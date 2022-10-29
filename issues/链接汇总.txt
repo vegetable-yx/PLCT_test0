@@ -27,4 +27,4 @@
 27. https://gitee.com/openeuler/RISC-V/issues/I5IDRO?from=project-issue#note_14033913_link
 28. https://gitee.com/openeuler/RISC-V/issues/I5A5T2?from=project-issue#note_14033968_link
 29. https://gitee.com/openeuler/RISC-V/issues/I5I05S?from=project-issue#note_14034042_link
-30. 
+30. https://gitee.com/openeuler/RISC-V/issues/I5A60U?from=project-issue#note_14034082_link
