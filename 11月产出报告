@@ -1,0 +1,5 @@
+## 11月产出报告
+
+- 60个issue的测试及报告整理：https://github.com/vegetable-yx/PLCT_test0/tree/main/issues
+- 了解 mugen，完成相应的配置以及运行了简单的初始程序，并分析相关日志（包括仓库中的使用以及开发的 python 脚本）：https://github.com/vegetable-yx/PLCT_test0/tree/main/mugen
+- 了解自动化测试任务，完成了环境的配置
