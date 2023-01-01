@@ -1,0 +1,15 @@
+Mon Jan  2 00:30:23 2023 - INFO  - Start environmental preparation.
+Mon Jan  2 00:31:39 2023 - INFO  - End of environmental preparation!
+Mon Jan  2 00:31:40 2023 - INFO  - Start testing...
+     Active: active (exited) since Mon 2023-01-02 00:31:41 CST; 7s ago
+     Active: inactive (dead)
+     Active: active (exited) since Mon 2023-01-02 00:31:58 CST; 7s ago
+/etc/systemd/system/sysinit.target.wants/cgconfig.service
+Removed /etc/systemd/system/sysinit.target.wants/cgconfig.service.
+find: ‘/etc/systemd/system/sysinit.target.wants/cgconfig.service’: No such file or directory
+Failed to reload cgconfig.service: Job type reload is not applicable for unit cgconfig.service.
+     Active: active (exited) since Mon 2023-01-02 00:31:58 CST; 31s ago
+Mon Jan  2 00:32:31 2023 - INFO  - Finish test!
+Mon Jan  2 00:32:32 2023 - INFO  - succeed to execute the case.
+Mon Jan  2 00:32:34 2023 - INFO  - start environment cleanup.
+Mon Jan  2 00:33:10 2023 - INFO  - Finish environment cleanup!

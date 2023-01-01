@@ -1,0 +1,13 @@
+Sun Jan  1 18:10:08 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 18:13:18 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 18:13:19 2023 - INFO  - Start testing...
+/etc/systemd/system/graphical.target.wants/initial-setup-reconfiguration.service
+/etc/systemd/system/multi-user.target.wants/initial-setup-reconfiguration.service
+Removed /etc/systemd/system/graphical.target.wants/initial-setup-reconfiguration.service.
+Removed /etc/systemd/system/multi-user.target.wants/initial-setup-reconfiguration.service.
+find: ‘/etc/systemd/system/graphical.target.wants/initial-setup-reconfiguration.service’: No such file or directory
+find: ‘/etc/systemd/system/multi-user.target.wants/initial-setup-reconfiguration.service’: No such file or directory
+Sun Jan  1 18:13:49 2023 - INFO  - Finish test!
+Sun Jan  1 18:13:51 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 18:13:52 2023 - INFO  - start environment cleanup.
+Sun Jan  1 18:15:49 2023 - INFO  - Finish environment cleanup!

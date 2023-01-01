@@ -1,0 +1,18 @@
+Sun Jan  1 11:50:09 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 11:51:55 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 11:51:56 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 11:51:57 CST; 7s ago
+Warning: Stopping virtlockd.service, but it can still be activated by:
+  virtlockd.socket
+  virtlockd-admin.socket
+     Active: inactive (dead) since Sun 2023-01-01 11:52:04 CST; 6s ago
+     Active: active (running) since Sun 2023-01-01 11:52:11 CST; 6s ago
+Sun Jan  1 11:52:19 2023 - INFO  - Unit is indirect, ignoring.
+     Active: active (running) since Sun 2023-01-01 11:52:11 CST; 19s ago
+Sun Jan  1 11:52:32 2023 - INFO  - Finish test!
+Sun Jan  1 11:52:33 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 11:52:34 2023 - INFO  - start environment cleanup.
+Warning: Stopping virtlockd.service, but it can still be activated by:
+  virtlockd.socket
+  virtlockd-admin.socket
+Sun Jan  1 11:53:39 2023 - INFO  - Finish environment cleanup!

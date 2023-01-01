@@ -1,0 +1,13 @@
+Sun Jan  1 11:20:45 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 11:21:41 2023 - INFO  - Finish preparing the test environment.
+Sun Jan  1 11:21:42 2023 - INFO  - Start to run test.
+Usage:
+  osinfo-detect [OPTION…] - Detect if media is bootable and the relevant OS and distribution.
+Sun Jan  1 11:22:06 2023 - INFO  - Obsolete version command
+Media is bootable.
+Media is bootable.
+Sun Jan  1 11:22:31 2023 - INFO  - End of the test.
+Sun Jan  1 11:22:32 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 11:22:33 2023 - INFO  - Start to restore the test environment.
+oe_test_osinfo-detect.sh: line 48:  4914 Killed                  nohup wget https://repo.openeuler.org/openEuler-20.03-LTS/ISO/aarch64/openEuler-20.03-LTS-aarch64-dvd.iso > /dev/null 2>&1
+Sun Jan  1 11:22:57 2023 - INFO  - Finish restoring the test environment.

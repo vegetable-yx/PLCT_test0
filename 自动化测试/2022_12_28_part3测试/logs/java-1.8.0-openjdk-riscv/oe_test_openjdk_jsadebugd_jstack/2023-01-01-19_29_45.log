@@ -1,0 +1,8 @@
+Sun Jan  1 19:29:51 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 19:40:16 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 19:40:17 2023 - INFO  - Start to run test.
+Error: Could not find or load main class sun.jvm.hotspot.jdi.SADebugServer
+Sun Jan  1 19:40:20 2023 - ERROR - oe_test_openjdk_jsadebugd_jstack.sh line 30
+Usage:
+Sun Jan  1 19:40:25 2023 - INFO  - Need't to restore the tet environment.
+nashorn> Sun Jan  1 19:41:53 2023 - INFO  - End to restore the test environment.

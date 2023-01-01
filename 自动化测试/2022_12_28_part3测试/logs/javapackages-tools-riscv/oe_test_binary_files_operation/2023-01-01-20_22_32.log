@@ -1,0 +1,1048 @@
+Sun Jan  1 20:22:39 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 20:22:59 2023 - INFO  - pkgs:(tar) is already installed
+Sun Jan  1 20:23:13 2023 - INFO  - pkgs:(junit) is already installed
+Sun Jan  1 20:23:31 2023 - INFO  - pkgs:(javapackages-tools java-1.8.0
+1.8.0
+1.8.0-devel xmvn-resolve objectweb-asm3 beust-jcommander log4j) is already installed
+Sun Jan  1 20:23:33 2023 - INFO  - Finish preparing the test environment.
+Sun Jan  1 20:23:34 2023 - INFO  - Start to run test.
+hello/
+hello/apache-commons-logging-adapters.jar
+hello/glassfish-el-api.jar
+hello/commons-logging-adapters.jar
+hello/flute.jar
+hello/libserializer.jar
+hello/xstream.jar
+hello/easymock-test-testng.jar
+hello/easymock.jar
+hello/xpp3_xpath.jar
+hello/flow-engine.jar
+hello/apache-commons-lang.jar
+hello/apache-commons-collections.jar
+hello/qdox.jar
+hello/antlr.jar
+hello/commons-codec.jar
+hello/easymock3.jar
+hello/libformula.jar
+hello/commons-logging-api.jar
+hello/libbase.jar
+hello/libxml.jar
+hello/beust-jcommander.jar
+hello/libfonts.jar
+hello/apache-commons-logging-api.jar
+hello/librepository.jar
+hello/ivy.jar
+hello/postgresql-jdbc.jar
+hello/commons-collections.jar
+hello/jcsp.jar
+hello/xpp3_min.jar
+hello/sac.jar
+hello/ant-launcher.jar
+hello/extra166y.jar
+hello/postgresql.jar
+hello/easymock3-test-java8.jar
+hello/netty3-3.10.6.jar
+hello/glassfish-servlet-api.jar
+hello/apache-commons-cli.jar
+hello/commons-cli.jar
+hello/easymock-test-java8.jar
+hello/apache-commons-codec.jar
+hello/Hello.java
+hello/db.jar
+hello/ant.jar
+hello/apache-commons-logging.jar
+hello/base64coder.jar
+hello/ant-bootstrap.jar
+hello/junit.jar
+hello/commons-lang.jar
+hello/bsf.jar
+hello/snakeyaml.jar
+hello/testng.jar
+hello/liblayout.jar
+hello/libloader.jar
+hello/easymock3-test-testng.jar
+hello/velocity.jar
+hello/xpp3.jar
+hello/commons-logging.jar
+hello/jzlib.jar
+remove hello/jzlib.jar
+remove hello/commons-logging.jar
+remove hello/xpp3.jar
+remove hello/velocity.jar
+remove hello/easymock3-test-testng.jar
+remove hello/libloader.jar
+remove hello/liblayout.jar
+remove hello/testng.jar
+remove hello/snakeyaml.jar
+remove hello/bsf.jar
+remove hello/commons-lang.jar
+remove hello/junit.jar
+remove hello/ant-bootstrap.jar
+remove hello/base64coder.jar
+remove hello/apache-commons-logging.jar
+remove hello/ant.jar
+remove hello/db.jar
+remove hello/apache-commons-codec.jar
+remove hello/easymock-test-java8.jar
+remove hello/commons-cli.jar
+remove hello/apache-commons-cli.jar
+remove hello/glassfish-servlet-api.jar
+remove hello/netty3-3.10.6.jar
+remove hello/easymock3-test-java8.jar
+remove hello/postgresql.jar
+remove hello/extra166y.jar
+remove hello/ant-launcher.jar
+remove hello/sac.jar
+remove hello/xpp3_min.jar
+remove hello/jcsp.jar
+remove hello/commons-collections.jar
+remove hello/postgresql-jdbc.jar
+remove hello/ivy.jar
+remove hello/librepository.jar
+remove hello/apache-commons-logging-api.jar
+remove hello/libfonts.jar
+remove hello/beust-jcommander.jar
+remove hello/libxml.jar
+remove hello/libbase.jar
+remove hello/commons-logging-api.jar
+remove hello/libformula.jar
+remove hello/easymock3.jar
+remove hello/commons-codec.jar
+remove hello/antlr.jar
+remove hello/qdox.jar
+remove hello/apache-commons-collections.jar
+remove hello/apache-commons-lang.jar
+remove hello/flow-engine.jar
+remove hello/xpp3_xpath.jar
+remove hello/easymock.jar
+remove hello/easymock-test-testng.jar
+remove hello/xstream.jar
+remove hello/libserializer.jar
+remove hello/flute.jar
+remove hello/commons-logging-adapters.jar
+remove hello/glassfish-el-api.jar
+remove hello/apache-commons-logging-adapters.jar
+ERROR: File hello/jzlib.jar should not exist, but does.
+ERROR: File hello/commons-logging.jar should not exist, but does.
+ERROR: File hello/xpp3.jar should not exist, but does.
+ERROR: File hello/velocity.jar should not exist, but does.
+ERROR: File hello/easymock3-test-testng.jar should not exist, but does.
+ERROR: File hello/libloader.jar should not exist, but does.
+ERROR: File hello/liblayout.jar should not exist, but does.
+ERROR: File hello/testng.jar should not exist, but does.
+ERROR: File hello/snakeyaml.jar should not exist, but does.
+ERROR: File hello/bsf.jar should not exist, but does.
+ERROR: File hello/commons-lang.jar should not exist, but does.
+ERROR: File hello/junit.jar should not exist, but does.
+ERROR: File hello/ant-bootstrap.jar should not exist, but does.
+ERROR: File hello/base64coder.jar should not exist, but does.
+ERROR: File hello/apache-commons-logging.jar should not exist, but does.
+ERROR: File hello/ant.jar should not exist, but does.
+ERROR: File hello/db.jar should not exist, but does.
+ERROR: File hello/apache-commons-codec.jar should not exist, but does.
+ERROR: File hello/easymock-test-java8.jar should not exist, but does.
+ERROR: File hello/commons-cli.jar should not exist, but does.
+ERROR: File hello/apache-commons-cli.jar should not exist, but does.
+ERROR: File hello/glassfish-servlet-api.jar should not exist, but does.
+ERROR: File hello/netty3-3.10.6.jar should not exist, but does.
+ERROR: File hello/easymock3-test-java8.jar should not exist, but does.
+ERROR: File hello/postgresql.jar should not exist, but does.
+ERROR: File hello/extra166y.jar should not exist, but does.
+ERROR: File hello/ant-launcher.jar should not exist, but does.
+ERROR: File hello/sac.jar should not exist, but does.
+ERROR: File hello/xpp3_min.jar should not exist, but does.
+ERROR: File hello/jcsp.jar should not exist, but does.
+ERROR: File hello/commons-collections.jar should not exist, but does.
+ERROR: File hello/postgresql-jdbc.jar should not exist, but does.
+ERROR: File hello/ivy.jar should not exist, but does.
+ERROR: File hello/librepository.jar should not exist, but does.
+ERROR: File hello/apache-commons-logging-api.jar should not exist, but does.
+ERROR: File hello/libfonts.jar should not exist, but does.
+ERROR: File hello/beust-jcommander.jar should not exist, but does.
+ERROR: File hello/libxml.jar should not exist, but does.
+ERROR: File hello/libbase.jar should not exist, but does.
+ERROR: File hello/commons-logging-api.jar should not exist, but does.
+ERROR: File hello/libformula.jar should not exist, but does.
+ERROR: File hello/easymock3.jar should not exist, but does.
+ERROR: File hello/commons-codec.jar should not exist, but does.
+ERROR: File hello/antlr.jar should not exist, but does.
+ERROR: File hello/qdox.jar should not exist, but does.
+ERROR: File hello/apache-commons-collections.jar should not exist, but does.
+ERROR: File hello/apache-commons-lang.jar should not exist, but does.
+ERROR: File hello/flow-engine.jar should not exist, but does.
+ERROR: File hello/xpp3_xpath.jar should not exist, but does.
+ERROR: File hello/easymock.jar should not exist, but does.
+ERROR: File hello/easymock-test-testng.jar should not exist, but does.
+ERROR: File hello/xstream.jar should not exist, but does.
+ERROR: File hello/libserializer.jar should not exist, but does.
+ERROR: File hello/flute.jar should not exist, but does.
+ERROR: File hello/commons-logging-adapters.jar should not exist, but does.
+ERROR: File hello/glassfish-el-api.jar should not exist, but does.
+ERROR: File hello/apache-commons-logging-adapters.jar should not exist, but does.
+rm -f "hello/jzlib.jar"
+rm -f "hello/commons-logging.jar"
+rm -f "hello/xpp3.jar"
+rm -f "hello/velocity.jar"
+rm -f "hello/easymock3-test-testng.jar"
+rm -f "hello/libloader.jar"
+rm -f "hello/liblayout.jar"
+rm -f "hello/testng.jar"
+rm -f "hello/snakeyaml.jar"
+rm -f "hello/bsf.jar"
+rm -f "hello/commons-lang.jar"
+rm -f "hello/junit.jar"
+rm -f "hello/ant-bootstrap.jar"
+rm -f "hello/base64coder.jar"
+rm -f "hello/apache-commons-logging.jar"
+rm -f "hello/ant.jar"
+rm -f "hello/db.jar"
+rm -f "hello/apache-commons-codec.jar"
+rm -f "hello/easymock-test-java8.jar"
+rm -f "hello/commons-cli.jar"
+rm -f "hello/apache-commons-cli.jar"
+rm -f "hello/glassfish-servlet-api.jar"
+rm -f "hello/netty3-3.10.6.jar"
+rm -f "hello/easymock3-test-java8.jar"
+rm -f "hello/postgresql.jar"
+rm -f "hello/extra166y.jar"
+rm -f "hello/ant-launcher.jar"
+rm -f "hello/sac.jar"
+rm -f "hello/xpp3_min.jar"
+rm -f "hello/jcsp.jar"
+rm -f "hello/commons-collections.jar"
+rm -f "hello/postgresql-jdbc.jar"
+rm -f "hello/ivy.jar"
+rm -f "hello/librepository.jar"
+rm -f "hello/apache-commons-logging-api.jar"
+rm -f "hello/libfonts.jar"
+rm -f "hello/beust-jcommander.jar"
+rm -f "hello/libxml.jar"
+rm -f "hello/libbase.jar"
+rm -f "hello/commons-logging-api.jar"
+rm -f "hello/libformula.jar"
+rm -f "hello/easymock3.jar"
+rm -f "hello/commons-codec.jar"
+rm -f "hello/antlr.jar"
+rm -f "hello/qdox.jar"
+rm -f "hello/apache-commons-collections.jar"
+rm -f "hello/apache-commons-lang.jar"
+rm -f "hello/flow-engine.jar"
+rm -f "hello/xpp3_xpath.jar"
+rm -f "hello/easymock.jar"
+rm -f "hello/easymock-test-testng.jar"
+rm -f "hello/xstream.jar"
+rm -f "hello/libserializer.jar"
+rm -f "hello/flute.jar"
+rm -f "hello/commons-logging-adapters.jar"
+rm -f "hello/glassfish-el-api.jar"
+rm -f "hello/apache-commons-logging-adapters.jar"
+hello/
+hello/Hello.java
+/usr/bin/build-jar-repository: Could not find netty3 Java extension for this JVM
+/usr/bin/build-jar-repository: error: Some specified jars were not found for this jvm
+build-jar-repository -s  hello jzlib
+build-jar-repository -s  hello commons-logging
+build-jar-repository -s  hello xpp3
+build-jar-repository -s  hello velocity
+build-jar-repository -s  hello easymock3-test-testng
+build-jar-repository -s  hello libloader
+build-jar-repository -s  hello liblayout
+build-jar-repository -s  hello testng
+build-jar-repository -s  hello snakeyaml
+build-jar-repository -s  hello bsf
+build-jar-repository -s  hello commons-lang
+build-jar-repository -s  hello junit
+build-jar-repository -s  hello ant-bootstrap
+build-jar-repository -s  hello base64coder
+build-jar-repository -s  hello apache-commons-logging
+build-jar-repository -s  hello ant
+build-jar-repository -s  hello db
+build-jar-repository -s  hello apache-commons-codec
+build-jar-repository -s  hello easymock-test-java8
+build-jar-repository -s  hello commons-cli
+build-jar-repository -s  hello apache-commons-cli
+build-jar-repository -s  hello glassfish-servlet-api
+build-jar-repository -s  hello netty3
+build-jar-repository -s  hello easymock3-test-java8
+build-jar-repository -s  hello postgresql
+build-jar-repository -s  hello extra166y
+build-jar-repository -s  hello ant-launcher
+build-jar-repository -s  hello sac
+build-jar-repository -s  hello xpp3_min
+build-jar-repository -s  hello jcsp
+build-jar-repository -s  hello commons-collections
+build-jar-repository -s  hello postgresql-jdbc
+build-jar-repository -s  hello ivy
+build-jar-repository -s  hello librepository
+build-jar-repository -s  hello apache-commons-logging-api
+build-jar-repository -s  hello libfonts
+build-jar-repository -s  hello beust-jcommander
+build-jar-repository -s  hello libxml
+build-jar-repository -s  hello libbase
+build-jar-repository -s  hello commons-logging-api
+build-jar-repository -s  hello libformula
+build-jar-repository -s  hello easymock3
+build-jar-repository -s  hello commons-codec
+build-jar-repository -s  hello antlr
+build-jar-repository -s  hello qdox
+build-jar-repository -s  hello apache-commons-collections
+build-jar-repository -s  hello apache-commons-lang
+build-jar-repository -s  hello flow-engine
+build-jar-repository -s  hello xpp3_xpath
+build-jar-repository -s  hello easymock
+build-jar-repository -s  hello easymock-test-testng
+build-jar-repository -s  hello xstream
+build-jar-repository -s  hello libserializer
+build-jar-repository -s  hello flute
+build-jar-repository -s  hello commons-logging-adapters
+build-jar-repository -s  hello glassfish-el-api
+build-jar-repository -s  hello apache-commons-logging-adapters
+lrwxrwxrwx 1 root root  33 Jan  1 20:26 [ant-bootstrap].jar -> /usr/share/java/ant-bootstrap.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:26 [ant].jar -> /usr/share/java/ant.jar
+lrwxrwxrwx 1 root root  32 Jan  1 20:26 [ant-launcher].jar -> /usr/share/java/ant-launcher.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:26 [antlr].jar -> /usr/share/java/antlr.jar
+lrwxrwxrwx 1 root root  38 Jan  1 20:26 [apache-commons-cli].jar -> /usr/share/java/apache-commons-cli.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:26 [apache-commons-codec].jar -> /usr/share/java/apache-commons-codec.jar
+lrwxrwxrwx 1 root root  46 Jan  1 20:26 [apache-commons-collections].jar -> /usr/share/java/apache-commons-collections.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:26 [apache-commons-lang].jar -> /usr/share/java/apache-commons-lang.jar
+lrwxrwxrwx 1 root root  51 Jan  1 20:27 [apache-commons-logging-adapters].jar -> /usr/share/java/apache-commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  46 Jan  1 20:26 [apache-commons-logging-api].jar -> /usr/share/java/apache-commons-logging-api.jar
+lrwxrwxrwx 1 root root  42 Jan  1 20:26 [apache-commons-logging].jar -> /usr/share/java/apache-commons-logging.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:26 [base64coder].jar -> /usr/share/java/base64coder.jar
+lrwxrwxrwx 1 root root  36 Jan  1 20:26 [beust-jcommander].jar -> /usr/share/java/beust-jcommander.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:25 [bsf].jar -> /usr/share/java/bsf.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:26 [commons-cli].jar -> /usr/share/java/commons-cli.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:26 [commons-codec].jar -> /usr/share/java/commons-codec.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:26 [commons-collections].jar -> /usr/share/java/commons-collections.jar
+lrwxrwxrwx 1 root root  32 Jan  1 20:26 [commons-lang].jar -> /usr/share/java/commons-lang.jar
+lrwxrwxrwx 1 root root  44 Jan  1 20:26 [commons-logging-adapters].jar -> /usr/share/java/commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:26 [commons-logging-api].jar -> /usr/share/java/commons-logging-api.jar
+lrwxrwxrwx 1 root root  35 Jan  1 20:25 [commons-logging].jar -> /usr/share/java/commons-logging.jar
+lrwxrwxrwx 1 root root  22 Jan  1 20:26 [db].jar -> /usr/share/java/db.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:26 [easymock3].jar -> /usr/share/java/easymock3.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:26 [easymock3-test-java8].jar -> /usr/share/java/easymock3-test-java8.jar
+lrwxrwxrwx 1 root root  41 Jan  1 20:25 [easymock3-test-testng].jar -> /usr/share/java/easymock3-test-testng.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:26 [easymock].jar -> /usr/share/java/easymock.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:26 [easymock-test-java8].jar -> /usr/share/java/easymock-test-java8.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:26 [easymock-test-testng].jar -> /usr/share/java/easymock-test-testng.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:26 [extra166y].jar -> /usr/share/java/extra166y.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:26 [flow-engine].jar -> /usr/share/java/flow-engine.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:26 [flute].jar -> /usr/share/java/flute.jar
+lrwxrwxrwx 1 root root  36 Jan  1 20:27 [glassfish-el-api].jar -> /usr/share/java/glassfish-el-api.jar
+lrwxrwxrwx 1 root root  41 Jan  1 20:26 [glassfish-servlet-api].jar -> /usr/share/java/glassfish-servlet-api.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:26 [ivy].jar -> /usr/share/java/ivy.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:26 [jcsp].jar -> /usr/share/java/jcsp.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:26 [junit].jar -> /usr/share/java/junit.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:25 [jzlib].jar -> /usr/share/java/jzlib.jar
+lrwxrwxrwx 1 root root  27 Jan  1 20:26 [libbase].jar -> /usr/share/java/libbase.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:26 [libfonts].jar -> /usr/share/java/libfonts.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:26 [libformula].jar -> /usr/share/java/libformula.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:25 [liblayout].jar -> /usr/share/java/liblayout.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:25 [libloader].jar -> /usr/share/java/libloader.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:26 [librepository].jar -> /usr/share/java/librepository.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:26 [libserializer].jar -> /usr/share/java/libserializer.jar
+lrwxrwxrwx 1 root root  26 Jan  1 20:26 [libxml].jar -> /usr/share/java/libxml.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:26 [postgresql].jar -> /usr/share/java/postgresql.jar
+lrwxrwxrwx 1 root root  35 Jan  1 20:26 [postgresql-jdbc].jar -> /usr/share/java/postgresql-jdbc.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:26 [qdox].jar -> /usr/share/java/qdox.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:26 [sac].jar -> /usr/share/java/sac.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:25 [snakeyaml].jar -> /usr/share/java/snakeyaml.jar
+lrwxrwxrwx 1 root root  26 Jan  1 20:25 [testng].jar -> /usr/share/java/testng.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:25 [velocity].jar -> /usr/share/java/velocity.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:25 [xpp3].jar -> /usr/share/java/xpp3.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:26 [xpp3_min].jar -> /usr/share/java/xpp3_min.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:26 [xpp3_xpath].jar -> /usr/share/java/xpp3_xpath.jar
+lrwxrwxrwx 1 root root  27 Jan  1 20:26 [xstream].jar -> /usr/share/java/xstream.jar
+/usr/bin/build-jar-repository: Could not find netty3 Java extension for this JVM
+/usr/bin/build-jar-repository: error: Some specified jars were not found for this jvm
+build-jar-repository -s  hello jzlib
+build-jar-repository -s  hello commons-logging
+build-jar-repository -s  hello xpp3
+build-jar-repository -s  hello velocity
+build-jar-repository -s  hello easymock3-test-testng
+build-jar-repository -s  hello libloader
+build-jar-repository -s  hello liblayout
+build-jar-repository -s  hello testng
+build-jar-repository -s  hello snakeyaml
+build-jar-repository -s  hello bsf
+build-jar-repository -s  hello commons-lang
+build-jar-repository -s  hello junit
+build-jar-repository -s  hello ant-bootstrap
+build-jar-repository -s  hello base64coder
+build-jar-repository -s  hello apache-commons-logging
+build-jar-repository -s  hello ant
+build-jar-repository -s  hello db
+build-jar-repository -s  hello apache-commons-codec
+build-jar-repository -s  hello easymock-test-java8
+build-jar-repository -s  hello commons-cli
+build-jar-repository -s  hello apache-commons-cli
+build-jar-repository -s  hello glassfish-servlet-api
+build-jar-repository -s  hello netty3
+build-jar-repository -s  hello easymock3-test-java8
+build-jar-repository -s  hello postgresql
+build-jar-repository -s  hello extra166y
+build-jar-repository -s  hello ant-launcher
+build-jar-repository -s  hello sac
+build-jar-repository -s  hello xpp3_min
+build-jar-repository -s  hello jcsp
+build-jar-repository -s  hello commons-collections
+build-jar-repository -s  hello postgresql-jdbc
+build-jar-repository -s  hello ivy
+build-jar-repository -s  hello librepository
+build-jar-repository -s  hello apache-commons-logging-api
+build-jar-repository -s  hello libfonts
+build-jar-repository -s  hello beust-jcommander
+build-jar-repository -s  hello libxml
+build-jar-repository -s  hello libbase
+build-jar-repository -s  hello commons-logging-api
+build-jar-repository -s  hello libformula
+build-jar-repository -s  hello easymock3
+build-jar-repository -s  hello commons-codec
+build-jar-repository -s  hello antlr
+build-jar-repository -s  hello qdox
+build-jar-repository -s  hello apache-commons-collections
+build-jar-repository -s  hello apache-commons-lang
+build-jar-repository -s  hello flow-engine
+build-jar-repository -s  hello xpp3_xpath
+build-jar-repository -s  hello easymock
+build-jar-repository -s  hello easymock-test-testng
+build-jar-repository -s  hello xstream
+build-jar-repository -s  hello libserializer
+build-jar-repository -s  hello flute
+build-jar-repository -s  hello commons-logging-adapters
+build-jar-repository -s  hello glassfish-el-api
+build-jar-repository -s  hello apache-commons-logging-adapters
+hello/
+hello/[apache-commons-logging-adapters].jar
+hello/[glassfish-el-api].jar
+hello/[commons-logging-adapters].jar
+hello/[flute].jar
+hello/[libserializer].jar
+hello/[xstream].jar
+hello/[easymock-test-testng].jar
+hello/[easymock].jar
+hello/[xpp3_xpath].jar
+hello/[flow-engine].jar
+hello/[apache-commons-lang].jar
+hello/[apache-commons-collections].jar
+hello/[qdox].jar
+hello/[antlr].jar
+hello/[commons-codec].jar
+hello/[easymock3].jar
+hello/[libformula].jar
+hello/[commons-logging-api].jar
+hello/[libbase].jar
+hello/[libxml].jar
+hello/[beust-jcommander].jar
+hello/[libfonts].jar
+hello/[apache-commons-logging-api].jar
+hello/[librepository].jar
+hello/[ivy].jar
+hello/[postgresql-jdbc].jar
+hello/[commons-collections].jar
+hello/[jcsp].jar
+hello/[xpp3_min].jar
+hello/[sac].jar
+hello/[ant-launcher].jar
+hello/[extra166y].jar
+hello/[postgresql].jar
+hello/[easymock3-test-java8].jar
+hello/[netty3].jar
+hello/[glassfish-servlet-api].jar
+hello/[apache-commons-cli].jar
+hello/[commons-cli].jar
+hello/[easymock-test-java8].jar
+hello/[apache-commons-codec].jar
+hello/[db].jar
+hello/[ant].jar
+hello/[apache-commons-logging].jar
+hello/[base64coder].jar
+hello/[ant-bootstrap].jar
+hello/[junit].jar
+hello/[commons-lang].jar
+hello/[bsf].jar
+hello/[snakeyaml].jar
+hello/[testng].jar
+hello/[liblayout].jar
+hello/[libloader].jar
+hello/[easymock3-test-testng].jar
+hello/[velocity].jar
+hello/[xpp3].jar
+hello/[commons-logging].jar
+hello/[jzlib].jar
+hello/Hello.java
+lrwxrwxrwx 1 root root  33 Jan  1 20:27 [ant-bootstrap].jar -> /usr/share/java/ant-bootstrap.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:27 [ant].jar -> /usr/share/java/ant.jar
+lrwxrwxrwx 1 root root  32 Jan  1 20:28 [ant-launcher].jar -> /usr/share/java/ant-launcher.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:28 [antlr].jar -> /usr/share/java/antlr.jar
+lrwxrwxrwx 1 root root  38 Jan  1 20:27 [apache-commons-cli].jar -> /usr/share/java/apache-commons-cli.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:27 [apache-commons-codec].jar -> /usr/share/java/apache-commons-codec.jar
+lrwxrwxrwx 1 root root  46 Jan  1 20:28 [apache-commons-collections].jar -> /usr/share/java/apache-commons-collections.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:28 [apache-commons-lang].jar -> /usr/share/java/apache-commons-lang.jar
+lrwxrwxrwx 1 root root  51 Jan  1 20:28 [apache-commons-logging-adapters].jar -> /usr/share/java/apache-commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  46 Jan  1 20:28 [apache-commons-logging-api].jar -> /usr/share/java/apache-commons-logging-api.jar
+lrwxrwxrwx 1 root root  42 Jan  1 20:27 [apache-commons-logging].jar -> /usr/share/java/apache-commons-logging.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:27 [base64coder].jar -> /usr/share/java/base64coder.jar
+lrwxrwxrwx 1 root root  36 Jan  1 20:28 [beust-jcommander].jar -> /usr/share/java/beust-jcommander.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:27 [bsf].jar -> /usr/share/java/bsf.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:27 [commons-cli].jar -> /usr/share/java/commons-cli.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:28 [commons-codec].jar -> /usr/share/java/commons-codec.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:28 [commons-collections].jar -> /usr/share/java/commons-collections.jar
+lrwxrwxrwx 1 root root  32 Jan  1 20:27 [commons-lang].jar -> /usr/share/java/commons-lang.jar
+lrwxrwxrwx 1 root root  44 Jan  1 20:28 [commons-logging-adapters].jar -> /usr/share/java/commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:28 [commons-logging-api].jar -> /usr/share/java/commons-logging-api.jar
+lrwxrwxrwx 1 root root  35 Jan  1 20:27 [commons-logging].jar -> /usr/share/java/commons-logging.jar
+lrwxrwxrwx 1 root root  22 Jan  1 20:27 [db].jar -> /usr/share/java/db.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:28 [easymock3].jar -> /usr/share/java/easymock3.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:27 [easymock3-test-java8].jar -> /usr/share/java/easymock3-test-java8.jar
+lrwxrwxrwx 1 root root  41 Jan  1 20:27 [easymock3-test-testng].jar -> /usr/share/java/easymock3-test-testng.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:28 [easymock].jar -> /usr/share/java/easymock.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:27 [easymock-test-java8].jar -> /usr/share/java/easymock-test-java8.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:28 [easymock-test-testng].jar -> /usr/share/java/easymock-test-testng.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:28 [extra166y].jar -> /usr/share/java/extra166y.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:28 [flow-engine].jar -> /usr/share/java/flow-engine.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:28 [flute].jar -> /usr/share/java/flute.jar
+lrwxrwxrwx 1 root root  36 Jan  1 20:28 [glassfish-el-api].jar -> /usr/share/java/glassfish-el-api.jar
+lrwxrwxrwx 1 root root  41 Jan  1 20:27 [glassfish-servlet-api].jar -> /usr/share/java/glassfish-servlet-api.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:28 [ivy].jar -> /usr/share/java/ivy.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:28 [jcsp].jar -> /usr/share/java/jcsp.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:27 [junit].jar -> /usr/share/java/junit.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:27 [jzlib].jar -> /usr/share/java/jzlib.jar
+lrwxrwxrwx 1 root root  27 Jan  1 20:28 [libbase].jar -> /usr/share/java/libbase.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:28 [libfonts].jar -> /usr/share/java/libfonts.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:28 [libformula].jar -> /usr/share/java/libformula.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:27 [liblayout].jar -> /usr/share/java/liblayout.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:27 [libloader].jar -> /usr/share/java/libloader.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:28 [librepository].jar -> /usr/share/java/librepository.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:28 [libserializer].jar -> /usr/share/java/libserializer.jar
+lrwxrwxrwx 1 root root  26 Jan  1 20:28 [libxml].jar -> /usr/share/java/libxml.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:27 [postgresql].jar -> /usr/share/java/postgresql.jar
+lrwxrwxrwx 1 root root  35 Jan  1 20:28 [postgresql-jdbc].jar -> /usr/share/java/postgresql-jdbc.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:28 [qdox].jar -> /usr/share/java/qdox.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:28 [sac].jar -> /usr/share/java/sac.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:27 [snakeyaml].jar -> /usr/share/java/snakeyaml.jar
+lrwxrwxrwx 1 root root  26 Jan  1 20:27 [testng].jar -> /usr/share/java/testng.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:27 [velocity].jar -> /usr/share/java/velocity.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:27 [xpp3].jar -> /usr/share/java/xpp3.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:28 [xpp3_min].jar -> /usr/share/java/xpp3_min.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:28 [xpp3_xpath].jar -> /usr/share/java/xpp3_xpath.jar
+lrwxrwxrwx 1 root root  27 Jan  1 20:28 [xstream].jar -> /usr/share/java/xstream.jar
+build-jar-repository -s -p hello jzlib
+build-jar-repository -s -p hello commons-logging
+build-jar-repository -s -p hello xpp3
+build-jar-repository -s -p hello velocity
+build-jar-repository -s -p hello easymock3-test-testng
+build-jar-repository -s -p hello libloader
+build-jar-repository -s -p hello liblayout
+build-jar-repository -s -p hello testng
+build-jar-repository -s -p hello snakeyaml
+build-jar-repository -s -p hello bsf
+build-jar-repository -s -p hello commons-lang
+build-jar-repository -s -p hello junit
+build-jar-repository -s -p hello ant-bootstrap
+build-jar-repository -s -p hello base64coder
+build-jar-repository -s -p hello apache-commons-logging
+build-jar-repository -s -p hello ant
+build-jar-repository -s -p hello db
+build-jar-repository -s -p hello apache-commons-codec
+build-jar-repository -s -p hello easymock-test-java8
+build-jar-repository -s -p hello commons-cli
+build-jar-repository -s -p hello apache-commons-cli
+build-jar-repository -s -p hello glassfish-servlet-api
+build-jar-repository -s -p hello netty3
+/usr/bin/build-jar-repository: Could not find netty3 Java extension for this JVM
+/usr/bin/build-jar-repository: error: Some specified jars were not found for this jvm
+build-jar-repository -s -p hello easymock3-test-java8
+build-jar-repository -s -p hello postgresql
+build-jar-repository -s -p hello extra166y
+build-jar-repository -s -p hello ant-launcher
+build-jar-repository -s -p hello sac
+build-jar-repository -s -p hello xpp3_min
+build-jar-repository -s -p hello jcsp
+build-jar-repository -s -p hello commons-collections
+build-jar-repository -s -p hello postgresql-jdbc
+build-jar-repository -s -p hello ivy
+build-jar-repository -s -p hello librepository
+build-jar-repository -s -p hello apache-commons-logging-api
+build-jar-repository -s -p hello libfonts
+build-jar-repository -s -p hello beust-jcommander
+build-jar-repository -s -p hello libxml
+build-jar-repository -s -p hello libbase
+build-jar-repository -s -p hello commons-logging-api
+build-jar-repository -s -p hello libformula
+build-jar-repository -s -p hello easymock3
+build-jar-repository -s -p hello commons-codec
+build-jar-repository -s -p hello antlr
+build-jar-repository -s -p hello qdox
+build-jar-repository -s -p hello apache-commons-collections
+build-jar-repository -s -p hello apache-commons-lang
+build-jar-repository -s -p hello flow-engine
+build-jar-repository -s -p hello xpp3_xpath
+build-jar-repository -s -p hello easymock
+build-jar-repository -s -p hello easymock-test-testng
+build-jar-repository -s -p hello xstream
+build-jar-repository -s -p hello libserializer
+build-jar-repository -s -p hello flute
+build-jar-repository -s -p hello commons-logging-adapters
+build-jar-repository -s -p hello glassfish-el-api
+build-jar-repository -s -p hello apache-commons-logging-adapters
+lrwxrwxrwx 1 root root  33 Jan  1 20:27 [ant-bootstrap].jar -> /usr/share/java/ant-bootstrap.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:29 ant-bootstrap.jar -> /usr/share/java/ant-bootstrap.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:27 [ant].jar -> /usr/share/java/ant.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:29 ant.jar -> /usr/share/java/ant.jar
+lrwxrwxrwx 1 root root  32 Jan  1 20:28 [ant-launcher].jar -> /usr/share/java/ant-launcher.jar
+lrwxrwxrwx 1 root root  32 Jan  1 20:29 ant-launcher.jar -> /usr/share/java/ant-launcher.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:28 [antlr].jar -> /usr/share/java/antlr.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:30 antlr.jar -> /usr/share/java/antlr.jar
+lrwxrwxrwx 1 root root  38 Jan  1 20:27 [apache-commons-cli].jar -> /usr/share/java/apache-commons-cli.jar
+lrwxrwxrwx 1 root root  38 Jan  1 20:29 apache-commons-cli.jar -> /usr/share/java/apache-commons-cli.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:27 [apache-commons-codec].jar -> /usr/share/java/apache-commons-codec.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:29 apache-commons-codec.jar -> /usr/share/java/apache-commons-codec.jar
+lrwxrwxrwx 1 root root  46 Jan  1 20:28 [apache-commons-collections].jar -> /usr/share/java/apache-commons-collections.jar
+lrwxrwxrwx 1 root root  46 Jan  1 20:30 apache-commons-collections.jar -> /usr/share/java/apache-commons-collections.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:28 [apache-commons-lang].jar -> /usr/share/java/apache-commons-lang.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:30 apache-commons-lang.jar -> /usr/share/java/apache-commons-lang.jar
+lrwxrwxrwx 1 root root  51 Jan  1 20:28 [apache-commons-logging-adapters].jar -> /usr/share/java/apache-commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  51 Jan  1 20:30 apache-commons-logging-adapters.jar -> /usr/share/java/apache-commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  46 Jan  1 20:28 [apache-commons-logging-api].jar -> /usr/share/java/apache-commons-logging-api.jar
+lrwxrwxrwx 1 root root  46 Jan  1 20:30 apache-commons-logging-api.jar -> /usr/share/java/apache-commons-logging-api.jar
+lrwxrwxrwx 1 root root  42 Jan  1 20:27 [apache-commons-logging].jar -> /usr/share/java/apache-commons-logging.jar
+lrwxrwxrwx 1 root root  42 Jan  1 20:29 apache-commons-logging.jar -> /usr/share/java/apache-commons-logging.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:27 [base64coder].jar -> /usr/share/java/base64coder.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:29 base64coder.jar -> /usr/share/java/base64coder.jar
+lrwxrwxrwx 1 root root  36 Jan  1 20:28 [beust-jcommander].jar -> /usr/share/java/beust-jcommander.jar
+lrwxrwxrwx 1 root root  36 Jan  1 20:30 beust-jcommander.jar -> /usr/share/java/beust-jcommander.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:27 [bsf].jar -> /usr/share/java/bsf.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:29 bsf.jar -> /usr/share/java/bsf.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:27 [commons-cli].jar -> /usr/share/java/commons-cli.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:29 commons-cli.jar -> /usr/share/java/commons-cli.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:28 [commons-codec].jar -> /usr/share/java/commons-codec.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:30 commons-codec.jar -> /usr/share/java/commons-codec.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:28 [commons-collections].jar -> /usr/share/java/commons-collections.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:29 commons-collections.jar -> /usr/share/java/commons-collections.jar
+lrwxrwxrwx 1 root root  32 Jan  1 20:27 [commons-lang].jar -> /usr/share/java/commons-lang.jar
+lrwxrwxrwx 1 root root  32 Jan  1 20:29 commons-lang.jar -> /usr/share/java/commons-lang.jar
+lrwxrwxrwx 1 root root  44 Jan  1 20:28 [commons-logging-adapters].jar -> /usr/share/java/commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  44 Jan  1 20:30 commons-logging-adapters.jar -> /usr/share/java/commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:28 [commons-logging-api].jar -> /usr/share/java/commons-logging-api.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:30 commons-logging-api.jar -> /usr/share/java/commons-logging-api.jar
+lrwxrwxrwx 1 root root  35 Jan  1 20:27 [commons-logging].jar -> /usr/share/java/commons-logging.jar
+lrwxrwxrwx 1 root root  35 Jan  1 20:29 commons-logging.jar -> /usr/share/java/commons-logging.jar
+lrwxrwxrwx 1 root root  22 Jan  1 20:27 [db].jar -> /usr/share/java/db.jar
+lrwxrwxrwx 1 root root  22 Jan  1 20:29 db.jar -> /usr/share/java/db.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:30 easymock3.jar -> /usr/share/java/easymock3.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:28 [easymock3].jar -> /usr/share/java/easymock3.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:29 easymock3-test-java8.jar -> /usr/share/java/easymock3-test-java8.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:27 [easymock3-test-java8].jar -> /usr/share/java/easymock3-test-java8.jar
+lrwxrwxrwx 1 root root  41 Jan  1 20:27 [easymock3-test-testng].jar -> /usr/share/java/easymock3-test-testng.jar
+lrwxrwxrwx 1 root root  41 Jan  1 20:29 easymock3-test-testng.jar -> /usr/share/java/easymock3-test-testng.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:28 [easymock].jar -> /usr/share/java/easymock.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:30 easymock.jar -> /usr/share/java/easymock.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:29 easymock-test-java8.jar -> /usr/share/java/easymock-test-java8.jar
+lrwxrwxrwx 1 root root  39 Jan  1 20:27 [easymock-test-java8].jar -> /usr/share/java/easymock-test-java8.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:28 [easymock-test-testng].jar -> /usr/share/java/easymock-test-testng.jar
+lrwxrwxrwx 1 root root  40 Jan  1 20:30 easymock-test-testng.jar -> /usr/share/java/easymock-test-testng.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:28 [extra166y].jar -> /usr/share/java/extra166y.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:29 extra166y.jar -> /usr/share/java/extra166y.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:28 [flow-engine].jar -> /usr/share/java/flow-engine.jar
+lrwxrwxrwx 1 root root  31 Jan  1 20:30 flow-engine.jar -> /usr/share/java/flow-engine.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:28 [flute].jar -> /usr/share/java/flute.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:30 flute.jar -> /usr/share/java/flute.jar
+lrwxrwxrwx 1 root root  36 Jan  1 20:28 [glassfish-el-api].jar -> /usr/share/java/glassfish-el-api.jar
+lrwxrwxrwx 1 root root  36 Jan  1 20:30 glassfish-el-api.jar -> /usr/share/java/glassfish-el-api.jar
+lrwxrwxrwx 1 root root  41 Jan  1 20:27 [glassfish-servlet-api].jar -> /usr/share/java/glassfish-servlet-api.jar
+lrwxrwxrwx 1 root root  41 Jan  1 20:29 glassfish-servlet-api.jar -> /usr/share/java/glassfish-servlet-api.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:28 [ivy].jar -> /usr/share/java/ivy.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:30 ivy.jar -> /usr/share/java/ivy.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:28 [jcsp].jar -> /usr/share/java/jcsp.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:29 jcsp.jar -> /usr/share/java/jcsp.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:27 [junit].jar -> /usr/share/java/junit.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:29 junit.jar -> /usr/share/java/junit.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:27 [jzlib].jar -> /usr/share/java/jzlib.jar
+lrwxrwxrwx 1 root root  25 Jan  1 20:29 jzlib.jar -> /usr/share/java/jzlib.jar
+lrwxrwxrwx 1 root root  27 Jan  1 20:28 [libbase].jar -> /usr/share/java/libbase.jar
+lrwxrwxrwx 1 root root  27 Jan  1 20:30 libbase.jar -> /usr/share/java/libbase.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:28 [libfonts].jar -> /usr/share/java/libfonts.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:30 libfonts.jar -> /usr/share/java/libfonts.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:28 [libformula].jar -> /usr/share/java/libformula.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:30 libformula.jar -> /usr/share/java/libformula.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:27 [liblayout].jar -> /usr/share/java/liblayout.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:29 liblayout.jar -> /usr/share/java/liblayout.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:27 [libloader].jar -> /usr/share/java/libloader.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:29 libloader.jar -> /usr/share/java/libloader.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:28 [librepository].jar -> /usr/share/java/librepository.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:30 librepository.jar -> /usr/share/java/librepository.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:28 [libserializer].jar -> /usr/share/java/libserializer.jar
+lrwxrwxrwx 1 root root  33 Jan  1 20:30 libserializer.jar -> /usr/share/java/libserializer.jar
+lrwxrwxrwx 1 root root  26 Jan  1 20:28 [libxml].jar -> /usr/share/java/libxml.jar
+lrwxrwxrwx 1 root root  26 Jan  1 20:30 libxml.jar -> /usr/share/java/libxml.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:27 [postgresql].jar -> /usr/share/java/postgresql.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:29 postgresql.jar -> /usr/share/java/postgresql.jar
+lrwxrwxrwx 1 root root  35 Jan  1 20:28 [postgresql-jdbc].jar -> /usr/share/java/postgresql-jdbc.jar
+lrwxrwxrwx 1 root root  35 Jan  1 20:29 postgresql-jdbc.jar -> /usr/share/java/postgresql-jdbc.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:28 [qdox].jar -> /usr/share/java/qdox.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:30 qdox.jar -> /usr/share/java/qdox.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:28 [sac].jar -> /usr/share/java/sac.jar
+lrwxrwxrwx 1 root root  23 Jan  1 20:29 sac.jar -> /usr/share/java/sac.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:27 [snakeyaml].jar -> /usr/share/java/snakeyaml.jar
+lrwxrwxrwx 1 root root  29 Jan  1 20:29 snakeyaml.jar -> /usr/share/java/snakeyaml.jar
+lrwxrwxrwx 1 root root  26 Jan  1 20:27 [testng].jar -> /usr/share/java/testng.jar
+lrwxrwxrwx 1 root root  26 Jan  1 20:29 testng.jar -> /usr/share/java/testng.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:27 [velocity].jar -> /usr/share/java/velocity.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:29 velocity.jar -> /usr/share/java/velocity.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:29 xpp3.jar -> /usr/share/java/xpp3.jar
+lrwxrwxrwx 1 root root  24 Jan  1 20:27 [xpp3].jar -> /usr/share/java/xpp3.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:28 [xpp3_min].jar -> /usr/share/java/xpp3_min.jar
+lrwxrwxrwx 1 root root  28 Jan  1 20:29 xpp3_min.jar -> /usr/share/java/xpp3_min.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:28 [xpp3_xpath].jar -> /usr/share/java/xpp3_xpath.jar
+lrwxrwxrwx 1 root root  30 Jan  1 20:30 xpp3_xpath.jar -> /usr/share/java/xpp3_xpath.jar
+lrwxrwxrwx 1 root root  27 Jan  1 20:28 [xstream].jar -> /usr/share/java/xstream.jar
+lrwxrwxrwx 1 root root  27 Jan  1 20:30 xstream.jar -> /usr/share/java/xstream.jar
+build-jar-repository -s -p hello jzlib
+build-jar-repository -s -p hello commons-logging
+build-jar-repository -s -p hello xpp3
+build-jar-repository -s -p hello velocity
+build-jar-repository -s -p hello easymock3-test-testng
+build-jar-repository -s -p hello libloader
+build-jar-repository -s -p hello liblayout
+build-jar-repository -s -p hello testng
+build-jar-repository -s -p hello snakeyaml
+build-jar-repository -s -p hello bsf
+build-jar-repository -s -p hello commons-lang
+build-jar-repository -s -p hello junit
+build-jar-repository -s -p hello ant-bootstrap
+build-jar-repository -s -p hello base64coder
+build-jar-repository -s -p hello apache-commons-logging
+build-jar-repository -s -p hello ant
+build-jar-repository -s -p hello db
+build-jar-repository -s -p hello apache-commons-codec
+build-jar-repository -s -p hello easymock-test-java8
+build-jar-repository -s -p hello commons-cli
+build-jar-repository -s -p hello apache-commons-cli
+build-jar-repository -s -p hello glassfish-servlet-api
+build-jar-repository -s -p hello netty3
+/usr/bin/build-jar-repository: Could not find netty3 Java extension for this JVM
+/usr/bin/build-jar-repository: error: Some specified jars were not found for this jvm
+build-jar-repository -s -p hello easymock3-test-java8
+build-jar-repository -s -p hello postgresql
+build-jar-repository -s -p hello extra166y
+build-jar-repository -s -p hello ant-launcher
+build-jar-repository -s -p hello sac
+build-jar-repository -s -p hello xpp3_min
+build-jar-repository -s -p hello jcsp
+build-jar-repository -s -p hello commons-collections
+build-jar-repository -s -p hello postgresql-jdbc
+build-jar-repository -s -p hello ivy
+build-jar-repository -s -p hello librepository
+build-jar-repository -s -p hello apache-commons-logging-api
+build-jar-repository -s -p hello libfonts
+build-jar-repository -s -p hello beust-jcommander
+build-jar-repository -s -p hello libxml
+build-jar-repository -s -p hello libbase
+build-jar-repository -s -p hello commons-logging-api
+build-jar-repository -s -p hello libformula
+build-jar-repository -s -p hello easymock3
+build-jar-repository -s -p hello commons-codec
+build-jar-repository -s -p hello antlr
+build-jar-repository -s -p hello qdox
+build-jar-repository -s -p hello apache-commons-collections
+build-jar-repository -s -p hello apache-commons-lang
+build-jar-repository -s -p hello flow-engine
+build-jar-repository -s -p hello xpp3_xpath
+build-jar-repository -s -p hello easymock
+build-jar-repository -s -p hello easymock-test-testng
+build-jar-repository -s -p hello xstream
+build-jar-repository -s -p hello libserializer
+build-jar-repository -s -p hello flute
+build-jar-repository -s -p hello commons-logging-adapters
+build-jar-repository -s -p hello glassfish-el-api
+build-jar-repository -s -p hello apache-commons-logging-adapters
++org/junit/
++org/junit/After.class
++org/junit/AfterClass.class
++org/junit/Assert.class
++org/junit/Assume.class
++org/junit/AssumptionViolatedException.class
++org/junit/Before.class
++org/junit/BeforeClass.class
++org/junit/ClassRule.class
++org/junit/ComparisonFailure$1.class
++org/junit/ComparisonFailure$ComparisonCompactor$DiffExtractor.class
++org/junit/ComparisonFailure$ComparisonCompactor.class
++org/junit/ComparisonFailure.class
++org/junit/experimental/
++org/junit/experimental/categories/
++org/junit/experimental/categories/Categories$CategoryFilter.class
++org/junit/experimental/categories/Categories$ExcludeCategory.class
++org/junit/experimental/categories/Categories$IncludeCategory.class
++org/junit/experimental/categories/Categories.class
++org/junit/experimental/categories/Category.class
++org/junit/experimental/categories/CategoryFilterFactory.class
++org/junit/experimental/categories/CategoryValidator.class
++org/junit/experimental/categories/ExcludeCategories$ExcludesAny.class
++org/junit/experimental/categories/ExcludeCategories.class
++org/junit/experimental/categories/IncludeCategories$IncludesAny.class
++org/junit/experimental/categories/IncludeCategories.class
++org/junit/experimental/max/
++org/junit/experimental/max/CouldNotReadCoreException.class
++org/junit/experimental/max/MaxCore$1$1.class
++org/junit/experimental/max/MaxCore$1.class
++org/junit/experimental/max/MaxCore.class
++org/junit/experimental/max/MaxHistory$1.class
++org/junit/experimental/max/MaxHistory$RememberingListener.class
++org/junit/experimental/max/MaxHistory$TestComparator.class
++org/junit/experimental/max/MaxHistory.class
++org/junit/experimental/ParallelComputer$1.class
++org/junit/experimental/ParallelComputer.class
++org/junit/experimental/results/
++org/junit/experimental/results/FailureList.class
++org/junit/experimental/results/PrintableResult.class
++org/junit/experimental/results/ResultMatchers$1.class
++org/junit/experimental/results/ResultMatchers$2.class
++org/junit/experimental/results/ResultMatchers$3.class
++org/junit/experimental/results/ResultMatchers.class
++org/junit/experimental/runners/
++org/junit/experimental/runners/Enclosed.class
++org/junit/experimental/theories/
++org/junit/experimental/theories/DataPoint.class
++org/junit/experimental/theories/DataPoints.class
++org/junit/experimental/theories/FromDataPoints.class
++org/junit/experimental/theories/internal/
++org/junit/experimental/theories/internal/AllMembersSupplier$1.class
++org/junit/experimental/theories/internal/AllMembersSupplier$MethodParameterValue.class
++org/junit/experimental/theories/internal/AllMembersSupplier.class
++org/junit/experimental/theories/internal/Assignments.class
++org/junit/experimental/theories/internal/BooleanSupplier.class
++org/junit/experimental/theories/internal/EnumSupplier.class
++org/junit/experimental/theories/internal/ParameterizedAssertionError.class
++org/junit/experimental/theories/internal/SpecificDataPointsSupplier.class
++org/junit/experimental/theories/ParameterSignature.class
++org/junit/experimental/theories/ParametersSuppliedBy.class
++org/junit/experimental/theories/ParameterSupplier.class
++org/junit/experimental/theories/PotentialAssignment$1.class
++org/junit/experimental/theories/PotentialAssignment$CouldNotGenerateValueException.class
++org/junit/experimental/theories/PotentialAssignment.class
++org/junit/experimental/theories/suppliers/
++org/junit/experimental/theories/suppliers/TestedOn.class
++org/junit/experimental/theories/suppliers/TestedOnSupplier.class
++org/junit/experimental/theories/Theories$TheoryAnchor$1$1.class
++org/junit/experimental/theories/Theories$TheoryAnchor$1.class
++org/junit/experimental/theories/Theories$TheoryAnchor$2.class
++org/junit/experimental/theories/Theories$TheoryAnchor.class
++org/junit/experimental/theories/Theories.class
++org/junit/experimental/theories/Theory.class
++org/junit/FixMethodOrder.class
++org/junit/Ignore.class
++org/junit/internal/
++org/junit/internal/ArrayComparisonFailure.class
++org/junit/internal/AssumptionViolatedException.class
++org/junit/internal/builders/
++org/junit/internal/builders/AllDefaultPossibilitiesBuilder.class
++org/junit/internal/builders/AnnotatedBuilder.class
++org/junit/internal/builders/IgnoredBuilder.class
++org/junit/internal/builders/IgnoredClassRunner.class
++org/junit/internal/builders/JUnit3Builder.class
++org/junit/internal/builders/JUnit4Builder.class
++org/junit/internal/builders/NullBuilder.class
++org/junit/internal/builders/SuiteMethodBuilder.class
++org/junit/internal/Classes.class
++org/junit/internal/ComparisonCriteria.class
++org/junit/internal/ExactComparisonCriteria.class
++org/junit/internal/InexactComparisonCriteria.class
++org/junit/internal/JUnitSystem.class
++org/junit/internal/matchers/
++org/junit/internal/matchers/StacktracePrintingMatcher.class
++org/junit/internal/matchers/ThrowableCauseMatcher.class
++org/junit/internal/matchers/ThrowableMessageMatcher.class
++org/junit/internal/matchers/TypeSafeMatcher.class
++org/junit/internal/MethodSorter$1.class
++org/junit/internal/MethodSorter$2.class
++org/junit/internal/MethodSorter.class
++org/junit/internal/RealSystem.class
++org/junit/internal/requests/
++org/junit/internal/requests/ClassRequest.class
++org/junit/internal/requests/FilterRequest.class
++org/junit/internal/requests/SortingRequest.class
++org/junit/internal/runners/
++org/junit/internal/runners/ClassRoadie.class
++org/junit/internal/runners/ErrorReportingRunner.class
++org/junit/internal/runners/FailedBefore.class
++org/junit/internal/runners/InitializationError.class
++org/junit/internal/runners/JUnit38ClassRunner$1.class
++org/junit/internal/runners/JUnit38ClassRunner$OldTestClassAdaptingListener.class
++org/junit/internal/runners/JUnit38ClassRunner.class
++org/junit/internal/runners/JUnit4ClassRunner$1.class
++org/junit/internal/runners/JUnit4ClassRunner$2.class
++org/junit/internal/runners/JUnit4ClassRunner.class
++org/junit/internal/runners/MethodRoadie$1$1.class
++org/junit/internal/runners/MethodRoadie$1.class
++org/junit/internal/runners/MethodRoadie$2.class
++org/junit/internal/runners/MethodRoadie.class
++org/junit/internal/runners/MethodValidator.class
++org/junit/internal/runners/model/
++org/junit/internal/runners/model/EachTestNotifier.class
++org/junit/internal/runners/model/MultipleFailureException.class
++org/junit/internal/runners/model/ReflectiveCallable.class
++org/junit/internal/runners/rules/
++org/junit/internal/runners/rules/RuleMemberValidator$1.class
++org/junit/internal/runners/rules/RuleMemberValidator$Builder.class
++org/junit/internal/runners/rules/RuleMemberValidator$DeclaringClassMustBePublic.class
++org/junit/internal/runners/rules/RuleMemberValidator$FieldMustBeARule.class
++org/junit/internal/runners/rules/RuleMemberValidator$FieldMustBeATestRule.class
++org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBeNonStaticOrAlsoClassRule.class
++org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBePublic.class
++org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBeStatic.class
++org/junit/internal/runners/rules/RuleMemberValidator$MethodMustBeARule.class
++org/junit/internal/runners/rules/RuleMemberValidator$MethodMustBeATestRule.class
++org/junit/internal/runners/rules/RuleMemberValidator$RuleValidator.class
++org/junit/internal/runners/rules/RuleMemberValidator.class
++org/junit/internal/runners/rules/ValidationError.class
++org/junit/internal/runners/statements/
++org/junit/internal/runners/statements/ExpectException.class
++org/junit/internal/runners/statements/Fail.class
++org/junit/internal/runners/statements/FailOnTimeout$1.class
++org/junit/internal/runners/statements/FailOnTimeout$Builder.class
++org/junit/internal/runners/statements/FailOnTimeout$CallableStatement.class
++org/junit/internal/runners/statements/FailOnTimeout.class
++org/junit/internal/runners/statements/InvokeMethod.class
++org/junit/internal/runners/statements/RunAfters.class
++org/junit/internal/runners/statements/RunBefores.class
++org/junit/internal/runners/SuiteMethod.class
++org/junit/internal/runners/TestClass.class
++org/junit/internal/runners/TestMethod.class
++org/junit/internal/TextListener.class
++org/junit/internal/Throwables.class
++org/junit/matchers/
++org/junit/matchers/JUnitMatchers.class
++org/junit/Rule.class
++org/junit/rules/
++org/junit/rules/DisableOnDebug.class
++org/junit/rules/ErrorCollector$1.class
++org/junit/rules/ErrorCollector.class
++org/junit/rules/ExpectedException$ExpectedExceptionStatement.class
++org/junit/rules/ExpectedException.class
++org/junit/rules/ExpectedExceptionMatcherBuilder.class
++org/junit/rules/ExternalResource$1.class
++org/junit/rules/ExternalResource.class
++org/junit/rules/MethodRule.class
++org/junit/rules/RuleChain.class
++org/junit/rules/RunRules.class
++org/junit/rules/Stopwatch$1.class
++org/junit/rules/Stopwatch$Clock.class
++org/junit/rules/Stopwatch$InternalWatcher.class
++org/junit/rules/Stopwatch.class
++org/junit/rules/TemporaryFolder.class
++org/junit/rules/TestName.class
++org/junit/rules/TestRule.class
++org/junit/rules/TestWatcher$1.class
++org/junit/rules/TestWatcher.class
++org/junit/rules/TestWatchman$1.class
++org/junit/rules/TestWatchman.class
++org/junit/rules/Timeout$1.class
++org/junit/rules/Timeout$Builder.class
++org/junit/rules/Timeout.class
++org/junit/rules/Verifier$1.class
++org/junit/rules/Verifier.class
++org/junit/runner/
++org/junit/runner/Computer$1.class
++org/junit/runner/Computer.class
++org/junit/runner/Describable.class
++org/junit/runner/Description.class
++org/junit/runner/FilterFactories.class
++org/junit/runner/FilterFactory$FilterNotCreatedException.class
++org/junit/runner/FilterFactory.class
++org/junit/runner/FilterFactoryParams.class
++org/junit/runner/JUnitCommandLineParseResult$CommandLineParserError.class
++org/junit/runner/JUnitCommandLineParseResult.class
++org/junit/runner/JUnitCore.class
++org/junit/runner/manipulation/
++org/junit/runner/manipulation/Filter$1.class
++org/junit/runner/manipulation/Filter$2.class
++org/junit/runner/manipulation/Filter$3.class
++org/junit/runner/manipulation/Filterable.class
++org/junit/runner/manipulation/Filter.class
++org/junit/runner/manipulation/NoTestsRemainException.class
++org/junit/runner/manipulation/Sortable.class
++org/junit/runner/manipulation/Sorter$1.class
++org/junit/runner/manipulation/Sorter.class
++org/junit/runner/notification/
++org/junit/runner/notification/Failure.class
++org/junit/runner/notification/RunListener$ThreadSafe.class
++org/junit/runner/notification/RunListener.class
++org/junit/runner/notification/RunNotifier$1.class
++org/junit/runner/notification/RunNotifier$2.class
++org/junit/runner/notification/RunNotifier$3.class
++org/junit/runner/notification/RunNotifier$4.class
++org/junit/runner/notification/RunNotifier$5.class
++org/junit/runner/notification/RunNotifier$6.class
++org/junit/runner/notification/RunNotifier$7.class
++org/junit/runner/notification/RunNotifier$SafeNotifier.class
++org/junit/runner/notification/RunNotifier.class
++org/junit/runner/notification/StoppedByUserException.class
++org/junit/runner/notification/SynchronizedRunListener.class
++org/junit/runner/Request$1.class
++org/junit/runner/Request.class
++org/junit/runner/Result$1.class
++org/junit/runner/Result$Listener.class
++org/junit/runner/Result$SerializedForm.class
++org/junit/runner/Result.class
++org/junit/runner/Runner.class
++org/junit/runner/RunWith.class
++org/junit/runners/
++org/junit/runners/AllTests.class
++org/junit/runners/BlockJUnit4ClassRunner$1.class
++org/junit/runners/BlockJUnit4ClassRunner.class
++org/junit/runners/JUnit4.class
++org/junit/runners/MethodSorters.class
++org/junit/runners/model/
++org/junit/runners/model/Annotatable.class
++org/junit/runners/model/FrameworkField.class
++org/junit/runners/model/FrameworkMember.class
++org/junit/runners/model/FrameworkMethod$1.class
++org/junit/runners/model/FrameworkMethod.class
++org/junit/runners/model/InitializationError.class
++org/junit/runners/model/MultipleFailureException.class
++org/junit/runners/model/NoGenericTypeParametersValidator.class
++org/junit/runners/model/RunnerBuilder.class
++org/junit/runners/model/RunnerScheduler.class
++org/junit/runners/model/Statement.class
++org/junit/runners/model/TestClass$1.class
++org/junit/runners/model/TestClass$FieldComparator.class
++org/junit/runners/model/TestClass$MethodComparator.class
++org/junit/runners/model/TestClass.class
++org/junit/runners/model/TestTimedOutException.class
++org/junit/runners/parameterized/
++org/junit/runners/Parameterized$Parameter.class
++org/junit/runners/Parameterized$Parameters.class
++org/junit/runners/Parameterized$UseParametersRunnerFactory.class
++org/junit/runners/parameterized/BlockJUnit4ClassRunnerWithParameters.class
++org/junit/runners/parameterized/BlockJUnit4ClassRunnerWithParametersFactory.class
++org/junit/runners/Parameterized.class
++org/junit/runners/parameterized/ParametersRunnerFactory.class
++org/junit/runners/parameterized/TestWithParameters.class
++org/junit/runners/ParentRunner$1.class
++org/junit/runners/ParentRunner$2.class
++org/junit/runners/ParentRunner$3.class
++org/junit/runners/ParentRunner$4.class
++org/junit/runners/ParentRunner.class
++org/junit/runners/Suite$SuiteClasses.class
++org/junit/runners/Suite.class
++org/junit/Test$None.class
++org/junit/Test.class
++org/junit/validator/
++org/junit/validator/AnnotationsValidator$1.class
++org/junit/validator/AnnotationsValidator$AnnotatableValidator.class
++org/junit/validator/AnnotationsValidator$ClassValidator.class
++org/junit/validator/AnnotationsValidator$FieldValidator.class
++org/junit/validator/AnnotationsValidator$MethodValidator.class
++org/junit/validator/AnnotationsValidator.class
++org/junit/validator/AnnotationValidator.class
++org/junit/validator/AnnotationValidatorFactory.class
++org/junit/validator/PublicClassValidator.class
++org/junit/validator/TestClassValidator.class
++org/junit/validator/ValidateWith.class
+Sun Jan  1 20:32:19 2023 - INFO  - End of the test.
+Sun Jan  1 20:32:20 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 20:32:21 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 20:32:23 2023 - WARN  - no thing to do.
+Sun Jan  1 20:32:25 2023 - INFO  - Finish restoring the test environment.

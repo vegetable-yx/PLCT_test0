@@ -1,0 +1,14 @@
+Sun Jan  1 22:04:17 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 22:07:44 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 22:07:46 2023 - INFO  - Start testing...
+import: 'exceptions' as org.python.core.exceptions in builtin modules
+test
+test_arg
+Library usage: see the Timer class.
+sys:1: DeprecationWarning: catching classes that don't inherit from BaseException is not allowed in 3.x
+ENABLE_USER_SITE: False
+stdout1stderr1
+Sun Jan  1 22:23:18 2023 - INFO  - Finish test!
+Sun Jan  1 22:23:20 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 22:23:21 2023 - INFO  - start environment cleanup.
+Sun Jan  1 22:24:21 2023 - INFO  - Finish environment cleanup!

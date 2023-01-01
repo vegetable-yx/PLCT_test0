@@ -1,0 +1,12 @@
+Sun Jan  1 20:56:41 2023 - INFO  - Start environment preparation.
+Sun Jan  1 20:57:54 2023 - INFO  - pkgs:(java-1.8.0-devel) is already installed
+Sun Jan  1 20:57:55 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 20:57:57 2023 - INFO  - Start testing...
+[         4 tests successful      ]
+[         1 tests failed          ]
+[36m│     └─[0m [31mTestE()[0m [31m✘[0m [31mexecution timed out after 10 ms[0m
+    => org.opentest4j.AssertionFailedError: execution timed out after 10 ms
+Sun Jan  1 20:58:49 2023 - INFO  - Finish test!
+Sun Jan  1 20:58:50 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 20:58:51 2023 - INFO  - start environment cleanup.
+Sun Jan  1 20:59:13 2023 - INFO  - Finish environment cleanup!

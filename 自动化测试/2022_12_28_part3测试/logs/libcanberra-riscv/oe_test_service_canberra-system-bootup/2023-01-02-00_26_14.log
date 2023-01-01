@@ -1,0 +1,24 @@
+Mon Jan  2 00:26:21 2023 - INFO  - Start environmental preparation.
+Mon Jan  2 00:26:37 2023 - INFO  - pkgs:(libcanberra) is already installed
+Mon Jan  2 00:26:41 2023 - INFO  - End of environmental preparation!
+Mon Jan  2 00:26:42 2023 - INFO  - Start testing...
+/etc/systemd/system/sound.target.wants/canberra-system-bootup.service
+/etc/systemd/system/halt.target.wants/canberra-system-shutdown.service
+/etc/systemd/system/poweroff.target.wants/canberra-system-shutdown.service
+/etc/systemd/system/reboot.target.wants/canberra-system-shutdown-reboot.service
+/etc/systemd/system/kexec.target.wants/canberra-system-shutdown-reboot.service
+Removed /etc/systemd/system/poweroff.target.wants/canberra-system-shutdown.service.
+Removed /etc/systemd/system/sound.target.wants/canberra-system-bootup.service.
+Removed /etc/systemd/system/reboot.target.wants/canberra-system-shutdown-reboot.service.
+Removed /etc/systemd/system/halt.target.wants/canberra-system-shutdown.service.
+Removed /etc/systemd/system/kexec.target.wants/canberra-system-shutdown-reboot.service.
+find: ‘/etc/systemd/system/sound.target.wants/canberra-system-bootup.service’: No such file or directory
+find: ‘/etc/systemd/system/halt.target.wants/canberra-system-shutdown.service’: No such file or directory
+find: ‘/etc/systemd/system/poweroff.target.wants/canberra-system-shutdown.service’: No such file or directory
+find: ‘/etc/systemd/system/reboot.target.wants/canberra-system-shutdown-reboot.service’: No such file or directory
+find: ‘/etc/systemd/system/kexec.target.wants/canberra-system-shutdown-reboot.service’: No such file or directory
+Mon Jan  2 00:27:07 2023 - INFO  - Finish test!
+Mon Jan  2 00:27:08 2023 - INFO  - succeed to execute the case.
+Mon Jan  2 00:27:10 2023 - INFO  - start environment cleanup.
+Mon Jan  2 00:27:11 2023 - WARN  - no thing to do.
+Mon Jan  2 00:27:13 2023 - INFO  - Finish environment cleanup!

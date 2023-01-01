@@ -1,0 +1,21 @@
+Sun Jan  1 23:57:46 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 23:59:09 2023 - INFO  - pkgs:(docker-engine kubernetes-kubelet conntrack-tools) is already installed
+Sun Jan  1 23:59:20 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 23:59:27 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 23:59:29 CST; 16s ago
+     Active: inactive (dead)
+     Active: active (running) since Mon 2023-01-02 00:00:06 CST; 16s ago
+/etc/systemd/system/multi-user.target.wants/kubelet.service
+Removed /etc/systemd/system/multi-user.target.wants/kubelet.service.
+Hangup
+Mon Jan  2 00:01:32 2023 - INFO  - start environment cleanup.
+Mon Jan  2 00:01:54 2023 - WARN  - no thing to do.
+Mon Jan  2 00:01:58 2023 - INFO  - Finish environment cleanup!
+find: ‘/etc/systemd/system/multi-user.target.wants/kubelet.service’: No such file or directory
+Failed to reload kubelet.service: Job type reload is not applicable for unit kubelet.service.
+     Active: active (running) since Mon 2023-01-02 00:02:01 CST; 2s ago
+Mon Jan  2 00:02:09 2023 - INFO  - Finish test!
+Mon Jan  2 00:02:17 2023 - INFO  - succeed to execute the case.
+Mon Jan  2 00:02:21 2023 - INFO  - start environment cleanup.
+Mon Jan  2 00:02:27 2023 - WARN  - no thing to do.
+Mon Jan  2 00:02:31 2023 - INFO  - Finish environment cleanup!

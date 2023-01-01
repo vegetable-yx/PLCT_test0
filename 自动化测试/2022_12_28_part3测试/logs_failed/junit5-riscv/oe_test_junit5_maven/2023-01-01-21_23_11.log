@@ -1,0 +1,17 @@
+Sun Jan  1 21:23:19 2023 - INFO  - Start environment preparation.
+Sun Jan  1 21:24:29 2023 - INFO  - pkgs:(java-1.8.0-devel) is already installed
+Sun Jan  1 21:25:58 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 21:25:59 2023 - INFO  - Start testing...
+Apache Maven 3.6.3 (openEuler 3.6.3-1)
+Maven home: /usr/share/maven
+Java version: 1.8.0_332, vendor: Bisheng, runtime: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.332.b09-4.oe2203.riscv64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.10.0-7.oe2203.riscv64", arch: "riscv64", family: "unix"
+Sun Jan  1 21:28:02 2023 - ERROR - oe_test_junit5_maven.sh line 39
+Sun Jan  1 21:28:03 2023 - ERROR - oe_test_junit5_maven.sh line 41
+Sun Jan  1 21:28:05 2023 - ERROR - oe_test_junit5_maven.sh line 43
+/home/openeuler/Desktop/mugen-riscv/testcases/cli-test/junit5/oe_test_junit5_maven
+Sun Jan  1 21:28:06 2023 - INFO  - Finish test!
+Sun Jan  1 21:28:07 2023 - ERROR - failed to execute the case.
+Sun Jan  1 21:28:08 2023 - INFO  - start environment cleanup.
+Sun Jan  1 21:29:06 2023 - INFO  - Finish environment cleanup!

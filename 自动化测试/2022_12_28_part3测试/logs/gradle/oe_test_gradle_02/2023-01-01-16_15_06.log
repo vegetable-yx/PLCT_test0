@@ -1,0 +1,15 @@
+Sun Jan  1 16:15:13 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 16:28:52 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 16:28:53 2023 - INFO  - Start to run test.
+BUILD SUCCESSFUL in 49s
+BUILD SUCCESSFUL in 32s
+BUILD SUCCESSFUL in 1m 44s
+BUILD SUCCESSFUL in 30s
+using build file '.name' in '.parentFile.name'.
+using build file '.name' in '.parentFile.name'.
+The Task.leftShift(Closure) method has been deprecated and is scheduled to be removed in Gradle 5.0. Please use Task.doLast(Action) instead.
+	(Run with --stacktrace to get the full stack trace of this deprecation warning.)
+Sun Jan  1 16:35:16 2023 - INFO  - End to run test.
+Sun Jan  1 16:35:18 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 16:35:19 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 16:38:53 2023 - INFO  - End to restore the test environment.

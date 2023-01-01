@@ -1,0 +1,15 @@
+Sun Jan  1 18:00:57 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 18:02:06 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 18:02:07 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 18:02:23 CST; 6s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 18:03:02 CST; 6s ago
+/etc/systemd/system/multi-user.target.wants/hsqldb.service
+Removed /etc/systemd/system/multi-user.target.wants/hsqldb.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/hsqldb.service’: No such file or directory
+Failed to reload hsqldb.service: Job type reload is not applicable for unit hsqldb.service.
+     Active: active (running) since Sun 2023-01-01 18:03:02 CST; 34s ago
+Sun Jan  1 18:03:37 2023 - INFO  - Finish test!
+Sun Jan  1 18:03:39 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 18:03:40 2023 - INFO  - start environment cleanup.
+Sun Jan  1 18:04:23 2023 - INFO  - Finish environment cleanup!

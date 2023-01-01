@@ -1,0 +1,15 @@
+Sun Jan  1 13:43:54 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 13:45:31 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 13:45:33 2023 - INFO  - Start to run test.
+     Active: active (listening) since Sun 2023-01-01 13:45:33 CST; 6s ago
+     Active: inactive (dead) since Sun 2023-01-01 13:45:41 CST; 6s ago
+     Active: active (listening) since Sun 2023-01-01 13:45:48 CST; 6s ago
+/etc/systemd/system/sockets.target.wants/virtproxyd-admin.socket
+Removed /etc/systemd/system/sockets.target.wants/virtproxyd-admin.socket.
+find: ‘/etc/systemd/system/sockets.target.wants/virtproxyd-admin.socket’: No such file or directory
+Failed to reload virtproxyd-admin.socket: Job type reload is not applicable for unit virtproxyd-admin.socket.
+     Active: active (listening) since Sun 2023-01-01 13:45:48 CST; 26s ago
+Sun Jan  1 13:46:15 2023 - INFO  - End of the test.
+Sun Jan  1 13:46:17 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 13:46:18 2023 - INFO  - start environment cleanup.
+Sun Jan  1 13:47:07 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,16 @@
+Mon Jan  2 00:21:34 2023 - INFO  - Start to prepare the test environment.
+Mon Jan  2 00:23:01 2023 - INFO  - End to prepare the test environment.
+Mon Jan  2 00:23:03 2023 - INFO  - Start to run test.
+Usage:	analyseplugin [flags] <LADSPA plugin file name> [<plugin label>].
+Mon Jan  2 00:23:05 2023 - ERROR - check -l failed
+Mon Jan  2 00:23:06 2023 - ERROR - oe_test_ladspa_analyseplugin.sh line 35
+Mon Jan  2 00:23:08 2023 - ERROR - check plugin file failed
+Mon Jan  2 00:23:09 2023 - ERROR - oe_test_ladspa_analyseplugin.sh line 37
+Mon Jan  2 00:23:11 2023 - ERROR - check plugin label amp_mono failed
+Mon Jan  2 00:23:12 2023 - ERROR - oe_test_ladspa_analyseplugin.sh line 39
+Mon Jan  2 00:23:13 2023 - ERROR - check plugin label amp_stereo failed
+Mon Jan  2 00:23:15 2023 - ERROR - oe_test_ladspa_analyseplugin.sh line 41
+Mon Jan  2 00:23:16 2023 - INFO  - End to run test.
+Mon Jan  2 00:23:17 2023 - ERROR - failed to execute the case.
+Mon Jan  2 00:23:19 2023 - INFO  - Start to restore the test environment.
+Mon Jan  2 00:23:42 2023 - INFO  - End to restore the test environment.

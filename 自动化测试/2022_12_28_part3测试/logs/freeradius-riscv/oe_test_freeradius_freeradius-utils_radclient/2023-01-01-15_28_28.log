@@ -1,0 +1,41 @@
+Sun Jan  1 15:28:34 2023 - INFO  - Start to prepare the test environment.
+Failed to start radiusd.service: Unit radiusd.service not found.
+Sun Jan  1 15:29:21 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 15:29:22 2023 - INFO  - Start to run test.
+oe_test_freeradius_freeradius-utils_radclient.sh: line 34: radclient: command not found
+Sun Jan  1 15:29:23 2023 - ERROR - radclient -4 execution failed.
+Sun Jan  1 15:29:25 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 35
+oe_test_freeradius_freeradius-utils_radclient.sh: line 36: radclient: command not found
+Sun Jan  1 15:29:26 2023 - ERROR - radclient -6 execution failed.
+Sun Jan  1 15:29:27 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 37
+oe_test_freeradius_freeradius-utils_radclient.sh: line 38: radclient: command not found
+Sun Jan  1 15:29:29 2023 - ERROR - radclient -c execution failed.
+Sun Jan  1 15:29:30 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 39
+oe_test_freeradius_freeradius-utils_radclient.sh: line 40: radclient: command not found
+Sun Jan  1 15:29:31 2023 - ERROR - radclient -d execution failed.
+Sun Jan  1 15:29:32 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 41
+oe_test_freeradius_freeradius-utils_radclient.sh: line 42: radclient: command not found
+Sun Jan  1 15:29:33 2023 - ERROR - radclient -D execution failed.
+Sun Jan  1 15:29:35 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 43
+oe_test_freeradius_freeradius-utils_radclient.sh: line 45: radclient: command not found
+Sun Jan  1 15:29:36 2023 - ERROR - radclient -f execution failed.
+Sun Jan  1 15:29:37 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 46
+oe_test_freeradius_freeradius-utils_radclient.sh: line 47: radclient: command not found
+Sun Jan  1 15:29:38 2023 - ERROR - radclient -F execution failed.
+Sun Jan  1 15:29:40 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 48
+Sun Jan  1 15:29:41 2023 - ERROR - radclient -h execution failed.
+Sun Jan  1 15:29:42 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 50
+oe_test_freeradius_freeradius-utils_radclient.sh: line 51: radclient: command not found
+Sun Jan  1 15:29:44 2023 - ERROR - radclient -n execution failed.
+Sun Jan  1 15:29:45 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 52
+Sun Jan  1 15:29:46 2023 - INFO  - End to run test.
+Sun Jan  1 15:29:47 2023 - ERROR - failed to execute the case.
+Sun Jan  1 15:29:48 2023 - INFO  - Start to restore the test environment.
+Failed to stop radiusd.service: Unit radiusd.service not loaded.
+Traceback (most recent call last):
+  File "/home/openeuler/Desktop/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/home/openeuler/Desktop/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 1:43:40 ago on Sun 01 Jan 2023 01:45:35 PM CST.\nError: \n Problem: conflicting requests\n  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64\n(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)"
+Sun Jan  1 15:29:55 2023 - INFO  - End to restore the test environment.

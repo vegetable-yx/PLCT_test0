@@ -1,0 +1,28 @@
+Sun Jan  1 19:15:13 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 19:25:43 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 19:25:44 2023 - INFO  - Start to run test.
+jjs [<options>] <files> [-- <arguments>]
+spawn jjs -strict
+a=10
+jjs> exit()
+<shell>:1 ReferenceError: "a" is not defined
+jjs> <shell>:1 ReferenceError: "a" is not defined
+spawn jjs
+a=10
+jjs> exit()
+10
+jjs> 10
+Usage:
+46647 Jps
+usage: jps [-help]
+Usage: jrunscript [options] [arguments...]
+hello world
+spawn jjs
+20+40
+jjs> exit()
+60
+jjs> 60
+Sun Jan  1 19:28:10 2023 - INFO  - End to run test.
+Sun Jan  1 19:28:11 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 19:28:12 2023 - INFO  - Need't to restore the tet environment.
+Sun Jan  1 19:29:32 2023 - INFO  - End to restore the test environment.

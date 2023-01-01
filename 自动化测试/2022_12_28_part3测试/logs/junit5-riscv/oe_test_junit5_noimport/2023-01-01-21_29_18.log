@@ -1,0 +1,85 @@
+Sun Jan  1 21:29:26 2023 - INFO  - Start environment preparation.
+Sun Jan  1 21:30:37 2023 - INFO  - pkgs:(java-1.8.0-devel) is already installed
+Sun Jan  1 21:30:38 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 21:30:39 2023 - INFO  - Start testing...
+this BeforeAll
+this BeforeEach
+[showInfo]
+this AfterEach
+this BeforeEach
+this AfterEach
+this AfterAll
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mTestJunit5[0m [32m✔[0m
+[36m│     ├─[0m [34mTestA(TestInfo)[0m [32m✔[0m
+[36m│     └─[0m [34mfirsttest[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 3912 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+TestJunit5.java:26: error: cannot find symbol
+    public void TestA(TestInfo info){
+                      ^
+  symbol:   class TestInfo
+  location: class TestJunit5
+TestJunit5.java:8: error: cannot find symbol
+    @BeforeAll
+     ^
+  symbol:   class BeforeAll
+  location: class TestJunit5
+TestJunit5.java:12: error: cannot find symbol
+    @BeforeEach
+     ^
+  symbol:   class BeforeEach
+  location: class TestJunit5
+TestJunit5.java:16: error: cannot find symbol
+    @AfterAll
+     ^
+  symbol:   class AfterAll
+  location: class TestJunit5
+TestJunit5.java:20: error: cannot find symbol
+    @AfterEach
+     ^
+  symbol:   class AfterEach
+  location: class TestJunit5
+TestJunit5.java:24: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class TestJunit5
+TestJunit5.java:25: error: cannot find symbol
+    @Tag("showInfo")
+     ^
+  symbol:   class Tag
+  location: class TestJunit5
+TestJunit5.java:30: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class TestJunit5
+TestJunit5.java:31: error: cannot find symbol
+    @DisplayName("firsttest")
+     ^
+  symbol:   class DisplayName
+  location: class TestJunit5
+9 errors
+Sun Jan  1 21:31:53 2023 - INFO  - Finish test!
+Sun Jan  1 21:31:55 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 21:31:56 2023 - INFO  - start environment cleanup.
+Sun Jan  1 21:32:17 2023 - INFO  - Finish environment cleanup!

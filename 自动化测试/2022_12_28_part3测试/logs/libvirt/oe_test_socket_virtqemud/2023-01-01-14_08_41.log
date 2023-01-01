@@ -1,0 +1,15 @@
+Sun Jan  1 14:08:47 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 14:10:34 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 14:10:36 2023 - INFO  - Start to run test.
+     Active: active (listening) since Sun 2023-01-01 14:10:36 CST; 6s ago
+     Active: inactive (dead)
+     Active: active (listening) since Sun 2023-01-01 14:10:50 CST; 6s ago
+/etc/systemd/system/sockets.target.wants/virtqemud.socket
+Removed /etc/systemd/system/sockets.target.wants/virtqemud.socket.
+find: ‘/etc/systemd/system/sockets.target.wants/virtqemud.socket’: No such file or directory
+Failed to reload virtqemud.socket: Job type reload is not applicable for unit virtqemud.socket.
+     Active: active (listening) since Sun 2023-01-01 14:10:50 CST; 27s ago
+Sun Jan  1 14:11:19 2023 - INFO  - End of the test.
+Sun Jan  1 14:11:20 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 14:11:22 2023 - INFO  - start environment cleanup.
+Sun Jan  1 14:12:15 2023 - INFO  - Finish environment cleanup!

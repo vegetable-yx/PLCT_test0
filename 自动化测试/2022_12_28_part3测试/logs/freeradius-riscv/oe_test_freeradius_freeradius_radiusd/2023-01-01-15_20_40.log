@@ -1,0 +1,18 @@
+Sun Jan  1 15:20:46 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 15:23:25 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 15:23:26 2023 - INFO  - Start to run test.
+root       32831       1 99 15:23 ?        00:00:01 radiusd -d /etc/raddb
+root       32843       1 99 15:23 ?        00:00:01 radiusd -D /usr/share/freeradius
+root       32853   32651 61 15:23 pts/0    00:00:00 radiusd -f
+  -d <raddb>    Set configuration directory (defaults to /etc/raddb).
+  -D <dictdir>  Set main dictionary directory (defaults to /usr/share/freeradius).
+Usage: radiusd [options]
+oe_test_freeradius_freeradius_radiusd.sh: line 27: 32853 Killed                  radiusd -f
+root       32865       1 95 15:23 ?        00:00:00 radiusd -i 127.0.0.1 -p 7229
+root       32877       1 99 15:23 ?        00:00:01 radiusd -l /tmp/test.log
+root       32890       1 16 15:23 ?        00:00:01 radiusd -n test
+Sun Jan  1 15:23:52 2023 - INFO  - End to run test.
+/home/openeuler/Desktop/mugen-riscv/libs/locallibs/common_lib_python.sh: line 19: 32915 Killed                  radiusd -s
+Sun Jan  1 15:23:53 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 15:23:55 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 15:24:32 2023 - INFO  - End to restore the test environment.

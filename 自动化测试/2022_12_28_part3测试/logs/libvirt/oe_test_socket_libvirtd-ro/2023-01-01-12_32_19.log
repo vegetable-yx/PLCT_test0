@@ -1,0 +1,15 @@
+Sun Jan  1 12:32:25 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 12:34:02 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 12:34:03 2023 - INFO  - Start to run test.
+     Active: active (listening) since Sun 2023-01-01 12:34:04 CST; 6s ago
+     Active: inactive (dead) since Sun 2023-01-01 12:34:11 CST; 7s ago
+     Active: active (listening) since Sun 2023-01-01 12:34:18 CST; 6s ago
+find: ‘/etc/systemd/system/sockets.target.wants/libvirtd-ro.socket’: No such file or directory
+Created symlink /etc/systemd/system/sockets.target.wants/libvirtd-ro.socket → /usr/lib/systemd/system/libvirtd-ro.socket.
+/etc/systemd/system/sockets.target.wants/libvirtd-ro.socket
+Failed to reload libvirtd-ro.socket: Job type reload is not applicable for unit libvirtd-ro.socket.
+     Active: active (listening) since Sun 2023-01-01 12:34:18 CST; 27s ago
+Sun Jan  1 12:34:47 2023 - INFO  - End of the test.
+Sun Jan  1 12:34:48 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 12:34:49 2023 - INFO  - start environment cleanup.
+Sun Jan  1 12:35:39 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,15 @@
+Sun Jan  1 18:25:11 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 18:26:22 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 18:26:23 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 18:26:24 CST; 7s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 18:26:39 CST; 7s ago
+/etc/systemd/system/multi-user.target.wants/ipwatchd.service
+Removed /etc/systemd/system/multi-user.target.wants/ipwatchd.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/ipwatchd.service’: No such file or directory
+Failed to reload ipwatchd.service: Job type reload is not applicable for unit ipwatchd.service.
+     Active: active (running) since Sun 2023-01-01 18:26:39 CST; 28s ago
+Sun Jan  1 18:27:09 2023 - INFO  - Finish test!
+Sun Jan  1 18:27:10 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 18:27:13 2023 - INFO  - start environment cleanup.
+Sun Jan  1 18:27:53 2023 - INFO  - Finish environment cleanup!

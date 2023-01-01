@@ -1,0 +1,17 @@
+Sun Jan  1 22:37:51 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 22:39:59 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 22:40:00 2023 - INFO  - Start to run test.
+Usage: kwriteconfig5 [options] value
+Options:
+Usage: kreadconfig5 [options]
+Options:
+Usage: kreadconfig5 [options]
+Options:
+Usage: kreadconfig5 [options]
+Options:
+abc
+Meta+L\tCtrl+Alt+L\tScreensaver,Meta+L\tScreensaver,Lock Session
+Sun Jan  1 22:40:04 2023 - INFO  - End to run test.
+Sun Jan  1 22:40:05 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 22:40:07 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 22:41:09 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,18 @@
+Sun Jan  1 11:53:59 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 11:55:41 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 11:55:43 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 11:55:43 CST; 7s ago
+Warning: Stopping virtlogd.service, but it can still be activated by:
+  virtlogd.socket
+  virtlogd-admin.socket
+     Active: inactive (dead) since Sun 2023-01-01 11:55:51 CST; 6s ago
+     Active: active (running) since Sun 2023-01-01 11:55:58 CST; 7s ago
+Sun Jan  1 11:56:08 2023 - INFO  - Unit is indirect, ignoring.
+     Active: active (running) since Sun 2023-01-01 11:55:58 CST; 22s ago
+Sun Jan  1 11:56:22 2023 - INFO  - Finish test!
+Sun Jan  1 11:56:23 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 11:56:25 2023 - INFO  - start environment cleanup.
+Warning: Stopping virtlogd.service, but it can still be activated by:
+  virtlogd.socket
+  virtlogd-admin.socket
+Sun Jan  1 11:57:29 2023 - INFO  - Finish environment cleanup!

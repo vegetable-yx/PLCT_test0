@@ -1,0 +1,84 @@
+Sun Jan  1 17:01:34 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 17:15:51 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 17:15:53 2023 - INFO  - Start to run test.
+spawn gradle base --scan
+yes
+[0mSun Jan  1 17:16:15 2023 - ERROR - Check gradle base --scan failed
+Sun Jan  1 17:16:16 2023 - ERROR - oe_test_gradle_04.sh line 36
+BUILD SUCCESSFUL in 39s
+BUILD SUCCESSFUL in 1m 13s
+BUILD SUCCESSFUL in 1m 50s
+
+Welcome to Gradle 4.4.1.
+
+To run a build, run gradle <task> ...
+
+To see a list of available tasks, run gradle tasks
+
+To see a list of command-line options, run gradle --help
+
+To see more detail about a task, run gradle help --task <task>
+
+------------------------------------------------------------
+All tasks runnable from root project
+------------------------------------------------------------
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+jar - Assembles a jar archive containing the main classes.
+testClasses - Assembles test classes.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Documentation tasks
+-------------------
+javadoc - Generates Javadoc API documentation for the main source code.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'oe_test_gradle_04'.
+components - Displays the components produced by root project 'oe_test_gradle_04'. [incubating]
+dependencies - Displays all dependencies declared in root project 'oe_test_gradle_04'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'oe_test_gradle_04'.
+dependentComponents - Displays the dependent components of components in root project 'oe_test_gradle_04'. [incubating]
+help - Displays a help message.
+model - Displays the configuration model of root project 'oe_test_gradle_04'. [incubating]
+projects - Displays the sub-projects of root project 'oe_test_gradle_04'.
+properties - Displays the properties of root project 'oe_test_gradle_04'.
+tasks - Displays the tasks runnable from root project 'oe_test_gradle_04'.
+
+Verification tasks
+------------------
+check - Runs all checks.
+test - Runs the unit tests.
+
+Rules
+-----
+Pattern: clean<TaskName>: Cleans the output files of a task.
+Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
+Pattern: upload<ConfigurationName>: Assembles and uploads the artifacts belonging to a configuration.
+
+To see all tasks and more detail, run gradle tasks --all
+
+To see more detail about a task, run gradle help --task <task>
+addtion start......
+i'm base!
+addtion end......
+BUILD SUCCESSFUL in 3m 8s
+BUILD SUCCESSFUL in 1m 10s
+BUILD SUCCESSFUL in 57s
+BUILD SUCCESSFUL in 51s
+BUILD SUCCESSFUL in 50s
+Sun Jan  1 17:30:04 2023 - INFO  - End to run test.
+Sun Jan  1 17:30:06 2023 - ERROR - failed to execute the case.
+Sun Jan  1 17:30:08 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 17:31:29 2023 - ERROR - Timeout : Command 'bash oe_test_gradle_04.sh' timed out after 1799.9968635170007 seconds

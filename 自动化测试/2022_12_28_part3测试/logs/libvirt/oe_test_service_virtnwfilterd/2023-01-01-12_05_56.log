@@ -1,0 +1,31 @@
+Sun Jan  1 12:06:03 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 12:07:43 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 12:07:45 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 12:07:46 CST; 7s ago
+Warning: Stopping virtnwfilterd.service, but it can still be activated by:
+  virtnwfilterd.socket
+  virtnwfilterd-ro.socket
+  virtnwfilterd-admin.socket
+     Active: inactive (dead) since Sun 2023-01-01 12:07:54 CST; 6s ago
+     Active: active (running) since Sun 2023-01-01 12:08:02 CST; 7s ago
+/etc/systemd/system/multi-user.target.wants/virtnwfilterd.service
+/etc/systemd/system/sockets.target.wants/virtnwfilterd.socket
+/etc/systemd/system/sockets.target.wants/virtnwfilterd-ro.socket
+/etc/systemd/system/sockets.target.wants/virtnwfilterd-admin.socket
+Removed /etc/systemd/system/sockets.target.wants/virtnwfilterd.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtnwfilterd-admin.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtnwfilterd-ro.socket.
+Removed /etc/systemd/system/multi-user.target.wants/virtnwfilterd.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/virtnwfilterd.service’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtnwfilterd.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtnwfilterd-ro.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtnwfilterd-admin.socket’: No such file or directory
+     Active: active (running) since Sun 2023-01-01 12:08:02 CST; 37s ago
+Sun Jan  1 12:08:41 2023 - INFO  - Finish test!
+Sun Jan  1 12:08:42 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 12:08:43 2023 - INFO  - start environment cleanup.
+Warning: Stopping virtnwfilterd.service, but it can still be activated by:
+  virtnwfilterd-ro.socket
+  virtnwfilterd-admin.socket
+  virtnwfilterd.socket
+Sun Jan  1 12:09:48 2023 - INFO  - Finish environment cleanup!

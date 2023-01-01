@@ -1,0 +1,15 @@
+Sun Jan  1 13:40:20 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 13:41:57 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 13:41:58 2023 - INFO  - Start to run test.
+     Active: active (listening) since Sun 2023-01-01 13:41:59 CST; 6s ago
+     Active: inactive (dead)
+     Active: active (listening) since Sun 2023-01-01 13:42:13 CST; 6s ago
+/etc/systemd/system/sockets.target.wants/virtnwfilterd.socket
+Removed /etc/systemd/system/sockets.target.wants/virtnwfilterd.socket.
+find: ‘/etc/systemd/system/sockets.target.wants/virtnwfilterd.socket’: No such file or directory
+Failed to reload virtnwfilterd.socket: Job type reload is not applicable for unit virtnwfilterd.socket.
+     Active: active (listening) since Sun 2023-01-01 13:42:13 CST; 28s ago
+Sun Jan  1 13:42:42 2023 - INFO  - End of the test.
+Sun Jan  1 13:42:44 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 13:42:45 2023 - INFO  - start environment cleanup.
+Sun Jan  1 13:43:38 2023 - INFO  - Finish environment cleanup!

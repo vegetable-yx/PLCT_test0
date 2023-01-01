@@ -1,0 +1,15 @@
+Sun Jan  1 14:19:41 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 14:21:18 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 14:21:19 2023 - INFO  - Start to run test.
+     Active: active (listening) since Sun 2023-01-01 14:21:19 CST; 6s ago
+     Active: inactive (dead)
+     Active: active (listening) since Sun 2023-01-01 14:21:34 CST; 6s ago
+/etc/systemd/system/sockets.target.wants/virtsecretd.socket
+Removed /etc/systemd/system/sockets.target.wants/virtsecretd.socket.
+find: ‘/etc/systemd/system/sockets.target.wants/virtsecretd.socket’: No such file or directory
+Failed to reload virtsecretd.socket: Job type reload is not applicable for unit virtsecretd.socket.
+     Active: active (listening) since Sun 2023-01-01 14:21:34 CST; 27s ago
+Sun Jan  1 14:22:02 2023 - INFO  - End of the test.
+Sun Jan  1 14:22:04 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 14:22:05 2023 - INFO  - start environment cleanup.
+Sun Jan  1 14:22:56 2023 - INFO  - Finish environment cleanup!

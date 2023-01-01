@@ -1,0 +1,42 @@
+Sun Jan  1 11:18:16 2023 - INFO  - Start to prepare the test environment.
+tcp        0      0 0.0.0.0:11211           0.0.0.0:*               LISTEN     
+tcp6       0      0 :::11211                :::*                    LISTEN     
+4710
+Sun Jan  1 11:19:29 2023 - INFO  - Finish preparing the test environment.
+Sun Jan  1 11:19:30 2023 - INFO  - Start to run test.
+spawn telnet 127.0.0.1 11211
+set user_id 1 0 3
+001
+set user_name 2 0 4
+Lily
+quit
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+STORED
+STORED
+Connection closed by foreign host.
+Found key user_id
+Found key user_name
+	 --version 
+	 --help 
+	 --quiet 
+	 --verbose 
+	 --debug 
+	 --servers=
+	 --hash=
+	 --binary 
+	 --username=
+	 --password=
+	 --expire=
+memtouch v1.0
+Found key user_id
+Found key user_name
+Could not find key "user_id"
+Could not find key "user_name"
+Could not find key "user_id"
+Could not find key "user_name"
+Sun Jan  1 11:19:50 2023 - INFO  - End of the test.
+Sun Jan  1 11:19:51 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 11:19:53 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 11:20:27 2023 - INFO  - Finish restoring the test environment.

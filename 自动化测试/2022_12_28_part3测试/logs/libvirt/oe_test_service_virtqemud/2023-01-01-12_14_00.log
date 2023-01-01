@@ -1,0 +1,31 @@
+Sun Jan  1 12:14:06 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 12:15:54 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 12:15:56 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 12:15:58 CST; 7s ago
+Warning: Stopping virtqemud.service, but it can still be activated by:
+  virtqemud.socket
+  virtqemud-ro.socket
+  virtqemud-admin.socket
+     Active: inactive (dead) since Sun 2023-01-01 12:16:06 CST; 6s ago
+     Active: active (running) since Sun 2023-01-01 12:16:14 CST; 6s ago
+/etc/systemd/system/multi-user.target.wants/virtqemud.service
+/etc/systemd/system/sockets.target.wants/virtqemud.socket
+/etc/systemd/system/sockets.target.wants/virtqemud-ro.socket
+/etc/systemd/system/sockets.target.wants/virtqemud-admin.socket
+Removed /etc/systemd/system/sockets.target.wants/virtqemud-ro.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtqemud-admin.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtqemud.socket.
+Removed /etc/systemd/system/multi-user.target.wants/virtqemud.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/virtqemud.service’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtqemud.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtqemud-ro.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtqemud-admin.socket’: No such file or directory
+     Active: active (running) since Sun 2023-01-01 12:16:14 CST; 42s ago
+Sun Jan  1 12:16:58 2023 - INFO  - Finish test!
+Sun Jan  1 12:16:59 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 12:17:01 2023 - INFO  - start environment cleanup.
+Warning: Stopping virtqemud.service, but it can still be activated by:
+  virtqemud.socket
+  virtqemud-ro.socket
+  virtqemud-admin.socket
+Sun Jan  1 12:18:17 2023 - INFO  - Finish environment cleanup!

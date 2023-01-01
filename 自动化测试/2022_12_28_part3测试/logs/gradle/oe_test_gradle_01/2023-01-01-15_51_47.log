@@ -1,0 +1,23 @@
+Sun Jan  1 15:51:53 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 16:05:27 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 16:05:28 2023 - INFO  - Start to run test.
+USAGE: gradle [option...] [task...]
+BUILD SUCCESSFUL in 2m 3s
+BUILD SUCCESSFUL in 33s
+BUILD SUCCESSFUL in 24s
+:model
+      | Type:   	org.gradle.model.ModelMap<org.gradle.api.Task>
+    + model
+          | Type:   	org.gradle.api.reporting.model.ModelReport
+          | Value:  	task ':model'
+          | Creator: 	tasks.addPlaceholderAction(model)
+BUILD SUCCESSFUL in 32s
+Root project
+Root project 'oe_test_gradle_01'
+No sub-projects
+To see a list of the tasks of a project, run gradle <project-path>:tasks
+BUILD SUCCESSFUL in 22s
+Sun Jan  1 16:11:25 2023 - INFO  - End to run test.
+Sun Jan  1 16:11:26 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 16:11:28 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 16:14:55 2023 - INFO  - End to restore the test environment.

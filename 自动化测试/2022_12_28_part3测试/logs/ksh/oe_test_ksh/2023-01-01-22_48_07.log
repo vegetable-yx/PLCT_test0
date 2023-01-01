@@ -1,0 +1,8 @@
+Sun Jan  1 22:48:14 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 22:49:08 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 22:49:09 2023 - INFO  - Start to run test.
+hello world
+Sun Jan  1 22:49:11 2023 - INFO  - End to run test.
+Sun Jan  1 22:49:12 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 22:49:13 2023 - INFO  - start environment cleanup.
+Sun Jan  1 22:49:36 2023 - INFO  - Finish environment cleanup!

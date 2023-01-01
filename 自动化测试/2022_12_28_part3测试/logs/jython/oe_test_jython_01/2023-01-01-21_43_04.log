@@ -1,0 +1,18 @@
+Sun Jan  1 21:43:11 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 21:46:40 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 21:46:42 2023 - INFO  - Start testing...
+usage: jython [option] ... [-c cmd | -m mod | file | -] [arg] ...
+usage: jython [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Jython 2.7.1
+Jython 2.7.1
+test
+test
+NameError: name 'exit' is not defined
+Sun Jan 01 21:59:33 CST 2023
+import: 'exceptions' as org.python.core.exceptions in builtin modules
+import: trying _warnings/__init__$py.class in parent class loader
+./common/test.py
+Sun Jan  1 22:03:01 2023 - INFO  - Finish test!
+Sun Jan  1 22:03:03 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 22:03:04 2023 - INFO  - start environment cleanup.
+Sun Jan  1 22:03:59 2023 - INFO  - Finish environment cleanup!

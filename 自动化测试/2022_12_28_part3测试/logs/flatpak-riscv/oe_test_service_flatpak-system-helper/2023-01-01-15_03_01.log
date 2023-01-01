@@ -1,0 +1,15 @@
+Sun Jan  1 15:03:07 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 15:03:22 2023 - INFO  - pkgs:(flatpak) is already installed
+Sun Jan  1 15:03:24 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 15:03:25 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 15:03:26 CST; 6s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 15:03:41 CST; 6s ago
+Sun Jan  1 15:03:49 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
+Failed to reload flatpak-system-helper.service: Job type reload is not applicable for unit flatpak-system-helper.service.
+     Active: active (running) since Sun 2023-01-01 15:03:41 CST; 9s ago
+Sun Jan  1 15:03:51 2023 - INFO  - Finish test!
+Sun Jan  1 15:03:52 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 15:03:54 2023 - INFO  - start environment cleanup.
+Sun Jan  1 15:03:55 2023 - WARN  - no thing to do.
+Sun Jan  1 15:03:56 2023 - INFO  - Finish environment cleanup!

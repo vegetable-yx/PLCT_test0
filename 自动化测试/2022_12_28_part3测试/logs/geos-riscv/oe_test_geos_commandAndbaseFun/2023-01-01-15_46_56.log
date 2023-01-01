@@ -1,0 +1,33 @@
+Sun Jan  1 15:47:02 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 15:47:56 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 15:47:58 2023 - INFO  - Start to run test.
+/usr
+3.9.0
+-L/usr/lib64 -lgeos-3.9.0
+-L/usr/lib64 -lgeos_c
+-L/usr/lib64 -lgeos
+-L/usr/lib64 -lgeos_c -lgeos -lm
+-L/usr/lib64 -lgeos -lm
+-I/usr/include
+-L/usr/lib64
+/usr/include
+In file included from /usr/include/geos/geom.h:126,
+                 from /usr/include/geos.h:26,
+                 from geos_test.cpp:3:
+/usr/include/geos/geom/Geometry.h:26:3: warning: #warning "The GEOS C++ API is unstable, please use the C API instead" [-Wcpp]
+   26 | # warning "The GEOS C++ API is unstable, please use the C API instead"
+      |   ^~~~~~~
+/usr/include/geos/geom/Geometry.h:27:3: warning: #warning "HINT: #include geos_c.h" [-Wcpp]
+   27 | # warning "HINT: #include geos_c.h"
+      |   ^~~~~~~
+In file included from /usr/include/geos.h:26,
+                 from geos_test.cpp:3:
+/usr/include/geos/geom.h:145:2: warning: #warning *** DEPRECATED: You are using deprecated header geom.h. Please, update your sources according to new layout of GEOS headers and namespaces [-Wcpp]
+  145 | #warning *** DEPRECATED: You are using deprecated header geom.h. Please, update your sources according to new layout of GEOS headers and namespaces
+      |  ^~~~~~~
+geos's version is 3.9.0
+geos's jts_port is 1.17.0
+Sun Jan  1 15:48:32 2023 - INFO  - End to run test.
+Sun Jan  1 15:48:33 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 15:48:34 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 15:48:57 2023 - INFO  - End to restore the test environment.

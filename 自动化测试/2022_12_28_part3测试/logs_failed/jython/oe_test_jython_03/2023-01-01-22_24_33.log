@@ -1,0 +1,17 @@
+Sun Jan  1 22:24:39 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 22:28:15 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 22:28:16 2023 - INFO  - Start testing...
+java -Xmx512m -Xss2560k -classpath /usr/share/jython/jython.jar:/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:/usr/share/jython/javalib/objectweb-asm_asm-commons.jar:/usr/share/jython/javalib/objectweb-asm_asm.jar:/usr/share/jython/javalib/objectweb-asm_asm-util.jar:/usr/share/jython/javalib/xerces-j2.jar: -Dpython.home=/usr/share/jython -Dpython.executable=/usr/share/jython/bin/jython org.python.util.jython
+java -Xmx768m -Xss2560k -classpath /usr/share/jython/jython.jar:/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:/usr/share/jython/javalib/objectweb-asm_asm-commons.jar:/usr/share/jython/javalib/objectweb-asm_asm.jar:/usr/share/jython/javalib/objectweb-asm_asm-util.jar:/usr/share/jython/javalib/xerces-j2.jar: -Dpython.home=/usr/share/jython -Dpython.executable=/usr/share/jython/bin/jython org.python.util.jython
+Running with instrumented profiler
+test
+spawn jython --jdb
+run Hello
+Initializing jdb ...
+> run  Hello
+Sun Jan  1 22:34:45 2023 - ERROR - Failed to run command: jython --jdb
+Sun Jan  1 22:34:47 2023 - ERROR - oe_test_jython_03.sh line 55
+Sun Jan  1 22:34:48 2023 - INFO  - Finish test!
+Sun Jan  1 22:34:49 2023 - ERROR - failed to execute the case.
+Sun Jan  1 22:34:50 2023 - INFO  - start environment cleanup.
+Sun Jan  1 22:35:46 2023 - INFO  - Finish environment cleanup!

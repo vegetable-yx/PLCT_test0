@@ -1,0 +1,25 @@
+Sun Jan  1 20:33:54 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 20:34:09 2023 - INFO  - pkgs:(junit) is already installed
+Sun Jan  1 20:34:28 2023 - INFO  - pkgs:(javapackages-tools java-1.8.0
+1.8.0
+1.8.0-devel xmvn-resolve objectweb-asm3 beust-jcommander log4j) is already installed
+Sun Jan  1 20:34:29 2023 - INFO  - Finish preparing the test environment.
+Sun Jan  1 20:34:30 2023 - INFO  - Start to run test.
+/usr/bin/build-jar-repository: Could not find log4j Java extension for this JVM
+/usr/bin/build-jar-repository: error: Some specified jars were not found for this jvm
+Sun Jan  1 20:34:32 2023 - ERROR - oe_test_build-jar-repository.sh line 31
+/usr/bin/rebuild-jar-repository: Could not find log4j Java extension for this JVM
+/usr/bin/rebuild-jar-repository: error: Some detected jars were not found for this jvm
+Sun Jan  1 20:34:41 2023 - ERROR - oe_test_build-jar-repository.sh line 39
+/usr/bin/rebuild-jar-repository: Could not find log4j Java extension for this JVM
+/usr/bin/rebuild-jar-repository: error: Some detected jars were not found for this jvm
+Sun Jan  1 20:34:46 2023 - ERROR - oe_test_build-jar-repository.sh line 41
+/usr/bin/rebuild-jar-repository: Could not find log4j Java extension for this JVM
+/usr/bin/rebuild-jar-repository: Could not find log4j Java extension for this JVM
+/usr/bin/rebuild-jar-repository: error: Some detected jars were not found for this jvm
+Sun Jan  1 20:34:50 2023 - ERROR - oe_test_build-jar-repository.sh line 43
+Sun Jan  1 20:34:51 2023 - INFO  - End of the test.
+Sun Jan  1 20:34:52 2023 - ERROR - failed to execute the case.
+Sun Jan  1 20:34:54 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 20:34:55 2023 - WARN  - no thing to do.
+Sun Jan  1 20:34:57 2023 - INFO  - Finish restoring the test environment.

@@ -1,0 +1,18 @@
+Sun Jan  1 19:42:12 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 19:52:44 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 19:52:47 2023 - INFO  - Start to run test.
+\u5bb9\u989c
+容颜
+\u00e5\u00ae\u00b9\u00e9\u00a2\u009c
+Usage:  pack200 [-opt... | --option=value]... x.pack[.gz] y.jar
+com.sun.java.util.jar.pack.Driver version 1.31, 07/05/05
+added manifest
+adding: Hello.class(in = 416) (out= 286)(deflated 31%)
+Hello.jar
+Hello.jar.pack.gz
+Hello.jar
+Hello.jar.pack.gz
+Sun Jan  1 19:53:38 2023 - INFO  - End to run test.
+Sun Jan  1 19:53:39 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 19:53:41 2023 - INFO  - Need't to restore the tet environment.
+Sun Jan  1 19:54:58 2023 - INFO  - End to restore the test environment.

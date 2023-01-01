@@ -1,0 +1,17 @@
+Sun Jan  1 15:37:26 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 15:38:37 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 15:38:38 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 15:38:44 CST; 6s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 15:39:01 CST; 6s ago
+Sun Jan  1 15:39:09 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
+Jan 01 15:38:42 openEuler-riscv64 fwupd[34228]: 07:38:42:0957 FuEngine             Failed to load SMBIOS: Failed to open file “/sys/firmware/dmi/tables/smbios_entry_point”: No such file or directory
+Jan 01 15:39:00 openEuler-riscv64 fwupd[34250]: 07:39:00:0089 FuEngine             Failed to load SMBIOS: Failed to open file “/sys/firmware/dmi/tables/smbios_entry_point”: No such file or directory
+Sun Jan  1 15:39:11 2023 - ERROR - There is an error message for the log of fwupd.service
+Sun Jan  1 15:39:12 2023 - ERROR - ../common/common_lib.sh line 28
+Failed to reload fwupd.service: Job type reload is not applicable for unit fwupd.service.
+     Active: active (running) since Sun 2023-01-01 15:39:01 CST; 12s ago
+Sun Jan  1 15:39:14 2023 - INFO  - Finish test!
+Sun Jan  1 15:39:15 2023 - ERROR - failed to execute the case.
+Sun Jan  1 15:39:17 2023 - INFO  - start environment cleanup.
+Sun Jan  1 15:39:53 2023 - INFO  - Finish environment cleanup!

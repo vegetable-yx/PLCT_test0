@@ -1,0 +1,16 @@
+Sun Jan  1 19:00:49 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 19:11:25 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 19:11:26 2023 - INFO  - Start to run test.
+Usage: javap <options> <classes>
+1.8.0_332
+class Hello {
+class Hello {
+class Hello {
+class Hello {
+Classfile /home/openeuler/Desktop/mugen-riscv/testcases/cli-test/java-1.8.0-openjdk/oe_test_openjdk_javap_jcmd/Hello.class
+Usage: jcmd <pid | main class> <command ...|PerfCounter.print|-f file>
+46172 sun.tools.jcmd.JCmd -l
+Sun Jan  1 19:13:33 2023 - INFO  - End to run test.
+Sun Jan  1 19:13:34 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 19:13:36 2023 - INFO  - Need't to restore the tet environment.
+Sun Jan  1 19:14:55 2023 - INFO  - End to restore the test environment.

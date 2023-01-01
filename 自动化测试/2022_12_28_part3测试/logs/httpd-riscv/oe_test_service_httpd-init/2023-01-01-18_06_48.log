@@ -1,0 +1,8 @@
+Sun Jan  1 18:06:54 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 18:08:55 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 18:08:56 2023 - INFO  - Start testing...
+Sun Jan  1 18:08:58 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
+Sun Jan  1 18:08:59 2023 - INFO  - Finish test!
+Sun Jan  1 18:09:01 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 18:09:02 2023 - INFO  - start environment cleanup.
+Sun Jan  1 18:09:48 2023 - INFO  - Finish environment cleanup!

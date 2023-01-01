@@ -1,0 +1,14 @@
+Sun Jan  1 11:35:05 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 11:36:10 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 11:36:11 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 11:36:12 CST; 6s ago
+     Active: inactive (dead) since Sun 2023-01-01 11:36:19 CST; 6s ago
+     Active: active (running) since Sun 2023-01-01 11:36:26 CST; 6s ago
+find: ‘/etc/systemd/system/multi-user.target.wants/libstoragemgmt.service’: No such file or directory
+Created symlink /etc/systemd/system/multi-user.target.wants/libstoragemgmt.service → /usr/lib/systemd/system/libstoragemgmt.service.
+/etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
+     Active: active (running) since Sun 2023-01-01 11:36:26 CST; 34s ago
+Sun Jan  1 11:37:02 2023 - INFO  - Finish test!
+Sun Jan  1 11:37:03 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 11:37:04 2023 - INFO  - start environment cleanup.
+Sun Jan  1 11:37:46 2023 - INFO  - Finish environment cleanup!

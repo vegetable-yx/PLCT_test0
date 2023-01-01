@@ -1,0 +1,24 @@
+Sun Jan  1 03:37:10 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 03:45:14 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 03:45:15 2023 - INFO  - Start to run test.
+Sun Jan  1 03:46:22 2023 - ERROR - raddebug -c execution failed.
+Sun Jan  1 03:46:23 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 43
+Sun Jan  1 03:47:30 2023 - ERROR - raddebug -d execution failed.
+Sun Jan  1 03:47:31 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 50
+root        2387    2376  0 03:47 pts/0    00:00:00 tail -f /var/log/radius/radmin.debug.2376
+Sun Jan  1 03:49:45 2023 - ERROR - raddebug -D execution failed.
+Sun Jan  1 03:49:46 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 65
+Sun Jan  1 03:50:53 2023 - ERROR - raddebug -i execution failed.
+Sun Jan  1 03:50:54 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 72
+ERROR: Parse error in condition "1 && (Packet-Src-IPv6-Address == )": Empty string is invalid
+Sun Jan  1 03:52:01 2023 - ERROR - raddebug -I execution failed.
+Sun Jan  1 03:52:02 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 79
+root        2496    2485  4 03:52 pts/0    00:00:00 tail -f /var/log/radius/radmin.debug.2485
+Sun Jan  1 03:53:15 2023 - ERROR - raddebug -t execution failed.
+Sun Jan  1 03:53:17 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 93
+Sun Jan  1 03:54:24 2023 - ERROR - raddebug -u execution failed.
+Sun Jan  1 03:54:26 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 100
+Sun Jan  1 03:54:28 2023 - INFO  - End to run test.
+Sun Jan  1 03:54:29 2023 - ERROR - failed to execute the case.
+Sun Jan  1 03:54:31 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 03:55:10 2023 - INFO  - End to restore the test environment.

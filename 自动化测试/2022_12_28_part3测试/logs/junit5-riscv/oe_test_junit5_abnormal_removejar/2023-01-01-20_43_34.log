@@ -1,0 +1,43 @@
+Sun Jan  1 20:43:41 2023 - INFO  - Start environment preparation.
+Sun Jan  1 20:44:53 2023 - INFO  - pkgs:(java-1.8.0-devel) is already installed
+Sun Jan  1 20:44:55 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 20:44:56 2023 - INFO  - Start testing...
+this BeforeAll
+this BeforeEach
+[showInfo]
+this AfterEach
+this BeforeEach
+this AfterEach
+this AfterAll
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mTestJunit5[0m [32m✔[0m
+[36m│     ├─[0m [34mTestA(TestInfo)[0m [32m✔[0m
+[36m│     └─[0m [34mfirsttest[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 4146 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+javac: invalid flag: .
+Usage: javac <options> <source files>
+use -help for a list of possible options
+Error: Invalid or corrupt jarfile .
+Sun Jan  1 20:45:51 2023 - INFO  - Finish test!
+Sun Jan  1 20:45:53 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 20:45:54 2023 - INFO  - start environment cleanup.
+Sun Jan  1 20:46:15 2023 - INFO  - Finish environment cleanup!

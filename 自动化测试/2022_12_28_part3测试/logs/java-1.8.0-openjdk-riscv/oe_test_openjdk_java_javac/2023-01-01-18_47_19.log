@@ -1,0 +1,15 @@
+Sun Jan  1 18:47:26 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 18:57:56 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 18:57:57 2023 - INFO  - Start to run test.
+Usage: java [-options] class [args...]
+Hello,world!
+openjdk version "1.8.0_332"
+openjdk version "1.8.0_332"
+testjava/Hello.class
+Usage: javac <options> <source files>
+javac 1.8.0_332
+javac 1.8.0_332
+Sun Jan  1 18:59:05 2023 - INFO  - End to run test.
+Sun Jan  1 18:59:06 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 18:59:07 2023 - INFO  - Need't to restore the tet environment.
+Sun Jan  1 19:00:27 2023 - INFO  - End to restore the test environment.

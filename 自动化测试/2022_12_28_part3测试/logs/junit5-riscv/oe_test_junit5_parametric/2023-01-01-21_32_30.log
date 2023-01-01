@@ -1,0 +1,10 @@
+Sun Jan  1 21:32:36 2023 - INFO  - Start environment preparation.
+Sun Jan  1 21:33:47 2023 - INFO  - pkgs:(java-1.8.0-devel) is already installed
+Sun Jan  1 21:33:49 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 21:33:50 2023 - INFO  - Start testing...
+[        14 tests successful      ]
+[         0 tests failed          ]
+Sun Jan  1 21:34:54 2023 - INFO  - Finish test!
+Sun Jan  1 21:34:55 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 21:34:57 2023 - INFO  - start environment cleanup.
+Sun Jan  1 21:35:18 2023 - INFO  - Finish environment cleanup!

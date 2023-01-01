@@ -1,0 +1,15 @@
+Sun Jan  1 15:43:05 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 15:44:13 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 15:44:14 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 15:44:15 CST; 7s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 15:44:30 CST; 6s ago
+/etc/systemd/system/multi-user.target.wants/gmond.service
+Removed /etc/systemd/system/multi-user.target.wants/gmond.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/gmond.service’: No such file or directory
+Failed to reload gmond.service: Job type reload is not applicable for unit gmond.service.
+     Active: active (running) since Sun 2023-01-01 15:44:30 CST; 27s ago
+Sun Jan  1 15:44:58 2023 - INFO  - Finish test!
+Sun Jan  1 15:44:59 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 15:45:01 2023 - INFO  - start environment cleanup.
+Sun Jan  1 15:45:34 2023 - INFO  - Finish environment cleanup!

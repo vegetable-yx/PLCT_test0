@@ -1,0 +1,10 @@
+Sun Jan  1 20:59:32 2023 - INFO  - Start environment preparation.
+Sun Jan  1 21:00:44 2023 - INFO  - pkgs:(java-1.8.0-devel) is already installed
+Sun Jan  1 21:00:46 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 21:00:47 2023 - INFO  - Start testing...
+Jan 01, 2023 9:01:27 PM org.junit.jupiter.engine.discovery.MethodSelectorResolver resolve
+WARNING: Possible configuration error: method [void com.exmaple.junit5.TestJunit5$Nested1$AfterPushing.Nested2_TestA()] resulted in multiple TestDescriptors [org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor, org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor]. This is typically the result of annotating a method with multiple competing annotations such as @Test, @RepeatedTest, @ParameterizedTest, @TestFactory, etc.
+Sun Jan  1 21:01:35 2023 - INFO  - Finish test!
+Sun Jan  1 21:01:36 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 21:01:37 2023 - INFO  - start environment cleanup.
+Sun Jan  1 21:01:58 2023 - INFO  - Finish environment cleanup!

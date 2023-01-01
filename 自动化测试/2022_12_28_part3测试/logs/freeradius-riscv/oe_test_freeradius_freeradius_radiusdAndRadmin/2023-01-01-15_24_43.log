@@ -1,0 +1,21 @@
+Sun Jan  1 15:24:49 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 15:27:20 2023 - INFO  - End to prepare the test environment.
+Sun Jan  1 15:27:22 2023 - INFO  - Start to run test.
+radiusd: FreeRADIUS Version 3.0.25, for host riscv64-openEuler-linux-gnu, built on Aug  3 2022 at 04:31:54
+FreeRADIUS Version 3.0.25
+radmin version 3.0.25, built on Aug  3 2022 at 04:32:26 - FreeRADIUS Server administration tool.
+FreeRADIUS Version 3.0.25, for host riscv64-openEuler-linux-gnu, built on Aug  3 2022 at 04:31:54
+radmin version 3.0.25, built on Aug  3 2022 at 04:32:26 - FreeRADIUS Server administration tool.
+FreeRADIUS Version 3.0.25, for host riscv64-openEuler-linux-gnu, built on Aug  3 2022 at 04:31:54
+FreeRADIUS Version 3.0.25, for host riscv64-openEuler-linux-gnu, built on Aug  3 2022 at 04:31:54
+radmin version 3.0.25, built on Aug  3 2022 at 04:32:26 - FreeRADIUS Server administration tool.
+FreeRADIUS Version 3.0.25, for host riscv64-openEuler-linux-gnu, built on Aug  3 2022 at 04:31:54
+Usage: radmin [ args ]
+FreeRADIUS Version 3.0.25, for host riscv64-openEuler-linux-gnu, built on Aug  3 2022 at 04:31:54
+radmin version 3.0.25, built on Aug  3 2022 at 04:32:26 - FreeRADIUS Server administration tool.
+FreeRADIUS Version 3.0.25, for host riscv64-openEuler-linux-gnu, built on Aug  3 2022 at 04:31:54
+Sun Jan  1 15:27:35 2023 - INFO  - End to run test.
+/home/openeuler/Desktop/mugen-riscv/libs/locallibs/common_lib_python.sh: line 19: 33288 Killed                  radmin -q > /tmp/test
+Sun Jan  1 15:27:36 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 15:27:37 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 15:28:16 2023 - INFO  - End to restore the test environment.

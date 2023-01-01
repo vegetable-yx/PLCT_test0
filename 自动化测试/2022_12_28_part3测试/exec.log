@@ -1,0 +1,321 @@
+Sun Jan  1 15:03:00 2023 - INFO  - start to run testcase:oe_test_service_flatpak-system-helper.
+Sun Jan  1 15:03:57 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:03:59 2023 - INFO  - End to run testcase:oe_test_service_flatpak-system-helper.
+Sun Jan  1 15:04:00 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:04:08 2023 - INFO  - start to run testcase:oe_test_service_fprintd.
+Sun Jan  1 15:06:31 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:06:32 2023 - INFO  - End to run testcase:oe_test_service_fprintd.
+Sun Jan  1 15:06:33 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:06:40 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius_raddebugAndCheckrad.
+Sun Jan  1 15:20:30 2023 - ERROR - The case exit by code 6.
+Sun Jan  1 15:20:31 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius_raddebugAndCheckrad.
+Sun Jan  1 15:20:32 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 15:20:39 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius_radiusd.
+Sun Jan  1 15:24:34 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:24:35 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius_radiusd.
+Sun Jan  1 15:24:36 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:24:43 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius_radiusdAndRadmin.
+Sun Jan  1 15:28:18 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:28:19 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius_radiusdAndRadmin.
+Sun Jan  1 15:28:21 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:28:27 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius-utils_radclient.
+Sun Jan  1 15:29:56 2023 - ERROR - The case exit by code 9.
+Sun Jan  1 15:29:57 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius-utils_radclient.
+Sun Jan  1 15:29:58 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 15:30:05 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius-utils_rad_counter.
+Sun Jan  1 15:31:30 2023 - ERROR - The case exit by code 7.
+Sun Jan  1 15:31:31 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius-utils_rad_counter.
+Sun Jan  1 15:31:32 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 15:31:40 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius-utils_radcryptAndRadeapclient.
+Sun Jan  1 15:33:07 2023 - ERROR - The case exit by code 9.
+Sun Jan  1 15:33:09 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius-utils_radcryptAndRadeapclient.
+Sun Jan  1 15:33:10 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 15:33:17 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius-utils_radlastAndRadsniff.
+Sun Jan  1 15:34:43 2023 - ERROR - The case exit by code 9.
+Sun Jan  1 15:34:45 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius-utils_radlastAndRadsniff.
+Sun Jan  1 15:34:46 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 15:34:53 2023 - INFO  - start to run testcase:oe_test_service_fwupd-offline-update.
+Sun Jan  1 15:37:09 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:37:11 2023 - INFO  - End to run testcase:oe_test_service_fwupd-offline-update.
+Sun Jan  1 15:37:12 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:37:19 2023 - INFO  - start to run testcase:oe_test_service_fwupd.
+Sun Jan  1 15:39:55 2023 - ERROR - The case exit by code 1.
+Sun Jan  1 15:39:56 2023 - INFO  - End to run testcase:oe_test_service_fwupd.
+Sun Jan  1 15:39:57 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 15:40:05 2023 - INFO  - start to run testcase:oe_test_galera_garbd.
+Sun Jan  1 15:42:49 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:42:50 2023 - INFO  - End to run testcase:oe_test_galera_garbd.
+Sun Jan  1 15:42:51 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:42:58 2023 - INFO  - start to run testcase:oe_test_service_gmond.
+Sun Jan  1 15:45:36 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:45:37 2023 - INFO  - End to run testcase:oe_test_service_gmond.
+Sun Jan  1 15:45:38 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:45:45 2023 - INFO  - start to run testcase:oe_test_service_geoclue.
+Sun Jan  1 15:46:46 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:46:47 2023 - INFO  - End to run testcase:oe_test_service_geoclue.
+Sun Jan  1 15:46:48 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:46:56 2023 - INFO  - start to run testcase:oe_test_geos_commandAndbaseFun.
+Sun Jan  1 15:48:58 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:49:00 2023 - INFO  - End to run testcase:oe_test_geos_commandAndbaseFun.
+Sun Jan  1 15:49:01 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:49:08 2023 - INFO  - start to run testcase:oe_test_service_gpm.
+Sun Jan  1 15:51:37 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 15:51:39 2023 - INFO  - End to run testcase:oe_test_service_gpm.
+Sun Jan  1 15:51:40 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 15:51:47 2023 - INFO  - start to run testcase:oe_test_gradle_01.
+Sun Jan  1 16:14:56 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 16:14:57 2023 - INFO  - End to run testcase:oe_test_gradle_01.
+Sun Jan  1 16:14:59 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 16:15:06 2023 - INFO  - start to run testcase:oe_test_gradle_02.
+Sun Jan  1 16:38:54 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 16:38:56 2023 - INFO  - End to run testcase:oe_test_gradle_02.
+Sun Jan  1 16:38:57 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 16:39:04 2023 - INFO  - start to run testcase:oe_test_gradle_03.
+Sun Jan  1 17:01:17 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 17:01:19 2023 - INFO  - End to run testcase:oe_test_gradle_03.
+Sun Jan  1 17:01:20 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 17:01:27 2023 - INFO  - start to run testcase:oe_test_gradle_04.
+Sun Jan  1 17:31:33 2023 - WARN  - The case execution timeout.
+Sun Jan  1 17:31:36 2023 - ERROR - The case exit by code 143.
+Sun Jan  1 17:31:38 2023 - INFO  - End to run testcase:oe_test_gradle_04.
+Sun Jan  1 17:31:41 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 17:31:55 2023 - INFO  - start to run testcase:oe_test_groovy_01.
+Sun Jan  1 17:36:41 2023 - ERROR - The case exit by code 8.
+Sun Jan  1 17:36:44 2023 - INFO  - End to run testcase:oe_test_groovy_01.
+Sun Jan  1 17:36:47 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 17:36:59 2023 - INFO  - start to run testcase:oe_test_groovy_02.
+Sun Jan  1 17:47:57 2023 - ERROR - The case exit by code 1.
+Sun Jan  1 17:47:59 2023 - INFO  - End to run testcase:oe_test_groovy_02.
+Sun Jan  1 17:48:00 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 17:48:09 2023 - INFO  - start to run testcase:oe_test_service_gssproxy.
+Sun Jan  1 17:51:49 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 17:51:51 2023 - INFO  - End to run testcase:oe_test_service_gssproxy.
+Sun Jan  1 17:51:52 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 17:52:00 2023 - INFO  - start to run testcase:oe_test_service_haproxy.
+Sun Jan  1 17:55:19 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 17:55:21 2023 - INFO  - End to run testcase:oe_test_service_haproxy.
+Sun Jan  1 17:55:22 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 17:55:30 2023 - INFO  - start to run testcase:oe_test_service_haveged.
+Sun Jan  1 17:58:14 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 17:58:15 2023 - INFO  - End to run testcase:oe_test_service_haveged.
+Sun Jan  1 17:58:16 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 17:58:23 2023 - INFO  - start to run testcase:oe_test_help2man.
+Sun Jan  1 18:00:39 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:00:40 2023 - INFO  - End to run testcase:oe_test_help2man.
+Sun Jan  1 18:00:42 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:00:49 2023 - INFO  - start to run testcase:oe_test_service_hsqldb.
+Sun Jan  1 18:04:24 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:04:25 2023 - INFO  - End to run testcase:oe_test_service_hsqldb.
+Sun Jan  1 18:04:27 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:04:34 2023 - INFO  - start to run testcase:oe_test_htop_01.
+Sun Jan  1 18:06:37 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:06:39 2023 - INFO  - End to run testcase:oe_test_htop_01.
+Sun Jan  1 18:06:40 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:06:47 2023 - INFO  - start to run testcase:oe_test_service_httpd-init.
+Sun Jan  1 18:09:50 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:09:51 2023 - INFO  - End to run testcase:oe_test_service_httpd-init.
+Sun Jan  1 18:09:53 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:10:00 2023 - INFO  - start to run testcase:oe_test_service_initial-setup-reconfiguration.
+Sun Jan  1 18:15:50 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:15:52 2023 - INFO  - End to run testcase:oe_test_service_initial-setup-reconfiguration.
+Sun Jan  1 18:15:53 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:16:01 2023 - INFO  - start to run testcase:oe_test_service_network.
+Sun Jan  1 18:19:58 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:19:59 2023 - INFO  - End to run testcase:oe_test_service_network.
+Sun Jan  1 18:20:01 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:20:08 2023 - INFO  - start to run testcase:oe_test_service_readonly-root.
+Sun Jan  1 18:23:00 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:23:02 2023 - INFO  - End to run testcase:oe_test_service_readonly-root.
+Sun Jan  1 18:23:03 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:23:10 2023 - INFO  - start to run testcase:oe_test_iperf3_client.
+Sun Jan  1 18:24:53 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:24:55 2023 - INFO  - End to run testcase:oe_test_iperf3_client.
+Sun Jan  1 18:24:56 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:25:04 2023 - INFO  - start to run testcase:oe_test_service_ipwatchd.
+Sun Jan  1 18:27:55 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:27:56 2023 - INFO  - End to run testcase:oe_test_service_ipwatchd.
+Sun Jan  1 18:27:57 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:28:05 2023 - INFO  - start to run testcase:oe_test_service_isula-build.
+Sun Jan  1 18:31:59 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:32:00 2023 - INFO  - End to run testcase:oe_test_service_isula-build.
+Sun Jan  1 18:32:01 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:32:09 2023 - INFO  - start to run testcase:oe_test_openjdk_javadoc_javah.
+Sun Jan  1 18:47:08 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 18:47:09 2023 - INFO  - End to run testcase:oe_test_openjdk_javadoc_javah.
+Sun Jan  1 18:47:10 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 18:47:18 2023 - INFO  - start to run testcase:oe_test_openjdk_java_javac.
+Sun Jan  1 19:00:29 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 19:00:30 2023 - INFO  - End to run testcase:oe_test_openjdk_java_javac.
+Sun Jan  1 19:00:31 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 19:00:39 2023 - INFO  - start to run testcase:oe_test_openjdk_javap_jcmd.
+Sun Jan  1 19:14:56 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 19:14:58 2023 - INFO  - End to run testcase:oe_test_openjdk_javap_jcmd.
+Sun Jan  1 19:14:59 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 19:15:06 2023 - INFO  - start to run testcase:oe_test_openjdk_jjs_jmap.
+Sun Jan  1 19:29:33 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 19:29:35 2023 - INFO  - End to run testcase:oe_test_openjdk_jjs_jmap.
+Sun Jan  1 19:29:36 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 19:29:44 2023 - INFO  - start to run testcase:oe_test_openjdk_jsadebugd_jstack.
+Sun Jan  1 19:41:54 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 19:41:56 2023 - INFO  - End to run testcase:oe_test_openjdk_jsadebugd_jstack.
+Sun Jan  1 19:41:57 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 19:42:04 2023 - INFO  - start to run testcase:oe_test_openjdk_native2ascii_pack200.
+Sun Jan  1 19:55:00 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 19:55:01 2023 - INFO  - End to run testcase:oe_test_openjdk_native2ascii_pack200.
+Sun Jan  1 19:55:02 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 19:55:10 2023 - INFO  - start to run testcase:oe_test_openjdk_rmic_rmid.
+Sun Jan  1 20:08:12 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:08:14 2023 - INFO  - End to run testcase:oe_test_openjdk_rmic_rmid.
+Sun Jan  1 20:08:16 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:08:27 2023 - INFO  - start to run testcase:oe_test_openjdk_servertool_unpack200.
+Sun Jan  1 20:22:18 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:22:20 2023 - INFO  - End to run testcase:oe_test_openjdk_servertool_unpack200.
+Sun Jan  1 20:22:21 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:22:31 2023 - INFO  - start to run testcase:oe_test_binary_files_operation.
+Sun Jan  1 20:32:26 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:32:27 2023 - INFO  - End to run testcase:oe_test_binary_files_operation.
+Sun Jan  1 20:32:29 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:32:36 2023 - INFO  - start to run testcase:oe_test_build-classpath.
+Sun Jan  1 20:33:36 2023 - ERROR - The case exit by code 1.
+Sun Jan  1 20:33:38 2023 - INFO  - End to run testcase:oe_test_build-classpath.
+Sun Jan  1 20:33:39 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 20:33:47 2023 - INFO  - start to run testcase:oe_test_build-jar-repository.
+Sun Jan  1 20:34:58 2023 - ERROR - The case exit by code 4.
+Sun Jan  1 20:34:59 2023 - INFO  - End to run testcase:oe_test_build-jar-repository.
+Sun Jan  1 20:35:01 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 20:35:08 2023 - INFO  - start to run testcase:oe_test_find-shade-jar.
+Sun Jan  1 20:36:04 2023 - ERROR - The case exit by code 2.
+Sun Jan  1 20:36:05 2023 - INFO  - End to run testcase:oe_test_find-shade-jar.
+Sun Jan  1 20:36:06 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 20:36:14 2023 - INFO  - start to run testcase:oe_test_javapackages-local.
+Sun Jan  1 20:38:02 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:38:04 2023 - INFO  - End to run testcase:oe_test_javapackages-local.
+Sun Jan  1 20:38:05 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:38:13 2023 - INFO  - start to run testcase:oe_test_jemalloc_01.
+Sun Jan  1 20:39:48 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:39:50 2023 - INFO  - End to run testcase:oe_test_jemalloc_01.
+Sun Jan  1 20:39:51 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:39:58 2023 - INFO  - start to run testcase:oe_test_jemalloc_02.
+Sun Jan  1 20:41:33 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:41:35 2023 - INFO  - End to run testcase:oe_test_jemalloc_02.
+Sun Jan  1 20:41:36 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:41:44 2023 - INFO  - start to run testcase:oe_test_jq.
+Sun Jan  1 20:43:23 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:43:24 2023 - INFO  - End to run testcase:oe_test_jq.
+Sun Jan  1 20:43:26 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:43:34 2023 - INFO  - start to run testcase:oe_test_junit5_abnormal_removejar.
+Sun Jan  1 20:46:16 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:46:18 2023 - INFO  - End to run testcase:oe_test_junit5_abnormal_removejar.
+Sun Jan  1 20:46:19 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:46:26 2023 - INFO  - start to run testcase:oe_test_junit5_annotation_tag.
+Sun Jan  1 20:49:12 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:49:13 2023 - INFO  - End to run testcase:oe_test_junit5_annotation_tag.
+Sun Jan  1 20:49:14 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:49:22 2023 - INFO  - start to run testcase:oe_test_junit5_annotation_timeout.
+Sun Jan  1 20:51:57 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:51:58 2023 - INFO  - End to run testcase:oe_test_junit5_annotation_timeout.
+Sun Jan  1 20:52:00 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:52:07 2023 - INFO  - start to run testcase:oe_test_junit5_ant.
+Sun Jan  1 20:56:23 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:56:25 2023 - INFO  - End to run testcase:oe_test_junit5_ant.
+Sun Jan  1 20:56:26 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:56:33 2023 - INFO  - start to run testcase:oe_test_junit5_assert.
+Sun Jan  1 20:59:15 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 20:59:16 2023 - INFO  - End to run testcase:oe_test_junit5_assert.
+Sun Jan  1 20:59:17 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 20:59:24 2023 - INFO  - start to run testcase:oe_test_junit5_epeat.
+Sun Jan  1 21:02:00 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 21:02:01 2023 - INFO  - End to run testcase:oe_test_junit5_epeat.
+Sun Jan  1 21:02:02 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 21:02:11 2023 - INFO  - start to run testcase:oe_test_junit5_junit4.
+Sun Jan  1 21:15:56 2023 - ERROR - The case exit by code 3.
+Sun Jan  1 21:15:58 2023 - INFO  - End to run testcase:oe_test_junit5_junit4.
+Sun Jan  1 21:16:00 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 21:16:07 2023 - INFO  - start to run testcase:oe_test_junit5_kotlin_maven.
+Sun Jan  1 21:23:01 2023 - ERROR - The case exit by code 3.
+Sun Jan  1 21:23:02 2023 - INFO  - End to run testcase:oe_test_junit5_kotlin_maven.
+Sun Jan  1 21:23:03 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 21:23:10 2023 - INFO  - start to run testcase:oe_test_junit5_maven.
+Sun Jan  1 21:29:08 2023 - ERROR - The case exit by code 3.
+Sun Jan  1 21:29:09 2023 - INFO  - End to run testcase:oe_test_junit5_maven.
+Sun Jan  1 21:29:10 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 21:29:17 2023 - INFO  - start to run testcase:oe_test_junit5_noimport.
+Sun Jan  1 21:32:18 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 21:32:20 2023 - INFO  - End to run testcase:oe_test_junit5_noimport.
+Sun Jan  1 21:32:21 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 21:32:29 2023 - INFO  - start to run testcase:oe_test_junit5_parametric.
+Sun Jan  1 21:35:19 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 21:35:21 2023 - INFO  - End to run testcase:oe_test_junit5_parametric.
+Sun Jan  1 21:35:22 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 21:35:29 2023 - INFO  - start to run testcase:oe_test_junit5_spring_maven.
+Sun Jan  1 21:42:52 2023 - ERROR - The case exit by code 1.
+Sun Jan  1 21:42:54 2023 - INFO  - End to run testcase:oe_test_junit5_spring_maven.
+Sun Jan  1 21:42:56 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 21:43:04 2023 - INFO  - start to run testcase:oe_test_jython_01.
+Sun Jan  1 22:04:01 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 22:04:02 2023 - INFO  - End to run testcase:oe_test_jython_01.
+Sun Jan  1 22:04:03 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 22:04:10 2023 - INFO  - start to run testcase:oe_test_jython_02.
+Sun Jan  1 22:24:22 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 22:24:24 2023 - INFO  - End to run testcase:oe_test_jython_02.
+Sun Jan  1 22:24:25 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 22:24:32 2023 - INFO  - start to run testcase:oe_test_jython_03.
+Sun Jan  1 22:35:48 2023 - ERROR - The case exit by code 1.
+Sun Jan  1 22:35:50 2023 - INFO  - End to run testcase:oe_test_jython_03.
+Sun Jan  1 22:35:51 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 22:35:58 2023 - INFO  - start to run testcase:oe_test_keyutils-keyctl.
+Sun Jan  1 22:37:32 2023 - ERROR - The case exit by code 2.
+Sun Jan  1 22:37:33 2023 - INFO  - End to run testcase:oe_test_keyutils-keyctl.
+Sun Jan  1 22:37:34 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 22:37:41 2023 - INFO  - start to run testcase:oe_test_kf5-kconfig-core_01.
+Sun Jan  1 22:41:10 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 22:41:12 2023 - INFO  - End to run testcase:oe_test_kf5-kconfig-core_01.
+Sun Jan  1 22:41:13 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 22:41:22 2023 - INFO  - start to run testcase:oe_test_service_kprop.
+Sun Jan  1 22:44:25 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 22:44:27 2023 - INFO  - End to run testcase:oe_test_service_kprop.
+Sun Jan  1 22:44:28 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 22:44:35 2023 - INFO  - start to run testcase:oe_test_service_krb5kdc.
+Sun Jan  1 22:47:57 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 22:47:58 2023 - INFO  - End to run testcase:oe_test_service_krb5kdc.
+Sun Jan  1 22:48:00 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 22:48:07 2023 - INFO  - start to run testcase:oe_test_ksh.
+Sun Jan  1 22:49:37 2023 - INFO  - The case exit by code 0.
+Sun Jan  1 22:49:38 2023 - INFO  - End to run testcase:oe_test_ksh.
+Sun Jan  1 22:49:40 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Sun Jan  1 22:49:47 2023 - INFO  - start to run testcase:oe_test_service_kube-controller-manager.
+Sun Jan  1 23:20:49 2023 - WARN  - The case execution timeout.
+Sun Jan  1 23:21:30 2023 - ERROR - The case exit by code 143.
+Sun Jan  1 23:22:25 2023 - INFO  - End to run testcase:oe_test_service_kube-controller-manager.
+Sun Jan  1 23:23:07 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 23:24:49 2023 - INFO  - start to run testcase:oe_test_service_kube-scheduler.
+Sun Jan  1 23:56:09 2023 - WARN  - The case execution timeout.
+Sun Jan  1 23:56:16 2023 - ERROR - The case exit by code 143.
+Sun Jan  1 23:56:23 2023 - INFO  - End to run testcase:oe_test_service_kube-scheduler.
+Sun Jan  1 23:56:31 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  1 23:57:08 2023 - INFO  - start to run testcase:oe_test_service_kubelet.
+Mon Jan  2 00:21:22 2023 - INFO  - start to run testcase:oe_test_ladspa_analyseplugin.
+Mon Jan  2 00:23:43 2023 - ERROR - The case exit by code 4.
+Mon Jan  2 00:23:45 2023 - INFO  - End to run testcase:oe_test_ladspa_analyseplugin.
+Mon Jan  2 00:23:47 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Mon Jan  2 00:23:54 2023 - INFO  - start to run testcase:oe_test_ladspa_applyplugin.
+Mon Jan  2 00:26:02 2023 - ERROR - The case exit by code 3.
+Mon Jan  2 00:26:04 2023 - INFO  - End to run testcase:oe_test_ladspa_applyplugin.
+Mon Jan  2 00:26:05 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Mon Jan  2 00:26:13 2023 - INFO  - start to run testcase:oe_test_service_canberra-system-bootup.
+Mon Jan  2 00:27:14 2023 - INFO  - The case exit by code 0.
+Mon Jan  2 00:27:16 2023 - INFO  - End to run testcase:oe_test_service_canberra-system-bootup.
+Mon Jan  2 00:27:17 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Mon Jan  2 00:27:31 2023 - INFO  - start to run testcase:oe_test_service_canberra-system-shutdown-reboot.
+Mon Jan  2 00:28:55 2023 - INFO  - The case exit by code 0.
+Mon Jan  2 00:28:56 2023 - INFO  - End to run testcase:oe_test_service_canberra-system-shutdown-reboot.
+Mon Jan  2 00:28:57 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Mon Jan  2 00:29:06 2023 - INFO  - start to run testcase:oe_test_service_canberra-system-shutdown.
+Mon Jan  2 00:30:04 2023 - INFO  - The case exit by code 0.
+Mon Jan  2 00:30:06 2023 - INFO  - End to run testcase:oe_test_service_canberra-system-shutdown.
+Mon Jan  2 00:30:07 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Mon Jan  2 00:30:15 2023 - INFO  - start to run testcase:oe_test_service_cgconfig.
+Mon Jan  2 00:33:11 2023 - INFO  - The case exit by code 0.
+Mon Jan  2 00:33:13 2023 - INFO  - End to run testcase:oe_test_service_cgconfig.
+Mon Jan  2 00:33:14 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+

@@ -1,0 +1,11 @@
+Sun Jan  1 20:46:33 2023 - INFO  - Start environment preparation.
+Sun Jan  1 20:47:47 2023 - INFO  - pkgs:(java-1.8.0-devel) is already installed
+Sun Jan  1 20:47:49 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 20:47:50 2023 - INFO  - Start testing...
+[36m│     ├─[0m [35mTestC()[0m [35m↷[0m [35mvoid com.exmaple.junit5.TestJunit5.TestC() is @Disabled[0m
+[36m│     └─[0m [31mTestD()[0m [31m✘[0m [31mTestD() timed out after 1 second[0m
+    => java.util.concurrent.TimeoutException: TestD() timed out after 1 second
+Sun Jan  1 20:48:46 2023 - INFO  - Finish test!
+Sun Jan  1 20:48:47 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 20:48:48 2023 - INFO  - start environment cleanup.
+Sun Jan  1 20:49:10 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,15 @@
+Sun Jan  1 13:08:26 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 13:10:06 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 13:10:07 2023 - INFO  - Start to run test.
+     Active: active (listening) since Sun 2023-01-01 13:10:07 CST; 6s ago
+     Active: inactive (dead) since Sun 2023-01-01 13:10:14 CST; 6s ago
+     Active: active (listening) since Sun 2023-01-01 13:10:21 CST; 6s ago
+find: ‘/etc/systemd/system/sockets.target.wants/virtlogd.socket’: No such file or directory
+Created symlink /etc/systemd/system/sockets.target.wants/virtlogd.socket → /usr/lib/systemd/system/virtlogd.socket.
+/etc/systemd/system/sockets.target.wants/virtlogd.socket
+Failed to reload virtlogd.socket: Job type reload is not applicable for unit virtlogd.socket.
+     Active: active (listening) since Sun 2023-01-01 13:10:21 CST; 26s ago
+Sun Jan  1 13:10:49 2023 - INFO  - End of the test.
+Sun Jan  1 13:10:50 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 13:10:51 2023 - INFO  - start environment cleanup.
+Sun Jan  1 13:11:41 2023 - INFO  - Finish environment cleanup!

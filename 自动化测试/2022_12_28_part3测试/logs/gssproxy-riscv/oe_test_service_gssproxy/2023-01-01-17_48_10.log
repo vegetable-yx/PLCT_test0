@@ -1,0 +1,14 @@
+Sun Jan  1 17:48:17 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 17:49:56 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 17:49:58 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 17:49:59 CST; 8s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 17:50:17 CST; 6s ago
+/etc/systemd/system/multi-user.target.wants/gssproxy.service
+Removed /etc/systemd/system/multi-user.target.wants/gssproxy.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/gssproxy.service’: No such file or directory
+     Active: active (running) since Sun 2023-01-01 17:50:17 CST; 38s ago
+Sun Jan  1 17:50:56 2023 - INFO  - Finish test!
+Sun Jan  1 17:50:58 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 17:50:59 2023 - INFO  - start environment cleanup.
+Sun Jan  1 17:51:48 2023 - INFO  - Finish environment cleanup!

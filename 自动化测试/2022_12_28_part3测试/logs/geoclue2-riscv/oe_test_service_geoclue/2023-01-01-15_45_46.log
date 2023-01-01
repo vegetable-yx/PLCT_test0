@@ -1,0 +1,17 @@
+Sun Jan  1 15:45:52 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 15:46:06 2023 - INFO  - pkgs:(geoclue2 avahi) is already installed
+Sun Jan  1 15:46:08 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 15:46:09 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 15:46:13 CST; 7s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 15:46:29 CST; 6s ago
+Sun Jan  1 15:46:37 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
+Failed to reload geoclue.service: Job type reload is not applicable for unit geoclue.service.
+     Active: active (running) since Sun 2023-01-01 15:46:29 CST; 9s ago
+Sun Jan  1 15:46:40 2023 - INFO  - Finish test!
+Sun Jan  1 15:46:41 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 15:46:42 2023 - INFO  - start environment cleanup.
+Warning: Stopping avahi-daemon.service, but it can still be activated by:
+  avahi-daemon.socket
+Sun Jan  1 15:46:43 2023 - WARN  - no thing to do.
+Sun Jan  1 15:46:44 2023 - INFO  - Finish environment cleanup!

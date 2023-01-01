@@ -1,0 +1,13 @@
+Sun Jan  1 11:28:15 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 11:29:06 2023 - INFO  - Finish preparing the test environment.
+Sun Jan  1 11:29:07 2023 - INFO  - Start to run test.
+-lpng12
+-I/usr/include/libpng12
+-I/usr/include/libpng12
+-L/usr/lib64
+-L/usr/lib64 -lpng12
+Usage: /usr/bin/libpng12-config [OPTION] ...
+Sun Jan  1 11:29:11 2023 - INFO  - End of the test.
+Sun Jan  1 11:29:12 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 11:29:13 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 11:29:35 2023 - INFO  - Finish restoring the test environment.

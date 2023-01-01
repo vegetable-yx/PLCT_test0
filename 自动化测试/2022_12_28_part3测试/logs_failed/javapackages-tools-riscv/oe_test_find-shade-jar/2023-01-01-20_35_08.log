@@ -1,0 +1,18 @@
+Sun Jan  1 20:35:15 2023 - INFO  - Start to prepare the test environment.
+Sun Jan  1 20:35:31 2023 - INFO  - pkgs:(junit) is already installed
+Sun Jan  1 20:35:49 2023 - INFO  - pkgs:(javapackages-tools java-1.8.0
+1.8.0
+1.8.0-devel xmvn-resolve objectweb-asm3 beust-jcommander log4j) is already installed
+Sun Jan  1 20:35:51 2023 - INFO  - Finish preparing the test environment.
+Sun Jan  1 20:35:52 2023 - INFO  - Start to run test.
+/usr/share/java/junit.jar
+/usr/share/java/easymock.jar
+/usr/bin/shade-jar: Unable to execute objectweb-asm3-processor.
+/usr/bin/shade-jar: Make sure that objectweb-asm3 is installed.
+Sun Jan  1 20:35:54 2023 - ERROR - oe_test_find-shade-jar.sh line 36
+Sun Jan  1 20:35:56 2023 - ERROR - oe_test_find-shade-jar.sh line 38
+Sun Jan  1 20:35:57 2023 - INFO  - End of the test.
+Sun Jan  1 20:35:58 2023 - ERROR - failed to execute the case.
+Sun Jan  1 20:36:00 2023 - INFO  - Start to restore the test environment.
+Sun Jan  1 20:36:01 2023 - WARN  - no thing to do.
+Sun Jan  1 20:36:02 2023 - INFO  - Finish restoring the test environment.

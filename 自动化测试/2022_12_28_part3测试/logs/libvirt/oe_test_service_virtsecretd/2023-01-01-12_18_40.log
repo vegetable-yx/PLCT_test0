@@ -1,0 +1,31 @@
+Sun Jan  1 12:18:53 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 12:20:40 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 12:20:41 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 12:20:43 CST; 7s ago
+Warning: Stopping virtsecretd.service, but it can still be activated by:
+  virtsecretd.socket
+  virtsecretd-admin.socket
+  virtsecretd-ro.socket
+     Active: inactive (dead) since Sun 2023-01-01 12:20:52 CST; 6s ago
+     Active: active (running) since Sun 2023-01-01 12:21:00 CST; 6s ago
+/etc/systemd/system/multi-user.target.wants/virtsecretd.service
+/etc/systemd/system/sockets.target.wants/virtsecretd.socket
+/etc/systemd/system/sockets.target.wants/virtsecretd-ro.socket
+/etc/systemd/system/sockets.target.wants/virtsecretd-admin.socket
+Removed /etc/systemd/system/sockets.target.wants/virtsecretd-ro.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtsecretd.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtsecretd-admin.socket.
+Removed /etc/systemd/system/multi-user.target.wants/virtsecretd.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/virtsecretd.service’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtsecretd.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtsecretd-ro.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtsecretd-admin.socket’: No such file or directory
+     Active: active (running) since Sun 2023-01-01 12:21:00 CST; 40s ago
+Sun Jan  1 12:21:41 2023 - INFO  - Finish test!
+Sun Jan  1 12:21:42 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 12:21:44 2023 - INFO  - start environment cleanup.
+Warning: Stopping virtsecretd.service, but it can still be activated by:
+  virtsecretd-ro.socket
+  virtsecretd.socket
+  virtsecretd-admin.socket
+Sun Jan  1 12:22:48 2023 - INFO  - Finish environment cleanup!

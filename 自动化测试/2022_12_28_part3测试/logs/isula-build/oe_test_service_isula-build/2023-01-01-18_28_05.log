@@ -1,0 +1,15 @@
+Sun Jan  1 18:28:12 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 18:29:36 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 18:29:37 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 18:29:57 CST; 7s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 18:30:54 CST; 6s ago
+/etc/systemd/system/multi-user.target.wants/isula-build.service
+Removed /etc/systemd/system/multi-user.target.wants/isula-build.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/isula-build.service’: No such file or directory
+Failed to reload isula-build.service: Job type reload is not applicable for unit isula-build.service.
+     Active: active (running) since Sun 2023-01-01 18:30:54 CST; 28s ago
+Sun Jan  1 18:31:23 2023 - INFO  - Finish test!
+Sun Jan  1 18:31:24 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 18:31:25 2023 - INFO  - start environment cleanup.
+Sun Jan  1 18:31:57 2023 - INFO  - Finish environment cleanup!

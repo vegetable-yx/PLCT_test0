@@ -1,0 +1,28 @@
+Sun Jan  1 22:41:29 2023 - INFO  - Start environmental preparation.
+spawn kdb5_util create -s
+Loading random data
+Initializing database '/var/kerberos/krb5kdc/principal' for realm 'EXAMPLE.COM',
+master key name 'K/M@EXAMPLE.COM'
+You will be prompted for the database Master Password.
+It is important that you NOT FORGET this password.
+Enter KDC database master key: 
+Re-enter KDC database master key to verify: 
+No policy specified for rootadmin@EXAMPLE.COM; defaulting to no policy
+Authenticating as principal root/admin@EXAMPLE.COM with password.
+Enter password for principal "rootadmin@EXAMPLE.COM": 
+Re-enter password for principal "rootadmin@EXAMPLE.COM": 
+Principal "rootadmin@EXAMPLE.COM" created.
+Sun Jan  1 22:43:00 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 22:43:02 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 22:43:02 CST; 7s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 22:43:18 CST; 6s ago
+/etc/systemd/system/multi-user.target.wants/kprop.service
+Removed /etc/systemd/system/multi-user.target.wants/kprop.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/kprop.service’: No such file or directory
+Failed to reload kprop.service: Job type reload is not applicable for unit kprop.service.
+     Active: active (running) since Sun 2023-01-01 22:43:18 CST; 28s ago
+Sun Jan  1 22:43:47 2023 - INFO  - Finish test!
+Sun Jan  1 22:43:49 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 22:43:50 2023 - INFO  - start environment cleanup.
+Sun Jan  1 22:44:24 2023 - INFO  - Finish environment cleanup!

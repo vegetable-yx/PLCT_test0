@@ -1,0 +1,31 @@
+Sun Jan  1 12:10:08 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 12:11:47 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 12:11:48 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 12:11:49 CST; 6s ago
+Warning: Stopping virtproxyd.service, but it can still be activated by:
+  virtproxyd-admin.socket
+  virtproxyd.socket
+  virtproxyd-ro.socket
+     Active: inactive (dead) since Sun 2023-01-01 12:11:57 CST; 6s ago
+     Active: active (running) since Sun 2023-01-01 12:12:04 CST; 7s ago
+/etc/systemd/system/multi-user.target.wants/virtproxyd.service
+/etc/systemd/system/sockets.target.wants/virtproxyd.socket
+/etc/systemd/system/sockets.target.wants/virtproxyd-ro.socket
+/etc/systemd/system/sockets.target.wants/virtproxyd-admin.socket
+Removed /etc/systemd/system/sockets.target.wants/virtproxyd-admin.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtproxyd.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtproxyd-ro.socket.
+Removed /etc/systemd/system/multi-user.target.wants/virtproxyd.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/virtproxyd.service’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtproxyd.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtproxyd-ro.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtproxyd-admin.socket’: No such file or directory
+     Active: active (running) since Sun 2023-01-01 12:12:04 CST; 38s ago
+Sun Jan  1 12:12:44 2023 - INFO  - Finish test!
+Sun Jan  1 12:12:45 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 12:12:46 2023 - INFO  - start environment cleanup.
+Warning: Stopping virtproxyd.service, but it can still be activated by:
+  virtproxyd-ro.socket
+  virtproxyd-admin.socket
+  virtproxyd.socket
+Sun Jan  1 12:13:49 2023 - INFO  - Finish environment cleanup!

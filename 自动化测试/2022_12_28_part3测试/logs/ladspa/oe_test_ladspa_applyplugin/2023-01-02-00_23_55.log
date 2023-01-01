@@ -1,0 +1,21 @@
+Mon Jan  2 00:24:02 2023 - INFO  - Start to prepare the test environment.
+Mon Jan  2 00:25:20 2023 - INFO  - End to prepare the test environment.
+Mon Jan  2 00:25:21 2023 - INFO  - Start to run test.
+Unable to find label "amp_mono" in plugin library file "amp.so".
+Mon Jan  2 00:25:23 2023 - ERROR - applyplugin check failed
+Mon Jan  2 00:25:24 2023 - ERROR - oe_test_ladspa_applyplugin.sh line 34
+Unable to find label "delay_5s" in plugin library file "delay.so".
+Mon Jan  2 00:25:25 2023 - ERROR - applyplugin multiple parameters check failed
+Mon Jan  2 00:25:27 2023 - ERROR - oe_test_ladspa_applyplugin.sh line 36
+Unable to find label "amp_mono" in plugin library file "amp.so".
+Mon Jan  2 00:25:28 2023 - ERROR - applyplugin -s  check failed
+Mon Jan  2 00:25:29 2023 - ERROR - oe_test_ladspa_applyplugin.sh line 38
+/usr/lib64/ladspa/delay.so:
+/usr/lib64/ladspa/filter.so:
+/usr/lib64/ladspa/amp.so:
+/usr/lib64/ladspa/noise.so:
+/usr/lib64/ladspa/sine.so:
+Mon Jan  2 00:25:31 2023 - INFO  - End to run test.
+Mon Jan  2 00:25:32 2023 - ERROR - failed to execute the case.
+Mon Jan  2 00:25:33 2023 - INFO  - Start to restore the test environment.
+Mon Jan  2 00:26:00 2023 - INFO  - End to restore the test environment.

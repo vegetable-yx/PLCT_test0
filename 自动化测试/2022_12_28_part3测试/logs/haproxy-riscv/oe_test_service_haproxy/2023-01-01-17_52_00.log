@@ -1,0 +1,14 @@
+Sun Jan  1 17:52:07 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 17:53:19 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 17:53:20 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 17:53:22 CST; 7s ago
+     Active: inactive (dead)
+     Active: active (running) since Sun 2023-01-01 17:53:38 CST; 7s ago
+/etc/systemd/system/multi-user.target.wants/haproxy.service
+Removed /etc/systemd/system/multi-user.target.wants/haproxy.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/haproxy.service’: No such file or directory
+     Active: active (running) since Sun 2023-01-01 17:53:38 CST; 40s ago
+Sun Jan  1 17:54:22 2023 - INFO  - Finish test!
+Sun Jan  1 17:54:27 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 17:54:31 2023 - INFO  - start environment cleanup.
+Sun Jan  1 17:55:17 2023 - INFO  - Finish environment cleanup!

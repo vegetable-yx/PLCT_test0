@@ -1,0 +1,15 @@
+Sun Jan  1 13:29:45 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 13:31:19 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 13:31:21 2023 - INFO  - Start to run test.
+     Active: active (listening) since Sun 2023-01-01 13:31:21 CST; 7s ago
+     Active: inactive (dead)
+     Active: active (listening) since Sun 2023-01-01 13:31:35 CST; 6s ago
+/etc/systemd/system/sockets.target.wants/virtnodedevd.socket
+Removed /etc/systemd/system/sockets.target.wants/virtnodedevd.socket.
+find: ‘/etc/systemd/system/sockets.target.wants/virtnodedevd.socket’: No such file or directory
+Failed to reload virtnodedevd.socket: Job type reload is not applicable for unit virtnodedevd.socket.
+     Active: active (listening) since Sun 2023-01-01 13:31:35 CST; 27s ago
+Sun Jan  1 13:32:04 2023 - INFO  - End of the test.
+Sun Jan  1 13:32:05 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 13:32:06 2023 - INFO  - start environment cleanup.
+Sun Jan  1 13:32:57 2023 - INFO  - Finish environment cleanup!

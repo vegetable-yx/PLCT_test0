@@ -1,0 +1,31 @@
+Sun Jan  1 12:23:06 2023 - INFO  - Start environmental preparation.
+Sun Jan  1 12:25:41 2023 - INFO  - End of environmental preparation!
+Sun Jan  1 12:25:42 2023 - INFO  - Start testing...
+     Active: active (running) since Sun 2023-01-01 12:25:44 CST; 6s ago
+Warning: Stopping virtstoraged.service, but it can still be activated by:
+  virtstoraged-admin.socket
+  virtstoraged.socket
+  virtstoraged-ro.socket
+     Active: inactive (dead) since Sun 2023-01-01 12:25:51 CST; 6s ago
+     Active: active (running) since Sun 2023-01-01 12:25:59 CST; 6s ago
+/etc/systemd/system/multi-user.target.wants/virtstoraged.service
+/etc/systemd/system/sockets.target.wants/virtstoraged.socket
+/etc/systemd/system/sockets.target.wants/virtstoraged-ro.socket
+/etc/systemd/system/sockets.target.wants/virtstoraged-admin.socket
+Removed /etc/systemd/system/sockets.target.wants/virtstoraged-ro.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtstoraged.socket.
+Removed /etc/systemd/system/sockets.target.wants/virtstoraged-admin.socket.
+Removed /etc/systemd/system/multi-user.target.wants/virtstoraged.service.
+find: ‘/etc/systemd/system/multi-user.target.wants/virtstoraged.service’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtstoraged.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtstoraged-ro.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtstoraged-admin.socket’: No such file or directory
+     Active: active (running) since Sun 2023-01-01 12:25:59 CST; 40s ago
+Sun Jan  1 12:26:41 2023 - INFO  - Finish test!
+Sun Jan  1 12:26:42 2023 - INFO  - succeed to execute the case.
+Sun Jan  1 12:26:43 2023 - INFO  - start environment cleanup.
+Warning: Stopping virtstoraged.service, but it can still be activated by:
+  virtstoraged-ro.socket
+  virtstoraged-admin.socket
+  virtstoraged.socket
+Sun Jan  1 12:28:04 2023 - INFO  - Finish environment cleanup!
