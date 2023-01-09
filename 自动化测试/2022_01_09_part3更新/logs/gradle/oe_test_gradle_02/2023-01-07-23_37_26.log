@@ -1,0 +1,561 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Jan  7 23:38:11 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL gradle
++ pkgs=gradle
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs gradle --node 1 --tempfile ''
+Sun Jan  8 00:07:34 2023 - ERROR - Timeout : Command 'bash -x oe_test_gradle_02.sh' timed out after 1799.96901613 seconds
++ tmpfile2='Last metadata expiration check: 23:58:55 ago on Fri 06 Jan 2023 11:43:55 PM CST.
+Dependencies resolved.
+======================================================================================
+ Package                                Arch     Version               Repo       Size
+======================================================================================
+Installing:
+ gradle                                 noarch   4.4.1-3.oe2203        mainline  9.2 M
+Installing dependencies:
+ aopalliance                            noarch   1.0-19.oe2203         mainline   15 k
+ apache-commons-configuration           noarch   1.10-13.oe2203        mainline  353 k
+ apache-parent                          noarch   19-5.oe2203           mainline   15 k
+ apache-resource-bundles                noarch   2-23.oe2203           mainline   27 k
+ apr                                    riscv64  1.7.0-4.oe2203        mainline  105 k
+ aqute-bnd                              noarch   3.5.0-9.oe2203        mainline  1.6 M
+ args4j                                 noarch   2.33-6.oe2203         mainline  166 k
+ avalon-framework                       noarch   4.3-24.oe2203         mainline   87 k
+ avalon-logkit                          noarch   2.1-34.oe2203         mainline   83 k
+ aws-sdk-java                           noarch   1.11.3-8.oe2203       mainline   47 M
+ batik                                  noarch   1.10-6.oe2203         mainline   13 M
+ bcel                                   noarch   6.4.1-1.oe2203        mainline  1.2 M
+ cdi-api                                noarch   1.2-9.oe2203          mainline  140 k
+ dain-snappy                            noarch   0.4-7.oe2203          mainline   89 k
+ ed25519-java                           noarch   0.3.0-4.oe2203        mainline   71 k
+ extra166y                              noarch   1.7.0-11.oe2203       mainline  676 k
+ fasterxml-oss-parent                   noarch   26-8.oe2203           mainline   18 k
+ fontbox                                noarch   2.0.25-1.oe2203       mainline  1.5 M
+ fop                                    noarch   2.2-5.oe2203          mainline  7.9 M
+ geronimo-annotation                    noarch   1.0-25.oe2203         mainline   22 k
+ google-guice                           noarch   4.1-13.oe2203         mainline  461 k
+ gpars                                  noarch   1.2.1-13.oe2203       mainline  568 k
+ groovy                                 noarch   2.4.8-10.oe2203       mainline   19 M
+ jackson-bom                            noarch   2.9.8-1.oe2203        mainline   15 k
+ jackson-dataformats-binary             noarch   2.9.4-6.oe2203        mainline  237 k
+ jackson-parent                         noarch   2.9.1-4.oe2203        mainline   15 k
+ jatl                                   noarch   0.2.2-15.oe2203       mainline   80 k
+ javaewah                               noarch   1.1.6-5.oe2203        mainline  159 k
+ jboss-interceptors-1.2-api             noarch   1.0.1-1.oe2203        mainline   53 k
+ jcip-annotations                       noarch   1-25.20060626.oe2203  mainline   24 k
+ jdom2                                  noarch   2.0.6-15.oe2203       mainline  867 k
+ jgit                                   noarch   5.4.0-1.oe2203        mainline  3.0 M
+ jsoup                                  noarch   1.14.2-1.oe2203       mainline  598 k
+ kohsuke-pom                            noarch   14-1.oe2203           mainline   10 k
+ libtcnative-1-0                        riscv64  1.2.23-4.oe2203       mainline   73 k
+ maven-archiver                         noarch   3.5.2-1.oe2203        mainline   62 k
+ maven-artifact-manager                 noarch   2.2.1-60.oe2203       mainline   76 k
+ maven-artifact-resolver                noarch   1:1.0-21.oe2203       mainline   27 k
+ maven-artifact-transfer                noarch   1:0.9.0-7.oe2203      mainline   80 k
+ maven-common-artifact-filters          noarch   3.0.1-7.oe2203        mainline  112 k
+ maven-compiler-plugin                  noarch   3.8.0-2.oe2203        mainline   69 k
+ maven-doxia-core                       noarch   1.7-12.oe2203         mainline  159 k
+ maven-doxia-logging-api                noarch   1.7-12.oe2203         mainline   23 k
+ maven-doxia-module-apt                 noarch   1.7-12.oe2203         mainline   56 k
+ maven-doxia-module-fml                 noarch   1.7-12.oe2203         mainline   45 k
+ maven-doxia-module-fo                  noarch   1.7-12.oe2203         mainline   65 k
+ maven-doxia-module-markdown            noarch   1.7-12.oe2203         mainline   22 k
+ maven-doxia-module-xdoc                noarch   1.7-12.oe2203         mainline   43 k
+ maven-doxia-module-xhtml               noarch   1.7-12.oe2203         mainline   24 k
+ maven-doxia-sink-api                   noarch   1.7-12.oe2203         mainline   19 k
+ maven-doxia-sitetools                  noarch   1.7.5-5.oe2203        mainline  293 k
+ maven-enforcer-api                     noarch   1.4.1-11.oe2203       mainline   19 k
+ maven-enforcer-plugin                  noarch   1.4.1-11.oe2203       mainline   35 k
+ maven-enforcer-rules                   noarch   1.4.1-11.oe2203       mainline  101 k
+ maven-filtering                        noarch   3.1.1-7.oe2203        mainline  100 k
+ maven-jar-plugin                       noarch   3.1.0-3.oe2203        mainline   37 k
+ maven-lib                              noarch   1:3.6.3-1.oe2203      mainline  1.5 M
+ maven-monitor                          noarch   2.2.1-60.oe2203       mainline   23 k
+ maven-parent                           noarch   27-7.oe2203           mainline   18 k
+ maven-plugin-build-helper              noarch   1.9.1-10.oe2203       mainline   54 k
+ maven-plugin-bundle                    noarch   3.5.0-5.oe2203        mainline  202 k
+ maven-plugin-registry                  noarch   2.2.1-60.oe2203       mainline   38 k
+ maven-plugin-testing-harness           noarch   3.3.0-14.oe2203       mainline   56 k
+ maven-plugin-tools                     noarch   3.5.1-7.oe2203        mainline  314 k
+ maven-profile                          noarch   2.2.1-60.oe2203       mainline   43 k
+ maven-project                          noarch   2.2.1-60.oe2203       mainline  162 k
+ maven-remote-resources-plugin          noarch   1.5-4.oe2203          mainline   72 k
+ maven-reporting-api                    noarch   3.0-17.oe2203         mainline   40 k
+ maven-reporting-impl                   noarch   3.0.0-5.oe2203        mainline   31 k
+ maven-settings                         noarch   2.2.1-60.oe2203       mainline   57 k
+ maven-shared-incremental               noarch   1.1-16.oe2203         mainline   42 k
+ maven-surefire                         noarch   2.22.0-6.oe2203       mainline  811 k
+ maven-surefire-plugin                  noarch   2.22.0-6.oe2203       mainline   33 k
+ maven-wagon-http                       noarch   3.1.0-2.oe2203        mainline   20 k
+ maven-wagon-http-shared                noarch   3.1.0-2.oe2203        mainline   42 k
+ multiverse                             noarch   0.7.0-10.oe2203       mainline  562 k
+ native-platform                        riscv64  0.14-15.oe2203        mainline  164 k
+ nekohtml                               noarch   1.9.22-8.oe2203       mainline  253 k
+ netty-tcnative                         riscv64  1.1.33-1.oe2203       mainline   75 k
+ netty3                                 noarch   3.10.6-6.oe2203       mainline  2.3 M
+ osgi-annotation                        noarch   7.0.0-1.oe2203        mainline   23 k
+ plexus-archiver                        noarch   4.2.6-1.oe2203        mainline  376 k
+ plexus-cli                             noarch   1.6-9.oe2203          mainline   20 k
+ plexus-compiler                        noarch   2.8.2-4.oe2203        mainline  170 k
+ plexus-components-pom                  noarch   1.3.1-14.oe2203       mainline   13 k
+ plexus-containers-component-metadata   noarch   1.7.1-7.oe2203        mainline  113 k
+ plexus-containers-container-default    noarch   1.7.1-7.oe2203        mainline  194 k
+ plexus-i18n                            noarch   1.0-0.12.b10.6.oe2203 mainline   20 k
+ plexus-pom                             noarch   5.0-4.oe2203          mainline   16 k
+ plexus-resources                       noarch   1.0-0.25.a7.oe2203    mainline   27 k
+ plexus-velocity                        noarch   1.2-6.oe2203          mainline   20 k
+ sisu-inject                            noarch   1:0.3.3-5.oe2203      mainline  860 k
+ tesla-polyglot-groovy                  noarch   0.2.1-3.oe2203        mainline   55 k
+ xbean                                  noarch   4.9-3.oe2203          mainline  755 k
+
+Transaction Summary
+======================================================================================
+Install  95 Packages
+
+Total size: 119 M
+Installed size: 996 M
+Downloading Packages:
+[SKIPPED] aopalliance-1.0-19.oe2203.noarch.rpm: Already downloaded             
+[SKIPPED] apache-commons-configuration-1.10-13.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] apache-parent-19-5.oe2203.noarch.rpm: Already downloaded             
+[SKIPPED] apache-resource-bundles-2-23.oe2203.noarch.rpm: Already downloaded   
+[SKIPPED] apr-1.7.0-4.oe2203.riscv64.rpm: Already downloaded                   
+[SKIPPED] aqute-bnd-3.5.0-9.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] args4j-2.33-6.oe2203.noarch.rpm: Already downloaded                  
+[SKIPPED] avalon-framework-4.3-24.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] avalon-logkit-2.1-34.oe2203.noarch.rpm: Already downloaded           
+[SKIPPED] aws-sdk-java-1.11.3-8.oe2203.noarch.rpm: Already downloaded          
+[SKIPPED] batik-1.10-6.oe2203.noarch.rpm: Already downloaded                   
+[SKIPPED] bcel-6.4.1-1.oe2203.noarch.rpm: Already downloaded                   
+[SKIPPED] cdi-api-1.2-9.oe2203.noarch.rpm: Already downloaded                  
+[SKIPPED] dain-snappy-0.4-7.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] ed25519-java-0.3.0-4.oe2203.noarch.rpm: Already downloaded           
+[SKIPPED] extra166y-1.7.0-11.oe2203.noarch.rpm: Already downloaded             
+[SKIPPED] fasterxml-oss-parent-26-8.oe2203.noarch.rpm: Already downloaded      
+[SKIPPED] fontbox-2.0.25-1.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] fop-2.2-5.oe2203.noarch.rpm: Already downloaded                      
+[SKIPPED] geronimo-annotation-1.0-25.oe2203.noarch.rpm: Already downloaded     
+[SKIPPED] google-guice-4.1-13.oe2203.noarch.rpm: Already downloaded            
+[SKIPPED] gpars-1.2.1-13.oe2203.noarch.rpm: Already downloaded                 
+[SKIPPED] gradle-4.4.1-3.oe2203.noarch.rpm: Already downloaded                 
+[SKIPPED] groovy-2.4.8-10.oe2203.noarch.rpm: Already downloaded                
+[SKIPPED] jackson-bom-2.9.8-1.oe2203.noarch.rpm: Already downloaded            
+[SKIPPED] jackson-dataformats-binary-2.9.4-6.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] jackson-parent-2.9.1-4.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] jatl-0.2.2-15.oe2203.noarch.rpm: Already downloaded                  
+[SKIPPED] javaewah-1.1.6-5.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] jboss-interceptors-1.2-api-1.0.1-1.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] jcip-annotations-1-25.20060626.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] jdom2-2.0.6-15.oe2203.noarch.rpm: Already downloaded                 
+[SKIPPED] jgit-5.4.0-1.oe2203.noarch.rpm: Already downloaded                   
+[SKIPPED] jsoup-1.14.2-1.oe2203.noarch.rpm: Already downloaded                 
+[SKIPPED] kohsuke-pom-14-1.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] libtcnative-1-0-1.2.23-4.oe2203.riscv64.rpm: Already downloaded      
+[SKIPPED] maven-archiver-3.5.2-1.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] maven-artifact-manager-2.2.1-60.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-artifact-resolver-1.0-21.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-artifact-transfer-0.9.0-7.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-common-artifact-filters-3.0.1-7.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-compiler-plugin-3.8.0-2.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-doxia-core-1.7-12.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] maven-doxia-logging-api-1.7-12.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-doxia-module-apt-1.7-12.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-doxia-module-fml-1.7-12.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-doxia-module-fo-1.7-12.oe2203.noarch.rpm: Already downloaded   
+[SKIPPED] maven-doxia-module-markdown-1.7-12.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-doxia-module-xdoc-1.7-12.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-doxia-module-xhtml-1.7-12.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-doxia-sink-api-1.7-12.oe2203.noarch.rpm: Already downloaded    
+[SKIPPED] maven-doxia-sitetools-1.7.5-5.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-enforcer-api-1.4.1-11.oe2203.noarch.rpm: Already downloaded    
+[SKIPPED] maven-enforcer-plugin-1.4.1-11.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-enforcer-rules-1.4.1-11.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-filtering-3.1.1-7.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] maven-jar-plugin-3.1.0-3.oe2203.noarch.rpm: Already downloaded       
+[SKIPPED] maven-lib-3.6.3-1.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] maven-monitor-2.2.1-60.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] maven-parent-27-7.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] maven-plugin-build-helper-1.9.1-10.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-plugin-bundle-3.5.0-5.oe2203.noarch.rpm: Already downloaded    
+[SKIPPED] maven-plugin-registry-2.2.1-60.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-plugin-testing-harness-3.3.0-14.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-plugin-tools-3.5.1-7.oe2203.noarch.rpm: Already downloaded     
+[SKIPPED] maven-profile-2.2.1-60.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] maven-project-2.2.1-60.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] maven-remote-resources-plugin-1.5-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-reporting-api-3.0-17.oe2203.noarch.rpm: Already downloaded     
+[SKIPPED] maven-reporting-impl-3.0.0-5.oe2203.noarch.rpm: Already downloaded   
+[SKIPPED] maven-settings-2.2.1-60.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] maven-shared-incremental-1.1-16.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-surefire-2.22.0-6.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] maven-surefire-plugin-2.22.0-6.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-wagon-http-3.1.0-2.oe2203.noarch.rpm: Already downloaded       
+[SKIPPED] maven-wagon-http-shared-3.1.0-2.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] multiverse-0.7.0-10.oe2203.noarch.rpm: Already downloaded            
+[SKIPPED] native-platform-0.14-15.oe2203.riscv64.rpm: Already downloaded       
+[SKIPPED] nekohtml-1.9.22-8.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] netty-tcnative-1.1.33-1.oe2203.riscv64.rpm: Already downloaded       
+[SKIPPED] netty3-3.10.6-6.oe2203.noarch.rpm: Already downloaded                
+[SKIPPED] osgi-annotation-7.0.0-1.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] plexus-archiver-4.2.6-1.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] plexus-cli-1.6-9.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] plexus-compiler-2.8.2-4.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] plexus-components-pom-1.3.1-14.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] plexus-containers-component-metadata-1.7.1-7.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] plexus-containers-container-default-1.7.1-7.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] plexus-i18n-1.0-0.12.b10.6.oe2203.noarch.rpm: Already downloaded     
+[SKIPPED] plexus-pom-5.0-4.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] plexus-resources-1.0-0.25.a7.oe2203.noarch.rpm: Already downloaded   
+[SKIPPED] plexus-velocity-1.2-6.oe2203.noarch.rpm: Already downloaded          
+[SKIPPED] sisu-inject-0.3.3-5.oe2203.noarch.rpm: Already downloaded            
+[SKIPPED] tesla-polyglot-groovy-0.2.1-3.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] xbean-4.9-3.oe2203.noarch.rpm: Already downloaded                    
+Running transaction check
+Waiting for process with pid 960 to finish.
+Waiting for process with pid 4266 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/mainline-c9af0cb5497c393d/packages/groovy-2.4.8-10.oe2203.noarch.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sun Jan  8 00:17:55 2023 - INFO  - Start to restore the test environment.
++++ ls
++++ grep -vE '\.sh'
+++ rm -rf .gradle/
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Sun Jan  8 00:18:07 2023 - WARN  - no thing to do.
+++ return 0
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jan  8 00:18:17 2023 - INFO  - End to restore the test environment.
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 23:58:55 ago on Fri 06 Jan 2023 11:43:55 PM CST.
+Dependencies resolved.
+======================================================================================
+ Package                                Arch     Version               Repo       Size
+======================================================================================
+Installing:
+ gradle                                 noarch   4.4.1-3.oe2203        mainline  9.2 M
+Installing dependencies:
+ aopalliance                            noarch   1.0-19.oe2203         mainline   15 k
+ apache-commons-configuration           noarch   1.10-13.oe2203        mainline  353 k
+ apache-parent                          noarch   19-5.oe2203           mainline   15 k
+ apache-resource-bundles                noarch   2-23.oe2203           mainline   27 k
+ apr                                    riscv64  1.7.0-4.oe2203        mainline  105 k
+ aqute-bnd                              noarch   3.5.0-9.oe2203        mainline  1.6 M
+ args4j                                 noarch   2.33-6.oe2203         mainline  166 k
+ avalon-framework                       noarch   4.3-24.oe2203         mainline   87 k
+ avalon-logkit                          noarch   2.1-34.oe2203         mainline   83 k
+ aws-sdk-java                           noarch   1.11.3-8.oe2203       mainline   47 M
+ batik                                  noarch   1.10-6.oe2203         mainline   13 M
+ bcel                                   noarch   6.4.1-1.oe2203        mainline  1.2 M
+ cdi-api                                noarch   1.2-9.oe2203          mainline  140 k
+ dain-snappy                            noarch   0.4-7.oe2203          mainline   89 k
+ ed25519-java                           noarch   0.3.0-4.oe2203        mainline   71 k
+ extra166y                              noarch   1.7.0-11.oe2203       mainline  676 k
+ fasterxml-oss-parent                   noarch   26-8.oe2203           mainline   18 k
+ fontbox                                noarch   2.0.25-1.oe2203       mainline  1.5 M
+ fop                                    noarch   2.2-5.oe2203          mainline  7.9 M
+ geronimo-annotation                    noarch   1.0-25.oe2203         mainline   22 k
+ google-guice                           noarch   4.1-13.oe2203         mainline  461 k
+ gpars                                  noarch   1.2.1-13.oe2203       mainline  568 k
+ groovy                                 noarch   2.4.8-10.oe2203       mainline   19 M
+ jackson-bom                            noarch   2.9.8-1.oe2203        mainline   15 k
+ jackson-dataformats-binary             noarch   2.9.4-6.oe2203        mainline  237 k
+ jackson-parent                         noarch   2.9.1-4.oe2203        mainline   15 k
+ jatl                                   noarch   0.2.2-15.oe2203       mainline   80 k
+ javaewah                               noarch   1.1.6-5.oe2203        mainline  159 k
+ jboss-interceptors-1.2-api             noarch   1.0.1-1.oe2203        mainline   53 k
+ jcip-annotations                       noarch   1-25.20060626.oe2203  mainline   24 k
+ jdom2                                  noarch   2.0.6-15.oe2203       mainline  867 k
+ jgit                                   noarch   5.4.0-1.oe2203        mainline  3.0 M
+ jsoup                                  noarch   1.14.2-1.oe2203       mainline  598 k
+ kohsuke-pom                            noarch   14-1.oe2203           mainline   10 k
+ libtcnative-1-0                        riscv64  1.2.23-4.oe2203       mainline   73 k
+ maven-archiver                         noarch   3.5.2-1.oe2203        mainline   62 k
+ maven-artifact-manager                 noarch   2.2.1-60.oe2203       mainline   76 k
+ maven-artifact-resolver                noarch   1:1.0-21.oe2203       mainline   27 k
+ maven-artifact-transfer                noarch   1:0.9.0-7.oe2203      mainline   80 k
+ maven-common-artifact-filters          noarch   3.0.1-7.oe2203        mainline  112 k
+ maven-compiler-plugin                  noarch   3.8.0-2.oe2203        mainline   69 k
+ maven-doxia-core                       noarch   1.7-12.oe2203         mainline  159 k
+ maven-doxia-logging-api                noarch   1.7-12.oe2203         mainline   23 k
+ maven-doxia-module-apt                 noarch   1.7-12.oe2203         mainline   56 k
+ maven-doxia-module-fml                 noarch   1.7-12.oe2203         mainline   45 k
+ maven-doxia-module-fo                  noarch   1.7-12.oe2203         mainline   65 k
+ maven-doxia-module-markdown            noarch   1.7-12.oe2203         mainline   22 k
+ maven-doxia-module-xdoc                noarch   1.7-12.oe2203         mainline   43 k
+ maven-doxia-module-xhtml               noarch   1.7-12.oe2203         mainline   24 k
+ maven-doxia-sink-api                   noarch   1.7-12.oe2203         mainline   19 k
+ maven-doxia-sitetools                  noarch   1.7.5-5.oe2203        mainline  293 k
+ maven-enforcer-api                     noarch   1.4.1-11.oe2203       mainline   19 k
+ maven-enforcer-plugin                  noarch   1.4.1-11.oe2203       mainline   35 k
+ maven-enforcer-rules                   noarch   1.4.1-11.oe2203       mainline  101 k
+ maven-filtering                        noarch   3.1.1-7.oe2203        mainline  100 k
+ maven-jar-plugin                       noarch   3.1.0-3.oe2203        mainline   37 k
+ maven-lib                              noarch   1:3.6.3-1.oe2203      mainline  1.5 M
+ maven-monitor                          noarch   2.2.1-60.oe2203       mainline   23 k
+ maven-parent                           noarch   27-7.oe2203           mainline   18 k
+ maven-plugin-build-helper              noarch   1.9.1-10.oe2203       mainline   54 k
+ maven-plugin-bundle                    noarch   3.5.0-5.oe2203        mainline  202 k
+ maven-plugin-registry                  noarch   2.2.1-60.oe2203       mainline   38 k
+ maven-plugin-testing-harness           noarch   3.3.0-14.oe2203       mainline   56 k
+ maven-plugin-tools                     noarch   3.5.1-7.oe2203        mainline  314 k
+ maven-profile                          noarch   2.2.1-60.oe2203       mainline   43 k
+ maven-project                          noarch   2.2.1-60.oe2203       mainline  162 k
+ maven-remote-resources-plugin          noarch   1.5-4.oe2203          mainline   72 k
+ maven-reporting-api                    noarch   3.0-17.oe2203         mainline   40 k
+ maven-reporting-impl                   noarch   3.0.0-5.oe2203        mainline   31 k
+ maven-settings                         noarch   2.2.1-60.oe2203       mainline   57 k
+ maven-shared-incremental               noarch   1.1-16.oe2203         mainline   42 k
+ maven-surefire                         noarch   2.22.0-6.oe2203       mainline  811 k
+ maven-surefire-plugin                  noarch   2.22.0-6.oe2203       mainline   33 k
+ maven-wagon-http                       noarch   3.1.0-2.oe2203        mainline   20 k
+ maven-wagon-http-shared                noarch   3.1.0-2.oe2203        mainline   42 k
+ multiverse                             noarch   0.7.0-10.oe2203       mainline  562 k
+ native-platform                        riscv64  0.14-15.oe2203        mainline  164 k
+ nekohtml                               noarch   1.9.22-8.oe2203       mainline  253 k
+ netty-tcnative                         riscv64  1.1.33-1.oe2203       mainline   75 k
+ netty3                                 noarch   3.10.6-6.oe2203       mainline  2.3 M
+ osgi-annotation                        noarch   7.0.0-1.oe2203        mainline   23 k
+ plexus-archiver                        noarch   4.2.6-1.oe2203        mainline  376 k
+ plexus-cli                             noarch   1.6-9.oe2203          mainline   20 k
+ plexus-compiler                        noarch   2.8.2-4.oe2203        mainline  170 k
+ plexus-components-pom                  noarch   1.3.1-14.oe2203       mainline   13 k
+ plexus-containers-component-metadata   noarch   1.7.1-7.oe2203        mainline  113 k
+ plexus-containers-container-default    noarch   1.7.1-7.oe2203        mainline  194 k
+ plexus-i18n                            noarch   1.0-0.12.b10.6.oe2203 mainline   20 k
+ plexus-pom                             noarch   5.0-4.oe2203          mainline   16 k
+ plexus-resources                       noarch   1.0-0.25.a7.oe2203    mainline   27 k
+ plexus-velocity                        noarch   1.2-6.oe2203          mainline   20 k
+ sisu-inject                            noarch   1:0.3.3-5.oe2203      mainline  860 k
+ tesla-polyglot-groovy                  noarch   0.2.1-3.oe2203        mainline   55 k
+ xbean                                  noarch   4.9-3.oe2203          mainline  755 k
+
+Transaction Summary
+======================================================================================
+Install  95 Packages
+
+Total size: 119 M
+Installed size: 996 M
+Downloading Packages:
+[SKIPPED] aopalliance-1.0-19.oe2203.noarch.rpm: Already downloaded             
+[SKIPPED] apache-commons-configuration-1.10-13.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] apache-parent-19-5.oe2203.noarch.rpm: Already downloaded             
+[SKIPPED] apache-resource-bundles-2-23.oe2203.noarch.rpm: Already downloaded   
+[SKIPPED] apr-1.7.0-4.oe2203.riscv64.rpm: Already downloaded                   
+[SKIPPED] aqute-bnd-3.5.0-9.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] args4j-2.33-6.oe2203.noarch.rpm: Already downloaded                  
+[SKIPPED] avalon-framework-4.3-24.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] avalon-logkit-2.1-34.oe2203.noarch.rpm: Already downloaded           
+[SKIPPED] aws-sdk-java-1.11.3-8.oe2203.noarch.rpm: Already downloaded          
+[SKIPPED] batik-1.10-6.oe2203.noarch.rpm: Already downloaded                   
+[SKIPPED] bcel-6.4.1-1.oe2203.noarch.rpm: Already downloaded                   
+[SKIPPED] cdi-api-1.2-9.oe2203.noarch.rpm: Already downloaded                  
+[SKIPPED] dain-snappy-0.4-7.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] ed25519-java-0.3.0-4.oe2203.noarch.rpm: Already downloaded           
+[SKIPPED] extra166y-1.7.0-11.oe2203.noarch.rpm: Already downloaded             
+[SKIPPED] fasterxml-oss-parent-26-8.oe2203.noarch.rpm: Already downloaded      
+[SKIPPED] fontbox-2.0.25-1.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] fop-2.2-5.oe2203.noarch.rpm: Already downloaded                      
+[SKIPPED] geronimo-annotation-1.0-25.oe2203.noarch.rpm: Already downloaded     
+[SKIPPED] google-guice-4.1-13.oe2203.noarch.rpm: Already downloaded            
+[SKIPPED] gpars-1.2.1-13.oe2203.noarch.rpm: Already downloaded                 
+[SKIPPED] gradle-4.4.1-3.oe2203.noarch.rpm: Already downloaded                 
+[SKIPPED] groovy-2.4.8-10.oe2203.noarch.rpm: Already downloaded                
+[SKIPPED] jackson-bom-2.9.8-1.oe2203.noarch.rpm: Already downloaded            
+[SKIPPED] jackson-dataformats-binary-2.9.4-6.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] jackson-parent-2.9.1-4.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] jatl-0.2.2-15.oe2203.noarch.rpm: Already downloaded                  
+[SKIPPED] javaewah-1.1.6-5.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] jboss-interceptors-1.2-api-1.0.1-1.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] jcip-annotations-1-25.20060626.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] jdom2-2.0.6-15.oe2203.noarch.rpm: Already downloaded                 
+[SKIPPED] jgit-5.4.0-1.oe2203.noarch.rpm: Already downloaded                   
+[SKIPPED] jsoup-1.14.2-1.oe2203.noarch.rpm: Already downloaded                 
+[SKIPPED] kohsuke-pom-14-1.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] libtcnative-1-0-1.2.23-4.oe2203.riscv64.rpm: Already downloaded      
+[SKIPPED] maven-archiver-3.5.2-1.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] maven-artifact-manager-2.2.1-60.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-artifact-resolver-1.0-21.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-artifact-transfer-0.9.0-7.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-common-artifact-filters-3.0.1-7.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-compiler-plugin-3.8.0-2.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-doxia-core-1.7-12.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] maven-doxia-logging-api-1.7-12.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-doxia-module-apt-1.7-12.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-doxia-module-fml-1.7-12.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-doxia-module-fo-1.7-12.oe2203.noarch.rpm: Already downloaded   
+[SKIPPED] maven-doxia-module-markdown-1.7-12.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-doxia-module-xdoc-1.7-12.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-doxia-module-xhtml-1.7-12.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-doxia-sink-api-1.7-12.oe2203.noarch.rpm: Already downloaded    
+[SKIPPED] maven-doxia-sitetools-1.7.5-5.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-enforcer-api-1.4.1-11.oe2203.noarch.rpm: Already downloaded    
+[SKIPPED] maven-enforcer-plugin-1.4.1-11.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-enforcer-rules-1.4.1-11.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] maven-filtering-3.1.1-7.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] maven-jar-plugin-3.1.0-3.oe2203.noarch.rpm: Already downloaded       
+[SKIPPED] maven-lib-3.6.3-1.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] maven-monitor-2.2.1-60.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] maven-parent-27-7.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] maven-plugin-build-helper-1.9.1-10.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-plugin-bundle-3.5.0-5.oe2203.noarch.rpm: Already downloaded    
+[SKIPPED] maven-plugin-registry-2.2.1-60.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-plugin-testing-harness-3.3.0-14.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-plugin-tools-3.5.1-7.oe2203.noarch.rpm: Already downloaded     
+[SKIPPED] maven-profile-2.2.1-60.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] maven-project-2.2.1-60.oe2203.noarch.rpm: Already downloaded         
+[SKIPPED] maven-remote-resources-plugin-1.5-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-reporting-api-3.0-17.oe2203.noarch.rpm: Already downloaded     
+[SKIPPED] maven-reporting-impl-3.0.0-5.oe2203.noarch.rpm: Already downloaded   
+[SKIPPED] maven-settings-2.2.1-60.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] maven-shared-incremental-1.1-16.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] maven-surefire-2.22.0-6.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] maven-surefire-plugin-2.22.0-6.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] maven-wagon-http-3.1.0-2.oe2203.noarch.rpm: Already downloaded       
+[SKIPPED] maven-wagon-http-shared-3.1.0-2.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] multiverse-0.7.0-10.oe2203.noarch.rpm: Already downloaded            
+[SKIPPED] native-platform-0.14-15.oe2203.riscv64.rpm: Already downloaded       
+[SKIPPED] nekohtml-1.9.22-8.oe2203.noarch.rpm: Already downloaded              
+[SKIPPED] netty-tcnative-1.1.33-1.oe2203.riscv64.rpm: Already downloaded       
+[SKIPPED] netty3-3.10.6-6.oe2203.noarch.rpm: Already downloaded                
+[SKIPPED] osgi-annotation-7.0.0-1.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] plexus-archiver-4.2.6-1.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] plexus-cli-1.6-9.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] plexus-compiler-2.8.2-4.oe2203.noarch.rpm: Already downloaded        
+[SKIPPED] plexus-components-pom-1.3.1-14.oe2203.noarch.rpm: Already downloaded 
+[SKIPPED] plexus-containers-component-metadata-1.7.1-7.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] plexus-containers-container-default-1.7.1-7.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] plexus-i18n-1.0-0.12.b10.6.oe2203.noarch.rpm: Already downloaded     
+[SKIPPED] plexus-pom-5.0-4.oe2203.noarch.rpm: Already downloaded               
+[SKIPPED] plexus-resources-1.0-0.25.a7.oe2203.noarch.rpm: Already downloaded   
+[SKIPPED] plexus-velocity-1.2-6.oe2203.noarch.rpm: Already downloaded          
+[SKIPPED] sisu-inject-0.3.3-5.oe2203.noarch.rpm: Already downloaded            
+[SKIPPED] tesla-polyglot-groovy-0.2.1-3.oe2203.noarch.rpm: Already downloaded  
+[SKIPPED] xbean-4.9-3.oe2203.noarch.rpm: Already downloaded                    
+Running transaction check
+Waiting for process with pid 960 to finish.
+Waiting for process with pid 4266 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/mainline-c9af0cb5497c393d/packages/groovy-2.4.8-10.oe2203.noarch.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ mkdir subdir
++ cat
++ cat
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sun Jan  8 00:18:30 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 00:18:40 2023 - INFO  - Start to run test.
++ grep 'BUILD SUCCESSFUL'
++ gradle tasks init
+BUILD SUCCESSFUL in 25m 5s
++ CHECK_RESULT 0 0 0 'Check gradle tasks init failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle tasks init failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'BUILD SUCCESSFUL'
++ gradle tasks wrapper
+BUILD SUCCESSFUL in 8m 30s
++ CHECK_RESULT 0 0 0 'Check gradle tasks wrapper failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle tasks wrapper failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cp -f ../common/build.gradle ./
++ gradle -m build
++ grep 'BUILD SUCCESSFUL'
+BUILD SUCCESSFUL in 24m 33s
++ CHECK_RESULT 0 0 0 'Check gradle -m build failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle -m build failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'BUILD SUCCESSFUL'
++ gradle build --profile
+BUILD SUCCESSFUL in 8m 33s
++ CHECK_RESULT 0 0 0 'Check gradle build --profile failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle build --profile failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gradle -q -b subdir/myproject.gradle hello
++ grep 'using build file '\''.name'\'' in '\''.parentFile.name'\''.'
+using build file '.name' in '.parentFile.name'.
++ CHECK_RESULT 0 0 0 'Check gradle -q -b failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle -q -b failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'using build file '\''.name'\'' in '\''.parentFile.name'\''.'
++ gradle -q -p subdir hello
+using build file '.name' in '.parentFile.name'.
++ CHECK_RESULT 0 0 0 'Check gradle -q -p failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle -q -p failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gradle base
++ grep Task

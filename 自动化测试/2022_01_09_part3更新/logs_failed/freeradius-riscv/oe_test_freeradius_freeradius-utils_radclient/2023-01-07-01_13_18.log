@@ -1,0 +1,310 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Jan  7 01:13:33 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'freeradius freeradius-utils'
++ pkgs='freeradius freeradius-utils'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'freeradius freeradius-utils' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 1:02:20 ago on Sat 07 Jan 2023 12:12:48 AM CST.
+Error: 
+ Problem: conflicting requests
+  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 1:02:20 ago on Sat 07 Jan 2023 12:12:48 AM CST.
+Error: 
+ Problem: conflicting requests
+  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
++ systemctl start radiusd
+Failed to start radiusd.service: Unit radiusd.service not found.
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sat Jan  7 01:15:21 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sat Jan  7 01:15:24 2023 - INFO  - Start to run test.
++ echo 'Message-Authenticator = 0x00'
++ radclient -4 127.0.0.1 status testing123
++ grep 'Received Access-Accept'
+oe_test_freeradius_freeradius-utils_radclient.sh: line 34: radclient: command not found
++ CHECK_RESULT 1 0 0 'radclient -4 execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -4 execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -4 execution failed.'
++ LOG_ERROR 'radclient -4 execution failed.'
++ message='radclient -4 execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -4 execution failed.'
+Sat Jan  7 01:15:27 2023 - ERROR - radclient -4 execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 35'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 35'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 35'
+Sat Jan  7 01:15:30 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 35
++ return 0
++ echo 'Message-Authenticator = 0x00'
++ grep 'Received Access-Accept'
++ radclient -6 '[::1]' status testing123
+oe_test_freeradius_freeradius-utils_radclient.sh: line 36: radclient: command not found
++ CHECK_RESULT 1 0 0 'radclient -6 execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -6 execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -6 execution failed.'
++ LOG_ERROR 'radclient -6 execution failed.'
++ message='radclient -6 execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -6 execution failed.'
+Sat Jan  7 01:15:33 2023 - ERROR - radclient -6 execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 37'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 37'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 37'
+Sat Jan  7 01:15:35 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 37
++ return 0
+++ echo 'Message-Authenticator = 0x00'
+++ grep -c 'Received Access-Accept'
+++ radclient -c 2 127.0.0.1 status testing123
+oe_test_freeradius_freeradius-utils_radclient.sh: line 38: radclient: command not found
++ '[' 0 -eq 2 ']'
++ CHECK_RESULT 1 0 0 'radclient -c execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -c execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -c execution failed.'
++ LOG_ERROR 'radclient -c execution failed.'
++ message='radclient -c execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -c execution failed.'
+Sat Jan  7 01:15:38 2023 - ERROR - radclient -c execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 39'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 39'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 39'
+Sat Jan  7 01:15:41 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 39
++ return 0
++ grep 'Received Access-Accept'
++ echo 'Message-Authenticator = 0x00'
++ radclient -d /etc/raddb 127.0.0.1 status testing123
+oe_test_freeradius_freeradius-utils_radclient.sh: line 40: radclient: command not found
++ CHECK_RESULT 1 0 0 'radclient -d execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -d execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -d execution failed.'
++ LOG_ERROR 'radclient -d execution failed.'
++ message='radclient -d execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -d execution failed.'
+Sat Jan  7 01:15:44 2023 - ERROR - radclient -d execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 41'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 41'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 41'
+Sat Jan  7 01:15:47 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 41
++ return 0
++ echo 'Message-Authenticator = 0x00'
++ radclient -D /usr/share/freeradius 127.0.0.1 status testing123
+oe_test_freeradius_freeradius-utils_radclient.sh: line 42: radclient: command not found
++ grep 'Received Access-Accept'
++ CHECK_RESULT 1 0 0 'radclient -D execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -D execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -D execution failed.'
++ LOG_ERROR 'radclient -D execution failed.'
++ message='radclient -D execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -D execution failed.'
+Sat Jan  7 01:15:49 2023 - ERROR - radclient -D execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 43'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 43'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 43'
+Sat Jan  7 01:15:52 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 43
++ return 0
++ echo 'Message-Authenticator = 0x00'
++ radclient -f /tmp/test 127.0.0.1 status testing123
++ grep 'Received Access-Accept'
+oe_test_freeradius_freeradius-utils_radclient.sh: line 45: radclient: command not found
++ CHECK_RESULT 1 0 0 'radclient -f execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -f execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -f execution failed.'
++ LOG_ERROR 'radclient -f execution failed.'
++ message='radclient -f execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -f execution failed.'
+Sat Jan  7 01:15:56 2023 - ERROR - radclient -f execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 46'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 46'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 46'
+Sat Jan  7 01:15:59 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 46
++ return 0
++ echo 'Message-Authenticator = 0x00'
++ radclient -F 127.0.0.1 status testing123
+oe_test_freeradius_freeradius-utils_radclient.sh: line 47: radclient: command not found
++ grep 'Received Access-Accept'
++ CHECK_RESULT 1 0 0 'radclient -F execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -F execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -F execution failed.'
++ LOG_ERROR 'radclient -F execution failed.'
++ message='radclient -F execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -F execution failed.'
+Sat Jan  7 01:16:01 2023 - ERROR - radclient -F execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 48'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 48'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 48'
+Sat Jan  7 01:16:04 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 48
++ return 0
++ grep -i Usage
++ radclient -h
++ CHECK_RESULT 1 0 0 'radclient -h execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -h execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -h execution failed.'
++ LOG_ERROR 'radclient -h execution failed.'
++ message='radclient -h execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -h execution failed.'
+Sat Jan  7 01:16:07 2023 - ERROR - radclient -h execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 50'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 50'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 50'
+Sat Jan  7 01:16:10 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 50
++ return 0
++ radclient -n 30 127.0.0.1 status testing123
++ grep 'Received Access-Accept'
+oe_test_freeradius_freeradius-utils_radclient.sh: line 51: radclient: command not found
++ echo 'Message-Authenticator = 0x00'
++ CHECK_RESULT 1 0 0 'radclient -n execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radclient -n execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radclient -n execution failed.'
++ LOG_ERROR 'radclient -n execution failed.'
++ message='radclient -n execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radclient -n execution failed.'
+Sat Jan  7 01:16:13 2023 - ERROR - radclient -n execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radclient.sh line 52'
++ message='oe_test_freeradius_freeradius-utils_radclient.sh line 52'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radclient.sh line 52'
+Sat Jan  7 01:16:15 2023 - ERROR - oe_test_freeradius_freeradius-utils_radclient.sh line 52
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sat Jan  7 01:16:17 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 9
++ test 9 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sat Jan  7 01:16:21 2023 - ERROR - failed to execute the case.
++ exit 9
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sat Jan  7 01:16:23 2023 - INFO  - Start to restore the test environment.
++ systemctl stop radiusd
+Failed to stop radiusd.service: Unit radiusd.service not loaded.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 1:02:20 ago on Sat 07 Jan 2023 12:12:48 AM CST.
+Error: 
+ Problem: conflicting requests
+  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64
+(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages) ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 1:02:20 ago on Sat 07 Jan 2023 12:12:48 AM CST.
+Error: 
+ Problem: conflicting requests
+  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
+Traceback (most recent call last):
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 1:02:20 ago on Sat 07 Jan 2023 12:12:48 AM CST.\nError: \n Problem: conflicting requests\n  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64\n(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)"
++ '[' 0 -ne 0 ']'
++ rm -rf /etc/raddb
++ rm -rf /var/log/radius
++ rm -rf /tmp/test
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sat Jan  7 01:16:37 2023 - INFO  - End to restore the test environment.

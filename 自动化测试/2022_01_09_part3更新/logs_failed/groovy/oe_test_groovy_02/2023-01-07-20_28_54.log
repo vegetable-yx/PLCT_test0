@@ -1,0 +1,159 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Jan  7 20:29:34 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL groovy
++ pkgs=groovy
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs groovy --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpdkn40_vn
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpdkn40_vn
++ cp ../common/test.groovy ./
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sat Jan  7 20:48:50 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sat Jan  7 20:48:58 2023 - INFO  - Start to run test.
++ groovyc -d /tmp/ test.groovy
++ CHECK_RESULT 0 0 0 'Check groovyc -d failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc -d failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f /tmp/test.class
++ rm -rf /tmp/test.class
++ CHECK_RESULT 0 0 0 'Check groovyc -d failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc -d failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ groovyc test.groovy
++ CHECK_RESULT 0 0 0 'Check groovyc failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test.class
++ rm -rf test.class
++ groovyc -e test.groovy
++ CHECK_RESULT 0 0 0 'Check groovyc -e failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc -e failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test.class
++ rm -rf test.class
++ CHECK_RESULT 0 0 0 'Check groovyc -e failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc -e failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ groovyc -cp lib/dep.jar test.groovy
++ CHECK_RESULT 0 0 0 'Check groovyc -cp failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc -cp failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test.class
++ rm -rf test.class
++ CHECK_RESULT 0 0 0 'Check groovyc -cp failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc -cp failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ groovyc --encoding utf-8 test.groovy
++ CHECK_RESULT 0 0 0 'Check groovyc --encoding failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc --encoding failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test.class
++ rm -rf test.class
++ CHECK_RESULT 0 0 0 'Check groovyc --encoding failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc --encoding failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ groovyc --indy test.groovy
++ CHECK_RESULT 0 0 0 'Check groovyc --indy failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check groovyc --indy failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test.class
++ CHECK_RESULT 0 0 0 'Check test.class not exist.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check test.class not exist.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ groovy test
++ grep 15
+Sat Jan  7 21:01:49 2023 - ERROR - Timeout : Command 'bash -x oe_test_groovy_02.sh' timed out after 1799.977075803 seconds

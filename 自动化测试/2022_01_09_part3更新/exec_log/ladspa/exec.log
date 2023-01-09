@@ -1,0 +1,8 @@
+Sun Jan  8 20:00:49 2023 - INFO  - start to run testcase:oe_test_ladspa_analyseplugin.
+Sun Jan  8 20:04:32 2023 - ERROR - The case exit by code 4.
+Sun Jan  8 20:04:36 2023 - INFO  - End to run testcase:oe_test_ladspa_analyseplugin.
+Sun Jan  8 20:04:38 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  8 20:04:53 2023 - INFO  - start to run testcase:oe_test_ladspa_applyplugin.
+Sun Jan  8 20:08:47 2023 - ERROR - The case exit by code 3.
+Sun Jan  8 20:08:49 2023 - INFO  - End to run testcase:oe_test_ladspa_applyplugin.
+Sun Jan  8 20:08:51 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.

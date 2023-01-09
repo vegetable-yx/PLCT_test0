@@ -1,0 +1,680 @@
++ source ../common/lib.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Sun Jan  8 15:01:49 2023 - INFO  - Start environment preparation.
++ pre_junit5
++ DNF_INSTALL junit5
++ pkgs=junit5
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs junit5 --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwcus5p31
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwcus5p31
+++ grep 'java-.*-openjdk'
+++ head -1
+++ rpm -qa 'java*'
+++ awk -F - '{print $2}'
++ java_version=1.8.0
++ DNF_INSTALL java-1.8.0-devel
++ pkgs=java-1.8.0-devel
++ node=1
++ '[' -z /tmp/tmpwcus5p31 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs java-1.8.0-devel --node 1 --tempfile /tmp/tmpwcus5p31
++ tmpfile2=/tmp/tmpwcus5p31
++ '[' -z /tmp/tmpwcus5p31 ']'
++ DNF_INSTALL 'ant ant-junit5'
++ pkgs='ant ant-junit5'
++ node=1
++ '[' -z /tmp/tmpwcus5p31 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'ant ant-junit5' --node 1 --tempfile /tmp/tmpwcus5p31
++ tmpfile2=/tmp/tmpwcus5p31
++ '[' -z /tmp/tmpwcus5p31 ']'
++ JAVA_HOME=/usr/lib/jvm/java-openjdk
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin
++ export JAVA_HOME PATH
++ export ANT_HOME=/usr/share/ant
++ ANT_HOME=/usr/share/ant
++ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:/usr/share/ant/bin
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:/usr/share/ant/bin
++ cp ../common/junit-platform-console-standalone-1.6.2.jar /usr/share/ant/lib/
++ mkdir -p junit5_ant/src/test/java/com/example/project/
++ mkdir -p junit5_ant/src/main/java/com/example/project/
++ cp Calculator.java junit5_ant/src/main/java/com/example/project/
++ cp CalculatorTests.java junit5_ant/src/test/java/com/example/project/
++ cp build.xml junit5_ant
++ cd junit5_ant
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Sun Jan  8 15:24:14 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Sun Jan  8 15:24:23 2023 - INFO  - Start testing...
++ ant -version
+Apache Ant(TM) version 1.10.12 compiled on July 29 2022
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wait
++ ant test
+Sun Jan  8 15:31:13 2023 - ERROR - Timeout : Command 'bash -x oe_test_junit5_ant.sh' timed out after 1799.9844772010001 seconds
+++ post_test
+++ LOG_INFO 'start environment cleanup.'
+++ message='start environment cleanup.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Sun Jan  8 15:31:24 2023 - INFO  - start environment cleanup.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z /tmp/tmpwcus5p31 ]]
+++ '[' 0 -ne 0 ']'
+++ '[' 1 == 0 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwcus5p31
+++ '[' 0 -ne 0 ']'
+++ rm -rf junit5_ant /tmp/ant_result
+++ source /etc/profile
++++ '[' -x /usr/bin/id ']'
++++ '[' -z 0 ']'
+++++ /usr/bin/id -un
++++ USER=root
++++ LOGNAME=root
++++ MAIL=/var/spool/mail/root
++++ '[' 0 = 0 ']'
++++ pathmunge /usr/sbin
++++ case ":${PATH}:" in
++++ pathmunge /usr/local/sbin
++++ case ":${PATH}:" in
+++++ /usr/bin/hostnamectl --transient
++++ HOSTNAME=openEuler-riscv64
++++ HISTSIZE=1000
++++ '[' '' = ignorespace ']'
++++ export HISTCONTROL=ignoredups
++++ HISTCONTROL=ignoredups
++++ export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
++++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
++++ '[' -r /etc/profile.d/color.sh ']'
++++ '[' hxB '!=' hxB ']'
++++ . /etc/profile.d/color.sh
+++++ alias 'ls=ls --color=auto'
+++++ alias 'll=ls -lh'
+++++ alias 'la=ls -lAh'
+++++ alias 'l.=ls -d .* --color=auto'
+++++ alias 'grep=grep --color=auto'
+++++ alias 'egrep=egrep --color=auto'
+++++ alias 'fgrep=fgrep --color=auto'
+++++ alias 'zgrep=zgrep --color=auto'
+++++ alias 'zfgrep=zfgrep --color=auto'
+++++ alias 'zegrep=zegrep --color=auto'
+++++ alias 'xzgrep=xzgrep --color=auto'
+++++ alias 'xzfgrep=xzfgrep --color=auto'
+++++ alias 'xzegrep=xzegrep --color=auto'
++++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
++++ '[' -r /etc/profile.d/flatpak.sh ']'
++++ '[' hxB '!=' hxB ']'
++++ . /etc/profile.d/flatpak.sh
+++++ command -v flatpak
++++++ new_dirs=
++++++ read -r install_path
++++++ unset G_MESSAGES_DEBUG
++++++ echo /root/.local/share/flatpak
++++++ GIO_USE_VFS=local
++++++ flatpak --installations
++++++ share_path=/root/.local/share/flatpak/exports/share
++++++ case ":$XDG_DATA_DIRS:" in
++++++ new_dirs=/root/.local/share/flatpak/exports/share
++++++ read -r install_path
++++++ share_path=/var/lib/flatpak/exports/share
++++++ case ":$XDG_DATA_DIRS:" in
++++++ new_dirs=/root/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share
++++++ read -r install_path
++++++ echo /root/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share
+++++ new_dirs=/root/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share
+++++ export XDG_DATA_DIRS
+++++ XDG_DATA_DIRS=/root/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
++++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
++++ '[' -r /etc/profile.d/gawk.sh ']'
++++ '[' hxB '!=' hxB ']'
++++ . /etc/profile.d/gawk.sh
++++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
++++ '[' -r /etc/profile.d/lang.sh ']'
++++ '[' hxB '!=' hxB ']'
++++ . /etc/profile.d/lang.sh
+++++ unset LANG_backup
++++++ /usr/bin/locale
+++++ '[' -n '' ']'
+++++ LANG_backup=en_US.UTF-8
+++++ for config in /etc/locale.conf "${HOME}/.i18n"
+++++ '[' -f /etc/locale.conf ']'
+++++ '[' -x /usr/bin/sed ']'
++++++ /usr/bin/sed -r -e 's/^[[:blank:]]*([[:upper:]_]+)=([[:print:][:digit:]\._-]+|"[[:print:][:digit:]\._-]+")/export \1=\2/;t;d' /etc/locale.conf
+++++ eval export LANG=en_US.UTF-8
++++++ export LANG=en_US.UTF-8
++++++ LANG=en_US.UTF-8
+++++ for config in /etc/locale.conf "${HOME}/.i18n"
+++++ '[' -f /root/.i18n ']'
+++++ '[' -n en_US.UTF-8 ']'
+++++ LANG=en_US.UTF-8
+++++ unset LANG_backup config
+++++ '[' -n '' ']'
+++++ '[' -n en_US.UTF-8 ']'
+++++ '[' unknown = linux ']'
++++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
++++ '[' -r /etc/profile.d/system-info.sh ']'
++++ '[' hxB '!=' hxB ']'
++++ . /etc/profile.d/system-info.sh
++++++ uname -r
+++++ welcome=5.10.0-7.oe2203.riscv64
++++++ cat /proc/meminfo
++++++ awk '/^MemTotal:/ {printf($2)}'
+++++ memory_total=8222420
++++++ awk '/^MemFree:/ { printf($2)}'
++++++ cat /proc/meminfo
+++++ memory_free=7566388
++++++ cat /proc/meminfo
++++++ awk '/^Buffers:/ { printf($2)}'
+++++ buffers=35692
++++++ cat /proc/meminfo
++++++ awk '/^Cached:/ { printf($2)}'
+++++ cached=354160
++++++ cat /proc/meminfo
++++++ awk '/^SReclaimable:/ { printf($2)}'
+++++ sreclaimable=29572
++++++ cat /proc/meminfo
++++++ awk '/^SwapTotal:/ { printf($2)}'
+++++ swap_total=0
++++++ awk '/^SwapFree:/ { printf($2)}'
++++++ cat /proc/meminfo
+++++ swap_free=0
+++++ '[' 8222420 -gt 0 ']'
++++++ echo 'scale=1; (8222420 - 7566388 - 35692 - 354160 - 29572) * 100.0 / 8222420'
++++++ bc
+++++ memory_usage=2.8
+++++ memory_usage=2.8%
+++++ '[' 0 -gt 0 ']'
+++++ swap_mem=0.0%
++++++ df -h /
++++++ awk '/\// {print $(NF-1)}'
+++++ usageof=30%
++++++ awk '{print $1}' /proc/loadavg
+++++ load_average=7.31
++++++ whoami
+++++ whoiam=root
++++++ date
+++++ time_cur='Sun Jan  8 03:36:31 PM CST 2023'
++++++ ps aux
++++++ wc -l
+++++ processes=148
++++++ users
++++++ wc -w
+++++ user_num=0
+++++ ip_pre=
+++++ '[' -x /sbin/ip ']'
++++++ /sbin/ip a
++++++ grep -v 127.0.0.1
++++++ grep inet
++++++ grep -v inet6
++++++ awk '{print $2}'
+++++ ip_pre=10.0.2.15/24
+++++ echo -e '\n'
+++++ echo -e 'Welcome to 5.10.0-7.oe2203.riscv64\n'
+++++ echo -e 'System information as of time: \tSun Jan  8 03:36:31 PM CST 2023\n'
+++++ echo -e 'System load: \t\033[0;33;40m7.31\033[0m'
+++++ echo -e 'Processes: \t148'
+++++ echo -e 'Memory used: \t2.8%'
+++++ echo -e 'Swap used: \t0.0%'
+++++ echo -e 'Usage On: \t30%'
+++++ for line in $ip_pre
+++++ ip_address=10.0.2.15
+++++ echo -e 'IP address: \t10.0.2.15'
+++++ echo -e 'Users online: \t0'
+++++ '[' root == root ']'
+++++ echo -e '\n'
++++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
++++ '[' -r /etc/profile.d/vte.sh ']'
++++ '[' hxB '!=' hxB ']'
++++ . /etc/profile.d/vte.sh
+++++ '[' -n '5.1.8(1)-release' -o -n '' ']'
+++++ [[ hxB == *i* ]]
+++++ return 0
++++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
++++ '[' -r /etc/profile.d/sh.local ']'
++++ '[' hxB '!=' hxB ']'
++++ . /etc/profile.d/sh.local
++++ unset i
++++ unset -f pathmunge
++++ test /usr/bin/bash
++++ test -z ''
++++ test oe_test_junit5_ant.sh '!=' sh
++++ test -r /etc/bashrc
++++ . /etc/bashrc
+++++ '[' -z '' ']'
+++++ BASHRCSOURCED=Y
+++++ '[' '' ']'
+++++ shopt -q login_shell
+++++ '[' 0 -gt 199 ']'
+++++ umask 022
+++++ SHELL=/bin/bash
+++++ for i in /etc/profile.d/*.sh
+++++ '[' -r /etc/profile.d/color.sh ']'
+++++ '[' '' ']'
+++++ . /etc/profile.d/color.sh
++++++ alias 'ls=ls --color=auto'
++++++ alias 'll=ls -lh'
++++++ alias 'la=ls -lAh'
++++++ alias 'l.=ls -d .* --color=auto'
++++++ alias 'grep=grep --color=auto'
++++++ alias 'egrep=egrep --color=auto'
++++++ alias 'fgrep=fgrep --color=auto'
++++++ alias 'zgrep=zgrep --color=auto'
++++++ alias 'zfgrep=zfgrep --color=auto'
++++++ alias 'zegrep=zegrep --color=auto'
++++++ alias 'xzgrep=xzgrep --color=auto'
++++++ alias 'xzfgrep=xzfgrep --color=auto'
++++++ alias 'xzegrep=xzegrep --color=auto'
+++++ for i in /etc/profile.d/*.sh
+++++ '[' -r /etc/profile.d/flatpak.sh ']'
+++++ '[' '' ']'
+++++ . /etc/profile.d/flatpak.sh
++++++ command -v flatpak
+++++++ new_dirs=
+++++++ read -r install_path
+++++++ unset G_MESSAGES_DEBUG
+++++++ echo /root/.local/share/flatpak
+++++++ GIO_USE_VFS=local
+++++++ share_path=/root/.local/share/flatpak/exports/share
+++++++ flatpak --installations
+++++++ case ":$XDG_DATA_DIRS:" in
+++++++ :
+++++++ read -r install_path
+++++++ share_path=/var/lib/flatpak/exports/share
+++++++ case ":$XDG_DATA_DIRS:" in
+++++++ :
+++++++ read -r install_path
+++++++ echo ''
++++++ new_dirs=
++++++ export XDG_DATA_DIRS
++++++ XDG_DATA_DIRS=/root/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+++++ for i in /etc/profile.d/*.sh
+++++ '[' -r /etc/profile.d/gawk.sh ']'
+++++ '[' '' ']'
+++++ . /etc/profile.d/gawk.sh
+++++ for i in /etc/profile.d/*.sh
+++++ '[' -r /etc/profile.d/lang.sh ']'
+++++ '[' '' ']'
+++++ . /etc/profile.d/lang.sh
++++++ unset LANG_backup
+++++++ /usr/bin/locale
++++++ '[' -n '' ']'
++++++ LANG_backup=en_US.UTF-8
++++++ for config in /etc/locale.conf "${HOME}/.i18n"
++++++ '[' -f /etc/locale.conf ']'
++++++ '[' -x /usr/bin/sed ']'
+++++++ /usr/bin/sed -r -e 's/^[[:blank:]]*([[:upper:]_]+)=([[:print:][:digit:]\._-]+|"[[:print:][:digit:]\._-]+")/export \1=\2/;t;d' /etc/locale.conf
++++++ eval export LANG=en_US.UTF-8
+++++++ export LANG=en_US.UTF-8
+++++++ LANG=en_US.UTF-8
++++++ for config in /etc/locale.conf "${HOME}/.i18n"
++++++ '[' -f /root/.i18n ']'
++++++ '[' -n en_US.UTF-8 ']'
++++++ LANG=en_US.UTF-8
++++++ unset LANG_backup config
++++++ '[' -n '' ']'
++++++ '[' -n en_US.UTF-8 ']'
++++++ '[' unknown = linux ']'
+++++ for i in /etc/profile.d/*.sh
+++++ '[' -r /etc/profile.d/system-info.sh ']'
+++++ '[' '' ']'
+++++ . /etc/profile.d/system-info.sh
+++++++ uname -r
++++++ welcome=5.10.0-7.oe2203.riscv64
+++++++ cat /proc/meminfo
+++++++ awk '/^MemTotal:/ {printf($2)}'
++++++ memory_total=8222420
+++++++ cat /proc/meminfo
+++++++ awk '/^MemFree:/ { printf($2)}'
++++++ memory_free=7636936
+++++++ awk '/^Buffers:/ { printf($2)}'
+++++++ cat /proc/meminfo
++++++ buffers=35760
+++++++ awk '/^Cached:/ { printf($2)}'
+++++++ cat /proc/meminfo
++++++ cached=331388
+++++++ awk '/^SReclaimable:/ { printf($2)}'
+++++++ cat /proc/meminfo
++++++ sreclaimable=28920
+++++++ cat /proc/meminfo
+++++++ awk '/^SwapTotal:/ { printf($2)}'
++++++ swap_total=0
+++++++ awk '/^SwapFree:/ { printf($2)}'
+++++++ cat /proc/meminfo
++++++ swap_free=0
++++++ '[' 8222420 -gt 0 ']'
+++++++ echo 'scale=1; (8222420 - 7636936 - 35760 - 331388 - 28920) * 100.0 / 8222420'
+++++++ bc
++++++ memory_usage=2.3
++++++ memory_usage=2.3%
++++++ '[' 0 -gt 0 ']'
++++++ swap_mem=0.0%
+++++++ awk '/\// {print $(NF-1)}'
+++++++ df -h /
++++++ usageof=30%
+++++++ awk '{print $1}' /proc/loadavg
++++++ load_average=6.88
+++++++ whoami
++++++ whoiam=root
+++++++ date
++++++ time_cur='Sun Jan  8 03:37:03 PM CST 2023'
+++++++ wc -l
+++++++ ps aux
++++++ processes=149
+++++++ wc -w
+++++++ users
++++++ user_num=0
++++++ ip_pre=
++++++ '[' -x /sbin/ip ']'
+++++++ grep inet
+++++++ /sbin/ip a
+++++++ grep -v 127.0.0.1
+++++++ grep -v inet6
+++++++ awk '{print $2}'
++++++ ip_pre=10.0.2.15/24
++++++ echo -e '\n'
++++++ echo -e 'Welcome to 5.10.0-7.oe2203.riscv64\n'
++++++ echo -e 'System information as of time: \tSun Jan  8 03:37:03 PM CST 2023\n'
++++++ echo -e 'System load: \t\033[0;33;40m6.88\033[0m'
++++++ echo -e 'Processes: \t149'
++++++ echo -e 'Memory used: \t2.3%'
++++++ echo -e 'Swap used: \t0.0%'
++++++ echo -e 'Usage On: \t30%'
++++++ for line in $ip_pre
++++++ ip_address=10.0.2.15
++++++ echo -e 'IP address: \t10.0.2.15'
++++++ echo -e 'Users online: \t0'
++++++ '[' root == root ']'
++++++ echo -e '\n'
+++++ for i in /etc/profile.d/*.sh
+++++ '[' -r /etc/profile.d/vte.sh ']'
+++++ '[' '' ']'
+++++ . /etc/profile.d/vte.sh
++++++ '[' -n '5.1.8(1)-release' -o -n '' ']'
++++++ [[ hxB == *i* ]]
++++++ return 0
+++++ unset i
+++++ unset -f pathmunge
+++ LOG_INFO 'Finish environment cleanup!'
+++ message='Finish environment cleanup!'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Sun Jan  8 15:37:19 2023 - INFO  - Finish environment cleanup!
++ grep '1 tests successful' /tmp/ant_result
+grep: /tmp/ant_result: No such file or directory
++ CHECK_RESULT 2
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_junit5_ant.sh line 48'
++ message='oe_test_junit5_ant.sh line 48'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_junit5_ant.sh line 48'
+Sun Jan  8 15:37:29 2023 - ERROR - oe_test_junit5_ant.sh line 48
++ return 0
++ grep 'BUILD SUCCESSFUL' /tmp/ant_result
+grep: /tmp/ant_result: No such file or directory
++ CHECK_RESULT 2
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_junit5_ant.sh line 50'
++ message='oe_test_junit5_ant.sh line 50'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_junit5_ant.sh line 50'
+Sun Jan  8 15:37:39 2023 - ERROR - oe_test_junit5_ant.sh line 50
++ return 0
++ cd -
+/root/GitRepo/mugen-riscv/testcases/cli-test/junit5/oe_test_junit5_ant
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Sun Jan  8 15:37:49 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sun Jan  8 15:37:58 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Sun Jan  8 15:38:07 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpwcus5p31 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwcus5p31
++ '[' 0 -ne 0 ']'
++ rm -rf junit5_ant /tmp/ant_result
++ source /etc/profile
+++ '[' -x /usr/bin/id ']'
+++ '[' -z 0 ']'
++++ /usr/bin/id -un
+++ USER=root
+++ LOGNAME=root
+++ MAIL=/var/spool/mail/root
+++ '[' 0 = 0 ']'
+++ pathmunge /usr/sbin
+++ case ":${PATH}:" in
+++ pathmunge /usr/local/sbin
+++ case ":${PATH}:" in
++++ /usr/bin/hostnamectl --transient
+++ HOSTNAME=openEuler-riscv64
+++ HISTSIZE=1000
+++ '[' ignoredups = ignorespace ']'
+++ export HISTCONTROL=ignoredups
+++ HISTCONTROL=ignoredups
+++ export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/color.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/color.sh
++++ alias 'ls=ls --color=auto'
++++ alias 'll=ls -lh'
++++ alias 'la=ls -lAh'
++++ alias 'l.=ls -d .* --color=auto'
++++ alias 'grep=grep --color=auto'
++++ alias 'egrep=egrep --color=auto'
++++ alias 'fgrep=fgrep --color=auto'
++++ alias 'zgrep=zgrep --color=auto'
++++ alias 'zfgrep=zfgrep --color=auto'
++++ alias 'zegrep=zegrep --color=auto'
++++ alias 'xzgrep=xzgrep --color=auto'
++++ alias 'xzfgrep=xzfgrep --color=auto'
++++ alias 'xzegrep=xzegrep --color=auto'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/flatpak.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/flatpak.sh
++++ command -v flatpak
+++++ new_dirs=
+++++ read -r install_path
+++++ unset G_MESSAGES_DEBUG
+++++ echo /root/.local/share/flatpak
+++++ GIO_USE_VFS=local
+++++ flatpak --installations
+++++ share_path=/root/.local/share/flatpak/exports/share
+++++ case ":$XDG_DATA_DIRS:" in
+++++ :
+++++ read -r install_path
+++++ share_path=/var/lib/flatpak/exports/share
+++++ case ":$XDG_DATA_DIRS:" in
+++++ :
+++++ read -r install_path
+++++ echo ''
++++ new_dirs=
++++ export XDG_DATA_DIRS
++++ XDG_DATA_DIRS=/root/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/gawk.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/gawk.sh
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/lang.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/lang.sh
++++ unset LANG_backup
+++++ /usr/bin/locale
++++ '[' -n '' ']'
++++ LANG_backup=en_US.UTF-8
++++ for config in /etc/locale.conf "${HOME}/.i18n"
++++ '[' -f /etc/locale.conf ']'
++++ '[' -x /usr/bin/sed ']'
+++++ /usr/bin/sed -r -e 's/^[[:blank:]]*([[:upper:]_]+)=([[:print:][:digit:]\._-]+|"[[:print:][:digit:]\._-]+")/export \1=\2/;t;d' /etc/locale.conf
++++ eval export LANG=en_US.UTF-8
+++++ export LANG=en_US.UTF-8
+++++ LANG=en_US.UTF-8
++++ for config in /etc/locale.conf "${HOME}/.i18n"
++++ '[' -f /root/.i18n ']'
++++ '[' -n en_US.UTF-8 ']'
++++ LANG=en_US.UTF-8
++++ unset LANG_backup config
++++ '[' -n '' ']'
++++ '[' -n en_US.UTF-8 ']'
++++ '[' unknown = linux ']'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/system-info.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/system-info.sh
+++++ uname -r
++++ welcome=5.10.0-7.oe2203.riscv64
+++++ awk '/^MemTotal:/ {printf($2)}'
+++++ cat /proc/meminfo
++++ memory_total=8222420
+++++ awk '/^MemFree:/ { printf($2)}'
+++++ cat /proc/meminfo
++++ memory_free=7662840
+++++ awk '/^Buffers:/ { printf($2)}'
+++++ cat /proc/meminfo
++++ buffers=36120
+++++ cat /proc/meminfo
+++++ awk '/^Cached:/ { printf($2)}'
++++ cached=334056
+++++ cat /proc/meminfo
+++++ awk '/^SReclaimable:/ { printf($2)}'
++++ sreclaimable=28796
+++++ cat /proc/meminfo
+++++ awk '/^SwapTotal:/ { printf($2)}'
++++ swap_total=0
+++++ awk '/^SwapFree:/ { printf($2)}'
+++++ cat /proc/meminfo
++++ swap_free=0
++++ '[' 8222420 -gt 0 ']'
+++++ echo 'scale=1; (8222420 - 7662840 - 36120 - 334056 - 28796) * 100.0 / 8222420'
+++++ bc
++++ memory_usage=1.9
++++ memory_usage=1.9%
++++ '[' 0 -gt 0 ']'
++++ swap_mem=0.0%
+++++ df -h /
+++++ awk '/\// {print $(NF-1)}'
++++ usageof=30%
+++++ awk '{print $1}' /proc/loadavg
++++ load_average=4.17
+++++ whoami
++++ whoiam=root
+++++ date
++++ time_cur='Sun Jan  8 03:40:13 PM CST 2023'
+++++ ps aux
+++++ wc -l
++++ processes=157
+++++ users
+++++ wc -w
++++ user_num=0
++++ ip_pre=
++++ '[' -x /sbin/ip ']'
+++++ /sbin/ip a
+++++ grep -v 127.0.0.1
+++++ grep inet
+++++ grep -v inet6
+++++ awk '{print $2}'
++++ ip_pre=10.0.2.15/24
++++ echo -e '\n'
++++ echo -e 'Welcome to 5.10.0-7.oe2203.riscv64\n'
++++ echo -e 'System information as of time: \tSun Jan  8 03:40:13 PM CST 2023\n'
++++ echo -e 'System load: \t\033[0;33;40m4.17\033[0m'
++++ echo -e 'Processes: \t157'
++++ echo -e 'Memory used: \t1.9%'
++++ echo -e 'Swap used: \t0.0%'
++++ echo -e 'Usage On: \t30%'
++++ for line in $ip_pre
++++ ip_address=10.0.2.15
++++ echo -e 'IP address: \t10.0.2.15'
++++ echo -e 'Users online: \t0'
++++ '[' root == root ']'
++++ echo -e '\n'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/vte.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/vte.sh
++++ '[' -n '5.1.8(1)-release' -o -n '' ']'
++++ [[ hxB == *i* ]]
++++ return 0
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/sh.local ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/sh.local
+++ unset i
+++ unset -f pathmunge
+++ test /usr/bin/bash
+++ test -z ''
+++ test oe_test_junit5_ant.sh '!=' sh
+++ test -r /etc/bashrc
+++ . /etc/bashrc
++++ '[' -z Y ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Sun Jan  8 15:40:25 2023 - INFO  - Finish environment cleanup!

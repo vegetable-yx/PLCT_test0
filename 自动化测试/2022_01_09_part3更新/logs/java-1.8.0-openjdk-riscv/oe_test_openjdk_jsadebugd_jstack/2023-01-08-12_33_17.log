@@ -1,0 +1,257 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jan  8 12:33:54 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'java-1.8.0-openjdk*'
++ pkgs='java-1.8.0-openjdk*'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'java-1.8.0-openjdk*' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 1:05:30 ago on Sun 08 Jan 2023 11:32:44 AM CST.
+Package java-1.8.0-openjdk-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-accessibility-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-accessibility-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-debuginfo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-debugsource-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-demo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-demo-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-devel-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-headless-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-headless-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                        Arch    Version                  Repo      Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk-devel       riscv64 1:1.8.0.332.b09-4.oe2203 mainline 7.8 M
+ java-1.8.0-openjdk-javadoc     noarch  1:1.8.0.332.b09-4.oe2203 mainline  15 M
+ java-1.8.0-openjdk-javadoc-zip noarch  1:1.8.0.332.b09-4.oe2203 mainline  42 M
+ java-1.8.0-openjdk-src         riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M
+ java-1.8.0-openjdk-src-slowdebug
+                                riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total size: 156 M
+Installed size: 453 M
+Downloading Packages:
+[SKIPPED] java-1.8.0-openjdk-devel-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-javadoc-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-javadoc-zip-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-src-slowdebug-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+Running transaction check
+Waiting for process with pid 8933 to finish.
+Transaction check succeeded.
+Running transaction test
+Error: Cannot open file /var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: [Errno 2] No such file or directory: '\''/var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm'\''
+TypeError: an integer is required (got type NoneType)
+FATAL ERROR: python callback ??? failed, aborting!'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 1:05:30 ago on Sun 08 Jan 2023 11:32:44 AM CST.
+Package java-1.8.0-openjdk-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-accessibility-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-accessibility-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-debuginfo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-debugsource-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-demo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-demo-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-devel-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-headless-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-headless-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                        Arch    Version                  Repo      Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk-devel       riscv64 1:1.8.0.332.b09-4.oe2203 mainline 7.8 M
+ java-1.8.0-openjdk-javadoc     noarch  1:1.8.0.332.b09-4.oe2203 mainline  15 M
+ java-1.8.0-openjdk-javadoc-zip noarch  1:1.8.0.332.b09-4.oe2203 mainline  42 M
+ java-1.8.0-openjdk-src         riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M
+ java-1.8.0-openjdk-src-slowdebug
+                                riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total size: 156 M
+Installed size: 453 M
+Downloading Packages:
+[SKIPPED] java-1.8.0-openjdk-devel-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-javadoc-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-javadoc-zip-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-src-slowdebug-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+Running transaction check
+Waiting for process with pid 8933 to finish.
+Transaction check succeeded.
+Running transaction test
+Error: Cannot open file /var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: [Errno 2] No such file or directory: '\''/var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm'\''
+TypeError: an integer is required (got type NoneType)
+FATAL ERROR: python callback ??? failed, aborting!'
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sun Jan  8 12:57:15 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 12:57:23 2023 - INFO  - Start to run test.
++ jsadebugd -help
++ grep Usage
+Error: Could not find or load main class sun.jvm.hotspot.jdi.SADebugServer
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_jsadebugd_jstack.sh line 30'
++ message='oe_test_openjdk_jsadebugd_jstack.sh line 30'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_jsadebugd_jstack.sh line 30'
+Sun Jan  8 12:57:42 2023 - ERROR - oe_test_openjdk_jsadebugd_jstack.sh line 30
++ return 0
++ grep Usage
++ jstack -h
+Usage:
++ jstack_pid=11965
++ jrunscript
++ exit
++ post_test
++ LOG_INFO 'Need'\''t to restore the tet environment.'
++ message='Need'\''t to restore the tet environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Need'\''t to restore the tet environment.'
+Sun Jan  8 12:58:02 2023 - INFO  - Need't to restore the tet environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 1:05:30 ago on Sun 08 Jan 2023 11:32:44 AM CST.
+Package java-1.8.0-openjdk-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-accessibility-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-accessibility-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-debuginfo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-debugsource-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-demo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-demo-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-devel-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-headless-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-headless-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                        Arch    Version                  Repo      Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk-devel       riscv64 1:1.8.0.332.b09-4.oe2203 mainline 7.8 M
+ java-1.8.0-openjdk-javadoc     noarch  1:1.8.0.332.b09-4.oe2203 mainline  15 M
+ java-1.8.0-openjdk-javadoc-zip noarch  1:1.8.0.332.b09-4.oe2203 mainline  42 M
+ java-1.8.0-openjdk-src         riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M
+ java-1.8.0-openjdk-src-slowdebug
+                                riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total size: 156 M
+Installed size: 453 M
+Downloading Packages:
+[SKIPPED] java-1.8.0-openjdk-devel-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-javadoc-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-javadoc-zip-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-src-slowdebug-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+Running transaction check
+Waiting for process with pid 8933 to finish.
+Transaction check succeeded.
+Running transaction test
+Error: Cannot open file /var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: [Errno 2] No such file or directory: '/var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm'
+TypeError: an integer is required (got type NoneType)
+FATAL ERROR: python callback ??? failed, aborting! ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 1:05:30 ago on Sun 08 Jan 2023 11:32:44 AM CST.
+Package java-1.8.0-openjdk-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-accessibility-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-accessibility-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-debuginfo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-debugsource-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-demo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-demo-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-devel-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-headless-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-headless-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Package java-1.8.0-openjdk-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                        Arch    Version                  Repo      Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk-devel       riscv64 1:1.8.0.332.b09-4.oe2203 mainline 7.8 M
+ java-1.8.0-openjdk-javadoc     noarch  1:1.8.0.332.b09-4.oe2203 mainline  15 M
+ java-1.8.0-openjdk-javadoc-zip noarch  1:1.8.0.332.b09-4.oe2203 mainline  42 M
+ java-1.8.0-openjdk-src         riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M
+ java-1.8.0-openjdk-src-slowdebug
+                                riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total size: 156 M
+Installed size: 453 M
+Downloading Packages:
+[SKIPPED] java-1.8.0-openjdk-devel-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-javadoc-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-javadoc-zip-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+[SKIPPED] java-1.8.0-openjdk-src-slowdebug-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded
+Running transaction check
+Waiting for process with pid 8933 to finish.
+Transaction check succeeded.
+Running transaction test
+Error: Cannot open file /var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: [Errno 2] No such file or directory: '\''/var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm'\''
+TypeError: an integer is required (got type NoneType)
+FATAL ERROR: python callback ??? failed, aborting!'
+Traceback (most recent call last):
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 1:05:30 ago on Sun 08 Jan 2023 11:32:44 AM CST.\nPackage java-1.8.0-openjdk-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-accessibility-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-accessibility-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-debuginfo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-debugsource-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-demo-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-demo-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-devel-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-headless-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-headless-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nPackage java-1.8.0-openjdk-slowdebug-1:1.8.0.332.b09-4.oe2203.riscv64 is already installed.\nDependencies resolved.\n================================================================================\n Package                        Arch    Version                  Repo      Size\n================================================================================\nInstalling:\n java-1.8.0-openjdk-devel       riscv64 1:1.8.0.332.b09-4.oe2203 mainline 7.8 M\n java-1.8.0-openjdk-javadoc     noarch  1:1.8.0.332.b09-4.oe2203 mainline  15 M\n java-1.8.0-openjdk-javadoc-zip noarch  1:1.8.0.332.b09-4.oe2203 mainline  42 M\n java-1.8.0-openjdk-src         riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M\n java-1.8.0-openjdk-src-slowdebug\n                                riscv64 1:1.8.0.332.b09-4.oe2203 mainline  45 M\n\nTransaction Summary\n================================================================================\nInstall  5 Packages\n\nTotal size: 156 M\nInstalled size: 453 M\nDownloading Packages:\n[SKIPPED] java-1.8.0-openjdk-devel-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded\n[SKIPPED] java-1.8.0-openjdk-javadoc-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded\n[SKIPPED] java-1.8.0-openjdk-javadoc-zip-1.8.0.332.b09-4.oe2203.noarch.rpm: Already downloaded\n[SKIPPED] java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded\n[SKIPPED] java-1.8.0-openjdk-src-slowdebug-1.8.0.332.b09-4.oe2203.riscv64.rpm: Already downloaded\nRunning transaction check\nWaiting for process with pid 8933 to finish.\nTransaction check succeeded.\nRunning transaction test\nError: Cannot open file /var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm: [Errno 2] No such file or directory: '/var/cache/dnf/mainline-c9af0cb5497c393d/packages/java-1.8.0-openjdk-src-1.8.0.332.b09-4.oe2203.riscv64.rpm'\nTypeError: an integer is required (got type NoneType)\nFATAL ERROR: python callback ??? failed, aborting!"
++ '[' 0 -ne 0 ']'
++ rm -rf jstatd.all.policy testuser.keystore
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jan  8 12:58:44 2023 - INFO  - End to restore the test environment.
+nashorn> 

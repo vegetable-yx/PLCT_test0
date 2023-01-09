@@ -1,0 +1,443 @@
++ source ../common/common_javapackages-tools.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jan  8 11:08:17 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL tar
++ pkgs=tar
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs tar --node 1 --tempfile ''
+Sun Jan  8 11:10:23 2023 - INFO  - pkgs:(tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ deploy_env
++ DNF_INSTALL junit
++ pkgs=junit
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs junit --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp4_4dqom9
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp4_4dqom9
+++ rpm -qa 'java*'
+++ grep 'java-.*-openjdk'
+++ awk -F - '{print $2}'
++ java_version=1.8.0
++ DNF_INSTALL 'javapackages-tools java-1.8.0-devel xmvn-resolve objectweb-asm3 beust-jcommander log4j'
++ pkgs='javapackages-tools java-1.8.0-devel xmvn-resolve objectweb-asm3 beust-jcommander log4j'
++ node=1
++ '[' -z /tmp/tmp4_4dqom9 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'javapackages-tools java-1.8.0-devel xmvn-resolve objectweb-asm3 beust-jcommander log4j' --node 1 --tempfile /tmp/tmp4_4dqom9
++ tmpfile2=/tmp/tmp4_4dqom9
++ '[' -z /tmp/tmp4_4dqom9 ']'
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Sun Jan  8 11:23:19 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 11:23:28 2023 - INFO  - Start to run test.
++ mkdir hello
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cp /usr/share/java/apache-commons-collections.jar /usr/share/java/apache-commons-lang.jar /usr/share/java/apache-commons-logging-adapters.jar /usr/share/java/apache-commons-logging-api.jar /usr/share/java/apache-commons-logging.jar /usr/share/java/beust-jcommander.jar /usr/share/java/commons-collections.jar /usr/share/java/commons-lang.jar /usr/share/java/commons-logging-adapters.jar /usr/share/java/commons-logging-api.jar /usr/share/java/commons-logging.jar /usr/share/java/db.jar /usr/share/java/easymock3.jar /usr/share/java/easymock3-test-java8.jar /usr/share/java/easymock3-test-testng.jar /usr/share/java/easymock.jar /usr/share/java/easymock-test-java8.jar /usr/share/java/easymock-test-testng.jar /usr/share/java/flow-engine.jar /usr/share/java/flute.jar /usr/share/java/jackson-annotations.jar /usr/share/java/jackson-core.jar /usr/share/java/jackson-databind.jar /usr/share/java/junit.jar /usr/share/java/libbase.jar /usr/share/java/libfonts.jar /usr/share/java/libformula.jar /usr/share/java/liblayout.jar /usr/share/java/libloader.jar /usr/share/java/librepository.jar /usr/share/java/libserializer.jar /usr/share/java/libxml.jar /usr/share/java/log4j.jar /usr/share/java/postgresql.jar /usr/share/java/postgresql-jdbc.jar /usr/share/java/qdox.jar /usr/share/java/sac.jar /usr/share/java/velocity.jar hello/
++ echo 'public class Hello{
+    public static void main(String[] args){
+        System.out.println("Hello java!");
+    }
+}'
++ tar cvzf hello.tar.gz hello
+hello/
+hello/apache-commons-logging-adapters.jar
+hello/commons-logging-adapters.jar
+hello/log4j.jar
+hello/jackson-databind.jar
+hello/flute.jar
+hello/jackson-core.jar
+hello/libserializer.jar
+hello/easymock-test-testng.jar
+hello/easymock.jar
+hello/flow-engine.jar
+hello/apache-commons-lang.jar
+hello/apache-commons-collections.jar
+hello/qdox.jar
+hello/easymock3.jar
+hello/libformula.jar
+hello/commons-logging-api.jar
+hello/libbase.jar
+hello/libxml.jar
+hello/beust-jcommander.jar
+hello/libfonts.jar
+hello/apache-commons-logging-api.jar
+hello/librepository.jar
+hello/postgresql-jdbc.jar
+hello/commons-collections.jar
+hello/sac.jar
+hello/postgresql.jar
+hello/easymock3-test-java8.jar
+hello/easymock-test-java8.jar
+hello/Hello.java
+hello/db.jar
+hello/apache-commons-logging.jar
+hello/junit.jar
+hello/commons-lang.jar
+hello/jackson-annotations.jar
+hello/liblayout.jar
+hello/libloader.jar
+hello/easymock3-test-testng.jar
+hello/velocity.jar
+hello/commons-logging.jar
++ test -f hello.tar.gz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ touch exclusion
++ clean-binary-files -e exclusion -l -a hello.tar.gz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'remove hello/' instructions
+remove hello/commons-logging.jar
+remove hello/velocity.jar
+remove hello/easymock3-test-testng.jar
+remove hello/libloader.jar
+remove hello/liblayout.jar
+remove hello/jackson-annotations.jar
+remove hello/commons-lang.jar
+remove hello/junit.jar
+remove hello/apache-commons-logging.jar
+remove hello/db.jar
+remove hello/easymock-test-java8.jar
+remove hello/easymock3-test-java8.jar
+remove hello/postgresql.jar
+remove hello/sac.jar
+remove hello/commons-collections.jar
+remove hello/postgresql-jdbc.jar
+remove hello/librepository.jar
+remove hello/apache-commons-logging-api.jar
+remove hello/libfonts.jar
+remove hello/beust-jcommander.jar
+remove hello/libxml.jar
+remove hello/libbase.jar
+remove hello/commons-logging-api.jar
+remove hello/libformula.jar
+remove hello/easymock3.jar
+remove hello/qdox.jar
+remove hello/apache-commons-collections.jar
+remove hello/apache-commons-lang.jar
+remove hello/flow-engine.jar
+remove hello/easymock.jar
+remove hello/easymock-test-testng.jar
+remove hello/libserializer.jar
+remove hello/jackson-core.jar
+remove hello/flute.jar
+remove hello/jackson-databind.jar
+remove hello/log4j.jar
+remove hello/commons-logging-adapters.jar
+remove hello/apache-commons-logging-adapters.jar
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello-clean.tar.gz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ check-binary-files -f instructions -a hello-clean.tar.gz
++ grep ERROR
+ERROR: File hello/commons-logging.jar should not exist, but does.
+ERROR: File hello/velocity.jar should not exist, but does.
+ERROR: File hello/easymock3-test-testng.jar should not exist, but does.
+ERROR: File hello/libloader.jar should not exist, but does.
+ERROR: File hello/liblayout.jar should not exist, but does.
+ERROR: File hello/jackson-annotations.jar should not exist, but does.
+ERROR: File hello/commons-lang.jar should not exist, but does.
+ERROR: File hello/junit.jar should not exist, but does.
+ERROR: File hello/apache-commons-logging.jar should not exist, but does.
+ERROR: File hello/db.jar should not exist, but does.
+ERROR: File hello/easymock-test-java8.jar should not exist, but does.
+ERROR: File hello/easymock3-test-java8.jar should not exist, but does.
+ERROR: File hello/postgresql.jar should not exist, but does.
+ERROR: File hello/sac.jar should not exist, but does.
+ERROR: File hello/commons-collections.jar should not exist, but does.
+ERROR: File hello/postgresql-jdbc.jar should not exist, but does.
+ERROR: File hello/librepository.jar should not exist, but does.
+ERROR: File hello/apache-commons-logging-api.jar should not exist, but does.
+ERROR: File hello/libfonts.jar should not exist, but does.
+ERROR: File hello/beust-jcommander.jar should not exist, but does.
+ERROR: File hello/libxml.jar should not exist, but does.
+ERROR: File hello/libbase.jar should not exist, but does.
+ERROR: File hello/commons-logging-api.jar should not exist, but does.
+ERROR: File hello/libformula.jar should not exist, but does.
+ERROR: File hello/easymock3.jar should not exist, but does.
+ERROR: File hello/qdox.jar should not exist, but does.
+ERROR: File hello/apache-commons-collections.jar should not exist, but does.
+ERROR: File hello/apache-commons-lang.jar should not exist, but does.
+ERROR: File hello/flow-engine.jar should not exist, but does.
+ERROR: File hello/easymock.jar should not exist, but does.
+ERROR: File hello/easymock-test-testng.jar should not exist, but does.
+ERROR: File hello/libserializer.jar should not exist, but does.
+ERROR: File hello/jackson-core.jar should not exist, but does.
+ERROR: File hello/flute.jar should not exist, but does.
+ERROR: File hello/jackson-databind.jar should not exist, but does.
+ERROR: File hello/log4j.jar should not exist, but does.
+ERROR: File hello/commons-logging-adapters.jar should not exist, but does.
+ERROR: File hello/apache-commons-logging-adapters.jar should not exist, but does.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -rf hello-clean.tar.gz
++ clean-binary-files -f instructions -n -a hello.tar.gz
++ grep 'rm -f "hello/'
+rm -f "hello/commons-logging.jar"
+rm -f "hello/velocity.jar"
+rm -f "hello/easymock3-test-testng.jar"
+rm -f "hello/libloader.jar"
+rm -f "hello/liblayout.jar"
+rm -f "hello/jackson-annotations.jar"
+rm -f "hello/commons-lang.jar"
+rm -f "hello/junit.jar"
+rm -f "hello/apache-commons-logging.jar"
+rm -f "hello/db.jar"
+rm -f "hello/easymock-test-java8.jar"
+rm -f "hello/easymock3-test-java8.jar"
+rm -f "hello/postgresql.jar"
+rm -f "hello/sac.jar"
+rm -f "hello/commons-collections.jar"
+rm -f "hello/postgresql-jdbc.jar"
+rm -f "hello/librepository.jar"
+rm -f "hello/apache-commons-logging-api.jar"
+rm -f "hello/libfonts.jar"
+rm -f "hello/beust-jcommander.jar"
+rm -f "hello/libxml.jar"
+rm -f "hello/libbase.jar"
+rm -f "hello/commons-logging-api.jar"
+rm -f "hello/libformula.jar"
+rm -f "hello/easymock3.jar"
+rm -f "hello/qdox.jar"
+rm -f "hello/apache-commons-collections.jar"
+rm -f "hello/apache-commons-lang.jar"
+rm -f "hello/flow-engine.jar"
+rm -f "hello/easymock.jar"
+rm -f "hello/easymock-test-testng.jar"
+rm -f "hello/libserializer.jar"
+rm -f "hello/jackson-core.jar"
+rm -f "hello/flute.jar"
+rm -f "hello/jackson-databind.jar"
+rm -f "hello/log4j.jar"
+rm -f "hello/commons-logging-adapters.jar"
+rm -f "hello/apache-commons-logging-adapters.jar"
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello-clean.tar.gz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ check-binary-files -f instructions -a hello-clean.tar.gz
++ grep ERROR
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ test -f hello-clean-clean.tar.gz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mv hello hello_old
++ tar zxvf hello-clean-clean.tar.gz
+hello/
+hello/Hello.java
++ test -d hello
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ create-jar-links -f instructions
++ grep 'build-jar-repository -s'
+build-jar-repository -s  hello commons-logging
+build-jar-repository -s  hello velocity
+build-jar-repository -s  hello easymock3-test-testng
+build-jar-repository -s  hello libloader
+build-jar-repository -s  hello liblayout
+build-jar-repository -s  hello jackson-annotations
+build-jar-repository -s  hello commons-lang
+build-jar-repository -s  hello junit
+build-jar-repository -s  hello apache-commons-logging
+build-jar-repository -s  hello db
+build-jar-repository -s  hello easymock-test-java8
+build-jar-repository -s  hello easymock3-test-java8
+build-jar-repository -s  hello postgresql
+build-jar-repository -s  hello sac
+build-jar-repository -s  hello commons-collections
+build-jar-repository -s  hello postgresql-jdbc
+build-jar-repository -s  hello librepository
+build-jar-repository -s  hello apache-commons-logging-api
+build-jar-repository -s  hello libfonts
+build-jar-repository -s  hello beust-jcommander
+build-jar-repository -s  hello libxml
+build-jar-repository -s  hello libbase
+build-jar-repository -s  hello commons-logging-api
+build-jar-repository -s  hello libformula
+build-jar-repository -s  hello easymock3
+build-jar-repository -s  hello qdox
+build-jar-repository -s  hello apache-commons-collections
+build-jar-repository -s  hello apache-commons-lang
+build-jar-repository -s  hello flow-engine
+build-jar-repository -s  hello easymock
+build-jar-repository -s  hello easymock-test-testng
+build-jar-repository -s  hello libserializer
+build-jar-repository -s  hello jackson-core
+build-jar-repository -s  hello flute
+build-jar-repository -s  hello jackson-databind
+build-jar-repository -s  hello log4j
+build-jar-repository -s  hello commons-logging-adapters
+build-jar-repository -s  hello apache-commons-logging-adapters
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l hello
++ grep '].jar -> /usr/share/java/'
+lrwxrwxrwx 1 root root  46 Jan  8 11:34 [apache-commons-collections].jar -> /usr/share/java/apache-commons-collections.jar
+lrwxrwxrwx 1 root root  39 Jan  8 11:34 [apache-commons-lang].jar -> /usr/share/java/apache-commons-lang.jar
+lrwxrwxrwx 1 root root  51 Jan  8 11:35 [apache-commons-logging-adapters].jar -> /usr/share/java/apache-commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  46 Jan  8 11:33 [apache-commons-logging-api].jar -> /usr/share/java/apache-commons-logging-api.jar
+lrwxrwxrwx 1 root root  42 Jan  8 11:32 [apache-commons-logging].jar -> /usr/share/java/apache-commons-logging.jar
+lrwxrwxrwx 1 root root  36 Jan  8 11:33 [beust-jcommander].jar -> /usr/share/java/beust-jcommander.jar
+lrwxrwxrwx 1 root root  39 Jan  8 11:33 [commons-collections].jar -> /usr/share/java/commons-collections.jar
+lrwxrwxrwx 1 root root  32 Jan  8 11:32 [commons-lang].jar -> /usr/share/java/commons-lang.jar
+lrwxrwxrwx 1 root root  44 Jan  8 11:35 [commons-logging-adapters].jar -> /usr/share/java/commons-logging-adapters.jar
+lrwxrwxrwx 1 root root  39 Jan  8 11:34 [commons-logging-api].jar -> /usr/share/java/commons-logging-api.jar
+lrwxrwxrwx 1 root root  35 Jan  8 11:31 [commons-logging].jar -> /usr/share/java/commons-logging.jar
+lrwxrwxrwx 1 root root  22 Jan  8 11:32 [db].jar -> /usr/share/java/db.jar
+lrwxrwxrwx 1 root root  29 Jan  8 11:34 [easymock3].jar -> /usr/share/java/easymock3.jar
+lrwxrwxrwx 1 root root  40 Jan  8 11:32 [easymock3-test-java8].jar -> /usr/share/java/easymock3-test-java8.jar
+lrwxrwxrwx 1 root root  41 Jan  8 11:31 [easymock3-test-testng].jar -> /usr/share/java/easymock3-test-testng.jar
+lrwxrwxrwx 1 root root  28 Jan  8 11:34 [easymock].jar -> /usr/share/java/easymock.jar
+lrwxrwxrwx 1 root root  39 Jan  8 11:32 [easymock-test-java8].jar -> /usr/share/java/easymock-test-java8.jar
+lrwxrwxrwx 1 root root  40 Jan  8 11:34 [easymock-test-testng].jar -> /usr/share/java/easymock-test-testng.jar
+lrwxrwxrwx 1 root root  31 Jan  8 11:34 [flow-engine].jar -> /usr/share/java/flow-engine.jar
+lrwxrwxrwx 1 root root  25 Jan  8 11:35 [flute].jar -> /usr/share/java/flute.jar
+lrwxrwxrwx 1 root root  39 Jan  8 11:32 [jackson-annotations].jar -> /usr/share/java/jackson-annotations.jar
+lrwxrwxrwx 1 root root  32 Jan  8 11:34 [jackson-core].jar -> /usr/share/java/jackson-core.jar
+lrwxrwxrwx 1 root root  36 Jan  8 11:35 [jackson-databind].jar -> /usr/share/java/jackson-databind.jar
+lrwxrwxrwx 1 root root  25 Jan  8 11:32 [junit].jar -> /usr/share/java/junit.jar
+lrwxrwxrwx 1 root root  27 Jan  8 11:33 [libbase].jar -> /usr/share/java/libbase.jar
+lrwxrwxrwx 1 root root  28 Jan  8 11:33 [libfonts].jar -> /usr/share/java/libfonts.jar
+lrwxrwxrwx 1 root root  30 Jan  8 11:34 [libformula].jar -> /usr/share/java/libformula.jar
+lrwxrwxrwx 1 root root  29 Jan  8 11:32 [liblayout].jar -> /usr/share/java/liblayout.jar
+lrwxrwxrwx 1 root root  29 Jan  8 11:31 [libloader].jar -> /usr/share/java/libloader.jar
+lrwxrwxrwx 1 root root  33 Jan  8 11:33 [librepository].jar -> /usr/share/java/librepository.jar
+lrwxrwxrwx 1 root root  33 Jan  8 11:34 [libserializer].jar -> /usr/share/java/libserializer.jar
+lrwxrwxrwx 1 root root  26 Jan  8 11:33 [libxml].jar -> /usr/share/java/libxml.jar
+lrwxrwxrwx 1 root root  25 Jan  8 11:35 [log4j].jar -> /usr/share/java/log4j.jar
+lrwxrwxrwx 1 root root  30 Jan  8 11:33 [postgresql].jar -> /usr/share/java/postgresql.jar
+lrwxrwxrwx 1 root root  35 Jan  8 11:33 [postgresql-jdbc].jar -> /usr/share/java/postgresql-jdbc.jar
+lrwxrwxrwx 1 root root  24 Jan  8 11:34 [qdox].jar -> /usr/share/java/qdox.jar
+lrwxrwxrwx 1 root root  23 Jan  8 11:33 [sac].jar -> /usr/share/java/sac.jar
+lrwxrwxrwx 1 root root  28 Jan  8 11:31 [velocity].jar -> /usr/share/java/velocity.jar
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ create-jar-links -f instructions -a hello-clean-clean.tar.gz
++ grep 'build-jar-repository -s'
+Sun Jan  8 11:37:47 2023 - ERROR - Timeout : Command 'bash -x oe_test_binary_files_operation.sh' timed out after 1799.990933314 seconds

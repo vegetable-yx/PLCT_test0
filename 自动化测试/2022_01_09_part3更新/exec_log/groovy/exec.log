@@ -1,0 +1,10 @@
+Sat Jan  7 19:57:29 2023 - INFO  - start to run testcase:oe_test_groovy_01.
+Sat Jan  7 20:27:49 2023 - WARN  - The case execution timeout.
+Sat Jan  7 20:27:55 2023 - ERROR - The case exit by code 143.
+Sat Jan  7 20:28:04 2023 - INFO  - End to run testcase:oe_test_groovy_01.
+Sat Jan  7 20:28:11 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sat Jan  7 20:28:52 2023 - INFO  - start to run testcase:oe_test_groovy_02.
+Sat Jan  7 21:02:01 2023 - WARN  - The case execution timeout.
+Sat Jan  7 21:02:11 2023 - ERROR - The case exit by code 143.
+Sat Jan  7 21:02:22 2023 - INFO  - End to run testcase:oe_test_groovy_02.
+Sat Jan  7 21:02:31 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.

@@ -1,0 +1,121 @@
++ source ./common/common.sh
+++ source ../common/common_lib.sh
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++++ python3 --version
+++++ '[' 0 -eq 0 ']'
+++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Sun Jan  8 19:01:19 2023 - INFO  - Start environmental preparation.
++ conf_common
++ pkg_path=/opt/cfssl.tar.gz
++ cfssl_path=/opt/cfssl
++++ dirname oe_test_service_kube-controller-manager.sh
+++ cd .
+++ pwd
++ current_path=/root/GitRepo/mugen-riscv/testcases/cli-test/kubernetes
++ cert_path=/etc/kubernetes/pki
++ mkdir -p /opt/cfssl /etc/kubernetes/pki
+++ hostname
++ host_name=openEuler-riscv64
++ name_host=k8snode1
++ hostname
++ grep -i k8snode1
++ hostnamectl set-hostname k8snode1
++ kubernetes_install
++ DNF_INSTALL 'docker conntrack-tools socat kubernetes*' 1
++ pkgs='docker conntrack-tools socat kubernetes*'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'docker conntrack-tools socat kubernetes*' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpqinq9jdl
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpqinq9jdl
++ certificate_prepare
++ wget --no-check-certificate https://github.com/cloudflare/cfssl/archive/v1.5.0.tar.gz -O /opt/cfssl.tar.gz
+--2023-01-08 19:18:24--  https://github.com/cloudflare/cfssl/archive/v1.5.0.tar.gz
+Resolving github.com (github.com)... 20.205.243.166
+Connecting to github.com (github.com)|20.205.243.166|:443... connected.
+HTTP request sent, awaiting response... Read error (Error in the pull function.) in headers.
+Retrying.
+
+--2023-01-08 19:18:47--  (try: 2)  https://github.com/cloudflare/cfssl/archive/v1.5.0.tar.gz
+Connecting to github.com (github.com)|20.205.243.166|:443... failed: Connection refused.
+Resolving github.com (github.com)... 20.205.243.166
+Connecting to github.com (github.com)|20.205.243.166|:443... failed: Connection refused.
++ test -f /opt/cfssl.tar.gz
++ which tar
+/usr/bin/tar
++ tar -zxvf /opt/cfssl.tar.gz -C /opt/cfssl --strip-components=1
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
++ which golang
+which: no golang in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin)
++ DNF_INSTALL golang 1
++ pkgs=golang
++ node=1
++ '[' -z /tmp/tmpqinq9jdl ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs golang --node 1 --tempfile /tmp/tmpqinq9jdl
+Sun Jan  8 19:31:07 2023 - ERROR - Timeout : Command 'bash -x oe_test_service_kube-controller-manager.sh' timed out after 1799.9815607 seconds
++ tmpfile2=/tmp/tmpqinq9jdl
+++ post_test
+++ LOG_INFO 'start environment cleanup.'
+++ message='start environment cleanup.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Sun Jan  8 19:34:56 2023 - INFO  - start environment cleanup.
+++ kubernetes_remove
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z /tmp/tmpqinq9jdl ]]
+++ '[' 0 -ne 0 ']'
+++ '[' 1 == 0 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpqinq9jdl
+++ '[' 0 -ne 0 ']'
+++ rm -rf /etc/kubernetes /opt/cfssl.tar.gz /opt/cfssl '/usr/local/bin/cfssl*'
+++ hostnamectl set-hostname openEuler-riscv64
+++ LOG_INFO 'Finish environment cleanup!'
+++ message='Finish environment cleanup!'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Sun Jan  8 19:40:35 2023 - INFO  - Finish environment cleanup!
++ '[' -z /tmp/tmpqinq9jdl ']'
++ cd /opt/cfssl
+./common/common.sh: line 49: cd: /opt/cfssl: No such file or directory
++ exit
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Sun Jan  8 19:40:40 2023 - INFO  - start environment cleanup.
++ kubernetes_remove
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpqinq9jdl ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpqinq9jdl
++ '[' 0 -ne 0 ']'
++ rm -rf /etc/kubernetes /opt/cfssl.tar.gz /opt/cfssl '/usr/local/bin/cfssl*'
++ hostnamectl set-hostname openEuler-riscv64
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Sun Jan  8 19:41:33 2023 - INFO  - Finish environment cleanup!

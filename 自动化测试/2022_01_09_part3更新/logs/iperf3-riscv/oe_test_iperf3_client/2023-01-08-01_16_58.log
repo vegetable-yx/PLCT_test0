@@ -1,0 +1,545 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ DNF_INSTALL iperf3
++ pkgs=iperf3
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs iperf3 --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpk3l3fcg2
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpk3l3fcg2
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 01:29:38 2023 - INFO  - Start to run test.
++ iperf3 -s -p 51314 -i 1 -D
++ CHECK_RESULT 0 0 0 'CHECK iperf3 -s -p 51314 -i 1 -D FAILED'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='CHECK iperf3 -s -p 51314 -i 1 -D FAILED'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ iperf3 -c 127.0.0.1 -i 1 -t 3 -p 51314
+Connecting to host 127.0.0.1, port 51314
+[  5] local 127.0.0.1 port 35328 connected to 127.0.0.1 port 51314
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.11   sec  22.5 MBytes   170 Mbits/sec    0   4.68 MBytes       
+[  5]   1.11-2.17   sec  8.75 MBytes  69.3 Mbits/sec    0   4.68 MBytes       
+[  5]   2.17-3.10   sec  10.0 MBytes  90.3 Mbits/sec    2   4.68 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-3.10   sec  41.2 MBytes   112 Mbits/sec    2             sender
+[  5]   0.00-3.14   sec  32.9 MBytes  87.8 Mbits/sec                  receiver
+
+iperf Done.
++ CHECK_RESULT 0 0 0 'Error: iperf3 -c ... run failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Error: iperf3 -c ... run failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iperf3 -s -p 51314 -D
++ CHECK_RESULT 0 0 0 'CHECK iperf3 -s -p 51314 -D FAILED'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='CHECK iperf3 -s -p 51314 -D FAILED'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ iperf3 -c 127.0.0.1 -P 2 -t 2 -p 51314 -d
+send_parameters:
+{
+	"tcp":	true,
+	"omit":	0,
+	"time":	2,
+	"parallel":	2,
+	"len":	131072,
+	"pacing_timer":	1000,
+	"client_version":	"3.10.1"
+}
+Connecting to host 127.0.0.1, port 51314
+SNDBUF is 16384, expecting 0
+RCVBUF is 131072, expecting 0
+Congestion algorithm is cubic
+[  5] local 127.0.0.1 port 56450 connected to 127.0.0.1 port 51314
+SNDBUF is 16384, expecting 0
+RCVBUF is 131072, expecting 0
+Congestion algorithm is cubic
+[  7] local 127.0.0.1 port 56452 connected to 127.0.0.1 port 51314
+sent 131072 bytes of 131072, pending 0, total 131072
+sent 131072 bytes of 131072, pending 0, total 131072
+sent 131072 bytes of 131072, pending 0, total 262144
+sent 131072 bytes of 131072, pending 0, total 262144
+sent 131072 bytes of 131072, pending 0, total 393216
+sent 131072 bytes of 131072, pending 0, total 393216
+sent 131072 bytes of 131072, pending 0, total 524288
+sent 131072 bytes of 131072, pending 0, total 524288
+sent 131072 bytes of 131072, pending 0, total 655360
+sent 131072 bytes of 131072, pending 0, total 655360
+sent 131072 bytes of 131072, pending 0, total 786432
+sent 131072 bytes of 131072, pending 0, total 786432
+sent 131072 bytes of 131072, pending 0, total 917504
+sent 131072 bytes of 131072, pending 0, total 917504
+sent 131072 bytes of 131072, pending 0, total 1048576
+sent 131072 bytes of 131072, pending 0, total 1048576
+sent 131072 bytes of 131072, pending 0, total 1179648
+sent 131072 bytes of 131072, pending 0, total 1179648
+sent 131072 bytes of 131072, pending 0, total 1310720
+sent 131072 bytes of 131072, pending 0, total 1310720
+sent 131072 bytes of 131072, pending 0, total 1441792
+sent 131072 bytes of 131072, pending 0, total 1441792
+sent 131072 bytes of 131072, pending 0, total 1572864
+sent 131072 bytes of 131072, pending 0, total 1572864
+sent 131072 bytes of 131072, pending 0, total 1703936
+sent 131072 bytes of 131072, pending 0, total 1703936
+sent 131072 bytes of 131072, pending 0, total 1835008
+sent 131072 bytes of 131072, pending 0, total 1835008
+sent 131072 bytes of 131072, pending 0, total 1966080
+sent 131072 bytes of 131072, pending 0, total 1966080
+sent 131072 bytes of 131072, pending 0, total 2097152
+sent 131072 bytes of 131072, pending 0, total 2097152
+sent 131072 bytes of 131072, pending 0, total 2228224
+sent 131072 bytes of 131072, pending 0, total 2228224
+sent 131072 bytes of 131072, pending 0, total 2359296
+sent 131072 bytes of 131072, pending 0, total 2359296
+sent 131072 bytes of 131072, pending 0, total 2490368
+sent 131072 bytes of 131072, pending 0, total 2490368
+sent 131072 bytes of 131072, pending 0, total 2621440
+sent 131072 bytes of 131072, pending 0, total 2621440
+sent 131072 bytes of 131072, pending 0, total 2752512
+sent 131072 bytes of 131072, pending 0, total 2752512
+sent 131072 bytes of 131072, pending 0, total 2883584
+sent 131072 bytes of 131072, pending 0, total 2883584
+sent 131072 bytes of 131072, pending 0, total 3014656
+sent 131072 bytes of 131072, pending 0, total 3014656
+sent 131072 bytes of 131072, pending 0, total 3145728
+sent 131072 bytes of 131072, pending 0, total 3145728
+sent 131072 bytes of 131072, pending 0, total 3276800
+sent 131072 bytes of 131072, pending 0, total 3276800
+sent 131072 bytes of 131072, pending 0, total 3407872
+sent 131072 bytes of 131072, pending 0, total 3407872
+sent 131072 bytes of 131072, pending 0, total 3538944
+sent 131072 bytes of 131072, pending 0, total 3538944
+sent 131072 bytes of 131072, pending 0, total 3670016
+sent 131072 bytes of 131072, pending 0, total 3670016
+sent 131072 bytes of 131072, pending 0, total 3801088
+sent 131072 bytes of 131072, pending 0, total 3801088
+sent 131072 bytes of 131072, pending 0, total 3932160
+sent 131072 bytes of 131072, pending 0, total 3932160
+sent 131072 bytes of 131072, pending 0, total 4063232
+sent 131072 bytes of 131072, pending 0, total 4063232
+sent 131072 bytes of 131072, pending 0, total 4194304
+sent 131072 bytes of 131072, pending 0, total 4194304
+sent 131072 bytes of 131072, pending 0, total 4325376
+sent 131072 bytes of 131072, pending 0, total 4325376
+sent 131072 bytes of 131072, pending 0, total 4456448
+sent 131072 bytes of 131072, pending 0, total 4456448
+sent 131072 bytes of 131072, pending 0, total 4587520
+sent 131072 bytes of 131072, pending 0, total 4587520
+sent 131072 bytes of 131072, pending 0, total 4718592
+sent 131072 bytes of 131072, pending 0, total 4718592
+sent 131072 bytes of 131072, pending 0, total 4849664
+sent 131072 bytes of 131072, pending 0, total 4849664
+sent 131072 bytes of 131072, pending 0, total 4980736
+sent 131072 bytes of 131072, pending 0, total 4980736
+sent 131072 bytes of 131072, pending 0, total 5111808
+sent 131072 bytes of 131072, pending 0, total 5111808
+sent 131072 bytes of 131072, pending 0, total 5242880
+sent 131072 bytes of 131072, pending 0, total 5242880
+tcpi_snd_cwnd 20 tcpi_snd_mss 65483 tcpi_rtt 33233
+tcpi_snd_cwnd 19 tcpi_snd_mss 65483 tcpi_rtt 24030
+interval_len 1.073766 bytes_transferred 5242880
+interval forces keep
+interval_len 1.103196 bytes_transferred 5242880
+interval forces keep
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.07   sec  5.00 MBytes  39.1 Mbits/sec    0   1.25 MBytes       
+[  7]   0.00-1.10   sec  5.00 MBytes  38.0 Mbits/sec    0   1.19 MBytes       
+[SUM]   0.00-1.07   sec  10.0 MBytes  78.1 Mbits/sec    0             
+sent 131072 bytes of 131072, pending 0, total 5373952
+sent 131072 bytes of 131072, pending 0, total 5373952
+sent 131072 bytes of 131072, pending 0, total 5505024
+sent 131072 bytes of 131072, pending 0, total 5505024
+sent 131072 bytes of 131072, pending 0, total 5636096
+sent 131072 bytes of 131072, pending 0, total 5636096
+sent 131072 bytes of 131072, pending 0, total 5767168
+sent 131072 bytes of 131072, pending 0, total 5767168
+sent 131072 bytes of 131072, pending 0, total 5898240
+sent 131072 bytes of 131072, pending 0, total 5898240
+sent 131072 bytes of 131072, pending 0, total 6029312
+sent 131072 bytes of 131072, pending 0, total 6029312
+sent 131072 bytes of 131072, pending 0, total 6160384
+sent 131072 bytes of 131072, pending 0, total 6160384
+sent 131072 bytes of 131072, pending 0, total 6291456
+sent 131072 bytes of 131072, pending 0, total 6291456
+sent 131072 bytes of 131072, pending 0, total 6422528
+sent 131072 bytes of 131072, pending 0, total 6422528
+sent 131072 bytes of 131072, pending 0, total 6553600
+sent 131072 bytes of 131072, pending 0, total 6553600
+sent 131072 bytes of 131072, pending 0, total 6684672
+sent 131072 bytes of 131072, pending 0, total 6684672
+sent 131072 bytes of 131072, pending 0, total 6815744
+sent 131072 bytes of 131072, pending 0, total 6815744
+sent 131072 bytes of 131072, pending 0, total 6946816
+sent 131072 bytes of 131072, pending 0, total 6946816
+sent 131072 bytes of 131072, pending 0, total 7077888
+sent 131072 bytes of 131072, pending 0, total 7077888
+sent 131072 bytes of 131072, pending 0, total 7208960
+sent 131072 bytes of 131072, pending 0, total 7208960
+sent 131072 bytes of 131072, pending 0, total 7340032
+sent 131072 bytes of 131072, pending 0, total 7340032
+sent 131072 bytes of 131072, pending 0, total 7471104
+sent 131072 bytes of 131072, pending 0, total 7471104
+sent 131072 bytes of 131072, pending 0, total 7602176
+sent 131072 bytes of 131072, pending 0, total 7602176
+sent 131072 bytes of 131072, pending 0, total 7733248
+sent 131072 bytes of 131072, pending 0, total 7733248
+sent 131072 bytes of 131072, pending 0, total 7864320
+sent 131072 bytes of 131072, pending 0, total 7864320
+sent 131072 bytes of 131072, pending 0, total 7995392
+sent 131072 bytes of 131072, pending 0, total 7995392
+sent 131072 bytes of 131072, pending 0, total 8126464
+sent 131072 bytes of 131072, pending 0, total 8126464
+sent 131072 bytes of 131072, pending 0, total 8257536
+sent 131072 bytes of 131072, pending 0, total 8257536
+sent 131072 bytes of 131072, pending 0, total 8388608
+sent 131072 bytes of 131072, pending 0, total 8388608
+sent 131072 bytes of 131072, pending 0, total 8519680
+sent 131072 bytes of 131072, pending 0, total 8519680
+sent 131072 bytes of 131072, pending 0, total 8650752
+sent 131072 bytes of 131072, pending 0, total 8650752
+sent 131072 bytes of 131072, pending 0, total 8781824
+sent 131072 bytes of 131072, pending 0, total 8781824
+sent 131072 bytes of 131072, pending 0, total 8912896
+sent 131072 bytes of 131072, pending 0, total 8912896
+sent 131072 bytes of 131072, pending 0, total 9043968
+sent 131072 bytes of 131072, pending 0, total 9043968
+sent 131072 bytes of 131072, pending 0, total 9175040
+sent 131072 bytes of 131072, pending 0, total 9175040
+sent 131072 bytes of 131072, pending 0, total 9306112
+sent 131072 bytes of 131072, pending 0, total 9306112
+sent 131072 bytes of 131072, pending 0, total 9437184
+sent 131072 bytes of 131072, pending 0, total 9437184
+sent 131072 bytes of 131072, pending 0, total 9568256
+sent 131072 bytes of 131072, pending 0, total 9568256
+sent 131072 bytes of 131072, pending 0, total 9699328
+sent 131072 bytes of 131072, pending 0, total 9699328
+sent 131072 bytes of 131072, pending 0, total 9830400
+sent 131072 bytes of 131072, pending 0, total 9830400
+sent 131072 bytes of 131072, pending 0, total 9961472
+sent 131072 bytes of 131072, pending 0, total 9961472
+sent 131072 bytes of 131072, pending 0, total 10092544
+sent 131072 bytes of 131072, pending 0, total 10092544
+sent 131072 bytes of 131072, pending 0, total 10223616
+sent 131072 bytes of 131072, pending 0, total 10223616
+sent 131072 bytes of 131072, pending 0, total 10354688
+sent 131072 bytes of 131072, pending 0, total 10354688
+sent 131072 bytes of 131072, pending 0, total 10485760
+sent 131072 bytes of 131072, pending 0, total 10485760
+sent 131072 bytes of 131072, pending 0, total 10616832
+sent 131072 bytes of 131072, pending 0, total 10616832
+sent 131072 bytes of 131072, pending 0, total 10747904
+sent 131072 bytes of 131072, pending 0, total 10747904
+sent 131072 bytes of 131072, pending 0, total 10878976
+sent 131072 bytes of 131072, pending 0, total 10878976
+sent 131072 bytes of 131072, pending 0, total 11010048
+sent 131072 bytes of 131072, pending 0, total 11010048
+sent 131072 bytes of 131072, pending 0, total 11141120
+sent 131072 bytes of 131072, pending 0, total 11141120
+sent 131072 bytes of 131072, pending 0, total 11272192
+sent 131072 bytes of 131072, pending 0, total 11272192
+sent 131072 bytes of 131072, pending 0, total 11403264
+sent 131072 bytes of 131072, pending 0, total 11403264
+sent 131072 bytes of 131072, pending 0, total 11534336
+sent 131072 bytes of 131072, pending 0, total 11534336
+sent 131072 bytes of 131072, pending 0, total 11665408
+sent 131072 bytes of 131072, pending 0, total 11665408
+sent 131072 bytes of 131072, pending 0, total 11796480
+sent 131072 bytes of 131072, pending 0, total 11796480
+tcpi_snd_cwnd 20 tcpi_snd_mss 65483 tcpi_rtt 24984
+tcpi_snd_cwnd 19 tcpi_snd_mss 65483 tcpi_rtt 19028
+send_results
+{
+	"cpu_util_total":	94.8410212579814,
+	"cpu_util_user":	11.012975580143072,
+	"cpu_util_system":	83.824636721118168,
+	"sender_has_retransmits":	1,
+	"congestion_used":	"cubic",
+	"streams":	[{
+			"id":	1,
+			"bytes":	11796480,
+			"retransmits":	0,
+			"jitter":	0,
+			"errors":	0,
+			"packets":	0,
+			"start_time":	0,
+			"end_time":	2.217875
+		}, {
+			"id":	3,
+			"bytes":	11796480,
+			"retransmits":	0,
+			"jitter":	0,
+			"errors":	0,
+			"packets":	0,
+			"start_time":	0,
+			"end_time":	2.21808
+		}]
+}
+get_results
+{
+	"cpu_util_total":	68.0801304841654,
+	"cpu_util_user":	3.5436046336667375,
+	"cpu_util_system":	64.536353889289657,
+	"sender_has_retransmits":	-1,
+	"congestion_used":	"cubic",
+	"streams":	[{
+			"id":	1,
+			"bytes":	11796480,
+			"retransmits":	-1,
+			"jitter":	0,
+			"errors":	0,
+			"packets":	0,
+			"start_time":	0,
+			"end_time":	2.325507
+		}, {
+			"id":	3,
+			"bytes":	11796480,
+			"retransmits":	-1,
+			"jitter":	0,
+			"errors":	0,
+			"packets":	0,
+			"start_time":	0,
+			"end_time":	2.325685
+		}]
+}
+interval_len 1.144109 bytes_transferred 6553600
+interval forces keep
+interval_len 1.114884 bytes_transferred 6553600
+interval forces keep
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   1.07-2.22   sec  6.25 MBytes  45.8 Mbits/sec    0   1.25 MBytes       
+[  7]   1.10-2.22   sec  6.25 MBytes  47.0 Mbits/sec    0   1.19 MBytes       
+[SUM]   1.07-2.22   sec  12.5 MBytes  91.7 Mbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-2.22   sec  11.2 MBytes  42.6 Mbits/sec    0             sender
+[  5]   0.00-2.33   sec  11.2 MBytes  40.6 Mbits/sec                  receiver
+[  7]   0.00-2.22   sec  11.2 MBytes  42.6 Mbits/sec    0             sender
+[  7]   0.00-2.33   sec  11.2 MBytes  40.6 Mbits/sec                  receiver
+[SUM]   0.00-2.22   sec  22.5 MBytes  85.1 Mbits/sec    0             sender
+[SUM]   0.00-2.33   sec  22.5 MBytes  81.2 Mbits/sec                  receiver
+
+iperf Done.
++ CHECK_RESULT 0 0 0 'Error: iperf3 -P ... run failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Error: iperf3 -P ... run failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iperf3 -s -p 51314 -D
++ CHECK_RESULT 0 0 0 'CHECK iperf3 -s -p 51314 -D FAILED'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='CHECK iperf3 -s -p 51314 -D FAILED'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 51314
++ grep iperf3
++ ss -ntlp
+LISTEN 0      4096               *:51314            *:*    users:(("iperf3",pid=10728,fd=3))
++ CHECK_RESULT 0 0 0 'Error: iperf3 -s ... run failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Error: iperf3 -s ... run failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iperf3 -s -p 51314 -D
++ CHECK_RESULT 0 0 0 'CHECK iperf3 -s -p 51314 -D FAILED'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='CHECK iperf3 -s -p 51314 -D FAILED'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ iperf3 -u -c 127.0.0.1 -p 51314 -b 10M -P 10 -t 3
+Connecting to host 127.0.0.1, port 51314
+[  5] local 127.0.0.1 port 52997 connected to 127.0.0.1 port 51314
+[  7] local 127.0.0.1 port 60555 connected to 127.0.0.1 port 51314
+[  9] local 127.0.0.1 port 51108 connected to 127.0.0.1 port 51314
+[ 11] local 127.0.0.1 port 43066 connected to 127.0.0.1 port 51314
+[ 13] local 127.0.0.1 port 60754 connected to 127.0.0.1 port 51314
+[ 15] local 127.0.0.1 port 33125 connected to 127.0.0.1 port 51314
+[ 17] local 127.0.0.1 port 49658 connected to 127.0.0.1 port 51314
+[ 19] local 127.0.0.1 port 53881 connected to 127.0.0.1 port 51314
+[ 21] local 127.0.0.1 port 38016 connected to 127.0.0.1 port 51314
+[ 23] local 127.0.0.1 port 40376 connected to 127.0.0.1 port 51314
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[  7]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[  9]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[ 11]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[ 13]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[ 15]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[ 17]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[ 19]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[ 21]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[ 23]   0.00-1.02   sec   895 KBytes  7.19 Mbits/sec  28  
+[SUM]   0.00-1.02   sec  8.74 MBytes  71.9 Mbits/sec  280  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[  7]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[  9]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[ 11]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[ 13]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[ 15]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[ 17]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[ 19]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[ 21]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[ 23]   1.02-2.06   sec   799 KBytes  6.31 Mbits/sec  25  
+[SUM]   1.02-2.06   sec  7.81 MBytes  63.1 Mbits/sec  250  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   2.06-3.01   sec   671 KBytes  5.75 Mbits/sec  21  
+[  7]   2.06-3.01   sec   671 KBytes  5.75 Mbits/sec  21  
+[  9]   2.06-3.01   sec   671 KBytes  5.75 Mbits/sec  21  
+[ 11]   2.06-3.01   sec   671 KBytes  5.75 Mbits/sec  21  
+[ 13]   2.06-3.01   sec   671 KBytes  5.75 Mbits/sec  21  
+[ 15]   2.06-3.03   sec   671 KBytes  5.64 Mbits/sec  21  
+[ 17]   2.06-3.03   sec   671 KBytes  5.64 Mbits/sec  21  
+[ 19]   2.06-3.03   sec   671 KBytes  5.64 Mbits/sec  21  
+[ 21]   2.06-3.03   sec   671 KBytes  5.64 Mbits/sec  21  
+[ 23]   2.06-3.03   sec   671 KBytes  5.64 Mbits/sec  21  
+[SUM]   2.06-3.01   sec  6.56 MBytes  57.5 Mbits/sec  210  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[  5]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  16.263 ms  0/74 (0%)  receiver
+[  7]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[  7]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  19.656 ms  0/74 (0%)  receiver
+[  9]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[  9]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  22.684 ms  0/74 (0%)  receiver
+[ 11]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[ 11]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  23.703 ms  0/74 (0%)  receiver
+[ 13]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[ 13]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  23.758 ms  0/74 (0%)  receiver
+[ 15]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[ 15]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  21.596 ms  0/74 (0%)  receiver
+[ 17]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[ 17]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  19.245 ms  0/74 (0%)  receiver
+[ 19]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[ 19]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  22.287 ms  0/74 (0%)  receiver
+[ 21]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[ 21]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  22.207 ms  0/74 (0%)  receiver
+[ 23]   0.00-3.01   sec  2.31 MBytes  6.43 Mbits/sec  0.000 ms  0/74 (0%)  sender
+[ 23]   0.00-3.07   sec  2.31 MBytes  6.32 Mbits/sec  23.490 ms  0/74 (0%)  receiver
+[SUM]   0.00-3.01   sec  23.1 MBytes  64.3 Mbits/sec  0.000 ms  0/740 (0%)  sender
+[SUM]   0.00-3.07   sec  23.1 MBytes  63.2 Mbits/sec  21.489 ms  0/740 (0%)  receiver
+
+iperf Done.
++ CHECK_RESULT 0 0 0 'Error: iperf3 -u -b ... run failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Error: iperf3 -u -b ... run failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iperf3 -v
++ grep 'iperf 3'
+iperf 3.10.1 (cJSON 1.7.13)
++ CHECK_RESULT 0 0 0 'Error: iperf3 -v run failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Error: iperf3 -v run failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iperf3 --version
++ grep 'iperf 3'
+iperf 3.10.1 (cJSON 1.7.13)
++ CHECK_RESULT 0 0 0 'Error: iperf3 --version run failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Error: iperf3 --version run failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Sun Jan  8 01:31:11 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Sun Jan  8 01:31:20 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpk3l3fcg2 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpk3l3fcg2
++ '[' 0 -ne 0 ']'

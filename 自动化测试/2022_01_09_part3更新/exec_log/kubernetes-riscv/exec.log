@@ -1,0 +1,13 @@
+Sun Jan  8 19:01:02 2023 - INFO  - start to run testcase:oe_test_service_kube-controller-manager.
+Sun Jan  8 19:31:12 2023 - WARN  - The case execution timeout.
+Sun Jan  8 19:31:16 2023 - ERROR - The case exit by code 143.
+Sun Jan  8 19:31:20 2023 - INFO  - End to run testcase:oe_test_service_kube-controller-manager.
+Sun Jan  8 19:31:24 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  8 19:31:45 2023 - INFO  - start to run testcase:oe_test_service_kube-scheduler.
+Sun Jan  8 19:44:07 2023 - ERROR - The case exit by code 1.
+Sun Jan  8 19:44:10 2023 - INFO  - End to run testcase:oe_test_service_kube-scheduler.
+Sun Jan  8 19:44:12 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Sun Jan  8 19:44:27 2023 - INFO  - start to run testcase:oe_test_service_kubelet.
+Sun Jan  8 19:55:16 2023 - INFO  - The case exit by code 0.
+Sun Jan  8 19:55:18 2023 - INFO  - End to run testcase:oe_test_service_kubelet.
+Sun Jan  8 19:55:21 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.

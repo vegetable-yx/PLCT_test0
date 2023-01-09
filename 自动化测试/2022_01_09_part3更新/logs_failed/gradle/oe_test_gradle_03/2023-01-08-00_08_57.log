@@ -1,0 +1,89 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jan  8 00:09:45 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL gradle
++ pkgs=gradle
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs gradle --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:23:57 ago on Sat 07 Jan 2023 11:51:03 PM CST.
+Dependencies resolved.
+================================================================================
+ Package        Architecture   Version                   Repository        Size
+================================================================================
+Installing:
+ gradle         noarch         4.4.1-3.oe2203            mainline         9.2 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total size: 9.2 M
+Installed size: 11 M
+Downloading Packages:
+[SKIPPED] gradle-4.4.1-3.oe2203.noarch.rpm: Already downloaded                 
+Running transaction check
+Waiting for process with pid 960 to finish.
+Transaction check succeeded.
+Running transaction test
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.
+Error: Transaction test error:
+  package gradle-4.4.1-3.oe2203.noarch is already installed'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:23:57 ago on Sat 07 Jan 2023 11:51:03 PM CST.
+Dependencies resolved.
+================================================================================
+ Package        Architecture   Version                   Repository        Size
+================================================================================
+Installing:
+ gradle         noarch         4.4.1-3.oe2203            mainline         9.2 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total size: 9.2 M
+Installed size: 11 M
+Downloading Packages:
+[SKIPPED] gradle-4.4.1-3.oe2203.noarch.rpm: Already downloaded                 
+Running transaction check
+Waiting for process with pid 960 to finish.
+Transaction check succeeded.
+Running transaction test
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.
+Error: Transaction test error:
+  package gradle-4.4.1-3.oe2203.noarch is already installed'
++ cp ../common/build.gradle ./
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sun Jan  8 00:17:49 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 00:17:59 2023 - INFO  - Start to run test.
++ gradle -i base
++ grep 'All projects evaluated.'
+Sun Jan  8 00:39:04 2023 - ERROR - Timeout : Command 'bash -x oe_test_gradle_03.sh' timed out after 1799.9958617850007 seconds

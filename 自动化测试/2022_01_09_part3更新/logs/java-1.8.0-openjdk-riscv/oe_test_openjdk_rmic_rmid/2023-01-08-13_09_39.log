@@ -1,0 +1,259 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jan  8 13:10:21 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'java-1.8.0-openjdk*'
++ pkgs='java-1.8.0-openjdk*'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'java-1.8.0-openjdk*' --node 1 --tempfile ''
+Sun Jan  8 13:11:56 2023 - INFO  - pkgs:(java-1.8.0-openjdk*) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ cp ../common/Hello.java .
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sun Jan  8 13:12:07 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 13:12:15 2023 - INFO  - Start to run test.
++ rmic -help
++ grep Usage
+Usage: rmic <options> <class names>
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rmid -help
++ grep Usage
+Usage: rmid <options>
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 3
++ rmid -port 1111 -log portlog
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ rmid -stop -port 1111
+Activation.main: warning: sun.rmi.activation.execPolicy system
+property unspecified and no ExecPermissions/ExecOptionPermissions
+granted; subsequent activation attempts may fail due to unsuccessful
+ExecPermission/ExecOptionPermission permission checks.  For
+documentation on how to configure rmid security, refer to:
+
+http://java.sun.com/j2se/1.4/docs/tooldocs/solaris/rmid.html
+http://java.sun.com/j2se/1.4/docs/tooldocs/win32/rmid.html
+
+Activation.main: an exception occurred: java.rmi.activation.ActivationException: unable to obtain ActivationSystem; nested exception is: 
+	java.rmi.ConnectException: Connection refused to host: 10.0.2.15; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused)
+java.rmi.activation.ActivationException: unable to obtain ActivationSystem; nested exception is: 
+	java.rmi.ConnectException: Connection refused to host: 10.0.2.15; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused)
+	at java.rmi.activation.ActivationGroup.getSystem(ActivationGroup.java:456)
+	at sun.rmi.server.Activation.main(Activation.java:2101)
+Caused by: java.rmi.ConnectException: Connection refused to host: 10.0.2.15; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:623)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.newCall(UnicastRef.java:343)
+	at sun.rmi.registry.RegistryImpl_Stub.lookup(RegistryImpl_Stub.java:116)
+	at java.rmi.Naming.lookup(Naming.java:101)
+	at java.rmi.activation.ActivationGroup.getSystem(ActivationGroup.java:453)
+	... 1 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at java.net.Socket.connect(Socket.java:556)
+	at java.net.Socket.<init>(Socket.java:452)
+	at java.net.Socket.<init>(Socket.java:229)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:148)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:617)
+	... 7 more
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_rmic_rmid.sh line 37'
++ message='oe_test_openjdk_rmic_rmid.sh line 37'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_rmic_rmid.sh line 37'
+Sun Jan  8 13:13:41 2023 - ERROR - oe_test_openjdk_rmic_rmid.sh line 37
++ return 0
++ find portlog
+portlog
+portlog/Snapshot.1
+portlog/Version_Number
+portlog/Logfile.1
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rmiregistry -h
++ grep Usage
+Usage: rmiregistry <options> <port>
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ schemagen -help
+oe_test_openjdk_rmic_rmid.sh: line 44: schemagen: command not found
++ grep Usage
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_rmic_rmid.sh line 45'
++ message='oe_test_openjdk_rmic_rmid.sh line 45'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_rmic_rmid.sh line 45'
+Sun Jan  8 13:14:25 2023 - ERROR - oe_test_openjdk_rmic_rmid.sh line 45
++ return 0
++ grep 'schemagen [0-9]'
++ schemagen -version
+oe_test_openjdk_rmic_rmid.sh: line 46: schemagen: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_rmic_rmid.sh line 47'
++ message='oe_test_openjdk_rmic_rmid.sh line 47'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_rmic_rmid.sh line 47'
+Sun Jan  8 13:14:32 2023 - ERROR - oe_test_openjdk_rmic_rmid.sh line 47
++ return 0
++ schemagen -fullversion
+oe_test_openjdk_rmic_rmid.sh: line 48: schemagen: command not found
++ grep 'schemagen full version'
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_rmic_rmid.sh line 49'
++ message='oe_test_openjdk_rmic_rmid.sh line 49'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_rmic_rmid.sh line 49'
+Sun Jan  8 13:14:40 2023 - ERROR - oe_test_openjdk_rmic_rmid.sh line 49
++ return 0
++ grep use
++ serialver
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_rmic_rmid.sh line 52'
++ message='oe_test_openjdk_rmic_rmid.sh line 52'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_rmic_rmid.sh line 52'
+Sun Jan  8 13:14:47 2023 - ERROR - oe_test_openjdk_rmic_rmid.sh line 52
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sun Jan  8 13:14:53 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 5
++ test 5 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sun Jan  8 13:15:00 2023 - ERROR - failed to execute the case.
++ exit 5
++ post_test
++ LOG_INFO 'Need'\''t to restore the tet environment.'
++ message='Need'\''t to restore the tet environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Need'\''t to restore the tet environment.'
+Sun Jan  8 13:15:05 2023 - INFO  - Need't to restore the tet environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Sun Jan  8 13:15:11 2023 - WARN  - no thing to do.
++ return 0
++ rm -rf Hello.java portlog
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jan  8 13:15:21 2023 - INFO  - End to restore the test environment.

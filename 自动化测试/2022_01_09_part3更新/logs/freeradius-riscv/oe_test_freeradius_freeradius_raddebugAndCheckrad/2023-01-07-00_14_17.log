@@ -1,0 +1,481 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Jan  7 00:15:13 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL freeradius
++ pkgs=freeradius
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs freeradius --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp5pcx7sp_
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp5pcx7sp_
++ ln -s /etc/raddb/sites-available/control-socket /etc/raddb/sites-enabled/control-socket
++ sed -i '/mode = rw/a mode = rw' /etc/raddb/sites-enabled/control-socket
++ sed -i '1i "test" Cleartext-Password := "pass123"' /etc/raddb/users
++ systemctl start radiusd
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sat Jan  7 00:44:21 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sat Jan  7 00:44:25 2023 - ERROR - Timeout : Command 'bash -x oe_test_freeradius_freeradius_raddebugAndCheckrad.sh' timed out after 1799.9640417059998 seconds
+Sat Jan  7 00:44:28 2023 - INFO  - Start to run test.
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sat Jan  7 00:44:35 2023 - INFO  - Start to restore the test environment.
+++ systemctl stop radiusd
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z /tmp/tmp5pcx7sp_ ]]
+++ '[' 0 -ne 0 ']'
+++ '[' 1 == 0 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp5pcx7sp_
+++ '[' 0 -ne 0 ']'
+++ rm -rf /etc/raddb
+++ rm -rf /var/log/radius
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sat Jan  7 00:48:28 2023 - INFO  - End to restore the test environment.
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ raddebug -c '&Framed-IP-Address == 127.0.0.1'
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+oe_test_freeradius_freeradius_raddebugAndCheckrad.sh: line 37: raddebug: command not found
++ ps -ef
++ grep -v grep
++ grep 'tail -f /var/log/radius'
++ status=1
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
+++ ps -ef
+++ grep -v grep
+++ grep 'raddebug -c'
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -c execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -c execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -c execution failed.'
++ LOG_ERROR 'raddebug -c execution failed.'
++ message='raddebug -c execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -c execution failed.'
+Sat Jan  7 00:49:59 2023 - ERROR - raddebug -c execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 43'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 43'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 43'
+Sat Jan  7 00:50:06 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 43
++ return 0
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ raddebug -d /etc/raddb/
+oe_test_freeradius_freeradius_raddebugAndCheckrad.sh: line 44: raddebug: command not found
++ grep 'tail -f /var/log/radius'
++ ps -ef
++ grep -v grep
++ status=1
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
+++ ps -ef
+++ grep -v grep
+++ grep 'raddebug -d'
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -d execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -d execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -d execution failed.'
++ LOG_ERROR 'raddebug -d execution failed.'
++ message='raddebug -d execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -d execution failed.'
+Sat Jan  7 00:51:39 2023 - ERROR - raddebug -d execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 50'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 50'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 50'
+Sat Jan  7 00:51:48 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 50
++ return 0
++ cp /etc/raddb/radiusd.conf /etc/raddb/test.conf
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ raddebug -n test
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+radmin: Could not find control socket in /etc/raddb/test.conf
++ ps -ef
++ grep 'tail -f /var/log/radius'
++ grep -v grep
++ status=1
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
+++ grep 'raddebug -n'
+++ ps -ef
+++ grep -v grep
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -n execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -n execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -n execution failed.'
++ LOG_ERROR 'raddebug -n execution failed.'
++ message='raddebug -n execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -n execution failed.'
+Sat Jan  7 00:53:15 2023 - ERROR - raddebug -n execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 58'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 58'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 58'
+Sat Jan  7 00:53:23 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 58
++ return 0
++ raddebug -D /usr/share/freeradius
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+radmin: Could not find control socket in /etc/raddb/radiusd.conf
++ ps -ef
++ grep -v grep
++ grep 'tail -f /var/log/radius'
++ status=1
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
+++ grep 'raddebug -D'
+++ ps -ef
+++ grep -v grep
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -D execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -D execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -D execution failed.'
++ LOG_ERROR 'raddebug -D execution failed.'
++ message='raddebug -D execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -D execution failed.'
+Sat Jan  7 00:54:55 2023 - ERROR - raddebug -D execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 65'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 65'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 65'
+Sat Jan  7 00:55:03 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 65
++ return 0
++ raddebug -i 127.0.0.1
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+radmin: Could not find control socket in /etc/raddb/radiusd.conf
++ ps -ef
++ grep -v grep
++ grep 'tail -f /var/log/radius'
++ status=1
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
+++ ps -ef
+++ grep -v grep
+++ grep 'raddebug -i'
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -i execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -i execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -i execution failed.'
++ LOG_ERROR 'raddebug -i execution failed.'
++ message='raddebug -i execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -i execution failed.'
+Sat Jan  7 00:56:43 2023 - ERROR - raddebug -i execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 72'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 72'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 72'
+Sat Jan  7 00:56:52 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 72
++ return 0
++ SLEEP_WAIT 1
++ wait_time=1
++ raddebug -I ''
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+radmin: Could not find control socket in /etc/raddb/radiusd.conf
++ ps -ef
++ grep 'tail -f /var/log/radius'
++ grep -v grep
++ status=1
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
+++ ps -ef
+++ grep 'raddebug -I'
+++ grep -v grep
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -I execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -I execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -I execution failed.'
++ LOG_ERROR 'raddebug -I execution failed.'
++ message='raddebug -I execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -I execution failed.'
+Sat Jan  7 00:58:28 2023 - ERROR - raddebug -I execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 79'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 79'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 79'
+Sat Jan  7 00:58:34 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 79
++ return 0
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ raddebug -f /var/run/radiusd/radiusd.sock
+radmin: Failed connecting to /var/run/radiusd/radiusd.sock: No such file or directory
+Perhaps you need to run the commands:	cd /etc/raddb
+	ln -s sites-available/control-socket sites-enabled/control-socket
+and then re-start the server?
++ ps -ef
++ grep 'tail -f /var/log/radius'
++ grep -v grep
++ status=1
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
+++ ps -ef
+++ grep -v grep
+++ grep 'raddebug -f'
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -f execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -f execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -f execution failed.'
++ LOG_ERROR 'raddebug -f execution failed.'
++ message='raddebug -f execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -f execution failed.'
+Sat Jan  7 00:59:50 2023 - ERROR - raddebug -f execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 86'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 86'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 86'
+Sat Jan  7 00:59:55 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 86
++ return 0
++ SLEEP_WAIT 1
++ raddebug -t 2
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+radmin: Could not find control socket in /etc/raddb/radiusd.conf
++ ps -ef
++ grep 'tail -f /var/log/radius'
++ grep -v grep
++ status=1
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ ps -ef
+++ grep 'raddebug -t'
+++ grep -v grep
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -t execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -t execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -t execution failed.'
++ LOG_ERROR 'raddebug -t execution failed.'
++ message='raddebug -t execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -t execution failed.'
+Sat Jan  7 01:00:15 2023 - ERROR - raddebug -t execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 93'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 93'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 93'
+Sat Jan  7 01:00:19 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 93
++ return 0
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ raddebug -u test
+radmin: Could not find control socket in /etc/raddb/radiusd.conf
++ grep 'tail -f /var/log/radius'
++ ps -ef
++ grep -v grep
++ status=1
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
+++ grep -v grep
+++ grep 'raddebug -u'
+++ ps -ef
++ '[' -z ']'
++ '[' 1 -eq 0 ']'
++ CHECK_RESULT 1 0 0 'raddebug -u execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='raddebug -u execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'raddebug -u execution failed.'
++ LOG_ERROR 'raddebug -u execution failed.'
++ message='raddebug -u execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'raddebug -u execution failed.'
+Sat Jan  7 01:01:37 2023 - ERROR - raddebug -u execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 100'
++ message='oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 100'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 100'
+Sat Jan  7 01:01:40 2023 - ERROR - oe_test_freeradius_freeradius_raddebugAndCheckrad.sh line 100
++ return 0
++ checkrad other 127.0.0.1 0 test 1
++ stat=1
++ '[' 1 -eq 0 ']'
++ '[' 1 -eq 1 ']'
++ CHECK_RESULT 0 0 0 'checkrad execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='checkrad execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sat Jan  7 01:01:52 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 9
++ test 9 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sat Jan  7 01:01:56 2023 - ERROR - failed to execute the case.
++ exit 9
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sat Jan  7 01:01:59 2023 - INFO  - Start to restore the test environment.
++ systemctl stop radiusd
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp5pcx7sp_ ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp5pcx7sp_
++ '[' 0 -ne 0 ']'
++ rm -rf /etc/raddb
++ rm -rf /var/log/radius
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sat Jan  7 01:05:35 2023 - INFO  - End to restore the test environment.

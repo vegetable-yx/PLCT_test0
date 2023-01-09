@@ -1,0 +1,319 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Jan  7 01:23:59 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'freeradius freeradius-utils net-tools'
++ pkgs='freeradius freeradius-utils net-tools'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'freeradius freeradius-utils net-tools' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 1:12:40 ago on Sat 07 Jan 2023 12:12:48 AM CST.
+Package net-tools-2.10-1.oe2203.riscv64 is already installed.
+Error: 
+ Problem: conflicting requests
+  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 1:12:40 ago on Sat 07 Jan 2023 12:12:48 AM CST.
+Package net-tools-2.10-1.oe2203.riscv64 is already installed.
+Error: 
+ Problem: conflicting requests
+  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
++ cp /var/log/wtmp /var/log/radius/radwtmp
+cp: cannot create regular file '/var/log/radius/radwtmp': No such file or directory
++ test -e /var/log/radius/radwtmp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sat Jan  7 01:25:34 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sat Jan  7 01:25:37 2023 - INFO  - Start to run test.
+++ radlast
+++ grep -c oot
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 34: radlast: command not found
+++ radlast -t 00:00
+++ grep -c oot
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 34: radlast: command not found
++ '[' 0 -gt 0 ']'
++ CHECK_RESULT 1 0 0 'radlast -t execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radlast -t execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radlast -t execution failed.'
++ LOG_ERROR 'radlast -t execution failed.'
++ message='radlast -t execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radlast -t execution failed.'
+Sat Jan  7 01:25:39 2023 - ERROR - radlast -t execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 35'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 35'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 35'
+Sat Jan  7 01:25:43 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 35
++ return 0
++ radlast -x
++ grep -e runlevel -e shutdown
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 36: radlast: command not found
++ CHECK_RESULT 1 0 0 'radlast -x execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radlast -x execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radlast -x execution failed.'
++ LOG_ERROR 'radlast -x execution failed.'
++ message='radlast -x execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radlast -x execution failed.'
+Sat Jan  7 01:25:45 2023 - ERROR - radlast -x execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 37'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 37'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 37'
+Sat Jan  7 01:25:48 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 37
++ return 0
++ radlast -h
++ grep '\-a'
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 38: radlast: command not found
++ CHECK_RESULT 1 0 0 'radlast -h execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radlast -h execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radlast -h execution failed.'
++ LOG_ERROR 'radlast -h execution failed.'
++ message='radlast -h execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radlast -h execution failed.'
+Sat Jan  7 01:25:52 2023 - ERROR - radlast -h execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 39'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 39'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 39'
+Sat Jan  7 01:25:54 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 39
++ return 0
++ radlast -V
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 40: radlast: command not found
+++ awk '{print $NF}'
+++ last -V
++ grep 2.37.2
++ CHECK_RESULT 1 0 0 'radlast -V execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radlast -V execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radlast -V execution failed.'
++ LOG_ERROR 'radlast -V execution failed.'
++ message='radlast -V execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radlast -V execution failed.'
+Sat Jan  7 01:25:56 2023 - ERROR - radlast -V execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 41'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 41'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 41'
+Sat Jan  7 01:25:59 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 41
++ return 0
++ radsniff -a
+++ ifconfig
+++ awk -F : '{print $1}'
+++ sed -n 1p
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 42: radsniff: command not found
++ grep eth0
++ CHECK_RESULT 1 0 0 'radsniff -a execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radsniff -a execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radsniff -a execution failed.'
++ LOG_ERROR 'radsniff -a execution failed.'
++ message='radsniff -a execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radsniff -a execution failed.'
+Sat Jan  7 01:26:02 2023 - ERROR - radsniff -a execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 43'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 43'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 43'
+Sat Jan  7 01:26:05 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 43
++ return 0
++ systemctl start radiusd
+Failed to start radiusd.service: Unit radiusd.service not found.
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ grep 'Captured 2 packets'
++ radsniff -c 2 -I ../common/test.pcap
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 46: radsniff: command not found
++ CHECK_RESULT 1 0 0 'radsniff -c execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radsniff -c execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radsniff -c execution failed.'
++ LOG_ERROR 'radsniff -c execution failed.'
++ message='radsniff -c execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radsniff -c execution failed.'
+Sat Jan  7 01:26:11 2023 - ERROR - radsniff -c execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 47'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 47'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 47'
+Sat Jan  7 01:26:13 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 47
++ return 0
++ radsniff -C -I ../common/test.pcap
++ tee /tmp/test
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 48: radsniff: command not found
++ grep 'UDP checksum' /tmp/test
++ CHECK_RESULT 1 0 0 'radsniff -C execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radsniff -C execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radsniff -C execution failed.'
++ LOG_ERROR 'radsniff -C execution failed.'
++ message='radsniff -C execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radsniff -C execution failed.'
+Sat Jan  7 01:26:16 2023 - ERROR - radsniff -C execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 50'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 50'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 50'
+Sat Jan  7 01:26:19 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 50
++ return 0
++ grep Access-Accept
++ radsniff -d /etc/raddb -I ../common/test.pcap
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 51: radsniff: command not found
++ CHECK_RESULT 1 0 0 'radsniff -d execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radsniff -d execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radsniff -d execution failed.'
++ LOG_ERROR 'radsniff -d execution failed.'
++ message='radsniff -d execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radsniff -d execution failed.'
+Sat Jan  7 01:26:23 2023 - ERROR - radsniff -d execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 52'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 52'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 52'
+Sat Jan  7 01:26:25 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 52
++ return 0
++ grep Access-Accept
++ radsniff -D /usr/share/freeradius -I ../common/test.pcap
+oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh: line 53: radsniff: command not found
++ CHECK_RESULT 1 0 0 'radsniff -D execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radsniff -D execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radsniff -D execution failed.'
++ LOG_ERROR 'radsniff -D execution failed.'
++ message='radsniff -D execution failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radsniff -D execution failed.'
+Sat Jan  7 01:26:28 2023 - ERROR - radsniff -D execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 54'
++ message='oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 54'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 54'
+Sat Jan  7 01:26:31 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlastAndRadsniff.sh line 54
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sat Jan  7 01:26:33 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 9
++ test 9 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sat Jan  7 01:26:35 2023 - ERROR - failed to execute the case.
++ exit 9
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sat Jan  7 01:26:38 2023 - INFO  - Start to restore the test environment.
++ systemctl stop radiusd
+Failed to stop radiusd.service: Unit radiusd.service not loaded.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 1:12:40 ago on Sat 07 Jan 2023 12:12:48 AM CST.
+Package net-tools-2.10-1.oe2203.riscv64 is already installed.
+Error: 
+ Problem: conflicting requests
+  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64
+(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages) ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 1:12:40 ago on Sat 07 Jan 2023 12:12:48 AM CST.
+Package net-tools-2.10-1.oe2203.riscv64 is already installed.
+Error: 
+ Problem: conflicting requests
+  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
+Traceback (most recent call last):
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 1:12:40 ago on Sat 07 Jan 2023 12:12:48 AM CST.\nPackage net-tools-2.10-1.oe2203.riscv64 is already installed.\nError: \n Problem: conflicting requests\n  - nothing provides perl(Net::IP) needed by freeradius-utils-3.0.25-1.oe2203.riscv64\n(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)"
++ '[' 0 -ne 0 ']'
++ rm -rf /etc/raddb
++ rm -rf /var/log/radius
++ rm -rf /tmp/test
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sat Jan  7 01:26:50 2023 - INFO  - End to restore the test environment.

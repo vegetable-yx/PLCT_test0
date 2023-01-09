@@ -1,0 +1,101 @@
++ source ../common/lib.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Sun Jan  8 15:01:49 2023 - INFO  - Start environment preparation.
++ pre_junit5
++ DNF_INSTALL junit5
++ pkgs=junit5
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs junit5 --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwcus5p31
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwcus5p31
+++ grep 'java-.*-openjdk'
+++ head -1
+++ rpm -qa 'java*'
+++ awk -F - '{print $2}'
++ java_version=1.8.0
++ DNF_INSTALL java-1.8.0-devel
++ pkgs=java-1.8.0-devel
++ node=1
++ '[' -z /tmp/tmpwcus5p31 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs java-1.8.0-devel --node 1 --tempfile /tmp/tmpwcus5p31
++ tmpfile2=/tmp/tmpwcus5p31
++ '[' -z /tmp/tmpwcus5p31 ']'
++ DNF_INSTALL 'ant ant-junit5'
++ pkgs='ant ant-junit5'
++ node=1
++ '[' -z /tmp/tmpwcus5p31 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'ant ant-junit5' --node 1 --tempfile /tmp/tmpwcus5p31
++ tmpfile2=/tmp/tmpwcus5p31
++ '[' -z /tmp/tmpwcus5p31 ']'
++ JAVA_HOME=/usr/lib/jvm/java-openjdk
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin
++ export JAVA_HOME PATH
++ export ANT_HOME=/usr/share/ant
++ ANT_HOME=/usr/share/ant
++ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:/usr/share/ant/bin
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:/usr/share/ant/bin
++ cp ../common/junit-platform-console-standalone-1.6.2.jar /usr/share/ant/lib/
++ mkdir -p junit5_ant/src/test/java/com/example/project/
++ mkdir -p junit5_ant/src/main/java/com/example/project/
++ cp Calculator.java junit5_ant/src/main/java/com/example/project/
++ cp CalculatorTests.java junit5_ant/src/test/java/com/example/project/
++ cp build.xml junit5_ant
++ cd junit5_ant
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Sun Jan  8 15:24:14 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Sun Jan  8 15:24:23 2023 - INFO  - Start testing...
++ ant -version
+Apache Ant(TM) version 1.10.12 compiled on July 29 2022
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wait
++ ant test
+Sun Jan  8 15:31:13 2023 - ERROR - Timeout : Command 'bash -x oe_test_junit5_ant.sh' timed out after 1799.9844772010001 seconds
+++ post_test
+++ LOG_INFO 'start environment cleanup.'
+++ message='start environment cleanup.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Sun Jan  8 15:31:24 2023 - INFO  - start environment cleanup.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z /tmp/tmpwcus5p31 ]]
+++ '[' 0 -ne 0 ']'
+++ '[' 1 == 0 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwcus5p31

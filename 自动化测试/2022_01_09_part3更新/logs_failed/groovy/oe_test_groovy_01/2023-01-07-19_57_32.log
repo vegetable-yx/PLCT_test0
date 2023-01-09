@@ -1,0 +1,107 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Jan  7 19:58:14 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL groovy
++ pkgs=groovy
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs groovy --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpc40l4ufp
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpc40l4ufp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sat Jan  7 20:13:23 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sat Jan  7 20:13:32 2023 - INFO  - Start to run test.
++ grape help
++ grep 'usage: grape'
+usage: grape [options] <command> [args]
++ CHECK_RESULT 0 0 0 'Check grape help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check grape help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grape --help
++ grep 'usage: grape'
+usage: grape [options] <command> [args]
++ CHECK_RESULT 0 0 0 'Check grape --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check grape --help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep Version:
++ grape -v
+Groovy Version: 2.4.8 JVM: 1.8.0_332
++ CHECK_RESULT 0 0 0 'Check grape -v failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check grape -v failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -E 'Grape module versions cached|Grape modules cached'
++ grape list
+0 Grape modules cached
+0 Grape module versions cached
++ CHECK_RESULT 0 0 0 'Check grape list failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check grape list failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ groovyConsole --help
++ grep 'usage: groovyConsole'
+Jan 07, 2023 8:27:06 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+Sat Jan  7 20:27:39 2023 - ERROR - Timeout : Command 'bash -x oe_test_groovy_01.sh' timed out after 1799.973278047 seconds
+usage: groovyConsole [options] [filename]
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sat Jan  7 20:27:58 2023 - INFO  - Start to restore the test environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z /tmp/tmpc40l4ufp ]]
+++ '[' 0 -ne 0 ']'
+++ '[' 1 == 0 ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpc40l4ufp

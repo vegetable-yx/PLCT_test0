@@ -1,0 +1,278 @@
++ source ../common/common_lib.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Mon Jan  9 01:36:34 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL libvirt-daemon
++ pkgs=libvirt-daemon
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs libvirt-daemon --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp6i86zf6d
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp6i86zf6d
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Mon Jan  9 01:45:54 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Mon Jan  9 01:46:02 2023 - INFO  - Start testing...
++ test_execution libvirtd.service
++ service=libvirtd.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-01-09 01:46:03'
++ test_restart libvirtd.service
++ service=libvirtd.service
++ systemctl restart libvirtd.service
++ CHECK_RESULT 0 0 0 'libvirtd.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status libvirtd.service
++ grep 'Active: active'
+     Active: active (running) since Mon 2023-01-09 01:46:34 CST; 18s ago
++ CHECK_RESULT 0 0 0 'libvirtd.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop libvirtd.service
+Warning: Stopping libvirtd.service, but it can still be activated by:
+  libvirtd-ro.socket
+  libvirtd.socket
+  libvirtd-admin.socket
++ CHECK_RESULT 0 0 0 'libvirtd.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status libvirtd.service
++ grep 'Active: inactive'
+     Active: inactive (dead) since Mon 2023-01-09 01:46:55 CST; 17s ago
++ CHECK_RESULT 0 0 0 'libvirtd.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start libvirtd.service
++ CHECK_RESULT 0 0 0 'libvirtd.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'Active: active'
++ systemctl status libvirtd.service
+     Active: active (running) since Mon 2023-01-09 01:47:19 CST; 13s ago
++ CHECK_RESULT 0 0 0 'libvirtd.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled libvirtd.service
++ service=libvirtd.service
+++ systemctl is-enabled libvirtd.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable libvirtd.service
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
+++ grep Removed
++ symlink_file='/etc/systemd/system/sockets.target.wants/libvirtd.socket
+/etc/systemd/system/sockets.target.wants/virtlogd.socket
+/etc/systemd/system/sockets.target.wants/virtlockd.socket
+/etc/systemd/system/sockets.target.wants/libvirtd-ro.socket
+/etc/systemd/system/multi-user.target.wants/libvirtd.service'
++ find /etc/systemd/system/sockets.target.wants/libvirtd.socket /etc/systemd/system/sockets.target.wants/virtlogd.socket /etc/systemd/system/sockets.target.wants/virtlockd.socket /etc/systemd/system/sockets.target.wants/libvirtd-ro.socket /etc/systemd/system/multi-user.target.wants/libvirtd.service
+find: ‘/etc/systemd/system/sockets.target.wants/libvirtd.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtlogd.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/virtlockd.socket’: No such file or directory
+find: ‘/etc/systemd/system/sockets.target.wants/libvirtd-ro.socket’: No such file or directory
+find: ‘/etc/systemd/system/multi-user.target.wants/libvirtd.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'libvirtd.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='libvirtd.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable libvirtd.service
+Created symlink /etc/systemd/system/multi-user.target.wants/libvirtd.service → /usr/lib/systemd/system/libvirtd.service.
+Created symlink /etc/systemd/system/sockets.target.wants/virtlockd.socket → /usr/lib/systemd/system/virtlockd.socket.
+Created symlink /etc/systemd/system/sockets.target.wants/virtlogd.socket → /usr/lib/systemd/system/virtlogd.socket.
+Created symlink /etc/systemd/system/sockets.target.wants/libvirtd.socket → /usr/lib/systemd/system/libvirtd.socket.
+Created symlink /etc/systemd/system/sockets.target.wants/libvirtd-ro.socket → /usr/lib/systemd/system/libvirtd-ro.socket.
++ find /etc/systemd/system/sockets.target.wants/libvirtd.socket /etc/systemd/system/sockets.target.wants/virtlogd.socket /etc/systemd/system/sockets.target.wants/virtlockd.socket /etc/systemd/system/sockets.target.wants/libvirtd-ro.socket /etc/systemd/system/multi-user.target.wants/libvirtd.service
+/etc/systemd/system/sockets.target.wants/libvirtd.socket
+/etc/systemd/system/sockets.target.wants/virtlogd.socket
+/etc/systemd/system/sockets.target.wants/virtlockd.socket
+/etc/systemd/system/sockets.target.wants/libvirtd-ro.socket
+/etc/systemd/system/multi-user.target.wants/libvirtd.service
++ CHECK_RESULT 0 0 0 'libvirtd.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-01-09 01:46:03' -u libvirtd.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of libvirtd.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of libvirtd.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start libvirtd.service
++ sed -i 's\ExecStart=/usr/sbin/libvirtd\ExecStart=/usr/sbin/libvirtd -v\g' /usr/lib/systemd/system/libvirtd.service
++ systemctl daemon-reload
++ systemctl reload libvirtd.service
+libvirtd.service is not active, cannot reload.
++ CHECK_RESULT 1 0 0 'libvirtd.service reload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service reload failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'libvirtd.service reload failed'
++ LOG_ERROR 'libvirtd.service reload failed'
++ message='libvirtd.service reload failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'libvirtd.service reload failed'
+Mon Jan  9 01:49:31 2023 - ERROR - libvirtd.service reload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_libvirtd.sh line 35'
++ message='oe_test_service_libvirtd.sh line 35'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_libvirtd.sh line 35'
+Mon Jan  9 01:49:37 2023 - ERROR - oe_test_service_libvirtd.sh line 35
++ return 0
++ systemctl status libvirtd.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'libvirtd.service reload causes the service status to change'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='libvirtd.service reload causes the service status to change'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'libvirtd.service reload causes the service status to change'
++ LOG_ERROR 'libvirtd.service reload causes the service status to change'
++ message='libvirtd.service reload causes the service status to change'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'libvirtd.service reload causes the service status to change'
+Mon Jan  9 01:49:45 2023 - ERROR - libvirtd.service reload causes the service status to change
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_libvirtd.sh line 37'
++ message='oe_test_service_libvirtd.sh line 37'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_libvirtd.sh line 37'
+Mon Jan  9 01:49:50 2023 - ERROR - oe_test_service_libvirtd.sh line 37
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Mon Jan  9 01:49:56 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon Jan  9 01:50:03 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Mon Jan  9 01:50:08 2023 - INFO  - start environment cleanup.
++ sed -i 's\ExecStart=/usr/sbin/libvirtd -v\ExecStart=/usr/sbin/libvirtd\g' /usr/lib/systemd/system/libvirtd.service
++ systemctl daemon-reload
++ systemctl reload libvirtd.service
+libvirtd.service is not active, cannot reload.
++ systemctl stop libvirtd.service
+Warning: Stopping libvirtd.service, but it can still be activated by:
+  libvirtd-ro.socket
+  libvirtd.socket
+  libvirtd-admin.socket
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp6i86zf6d ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp6i86zf6d
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Mon Jan  9 01:55:00 2023 - INFO  - Finish environment cleanup!

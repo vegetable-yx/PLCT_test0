@@ -1,0 +1,67 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jan  8 00:42:11 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL gradle
++ pkgs=gradle
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs gradle --node 1 --tempfile ''
+Sun Jan  8 00:44:48 2023 - INFO  - pkgs:(gradle) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ cp ../common/build.gradle ./
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sun Jan  8 00:45:02 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 00:45:15 2023 - INFO  - Start to run test.
++ expect
+spawn gradle base --scan
+yes
++ grep 'BUILD SUCCESSFUL' gradle_log
++ CHECK_RESULT 1 0 0 'Check gradle base --scan failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle base --scan failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle base --scan failed'
++ LOG_ERROR 'Check gradle base --scan failed'
++ message='Check gradle base --scan failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle base --scan failed'
+Sun Jan  8 00:46:28 2023 - ERROR - Check gradle base --scan failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_04.sh line 36'
++ message='oe_test_gradle_04.sh line 36'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_04.sh line 36'
+Sun Jan  8 00:46:39 2023 - ERROR - oe_test_gradle_04.sh line 36
++ return 0
++ gradle build
++ grep 'BUILD SUCCESSFUL'
+Sun Jan  8 01:11:14 2023 - ERROR - Timeout : Command 'bash -x oe_test_gradle_04.sh' timed out after 1799.9681275390003 seconds

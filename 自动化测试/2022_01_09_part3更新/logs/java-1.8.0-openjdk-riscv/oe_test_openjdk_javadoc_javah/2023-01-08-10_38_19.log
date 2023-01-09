@@ -1,0 +1,379 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jan  8 10:38:55 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'java-1.8.0-openjdk*'
++ pkgs='java-1.8.0-openjdk*'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'java-1.8.0-openjdk*' --node 1 --tempfile ''
+Sun Jan  8 11:08:25 2023 - ERROR - Timeout : Command 'bash -x oe_test_openjdk_javadoc_javah.sh' timed out after 1799.9779622610004 seconds
++ tmpfile2=/tmp/tmpq_64asrp
+++ post_test
+++ LOG_INFO 'Need'\''t to restore the tet environment.'
+++ message='Need'\''t to restore the tet environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Need'\''t to restore the tet environment.'
+Sun Jan  8 11:36:57 2023 - INFO  - Need't to restore the tet environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Sun Jan  8 11:37:04 2023 - WARN  - no thing to do.
+++ return 0
+++ rm -rf 'Hello*' public protected private package
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jan  8 11:37:13 2023 - INFO  - End to restore the test environment.
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpq_64asrp
++ cp ../common/Hello1.java ../common/Hello.java .
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sun Jan  8 11:37:22 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 11:37:29 2023 - INFO  - Start to run test.
++ javadoc -help
++ grep -i usage
+Usage: javadoc [options] [packagenames] [sourcefiles] [@files]
+  -use                             Create class and package usage pages
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ javadoc -public Hello1.java -d public
+Loading source file Hello1.java...
+Constructing Javadoc information...
+Creating destination directory: "public/"
+Standard Doclet version 1.8.0_332
+Building tree for all the packages and classes...
+Generating public/hello/Hello1.html...
+Generating public/hello/package-frame.html...
+Generating public/hello/package-summary.html...
+Generating public/hello/package-tree.html...
+Generating public/constant-values.html...
+Building index for all the packages and classes...
+Generating public/overview-tree.html...
+Generating public/index-all.html...
+Generating public/deprecated-list.html...
+Building index for all classes...
+Generating public/allclasses-frame.html...
+Generating public/allclasses-noframe.html...
+Generating public/index.html...
+Generating public/help-doc.html...
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ find public
+public
+public/package-list
+public/hello
+public/hello/package-summary.html
+public/hello/package-frame.html
+public/hello/package-tree.html
+public/hello/Hello1.html
+public/overview-tree.html
+public/deprecated-list.html
+public/allclasses-noframe.html
+public/index.html
+public/allclasses-frame.html
+public/stylesheet.css
+public/help-doc.html
+public/script.js
+public/index-all.html
+public/constant-values.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ javadoc -protected Hello1.java -d protected
+Loading source file Hello1.java...
+Constructing Javadoc information...
+Creating destination directory: "protected/"
+Standard Doclet version 1.8.0_332
+Building tree for all the packages and classes...
+Generating protected/hello/Hello1.html...
+Generating protected/hello/package-frame.html...
+Generating protected/hello/package-summary.html...
+Generating protected/hello/package-tree.html...
+Generating protected/constant-values.html...
+Building index for all the packages and classes...
+Generating protected/overview-tree.html...
+Generating protected/index-all.html...
+Generating protected/deprecated-list.html...
+Building index for all classes...
+Generating protected/allclasses-frame.html...
+Generating protected/allclasses-noframe.html...
+Generating protected/index.html...
+Generating protected/help-doc.html...
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ find protected
+protected
+protected/package-list
+protected/hello
+protected/hello/package-summary.html
+protected/hello/package-frame.html
+protected/hello/package-tree.html
+protected/hello/Hello1.html
+protected/overview-tree.html
+protected/deprecated-list.html
+protected/allclasses-noframe.html
+protected/index.html
+protected/allclasses-frame.html
+protected/stylesheet.css
+protected/help-doc.html
+protected/script.js
+protected/index-all.html
+protected/constant-values.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ javadoc -private Hello1.java -d private
+Loading source file Hello1.java...
+Constructing Javadoc information...
+Creating destination directory: "private/"
+Standard Doclet version 1.8.0_332
+Building tree for all the packages and classes...
+Generating private/hello/Hello1.html...
+Generating private/hello/package-frame.html...
+Generating private/hello/package-summary.html...
+Generating private/hello/package-tree.html...
+Generating private/constant-values.html...
+Building index for all the packages and classes...
+Generating private/overview-tree.html...
+Generating private/index-all.html...
+Generating private/deprecated-list.html...
+Building index for all classes...
+Generating private/allclasses-frame.html...
+Generating private/allclasses-noframe.html...
+Generating private/index.html...
+Generating private/help-doc.html...
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ find private
+private
+private/package-list
+private/hello
+private/hello/package-summary.html
+private/hello/package-frame.html
+private/hello/package-tree.html
+private/hello/Hello1.html
+private/overview-tree.html
+private/deprecated-list.html
+private/allclasses-noframe.html
+private/index.html
+private/allclasses-frame.html
+private/stylesheet.css
+private/help-doc.html
+private/script.js
+private/index-all.html
+private/constant-values.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ javadoc -package Hello1.java -d package
+Loading source file Hello1.java...
+Constructing Javadoc information...
+Creating destination directory: "package/"
+Standard Doclet version 1.8.0_332
+Building tree for all the packages and classes...
+Generating package/hello/Hello1.html...
+Generating package/hello/package-frame.html...
+Generating package/hello/package-summary.html...
+Generating package/hello/package-tree.html...
+Generating package/constant-values.html...
+Building index for all the packages and classes...
+Generating package/overview-tree.html...
+Generating package/index-all.html...
+Generating package/deprecated-list.html...
+Building index for all classes...
+Generating package/allclasses-frame.html...
+Generating package/allclasses-noframe.html...
+Generating package/index.html...
+Generating package/help-doc.html...
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ find package
+package
+package/package-list
+package/hello
+package/hello/package-summary.html
+package/hello/package-frame.html
+package/hello/package-tree.html
+package/hello/Hello1.html
+package/overview-tree.html
+package/deprecated-list.html
+package/allclasses-noframe.html
+package/index.html
+package/allclasses-frame.html
+package/stylesheet.css
+package/help-doc.html
+package/script.js
+package/index-all.html
+package/constant-values.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ javah -h
++ grep -i Usage
+Usage: 
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'javah version'
++ javah -version
+javah version "1.8.0_332"
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep Hello.h
++ javah -v Hello
+[Creating file RegularFileObject[Hello.h]]
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ find Hello.h
+Hello.h
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sun Jan  8 11:59:34 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Sun Jan  8 11:59:41 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Need'\''t to restore the tet environment.'
++ message='Need'\''t to restore the tet environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Need'\''t to restore the tet environment.'
+Sun Jan  8 11:59:49 2023 - INFO  - Need't to restore the tet environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpq_64asrp ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpq_64asrp
++ '[' 0 -ne 0 ']'
++ rm -rf Hello1.java Hello.h Hello.java public protected private package
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jan  8 12:07:47 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,294 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jan  8 12:02:39 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'java-1.8.0-openjdk*'
++ pkgs='java-1.8.0-openjdk*'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'java-1.8.0-openjdk*' --node 1 --tempfile ''
+Sun Jan  8 12:32:06 2023 - ERROR - Timeout : Command 'bash -x oe_test_openjdk_jjs_jmap.sh' timed out after 1799.9494974730005 seconds
++ tmpfile2=/tmp/tmpc8uteecb
+++ post_test
+++ LOG_INFO 'Need'\''t to restore the tet environment.'
+++ message='Need'\''t to restore the tet environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Need'\''t to restore the tet environment.'
+Sun Jan  8 12:57:07 2023 - INFO  - Need't to restore the tet environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Sun Jan  8 12:57:15 2023 - WARN  - no thing to do.
+++ return 0
+++ rm -rf 'testlog*' run.js
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jan  8 12:57:23 2023 - INFO  - End to restore the test environment.
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpc8uteecb
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sun Jan  8 12:57:30 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jan  8 12:57:37 2023 - INFO  - Start to run test.
++ jjs -help
++ grep options
+jjs [<options>] <files> [-- <arguments>]
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect -c '
+    log_file testlog1
+    spawn jjs -strict
+    expect "jjs>"
+    send "a=10\r"
+    expect "jjs>"
+    send "exit()\r"
+    expect eof
+'
+spawn jjs -strict
+a=10
+exit()
++ grep 'while executing' testlog1
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ grep 'is not defined' testlog1
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_jjs_jmap.sh line 44'
++ message='oe_test_openjdk_jjs_jmap.sh line 44'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_jjs_jmap.sh line 44'
+Sun Jan  8 12:59:23 2023 - ERROR - oe_test_openjdk_jjs_jmap.sh line 44
++ return 0
++ expect -c '
+    log_file testlog2
+    spawn jjs
+    expect "jjs>"
+    send "a=10\r"
+    expect "jjs>"
+    send "exit()\r"
+    expect eof
+'
+spawn jjs
+a=10
+exit()
++ grep 'while executing' testlog2
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ grep -v a=10 testlog2
++ grep 10
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_jjs_jmap.sh line 58'
++ message='oe_test_openjdk_jjs_jmap.sh line 58'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_jjs_jmap.sh line 58'
+Sun Jan  8 13:00:07 2023 - ERROR - oe_test_openjdk_jjs_jmap.sh line 58
++ return 0
++ grep Usage
++ jmap -h
+Usage:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jps
++ grep '[0-9] Jps'
+12169 Jps
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jps -help
++ grep usage
+usage: jps [-help]
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jrunscript -help
++ grep Usage
+Usage: jrunscript [options] [arguments...]
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jrunscript -e 'print('\''hello world'\'')'
++ grep 'hello world'
+hello world
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo 'println(arguments[0]); 
+println(arguments[1]); 
+println(arguments[2]);'
+++ jrunscript run.js arg1 arg2 arg3
+++ grep -icE 'arg1|arg2|arg3'
++ CHECK_RESULT 3 3
++ actual_result=3
++ expect_result=3
++ mode=0
++ error_log=
++ '[' -z 3 ']'
++ '[' 0 -eq 0 ']'
++ test 3x '!=' 3x
++ return 0
++ expect -c '
+    log_file testlog
+    spawn jjs
+    expect "jjs>"
+    send "20+40\r"
+    expect "jjs>"
+    send "exit()\r"
+    expect eof
+'
+spawn jjs
+20+40
+exit()
++ grep 'while executing' testlog
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ grep 60 testlog
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_openjdk_jjs_jmap.sh line 88'
++ message='oe_test_openjdk_jjs_jmap.sh line 88'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_openjdk_jjs_jmap.sh line 88'
+Sun Jan  8 13:09:40 2023 - ERROR - oe_test_openjdk_jjs_jmap.sh line 88
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sun Jan  8 13:09:46 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sun Jan  8 13:09:54 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'Need'\''t to restore the tet environment.'
++ message='Need'\''t to restore the tet environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Need'\''t to restore the tet environment.'
+Sun Jan  8 13:10:02 2023 - INFO  - Need't to restore the tet environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpc8uteecb ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpc8uteecb
++ '[' 0 -ne 0 ']'
++ rm -rf testlog testlog1 testlog2 run.js
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jan  8 13:14:38 2023 - INFO  - End to restore the test environment.
