@@ -106,12 +106,6 @@
 
 
 
-### p7zip
-
-- oe_test_p7zip_7za_001
-
-
-
 ### os-basic
 
 - oe_test_awk
