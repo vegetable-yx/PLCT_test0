@@ -1,0 +1,178 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Dec 29 11:57:24 2022 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'squid firewalld'
++ pkgs='squid firewalld'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'squid firewalld' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpxxhf858u
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpxxhf858u
++ systemctl start firewalld
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Dec 29 11:59:05 2022 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Dec 29 11:59:06 2022 - INFO  - Start to run test.
++ sed -i 's/#cache_dir ufs \/var\/spool\/squid 100 16 256/cache_dir ufs \/var\/spool\/squid 100 16 256/g' /etc/squid/squid.conf
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ awk -F : '{print$1}'
+++ grep -rn 'http_access deny all' /etc/squid/squid.conf
++ count_line=59
++ test -n 59
++ sed -i 59s/deny/allow/g /etc/squid/squid.conf
++ firewall-cmd --permanent --add-port=3128/tcp
+ERROR:dbus.proxies:Introspect error on :1.24:/org/fedoraproject/FirewallD1: dbus.exceptions.DBusException: org.freedesktop.DBus.Error.NoReply: Message recipient disconnected from message bus without replying
+Error: The name :1.24 was not provided by any .service files
++ CHECK_RESULT 254
++ actual_result=254
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 254 ']'
++ '[' 0 -eq 0 ']'
++ test 254x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_server_squid_proxy.sh line 35'
++ message='oe_test_server_squid_proxy.sh line 35'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_server_squid_proxy.sh line 35'
+Thu Dec 29 11:59:10 2022 - ERROR - oe_test_server_squid_proxy.sh line 35
++ return 0
++ firewall-cmd --reload
+ERROR:dbus.proxies:Introspect error on :1.26:/org/fedoraproject/FirewallD1: dbus.exceptions.DBusException: org.freedesktop.DBus.Error.NoReply: Message recipient disconnected from message bus without replying
+Error: The name :1.26 was not provided by any .service files
++ CHECK_RESULT 254
++ actual_result=254
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 254 ']'
++ '[' 0 -eq 0 ']'
++ test 254x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_server_squid_proxy.sh line 37'
++ message='oe_test_server_squid_proxy.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_server_squid_proxy.sh line 37'
+Thu Dec 29 11:59:14 2022 - ERROR - oe_test_server_squid_proxy.sh line 37
++ return 0
++ systemctl enable --now squid
+Created symlink /etc/systemd/system/multi-user.target.wants/squid.service → /usr/lib/systemd/system/squid.service.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ curl -o baidu -L https://news.baidu.com -x 127.0.0.1:3128 --insecure
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (7) Failed to connect to 127.0.0.1 port 3128 after 27 ms: Connection refused
++ CHECK_RESULT 7
++ actual_result=7
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 7 ']'
++ '[' 0 -eq 0 ']'
++ test 7x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_server_squid_proxy.sh line 42'
++ message='oe_test_server_squid_proxy.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_server_squid_proxy.sh line 42'
+Thu Dec 29 11:59:34 2022 - ERROR - oe_test_server_squid_proxy.sh line 42
++ return 0
++ ls -l baidu
+ls: cannot access 'baidu': No such file or directory
++ CHECK_RESULT 2
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_server_squid_proxy.sh line 44'
++ message='oe_test_server_squid_proxy.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_server_squid_proxy.sh line 44'
+Thu Dec 29 11:59:35 2022 - ERROR - oe_test_server_squid_proxy.sh line 44
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Dec 29 11:59:36 2022 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Dec 29 11:59:36 2022 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Dec 29 11:59:37 2022 - INFO  - Start to restore the test environment.
++ rm -rf baidu
++ test -n 59
++ sed -i 59s/allow/deny/g /etc/squid/squid.conf
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpxxhf858u ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpxxhf858u
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Dec 29 12:00:19 2022 - INFO  - End to restore the test environment.

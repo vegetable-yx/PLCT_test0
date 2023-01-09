@@ -1,0 +1,471 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the database config.'
++ message='Start to prepare the database config.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the database config.'
+Fri Jan  6 00:44:49 2023 - INFO  - Start to prepare the database config.
++ DNF_INSTALL 'clamav clamav-devel'
++ pkgs='clamav clamav-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'clamav clamav-devel' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 1:49:34 ago on Thu Jan  5 22:55:54 2023.
+Package clamav-0.103.6-3.oe2203.riscv64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                 Arch        Version                 Repository    Size
+================================================================================
+Installing:
+ clamav-devel            riscv64     0.103.6-3.oe2203        mainline      33 k
+Installing dependencies:
+ e2fsprogs-devel         riscv64     1.46.4-8.oe2203         mainline     561 k
+ keyutils-libs-devel     riscv64     1.6.3-3.oe2203          mainline      12 k
+ krb5-devel              riscv64     1.19.2-2.oe2203         mainline     161 k
+ libselinux-devel        riscv64     3.3-1.oe2203            mainline     208 k
+ libsepol-devel          riscv64     3.3-1.oe2203            mainline     943 k
+ libverto-devel          riscv64     0.3.2-1.oe2203          mainline      16 k
+ openssl-devel           riscv64     1:1.1.1l-2.oe2203       mainline     3.1 M
+ pcre2-devel             riscv64     10.39-1.oe2203          mainline     858 k
+ zlib-devel              riscv64     1.2.11-19.oe2203        mainline     137 k
+
+Transaction Summary
+================================================================================
+Install  10 Packages
+
+Total download size: 5.9 M
+Installed size: 46 M
+Downloading Packages:
+(1/10): keyutils-libs-devel-1.6.3-3.oe2203.risc  15 kB/s |  12 kB     00:00    
+(2/10): clamav-devel-0.103.6-3.oe2203.riscv64.r  38 kB/s |  33 kB     00:00    
+(3/10): krb5-devel-1.19.2-2.oe2203.riscv64.rpm  540 kB/s | 161 kB     00:00    
+(4/10): libselinux-devel-3.3-1.oe2203.riscv64.r 666 kB/s | 208 kB     00:00    
+(5/10): libverto-devel-0.3.2-1.oe2203.riscv64.r 162 kB/s |  16 kB     00:00    
+(6/10): e2fsprogs-devel-1.46.4-8.oe2203.riscv64 410 kB/s | 561 kB     00:01    
+(7/10): libsepol-devel-3.3-1.oe2203.riscv64.rpm 1.0 MB/s | 943 kB     00:00    
+(8/10): pcre2-devel-10.39-1.oe2203.riscv64.rpm  1.0 MB/s | 858 kB     00:00    
+(9/10): zlib-devel-1.2.11-19.oe2203.riscv64.rpm 658 kB/s | 137 kB     00:00    
+(10/10): openssl-devel-1.1.1l-2.oe2203.riscv64. 1.8 MB/s | 3.1 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           1.9 MB/s | 5.9 MB     00:03     
+Running transaction check
+Waiting for process with pid 5780 to finish.
+Error: transaction check vs depsolve:
+clamav = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64
+clamav-filesystem = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 1:49:34 ago on Thu Jan  5 22:55:54 2023.
+Package clamav-0.103.6-3.oe2203.riscv64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                 Arch        Version                 Repository    Size
+================================================================================
+Installing:
+ clamav-devel            riscv64     0.103.6-3.oe2203        mainline      33 k
+Installing dependencies:
+ e2fsprogs-devel         riscv64     1.46.4-8.oe2203         mainline     561 k
+ keyutils-libs-devel     riscv64     1.6.3-3.oe2203          mainline      12 k
+ krb5-devel              riscv64     1.19.2-2.oe2203         mainline     161 k
+ libselinux-devel        riscv64     3.3-1.oe2203            mainline     208 k
+ libsepol-devel          riscv64     3.3-1.oe2203            mainline     943 k
+ libverto-devel          riscv64     0.3.2-1.oe2203          mainline      16 k
+ openssl-devel           riscv64     1:1.1.1l-2.oe2203       mainline     3.1 M
+ pcre2-devel             riscv64     10.39-1.oe2203          mainline     858 k
+ zlib-devel              riscv64     1.2.11-19.oe2203        mainline     137 k
+
+Transaction Summary
+================================================================================
+Install  10 Packages
+
+Total download size: 5.9 M
+Installed size: 46 M
+Downloading Packages:
+(1/10): keyutils-libs-devel-1.6.3-3.oe2203.risc  15 kB/s |  12 kB     00:00    
+(2/10): clamav-devel-0.103.6-3.oe2203.riscv64.r  38 kB/s |  33 kB     00:00    
+(3/10): krb5-devel-1.19.2-2.oe2203.riscv64.rpm  540 kB/s | 161 kB     00:00    
+(4/10): libselinux-devel-3.3-1.oe2203.riscv64.r 666 kB/s | 208 kB     00:00    
+(5/10): libverto-devel-0.3.2-1.oe2203.riscv64.r 162 kB/s |  16 kB     00:00    
+(6/10): e2fsprogs-devel-1.46.4-8.oe2203.riscv64 410 kB/s | 561 kB     00:01    
+(7/10): libsepol-devel-3.3-1.oe2203.riscv64.rpm 1.0 MB/s | 943 kB     00:00    
+(8/10): pcre2-devel-10.39-1.oe2203.riscv64.rpm  1.0 MB/s | 858 kB     00:00    
+(9/10): zlib-devel-1.2.11-19.oe2203.riscv64.rpm 658 kB/s | 137 kB     00:00    
+(10/10): openssl-devel-1.1.1l-2.oe2203.riscv64. 1.8 MB/s | 3.1 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           1.9 MB/s | 5.9 MB     00:03     
+Running transaction check
+Waiting for process with pid 5780 to finish.
+Error: transaction check vs depsolve:
+clamav = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64
+clamav-filesystem = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ LOG_INFO 'End to prepare the database config.'
++ message='End to prepare the database config.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the database config.'
+Fri Jan  6 00:45:56 2023 - INFO  - End to prepare the database config.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Jan  6 00:45:57 2023 - INFO  - Start to run test.
++ clamsubmit -N bubble -n file
+oe_test_clamav_clamsubmit.sh: line 33: clamsubmit: command not found
++ CHECK_RESULT 127 0 0 'Set clamsubmit name failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Set clamsubmit name failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Set clamsubmit name failed.'
++ LOG_ERROR 'Set clamsubmit name failed.'
++ message='Set clamsubmit name failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Set clamsubmit name failed.'
+Fri Jan  6 00:45:58 2023 - ERROR - Set clamsubmit name failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 34'
++ message='oe_test_clamav_clamsubmit.sh line 34'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 34'
+Fri Jan  6 00:46:00 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 34
++ return 0
++ clamsubmit -e 244349477@qq.com -n file
+oe_test_clamav_clamsubmit.sh: line 35: clamsubmit: command not found
++ CHECK_RESULT 127 0 0 'Set clamsubmit email failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Set clamsubmit email failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Set clamsubmit email failed.'
++ LOG_ERROR 'Set clamsubmit email failed.'
++ message='Set clamsubmit email failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Set clamsubmit email failed.'
+Fri Jan  6 00:46:01 2023 - ERROR - Set clamsubmit email failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 36'
++ message='oe_test_clamav_clamsubmit.sh line 36'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 36'
+Fri Jan  6 00:46:02 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 36
++ return 0
++ clamsubmit -V -p file
+oe_test_clamav_clamsubmit.sh: line 37: clamsubmit: command not found
++ CHECK_RESULT 127 0 0 'Check virush failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virush failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virush failed.'
++ LOG_ERROR 'Check virush failed.'
++ message='Check virush failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check virush failed.'
+Fri Jan  6 00:46:03 2023 - ERROR - Check virush failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 38'
++ message='oe_test_clamav_clamsubmit.sh line 38'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 38'
+Fri Jan  6 00:46:05 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 38
++ return 0
++ clamsubmit --version
+oe_test_clamav_clamsubmit.sh: line 39: clamsubmit: command not found
++ CHECK_RESULT 127 0 0 'Check clamsubmit version failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check clamsubmit version failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check clamsubmit version failed.'
++ LOG_ERROR 'Check clamsubmit version failed.'
++ message='Check clamsubmit version failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clamsubmit version failed.'
+Fri Jan  6 00:46:06 2023 - ERROR - Check clamsubmit version failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 40'
++ message='oe_test_clamav_clamsubmit.sh line 40'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 40'
+Fri Jan  6 00:46:07 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 40
++ return 0
++ clamsubmit --help
+oe_test_clamav_clamsubmit.sh: line 41: clamsubmit: command not found
++ CHECK_RESULT 127 0 0 'Check clamsubmit help message failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check clamsubmit help message failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check clamsubmit help message failed.'
++ LOG_ERROR 'Check clamsubmit help message failed.'
++ message='Check clamsubmit help message failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clamsubmit help message failed.'
+Fri Jan  6 00:46:08 2023 - ERROR - Check clamsubmit help message failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 42'
++ message='oe_test_clamav_clamsubmit.sh line 42'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 42'
+Fri Jan  6 00:46:09 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 42
++ return 0
++ clamav-config --version
+oe_test_clamav_clamsubmit.sh: line 45: clamav-config: command not found
++ CHECK_RESULT 127 0 0 'Check clambc help message failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check clambc help message failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check clambc help message failed.'
++ LOG_ERROR 'Check clambc help message failed.'
++ message='Check clambc help message failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clambc help message failed.'
+Fri Jan  6 00:46:11 2023 - ERROR - Check clambc help message failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 46'
++ message='oe_test_clamav_clamsubmit.sh line 46'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 46'
+Fri Jan  6 00:46:12 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 46
++ return 0
++ clamav-config --help
+oe_test_clamav_clamsubmit.sh: line 47: clamav-config: command not found
++ CHECK_RESULT 127 0 0 'Check clambc help message failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check clambc help message failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check clambc help message failed.'
++ LOG_ERROR 'Check clambc help message failed.'
++ message='Check clambc help message failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clambc help message failed.'
+Fri Jan  6 00:46:13 2023 - ERROR - Check clambc help message failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 48'
++ message='oe_test_clamav_clamsubmit.sh line 48'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 48'
+Fri Jan  6 00:46:14 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 48
++ return 0
++ clamav-config --libs
+oe_test_clamav_clamsubmit.sh: line 49: clamav-config: command not found
++ CHECK_RESULT 127 0 0 'Check clambc help message failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check clambc help message failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check clambc help message failed.'
++ LOG_ERROR 'Check clambc help message failed.'
++ message='Check clambc help message failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clambc help message failed.'
+Fri Jan  6 00:46:15 2023 - ERROR - Check clambc help message failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 50'
++ message='oe_test_clamav_clamsubmit.sh line 50'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 50'
+Fri Jan  6 00:46:16 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 50
++ return 0
++ clamav-config --cflags
+oe_test_clamav_clamsubmit.sh: line 51: clamav-config: command not found
++ CHECK_RESULT 127 0 0 'Check clambc help message failed.'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check clambc help message failed.'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check clambc help message failed.'
++ LOG_ERROR 'Check clambc help message failed.'
++ message='Check clambc help message failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clambc help message failed.'
+Fri Jan  6 00:46:18 2023 - ERROR - Check clambc help message failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 52'
++ message='oe_test_clamav_clamsubmit.sh line 52'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 52'
+Fri Jan  6 00:46:19 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 52
++ return 0
++ clamav-config --prefix
+oe_test_clamav_clamsubmit.sh: line 53: clamav-config: command not found
++ grep /usr
++ CHECK_RESULT 1 0 0 'Check clambc help message failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check clambc help message failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check clambc help message failed.'
++ LOG_ERROR 'Check clambc help message failed.'
++ message='Check clambc help message failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clambc help message failed.'
+Fri Jan  6 00:46:20 2023 - ERROR - Check clambc help message failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamsubmit.sh line 54'
++ message='oe_test_clamav_clamsubmit.sh line 54'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamsubmit.sh line 54'
+Fri Jan  6 00:46:21 2023 - ERROR - oe_test_clamav_clamsubmit.sh line 54
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Jan  6 00:46:22 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 10
++ test 10 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 00:46:24 2023 - ERROR - failed to execute the case.
++ exit 10
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Jan  6 00:46:25 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 1:49:34 ago on Thu Jan  5 22:55:54 2023.
+Package clamav-0.103.6-3.oe2203.riscv64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                 Arch        Version                 Repository    Size
+================================================================================
+Installing:
+ clamav-devel            riscv64     0.103.6-3.oe2203        mainline      33 k
+Installing dependencies:
+ e2fsprogs-devel         riscv64     1.46.4-8.oe2203         mainline     561 k
+ keyutils-libs-devel     riscv64     1.6.3-3.oe2203          mainline      12 k
+ krb5-devel              riscv64     1.19.2-2.oe2203         mainline     161 k
+ libselinux-devel        riscv64     3.3-1.oe2203            mainline     208 k
+ libsepol-devel          riscv64     3.3-1.oe2203            mainline     943 k
+ libverto-devel          riscv64     0.3.2-1.oe2203          mainline      16 k
+ openssl-devel           riscv64     1:1.1.1l-2.oe2203       mainline     3.1 M
+ pcre2-devel             riscv64     10.39-1.oe2203          mainline     858 k
+ zlib-devel              riscv64     1.2.11-19.oe2203        mainline     137 k
+
+Transaction Summary
+================================================================================
+Install  10 Packages
+
+Total download size: 5.9 M
+Installed size: 46 M
+Downloading Packages:
+(1/10): keyutils-libs-devel-1.6.3-3.oe2203.risc  15 kB/s |  12 kB     00:00    
+(2/10): clamav-devel-0.103.6-3.oe2203.riscv64.r  38 kB/s |  33 kB     00:00    
+(3/10): krb5-devel-1.19.2-2.oe2203.riscv64.rpm  540 kB/s | 161 kB     00:00    
+(4/10): libselinux-devel-3.3-1.oe2203.riscv64.r 666 kB/s | 208 kB     00:00    
+(5/10): libverto-devel-0.3.2-1.oe2203.riscv64.r 162 kB/s |  16 kB     00:00    
+(6/10): e2fsprogs-devel-1.46.4-8.oe2203.riscv64 410 kB/s | 561 kB     00:01    
+(7/10): libsepol-devel-3.3-1.oe2203.riscv64.rpm 1.0 MB/s | 943 kB     00:00    
+(8/10): pcre2-devel-10.39-1.oe2203.riscv64.rpm  1.0 MB/s | 858 kB     00:00    
+(9/10): zlib-devel-1.2.11-19.oe2203.riscv64.rpm 658 kB/s | 137 kB     00:00    
+(10/10): openssl-devel-1.1.1l-2.oe2203.riscv64. 1.8 MB/s | 3.1 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           1.9 MB/s | 5.9 MB     00:03     
+Running transaction check
+Waiting for process with pid 5780 to finish.
+Error: transaction check vs depsolve:
+clamav = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64
+clamav-filesystem = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64
+To diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.
+You probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 1:49:34 ago on Thu Jan  5 22:55:54 2023.
+Package clamav-0.103.6-3.oe2203.riscv64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                 Arch        Version                 Repository    Size
+================================================================================
+Installing:
+ clamav-devel            riscv64     0.103.6-3.oe2203        mainline      33 k
+Installing dependencies:
+ e2fsprogs-devel         riscv64     1.46.4-8.oe2203         mainline     561 k
+ keyutils-libs-devel     riscv64     1.6.3-3.oe2203          mainline      12 k
+ krb5-devel              riscv64     1.19.2-2.oe2203         mainline     161 k
+ libselinux-devel        riscv64     3.3-1.oe2203            mainline     208 k
+ libsepol-devel          riscv64     3.3-1.oe2203            mainline     943 k
+ libverto-devel          riscv64     0.3.2-1.oe2203          mainline      16 k
+ openssl-devel           riscv64     1:1.1.1l-2.oe2203       mainline     3.1 M
+ pcre2-devel             riscv64     10.39-1.oe2203          mainline     858 k
+ zlib-devel              riscv64     1.2.11-19.oe2203        mainline     137 k
+
+Transaction Summary
+================================================================================
+Install  10 Packages
+
+Total download size: 5.9 M
+Installed size: 46 M
+Downloading Packages:
+(1/10): keyutils-libs-devel-1.6.3-3.oe2203.risc  15 kB/s |  12 kB     00:00    
+(2/10): clamav-devel-0.103.6-3.oe2203.riscv64.r  38 kB/s |  33 kB     00:00    
+(3/10): krb5-devel-1.19.2-2.oe2203.riscv64.rpm  540 kB/s | 161 kB     00:00    
+(4/10): libselinux-devel-3.3-1.oe2203.riscv64.r 666 kB/s | 208 kB     00:00    
+(5/10): libverto-devel-0.3.2-1.oe2203.riscv64.r 162 kB/s |  16 kB     00:00    
+(6/10): e2fsprogs-devel-1.46.4-8.oe2203.riscv64 410 kB/s | 561 kB     00:01    
+(7/10): libsepol-devel-3.3-1.oe2203.riscv64.rpm 1.0 MB/s | 943 kB     00:00    
+(8/10): pcre2-devel-10.39-1.oe2203.riscv64.rpm  1.0 MB/s | 858 kB     00:00    
+(9/10): zlib-devel-1.2.11-19.oe2203.riscv64.rpm 658 kB/s | 137 kB     00:00    
+(10/10): openssl-devel-1.1.1l-2.oe2203.riscv64. 1.8 MB/s | 3.1 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           1.9 MB/s | 5.9 MB     00:03     
+Running transaction check
+Waiting for process with pid 5780 to finish.
+Error: transaction check vs depsolve:
+clamav = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64
+clamav-filesystem = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 1:49:34 ago on Thu Jan  5 22:55:54 2023.\nPackage clamav-0.103.6-3.oe2203.riscv64 is already installed.\nDependencies resolved.\n================================================================================\n Package                 Arch        Version                 Repository    Size\n================================================================================\nInstalling:\n clamav-devel            riscv64     0.103.6-3.oe2203        mainline      33 k\nInstalling dependencies:\n e2fsprogs-devel         riscv64     1.46.4-8.oe2203         mainline     561 k\n keyutils-libs-devel     riscv64     1.6.3-3.oe2203          mainline      12 k\n krb5-devel              riscv64     1.19.2-2.oe2203         mainline     161 k\n libselinux-devel        riscv64     3.3-1.oe2203            mainline     208 k\n libsepol-devel          riscv64     3.3-1.oe2203            mainline     943 k\n libverto-devel          riscv64     0.3.2-1.oe2203          mainline      16 k\n openssl-devel           riscv64     1:1.1.1l-2.oe2203       mainline     3.1 M\n pcre2-devel             riscv64     10.39-1.oe2203          mainline     858 k\n zlib-devel              riscv64     1.2.11-19.oe2203        mainline     137 k\n\nTransaction Summary\n================================================================================\nInstall  10 Packages\n\nTotal download size: 5.9 M\nInstalled size: 46 M\nDownloading Packages:\n(1/10): keyutils-libs-devel-1.6.3-3.oe2203.risc  15 kB/s |  12 kB     00:00    \n(2/10): clamav-devel-0.103.6-3.oe2203.riscv64.r  38 kB/s |  33 kB     00:00    \n(3/10): krb5-devel-1.19.2-2.oe2203.riscv64.rpm  540 kB/s | 161 kB     00:00    \n(4/10): libselinux-devel-3.3-1.oe2203.riscv64.r 666 kB/s | 208 kB     00:00    \n(5/10): libverto-devel-0.3.2-1.oe2203.riscv64.r 162 kB/s |  16 kB     00:00    \n(6/10): e2fsprogs-devel-1.46.4-8.oe2203.riscv64 410 kB/s | 561 kB     00:01    \n(7/10): libsepol-devel-3.3-1.oe2203.riscv64.rpm 1.0 MB/s | 943 kB     00:00    \n(8/10): pcre2-devel-10.39-1.oe2203.riscv64.rpm  1.0 MB/s | 858 kB     00:00    \n(9/10): zlib-devel-1.2.11-19.oe2203.riscv64.rpm 658 kB/s | 137 kB     00:00    \n(10/10): openssl-devel-1.1.1l-2.oe2203.riscv64. 1.8 MB/s | 3.1 MB     00:01    \n--------------------------------------------------------------------------------\nTotal                                           1.9 MB/s | 5.9 MB     00:03     \nRunning transaction check\nWaiting for process with pid 5780 to finish.\nError: transaction check vs depsolve:\nclamav = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64\nclamav-filesystem = 0.103.6-3.oe2203 is needed by clamav-devel-0.103.6-3.oe2203.riscv64\nTo diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.\nYou probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Jan  6 00:46:30 2023 - INFO  - End to restore the test environment.

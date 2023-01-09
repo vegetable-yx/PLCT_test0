@@ -1,0 +1,231 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the database config.'
++ message='Start to prepare the database config.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the database config.'
+Fri Jan  6 00:53:48 2023 - INFO  - Start to prepare the database config.
++ DNF_INSTALL clamav
++ pkgs=clamav
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs clamav --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpx0lqtiv7
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpx0lqtiv7
++ mkdir testu testunpack
++ cp /var/lib/clamav/main.cvd testu/
++ cp /var/lib/clamav/main.cvd testunpack/
++ LOG_INFO 'End to prepare the database config.'
++ message='End to prepare the database config.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the database config.'
+Fri Jan  6 00:57:25 2023 - INFO  - End to prepare the database config.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Jan  6 00:57:26 2023 - INFO  - Start to run test.
++ echo 2
++ sigtool --hex-dump
++ grep 320a
+320a
++ CHECK_RESULT 0 0 0 'Check hex-dump 2 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check hex-dump 2 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo 100
++ sigtool --hex-dump --stdout
++ grep 3130300a
+3130300a
++ CHECK_RESULT 0 0 0 'Check hex-dump 100 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check hex-dump 100 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sigtool --md5 /var/lib/clamav/main.cvd
++ grep main.cvd
+a22e1b59c5e8b8eff166271b08b4ad72:117892267:main.cvd
++ CHECK_RESULT 0 0 0 'Check md5 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check md5 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sigtool --sha1 /var/lib/clamav/main.cvd
++ grep main.cvd
+d275ad7d79af6ecf602d8813173a0bb0a0a00a88:117892267:main.cvd
++ CHECK_RESULT 0 0 0 'Check sha1 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sha1 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sigtool --sha256 /var/lib/clamav/main.cvd
++ grep main.cvd
+081884225087021e718599e8458ff6c9ee3cdebed8775dd8e445fc7b589d88a6:117892267:main.cvd
++ CHECK_RESULT 0 0 0 'Check sha256 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sha256 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sigtool --info /var/lib/clamav/main.cvd
++ grep Signatures
+Signatures: 4566249
++ CHECK_RESULT 0 0 0 'Checkinfo failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Checkinfo failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sigtool --info /var/lib/clamav/main.cvd --flevel 1 --cvd-version 1 --no-cdiff --unsigned --hybrid
++ grep Signatures
+Signatures: 4566249
++ CHECK_RESULT 0 0 0 'Check info with flevel,cvd-version,no-cdiff,unsigned,hybrid failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check info with flevel,cvd-version,no-cdiff,unsigned,hybrid failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sigtool -i /var/lib/clamav/main.cvd
++ grep Signatures
+Signatures: 4566249
++ CHECK_RESULT 0 0 0 'Check sigtool -i failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sigtool -i failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sigtool -i /var/lib/clamav/main.cvd --debug
+File: /var/lib/clamav/main.cvd
+Build time: 07 Jun 2017 17:38 -0400
+Version: 58
+Signatures: 4566249
+Functionality level: 60
+Builder: sigmgr
+MD5: 57462fd73f1cfdb356b9dca66da2b732
+Digital signature: KWRdhTG+Own6ohh0wn5+vqg1d8ULKCxxxQeKuSA155B3ijxBKgf+bV3IXPcmZrIBUDn1xi8FmyvB63UieykwN/Avq5mTjHIVO8zFnC7wVF7dhdcEYn9Nt+Pmk/HXXx0voylYkidvgZmrxI8jx4a/Re6n3hHQJoCZrkHM15GER8j
+LibClamAV debug: Initialized 0.103.6 engine
+LibClamAV debug: in cli_cvdload()
+LibClamAV debug: MD5(.tar.gz) = 57462fd73f1cfdb356b9dca66da2b732
+LibClamAV debug: cli_versig: Decoded signature: 57462fd73f1cfdb356b9dca66da2b732
+LibClamAV debug: cli_versig: Digital signature is correct.
+LibClamAV debug: in cli_tgzload()
+LibClamAV debug: main.info loaded
+LibClamAV debug: in cli_tgzload_cleanup()
+LibClamAV debug: in cli_tgzload()
+LibClamAV debug: in cli_tgzload_cleanup()
+LibClamAV debug: Cleaning up phishcheck
+LibClamAV debug: Phishcheck cleaned up
+Verification OK.
++ CHECK_RESULT 0 0 0 'Check sigtool -i --debug failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sigtool -i --debug failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd testu/
++ sigtool -u main.cvd
++ ls main.hsb
+main.hsb
++ CHECK_RESULT 0 0 0 'Execute sigtool -u cmd failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute sigtool -u cmd failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd ../testunpack/
++ sigtool --unpack /var/lib/clamav/main.cvd
++ ls main.hsb
+main.hsb
++ CHECK_RESULT 0 0 0 'Execute sigtool -unpack cmd failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute sigtool -unpack cmd failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Jan  6 01:00:25 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Jan  6 01:00:26 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Jan  6 01:00:27 2023 - INFO  - Start to restore the test environment.
++ cd ../
++ rm -rf testu testunpack
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpx0lqtiv7 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpx0lqtiv7
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Jan  6 01:01:04 2023 - INFO  - End to restore the test environment.
