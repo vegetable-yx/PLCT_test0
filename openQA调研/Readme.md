@@ -10,9 +10,9 @@ openQA 可以针对操作系统的每个修订版运行多种测试组合，报�
 
 
 
+![openQA 架构图](.\images\openqa_architecture.png)
 
-
-openQA 架构图
+<center>openQA 架构图</center>
 
 
 
