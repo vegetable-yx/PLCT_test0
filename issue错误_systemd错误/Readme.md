@@ -40,7 +40,7 @@
     mugen_ready.qcow2由原始镜像openEuler-22.03-V2-base-qemu-preview.qcow2安装git和mugen依赖而来  
 ## 测试结果说明  
 ### 测试结果文件结构  
-- [logs_failed文件夹](https://github.com/brsf11/Tarsier-Internship/tree/main/Testing/openEuler-RISC-V-22.03-Preview-V2/logs_failed)：所有未通过测试用例的并且错误原因和systemd相关的用例的日志文件  
+- [logs_failed文件夹](https://github.com/vegetable-yx/PLCT_test0/tree/main/issue%E9%94%99%E8%AF%AF_systemd%E9%94%99%E8%AF%AF/logs_failed)：所有未通过测试用例的并且错误原因和systemd相关的用例的日志文件  
 ## 测试结果  
 ### 测试结果说明  
 - 相对此前的oE自动化测试，本次测试扩展了测试范围，测试了范围内测试套中所有测试用例（不包括描述文件中指定需要多机/网卡资源的用例），导致未通过用例比例比此前几次测试大。  
