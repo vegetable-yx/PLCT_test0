@@ -1,0 +1,320 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Jan  6 12:05:18 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL iSulad
++ pkgs=iSulad
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs iSulad --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpcv95h1cs
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpcv95h1cs
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Jan  6 12:06:38 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Jan  6 12:06:38 2023 - INFO  - Start to run test.
++ test_execution isulad.service
++ service=isulad.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-01-06 12:06:39'
++ test_restart isulad.service
++ service=isulad.service
++ systemctl restart isulad.service
+Job for isulad.service failed because the control process exited with error code.
+See "systemctl status isulad.service" and "journalctl -xeu isulad.service" for details.
++ CHECK_RESULT 1 0 0 'isulad.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='isulad.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'isulad.service restart failed'
++ LOG_ERROR 'isulad.service restart failed'
++ message='isulad.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'isulad.service restart failed'
+Fri Jan  6 12:06:39 2023 - ERROR - isulad.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Fri Jan  6 12:06:40 2023 - ERROR - ../common/common_lib.sh line 34
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'Active: active'
++ systemctl status isulad.service
++ CHECK_RESULT 1 0 0 'isulad.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='isulad.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'isulad.service restart failed'
++ LOG_ERROR 'isulad.service restart failed'
++ message='isulad.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'isulad.service restart failed'
+Fri Jan  6 12:06:47 2023 - ERROR - isulad.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Fri Jan  6 12:06:47 2023 - ERROR - ../common/common_lib.sh line 37
++ return 0
++ systemctl stop isulad.service
++ CHECK_RESULT 0 0 0 'isulad.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isulad.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status isulad.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'isulad.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='isulad.service stop failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'isulad.service stop failed'
++ LOG_ERROR 'isulad.service stop failed'
++ message='isulad.service stop failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'isulad.service stop failed'
+Fri Jan  6 12:06:54 2023 - ERROR - isulad.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Fri Jan  6 12:06:55 2023 - ERROR - ../common/common_lib.sh line 42
++ return 0
++ systemctl start isulad.service
+Job for isulad.service failed because the control process exited with error code.
+See "systemctl status isulad.service" and "journalctl -xeu isulad.service" for details.
++ CHECK_RESULT 1 0 0 'isulad.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='isulad.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'isulad.service start failed'
++ LOG_ERROR 'isulad.service start failed'
++ message='isulad.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'isulad.service start failed'
+Fri Jan  6 12:06:55 2023 - ERROR - isulad.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Fri Jan  6 12:06:56 2023 - ERROR - ../common/common_lib.sh line 44
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status isulad.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'isulad.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='isulad.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'isulad.service start failed'
++ LOG_ERROR 'isulad.service start failed'
++ message='isulad.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'isulad.service start failed'
+Fri Jan  6 12:07:03 2023 - ERROR - isulad.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Fri Jan  6 12:07:03 2023 - ERROR - ../common/common_lib.sh line 47
++ return 0
++ test_enabled isulad.service
++ service=isulad.service
+++ systemctl is-enabled isulad.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable isulad.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/isulad.service
++ find /etc/systemd/system/multi-user.target.wants/isulad.service
+find: ‘/etc/systemd/system/multi-user.target.wants/isulad.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'isulad.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='isulad.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable isulad.service
+Created symlink /etc/systemd/system/multi-user.target.wants/isulad.service → /usr/lib/systemd/system/isulad.service.
++ find /etc/systemd/system/multi-user.target.wants/isulad.service
+/etc/systemd/system/multi-user.target.wants/isulad.service
++ CHECK_RESULT 0 0 0 'isulad.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isulad.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-01-06 12:06:39' -u isulad.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+Jan 06 12:06:39 openEuler-riscv64 systemd[1]: isulad.service: Failed with result 'exit-code'.
+Jan 06 12:06:39 openEuler-riscv64 systemd[1]: Failed to start iSulad Application Container Engine.
+Jan 06 12:06:55 openEuler-riscv64 systemd[1]: isulad.service: Failed with result 'exit-code'.
+Jan 06 12:06:55 openEuler-riscv64 systemd[1]: Failed to start iSulad Application Container Engine.
++ CHECK_RESULT 0 0 1 'There is an error message for the log of isulad.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of isulad.service'
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of isulad.service'
++ LOG_ERROR 'There is an error message for the log of isulad.service'
++ message='There is an error message for the log of isulad.service'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of isulad.service'
+Fri Jan  6 12:07:13 2023 - ERROR - There is an error message for the log of isulad.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Fri Jan  6 12:07:13 2023 - ERROR - ../common/common_lib.sh line 28
++ return 0
++ systemctl start isulad.service
+Job for isulad.service failed because the control process exited with error code.
+See "systemctl status isulad.service" and "journalctl -xeu isulad.service" for details.
++ sed -i 's\ExecStart=/usr/bin/isulad\ExecStart=/usr/bin/isulad --log-level=ERROR\g' /usr/lib/systemd/system/isulad.service
++ systemctl daemon-reload
++ systemctl reload isulad.service
+isulad.service is not active, cannot reload.
++ CHECK_RESULT 1 0 0 'isulad.service reload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='isulad.service reload failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'isulad.service reload failed'
++ LOG_ERROR 'isulad.service reload failed'
++ message='isulad.service reload failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'isulad.service reload failed'
+Fri Jan  6 12:07:19 2023 - ERROR - isulad.service reload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_isulad.sh line 35'
++ message='oe_test_service_isulad.sh line 35'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_isulad.sh line 35'
+Fri Jan  6 12:07:20 2023 - ERROR - oe_test_service_isulad.sh line 35
++ return 0
++ systemctl status isulad.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'isulad.service reload causes the service status to change'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='isulad.service reload causes the service status to change'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'isulad.service reload causes the service status to change'
++ LOG_ERROR 'isulad.service reload causes the service status to change'
++ message='isulad.service reload causes the service status to change'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'isulad.service reload causes the service status to change'
+Fri Jan  6 12:07:21 2023 - ERROR - isulad.service reload causes the service status to change
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_isulad.sh line 37'
++ message='oe_test_service_isulad.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_isulad.sh line 37'
+Fri Jan  6 12:07:21 2023 - ERROR - oe_test_service_isulad.sh line 37
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Jan  6 12:07:22 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 12:07:23 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Jan  6 12:07:23 2023 - INFO  - Start to restore the test environment.
++ sed -i 's\ExecStart=/usr/bin/isulad --log-level=ERROR\ExecStart=/usr/bin/isulad\g' /usr/lib/systemd/system/isulad.service
++ systemctl daemon-reload
++ systemctl reload isulad.service
+isulad.service is not active, cannot reload.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpcv95h1cs ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpcv95h1cs
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Jan  6 12:07:52 2023 - INFO  - End to restore the test environment.

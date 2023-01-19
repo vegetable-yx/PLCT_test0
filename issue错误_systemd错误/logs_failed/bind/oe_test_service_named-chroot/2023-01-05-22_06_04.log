@@ -1,0 +1,324 @@
++ source ../common/common_lib.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jan  5 22:06:08 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL bind-chroot
++ pkgs=bind-chroot
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs bind-chroot --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp9cdto43b
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp9cdto43b
++ service=named-chroot.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-01-05 22:07:57'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jan  5 22:07:58 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jan  5 22:07:59 2023 - INFO  - Start testing...
++ test_restart named-chroot.service
++ service=named-chroot.service
++ systemctl restart named-chroot.service
+Job for named-chroot.service failed because the control process exited with error code.
+See "systemctl status named-chroot.service" and "journalctl -xeu named-chroot.service" for details.
++ CHECK_RESULT 1 0 0 'named-chroot.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'named-chroot.service restart failed'
++ LOG_ERROR 'named-chroot.service restart failed'
++ message='named-chroot.service restart failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'named-chroot.service restart failed'
+Thu Jan  5 22:08:04 2023 - ERROR - named-chroot.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Thu Jan  5 22:08:06 2023 - ERROR - ../common/common_lib.sh line 34
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status named-chroot.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'named-chroot.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'named-chroot.service restart failed'
++ LOG_ERROR 'named-chroot.service restart failed'
++ message='named-chroot.service restart failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'named-chroot.service restart failed'
+Thu Jan  5 22:08:14 2023 - ERROR - named-chroot.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Thu Jan  5 22:08:15 2023 - ERROR - ../common/common_lib.sh line 37
++ return 0
++ systemctl stop named-chroot.service
++ CHECK_RESULT 0 0 0 'named-chroot.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status named-chroot.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'named-chroot.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service stop failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'named-chroot.service stop failed'
++ LOG_ERROR 'named-chroot.service stop failed'
++ message='named-chroot.service stop failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'named-chroot.service stop failed'
+Thu Jan  5 22:08:23 2023 - ERROR - named-chroot.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Thu Jan  5 22:08:24 2023 - ERROR - ../common/common_lib.sh line 42
++ return 0
++ systemctl start named-chroot.service
+Job for named-chroot.service failed because the control process exited with error code.
+See "systemctl status named-chroot.service" and "journalctl -xeu named-chroot.service" for details.
++ CHECK_RESULT 1 0 0 'named-chroot.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'named-chroot.service start failed'
++ LOG_ERROR 'named-chroot.service start failed'
++ message='named-chroot.service start failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'named-chroot.service start failed'
+Thu Jan  5 22:08:29 2023 - ERROR - named-chroot.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Thu Jan  5 22:08:31 2023 - ERROR - ../common/common_lib.sh line 44
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status named-chroot.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'named-chroot.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'named-chroot.service start failed'
++ LOG_ERROR 'named-chroot.service start failed'
++ message='named-chroot.service start failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'named-chroot.service start failed'
+Thu Jan  5 22:08:39 2023 - ERROR - named-chroot.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Thu Jan  5 22:08:40 2023 - ERROR - ../common/common_lib.sh line 47
++ return 0
++ test_enabled named-chroot.service
++ service=named-chroot.service
+++ systemctl is-enabled named-chroot.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable named-chroot.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/named-chroot.service
++ find /etc/systemd/system/multi-user.target.wants/named-chroot.service
+/etc/systemd/system/multi-user.target.wants/named-chroot.service
++ CHECK_RESULT 0 0 0 'named-chroot.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable named-chroot.service
+Removed /etc/systemd/system/multi-user.target.wants/named-chroot.service.
++ find /etc/systemd/system/multi-user.target.wants/named-chroot.service
+find: ‘/etc/systemd/system/multi-user.target.wants/named-chroot.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'named-chroot.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='named-chroot.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-01-05 22:07:57' -u named-chroot.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ grep -v 'Open /etc/dns_port.conf fail, return.'
++ grep -v 'Unable to fetch DNSKEY set '\''.'\'': failure'
+Jan 05 22:08:03 openEuler-riscv64 systemd[1]: named-chroot.service: Control process exited, code=exited, status=1/FAILURE
+Jan 05 22:08:03 openEuler-riscv64 systemd[1]: named-chroot.service: Failed with result 'exit-code'.
+Jan 05 22:08:03 openEuler-riscv64 systemd[1]: Failed to start Berkeley Internet Name Domain (DNS).
+Jan 05 22:08:28 openEuler-riscv64 systemd[1]: named-chroot.service: Control process exited, code=exited, status=1/FAILURE
+Jan 05 22:08:28 openEuler-riscv64 systemd[1]: named-chroot.service: Failed with result 'exit-code'.
+Jan 05 22:08:28 openEuler-riscv64 systemd[1]: Failed to start Berkeley Internet Name Domain (DNS).
++ CHECK_RESULT 0 0 1 'There is an error message for the log of named-chroot.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of named-chroot.service'
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of named-chroot.service'
++ LOG_ERROR 'There is an error message for the log of named-chroot.service'
++ message='There is an error message for the log of named-chroot.service'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of named-chroot.service'
+Thu Jan  5 22:08:57 2023 - ERROR - There is an error message for the log of named-chroot.service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_named-chroot.sh line 36'
++ message='oe_test_service_named-chroot.sh line 36'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_named-chroot.sh line 36'
+Thu Jan  5 22:08:58 2023 - ERROR - oe_test_service_named-chroot.sh line 36
++ return 0
++ systemctl start named-chroot.service
+Job for named-chroot.service failed because the control process exited with error code.
+See "systemctl status named-chroot.service" and "journalctl -xeu named-chroot.service" for details.
++ sed -i 's\ExecStart=/usr/sbin/named\ExecStart=/usr/sbin/named -4\g' /usr/lib/systemd/system/named-chroot.service
++ systemctl daemon-reload
++ systemctl reload named-chroot.service
+named-chroot.service is not active, cannot reload.
++ CHECK_RESULT 1 0 0 'named-chroot.service reload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service reload failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'named-chroot.service reload failed'
++ LOG_ERROR 'named-chroot.service reload failed'
++ message='named-chroot.service reload failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'named-chroot.service reload failed'
+Thu Jan  5 22:09:12 2023 - ERROR - named-chroot.service reload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_named-chroot.sh line 41'
++ message='oe_test_service_named-chroot.sh line 41'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_named-chroot.sh line 41'
+Thu Jan  5 22:09:13 2023 - ERROR - oe_test_service_named-chroot.sh line 41
++ return 0
++ systemctl status named-chroot.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'named-chroot.service reload causes the service status to change'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='named-chroot.service reload causes the service status to change'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'named-chroot.service reload causes the service status to change'
++ LOG_ERROR 'named-chroot.service reload causes the service status to change'
++ message='named-chroot.service reload causes the service status to change'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'named-chroot.service reload causes the service status to change'
+Thu Jan  5 22:09:14 2023 - ERROR - named-chroot.service reload causes the service status to change
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_named-chroot.sh line 43'
++ message='oe_test_service_named-chroot.sh line 43'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_named-chroot.sh line 43'
+Thu Jan  5 22:09:15 2023 - ERROR - oe_test_service_named-chroot.sh line 43
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jan  5 22:09:17 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jan  5 22:09:18 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jan  5 22:09:19 2023 - INFO  - start environment cleanup.
++ sed -i 's\ExecStart=/usr/sbin/named -4\ExecStart=/usr/sbin/named\g' /usr/lib/systemd/system/named-chroot.service
++ systemctl daemon-reload
++ systemctl reload named-chroot.service
+named-chroot.service is not active, cannot reload.
++ systemctl stop named-chroot.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp9cdto43b ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp9cdto43b
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jan  5 22:10:04 2023 - INFO  - Finish environment cleanup!

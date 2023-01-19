@@ -1,0 +1,299 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Fri Jan  6 12:35:37 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL ipvsadm
++ pkgs=ipvsadm
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs ipvsadm --node 1 --tempfile ''
++ tmpfile2=/tmp/tmppza4t153
++ '[' -z '' ']'
++ tmpfile=/tmp/tmppza4t153
++ ipvsadm-save -n
+modprobe: ERROR: could not insert 'ip_vs': Exec format error
+Can't initialize ipvs: Protocol not available
+Are you sure that IP Virtual Server is built in the kernel or as module?
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri Jan  6 12:36:08 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri Jan  6 12:36:09 2023 - INFO  - Start testing...
++ test_execution ipvsadm.service
++ service=ipvsadm.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-01-06 12:36:09'
++ test_restart ipvsadm.service
++ service=ipvsadm.service
++ systemctl restart ipvsadm.service
+Job for ipvsadm.service failed because the control process exited with error code.
+See "systemctl status ipvsadm.service" and "journalctl -xeu ipvsadm.service" for details.
++ CHECK_RESULT 1 0 0 'ipvsadm.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipvsadm.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipvsadm.service restart failed'
++ LOG_ERROR 'ipvsadm.service restart failed'
++ message='ipvsadm.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipvsadm.service restart failed'
+Fri Jan  6 12:36:10 2023 - ERROR - ipvsadm.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Fri Jan  6 12:36:11 2023 - ERROR - ../common/common_lib.sh line 34
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipvsadm.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'ipvsadm.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipvsadm.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipvsadm.service restart failed'
++ LOG_ERROR 'ipvsadm.service restart failed'
++ message='ipvsadm.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipvsadm.service restart failed'
+Fri Jan  6 12:36:17 2023 - ERROR - ipvsadm.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Fri Jan  6 12:36:18 2023 - ERROR - ../common/common_lib.sh line 37
++ return 0
++ systemctl stop ipvsadm.service
++ CHECK_RESULT 0 0 0 'ipvsadm.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ipvsadm.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipvsadm.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'ipvsadm.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipvsadm.service stop failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipvsadm.service stop failed'
++ LOG_ERROR 'ipvsadm.service stop failed'
++ message='ipvsadm.service stop failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipvsadm.service stop failed'
+Fri Jan  6 12:36:25 2023 - ERROR - ipvsadm.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Fri Jan  6 12:36:25 2023 - ERROR - ../common/common_lib.sh line 42
++ return 0
++ systemctl start ipvsadm.service
+Job for ipvsadm.service failed because the control process exited with error code.
+See "systemctl status ipvsadm.service" and "journalctl -xeu ipvsadm.service" for details.
++ CHECK_RESULT 1 0 0 'ipvsadm.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipvsadm.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipvsadm.service start failed'
++ LOG_ERROR 'ipvsadm.service start failed'
++ message='ipvsadm.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipvsadm.service start failed'
+Fri Jan  6 12:36:27 2023 - ERROR - ipvsadm.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Fri Jan  6 12:36:27 2023 - ERROR - ../common/common_lib.sh line 44
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipvsadm.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'ipvsadm.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipvsadm.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipvsadm.service start failed'
++ LOG_ERROR 'ipvsadm.service start failed'
++ message='ipvsadm.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipvsadm.service start failed'
+Fri Jan  6 12:36:34 2023 - ERROR - ipvsadm.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Fri Jan  6 12:36:35 2023 - ERROR - ../common/common_lib.sh line 47
++ return 0
++ test_enabled ipvsadm.service
++ service=ipvsadm.service
+++ systemctl is-enabled ipvsadm.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable ipvsadm.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/ipvsadm.service
++ find /etc/systemd/system/multi-user.target.wants/ipvsadm.service
+/etc/systemd/system/multi-user.target.wants/ipvsadm.service
++ CHECK_RESULT 0 0 0 'ipvsadm.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ipvsadm.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable ipvsadm.service
+Removed /etc/systemd/system/multi-user.target.wants/ipvsadm.service.
++ find /etc/systemd/system/multi-user.target.wants/ipvsadm.service
+find: ‘/etc/systemd/system/multi-user.target.wants/ipvsadm.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'ipvsadm.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ipvsadm.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-01-06 12:36:09' -u ipvsadm.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+Jan 06 12:36:09 openEuler-riscv64 bash[1224]: modprobe: ERROR: could not insert 'ip_vs': Exec format error
+Jan 06 12:36:09 openEuler-riscv64 bash[1228]: modprobe: ERROR: could not insert 'ip_vs': Exec format error
+Jan 06 12:36:09 openEuler-riscv64 systemd[1]: ipvsadm.service: Failed with result 'exit-code'.
+Jan 06 12:36:09 openEuler-riscv64 systemd[1]: Failed to start Initialise the Linux Virtual Server.
+Jan 06 12:36:26 openEuler-riscv64 bash[1250]: modprobe: ERROR: could not insert 'ip_vs': Exec format error
+Jan 06 12:36:26 openEuler-riscv64 bash[1254]: modprobe: ERROR: could not insert 'ip_vs': Exec format error
+Jan 06 12:36:26 openEuler-riscv64 systemd[1]: ipvsadm.service: Failed with result 'exit-code'.
+Jan 06 12:36:26 openEuler-riscv64 systemd[1]: Failed to start Initialise the Linux Virtual Server.
++ CHECK_RESULT 0 0 1 'There is an error message for the log of ipvsadm.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of ipvsadm.service'
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of ipvsadm.service'
++ LOG_ERROR 'There is an error message for the log of ipvsadm.service'
++ message='There is an error message for the log of ipvsadm.service'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of ipvsadm.service'
+Fri Jan  6 12:36:44 2023 - ERROR - There is an error message for the log of ipvsadm.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Fri Jan  6 12:36:45 2023 - ERROR - ../common/common_lib.sh line 28
++ return 0
++ test_reload ipvsadm.service
++ service=ipvsadm.service
++ systemctl start ipvsadm.service
+Job for ipvsadm.service failed because the control process exited with error code.
+See "systemctl status ipvsadm.service" and "journalctl -xeu ipvsadm.service" for details.
++ systemctl reload ipvsadm.service
++ grep 'Job type reload is not applicable'
+Failed to reload ipvsadm.service: Job type reload is not applicable for unit ipvsadm.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit ipvsadm.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit ipvsadm.service'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status ipvsadm.service
++ grep 'Active: active'
++ systemctl status ipvsadm.service
++ grep 'inactive (dead)'
++ return 1
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri Jan  6 12:36:47 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 12:36:47 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Jan  6 12:36:48 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmppza4t153 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmppza4t153
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Jan  6 12:37:03 2023 - INFO  - Finish environment cleanup!

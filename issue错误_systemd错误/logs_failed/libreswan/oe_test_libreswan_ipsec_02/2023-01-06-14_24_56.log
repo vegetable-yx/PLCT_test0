@@ -1,0 +1,228 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Jan  6 14:24:59 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libreswan
++ pkgs=libreswan
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs libreswan --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpz9uu6zg2
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpz9uu6zg2
++ ipsec start
+Redirecting to: systemctl start ipsec.service
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Jan  6 14:25:48 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Jan  6 14:25:49 2023 - INFO  - Start to run test.
++ ipsec auto --showonly --utc --purgeocsp
++ grep 'ipsec whack --ctlsocket /run/pluto/pluto.ctl --utc --listall --purgeocsp'
+ipsec whack --ctlsocket /run/pluto/pluto.ctl --utc --listall --purgeocsp
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec whack --help
++ grep whack
+help: whack [--help] [--version]
+connection: whack --name <connection_name> \
+routing: whack (--route | --unroute) --name <connection_name>
+initiation: whack (--initiate [--remote-host <ip or hostname>] | --terminate) \
+rekey: whack (--rekey-ike | --rekey-ipsec) \
+active redirect: whack [--name <connection_name>] \
+global redirect: whack --global-redirect yes|no|auto
+opportunistic initiation: whack [--tunnelipv4 | --tunnelipv6] \
+delete: whack --delete --name <connection_name>
+delete: whack --deleteid --name <id>
+deletestate: whack --deletestate <state_object_number>
+delete user: whack --deleteuser --name <user_name> \
+pubkey: whack --keyid <id> [--addkey] [--pubkeyrsa <key>]
+debug: whack [--name <connection_name>] \
+listen: whack (--listen | --unlisten)
+socket buffers: whack --ike-socket-bufsize <bufsize>
+socket errqueue: whack --ike-socket-errqueue-toggle
+ddos-protection: whack (--ddos-busy | --ddos-unlimited | \
+list: whack [--utc] [--checkpubkeys] [--listpubkeys] [--listcerts] \
+purge: whack --purgeocsp
+reread: whack [--fetchcrls] [--rereadcerts] [--rereadsecrets] [--rereadall]
+status: whack [--status] | [--trafficstatus] | [--globalstatus] | \
+refresh dns: whack --ddns
+testing: whack --seccomp-crashtest (CAREFUL!)
+shutdown: whack --shutdown [--leave-state]
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -rf /etc/ipsec.d/cert9.db /etc/ipsec.d/key4.db
++ ipsec initnss
++ grep 'Initializing NSS database'
+Initializing NSS database
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec checknss
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec checknflog
++ grep 'nflog ipsec capture disabled'
+/usr/sbin/ipsec: line 164: iptables: command not found
+nflog ipsec capture disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec stopnflog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec shuntstatus
++ grep 'Bare Shunt list'
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_02.sh line 42'
++ message='oe_test_libreswan_ipsec_02.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_02.sh line 42'
+Fri Jan  6 14:25:52 2023 - ERROR - oe_test_libreswan_ipsec_02.sh line 42
++ return 0
++ ipsec globalstatus
++ grep total.ikev2.recv.notifies.status
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_02.sh line 44'
++ message='oe_test_libreswan_ipsec_02.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_02.sh line 44'
+Fri Jan  6 14:25:53 2023 - ERROR - oe_test_libreswan_ipsec_02.sh line 44
++ return 0
++ ipsec briefstatus
++ grep 000
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_02.sh line 46'
++ message='oe_test_libreswan_ipsec_02.sh line 46'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_02.sh line 46'
+Fri Jan  6 14:25:54 2023 - ERROR - oe_test_libreswan_ipsec_02.sh line 46
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Fri Jan  6 14:25:55 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 14:25:55 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Jan  6 14:25:56 2023 - INFO  - Start to restore the test environment.
++ rm -rf /var/lib/ipsec/nss/cert9.db /var/lib/ipsec/nss/key4.db
++ ipsec stop
+Redirecting to: systemctl stop ipsec.service
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpz9uu6zg2 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpz9uu6zg2
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Fri Jan  6 14:26:20 2023 - INFO  - Finish restoring the test environment.

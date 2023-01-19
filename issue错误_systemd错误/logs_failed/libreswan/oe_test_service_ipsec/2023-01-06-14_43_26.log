@@ -1,0 +1,338 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Fri Jan  6 14:43:29 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL libreswan
++ pkgs=libreswan
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs libreswan --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwy2b2cmz
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwy2b2cmz
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri Jan  6 14:44:14 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri Jan  6 14:44:15 2023 - INFO  - Start testing...
++ test_execution ipsec.service
++ service=ipsec.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-01-06 14:44:15'
++ test_restart ipsec.service
++ service=ipsec.service
++ systemctl restart ipsec.service
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
++ CHECK_RESULT 1 0 0 'ipsec.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipsec.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipsec.service restart failed'
++ LOG_ERROR 'ipsec.service restart failed'
++ message='ipsec.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipsec.service restart failed'
+Fri Jan  6 14:44:23 2023 - ERROR - ipsec.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Fri Jan  6 14:44:24 2023 - ERROR - ../common/common_lib.sh line 34
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipsec.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'ipsec.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipsec.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipsec.service restart failed'
++ LOG_ERROR 'ipsec.service restart failed'
++ message='ipsec.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipsec.service restart failed'
+Fri Jan  6 14:44:31 2023 - ERROR - ipsec.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Fri Jan  6 14:44:32 2023 - ERROR - ../common/common_lib.sh line 37
++ return 0
++ systemctl stop ipsec.service
++ CHECK_RESULT 0 0 0 'ipsec.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ipsec.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'Active: inactive'
++ systemctl status ipsec.service
++ CHECK_RESULT 1 0 0 'ipsec.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipsec.service stop failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipsec.service stop failed'
++ LOG_ERROR 'ipsec.service stop failed'
++ message='ipsec.service stop failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipsec.service stop failed'
+Fri Jan  6 14:44:39 2023 - ERROR - ipsec.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Fri Jan  6 14:44:39 2023 - ERROR - ../common/common_lib.sh line 42
++ return 0
++ systemctl start ipsec.service
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
++ CHECK_RESULT 1 0 0 'ipsec.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipsec.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipsec.service start failed'
++ LOG_ERROR 'ipsec.service start failed'
++ message='ipsec.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipsec.service start failed'
+Fri Jan  6 14:44:47 2023 - ERROR - ipsec.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Fri Jan  6 14:44:48 2023 - ERROR - ../common/common_lib.sh line 44
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipsec.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'ipsec.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipsec.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipsec.service start failed'
++ LOG_ERROR 'ipsec.service start failed'
++ message='ipsec.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipsec.service start failed'
+Fri Jan  6 14:44:55 2023 - ERROR - ipsec.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Fri Jan  6 14:44:56 2023 - ERROR - ../common/common_lib.sh line 47
++ return 0
++ test_enabled ipsec.service
++ service=ipsec.service
+++ systemctl is-enabled ipsec.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable ipsec.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/ipsec.service
++ find /etc/systemd/system/multi-user.target.wants/ipsec.service
+/etc/systemd/system/multi-user.target.wants/ipsec.service
++ CHECK_RESULT 0 0 0 'ipsec.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ipsec.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable ipsec.service
+Removed /etc/systemd/system/multi-user.target.wants/ipsec.service.
++ find /etc/systemd/system/multi-user.target.wants/ipsec.service
+find: ‘/etc/systemd/system/multi-user.target.wants/ipsec.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'ipsec.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ipsec.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-01-06 14:44:15' -u ipsec.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+Jan 06 14:44:20 openEuler-riscv64 pluto[17609]: FATAL ERROR: socket() in init_netlink()Protocol not supported (errno 93)
+Jan 06 14:44:20 openEuler-riscv64 pluto[17609]: ABORT: ASSERTION FAILED: nr_helper_threads == 0 (free_server_helper_jobs() +595 programs/pluto/server_pool.c)
+Jan 06 14:44:23 openEuler-riscv64 systemd[1]: ipsec.service: Control process exited, code=exited, status=1/FAILURE
+Jan 06 14:44:23 openEuler-riscv64 systemd[1]: ipsec.service: Failed with result 'core-dump'.
+Jan 06 14:44:23 openEuler-riscv64 systemd[1]: Failed to start Internet Key Exchange (IKE) Protocol Daemon for IPsec.
+Jan 06 14:44:28 openEuler-riscv64 pluto[17782]: FATAL ERROR: socket() in init_netlink()Protocol not supported (errno 93)
+Jan 06 14:44:28 openEuler-riscv64 pluto[17782]: ABORT: ASSERTION FAILED: nr_helper_threads == 0 (free_server_helper_jobs() +595 programs/pluto/server_pool.c)
+Jan 06 14:44:30 openEuler-riscv64 systemd[1]: ipsec.service: Control process exited, code=exited, status=1/FAILURE
+Jan 06 14:44:30 openEuler-riscv64 systemd[1]: ipsec.service: Failed with result 'core-dump'.
+Jan 06 14:44:30 openEuler-riscv64 systemd[1]: Failed to start Internet Key Exchange (IKE) Protocol Daemon for IPsec.
+Jan 06 14:44:32 openEuler-riscv64 systemd[1]: ipsec.service: Control process exited, code=exited, status=1/FAILURE
+Jan 06 14:44:32 openEuler-riscv64 systemd[1]: ipsec.service: Failed with result 'signal'.
+Jan 06 14:44:45 openEuler-riscv64 pluto[18020]: FATAL ERROR: socket() in init_netlink()Protocol not supported (errno 93)
+Jan 06 14:44:45 openEuler-riscv64 pluto[18020]: ABORT: ASSERTION FAILED: nr_helper_threads == 0 (free_server_helper_jobs() +595 programs/pluto/server_pool.c)
+Jan 06 14:44:47 openEuler-riscv64 systemd[1]: ipsec.service: Control process exited, code=exited, status=1/FAILURE
+Jan 06 14:44:47 openEuler-riscv64 systemd[1]: ipsec.service: Failed with result 'core-dump'.
+Jan 06 14:44:47 openEuler-riscv64 systemd[1]: Failed to start Internet Key Exchange (IKE) Protocol Daemon for IPsec.
+Jan 06 14:44:52 openEuler-riscv64 pluto[18192]: FATAL ERROR: socket() in init_netlink()Protocol not supported (errno 93)
+Jan 06 14:44:52 openEuler-riscv64 pluto[18192]: ABORT: ASSERTION FAILED: nr_helper_threads == 0 (free_server_helper_jobs() +595 programs/pluto/server_pool.c)
+Jan 06 14:44:54 openEuler-riscv64 systemd[1]: ipsec.service: Control process exited, code=exited, status=1/FAILURE
+Jan 06 14:44:54 openEuler-riscv64 systemd[1]: ipsec.service: Failed with result 'core-dump'.
+Jan 06 14:44:54 openEuler-riscv64 systemd[1]: Failed to start Internet Key Exchange (IKE) Protocol Daemon for IPsec.
++ CHECK_RESULT 0 0 1 'There is an error message for the log of ipsec.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of ipsec.service'
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of ipsec.service'
++ LOG_ERROR 'There is an error message for the log of ipsec.service'
++ message='There is an error message for the log of ipsec.service'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of ipsec.service'
+Fri Jan  6 14:45:05 2023 - ERROR - There is an error message for the log of ipsec.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Fri Jan  6 14:45:06 2023 - ERROR - ../common/common_lib.sh line 28
++ return 0
++ systemctl start ipsec.service
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
++ sed -i 's\ExecStart=/usr/libexec/ipsec/pluto\ExecStart=/usr/libexec/ipsec/pluto --debug\g' /usr/lib/systemd/system/ipsec.service
++ systemctl daemon-reload
++ systemctl reload ipsec.service
+Failed to reload ipsec.service: Job type reload is not applicable for unit ipsec.service.
++ CHECK_RESULT 3 0 0 'ipsec.service reload failed'
++ actual_result=3
++ expect_result=0
++ mode=0
++ error_log='ipsec.service reload failed'
++ '[' -z 3 ']'
++ '[' 0 -eq 0 ']'
++ test 3x '!=' 0x
++ test -n 'ipsec.service reload failed'
++ LOG_ERROR 'ipsec.service reload failed'
++ message='ipsec.service reload failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipsec.service reload failed'
+Fri Jan  6 14:45:12 2023 - ERROR - ipsec.service reload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_ipsec.sh line 35'
++ message='oe_test_service_ipsec.sh line 35'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_ipsec.sh line 35'
+Fri Jan  6 14:45:13 2023 - ERROR - oe_test_service_ipsec.sh line 35
++ return 0
++ grep 'Active: active'
++ systemctl status ipsec.service
++ CHECK_RESULT 1 0 0 'ipsec.service reload causes the service status to change'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipsec.service reload causes the service status to change'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipsec.service reload causes the service status to change'
++ LOG_ERROR 'ipsec.service reload causes the service status to change'
++ message='ipsec.service reload causes the service status to change'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'ipsec.service reload causes the service status to change'
+Fri Jan  6 14:45:14 2023 - ERROR - ipsec.service reload causes the service status to change
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_ipsec.sh line 37'
++ message='oe_test_service_ipsec.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_ipsec.sh line 37'
+Fri Jan  6 14:45:15 2023 - ERROR - oe_test_service_ipsec.sh line 37
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri Jan  6 14:45:15 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 14:45:16 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Jan  6 14:45:17 2023 - INFO  - start environment cleanup.
++ sed -i 's\ExecStart=/usr/libexec/ipsec/pluto --debug\ExecStart=/usr/libexec/ipsec/pluto\g' /usr/lib/systemd/system/ipsec.service
++ systemctl daemon-reload
++ systemctl reload ipsec.service
+Failed to reload ipsec.service: Job type reload is not applicable for unit ipsec.service.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpwy2b2cmz ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwy2b2cmz
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Jan  6 14:45:44 2023 - INFO  - Finish environment cleanup!

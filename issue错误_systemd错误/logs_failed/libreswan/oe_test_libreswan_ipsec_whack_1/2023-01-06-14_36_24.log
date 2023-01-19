@@ -1,0 +1,294 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the database config.'
++ message='Start to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the database config.'
+Fri Jan  6 14:36:26 2023 - INFO  - Start to prepare the database config.
++ DNF_INSTALL libreswan
++ pkgs=libreswan
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs libreswan --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpu7m7miq5
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpu7m7miq5
++ ipsec restart
+Redirecting to: systemctl restart ipsec.service
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
++ LOG_INFO 'End to prepare the database config.'
++ message='End to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the database config.'
+Fri Jan  6 14:37:18 2023 - INFO  - End to prepare the database config.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Jan  6 14:37:19 2023 - INFO  - Start to run test.
++ ipsec whack --version
++ CHECK_RESULT 0 0 0 'Check ipsec whack --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --version failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec whack --listen
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --listen failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --listen failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --listen failed.'
++ LOG_ERROR 'Check ipsec whack --listen failed.'
++ message='Check ipsec whack --listen failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --listen failed.'
+Fri Jan  6 14:37:20 2023 - ERROR - Check ipsec whack --listen failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 36'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 36'
+Fri Jan  6 14:37:21 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 36
++ return 0
++ ipsec whack --listpubkeys
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --listpubkeys failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --listpubkeys failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --listpubkeys failed.'
++ LOG_ERROR 'Check ipsec whack --listpubkeys failed.'
++ message='Check ipsec whack --listpubkeys failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --listpubkeys failed.'
+Fri Jan  6 14:37:22 2023 - ERROR - Check ipsec whack --listpubkeys failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 38'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 38'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 38'
+Fri Jan  6 14:37:23 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 38
++ return 0
++ ipsec whack --listcerts
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --listcerts failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --listcerts failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --listcerts failed.'
++ LOG_ERROR 'Check ipsec whack --listcerts failed.'
++ message='Check ipsec whack --listcerts failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --listcerts failed.'
+Fri Jan  6 14:37:24 2023 - ERROR - Check ipsec whack --listcerts failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 40'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 40'
+Fri Jan  6 14:37:25 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 40
++ return 0
++ ipsec whack --listcacerts
+whack: read() failed (104 Connection reset by peer)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --listcacerts failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --listcacerts failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --listcacerts failed.'
++ LOG_ERROR 'Check ipsec whack --listcacerts failed.'
++ message='Check ipsec whack --listcacerts failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --listcacerts failed.'
+Fri Jan  6 14:37:26 2023 - ERROR - Check ipsec whack --listcacerts failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 42'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 42'
+Fri Jan  6 14:37:27 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 42
++ return 0
++ ipsec whack --listcrls
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --listcrls failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --listcrls failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --listcrls failed.'
++ LOG_ERROR 'Check ipsec whack --listcrls failed.'
++ message='Check ipsec whack --listcrls failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --listcrls failed.'
+Fri Jan  6 14:37:28 2023 - ERROR - Check ipsec whack --listcrls failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 44'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 44'
+Fri Jan  6 14:37:29 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 44
++ return 0
++ ipsec whack --listpsks
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --listpsks failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --listpsks failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --listpsks failed.'
++ LOG_ERROR 'Check ipsec whack --listpsks failed.'
++ message='Check ipsec whack --listpsks failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --listpsks failed.'
+Fri Jan  6 14:37:30 2023 - ERROR - Check ipsec whack --listpsks failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 46'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 46'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 46'
+Fri Jan  6 14:37:30 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 46
++ return 0
++ ipsec whack --listevents
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --listevents failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --listevents failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --listevents failed.'
++ LOG_ERROR 'Check ipsec whack --listevents failed.'
++ message='Check ipsec whack --listevents failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --listevents failed.'
+Fri Jan  6 14:37:31 2023 - ERROR - Check ipsec whack --listevents failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 48'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 48'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 48'
+Fri Jan  6 14:37:32 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 48
++ return 0
++ ipsec whack --listall
+whack: read() failed (104 Connection reset by peer)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --listall failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --listall failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --listall failed.'
++ LOG_ERROR 'Check ipsec whack --listall failed.'
++ message='Check ipsec whack --listall failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --listall failed.'
+Fri Jan  6 14:37:34 2023 - ERROR - Check ipsec whack --listall failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 50'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 50'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 50'
+Fri Jan  6 14:37:35 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 50
++ return 0
++ ipsec whack --ike-socket-errqueue-toggle
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --ike-socket-errqueue-toggle failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --ike-socket-errqueue-toggle failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --ike-socket-errqueue-toggle failed.'
++ LOG_ERROR 'Check ipsec whack --ike-socket-errqueue-toggle failed.'
++ message='Check ipsec whack --ike-socket-errqueue-toggle failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --ike-socket-errqueue-toggle failed.'
+Fri Jan  6 14:37:36 2023 - ERROR - Check ipsec whack --ike-socket-errqueue-toggle failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 52'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 52'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 52'
+Fri Jan  6 14:37:37 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 52
++ return 0
++ ipsec whack --purgeocsp
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --purgeocsp failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --purgeocsp failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --purgeocsp failed.'
++ LOG_ERROR 'Check ipsec whack --purgeocsp failed.'
++ message='Check ipsec whack --purgeocsp failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --purgeocsp failed.'
+Fri Jan  6 14:37:38 2023 - ERROR - Check ipsec whack --purgeocsp failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_1.sh line 54'
++ message='oe_test_libreswan_ipsec_whack_1.sh line 54'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_1.sh line 54'
+Fri Jan  6 14:37:38 2023 - ERROR - oe_test_libreswan_ipsec_whack_1.sh line 54
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Jan  6 14:37:39 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 10
++ test 10 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 14:37:40 2023 - ERROR - failed to execute the case.
++ exit 10
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Jan  6 14:37:41 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpu7m7miq5 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpu7m7miq5
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Jan  6 14:38:05 2023 - INFO  - End to restore the test environment.

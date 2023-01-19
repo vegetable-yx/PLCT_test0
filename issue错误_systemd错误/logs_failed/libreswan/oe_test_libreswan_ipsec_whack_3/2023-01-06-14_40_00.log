@@ -1,0 +1,199 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the database config.'
++ message='Start to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the database config.'
+Fri Jan  6 14:40:03 2023 - INFO  - Start to prepare the database config.
++ DNF_INSTALL libreswan
++ pkgs=libreswan
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs libreswan --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpqtlm7ffd
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpqtlm7ffd
++ ipsec restart
+Redirecting to: systemctl restart ipsec.service
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
++ LOG_INFO 'End to prepare the database config.'
++ message='End to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the database config.'
+Fri Jan  6 14:40:55 2023 - INFO  - End to prepare the database config.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Jan  6 14:40:56 2023 - INFO  - Start to run test.
++ ipsec whack --ddos-busy
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --ddos-busy failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --ddos-busy failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --ddos-busy failed.'
++ LOG_ERROR 'Check ipsec whack --ddos-busy failed.'
++ message='Check ipsec whack --ddos-busy failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --ddos-busy failed.'
+Fri Jan  6 14:40:57 2023 - ERROR - Check ipsec whack --ddos-busy failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_3.sh line 35'
++ message='oe_test_libreswan_ipsec_whack_3.sh line 35'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_3.sh line 35'
+Fri Jan  6 14:40:58 2023 - ERROR - oe_test_libreswan_ipsec_whack_3.sh line 35
++ return 0
++ ipsec whack --ddos-unlimited
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --ddos-unlimited failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --ddos-unlimited failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --ddos-unlimited failed.'
++ LOG_ERROR 'Check ipsec whack --ddos-unlimited failed.'
++ message='Check ipsec whack --ddos-unlimited failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --ddos-unlimited failed.'
+Fri Jan  6 14:40:59 2023 - ERROR - Check ipsec whack --ddos-unlimited failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_3.sh line 37'
++ message='oe_test_libreswan_ipsec_whack_3.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_3.sh line 37'
+Fri Jan  6 14:40:59 2023 - ERROR - oe_test_libreswan_ipsec_whack_3.sh line 37
++ return 0
++ ipsec whack --ddos-auto
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --ddos-auto failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --ddos-auto failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --ddos-auto failed.'
++ LOG_ERROR 'Check ipsec whack --ddos-auto failed.'
++ message='Check ipsec whack --ddos-auto failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --ddos-auto failed.'
+Fri Jan  6 14:41:00 2023 - ERROR - Check ipsec whack --ddos-auto failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_3.sh line 39'
++ message='oe_test_libreswan_ipsec_whack_3.sh line 39'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_3.sh line 39'
+Fri Jan  6 14:41:01 2023 - ERROR - oe_test_libreswan_ipsec_whack_3.sh line 39
++ return 0
++ ipsec whack --impair help
++ CHECK_RESULT 0 0 0 'Check ipsec whack --impair help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --impair help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec whack --impair list
+whack: read() failed (104 Connection reset by peer)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --impair list failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --impair list failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --impair list failed.'
++ LOG_ERROR 'Check ipsec whack --impair list failed.'
++ message='Check ipsec whack --impair list failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --impair list failed.'
+Fri Jan  6 14:41:03 2023 - ERROR - Check ipsec whack --impair list failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_3.sh line 45'
++ message='oe_test_libreswan_ipsec_whack_3.sh line 45'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_3.sh line 45'
+Fri Jan  6 14:41:03 2023 - ERROR - oe_test_libreswan_ipsec_whack_3.sh line 45
++ return 0
++ ipsec whack --impair none
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33 0 0 'Check ipsec whack --impair none failed.'
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --impair none failed.'
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n 'Check ipsec whack --impair none failed.'
++ LOG_ERROR 'Check ipsec whack --impair none failed.'
++ message='Check ipsec whack --impair none failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check ipsec whack --impair none failed.'
+Fri Jan  6 14:41:04 2023 - ERROR - Check ipsec whack --impair none failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_whack_3.sh line 47'
++ message='oe_test_libreswan_ipsec_whack_3.sh line 47'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_whack_3.sh line 47'
+Fri Jan  6 14:41:05 2023 - ERROR - oe_test_libreswan_ipsec_whack_3.sh line 47
++ return 0
++ ipsec whack --no-impair help
++ CHECK_RESULT 0 0 0 'Check ipsec whack --no-impair help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ipsec whack --no-impair help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Jan  6 14:41:06 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 5
++ test 5 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 14:41:07 2023 - ERROR - failed to execute the case.
++ exit 5
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Jan  6 14:41:07 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpqtlm7ffd ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpqtlm7ffd
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Jan  6 14:41:32 2023 - INFO  - End to restore the test environment.

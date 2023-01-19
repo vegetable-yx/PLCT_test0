@@ -1,0 +1,703 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Jan  6 14:22:48 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libreswan
++ pkgs=libreswan
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs libreswan --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp1wpal9jz
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp1wpal9jz
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Jan  6 14:23:44 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Jan  6 14:23:45 2023 - INFO  - Start to run test.
++ ipsec --help
++ grep 'man ipsec <command> or ipsec <command>'
+See also: man ipsec <command> or ipsec <command> --help
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec --version
+++ rpm -q libreswan
+++ awk -F - '{print $2}'
++ grep 4.5
+Linux Libreswan 4.5 (XFRM) on 5.10.0-9.oe2203.riscv64
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec --directory
++ grep /usr/libexec/ipsec
+/usr/libexec/ipsec
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec stop
+Redirecting to: systemctl stop ipsec.service
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
++ ipsec start
+Redirecting to: systemctl start ipsec.service
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
++ SLEEP_WAIT 15
++ wait_time=15
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 15 --cmd '' --mode 1
++ grep 'active (running)'
++ systemctl status ipsec
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_01.sh line 37'
++ message='oe_test_libreswan_ipsec_01.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_01.sh line 37'
+Fri Jan  6 14:24:12 2023 - ERROR - oe_test_libreswan_ipsec_01.sh line 37
++ return 0
++ ipsec status
++ grep 0
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_01.sh line 39'
++ message='oe_test_libreswan_ipsec_01.sh line 39'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_01.sh line 39'
+Fri Jan  6 14:24:13 2023 - ERROR - oe_test_libreswan_ipsec_01.sh line 39
++ return 0
++ ipsec restart
++ grep restart
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
+Redirecting to: systemctl restart ipsec.service
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep stop
++ ipsec stop
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
+Redirecting to: systemctl stop ipsec.service
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec barf
++ grep pluto
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
+Checking that pluto is running                    	[FAILED]
++ grep -E -i 'ppid|pluto|ipsec'
+0     0    4372    4332  20   0   2640  1332 pipe_r S    ?          0:00              |               |   \_ grep -E -i ppid|pluto|ipsec
+0     0    4333     415  20   0   3008  1676 pipe_r S    ?          0:00              |               \_ grep pluto
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
+-rwxr-xr-x 1 root root    3055 Dec  2 04:31 _plutorun
+-rwxr-xr-x 1 root root 1949248 Dec  2 04:32 pluto
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: /usr/libexec/ipsec/pluto:  adjusting nssdir to /etc/ipsec.d
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: /usr/libexec/ipsec/pluto:  adjusting nssdir to /etc/ipsec.d
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: Initializing NSS using read-write database "sql:/etc/ipsec.d"
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: FIPS Mode: NO
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: NSS crypto library initialized
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: FIPS mode disabled for pluto daemon
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: FIPS HMAC integrity support [disabled]
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: libcap-ng support [enabled]
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: Linux audit support [enabled]
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: Linux audit activated
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: Starting Pluto (Libreswan Version 4.5 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-PRF) DNSSEC SYSTEMD_WATCHDOG LABELED_IPSEC (SELINUX) SECCOMP LIBCAP_NG LINUX_AUDIT AUTH_PAM NETWORKMANAGER CURL(non-NSS) LDAP(non-NSS)) pid:3319
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: core dump dir: /run/pluto
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: secrets file: /etc/ipsec.secrets
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: leak-detective enabled
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: NSS crypto [enabled]
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: XAUTH PAM support [enabled]
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: NAT-Traversal support  [enabled]
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: Encryption algorithms:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm, aes_gcm_c
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm_b
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm_a
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   NULL               []             IKEv1:     ESP     IKEv2:     ESP
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: Hash algorithms:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   MD5                               IKEv1: IKE         IKEv2:                  NSS
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: PRF algorithms:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              native(HMAC) md5
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: Integrity algorithms:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       native(HMAC) md5, hmac_md5
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: DH algorithms:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   DH19                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   DH20                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   DH21                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   DH31                              IKEv1: IKE         IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: testing CAMELLIA_CBC:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Camellia: 16 bytes with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Camellia: 16 bytes with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Camellia: 16 bytes with 256-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Camellia: 16 bytes with 256-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: testing AES_GCM_16:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   empty string
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   one block
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   two blocks
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   two blocks with associated data
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: testing AES_CTR:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 16 octets using AES-CTR with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 32 octets using AES-CTR with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 36 octets using AES-CTR with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 16 octets using AES-CTR with 192-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 32 octets using AES-CTR with 192-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 36 octets using AES-CTR with 192-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 16 octets using AES-CTR with 256-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 32 octets using AES-CTR with 256-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 36 octets using AES-CTR with 256-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: testing AES_CBC:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: testing AES_XCBC:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: testing HMAC_MD5:
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 2104: MD5_HMAC test 1
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 2104: MD5_HMAC test 2
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]:   RFC 2104: MD5_HMAC test 3
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: 4 CPU cores online
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: starting up 3 helper threads
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: started thread for helper 0
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: seccomp security disabled for crypto helper 1
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: started thread for helper 1
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: seccomp security disabled for crypto helper 2
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: started thread for helper 2
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: using Linux xfrm kernel support code on #1 SMP Thu Dec 8 04:05:09 UTC 2022
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: seccomp security disabled for crypto helper 3
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: FATAL ERROR: socket() in init_netlink()Protocol not supported (errno 93)
+Jan 06 14:23:53 openEuler-riscv64 pluto[3319]: ABORT: ASSERTION FAILED: nr_helper_threads == 0 (free_server_helper_jobs() +595 programs/pluto/server_pool.c)
+Jan 06 14:24:00 openEuler-riscv64 pluto[3865]: /usr/libexec/ipsec/pluto:  adjusting nssdir to /etc/ipsec.d
+Jan 06 14:24:00 openEuler-riscv64 pluto[3865]: /usr/libexec/ipsec/pluto:  adjusting nssdir to /etc/ipsec.d
+Jan 06 14:24:00 openEuler-riscv64 pluto[3865]: Initializing NSS using read-write database "sql:/etc/ipsec.d"
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: FIPS Mode: NO
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: NSS crypto library initialized
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: FIPS mode disabled for pluto daemon
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: FIPS HMAC integrity support [disabled]
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: libcap-ng support [enabled]
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: Linux audit support [enabled]
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: Linux audit activated
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: Starting Pluto (Libreswan Version 4.5 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-PRF) DNSSEC SYSTEMD_WATCHDOG LABELED_IPSEC (SELINUX) SECCOMP LIBCAP_NG LINUX_AUDIT AUTH_PAM NETWORKMANAGER CURL(non-NSS) LDAP(non-NSS)) pid:3865
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: core dump dir: /run/pluto
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: secrets file: /etc/ipsec.secrets
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: leak-detective enabled
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: NSS crypto [enabled]
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: XAUTH PAM support [enabled]
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: NAT-Traversal support  [enabled]
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: Encryption algorithms:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm, aes_gcm_c
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm_b
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm_a
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   NULL               []             IKEv1:     ESP     IKEv2:     ESP
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: Hash algorithms:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   MD5                               IKEv1: IKE         IKEv2:                  NSS
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: PRF algorithms:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              native(HMAC) md5
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: Integrity algorithms:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       native(HMAC) md5, hmac_md5
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: DH algorithms:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   DH19                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   DH20                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   DH21                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   DH31                              IKEv1: IKE         IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: testing CAMELLIA_CBC:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Camellia: 16 bytes with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Camellia: 16 bytes with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Camellia: 16 bytes with 256-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Camellia: 16 bytes with 256-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: testing AES_GCM_16:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   empty string
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   one block
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   two blocks
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   two blocks with associated data
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: testing AES_CTR:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 16 octets using AES-CTR with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 32 octets using AES-CTR with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 36 octets using AES-CTR with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 16 octets using AES-CTR with 192-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 32 octets using AES-CTR with 192-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 36 octets using AES-CTR with 192-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 16 octets using AES-CTR with 256-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 32 octets using AES-CTR with 256-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 36 octets using AES-CTR with 256-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: testing AES_CBC:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: testing AES_XCBC:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: testing HMAC_MD5:
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 2104: MD5_HMAC test 1
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 2104: MD5_HMAC test 2
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]:   RFC 2104: MD5_HMAC test 3
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: 4 CPU cores online
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: starting up 3 helper threads
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: started thread for helper 0
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: seccomp security disabled for crypto helper 1
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: started thread for helper 1
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: seccomp security disabled for crypto helper 2
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: started thread for helper 2
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: using Linux xfrm kernel support code on #1 SMP Thu Dec 8 04:05:09 UTC 2022
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: seccomp security disabled for crypto helper 3
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: FATAL ERROR: socket() in init_netlink()Protocol not supported (errno 93)
+Jan 06 14:24:01 openEuler-riscv64 pluto[3865]: ABORT: ASSERTION FAILED: nr_helper_threads == 0 (free_server_helper_jobs() +595 programs/pluto/server_pool.c)
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: /usr/libexec/ipsec/pluto:  adjusting nssdir to /etc/ipsec.d
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: /usr/libexec/ipsec/pluto:  adjusting nssdir to /etc/ipsec.d
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: Initializing NSS using read-write database "sql:/etc/ipsec.d"
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: FIPS Mode: NO
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: NSS crypto library initialized
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: FIPS mode disabled for pluto daemon
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: FIPS HMAC integrity support [disabled]
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: libcap-ng support [enabled]
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: Linux audit support [enabled]
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: Linux audit activated
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: Starting Pluto (Libreswan Version 4.5 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-PRF) DNSSEC SYSTEMD_WATCHDOG LABELED_IPSEC (SELINUX) SECCOMP LIBCAP_NG LINUX_AUDIT AUTH_PAM NETWORKMANAGER CURL(non-NSS) LDAP(non-NSS)) pid:4034
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: core dump dir: /run/pluto
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: secrets file: /etc/ipsec.secrets
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: leak-detective enabled
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: NSS crypto [enabled]
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: XAUTH PAM support [enabled]
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: NAT-Traversal support  [enabled]
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: Encryption algorithms:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm, aes_gcm_c
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm_b
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm_a
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   NULL               []             IKEv1:     ESP     IKEv2:     ESP
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: Hash algorithms:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   MD5                               IKEv1: IKE         IKEv2:                  NSS
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: PRF algorithms:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              native(HMAC) md5
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: Integrity algorithms:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       native(HMAC) md5, hmac_md5
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: DH algorithms:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   DH19                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   DH20                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   DH21                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   DH31                              IKEv1: IKE         IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: testing CAMELLIA_CBC:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Camellia: 16 bytes with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Camellia: 16 bytes with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Camellia: 16 bytes with 256-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Camellia: 16 bytes with 256-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: testing AES_GCM_16:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   empty string
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   one block
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   two blocks
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   two blocks with associated data
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: testing AES_CTR:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 16 octets using AES-CTR with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 32 octets using AES-CTR with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 36 octets using AES-CTR with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 16 octets using AES-CTR with 192-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 32 octets using AES-CTR with 192-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 36 octets using AES-CTR with 192-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 16 octets using AES-CTR with 256-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 32 octets using AES-CTR with 256-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 36 octets using AES-CTR with 256-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: testing AES_CBC:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: testing AES_XCBC:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: testing HMAC_MD5:
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 2104: MD5_HMAC test 1
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 2104: MD5_HMAC test 2
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]:   RFC 2104: MD5_HMAC test 3
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: 4 CPU cores online
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: starting up 3 helper threads
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: started thread for helper 0
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: seccomp security disabled for crypto helper 1
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: started thread for helper 1
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: seccomp security disabled for crypto helper 2
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: started thread for helper 2
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: seccomp security disabled for crypto helper 3
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: using Linux xfrm kernel support code on #1 SMP Thu Dec 8 04:05:09 UTC 2022
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: FATAL ERROR: socket() in init_netlink()Protocol not supported (errno 93)
+Jan 06 14:24:08 openEuler-riscv64 pluto[4034]: ABORT: ASSERTION FAILED: nr_helper_threads == 0 (free_server_helper_jobs() +595 programs/pluto/server_pool.c)
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: /usr/libexec/ipsec/pluto:  adjusting nssdir to /etc/ipsec.d
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: /usr/libexec/ipsec/pluto:  adjusting nssdir to /etc/ipsec.d
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: Initializing NSS using read-write database "sql:/etc/ipsec.d"
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: FIPS Mode: NO
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: NSS crypto library initialized
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: FIPS mode disabled for pluto daemon
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: FIPS HMAC integrity support [disabled]
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: libcap-ng support [enabled]
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: Linux audit support [enabled]
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: Linux audit activated
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: Starting Pluto (Libreswan Version 4.5 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-PRF) DNSSEC SYSTEMD_WATCHDOG LABELED_IPSEC (SELINUX) SECCOMP LIBCAP_NG LINUX_AUDIT AUTH_PAM NETWORKMANAGER CURL(non-NSS) LDAP(non-NSS)) pid:4285
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: core dump dir: /run/pluto
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: secrets file: /etc/ipsec.secrets
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: leak-detective enabled
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: NSS crypto [enabled]
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: XAUTH PAM support [enabled]
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: NAT-Traversal support  [enabled]
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: Encryption algorithms:
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm, aes_gcm_c
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm_b
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(GCM)     aes_gcm_a
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   NULL               []             IKEv1:     ESP     IKEv2:     ESP
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: Hash algorithms:
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   MD5                               IKEv1: IKE         IKEv2:                  NSS
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: PRF algorithms:
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              native(HMAC) md5
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: Integrity algorithms:
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       native(HMAC) md5, hmac_md5
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]: DH algorithms:
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Jan 06 14:24:18 openEuler-riscv64 pluto[4285]:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   DH19                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   DH20                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   DH21                              IKEv1: IKE         IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   DH31                              IKEv1: IKE         IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: testing CAMELLIA_CBC:
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Camellia: 16 bytes with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Camellia: 16 bytes with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Camellia: 16 bytes with 256-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Camellia: 16 bytes with 256-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: testing AES_GCM_16:
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   empty string
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   one block
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   two blocks
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   two blocks with associated data
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: testing AES_CTR:
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 16 octets using AES-CTR with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 32 octets using AES-CTR with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 36 octets using AES-CTR with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 16 octets using AES-CTR with 192-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 32 octets using AES-CTR with 192-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 36 octets using AES-CTR with 192-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 16 octets using AES-CTR with 256-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 32 octets using AES-CTR with 256-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 36 octets using AES-CTR with 256-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: testing AES_CBC:
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: testing AES_XCBC:
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: testing HMAC_MD5:
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 2104: MD5_HMAC test 1
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 2104: MD5_HMAC test 2
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]:   RFC 2104: MD5_HMAC test 3
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: 4 CPU cores online
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: starting up 3 helper threads
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: started thread for helper 0
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: seccomp security disabled for crypto helper 1
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: started thread for helper 1
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: started thread for helper 2
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: seccomp security disabled for crypto helper 2
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: using Linux xfrm kernel support code on #1 SMP Thu Dec 8 04:05:09 UTC 2022
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: seccomp security disabled for crypto helper 3
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: FATAL ERROR: socket() in init_netlink()Protocol not supported (errno 93)
+Jan 06 14:24:19 openEuler-riscv64 pluto[4285]: ABORT: ASSERTION FAILED: nr_helper_threads == 0 (free_server_helper_jobs() +595 programs/pluto/server_pool.c)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec auto
++ grep 'ipsec auto'
+	ipsec auto [--showonly] [--asynchronous] --up connectionname \
+	ipsec auto [--showonly] [--asynchronous] --down connectionname
+	ipsec auto [--showonly] --{add|delete|replace|start} connectionname
+	ipsec auto [--showonly] --{route|unroute|ondemand} connectionname
+	ipsec auto [--showonly] --{ready|status}
+	ipsec auto [--showonly] --{fetchcrls|rereadcerts|rereadall|rereadsecrets}
+	ipsec auto [--showonly] [--utc] --{listpubkeys|listcerts|listcacerts}
+	ipsec auto [--showonly] [--utc] --{listcrls|listall}
+	ipsec auto [--showonly] [--utc] --checkpubkeys
+	ipsec auto [--showonly] [--utc] --purgeocsp
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Fri Jan  6 14:24:28 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 14:24:29 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Jan  6 14:24:30 2023 - INFO  - Start to restore the test environment.
++ rm -rf '/var/lib/ipsec/nss/*.db'
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp1wpal9jz ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp1wpal9jz
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Fri Jan  6 14:24:50 2023 - INFO  - Finish restoring the test environment.

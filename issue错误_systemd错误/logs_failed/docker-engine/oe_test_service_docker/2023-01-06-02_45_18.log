@@ -1,0 +1,309 @@
++ source ../common/common_lib.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Fri Jan  6 02:45:23 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL docker-engine
++ pkgs=docker-engine
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs docker-engine --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpnryqegfh
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpnryqegfh
++ service=docker.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-01-06 02:47:45'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri Jan  6 02:47:46 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri Jan  6 02:47:47 2023 - INFO  - Start testing...
++ test_restart docker.service
++ service=docker.service
++ systemctl restart docker.service
+Job for docker.service failed because the control process exited with error code.
+See "systemctl status docker.service" and "journalctl -xeu docker.service" for details.
++ CHECK_RESULT 1 0 0 'docker.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='docker.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'docker.service restart failed'
++ LOG_ERROR 'docker.service restart failed'
++ message='docker.service restart failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'docker.service restart failed'
+Fri Jan  6 02:47:56 2023 - ERROR - docker.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Fri Jan  6 02:47:57 2023 - ERROR - ../common/common_lib.sh line 34
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status docker.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'docker.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='docker.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'docker.service restart failed'
++ LOG_ERROR 'docker.service restart failed'
++ message='docker.service restart failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'docker.service restart failed'
+Fri Jan  6 02:48:05 2023 - ERROR - docker.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Fri Jan  6 02:48:06 2023 - ERROR - ../common/common_lib.sh line 37
++ return 0
++ systemctl stop docker.service
++ CHECK_RESULT 0 0 0 'docker.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='docker.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status docker.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'docker.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='docker.service stop failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'docker.service stop failed'
++ LOG_ERROR 'docker.service stop failed'
++ message='docker.service stop failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'docker.service stop failed'
+Fri Jan  6 02:48:14 2023 - ERROR - docker.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Fri Jan  6 02:48:15 2023 - ERROR - ../common/common_lib.sh line 42
++ return 0
++ systemctl start docker.service
+Job for docker.service failed because the control process exited with error code.
+See "systemctl status docker.service" and "journalctl -xeu docker.service" for details.
++ CHECK_RESULT 1 0 0 'docker.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='docker.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'docker.service start failed'
++ LOG_ERROR 'docker.service start failed'
++ message='docker.service start failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'docker.service start failed'
+Fri Jan  6 02:48:27 2023 - ERROR - docker.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Fri Jan  6 02:48:29 2023 - ERROR - ../common/common_lib.sh line 44
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status docker.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'docker.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='docker.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'docker.service start failed'
++ LOG_ERROR 'docker.service start failed'
++ message='docker.service start failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'docker.service start failed'
+Fri Jan  6 02:48:36 2023 - ERROR - docker.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Fri Jan  6 02:48:37 2023 - ERROR - ../common/common_lib.sh line 47
++ return 0
++ test_enabled docker.service
++ service=docker.service
+++ systemctl is-enabled docker.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable docker.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/docker.service
++ find /etc/systemd/system/multi-user.target.wants/docker.service
+find: ‘/etc/systemd/system/multi-user.target.wants/docker.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'docker.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='docker.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable docker.service
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
++ find /etc/systemd/system/multi-user.target.wants/docker.service
+/etc/systemd/system/multi-user.target.wants/docker.service
++ CHECK_RESULT 0 0 0 'docker.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='docker.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-01-06 02:47:45' -u docker.service
++ grep -v level=warning
++ grep -i 'fail\|error'
++ grep -v level=info
+Jan 06 02:47:51 openEuler-riscv64 dockerd[617]: time="2023-01-06T02:47:51.022927789+08:00" level=error msg="'overlay' not found as a supported filesystem on this host. Please ensure kernel is new enough and has overlay support loaded." storage-driver=overlay2
+Jan 06 02:47:51 openEuler-riscv64 dockerd[617]: time="2023-01-06T02:47:51.102303744+08:00" level=error msg="AUFS was not found in /proc/filesystems" storage-driver=aufs
+Jan 06 02:47:51 openEuler-riscv64 dockerd[617]: time="2023-01-06T02:47:51.169689929+08:00" level=error msg="'overlay' not found as a supported filesystem on this host. Please ensure kernel is new enough and has overlay support loaded." storage-driver=overlay
+Jan 06 02:47:55 openEuler-riscv64 dockerd[617]: Error starting daemon: Error initializing network controller: error obtaining controller instance: failed to create NAT chain DOCKER: iptables failed: iptables -t nat -N DOCKER: modprobe: ERROR: could not insert 'ip_tables': Exec format error
+Jan 06 02:47:55 openEuler-riscv64 systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+Jan 06 02:47:55 openEuler-riscv64 systemd[1]: docker.service: Failed with result 'exit-code'.
+Jan 06 02:47:55 openEuler-riscv64 systemd[1]: Failed to start Docker Application Container Engine.
+Jan 06 02:48:19 openEuler-riscv64 dockerd[713]: time="2023-01-06T02:48:19.691539773+08:00" level=error msg="'overlay' not found as a supported filesystem on this host. Please ensure kernel is new enough and has overlay support loaded." storage-driver=overlay2
+Jan 06 02:48:19 openEuler-riscv64 dockerd[713]: time="2023-01-06T02:48:19.759616836+08:00" level=error msg="AUFS was not found in /proc/filesystems" storage-driver=aufs
+Jan 06 02:48:19 openEuler-riscv64 dockerd[713]: time="2023-01-06T02:48:19.833999019+08:00" level=error msg="'overlay' not found as a supported filesystem on this host. Please ensure kernel is new enough and has overlay support loaded." storage-driver=overlay
+Jan 06 02:48:26 openEuler-riscv64 dockerd[713]: Error starting daemon: Error initializing network controller: error obtaining controller instance: failed to create NAT chain DOCKER: iptables failed: iptables -t nat -N DOCKER: modprobe: ERROR: could not insert 'ip_tables': Exec format error
+Jan 06 02:48:26 openEuler-riscv64 systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+Jan 06 02:48:26 openEuler-riscv64 systemd[1]: docker.service: Failed with result 'exit-code'.
+Jan 06 02:48:26 openEuler-riscv64 systemd[1]: Failed to start Docker Application Container Engine.
++ CHECK_RESULT 0 0 1 'There is an error message for the log of docker.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of docker.service'
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of docker.service'
++ LOG_ERROR 'There is an error message for the log of docker.service'
++ message='There is an error message for the log of docker.service'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of docker.service'
+Fri Jan  6 02:48:52 2023 - ERROR - There is an error message for the log of docker.service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_docker.sh line 35'
++ message='oe_test_service_docker.sh line 35'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_docker.sh line 35'
+Fri Jan  6 02:48:53 2023 - ERROR - oe_test_service_docker.sh line 35
++ return 0
++ systemctl start docker.service
+Job for docker.service failed because the control process exited with error code.
+See "systemctl status docker.service" and "journalctl -xeu docker.service" for details.
++ sed -i 's\dockerd\dockerd --log-level=info\g' /usr/lib/systemd/system/docker.service
++ systemctl daemon-reload
++ systemctl reload docker.service
+docker.service is not active, cannot reload.
++ CHECK_RESULT 1 0 0 'docker.service reload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='docker.service reload failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'docker.service reload failed'
++ LOG_ERROR 'docker.service reload failed'
++ message='docker.service reload failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'docker.service reload failed'
+Fri Jan  6 02:49:09 2023 - ERROR - docker.service reload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_docker.sh line 40'
++ message='oe_test_service_docker.sh line 40'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_docker.sh line 40'
+Fri Jan  6 02:49:10 2023 - ERROR - oe_test_service_docker.sh line 40
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri Jan  6 02:49:11 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 7
++ test 7 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 02:49:12 2023 - ERROR - failed to execute the case.
++ exit 7
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Jan  6 02:49:13 2023 - INFO  - start environment cleanup.
++ sed -i 's\dockerd --log-level=info\dockerd\g' /usr/lib/systemd/system/docker.service
++ systemctl daemon-reload
++ systemctl reload docker.service
+docker.service is not active, cannot reload.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpnryqegfh ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpnryqegfh
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Jan  6 02:49:53 2023 - INFO  - Finish environment cleanup!

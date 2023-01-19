@@ -1,0 +1,245 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Jan  6 14:26:29 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libreswan
++ pkgs=libreswan
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs libreswan --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpnt6a72fa
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpnt6a72fa
++ ipsec start
+Redirecting to: systemctl start ipsec.service
+Job for ipsec.service failed because a fatal signal was delivered causing the control process to dump core.
+See "systemctl status ipsec.service" and "journalctl -xeu ipsec.service" for details.
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Jan  6 14:27:23 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Jan  6 14:27:24 2023 - INFO  - Start to run test.
++ ipsec showstates
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 33
++ actual_result=33
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 33 ']'
++ '[' 0 -eq 0 ']'
++ test 33x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_03.sh line 30'
++ message='oe_test_libreswan_ipsec_03.sh line 30'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_03.sh line 30'
+Fri Jan  6 14:27:25 2023 - ERROR - oe_test_libreswan_ipsec_03.sh line 30
++ return 0
++ ipsec fips
++ grep 'FIPS mode disabled'
+whack: is Pluto running?  connect() for "/run/pluto/pluto.ctl" failed (111 Connection refused)
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libreswan_ipsec_03.sh line 32'
++ message='oe_test_libreswan_ipsec_03.sh line 32'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_libreswan_ipsec_03.sh line 32'
+Fri Jan  6 14:27:26 2023 - ERROR - oe_test_libreswan_ipsec_03.sh line 32
++ return 0
++ ipsec cavp -h
++ grep cavp
+Usage: cavp [-?|-h|-help] [-fips] [-json] [-v] <test-option> ...
+File mode: cavp [-fips] [-json] [-v] [-<test>] <test-file>|-
+Command mode: cavp [-fips] [-json] [-v] -<test> -<acvp-key> <acvp-value> ...
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec letsencrypt --help
++ grep letsencrypt
+Usage: ipsec letsencrypt [arguments]
+usage: 'ipsec letsencrypt --client'
+usage: 'ipsec letsencrypt --server'
+usage: 'ipsec letsencrypt --test'
+usage: 'ipsec letsencrypt --generate-certificate hostname'
+usage: 'ipsec letsencrypt --renew hostname'
+usage: 'ipsec letsencrypt --disable'
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep XFRM
++ ipsec look
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
+XFRM state:
+XFRM policy:
+XFRM done
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec initnss --nssdir /var/lib/ipsec/nss
+Initializing NSS database
+
++ ipsec newhostkey
++ grep key
+Generated RSA key pair with CKAID 554d3fc2d0197487a64b3af6b2d747d17db2a813 was stored in the NSS database
+The public key can be displayed using: ipsec showhostkey --left --ckaid 554d3fc2d0197487a64b3af6b2d747d17db2a813
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec showhostkey --list
++ grep 'RSA keyid'
+< 1> RSA keyid: AwEAAcKsr ckaid: 554d3fc2d0197487a64b3af6b2d747d17db2a813
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -rf /run/pluto/pluto.pid
++ ipsec pluto
++ '[' -e /run/pluto/pluto.pid ']'
++ '[' -e /run/pluto/pluto.ctl ']'
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep conf
++ ipsec readwriteconf
+config setup
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ipsec setup --status
++ grep ipsec.service
+Redirecting to: systemctl status ipsec.service
+● ipsec.service - Internet Key Exchange (IKE) Protocol Daemon for IPsec
+     Loaded: loaded (/usr/lib/systemd/system/ipsec.service; disabled; vendor preset: disabled)
+     CGroup: /system.slice/ipsec.service
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'Verifying installed system and configuration files'
++ ipsec verify
+
+ipsec verify: encountered 13 errors - see 'man ipsec_verify' for help
+Verifying installed system and configuration files
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Fri Jan  6 14:27:38 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Jan  6 14:27:39 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Jan  6 14:27:39 2023 - INFO  - Start to restore the test environment.
++ rm -rf /var/lib/ipsec/nss/cert9.db /var/lib/ipsec/nss/key4.db
++ ipsec stop
+Redirecting to: systemctl stop ipsec.service
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
+Cannot open netlink socket: Protocol not supported
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpnt6a72fa ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpnt6a72fa
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Fri Jan  6 14:28:04 2023 - INFO  - Finish restoring the test environment.
