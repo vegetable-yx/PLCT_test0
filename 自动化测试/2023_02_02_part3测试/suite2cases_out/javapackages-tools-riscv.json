@@ -1,0 +1,11 @@
+{
+    "path": "$OET_PATH/testcases/cli-test/javapackages-tools",
+    "cases": [
+        {
+            "name": "oe_test_build-classpath"
+        },
+        {
+            "name": "oe_test_build-jar-repository"
+        }
+    ]
+}

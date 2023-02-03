@@ -1,0 +1,507 @@
++ source ../common/common_lib.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Fri Feb  3 10:35:29 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL initial-setup
++ pkgs=initial-setup
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs initial-setup --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 14:34:45 ago on Thu Feb  2 20:07:11 2023.
+Dependencies resolved.
+================================================================================
+ Package                      Arch      Version                Repository  Size
+================================================================================
+Installing:
+ initial-setup                riscv64   0.3.83-1.oe2203        mainline    61 k
+Installing dependencies:
+ anaconda                     riscv64   33.19-43.oe2203        mainline   367 k
+ anaconda-core                riscv64   33.19-43.oe2203        mainline   2.3 M
+ anaconda-tui                 riscv64   33.19-43.oe2203        mainline   107 k
+ augeas                       riscv64   1.12.0-8.oe2203        mainline   397 k
+ authselect                   riscv64   1.2.4-3.oe2203         mainline   186 k
+ blivet-data                  noarch    1:3.4.2-1.oe2203       mainline    92 k
+ btrfs-progs                  riscv64   5.15-1.oe2203          mainline   766 k
+ chrony                       riscv64   4.1-1.oe2203           mainline   183 k
+ createrepo_c                 riscv64   0.17.6-1.oe2203        mainline   129 k
+ cryptsetup                   riscv64   2.4.1-1.oe2203         mainline   945 k
+ daxctl-libs                  riscv64   71.1-3.oe2203          mainline    36 k
+ dhcp                         riscv64   12:4.4.2-13.oe2203     mainline   4.2 M
+ dmraid                       riscv64   1.0.0.rc16-54.oe2203   mainline   143 k
+ dmraid-events                riscv64   1.0.0.rc16-54.oe2203   mainline    13 k
+ dracut-network               riscv64   055-5.oe2203           mainline    61 k
+ dracut-squash                riscv64   055-5.oe2203           mainline    12 k
+ drpm                         riscv64   0.5.0-1.oe2203         mainline    58 k
+ ethtool                      riscv64   2:5.15-1.oe2203        mainline   176 k
+ fros                         noarch    1.1-18.oe2203          mainline    31 k
+ gdisk                        riscv64   1.0.8-2.oe2203         mainline   190 k
+ ipcalc                       riscv64   1.0.1-1.oe2203         mainline    33 k
+ isomd5sum                    riscv64   1:1.2.3-6.oe2203       mainline    26 k
+ kexec-tools                  riscv64   2.0.23-3.oe2203        mainline   116 k
+ langtable                    noarch    0.0.56-1.oe2203        mainline    41 k
+ libargon2                    riscv64   20190702-2.oe2203      mainline    28 k
+ libblockdev                  riscv64   2.26-1.oe2203          mainline   205 k
+ libbytesize                  riscv64   2.6-1.oe2203           mainline    34 k
+ libgnomekbd                  riscv64   3.26.1-1.oe2203        mainline   163 k
+ libreport                    riscv64   2.15.2-1.oe2203        mainline   586 k
+ lsof                         riscv64   4.94.0-1.oe2203        mainline    92 k
+ lvm2-dbusd                   riscv64   8:2.03.14-4.oe2203     mainline   113 k
+ lzo                          riscv64   2.10-1.oe2203          mainline    61 k
+ mdadm                        riscv64   4.1-5.oe2203           mainline   328 k
+ multipath-tools              riscv64   0.8.7-2.oe2203         mainline   269 k
+ ndctl                        riscv64   71.1-3.oe2203          mainline   174 k
+ ndctl-libs                   riscv64   71.1-3.oe2203          mainline    71 k
+ openEuler-logos              noarch    1.0-7.oe2203           mainline   8.7 M
+ python3-blivet               noarch    1:3.4.2-1.oe2203       mainline   566 k
+ python3-blockdev             riscv64   2.26-1.oe2203          mainline    26 k
+ python3-bytesize             riscv64   2.6-1.oe2203           mainline    19 k
+ python3-charset-normalizer   noarch    2.0.8-1.oe2203         mainline    72 k
+ python3-dasbus               noarch    1.6-1.oe2203           mainline    89 k
+ python3-kickstart            noarch    3.34-2.oe2203          mainline   391 k
+ python3-langtable            noarch    0.0.56-1.oe2203        mainline   818 k
+ python3-libreport            riscv64   2.15.2-1.oe2203        mainline    41 k
+ python3-meh                  noarch    0.50.1-1.oe2203        mainline    48 k
+ python3-ntplib               noarch    0.3.4-4.oe2203         mainline    14 k
+ python3-ordered-set          noarch    4.0.2-2.oe2203         mainline    20 k
+ python3-pid                  noarch    3.0.4-4.oe2203         mainline    27 k
+ python3-productmd            noarch    1.33-1.oe2203          mainline    74 k
+ python3-pwquality            riscv64   1.4.4-1.oe2203         mainline    13 k
+ python3-pyparted             riscv64   1:3.11.7-2.oe2203      mainline    97 k
+ python3-pysocks              noarch    1.7.1-1.oe2203         mainline    33 k
+ python3-pytz                 noarch    2021.3-1.oe2203        mainline    47 k
+ python3-pyudev               noarch    0.22.0-2.oe2203        mainline    80 k
+ python3-requests             noarch    2.26.0-5.oe2203        mainline   104 k
+ python3-requests-file        noarch    1.5.1-3.oe2203         mainline    14 k
+ python3-requests-ftp         noarch    0.3.1-17.oe2203        mainline    21 k
+ python3-simpleline           noarch    1.9.0-1.oe2203         mainline   123 k
+ python3-systemd              riscv64   234-13.oe2203          mainline    71 k
+ python3-urllib3              noarch    1.26.7-3.oe2203        mainline   191 k
+ realmd                       riscv64   0.17.0-1.oe2203        mainline   221 k
+ rsync                        riscv64   3.2.3-2.oe2203         mainline   289 k
+ satyr                        riscv64   0.38-3.oe2203          mainline    95 k
+ sgpio                        riscv64   1.2.1-2.oe2203         mainline    22 k
+ squashfs-tools               riscv64   4.5-1.oe2203           mainline   175 k
+ tigervnc-license             noarch    1.12.0-6.oe2203        mainline    15 k
+ tigervnc-server-minimal      riscv64   1.12.0-6.oe2203        mainline   1.0 M
+ userspace-rcu                riscv64   0.13.0-3.oe2203        mainline    87 k
+ volume_key                   riscv64   0.3.12-3.oe2203        mainline   142 k
+ xmlrpc-c                     riscv64   1.51.08-1.oe2203       mainline   352 k
+
+Transaction Summary
+================================================================================
+Install  72 Packages
+
+Total download size: 27 M
+Installed size: 73 M
+Downloading Packages:
+[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-tui-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-tui-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[FAILED] anaconda-core-33.19-43.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success
+
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.
+Error: Error downloading packages:
+  anaconda-core-33.19-43.oe2203.riscv64: Cannot download, all mirrors were already tried without success'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 14:34:45 ago on Thu Feb  2 20:07:11 2023.
+Dependencies resolved.
+================================================================================
+ Package                      Arch      Version                Repository  Size
+================================================================================
+Installing:
+ initial-setup                riscv64   0.3.83-1.oe2203        mainline    61 k
+Installing dependencies:
+ anaconda                     riscv64   33.19-43.oe2203        mainline   367 k
+ anaconda-core                riscv64   33.19-43.oe2203        mainline   2.3 M
+ anaconda-tui                 riscv64   33.19-43.oe2203        mainline   107 k
+ augeas                       riscv64   1.12.0-8.oe2203        mainline   397 k
+ authselect                   riscv64   1.2.4-3.oe2203         mainline   186 k
+ blivet-data                  noarch    1:3.4.2-1.oe2203       mainline    92 k
+ btrfs-progs                  riscv64   5.15-1.oe2203          mainline   766 k
+ chrony                       riscv64   4.1-1.oe2203           mainline   183 k
+ createrepo_c                 riscv64   0.17.6-1.oe2203        mainline   129 k
+ cryptsetup                   riscv64   2.4.1-1.oe2203         mainline   945 k
+ daxctl-libs                  riscv64   71.1-3.oe2203          mainline    36 k
+ dhcp                         riscv64   12:4.4.2-13.oe2203     mainline   4.2 M
+ dmraid                       riscv64   1.0.0.rc16-54.oe2203   mainline   143 k
+ dmraid-events                riscv64   1.0.0.rc16-54.oe2203   mainline    13 k
+ dracut-network               riscv64   055-5.oe2203           mainline    61 k
+ dracut-squash                riscv64   055-5.oe2203           mainline    12 k
+ drpm                         riscv64   0.5.0-1.oe2203         mainline    58 k
+ ethtool                      riscv64   2:5.15-1.oe2203        mainline   176 k
+ fros                         noarch    1.1-18.oe2203          mainline    31 k
+ gdisk                        riscv64   1.0.8-2.oe2203         mainline   190 k
+ ipcalc                       riscv64   1.0.1-1.oe2203         mainline    33 k
+ isomd5sum                    riscv64   1:1.2.3-6.oe2203       mainline    26 k
+ kexec-tools                  riscv64   2.0.23-3.oe2203        mainline   116 k
+ langtable                    noarch    0.0.56-1.oe2203        mainline    41 k
+ libargon2                    riscv64   20190702-2.oe2203      mainline    28 k
+ libblockdev                  riscv64   2.26-1.oe2203          mainline   205 k
+ libbytesize                  riscv64   2.6-1.oe2203           mainline    34 k
+ libgnomekbd                  riscv64   3.26.1-1.oe2203        mainline   163 k
+ libreport                    riscv64   2.15.2-1.oe2203        mainline   586 k
+ lsof                         riscv64   4.94.0-1.oe2203        mainline    92 k
+ lvm2-dbusd                   riscv64   8:2.03.14-4.oe2203     mainline   113 k
+ lzo                          riscv64   2.10-1.oe2203          mainline    61 k
+ mdadm                        riscv64   4.1-5.oe2203           mainline   328 k
+ multipath-tools              riscv64   0.8.7-2.oe2203         mainline   269 k
+ ndctl                        riscv64   71.1-3.oe2203          mainline   174 k
+ ndctl-libs                   riscv64   71.1-3.oe2203          mainline    71 k
+ openEuler-logos              noarch    1.0-7.oe2203           mainline   8.7 M
+ python3-blivet               noarch    1:3.4.2-1.oe2203       mainline   566 k
+ python3-blockdev             riscv64   2.26-1.oe2203          mainline    26 k
+ python3-bytesize             riscv64   2.6-1.oe2203           mainline    19 k
+ python3-charset-normalizer   noarch    2.0.8-1.oe2203         mainline    72 k
+ python3-dasbus               noarch    1.6-1.oe2203           mainline    89 k
+ python3-kickstart            noarch    3.34-2.oe2203          mainline   391 k
+ python3-langtable            noarch    0.0.56-1.oe2203        mainline   818 k
+ python3-libreport            riscv64   2.15.2-1.oe2203        mainline    41 k
+ python3-meh                  noarch    0.50.1-1.oe2203        mainline    48 k
+ python3-ntplib               noarch    0.3.4-4.oe2203         mainline    14 k
+ python3-ordered-set          noarch    4.0.2-2.oe2203         mainline    20 k
+ python3-pid                  noarch    3.0.4-4.oe2203         mainline    27 k
+ python3-productmd            noarch    1.33-1.oe2203          mainline    74 k
+ python3-pwquality            riscv64   1.4.4-1.oe2203         mainline    13 k
+ python3-pyparted             riscv64   1:3.11.7-2.oe2203      mainline    97 k
+ python3-pysocks              noarch    1.7.1-1.oe2203         mainline    33 k
+ python3-pytz                 noarch    2021.3-1.oe2203        mainline    47 k
+ python3-pyudev               noarch    0.22.0-2.oe2203        mainline    80 k
+ python3-requests             noarch    2.26.0-5.oe2203        mainline   104 k
+ python3-requests-file        noarch    1.5.1-3.oe2203         mainline    14 k
+ python3-requests-ftp         noarch    0.3.1-17.oe2203        mainline    21 k
+ python3-simpleline           noarch    1.9.0-1.oe2203         mainline   123 k
+ python3-systemd              riscv64   234-13.oe2203          mainline    71 k
+ python3-urllib3              noarch    1.26.7-3.oe2203        mainline   191 k
+ realmd                       riscv64   0.17.0-1.oe2203        mainline   221 k
+ rsync                        riscv64   3.2.3-2.oe2203         mainline   289 k
+ satyr                        riscv64   0.38-3.oe2203          mainline    95 k
+ sgpio                        riscv64   1.2.1-2.oe2203         mainline    22 k
+ squashfs-tools               riscv64   4.5-1.oe2203           mainline   175 k
+ tigervnc-license             noarch    1.12.0-6.oe2203        mainline    15 k
+ tigervnc-server-minimal      riscv64   1.12.0-6.oe2203        mainline   1.0 M
+ userspace-rcu                riscv64   0.13.0-3.oe2203        mainline    87 k
+ volume_key                   riscv64   0.3.12-3.oe2203        mainline   142 k
+ xmlrpc-c                     riscv64   1.51.08-1.oe2203       mainline   352 k
+
+Transaction Summary
+================================================================================
+Install  72 Packages
+
+Total download size: 27 M
+Installed size: 73 M
+Downloading Packages:
+[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-tui-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-tui-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[FAILED] anaconda-core-33.19-43.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success
+
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.
+Error: Error downloading packages:
+  anaconda-core-33.19-43.oe2203.riscv64: Cannot download, all mirrors were already tried without success'
++ touch /.unconfigured
++ systemctl start initial-setup-reconfiguration.service
+Failed to start initial-setup-reconfiguration.service: Unit initial-setup-reconfiguration.service not found.
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri Feb  3 10:42:55 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri Feb  3 10:43:12 2023 - INFO  - Start testing...
++ test_oneshot initial-setup-reconfiguration.service 'inactive (dead)'
++ service=initial-setup-reconfiguration.service
++ status='inactive (dead)'
++ grep Active
++ systemctl status initial-setup-reconfiguration.service
++ grep -v 'inactive (dead)'
+Unit initial-setup-reconfiguration.service could not be found.
++ CHECK_RESULT 1 0 1 'There is an error for the status of initial-setup-reconfiguration.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error for the status of initial-setup-reconfiguration.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_enabled initial-setup-reconfiguration.service
++ service=initial-setup-reconfiguration.service
+++ systemctl is-enabled initial-setup-reconfiguration.service
+Failed to get unit file state for initial-setup-reconfiguration.service: No such file or directory
++ state=
++ '[' '' == enabled ']'
++ '[' '' == disabled ']'
++ '[' '' == masked ']'
++ '[' '' == static ']'
++ LOG_INFO 'Unit is indirect, ignoring.'
++ message='Unit is indirect, ignoring.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Unit is indirect, ignoring.'
+Fri Feb  3 10:43:28 2023 - INFO  - Unit is indirect, ignoring.
++ journalctl -u initial-setup-reconfiguration.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of initial-setup-reconfiguration.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of initial-setup-reconfiguration.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri Feb  3 10:43:45 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 10:43:56 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Feb  3 10:44:04 2023 - INFO  - start environment cleanup.
++ rm -rf /.unconfigured
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 14:34:45 ago on Thu Feb  2 20:07:11 2023.
+Dependencies resolved.
+================================================================================
+ Package                      Arch      Version                Repository  Size
+================================================================================
+Installing:
+ initial-setup                riscv64   0.3.83-1.oe2203        mainline    61 k
+Installing dependencies:
+ anaconda                     riscv64   33.19-43.oe2203        mainline   367 k
+ anaconda-core                riscv64   33.19-43.oe2203        mainline   2.3 M
+ anaconda-tui                 riscv64   33.19-43.oe2203        mainline   107 k
+ augeas                       riscv64   1.12.0-8.oe2203        mainline   397 k
+ authselect                   riscv64   1.2.4-3.oe2203         mainline   186 k
+ blivet-data                  noarch    1:3.4.2-1.oe2203       mainline    92 k
+ btrfs-progs                  riscv64   5.15-1.oe2203          mainline   766 k
+ chrony                       riscv64   4.1-1.oe2203           mainline   183 k
+ createrepo_c                 riscv64   0.17.6-1.oe2203        mainline   129 k
+ cryptsetup                   riscv64   2.4.1-1.oe2203         mainline   945 k
+ daxctl-libs                  riscv64   71.1-3.oe2203          mainline    36 k
+ dhcp                         riscv64   12:4.4.2-13.oe2203     mainline   4.2 M
+ dmraid                       riscv64   1.0.0.rc16-54.oe2203   mainline   143 k
+ dmraid-events                riscv64   1.0.0.rc16-54.oe2203   mainline    13 k
+ dracut-network               riscv64   055-5.oe2203           mainline    61 k
+ dracut-squash                riscv64   055-5.oe2203           mainline    12 k
+ drpm                         riscv64   0.5.0-1.oe2203         mainline    58 k
+ ethtool                      riscv64   2:5.15-1.oe2203        mainline   176 k
+ fros                         noarch    1.1-18.oe2203          mainline    31 k
+ gdisk                        riscv64   1.0.8-2.oe2203         mainline   190 k
+ ipcalc                       riscv64   1.0.1-1.oe2203         mainline    33 k
+ isomd5sum                    riscv64   1:1.2.3-6.oe2203       mainline    26 k
+ kexec-tools                  riscv64   2.0.23-3.oe2203        mainline   116 k
+ langtable                    noarch    0.0.56-1.oe2203        mainline    41 k
+ libargon2                    riscv64   20190702-2.oe2203      mainline    28 k
+ libblockdev                  riscv64   2.26-1.oe2203          mainline   205 k
+ libbytesize                  riscv64   2.6-1.oe2203           mainline    34 k
+ libgnomekbd                  riscv64   3.26.1-1.oe2203        mainline   163 k
+ libreport                    riscv64   2.15.2-1.oe2203        mainline   586 k
+ lsof                         riscv64   4.94.0-1.oe2203        mainline    92 k
+ lvm2-dbusd                   riscv64   8:2.03.14-4.oe2203     mainline   113 k
+ lzo                          riscv64   2.10-1.oe2203          mainline    61 k
+ mdadm                        riscv64   4.1-5.oe2203           mainline   328 k
+ multipath-tools              riscv64   0.8.7-2.oe2203         mainline   269 k
+ ndctl                        riscv64   71.1-3.oe2203          mainline   174 k
+ ndctl-libs                   riscv64   71.1-3.oe2203          mainline    71 k
+ openEuler-logos              noarch    1.0-7.oe2203           mainline   8.7 M
+ python3-blivet               noarch    1:3.4.2-1.oe2203       mainline   566 k
+ python3-blockdev             riscv64   2.26-1.oe2203          mainline    26 k
+ python3-bytesize             riscv64   2.6-1.oe2203           mainline    19 k
+ python3-charset-normalizer   noarch    2.0.8-1.oe2203         mainline    72 k
+ python3-dasbus               noarch    1.6-1.oe2203           mainline    89 k
+ python3-kickstart            noarch    3.34-2.oe2203          mainline   391 k
+ python3-langtable            noarch    0.0.56-1.oe2203        mainline   818 k
+ python3-libreport            riscv64   2.15.2-1.oe2203        mainline    41 k
+ python3-meh                  noarch    0.50.1-1.oe2203        mainline    48 k
+ python3-ntplib               noarch    0.3.4-4.oe2203         mainline    14 k
+ python3-ordered-set          noarch    4.0.2-2.oe2203         mainline    20 k
+ python3-pid                  noarch    3.0.4-4.oe2203         mainline    27 k
+ python3-productmd            noarch    1.33-1.oe2203          mainline    74 k
+ python3-pwquality            riscv64   1.4.4-1.oe2203         mainline    13 k
+ python3-pyparted             riscv64   1:3.11.7-2.oe2203      mainline    97 k
+ python3-pysocks              noarch    1.7.1-1.oe2203         mainline    33 k
+ python3-pytz                 noarch    2021.3-1.oe2203        mainline    47 k
+ python3-pyudev               noarch    0.22.0-2.oe2203        mainline    80 k
+ python3-requests             noarch    2.26.0-5.oe2203        mainline   104 k
+ python3-requests-file        noarch    1.5.1-3.oe2203         mainline    14 k
+ python3-requests-ftp         noarch    0.3.1-17.oe2203        mainline    21 k
+ python3-simpleline           noarch    1.9.0-1.oe2203         mainline   123 k
+ python3-systemd              riscv64   234-13.oe2203          mainline    71 k
+ python3-urllib3              noarch    1.26.7-3.oe2203        mainline   191 k
+ realmd                       riscv64   0.17.0-1.oe2203        mainline   221 k
+ rsync                        riscv64   3.2.3-2.oe2203         mainline   289 k
+ satyr                        riscv64   0.38-3.oe2203          mainline    95 k
+ sgpio                        riscv64   1.2.1-2.oe2203         mainline    22 k
+ squashfs-tools               riscv64   4.5-1.oe2203           mainline   175 k
+ tigervnc-license             noarch    1.12.0-6.oe2203        mainline    15 k
+ tigervnc-server-minimal      riscv64   1.12.0-6.oe2203        mainline   1.0 M
+ userspace-rcu                riscv64   0.13.0-3.oe2203        mainline    87 k
+ volume_key                   riscv64   0.3.12-3.oe2203        mainline   142 k
+ xmlrpc-c                     riscv64   1.51.08-1.oe2203       mainline   352 k
+
+Transaction Summary
+================================================================================
+Install  72 Packages
+
+Total download size: 27 M
+Installed size: 73 M
+Downloading Packages:
+[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-tui-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-tui-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[FAILED] anaconda-core-33.19-43.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success
+
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'.
+Error: Error downloading packages:
+  anaconda-core-33.19-43.oe2203.riscv64: Cannot download, all mirrors were already tried without success ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 14:34:45 ago on Thu Feb  2 20:07:11 2023.
+Dependencies resolved.
+================================================================================
+ Package                      Arch      Version                Repository  Size
+================================================================================
+Installing:
+ initial-setup                riscv64   0.3.83-1.oe2203        mainline    61 k
+Installing dependencies:
+ anaconda                     riscv64   33.19-43.oe2203        mainline   367 k
+ anaconda-core                riscv64   33.19-43.oe2203        mainline   2.3 M
+ anaconda-tui                 riscv64   33.19-43.oe2203        mainline   107 k
+ augeas                       riscv64   1.12.0-8.oe2203        mainline   397 k
+ authselect                   riscv64   1.2.4-3.oe2203         mainline   186 k
+ blivet-data                  noarch    1:3.4.2-1.oe2203       mainline    92 k
+ btrfs-progs                  riscv64   5.15-1.oe2203          mainline   766 k
+ chrony                       riscv64   4.1-1.oe2203           mainline   183 k
+ createrepo_c                 riscv64   0.17.6-1.oe2203        mainline   129 k
+ cryptsetup                   riscv64   2.4.1-1.oe2203         mainline   945 k
+ daxctl-libs                  riscv64   71.1-3.oe2203          mainline    36 k
+ dhcp                         riscv64   12:4.4.2-13.oe2203     mainline   4.2 M
+ dmraid                       riscv64   1.0.0.rc16-54.oe2203   mainline   143 k
+ dmraid-events                riscv64   1.0.0.rc16-54.oe2203   mainline    13 k
+ dracut-network               riscv64   055-5.oe2203           mainline    61 k
+ dracut-squash                riscv64   055-5.oe2203           mainline    12 k
+ drpm                         riscv64   0.5.0-1.oe2203         mainline    58 k
+ ethtool                      riscv64   2:5.15-1.oe2203        mainline   176 k
+ fros                         noarch    1.1-18.oe2203          mainline    31 k
+ gdisk                        riscv64   1.0.8-2.oe2203         mainline   190 k
+ ipcalc                       riscv64   1.0.1-1.oe2203         mainline    33 k
+ isomd5sum                    riscv64   1:1.2.3-6.oe2203       mainline    26 k
+ kexec-tools                  riscv64   2.0.23-3.oe2203        mainline   116 k
+ langtable                    noarch    0.0.56-1.oe2203        mainline    41 k
+ libargon2                    riscv64   20190702-2.oe2203      mainline    28 k
+ libblockdev                  riscv64   2.26-1.oe2203          mainline   205 k
+ libbytesize                  riscv64   2.6-1.oe2203           mainline    34 k
+ libgnomekbd                  riscv64   3.26.1-1.oe2203        mainline   163 k
+ libreport                    riscv64   2.15.2-1.oe2203        mainline   586 k
+ lsof                         riscv64   4.94.0-1.oe2203        mainline    92 k
+ lvm2-dbusd                   riscv64   8:2.03.14-4.oe2203     mainline   113 k
+ lzo                          riscv64   2.10-1.oe2203          mainline    61 k
+ mdadm                        riscv64   4.1-5.oe2203           mainline   328 k
+ multipath-tools              riscv64   0.8.7-2.oe2203         mainline   269 k
+ ndctl                        riscv64   71.1-3.oe2203          mainline   174 k
+ ndctl-libs                   riscv64   71.1-3.oe2203          mainline    71 k
+ openEuler-logos              noarch    1.0-7.oe2203           mainline   8.7 M
+ python3-blivet               noarch    1:3.4.2-1.oe2203       mainline   566 k
+ python3-blockdev             riscv64   2.26-1.oe2203          mainline    26 k
+ python3-bytesize             riscv64   2.6-1.oe2203           mainline    19 k
+ python3-charset-normalizer   noarch    2.0.8-1.oe2203         mainline    72 k
+ python3-dasbus               noarch    1.6-1.oe2203           mainline    89 k
+ python3-kickstart            noarch    3.34-2.oe2203          mainline   391 k
+ python3-langtable            noarch    0.0.56-1.oe2203        mainline   818 k
+ python3-libreport            riscv64   2.15.2-1.oe2203        mainline    41 k
+ python3-meh                  noarch    0.50.1-1.oe2203        mainline    48 k
+ python3-ntplib               noarch    0.3.4-4.oe2203         mainline    14 k
+ python3-ordered-set          noarch    4.0.2-2.oe2203         mainline    20 k
+ python3-pid                  noarch    3.0.4-4.oe2203         mainline    27 k
+ python3-productmd            noarch    1.33-1.oe2203          mainline    74 k
+ python3-pwquality            riscv64   1.4.4-1.oe2203         mainline    13 k
+ python3-pyparted             riscv64   1:3.11.7-2.oe2203      mainline    97 k
+ python3-pysocks              noarch    1.7.1-1.oe2203         mainline    33 k
+ python3-pytz                 noarch    2021.3-1.oe2203        mainline    47 k
+ python3-pyudev               noarch    0.22.0-2.oe2203        mainline    80 k
+ python3-requests             noarch    2.26.0-5.oe2203        mainline   104 k
+ python3-requests-file        noarch    1.5.1-3.oe2203         mainline    14 k
+ python3-requests-ftp         noarch    0.3.1-17.oe2203        mainline    21 k
+ python3-simpleline           noarch    1.9.0-1.oe2203         mainline   123 k
+ python3-systemd              riscv64   234-13.oe2203          mainline    71 k
+ python3-urllib3              noarch    1.26.7-3.oe2203        mainline   191 k
+ realmd                       riscv64   0.17.0-1.oe2203        mainline   221 k
+ rsync                        riscv64   3.2.3-2.oe2203         mainline   289 k
+ satyr                        riscv64   0.38-3.oe2203          mainline    95 k
+ sgpio                        riscv64   1.2.1-2.oe2203         mainline    22 k
+ squashfs-tools               riscv64   4.5-1.oe2203           mainline   175 k
+ tigervnc-license             noarch    1.12.0-6.oe2203        mainline    15 k
+ tigervnc-server-minimal      riscv64   1.12.0-6.oe2203        mainline   1.0 M
+ userspace-rcu                riscv64   0.13.0-3.oe2203        mainline    87 k
+ volume_key                   riscv64   0.3.12-3.oe2203        mainline   142 k
+ xmlrpc-c                     riscv64   1.51.08-1.oe2203       mainline   352 k
+
+Transaction Summary
+================================================================================
+Install  72 Packages
+
+Total download size: 27 M
+Installed size: 73 M
+Downloading Packages:
+[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-tui-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-tui-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[FAILED] anaconda-core-33.19-43.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success
+
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.
+Error: Error downloading packages:
+  anaconda-core-33.19-43.oe2203.riscv64: Cannot download, all mirrors were already tried without success'
+Traceback (most recent call last):
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 14:34:45 ago on Thu Feb  2 20:07:11 2023.\nDependencies resolved.\n================================================================================\n Package                      Arch      Version                Repository  Size\n================================================================================\nInstalling:\n initial-setup                riscv64   0.3.83-1.oe2203        mainline    61 k\nInstalling dependencies:\n anaconda                     riscv64   33.19-43.oe2203        mainline   367 k\n anaconda-core                riscv64   33.19-43.oe2203        mainline   2.3 M\n anaconda-tui                 riscv64   33.19-43.oe2203        mainline   107 k\n augeas                       riscv64   1.12.0-8.oe2203        mainline   397 k\n authselect                   riscv64   1.2.4-3.oe2203         mainline   186 k\n blivet-data                  noarch    1:3.4.2-1.oe2203       mainline    92 k\n btrfs-progs                  riscv64   5.15-1.oe2203          mainline   766 k\n chrony                       riscv64   4.1-1.oe2203           mainline   183 k\n createrepo_c                 riscv64   0.17.6-1.oe2203        mainline   129 k\n cryptsetup                   riscv64   2.4.1-1.oe2203         mainline   945 k\n daxctl-libs                  riscv64   71.1-3.oe2203          mainline    36 k\n dhcp                         riscv64   12:4.4.2-13.oe2203     mainline   4.2 M\n dmraid                       riscv64   1.0.0.rc16-54.oe2203   mainline   143 k\n dmraid-events                riscv64   1.0.0.rc16-54.oe2203   mainline    13 k\n dracut-network               riscv64   055-5.oe2203           mainline    61 k\n dracut-squash                riscv64   055-5.oe2203           mainline    12 k\n drpm                         riscv64   0.5.0-1.oe2203         mainline    58 k\n ethtool                      riscv64   2:5.15-1.oe2203        mainline   176 k\n fros                         noarch    1.1-18.oe2203          mainline    31 k\n gdisk                        riscv64   1.0.8-2.oe2203         mainline   190 k\n ipcalc                       riscv64   1.0.1-1.oe2203         mainline    33 k\n isomd5sum                    riscv64   1:1.2.3-6.oe2203       mainline    26 k\n kexec-tools                  riscv64   2.0.23-3.oe2203        mainline   116 k\n langtable                    noarch    0.0.56-1.oe2203        mainline    41 k\n libargon2                    riscv64   20190702-2.oe2203      mainline    28 k\n libblockdev                  riscv64   2.26-1.oe2203          mainline   205 k\n libbytesize                  riscv64   2.6-1.oe2203           mainline    34 k\n libgnomekbd                  riscv64   3.26.1-1.oe2203        mainline   163 k\n libreport                    riscv64   2.15.2-1.oe2203        mainline   586 k\n lsof                         riscv64   4.94.0-1.oe2203        mainline    92 k\n lvm2-dbusd                   riscv64   8:2.03.14-4.oe2203     mainline   113 k\n lzo                          riscv64   2.10-1.oe2203          mainline    61 k\n mdadm                        riscv64   4.1-5.oe2203           mainline   328 k\n multipath-tools              riscv64   0.8.7-2.oe2203         mainline   269 k\n ndctl                        riscv64   71.1-3.oe2203          mainline   174 k\n ndctl-libs                   riscv64   71.1-3.oe2203          mainline    71 k\n openEuler-logos              noarch    1.0-7.oe2203           mainline   8.7 M\n python3-blivet               noarch    1:3.4.2-1.oe2203       mainline   566 k\n python3-blockdev             riscv64   2.26-1.oe2203          mainline    26 k\n python3-bytesize             riscv64   2.6-1.oe2203           mainline    19 k\n python3-charset-normalizer   noarch    2.0.8-1.oe2203         mainline    72 k\n python3-dasbus               noarch    1.6-1.oe2203           mainline    89 k\n python3-kickstart            noarch    3.34-2.oe2203          mainline   391 k\n python3-langtable            noarch    0.0.56-1.oe2203        mainline   818 k\n python3-libreport            riscv64   2.15.2-1.oe2203        mainline    41 k\n python3-meh                  noarch    0.50.1-1.oe2203        mainline    48 k\n python3-ntplib               noarch    0.3.4-4.oe2203         mainline    14 k\n python3-ordered-set          noarch    4.0.2-2.oe2203         mainline    20 k\n python3-pid                  noarch    3.0.4-4.oe2203         mainline    27 k\n python3-productmd            noarch    1.33-1.oe2203          mainline    74 k\n python3-pwquality            riscv64   1.4.4-1.oe2203         mainline    13 k\n python3-pyparted             riscv64   1:3.11.7-2.oe2203      mainline    97 k\n python3-pysocks              noarch    1.7.1-1.oe2203         mainline    33 k\n python3-pytz                 noarch    2021.3-1.oe2203        mainline    47 k\n python3-pyudev               noarch    0.22.0-2.oe2203        mainline    80 k\n python3-requests             noarch    2.26.0-5.oe2203        mainline   104 k\n python3-requests-file        noarch    1.5.1-3.oe2203         mainline    14 k\n python3-requests-ftp         noarch    0.3.1-17.oe2203        mainline    21 k\n python3-simpleline           noarch    1.9.0-1.oe2203         mainline   123 k\n python3-systemd              riscv64   234-13.oe2203          mainline    71 k\n python3-urllib3              noarch    1.26.7-3.oe2203        mainline   191 k\n realmd                       riscv64   0.17.0-1.oe2203        mainline   221 k\n rsync                        riscv64   3.2.3-2.oe2203         mainline   289 k\n satyr                        riscv64   0.38-3.oe2203          mainline    95 k\n sgpio                        riscv64   1.2.1-2.oe2203         mainline    22 k\n squashfs-tools               riscv64   4.5-1.oe2203           mainline   175 k\n tigervnc-license             noarch    1.12.0-6.oe2203        mainline    15 k\n tigervnc-server-minimal      riscv64   1.12.0-6.oe2203        mainline   1.0 M\n userspace-rcu                riscv64   0.13.0-3.oe2203        mainline    87 k\n volume_key                   riscv64   0.3.12-3.oe2203        mainline   142 k\n xmlrpc-c                     riscv64   1.51.08-1.oe2203       mainline   352 k\n\nTransaction Summary\n================================================================================\nInstall  72 Packages\n\nTotal download size: 27 M\nInstalled size: 73 M\nDownloading Packages:\n[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]\n[MIRROR] anaconda-tui-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-tui-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]\n[MIRROR] anaconda-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]\n[MIRROR] anaconda-core-33.19-43.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/anaconda-core-33.19-43.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]\n[FAILED] anaconda-core-33.19-43.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success\n\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'.\nError: Error downloading packages:\n  anaconda-core-33.19-43.oe2203.riscv64: Cannot download, all mirrors were already tried without success"
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Feb  3 10:45:13 2023 - INFO  - Finish environment cleanup!

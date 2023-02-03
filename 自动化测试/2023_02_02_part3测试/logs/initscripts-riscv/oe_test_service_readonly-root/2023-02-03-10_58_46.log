@@ -1,0 +1,411 @@
++ source ../common/common_lib.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Fri Feb  3 10:59:32 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL readonly-root
++ pkgs=readonly-root
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs readonly-root --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 14:57:52 ago on Thu Feb  2 20:07:11 2023.
+Dependencies resolved.
+================================================================================
+ Package                  Architecture Version              Repository     Size
+================================================================================
+Installing:
+ readonly-root            noarch       10.12-1.oe2203       mainline       15 k
+Installing dependencies:
+ initscripts              riscv64      10.12-1.oe2203       mainline      208 k
+ initscripts-service      noarch       10.12-1.oe2203       mainline       13 k
+ ipcalc                   riscv64      1.0.1-1.oe2203       mainline       33 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 268 k
+Installed size: 1.2 M
+Downloading Packages:
+[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] initscripts-service-10.12-1.oe2203.noarch.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/noarch/initscripts-service-10.12-1.oe2203.noarch.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] ipcalc-1.0.1-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/ipcalc-1.0.1-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[FAILED] initscripts-10.12-1.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success
+
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.
+Error: Error downloading packages:
+  initscripts-10.12-1.oe2203.riscv64: Cannot download, all mirrors were already tried without success'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 14:57:52 ago on Thu Feb  2 20:07:11 2023.
+Dependencies resolved.
+================================================================================
+ Package                  Architecture Version              Repository     Size
+================================================================================
+Installing:
+ readonly-root            noarch       10.12-1.oe2203       mainline       15 k
+Installing dependencies:
+ initscripts              riscv64      10.12-1.oe2203       mainline      208 k
+ initscripts-service      noarch       10.12-1.oe2203       mainline       13 k
+ ipcalc                   riscv64      1.0.1-1.oe2203       mainline       33 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 268 k
+Installed size: 1.2 M
+Downloading Packages:
+[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] initscripts-service-10.12-1.oe2203.noarch.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/noarch/initscripts-service-10.12-1.oe2203.noarch.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] ipcalc-1.0.1-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/ipcalc-1.0.1-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[FAILED] initscripts-10.12-1.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success
+
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.
+Error: Error downloading packages:
+  initscripts-10.12-1.oe2203.riscv64: Cannot download, all mirrors were already tried without success'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri Feb  3 11:05:47 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri Feb  3 11:05:56 2023 - INFO  - Start testing...
++ test_execution readonly-root.service
++ service=readonly-root.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-03 11:05:57'
++ test_restart readonly-root.service
++ service=readonly-root.service
++ systemctl restart readonly-root.service
+Failed to restart readonly-root.service: Unit readonly-root.service not found.
++ CHECK_RESULT 5 0 0 'readonly-root.service restart failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='readonly-root.service restart failed'
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'readonly-root.service restart failed'
++ LOG_ERROR 'readonly-root.service restart failed'
++ message='readonly-root.service restart failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'readonly-root.service restart failed'
+Fri Feb  3 11:06:05 2023 - ERROR - readonly-root.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Fri Feb  3 11:06:14 2023 - ERROR - ../common/common_lib.sh line 34
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status readonly-root.service
++ grep 'Active: active'
+Unit readonly-root.service could not be found.
++ CHECK_RESULT 1 0 0 'readonly-root.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='readonly-root.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'readonly-root.service restart failed'
++ LOG_ERROR 'readonly-root.service restart failed'
++ message='readonly-root.service restart failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'readonly-root.service restart failed'
+Fri Feb  3 11:06:40 2023 - ERROR - readonly-root.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Fri Feb  3 11:06:47 2023 - ERROR - ../common/common_lib.sh line 37
++ return 0
++ systemctl stop readonly-root.service
+Failed to stop readonly-root.service: Unit readonly-root.service not loaded.
++ CHECK_RESULT 5 0 0 'readonly-root.service stop failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='readonly-root.service stop failed'
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'readonly-root.service stop failed'
++ LOG_ERROR 'readonly-root.service stop failed'
++ message='readonly-root.service stop failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'readonly-root.service stop failed'
+Fri Feb  3 11:06:57 2023 - ERROR - readonly-root.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 39'
++ message='../common/common_lib.sh line 39'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 39'
+Fri Feb  3 11:07:07 2023 - ERROR - ../common/common_lib.sh line 39
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status readonly-root.service
++ grep 'Active: inactive'
+Unit readonly-root.service could not be found.
++ CHECK_RESULT 1 0 0 'readonly-root.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='readonly-root.service stop failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'readonly-root.service stop failed'
++ LOG_ERROR 'readonly-root.service stop failed'
++ message='readonly-root.service stop failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'readonly-root.service stop failed'
+Fri Feb  3 11:07:31 2023 - ERROR - readonly-root.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Fri Feb  3 11:07:36 2023 - ERROR - ../common/common_lib.sh line 42
++ return 0
++ systemctl start readonly-root.service
+Failed to start readonly-root.service: Unit readonly-root.service not found.
++ CHECK_RESULT 5 0 0 'readonly-root.service start failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='readonly-root.service start failed'
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'readonly-root.service start failed'
++ LOG_ERROR 'readonly-root.service start failed'
++ message='readonly-root.service start failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'readonly-root.service start failed'
+Fri Feb  3 11:07:44 2023 - ERROR - readonly-root.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Fri Feb  3 11:07:51 2023 - ERROR - ../common/common_lib.sh line 44
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status readonly-root.service
++ grep 'Active: active'
+Unit readonly-root.service could not be found.
++ CHECK_RESULT 1 0 0 'readonly-root.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='readonly-root.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'readonly-root.service start failed'
++ LOG_ERROR 'readonly-root.service start failed'
++ message='readonly-root.service start failed'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'readonly-root.service start failed'
+Fri Feb  3 11:08:10 2023 - ERROR - readonly-root.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Fri Feb  3 11:08:20 2023 - ERROR - ../common/common_lib.sh line 47
++ return 0
++ test_enabled readonly-root.service
++ service=readonly-root.service
+++ systemctl is-enabled readonly-root.service
+Failed to get unit file state for readonly-root.service: No such file or directory
++ state=
++ '[' '' == enabled ']'
++ '[' '' == disabled ']'
++ '[' '' == masked ']'
++ '[' '' == static ']'
++ LOG_INFO 'Unit is indirect, ignoring.'
++ message='Unit is indirect, ignoring.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Unit is indirect, ignoring.'
+Fri Feb  3 11:08:30 2023 - INFO  - Unit is indirect, ignoring.
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ grep -i 'fail\|error'
++ journalctl --since '2023-02-03 11:05:57' -u readonly-root.service
++ CHECK_RESULT 1 0 1 'There is an error message for the log of readonly-root.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of readonly-root.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start readonly-root.service
+Failed to start readonly-root.service: Unit readonly-root.service not found.
++ systemctl reload readonly-root.service
++ grep 'Job type reload is not applicable'
++ CHECK_RESULT 1 0 0 'Job type reload is not applicable for unit readonly-root.service'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit readonly-root.service'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Job type reload is not applicable for unit readonly-root.service'
++ LOG_ERROR 'Job type reload is not applicable for unit readonly-root.service'
++ message='Job type reload is not applicable for unit readonly-root.service'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Job type reload is not applicable for unit readonly-root.service'
+Fri Feb  3 11:08:42 2023 - ERROR - Job type reload is not applicable for unit readonly-root.service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_readonly-root.sh line 33'
++ message='oe_test_service_readonly-root.sh line 33'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_readonly-root.sh line 33'
+Fri Feb  3 11:08:50 2023 - ERROR - oe_test_service_readonly-root.sh line 33
++ return 0
++ systemctl status readonly-root.service
++ grep 'Active: active'
+Unit readonly-root.service could not be found.
++ CHECK_RESULT 1 0 0 'readonly-root.service reload causes the service status to change'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='readonly-root.service reload causes the service status to change'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'readonly-root.service reload causes the service status to change'
++ LOG_ERROR 'readonly-root.service reload causes the service status to change'
++ message='readonly-root.service reload causes the service status to change'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'readonly-root.service reload causes the service status to change'
+Fri Feb  3 11:08:59 2023 - ERROR - readonly-root.service reload causes the service status to change
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_readonly-root.sh line 35'
++ message='oe_test_service_readonly-root.sh line 35'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_readonly-root.sh line 35'
+Fri Feb  3 11:09:08 2023 - ERROR - oe_test_service_readonly-root.sh line 35
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri Feb  3 11:09:15 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Feb  3 11:09:22 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Feb  3 11:09:29 2023 - INFO  - start environment cleanup.
++ systemctl stop readonly-root.service
+Failed to stop readonly-root.service: Unit readonly-root.service not loaded.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 14:57:52 ago on Thu Feb  2 20:07:11 2023.
+Dependencies resolved.
+================================================================================
+ Package                  Architecture Version              Repository     Size
+================================================================================
+Installing:
+ readonly-root            noarch       10.12-1.oe2203       mainline       15 k
+Installing dependencies:
+ initscripts              riscv64      10.12-1.oe2203       mainline      208 k
+ initscripts-service      noarch       10.12-1.oe2203       mainline       13 k
+ ipcalc                   riscv64      1.0.1-1.oe2203       mainline       33 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 268 k
+Installed size: 1.2 M
+Downloading Packages:
+[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] initscripts-service-10.12-1.oe2203.noarch.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/noarch/initscripts-service-10.12-1.oe2203.noarch.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] ipcalc-1.0.1-1.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/ipcalc-1.0.1-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[FAILED] initscripts-10.12-1.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success
+
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'.
+Error: Error downloading packages:
+  initscripts-10.12-1.oe2203.riscv64: Cannot download, all mirrors were already tried without success ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 14:57:52 ago on Thu Feb  2 20:07:11 2023.
+Dependencies resolved.
+================================================================================
+ Package                  Architecture Version              Repository     Size
+================================================================================
+Installing:
+ readonly-root            noarch       10.12-1.oe2203       mainline       15 k
+Installing dependencies:
+ initscripts              riscv64      10.12-1.oe2203       mainline      208 k
+ initscripts-service      noarch       10.12-1.oe2203       mainline       13 k
+ ipcalc                   riscv64      1.0.1-1.oe2203       mainline       33 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 268 k
+Installed size: 1.2 M
+Downloading Packages:
+[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] initscripts-service-10.12-1.oe2203.noarch.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/noarch/initscripts-service-10.12-1.oe2203.noarch.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] ipcalc-1.0.1-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/ipcalc-1.0.1-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn'\''t resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]
+[FAILED] initscripts-10.12-1.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success
+
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.
+Error: Error downloading packages:
+  initscripts-10.12-1.oe2203.riscv64: Cannot download, all mirrors were already tried without success'
+Traceback (most recent call last):
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 14:57:52 ago on Thu Feb  2 20:07:11 2023.\nDependencies resolved.\n================================================================================\n Package                  Architecture Version              Repository     Size\n================================================================================\nInstalling:\n readonly-root            noarch       10.12-1.oe2203       mainline       15 k\nInstalling dependencies:\n initscripts              riscv64      10.12-1.oe2203       mainline      208 k\n initscripts-service      noarch       10.12-1.oe2203       mainline       13 k\n ipcalc                   riscv64      1.0.1-1.oe2203       mainline       33 k\n\nTransaction Summary\n================================================================================\nInstall  4 Packages\n\nTotal download size: 268 k\nInstalled size: 1.2 M\nDownloading Packages:\n[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]\n[MIRROR] initscripts-service-10.12-1.oe2203.noarch.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/noarch/initscripts-service-10.12-1.oe2203.noarch.rpm [Could not resolve host: mirror.iscas.ac.cn]\n[MIRROR] ipcalc-1.0.1-1.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/ipcalc-1.0.1-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]\n[MIRROR] initscripts-10.12-1.oe2203.riscv64.rpm: Curl error (6): Couldn't resolve host name for https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/preview/openEuler-22.03-V2-riscv64/repo/22.03/mainline/riscv64/initscripts-10.12-1.oe2203.riscv64.rpm [Could not resolve host: mirror.iscas.ac.cn]\n[FAILED] initscripts-10.12-1.oe2203.riscv64.rpm: No more mirrors to try - All mirrors were already tried without success\n\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'.\nError: Error downloading packages:\n  initscripts-10.12-1.oe2203.riscv64: Cannot download, all mirrors were already tried without success"
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Feb  3 11:10:12 2023 - INFO  - Finish environment cleanup!

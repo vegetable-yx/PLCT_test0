@@ -1,0 +1,326 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 18:13:09 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL javapackages-local
++ pkgs=javapackages-local
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs javapackages-local --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 1:36:46 ago on Fri Feb  3 16:42:21 2023.
+Dependencies resolved.
+================================================================================
+ Package                     Arch       Version              Repository    Size
+================================================================================
+Installing:
+ javapackages-local          noarch     5.3.0-6.oe2203       mainline      67 k
+Installing dependencies:
+ apache-commons-compress     noarch     1.21-1.oe2203        mainline     904 k
+ python3-javapackages        noarch     5.3.0-6.oe2203       mainline      72 k
+ slf4j                       noarch     1.7.25-8.oe2203      mainline      69 k
+ xmvn-install                noarch     3.0.0-24.oe2203      mainline      78 k
+ xmvn-subst                  noarch     3.0.0-24.oe2203      mainline      20 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total download size: 1.2 M
+Installed size: 1.5 M
+Downloading Packages:
+(1/6): javapackages-local-5.3.0-6.oe2203.noarch  12 kB/s |  67 kB     00:05    
+(2/6): python3-javapackages-5.3.0-6.oe2203.noar  13 kB/s |  72 kB     00:05    
+(3/6): slf4j-1.7.25-8.oe2203.noarch.rpm          83 kB/s |  69 kB     00:00    
+(4/6): xmvn-install-3.0.0-24.oe2203.noarch.rpm   70 kB/s |  78 kB     00:01    
+(5/6): xmvn-subst-3.0.0-24.oe2203.noarch.rpm     61 kB/s |  20 kB     00:00    
+(6/6): apache-commons-compress-1.21-1.oe2203.no  94 kB/s | 904 kB     00:09    
+--------------------------------------------------------------------------------
+Total                                           115 kB/s | 1.2 MB     00:10     
+Running transaction check
+Waiting for process with pid 12495 to finish.
+Error: transaction check vs depsolve:
+java-1.8.0-openjdk-devel is needed by javapackages-local-5.3.0-6.oe2203.noarch
+xmvn-resolve is needed by javapackages-local-5.3.0-6.oe2203.noarch
+mvn(com.beust:jcommander) is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.ow2.asm:asm) is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(com.beust:jcommander) is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 1:36:46 ago on Fri Feb  3 16:42:21 2023.
+Dependencies resolved.
+================================================================================
+ Package                     Arch       Version              Repository    Size
+================================================================================
+Installing:
+ javapackages-local          noarch     5.3.0-6.oe2203       mainline      67 k
+Installing dependencies:
+ apache-commons-compress     noarch     1.21-1.oe2203        mainline     904 k
+ python3-javapackages        noarch     5.3.0-6.oe2203       mainline      72 k
+ slf4j                       noarch     1.7.25-8.oe2203      mainline      69 k
+ xmvn-install                noarch     3.0.0-24.oe2203      mainline      78 k
+ xmvn-subst                  noarch     3.0.0-24.oe2203      mainline      20 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total download size: 1.2 M
+Installed size: 1.5 M
+Downloading Packages:
+(1/6): javapackages-local-5.3.0-6.oe2203.noarch  12 kB/s |  67 kB     00:05    
+(2/6): python3-javapackages-5.3.0-6.oe2203.noar  13 kB/s |  72 kB     00:05    
+(3/6): slf4j-1.7.25-8.oe2203.noarch.rpm          83 kB/s |  69 kB     00:00    
+(4/6): xmvn-install-3.0.0-24.oe2203.noarch.rpm   70 kB/s |  78 kB     00:01    
+(5/6): xmvn-subst-3.0.0-24.oe2203.noarch.rpm     61 kB/s |  20 kB     00:00    
+(6/6): apache-commons-compress-1.21-1.oe2203.no  94 kB/s | 904 kB     00:09    
+--------------------------------------------------------------------------------
+Total                                           115 kB/s | 1.2 MB     00:10     
+Running transaction check
+Waiting for process with pid 12495 to finish.
+Error: transaction check vs depsolve:
+java-1.8.0-openjdk-devel is needed by javapackages-local-5.3.0-6.oe2203.noarch
+xmvn-resolve is needed by javapackages-local-5.3.0-6.oe2203.noarch
+mvn(com.beust:jcommander) is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.ow2.asm:asm) is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(com.beust:jcommander) is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Feb  3 18:20:34 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 18:20:46 2023 - INFO  - Start to run test.
++ grep a/b/c
++ abs2rel /1/2/3/a/b/c /1/2/3
+oe_test_javapackages-local.sh: line 30: abs2rel: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_javapackages-local.sh line 31'
++ message='oe_test_javapackages-local.sh line 31'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_javapackages-local.sh line 31'
+Fri Feb  3 18:20:55 2023 - ERROR - oe_test_javapackages-local.sh line 31
++ return 0
++ abs2rel foo/bar foo/baz
+oe_test_javapackages-local.sh: line 32: abs2rel: command not found
++ grep ../bar
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_javapackages-local.sh line 33'
++ message='oe_test_javapackages-local.sh line 33'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_javapackages-local.sh line 33'
+Fri Feb  3 18:21:05 2023 - ERROR - oe_test_javapackages-local.sh line 33
++ return 0
++ gradle-local build
+oe_test_javapackages-local.sh: line 34: gradle-local: command not found
++ xmvn-builddep --help
+oe_test_javapackages-local.sh: line 35: xmvn-builddep: command not found
++ grep 'Usage: /usr/bin/xmvn-builddep'
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_javapackages-local.sh line 36'
++ message='oe_test_javapackages-local.sh line 36'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_javapackages-local.sh line 36'
+Fri Feb  3 18:21:19 2023 - ERROR - oe_test_javapackages-local.sh line 36
++ return 0
++ xmvn-builddep build.log
+oe_test_javapackages-local.sh: line 37: xmvn-builddep: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_javapackages-local.sh line 38'
++ message='oe_test_javapackages-local.sh line 38'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_javapackages-local.sh line 38'
+Fri Feb  3 18:21:31 2023 - ERROR - oe_test_javapackages-local.sh line 38
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Fri Feb  3 18:21:41 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Feb  3 18:21:51 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 18:22:00 2023 - INFO  - Start to restore the test environment.
++ rm -rf build.log .gradle build
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 1:36:46 ago on Fri Feb  3 16:42:21 2023.
+Dependencies resolved.
+================================================================================
+ Package                     Arch       Version              Repository    Size
+================================================================================
+Installing:
+ javapackages-local          noarch     5.3.0-6.oe2203       mainline      67 k
+Installing dependencies:
+ apache-commons-compress     noarch     1.21-1.oe2203        mainline     904 k
+ python3-javapackages        noarch     5.3.0-6.oe2203       mainline      72 k
+ slf4j                       noarch     1.7.25-8.oe2203      mainline      69 k
+ xmvn-install                noarch     3.0.0-24.oe2203      mainline      78 k
+ xmvn-subst                  noarch     3.0.0-24.oe2203      mainline      20 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total download size: 1.2 M
+Installed size: 1.5 M
+Downloading Packages:
+(1/6): javapackages-local-5.3.0-6.oe2203.noarch  12 kB/s |  67 kB     00:05    
+(2/6): python3-javapackages-5.3.0-6.oe2203.noar  13 kB/s |  72 kB     00:05    
+(3/6): slf4j-1.7.25-8.oe2203.noarch.rpm          83 kB/s |  69 kB     00:00    
+(4/6): xmvn-install-3.0.0-24.oe2203.noarch.rpm   70 kB/s |  78 kB     00:01    
+(5/6): xmvn-subst-3.0.0-24.oe2203.noarch.rpm     61 kB/s |  20 kB     00:00    
+(6/6): apache-commons-compress-1.21-1.oe2203.no  94 kB/s | 904 kB     00:09    
+--------------------------------------------------------------------------------
+Total                                           115 kB/s | 1.2 MB     00:10     
+Running transaction check
+Waiting for process with pid 12495 to finish.
+Error: transaction check vs depsolve:
+java-1.8.0-openjdk-devel is needed by javapackages-local-5.3.0-6.oe2203.noarch
+xmvn-resolve is needed by javapackages-local-5.3.0-6.oe2203.noarch
+mvn(com.beust:jcommander) is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.ow2.asm:asm) is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(com.beust:jcommander) is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+To diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.
+You probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 1:36:46 ago on Fri Feb  3 16:42:21 2023.
+Dependencies resolved.
+================================================================================
+ Package                     Arch       Version              Repository    Size
+================================================================================
+Installing:
+ javapackages-local          noarch     5.3.0-6.oe2203       mainline      67 k
+Installing dependencies:
+ apache-commons-compress     noarch     1.21-1.oe2203        mainline     904 k
+ python3-javapackages        noarch     5.3.0-6.oe2203       mainline      72 k
+ slf4j                       noarch     1.7.25-8.oe2203      mainline      69 k
+ xmvn-install                noarch     3.0.0-24.oe2203      mainline      78 k
+ xmvn-subst                  noarch     3.0.0-24.oe2203      mainline      20 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total download size: 1.2 M
+Installed size: 1.5 M
+Downloading Packages:
+(1/6): javapackages-local-5.3.0-6.oe2203.noarch  12 kB/s |  67 kB     00:05    
+(2/6): python3-javapackages-5.3.0-6.oe2203.noar  13 kB/s |  72 kB     00:05    
+(3/6): slf4j-1.7.25-8.oe2203.noarch.rpm          83 kB/s |  69 kB     00:00    
+(4/6): xmvn-install-3.0.0-24.oe2203.noarch.rpm   70 kB/s |  78 kB     00:01    
+(5/6): xmvn-subst-3.0.0-24.oe2203.noarch.rpm     61 kB/s |  20 kB     00:00    
+(6/6): apache-commons-compress-1.21-1.oe2203.no  94 kB/s | 904 kB     00:09    
+--------------------------------------------------------------------------------
+Total                                           115 kB/s | 1.2 MB     00:10     
+Running transaction check
+Waiting for process with pid 12495 to finish.
+Error: transaction check vs depsolve:
+java-1.8.0-openjdk-devel is needed by javapackages-local-5.3.0-6.oe2203.noarch
+xmvn-resolve is needed by javapackages-local-5.3.0-6.oe2203.noarch
+mvn(com.beust:jcommander) is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(org.ow2.asm:asm) is needed by xmvn-install-3.0.0-24.oe2203.noarch
+mvn(com.beust:jcommander) is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+mvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 1:36:46 ago on Fri Feb  3 16:42:21 2023.\nDependencies resolved.\n================================================================================\n Package                     Arch       Version              Repository    Size\n================================================================================\nInstalling:\n javapackages-local          noarch     5.3.0-6.oe2203       mainline      67 k\nInstalling dependencies:\n apache-commons-compress     noarch     1.21-1.oe2203        mainline     904 k\n python3-javapackages        noarch     5.3.0-6.oe2203       mainline      72 k\n slf4j                       noarch     1.7.25-8.oe2203      mainline      69 k\n xmvn-install                noarch     3.0.0-24.oe2203      mainline      78 k\n xmvn-subst                  noarch     3.0.0-24.oe2203      mainline      20 k\n\nTransaction Summary\n================================================================================\nInstall  6 Packages\n\nTotal download size: 1.2 M\nInstalled size: 1.5 M\nDownloading Packages:\n(1/6): javapackages-local-5.3.0-6.oe2203.noarch  12 kB/s |  67 kB     00:05    \n(2/6): python3-javapackages-5.3.0-6.oe2203.noar  13 kB/s |  72 kB     00:05    \n(3/6): slf4j-1.7.25-8.oe2203.noarch.rpm          83 kB/s |  69 kB     00:00    \n(4/6): xmvn-install-3.0.0-24.oe2203.noarch.rpm   70 kB/s |  78 kB     00:01    \n(5/6): xmvn-subst-3.0.0-24.oe2203.noarch.rpm     61 kB/s |  20 kB     00:00    \n(6/6): apache-commons-compress-1.21-1.oe2203.no  94 kB/s | 904 kB     00:09    \n--------------------------------------------------------------------------------\nTotal                                           115 kB/s | 1.2 MB     00:10     \nRunning transaction check\nWaiting for process with pid 12495 to finish.\nError: transaction check vs depsolve:\njava-1.8.0-openjdk-devel is needed by javapackages-local-5.3.0-6.oe2203.noarch\nxmvn-resolve is needed by javapackages-local-5.3.0-6.oe2203.noarch\nmvn(com.beust:jcommander) is needed by xmvn-install-3.0.0-24.oe2203.noarch\nmvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch\nmvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-install-3.0.0-24.oe2203.noarch\nmvn(org.ow2.asm:asm) is needed by xmvn-install-3.0.0-24.oe2203.noarch\nmvn(com.beust:jcommander) is needed by xmvn-subst-3.0.0-24.oe2203.noarch\nmvn(org.fedoraproject.xmvn:xmvn-api) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch\nmvn(org.fedoraproject.xmvn:xmvn-core) = 3.0.0 is needed by xmvn-subst-3.0.0-24.oe2203.noarch\nTo diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.\nYou probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Fri Feb  3 18:22:47 2023 - INFO  - Finish restoring the test environment.

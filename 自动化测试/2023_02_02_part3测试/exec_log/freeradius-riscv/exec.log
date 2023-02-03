@@ -1,0 +1,30 @@
+Thu Feb  2 20:54:50 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius_raddebugAndCheckrad.
+Thu Feb  2 21:25:11 2023 - WARN  - The case execution timeout.
+Thu Feb  2 21:25:16 2023 - ERROR - The case exit by code 143.
+Thu Feb  2 21:25:22 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius_raddebugAndCheckrad.
+Thu Feb  2 21:25:28 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Feb  2 21:26:07 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius_radiusd.
+Thu Feb  2 21:32:19 2023 - ERROR - The case exit by code 9.
+Thu Feb  2 21:32:25 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius_radiusd.
+Thu Feb  2 21:32:32 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Feb  2 21:33:06 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius_radiusdAndRadmin.
+Thu Feb  2 21:51:33 2023 - INFO  - The case exit by code 0.
+Thu Feb  2 21:51:39 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius_radiusdAndRadmin.
+Thu Feb  2 21:51:46 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Thu Feb  2 21:52:14 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius-utils_radclient.
+Thu Feb  2 22:20:05 2023 - INFO  - The case exit by code 0.
+Thu Feb  2 22:20:10 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius-utils_radclient.
+Thu Feb  2 22:20:14 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Thu Feb  2 22:20:44 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius-utils_rad_counter.
+Thu Feb  2 22:40:50 2023 - INFO  - The case exit by code 0.
+Thu Feb  2 22:40:55 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius-utils_rad_counter.
+Thu Feb  2 22:41:02 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Thu Feb  2 22:41:32 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius-utils_radcryptAndRadeapclient.
+Thu Feb  2 22:58:39 2023 - INFO  - The case exit by code 0.
+Thu Feb  2 22:58:45 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius-utils_radcryptAndRadeapclient.
+Thu Feb  2 22:58:56 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Thu Feb  2 22:59:37 2023 - INFO  - start to run testcase:oe_test_freeradius_freeradius-utils_radlastAndRadsniff.
+Thu Feb  2 23:29:59 2023 - WARN  - The case execution timeout.
+Thu Feb  2 23:30:06 2023 - ERROR - The case exit by code 143.
+Thu Feb  2 23:30:15 2023 - INFO  - End to run testcase:oe_test_freeradius_freeradius-utils_radlastAndRadsniff.
+Thu Feb  2 23:30:23 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
