@@ -1,0 +1,192 @@
+Fri Feb  3 04:06:26 2023 - INFO  - start to run testcase:oe_test_service_libvirtd.
+Fri Feb  3 04:16:18 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:16:20 2023 - INFO  - End to run testcase:oe_test_service_libvirtd.
+Fri Feb  3 04:16:22 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:16:32 2023 - INFO  - start to run testcase:oe_test_service_libvirt-guests.
+Fri Feb  3 04:21:29 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:21:30 2023 - INFO  - End to run testcase:oe_test_service_libvirt-guests.
+Fri Feb  3 04:21:33 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:21:43 2023 - INFO  - start to run testcase:oe_test_service_virtinterfaced.
+Fri Feb  3 04:27:03 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:27:05 2023 - INFO  - End to run testcase:oe_test_service_virtinterfaced.
+Fri Feb  3 04:27:07 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:27:17 2023 - INFO  - start to run testcase:oe_test_service_virtlockd.
+Fri Feb  3 04:31:58 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:32:00 2023 - INFO  - End to run testcase:oe_test_service_virtlockd.
+Fri Feb  3 04:32:02 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:32:11 2023 - INFO  - start to run testcase:oe_test_service_virtlogd.
+Fri Feb  3 04:36:47 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:36:49 2023 - INFO  - End to run testcase:oe_test_service_virtlogd.
+Fri Feb  3 04:36:51 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:37:01 2023 - INFO  - start to run testcase:oe_test_service_virtnetworkd.
+Fri Feb  3 04:42:10 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:42:12 2023 - INFO  - End to run testcase:oe_test_service_virtnetworkd.
+Fri Feb  3 04:42:14 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:42:24 2023 - INFO  - start to run testcase:oe_test_service_virtnodedevd.
+Fri Feb  3 04:47:34 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:47:35 2023 - INFO  - End to run testcase:oe_test_service_virtnodedevd.
+Fri Feb  3 04:47:37 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:47:47 2023 - INFO  - start to run testcase:oe_test_service_virtnwfilterd.
+Fri Feb  3 04:52:54 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:52:56 2023 - INFO  - End to run testcase:oe_test_service_virtnwfilterd.
+Fri Feb  3 04:52:57 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:53:07 2023 - INFO  - start to run testcase:oe_test_service_virtproxyd.
+Fri Feb  3 04:58:44 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 04:58:46 2023 - INFO  - End to run testcase:oe_test_service_virtproxyd.
+Fri Feb  3 04:58:49 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 04:59:02 2023 - INFO  - start to run testcase:oe_test_service_virtqemud.
+Fri Feb  3 05:04:25 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:04:26 2023 - INFO  - End to run testcase:oe_test_service_virtqemud.
+Fri Feb  3 05:04:29 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:04:38 2023 - INFO  - start to run testcase:oe_test_service_virtsecretd.
+Fri Feb  3 05:09:50 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:09:52 2023 - INFO  - End to run testcase:oe_test_service_virtsecretd.
+Fri Feb  3 05:09:54 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:10:03 2023 - INFO  - start to run testcase:oe_test_service_virtstoraged.
+Fri Feb  3 05:16:27 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:16:30 2023 - INFO  - End to run testcase:oe_test_service_virtstoraged.
+Fri Feb  3 05:16:31 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:16:41 2023 - INFO  - start to run testcase:oe_test_socket_libvirtd-admin.
+Fri Feb  3 05:21:16 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:21:17 2023 - INFO  - End to run testcase:oe_test_socket_libvirtd-admin.
+Fri Feb  3 05:21:19 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:21:29 2023 - INFO  - start to run testcase:oe_test_socket_libvirtd-ro.
+Fri Feb  3 05:25:58 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:26:01 2023 - INFO  - End to run testcase:oe_test_socket_libvirtd-ro.
+Fri Feb  3 05:26:02 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:26:12 2023 - INFO  - start to run testcase:oe_test_socket_libvirtd.
+Fri Feb  3 05:30:39 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:30:42 2023 - INFO  - End to run testcase:oe_test_socket_libvirtd.
+Fri Feb  3 05:30:44 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:30:53 2023 - INFO  - start to run testcase:oe_test_socket_libvirtd-tcp.
+Fri Feb  3 05:35:20 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:35:23 2023 - INFO  - End to run testcase:oe_test_socket_libvirtd-tcp.
+Fri Feb  3 05:35:24 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:35:34 2023 - INFO  - start to run testcase:oe_test_socket_libvirtd-tls.
+Fri Feb  3 05:40:02 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:40:04 2023 - INFO  - End to run testcase:oe_test_socket_libvirtd-tls.
+Fri Feb  3 05:40:05 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:40:16 2023 - INFO  - start to run testcase:oe_test_socket_virtinterfaced-admin.
+Fri Feb  3 05:44:51 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:44:53 2023 - INFO  - End to run testcase:oe_test_socket_virtinterfaced-admin.
+Fri Feb  3 05:44:55 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:45:05 2023 - INFO  - start to run testcase:oe_test_socket_virtinterfaced-ro.
+Fri Feb  3 05:49:49 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:49:50 2023 - INFO  - End to run testcase:oe_test_socket_virtinterfaced-ro.
+Fri Feb  3 05:49:52 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:50:00 2023 - INFO  - start to run testcase:oe_test_socket_virtinterfaced.
+Fri Feb  3 05:54:39 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:54:40 2023 - INFO  - End to run testcase:oe_test_socket_virtinterfaced.
+Fri Feb  3 05:54:41 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:54:52 2023 - INFO  - start to run testcase:oe_test_socket_virtlockd-admin.
+Fri Feb  3 05:59:16 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 05:59:18 2023 - INFO  - End to run testcase:oe_test_socket_virtlockd-admin.
+Fri Feb  3 05:59:20 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 05:59:31 2023 - INFO  - start to run testcase:oe_test_socket_virtlockd.
+Fri Feb  3 06:04:01 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:04:02 2023 - INFO  - End to run testcase:oe_test_socket_virtlockd.
+Fri Feb  3 06:04:04 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:04:13 2023 - INFO  - start to run testcase:oe_test_socket_virtlogd-admin.
+Fri Feb  3 06:08:41 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:08:43 2023 - INFO  - End to run testcase:oe_test_socket_virtlogd-admin.
+Fri Feb  3 06:08:45 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:08:54 2023 - INFO  - start to run testcase:oe_test_socket_virtlogd.
+Fri Feb  3 06:15:14 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:15:17 2023 - INFO  - End to run testcase:oe_test_socket_virtlogd.
+Fri Feb  3 06:15:18 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:15:27 2023 - INFO  - start to run testcase:oe_test_socket_virtnetworkd-admin.
+Fri Feb  3 06:20:05 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:20:07 2023 - INFO  - End to run testcase:oe_test_socket_virtnetworkd-admin.
+Fri Feb  3 06:20:08 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:20:19 2023 - INFO  - start to run testcase:oe_test_socket_virtnetworkd-ro.
+Fri Feb  3 06:25:04 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:25:06 2023 - INFO  - End to run testcase:oe_test_socket_virtnetworkd-ro.
+Fri Feb  3 06:25:07 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:25:16 2023 - INFO  - start to run testcase:oe_test_socket_virtnetworkd.
+Fri Feb  3 06:29:54 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:29:57 2023 - INFO  - End to run testcase:oe_test_socket_virtnetworkd.
+Fri Feb  3 06:29:58 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:30:08 2023 - INFO  - start to run testcase:oe_test_socket_virtnodedevd-admin.
+Fri Feb  3 06:34:39 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:34:41 2023 - INFO  - End to run testcase:oe_test_socket_virtnodedevd-admin.
+Fri Feb  3 06:34:43 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:34:52 2023 - INFO  - start to run testcase:oe_test_socket_virtnodedevd-ro.
+Fri Feb  3 06:39:17 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:39:18 2023 - INFO  - End to run testcase:oe_test_socket_virtnodedevd-ro.
+Fri Feb  3 06:39:20 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:39:30 2023 - INFO  - start to run testcase:oe_test_socket_virtnodedevd.
+Fri Feb  3 06:43:59 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:44:01 2023 - INFO  - End to run testcase:oe_test_socket_virtnodedevd.
+Fri Feb  3 06:44:04 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:44:13 2023 - INFO  - start to run testcase:oe_test_socket_virtnwfilterd-admin.
+Fri Feb  3 06:48:41 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:48:43 2023 - INFO  - End to run testcase:oe_test_socket_virtnwfilterd-admin.
+Fri Feb  3 06:48:45 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:48:55 2023 - INFO  - start to run testcase:oe_test_socket_virtnwfilterd-ro.
+Fri Feb  3 06:53:21 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:53:23 2023 - INFO  - End to run testcase:oe_test_socket_virtnwfilterd-ro.
+Fri Feb  3 06:53:25 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:53:34 2023 - INFO  - start to run testcase:oe_test_socket_virtnwfilterd.
+Fri Feb  3 06:58:07 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 06:58:08 2023 - INFO  - End to run testcase:oe_test_socket_virtnwfilterd.
+Fri Feb  3 06:58:11 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 06:58:20 2023 - INFO  - start to run testcase:oe_test_socket_virtproxyd-admin.
+Fri Feb  3 07:02:43 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:02:44 2023 - INFO  - End to run testcase:oe_test_socket_virtproxyd-admin.
+Fri Feb  3 07:02:46 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:02:55 2023 - INFO  - start to run testcase:oe_test_socket_virtproxyd-ro.
+Fri Feb  3 07:07:17 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:07:18 2023 - INFO  - End to run testcase:oe_test_socket_virtproxyd-ro.
+Fri Feb  3 07:07:20 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:07:30 2023 - INFO  - start to run testcase:oe_test_socket_virtproxyd.
+Fri Feb  3 07:11:52 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:11:55 2023 - INFO  - End to run testcase:oe_test_socket_virtproxyd.
+Fri Feb  3 07:11:57 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:12:06 2023 - INFO  - start to run testcase:oe_test_socket_virtproxyd-tcp.
+Fri Feb  3 07:16:36 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:16:38 2023 - INFO  - End to run testcase:oe_test_socket_virtproxyd-tcp.
+Fri Feb  3 07:16:40 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:16:49 2023 - INFO  - start to run testcase:oe_test_socket_virtproxyd-tls.
+Fri Feb  3 07:21:13 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:21:15 2023 - INFO  - End to run testcase:oe_test_socket_virtproxyd-tls.
+Fri Feb  3 07:21:17 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:21:26 2023 - INFO  - start to run testcase:oe_test_socket_virtqemud-admin.
+Fri Feb  3 07:26:05 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:26:06 2023 - INFO  - End to run testcase:oe_test_socket_virtqemud-admin.
+Fri Feb  3 07:26:08 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:26:19 2023 - INFO  - start to run testcase:oe_test_socket_virtqemud-ro.
+Fri Feb  3 07:30:58 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:31:00 2023 - INFO  - End to run testcase:oe_test_socket_virtqemud-ro.
+Fri Feb  3 07:31:01 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:31:11 2023 - INFO  - start to run testcase:oe_test_socket_virtqemud.
+Fri Feb  3 07:35:48 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:35:50 2023 - INFO  - End to run testcase:oe_test_socket_virtqemud.
+Fri Feb  3 07:35:52 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:36:01 2023 - INFO  - start to run testcase:oe_test_socket_virtsecretd-admin.
+Fri Feb  3 07:40:26 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:40:27 2023 - INFO  - End to run testcase:oe_test_socket_virtsecretd-admin.
+Fri Feb  3 07:40:29 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:40:39 2023 - INFO  - start to run testcase:oe_test_socket_virtsecretd-ro.
+Fri Feb  3 07:45:04 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:45:06 2023 - INFO  - End to run testcase:oe_test_socket_virtsecretd-ro.
+Fri Feb  3 07:45:07 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:45:16 2023 - INFO  - start to run testcase:oe_test_socket_virtsecretd.
+Fri Feb  3 07:49:36 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:49:37 2023 - INFO  - End to run testcase:oe_test_socket_virtsecretd.
+Fri Feb  3 07:49:39 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:49:48 2023 - INFO  - start to run testcase:oe_test_socket_virtstoraged-admin.
+Fri Feb  3 07:55:28 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 07:55:31 2023 - INFO  - End to run testcase:oe_test_socket_virtstoraged-admin.
+Fri Feb  3 07:55:32 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 07:55:41 2023 - INFO  - start to run testcase:oe_test_socket_virtstoraged-ro.
+Fri Feb  3 08:01:21 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 08:01:24 2023 - INFO  - End to run testcase:oe_test_socket_virtstoraged-ro.
+Fri Feb  3 08:01:25 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 08:01:36 2023 - INFO  - start to run testcase:oe_test_socket_virtstoraged.
+Fri Feb  3 08:07:18 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 08:07:20 2023 - INFO  - End to run testcase:oe_test_socket_virtstoraged.
+Fri Feb  3 08:07:22 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
+Fri Feb  3 08:07:31 2023 - INFO  - start to run testcase:oe_test_target_virt-guest-shutdown.
+Fri Feb  3 08:11:33 2023 - INFO  - The case exit by code 0.
+Fri Feb  3 08:11:34 2023 - INFO  - End to run testcase:oe_test_target_virt-guest-shutdown.
+Fri Feb  3 08:11:36 2023 - INFO  - A total of 1 use cases were executed, with 1 successes and 0 failures.
