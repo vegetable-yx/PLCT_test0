@@ -1,0 +1,189 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 07:56:34 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL net-tools
++ pkgs=net-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs net-tools --node 1 --tempfile ''
+Fri Feb  3 07:56:42 2023 - INFO  - pkgs:(net-tools) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ systemctl stop iptables
+Failed to stop iptables.service: Unit iptables.service not loaded.
++ cat
++ systemctl restart rsyslog
++ netstat -anpt
++ grep 514
++ grep rsyslogd
+tcp        0      0 0.0.0.0:514             0.0.0.0:*               LISTEN      7673/rsyslogd       
+tcp6       0      0 :::514                  :::*                    LISTEN      7673/rsyslogd       
++ SSH_CMD '
+    systemctl stop iptables && echo '\''local6.* @@127.0.0.1'\'' > /etc/rsyslog.d/client.conf
+    systemctl restart rsyslog
+    '
++ cmd='
+    systemctl stop iptables && echo '\''local6.* @@127.0.0.1'\'' > /etc/rsyslog.d/client.conf
+    systemctl restart rsyslog
+    '
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen-riscv/libs/locallibs/sshcmd.sh -c '
+    systemctl stop iptables && echo '\''local6.* @@127.0.0.1'\'' > /etc/rsyslog.d/client.conf
+    systemctl restart rsyslog
+    ' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Fri Feb  3 07:56:44 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
+++ cut -c 9-13
+++ date +%s%N
++ time=04173
+++ od -A n -t x
+++ head -c 1536 /dev/urandom
+++ tr -d ' '
+++ sed ':a;N;s/\n/ /g;ta'
++ string='ec67ca9134ce0c7e721bca69f37c42ca 6d86f3231056cdd6ec042f7e085d67c5 a13f46ae074151071fb25893e84c0a47 2bf1f65e8b1258e2a7d0534bc1bb79ac 9bf3abe5fb564edca84d74acf98921df 3be0aa9e7ab1e5d4c944de92c9172fa0 85be7bdbcb421e8816a61e6ae96ef359 2ff6647ff44c1b95793532c6369cc110 42319990127a5cff5f558c8a6b8b3b61 a292ca6121972c554de768b99c54b812 3cb1c3f8e2c95e07768f0cf9b485e092 3a20f020a8801bbbf03e85ee961e5166 297e66ff36878bb9173748a69398bf4b 16fcd9cdec1c50561f15d26679d92f10 a8eb444fb88b3c29359f3ba75882eba9 6d26e85f990e465bd5c325fdec570ac7 84d7257f0f881d923300673b8607f779 66ef81d1409c1ea6172eea3ac2055d4c 5df9ded31a03b9a21addf3dc67d20c66 9ca01d0484e7651e67fb403abeea96ea 5c8ec67d52f1a5e8e2b5f9d2422d3f02 e6e6c6fe51aa340f1c2ed0b3cbef6f93 51a622db8f8335390fd35ead94ba337c ed90a5a037a4d0ad4464adbb23e4afed f9b0c62e6dde8999019a16a67f73824f 439e685f0cdb73379ba547194090145f 98c9c8c677db1b56b418b62eb03221fa 9d69c2405b15b5fa6fb973551283851f 5a2aee7475c7c23c4c543b9f82e3fd45 def6d4b5371b0daea39390534f2e5586 694d87674df5eb23cb71d8336c26d6a9 31f1bc649f9151bb84c68b6460d0e4a8 2c57357d3bae93bf1097ee27240626d0 46b5d331165f1ddb119726e5bb5cd63b 554cd34f80baac836ffc1e6b722dd0cd 37373c744a6030cfb401850ff4e1f790 3d09e5422c9377bd872d7bc1e761b692 d92432c7347716249779f3763c67143b a8e85ce2bc4c0577510a0727e465f7a3 707555a27b8357442c5c74f975a8344e 29a80b58002dec388c9d7e6e1cf02f19 2fe65c09927a4daa831f8435cca485fd b3620766e1aecb7e7e2888ad39f468bc d6b71eaba4d0bc846cb76a88b8fb7b6d 70ea4339663373492c8ee1e46b237b10 cbc2e84ca696e4322ea1f2c4f88b6b70 ddfeb7f5b469e697d013aa388cc6770e f7f85793ea0c391bbd3a78320b49ea74 52ceb9cf72cec9bdde31aeadb560865f f5d455cedcffa4186044fbf237afa647 073cf5d800ad06a18fa223fc552a48b8 d2eb0fb9a746f4307cacd50f06f69f75 ab6d4a4a93175be1aa6bc9c008063a71 3fd471b67964ad1f0f3a0537e7841d2d 03a928b10498e87ffc9d31ca835d1e65 9a2c0feedfb42a3aa4f6bb718fd750ec 5137a876e6ebb3a8d437e5d2de3c13b8 86ce0b28f46874fd317146e002023a4e 5088c0c242ffa66f66b32c800822c81c 35594ca82c99f7d42ac65186874e6229 cfdbb0a4a84db9bb1c7f062f413f9b42 47f1d57e33ce924d167b419f2983602d 22c5944ce8b6a4d773aae16e9823e8ea 23ebc9bab139b559750cdd5c15c276bb 8de88f60a4300aec129750a1e539c9e7 0007c59f3d0573557910f907610f9fa7 2a59dc2ee8cdab251258f1105436f3c1 e84ed20794b72cea0b528a815c96f006 288e98ba38980818e5939a79c75ed29a c9827e16780953d1db0b8091456f8a1e 259c0647e90d00c51ce26c29048bc631 919aeac6da9ef319497610e99d21f561 e9159289db584d5fa1e2b89ef324a15d d57dd3f798834b9ce8e17d8aef50c268 f9ec818c1a72375950d2a9d7449abf2b 570a01c994e9a5dec46d3f27fb71121c 2572dbbcac3f2fe528a8d07697196c3f 34f41cd6587a7eb2a7cfdf14a8997209 acf9aa0f4e93e6906af7d76e7434aa1f 1f6351c7e8c92382f7b44706951e2bc2 503e07866935c651a754f51b598bb3ad 6f4d6ba1e75c81321d32d29a5ed7bda9 d26273e3bdc0f65efc18c2a7d200a88a 4fdefe9c6c7581135e2e73af236bc77b 2441ef26a132c2fd6d370c3c80f75c74 b0ecb0b6c27d37cd13c91272183c14de 1cbf84b47c83b0ed3b2853905588b55e 73fac46aff3c57380edbdaebfd3f1514 f5eca668a6137df14ddeddbf926e8449 c8709a204bd1307f1ab4cbdaa04543e7 905443923a373774691fd0a89e92650d b292df58256683d69a4d77c022b0c2b3 5cc9c89e75548792769b6081da4e01ef b6fbacd1e6c8634c83ad69898c81a816 9d7e0f0bc2e36c068a0d4b1a66ef0eac 18b49612899d983bc24eab5f0154071a'
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 07:56:44 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 07:56:45 2023 - INFO  - Start to run test.
++ SSH_CMD 'logger -t tcp -p local6.err '\''04173ec67ca9134ce0c7e721bca69f37c42ca 6d86f3231056cdd6ec042f7e085d67c5 a13f46ae074151071fb25893e84c0a47 2bf1f65e8b1258e2a7d0534bc1bb79ac 9bf3abe5fb564edca84d74acf98921df 3be0aa9e7ab1e5d4c944de92c9172fa0 85be7bdbcb421e8816a61e6ae96ef359 2ff6647ff44c1b95793532c6369cc110 42319990127a5cff5f558c8a6b8b3b61 a292ca6121972c554de768b99c54b812 3cb1c3f8e2c95e07768f0cf9b485e092 3a20f020a8801bbbf03e85ee961e5166 297e66ff36878bb9173748a69398bf4b 16fcd9cdec1c50561f15d26679d92f10 a8eb444fb88b3c29359f3ba75882eba9 6d26e85f990e465bd5c325fdec570ac7 84d7257f0f881d923300673b8607f779 66ef81d1409c1ea6172eea3ac2055d4c 5df9ded31a03b9a21addf3dc67d20c66 9ca01d0484e7651e67fb403abeea96ea 5c8ec67d52f1a5e8e2b5f9d2422d3f02 e6e6c6fe51aa340f1c2ed0b3cbef6f93 51a622db8f8335390fd35ead94ba337c ed90a5a037a4d0ad4464adbb23e4afed f9b0c62e6dde8999019a16a67f73824f 439e685f0cdb73379ba547194090145f 98c9c8c677db1b56b418b62eb03221fa 9d69c2405b15b5fa6fb973551283851f 5a2aee7475c7c23c4c543b9f82e3fd45 def6d4b5371b0daea39390534f2e5586 694d87674df5eb23cb71d8336c26d6a9 31f1bc649f9151bb84c68b6460d0e4a8 2c57357d3bae93bf1097ee27240626d0 46b5d331165f1ddb119726e5bb5cd63b 554cd34f80baac836ffc1e6b722dd0cd 37373c744a6030cfb401850ff4e1f790 3d09e5422c9377bd872d7bc1e761b692 d92432c7347716249779f3763c67143b a8e85ce2bc4c0577510a0727e465f7a3 707555a27b8357442c5c74f975a8344e 29a80b58002dec388c9d7e6e1cf02f19 2fe65c09927a4daa831f8435cca485fd b3620766e1aecb7e7e2888ad39f468bc d6b71eaba4d0bc846cb76a88b8fb7b6d 70ea4339663373492c8ee1e46b237b10 cbc2e84ca696e4322ea1f2c4f88b6b70 ddfeb7f5b469e697d013aa388cc6770e f7f85793ea0c391bbd3a78320b49ea74 52ceb9cf72cec9bdde31aeadb560865f f5d455cedcffa4186044fbf237afa647 073cf5d800ad06a18fa223fc552a48b8 d2eb0fb9a746f4307cacd50f06f69f75 ab6d4a4a93175be1aa6bc9c008063a71 3fd471b67964ad1f0f3a0537e7841d2d 03a928b10498e87ffc9d31ca835d1e65 9a2c0feedfb42a3aa4f6bb718fd750ec 5137a876e6ebb3a8d437e5d2de3c13b8 86ce0b28f46874fd317146e002023a4e 5088c0c242ffa66f66b32c800822c81c 35594ca82c99f7d42ac65186874e6229 cfdbb0a4a84db9bb1c7f062f413f9b42 47f1d57e33ce924d167b419f2983602d 22c5944ce8b6a4d773aae16e9823e8ea 23ebc9bab139b559750cdd5c15c276bb 8de88f60a4300aec129750a1e539c9e7 0007c59f3d0573557910f907610f9fa7 2a59dc2ee8cdab251258f1105436f3c1 e84ed20794b72cea0b528a815c96f006 288e98ba38980818e5939a79c75ed29a c9827e16780953d1db0b8091456f8a1e 259c0647e90d00c51ce26c29048bc631 919aeac6da9ef319497610e99d21f561 e9159289db584d5fa1e2b89ef324a15d d57dd3f798834b9ce8e17d8aef50c268 f9ec818c1a72375950d2a9d7449abf2b 570a01c994e9a5dec46d3f27fb71121c 2572dbbcac3f2fe528a8d07697196c3f 34f41cd6587a7eb2a7cfdf14a8997209 acf9aa0f4e93e6906af7d76e7434aa1f 1f6351c7e8c92382f7b44706951e2bc2 503e07866935c651a754f51b598bb3ad 6f4d6ba1e75c81321d32d29a5ed7bda9 d26273e3bdc0f65efc18c2a7d200a88a 4fdefe9c6c7581135e2e73af236bc77b 2441ef26a132c2fd6d370c3c80f75c74 b0ecb0b6c27d37cd13c91272183c14de 1cbf84b47c83b0ed3b2853905588b55e 73fac46aff3c57380edbdaebfd3f1514 f5eca668a6137df14ddeddbf926e8449 c8709a204bd1307f1ab4cbdaa04543e7 905443923a373774691fd0a89e92650d b292df58256683d69a4d77c022b0c2b3 5cc9c89e75548792769b6081da4e01ef b6fbacd1e6c8634c83ad69898c81a816 9d7e0f0bc2e36c068a0d4b1a66ef0eac 18b49612899d983bc24eab5f0154071a'\'''
++ cmd='logger -t tcp -p local6.err '\''04173ec67ca9134ce0c7e721bca69f37c42ca 6d86f3231056cdd6ec042f7e085d67c5 a13f46ae074151071fb25893e84c0a47 2bf1f65e8b1258e2a7d0534bc1bb79ac 9bf3abe5fb564edca84d74acf98921df 3be0aa9e7ab1e5d4c944de92c9172fa0 85be7bdbcb421e8816a61e6ae96ef359 2ff6647ff44c1b95793532c6369cc110 42319990127a5cff5f558c8a6b8b3b61 a292ca6121972c554de768b99c54b812 3cb1c3f8e2c95e07768f0cf9b485e092 3a20f020a8801bbbf03e85ee961e5166 297e66ff36878bb9173748a69398bf4b 16fcd9cdec1c50561f15d26679d92f10 a8eb444fb88b3c29359f3ba75882eba9 6d26e85f990e465bd5c325fdec570ac7 84d7257f0f881d923300673b8607f779 66ef81d1409c1ea6172eea3ac2055d4c 5df9ded31a03b9a21addf3dc67d20c66 9ca01d0484e7651e67fb403abeea96ea 5c8ec67d52f1a5e8e2b5f9d2422d3f02 e6e6c6fe51aa340f1c2ed0b3cbef6f93 51a622db8f8335390fd35ead94ba337c ed90a5a037a4d0ad4464adbb23e4afed f9b0c62e6dde8999019a16a67f73824f 439e685f0cdb73379ba547194090145f 98c9c8c677db1b56b418b62eb03221fa 9d69c2405b15b5fa6fb973551283851f 5a2aee7475c7c23c4c543b9f82e3fd45 def6d4b5371b0daea39390534f2e5586 694d87674df5eb23cb71d8336c26d6a9 31f1bc649f9151bb84c68b6460d0e4a8 2c57357d3bae93bf1097ee27240626d0 46b5d331165f1ddb119726e5bb5cd63b 554cd34f80baac836ffc1e6b722dd0cd 37373c744a6030cfb401850ff4e1f790 3d09e5422c9377bd872d7bc1e761b692 d92432c7347716249779f3763c67143b a8e85ce2bc4c0577510a0727e465f7a3 707555a27b8357442c5c74f975a8344e 29a80b58002dec388c9d7e6e1cf02f19 2fe65c09927a4daa831f8435cca485fd b3620766e1aecb7e7e2888ad39f468bc d6b71eaba4d0bc846cb76a88b8fb7b6d 70ea4339663373492c8ee1e46b237b10 cbc2e84ca696e4322ea1f2c4f88b6b70 ddfeb7f5b469e697d013aa388cc6770e f7f85793ea0c391bbd3a78320b49ea74 52ceb9cf72cec9bdde31aeadb560865f f5d455cedcffa4186044fbf237afa647 073cf5d800ad06a18fa223fc552a48b8 d2eb0fb9a746f4307cacd50f06f69f75 ab6d4a4a93175be1aa6bc9c008063a71 3fd471b67964ad1f0f3a0537e7841d2d 03a928b10498e87ffc9d31ca835d1e65 9a2c0feedfb42a3aa4f6bb718fd750ec 5137a876e6ebb3a8d437e5d2de3c13b8 86ce0b28f46874fd317146e002023a4e 5088c0c242ffa66f66b32c800822c81c 35594ca82c99f7d42ac65186874e6229 cfdbb0a4a84db9bb1c7f062f413f9b42 47f1d57e33ce924d167b419f2983602d 22c5944ce8b6a4d773aae16e9823e8ea 23ebc9bab139b559750cdd5c15c276bb 8de88f60a4300aec129750a1e539c9e7 0007c59f3d0573557910f907610f9fa7 2a59dc2ee8cdab251258f1105436f3c1 e84ed20794b72cea0b528a815c96f006 288e98ba38980818e5939a79c75ed29a c9827e16780953d1db0b8091456f8a1e 259c0647e90d00c51ce26c29048bc631 919aeac6da9ef319497610e99d21f561 e9159289db584d5fa1e2b89ef324a15d d57dd3f798834b9ce8e17d8aef50c268 f9ec818c1a72375950d2a9d7449abf2b 570a01c994e9a5dec46d3f27fb71121c 2572dbbcac3f2fe528a8d07697196c3f 34f41cd6587a7eb2a7cfdf14a8997209 acf9aa0f4e93e6906af7d76e7434aa1f 1f6351c7e8c92382f7b44706951e2bc2 503e07866935c651a754f51b598bb3ad 6f4d6ba1e75c81321d32d29a5ed7bda9 d26273e3bdc0f65efc18c2a7d200a88a 4fdefe9c6c7581135e2e73af236bc77b 2441ef26a132c2fd6d370c3c80f75c74 b0ecb0b6c27d37cd13c91272183c14de 1cbf84b47c83b0ed3b2853905588b55e 73fac46aff3c57380edbdaebfd3f1514 f5eca668a6137df14ddeddbf926e8449 c8709a204bd1307f1ab4cbdaa04543e7 905443923a373774691fd0a89e92650d b292df58256683d69a4d77c022b0c2b3 5cc9c89e75548792769b6081da4e01ef b6fbacd1e6c8634c83ad69898c81a816 9d7e0f0bc2e36c068a0d4b1a66ef0eac 18b49612899d983bc24eab5f0154071a'\'''
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen-riscv/libs/locallibs/sshcmd.sh -c 'logger -t tcp -p local6.err '\''04173ec67ca9134ce0c7e721bca69f37c42ca 6d86f3231056cdd6ec042f7e085d67c5 a13f46ae074151071fb25893e84c0a47 2bf1f65e8b1258e2a7d0534bc1bb79ac 9bf3abe5fb564edca84d74acf98921df 3be0aa9e7ab1e5d4c944de92c9172fa0 85be7bdbcb421e8816a61e6ae96ef359 2ff6647ff44c1b95793532c6369cc110 42319990127a5cff5f558c8a6b8b3b61 a292ca6121972c554de768b99c54b812 3cb1c3f8e2c95e07768f0cf9b485e092 3a20f020a8801bbbf03e85ee961e5166 297e66ff36878bb9173748a69398bf4b 16fcd9cdec1c50561f15d26679d92f10 a8eb444fb88b3c29359f3ba75882eba9 6d26e85f990e465bd5c325fdec570ac7 84d7257f0f881d923300673b8607f779 66ef81d1409c1ea6172eea3ac2055d4c 5df9ded31a03b9a21addf3dc67d20c66 9ca01d0484e7651e67fb403abeea96ea 5c8ec67d52f1a5e8e2b5f9d2422d3f02 e6e6c6fe51aa340f1c2ed0b3cbef6f93 51a622db8f8335390fd35ead94ba337c ed90a5a037a4d0ad4464adbb23e4afed f9b0c62e6dde8999019a16a67f73824f 439e685f0cdb73379ba547194090145f 98c9c8c677db1b56b418b62eb03221fa 9d69c2405b15b5fa6fb973551283851f 5a2aee7475c7c23c4c543b9f82e3fd45 def6d4b5371b0daea39390534f2e5586 694d87674df5eb23cb71d8336c26d6a9 31f1bc649f9151bb84c68b6460d0e4a8 2c57357d3bae93bf1097ee27240626d0 46b5d331165f1ddb119726e5bb5cd63b 554cd34f80baac836ffc1e6b722dd0cd 37373c744a6030cfb401850ff4e1f790 3d09e5422c9377bd872d7bc1e761b692 d92432c7347716249779f3763c67143b a8e85ce2bc4c0577510a0727e465f7a3 707555a27b8357442c5c74f975a8344e 29a80b58002dec388c9d7e6e1cf02f19 2fe65c09927a4daa831f8435cca485fd b3620766e1aecb7e7e2888ad39f468bc d6b71eaba4d0bc846cb76a88b8fb7b6d 70ea4339663373492c8ee1e46b237b10 cbc2e84ca696e4322ea1f2c4f88b6b70 ddfeb7f5b469e697d013aa388cc6770e f7f85793ea0c391bbd3a78320b49ea74 52ceb9cf72cec9bdde31aeadb560865f f5d455cedcffa4186044fbf237afa647 073cf5d800ad06a18fa223fc552a48b8 d2eb0fb9a746f4307cacd50f06f69f75 ab6d4a4a93175be1aa6bc9c008063a71 3fd471b67964ad1f0f3a0537e7841d2d 03a928b10498e87ffc9d31ca835d1e65 9a2c0feedfb42a3aa4f6bb718fd750ec 5137a876e6ebb3a8d437e5d2de3c13b8 86ce0b28f46874fd317146e002023a4e 5088c0c242ffa66f66b32c800822c81c 35594ca82c99f7d42ac65186874e6229 cfdbb0a4a84db9bb1c7f062f413f9b42 47f1d57e33ce924d167b419f2983602d 22c5944ce8b6a4d773aae16e9823e8ea 23ebc9bab139b559750cdd5c15c276bb 8de88f60a4300aec129750a1e539c9e7 0007c59f3d0573557910f907610f9fa7 2a59dc2ee8cdab251258f1105436f3c1 e84ed20794b72cea0b528a815c96f006 288e98ba38980818e5939a79c75ed29a c9827e16780953d1db0b8091456f8a1e 259c0647e90d00c51ce26c29048bc631 919aeac6da9ef319497610e99d21f561 e9159289db584d5fa1e2b89ef324a15d d57dd3f798834b9ce8e17d8aef50c268 f9ec818c1a72375950d2a9d7449abf2b 570a01c994e9a5dec46d3f27fb71121c 2572dbbcac3f2fe528a8d07697196c3f 34f41cd6587a7eb2a7cfdf14a8997209 acf9aa0f4e93e6906af7d76e7434aa1f 1f6351c7e8c92382f7b44706951e2bc2 503e07866935c651a754f51b598bb3ad 6f4d6ba1e75c81321d32d29a5ed7bda9 d26273e3bdc0f65efc18c2a7d200a88a 4fdefe9c6c7581135e2e73af236bc77b 2441ef26a132c2fd6d370c3c80f75c74 b0ecb0b6c27d37cd13c91272183c14de 1cbf84b47c83b0ed3b2853905588b55e 73fac46aff3c57380edbdaebfd3f1514 f5eca668a6137df14ddeddbf926e8449 c8709a204bd1307f1ab4cbdaa04543e7 905443923a373774691fd0a89e92650d b292df58256683d69a4d77c022b0c2b3 5cc9c89e75548792769b6081da4e01ef b6fbacd1e6c8634c83ad69898c81a816 9d7e0f0bc2e36c068a0d4b1a66ef0eac 18b49612899d983bc24eab5f0154071a'\''' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Fri Feb  3 07:56:46 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_reliability_lenght.sh line 43'
++ message='oe_test_rsyslog_reliability_lenght.sh line 43'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_reliability_lenght.sh line 43'
+Fri Feb  3 07:56:46 2023 - ERROR - oe_test_rsyslog_reliability_lenght.sh line 43
++ return 0
++ SLEEP_WAIT 20
++ wait_time=20
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 20 --cmd '' --mode 1
++ grep 'tcp\[' /var/log/messages
++ grep 04173
+++ ls -l test.txt
+++ awk '{print $5}'
++ size=0
++ '[' 0 -gt 0 ']'
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_reliability_lenght.sh line 48'
++ message='oe_test_rsyslog_reliability_lenght.sh line 48'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_reliability_lenght.sh line 48'
+Fri Feb  3 07:57:08 2023 - ERROR - oe_test_rsyslog_reliability_lenght.sh line 48
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 07:57:09 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Feb  3 07:57:09 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 07:57:10 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri Feb  3 07:57:10 2023 - WARN  - no thing to do.
++ return 0
++ SSH_CMD 'rm -rf /etc/rsyslog.d/client.conf && systemctl restart rsyslog && systemctl start iptables'
++ cmd='rm -rf /etc/rsyslog.d/client.conf && systemctl restart rsyslog && systemctl start iptables'
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen-riscv/libs/locallibs/sshcmd.sh -c 'rm -rf /etc/rsyslog.d/client.conf && systemctl restart rsyslog && systemctl start iptables' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Fri Feb  3 07:57:11 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ rm -rf /etc/rsyslog.d/server.conf test.txt
++ systemctl restart rsyslog
++ systemctl start iptables
+Failed to start iptables.service: Unit iptables.service not found.
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 07:57:13 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,279 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Feb  2 21:11:40 2023 - INFO  - Start environmental preparation.
+++ ip route
+++ grep 127.0.0.1
+++ awk '{print $3}'
++ eth_name=
+++ ethtool -T
+++ grep 'PTP Hardware Clock'
+++ awk '{print $4}'
+oe_test_service_phc2sys.sh: line 25: ethtool: command not found
++ '[' '' == none ']'
++ DNF_INSTALL linuxptp
++ pkgs=linuxptp
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs linuxptp --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp1490_rzg
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp1490_rzg
++ sed -i 's\-f /etc/ptp4l.conf -i eth0\-f /etc/ptp4l.conf -i \g' /etc/sysconfig/ptp4l
++ systemctl start ptp4l.service
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Feb  2 21:12:12 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Feb  2 21:12:12 2023 - INFO  - Start testing...
++ test_execution phc2sys.service
++ service=phc2sys.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-02 21:12:12'
++ test_restart phc2sys.service
++ service=phc2sys.service
++ systemctl restart phc2sys.service
++ CHECK_RESULT 0 0 0 'phc2sys.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='phc2sys.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status phc2sys.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-02-02 21:12:12 CST; 5s ago
++ CHECK_RESULT 0 0 0 'phc2sys.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='phc2sys.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop phc2sys.service
++ CHECK_RESULT 0 0 0 'phc2sys.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='phc2sys.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status phc2sys.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'phc2sys.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='phc2sys.service stop failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'phc2sys.service stop failed'
++ LOG_ERROR 'phc2sys.service stop failed'
++ message='phc2sys.service stop failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'phc2sys.service stop failed'
+Thu Feb  2 21:12:25 2023 - ERROR - phc2sys.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Thu Feb  2 21:12:26 2023 - ERROR - ../common/common_lib.sh line 42
++ return 0
++ systemctl start phc2sys.service
++ CHECK_RESULT 0 0 0 'phc2sys.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='phc2sys.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status phc2sys.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-02-02 21:12:26 CST; 5s ago
++ CHECK_RESULT 0 0 0 'phc2sys.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='phc2sys.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled phc2sys.service
++ service=phc2sys.service
+++ systemctl is-enabled phc2sys.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable phc2sys.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/phc2sys.service
++ find /etc/systemd/system/multi-user.target.wants/phc2sys.service
+/etc/systemd/system/multi-user.target.wants/phc2sys.service
++ CHECK_RESULT 0 0 0 'phc2sys.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='phc2sys.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable phc2sys.service
+Removed /etc/systemd/system/multi-user.target.wants/phc2sys.service.
++ find /etc/systemd/system/multi-user.target.wants/phc2sys.service
+find: ‘/etc/systemd/system/multi-user.target.wants/phc2sys.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'phc2sys.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='phc2sys.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-02-02 21:12:12' -u phc2sys.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+Feb 02 21:12:12 openEuler-riscv64 phc2sys[507]: [56.830] uds: sendto failed: No such file or directory
+Feb 02 21:12:13 openEuler-riscv64 phc2sys[507]: [57.845] uds: sendto failed: No such file or directory
+Feb 02 21:12:14 openEuler-riscv64 phc2sys[507]: [58.849] uds: sendto failed: No such file or directory
+Feb 02 21:12:15 openEuler-riscv64 phc2sys[507]: [59.853] uds: sendto failed: No such file or directory
+Feb 02 21:12:16 openEuler-riscv64 phc2sys[507]: [60.857] uds: sendto failed: No such file or directory
+Feb 02 21:12:17 openEuler-riscv64 phc2sys[507]: [61.861] uds: sendto failed: No such file or directory
+Feb 02 21:12:18 openEuler-riscv64 phc2sys[507]: [62.864] uds: sendto failed: No such file or directory
+Feb 02 21:12:18 openEuler-riscv64 phc2sys[507]: [62.898] poll failed
+Feb 02 21:12:19 openEuler-riscv64 systemd[1]: phc2sys.service: Failed with result 'exit-code'.
+Feb 02 21:12:26 openEuler-riscv64 phc2sys[520]: [70.199] uds: sendto failed: No such file or directory
+Feb 02 21:12:27 openEuler-riscv64 phc2sys[520]: [71.211] uds: sendto failed: No such file or directory
+Feb 02 21:12:28 openEuler-riscv64 phc2sys[520]: [72.216] uds: sendto failed: No such file or directory
+Feb 02 21:12:29 openEuler-riscv64 phc2sys[520]: [73.220] uds: sendto failed: No such file or directory
+Feb 02 21:12:30 openEuler-riscv64 phc2sys[520]: [74.224] uds: sendto failed: No such file or directory
+Feb 02 21:12:31 openEuler-riscv64 phc2sys[520]: [75.228] uds: sendto failed: No such file or directory
+Feb 02 21:12:32 openEuler-riscv64 phc2sys[520]: [76.232] uds: sendto failed: No such file or directory
+Feb 02 21:12:33 openEuler-riscv64 phc2sys[520]: [77.236] uds: sendto failed: No such file or directory
+Feb 02 21:12:34 openEuler-riscv64 phc2sys[520]: [78.240] uds: sendto failed: No such file or directory
+Feb 02 21:12:35 openEuler-riscv64 phc2sys[520]: [79.244] uds: sendto failed: No such file or directory
+Feb 02 21:12:36 openEuler-riscv64 phc2sys[520]: [80.248] uds: sendto failed: No such file or directory
+Feb 02 21:12:37 openEuler-riscv64 phc2sys[520]: [81.252] uds: sendto failed: No such file or directory
+Feb 02 21:12:38 openEuler-riscv64 phc2sys[520]: [82.256] uds: sendto failed: No such file or directory
+Feb 02 21:12:39 openEuler-riscv64 phc2sys[520]: [83.260] uds: sendto failed: No such file or directory
+Feb 02 21:12:40 openEuler-riscv64 phc2sys[520]: [84.264] uds: sendto failed: No such file or directory
++ CHECK_RESULT 0 0 1 'There is an error message for the log of phc2sys.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of phc2sys.service'
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of phc2sys.service'
++ LOG_ERROR 'There is an error message for the log of phc2sys.service'
++ message='There is an error message for the log of phc2sys.service'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of phc2sys.service'
+Thu Feb  2 21:12:41 2023 - ERROR - There is an error message for the log of phc2sys.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Thu Feb  2 21:12:41 2023 - ERROR - ../common/common_lib.sh line 28
++ return 0
++ test_reload phc2sys.service
++ service=phc2sys.service
++ systemctl start phc2sys.service
++ systemctl reload phc2sys.service
++ grep 'Job type reload is not applicable'
+Failed to reload phc2sys.service: Job type reload is not applicable for unit phc2sys.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit phc2sys.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit phc2sys.service'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status phc2sys.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-02-02 21:12:26 CST; 16s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Feb  2 21:12:42 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Feb  2 21:12:43 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Feb  2 21:12:44 2023 - INFO  - start environment cleanup.
++ systemctl stop phc2sys.service
++ systemctl stop ptp4l.service
++ sed -i 's\-f /etc/ptp4l.conf -i \-f /etc/ptp4l.conf -i eth0\g' /etc/sysconfig/ptp4l
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp1490_rzg ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp1490_rzg
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Feb  2 21:12:58 2023 - INFO  - Finish environment cleanup!

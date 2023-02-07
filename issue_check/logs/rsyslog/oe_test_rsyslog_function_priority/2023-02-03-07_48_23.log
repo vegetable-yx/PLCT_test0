@@ -1,0 +1,322 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 07:48:26 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL rsyslog
++ pkgs=rsyslog
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs rsyslog --node 1 --tempfile ''
+Fri Feb  3 07:48:33 2023 - INFO  - pkgs:(rsyslog) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 07:48:34 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 07:48:35 2023 - INFO  - Start to run test.
++ priority_list=("emerg" "alert" "crit" "err" "warning" "notice" "info" "debug")
++ for priority in "${priority_list[@]}"
++ echo 'local5.=emerg   /var/log/test'
++ systemctl restart rsyslog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%s%N
+++ cut -c 9-13
++ time=16054
++ logger -t emerg -p local5.emerg testemerg16054
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep testemerg16054 /var/log/test
+Feb  3 07:48:36 openEuler-riscv64 emerg[5864]: testemerg16054
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for priority in "${priority_list[@]}"
++ echo 'local5.=alert   /var/log/test'
++ systemctl restart rsyslog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%s%N
+++ cut -c 9-13
++ time=20760
++ logger -t alert -p local5.alert testalert20760
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep testalert20760 /var/log/test
+Feb  3 07:48:40 openEuler-riscv64 alert[5878]: testalert20760
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for priority in "${priority_list[@]}"
++ echo 'local5.=crit   /var/log/test'
++ systemctl restart rsyslog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ cut -c 9-13
+++ date +%s%N
++ time=25449
++ logger -t crit -p local5.crit testcrit25449
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep testcrit25449 /var/log/test
+Feb  3 07:48:45 openEuler-riscv64 crit[5893]: testcrit25449
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for priority in "${priority_list[@]}"
++ echo 'local5.=err   /var/log/test'
++ systemctl restart rsyslog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%s%N
+++ cut -c 9-13
++ time=30203
++ logger -t err -p local5.err testerr30203
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep testerr30203 /var/log/test
+Feb  3 07:48:50 openEuler-riscv64 err[5908]: testerr30203
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for priority in "${priority_list[@]}"
++ echo 'local5.=warning   /var/log/test'
++ systemctl restart rsyslog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%s%N
+++ cut -c 9-13
++ time=34963
++ logger -t warning -p local5.warning testwarning34963
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep testwarning34963 /var/log/test
+Feb  3 07:48:55 openEuler-riscv64 warning[5922]: testwarning34963
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for priority in "${priority_list[@]}"
++ echo 'local5.=notice   /var/log/test'
++ systemctl restart rsyslog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%s%N
+++ cut -c 9-13
++ time=39715
++ logger -t notice -p local5.notice testnotice39715
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep testnotice39715 /var/log/test
+Feb  3 07:48:59 openEuler-riscv64 notice[5936]: testnotice39715
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for priority in "${priority_list[@]}"
++ echo 'local5.=info   /var/log/test'
++ systemctl restart rsyslog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%s%N
+++ cut -c 9-13
++ time=44450
++ logger -t info -p local5.info testinfo44450
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep testinfo44450 /var/log/test
+Feb  3 07:49:04 openEuler-riscv64 info[5950]: testinfo44450
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for priority in "${priority_list[@]}"
++ echo 'local5.=debug   /var/log/test'
++ systemctl restart rsyslog
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%s%N
+++ cut -c 9-13
++ time=48973
++ logger -t debug -p local5.debug testdebug48973
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep testdebug48973 /var/log/test
+Feb  3 07:49:09 openEuler-riscv64 debug[5964]: testdebug48973
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 07:49:13 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 07:49:14 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 07:49:14 2023 - INFO  - Start to restore the test environment.
++ rm -rf /var/log/test /etc/rsyslog.d/test.conf
++ systemctl restart rsyslog
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 07:49:16 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,171 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Fri Feb  3 11:34:04 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL tomcat
++ pkgs=tomcat
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs tomcat --node 1 --tempfile ''
++ tmpfile2=/tmp/tmps6a34rrh
++ '[' -z '' ']'
++ tmpfile=/tmp/tmps6a34rrh
++ systemctl start tomcat
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Fri Feb  3 11:35:31 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Fri Feb  3 11:35:32 2023 - INFO  - Start executing testcase!
++ systemctl status tomcat
++ grep running
+     Active: active (running) since Fri 2023-02-03 11:35:30 CST; 1s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tomcat-tool-wrapper -server org.apache.catalina.realm.RealmBase md5
++ grep md5
+md5:cacbfefdaf842aad4d72c842514a13a1f146a00b27f5fa507948007669234114$1$59791b85c9d4955798cfab5002fcf00b259aac5a8ea624b0dd605c10f18943bbc086583a43bf186f4a9aa7cfb0355fd61e3a6acbca124e961d53a9f7167adf7c
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tomcat-digest -a SHA-256 Foo
++ grep Foo
+Foo:3b188eb41aa7847af59e8d5ad47a1cdc2dec39d63f4d502ee20fb955925c0aa8$1$f722659c9027dd08a782f7c56224dd2882e66edab3a00b2b8e376da83e471e40
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tomcat-digest -e SHA-256 Foo
++ grep Foo
+Feb 03, 2023 11:35:45 AM org.apache.catalina.realm.MessageDigestCredentialHandler setEncoding
+WARNING: The encoding [SHA-256] is not supported so the current setting of [UTF-8] will still be used
+Foo:82bf5788b87dade6459f77b82443ba73d57c3eb2d1983da437ed86ece366ceb0$1$5da1bb80dc41fe079a04feefc4d1de97d2509bc134d94ec584502e0ae6434b95d100d8203633f940d829c1a90d955749715917dd09b777c7e100dec14ada149e
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tomcat-digest -h Foo
++ grep Foo
+Foo:c018ac004b779e48ac82060d97828c0099a4ab2b70e883ace77562b409828f12$1$2c325145a6a3db5a79cf815a69401c99520410e8b2812a8f31f07ff158ec4741ae11d887bd871dd3e1b379bdefbb051aabfb009bfca896635d0ed4a35c26a11d
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tomcat-digest -k Foo
++ grep Foo
+Foo:7b0b00b1d934bef794933c9b3652e9b5404a9454c0e709e4fd7ebddfee0165fe$1$4153f0b26f0fc1bd497c43c06f3b58bc4349247d12e4b3c87d774a76c7e75ddf0a3ff8e5a62da68825299425a01a1165eacb969653b10ab25a581b3a1e7d8578
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tomcat-digest -i Foo
+-i:4938954f030f4700455bac4e0fb39e0eca97903edfb00e2624d1c84defa26b85$1$3bb5417943b205131ef67b3b7ba83a27e58453c4254b2d48867d0409c1a89becdc44dc87e973ff11ac0df7dbd656ab94454527732caa3f7c5257a29d09bf1206
+Foo:b0b99da27e59deb54dbc1f27c66e9bc9e07a5cebe93a257f8cbfbe278c6412fb$1$8b1aa70c919b3f7eb2613470c0fbc5709ae153a1d3a574545fe140a9af2cde024ec84b0168cd827a8597a9e812c73f03a207547902ea8d3c0745da3504a4c4cd
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tomcat-digest -s Foo
+-s:f636716a5e7a7d091a73d499643b6f150eb81aa17c4528083129dd6f70b32ad5$1$12050d0fca74880f38fd7252852d52b978116438ce49e23224aa8c3ebe18f45644ff155743287fa6b7ff11d5984969b49b430b3c7ff9ae72cd52ad24af0f579e
+Foo:bb83e615e6b5097fbb2d9fd2466258a9004ed8196f0eecb7e59eae150c62804a$1$10a3ebdcaabd45a59a998f94711097b791c7bfa1b55021c80995cc453cff7f6a52c7960ebefd96f2509053f2902da9b3cfde89e5d0f9544e6a7828aae77de7cc
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of testcase execution!'
++ message='End of testcase execution!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of testcase execution!'
+Fri Feb  3 11:36:03 2023 - INFO  - End of testcase execution!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 11:36:03 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start environment cleanup.'
++ message='Start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environment cleanup.'
+Fri Feb  3 11:36:04 2023 - INFO  - Start environment cleanup.
++ systemctl stop tomcat
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmps6a34rrh ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmps6a34rrh
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup.'
++ message='Finish environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup.'
+Fri Feb  3 11:36:28 2023 - INFO  - Finish environment cleanup.

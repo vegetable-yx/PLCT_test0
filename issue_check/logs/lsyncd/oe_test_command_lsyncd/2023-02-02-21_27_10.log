@@ -1,0 +1,173 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Feb  2 21:27:12 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL lsyncd
++ pkgs=lsyncd
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs lsyncd --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp8jch7hro
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp8jch7hro
++ cat
++ mkdir -p /var/www/html /tmp/htmlcopy /var/log/lsyncd
++ touch /var/log/lsyncd/lsyncd.log /var/log/lsyncd/lsyncd.status
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Feb  2 21:27:43 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Feb  2 21:27:44 2023 - INFO  - Start to run test.
++ lsyncd /etc/lsyncd.conf -delay 25
+21:27:44 Normal: --- Startup, daemonizing ---
++ CHECK_RESULT 0 0 0 'Check dealy failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check dealy failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsyncd -insist /etc/lsyncd.conf
+21:27:44 Normal: --- Startup, daemonizing ---
++ CHECK_RESULT 0 0 0 'Check insist failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check insist failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsyncd -pidfile /var/log/lsyncd/lsyncd.pid /etc/lsyncd.conf
+21:27:44 Normal: --- Startup, daemonizing ---
++ CHECK_RESULT 0 0 0 'Check pidfile failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check pidfile failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sed '/.*Startup.*/q'
++ lsyncd -nodaemon /etc/lsyncd.conf
+21:27:44 Normal: --- Startup ---
++ CHECK_RESULT 0 0 0 'Check nodaemon failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check nodaemon failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsyncd -log all /etc/lsyncd.conf
+kernels clocks_per_sec=100
+Call: configure( )
+Inotify: inotify fd = 3
+Call: initialize( )
+21:27:44 Normal: --- Startup, daemonizing ---
++ CHECK_RESULT 0 0 0 'Check log all failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check log all failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsyncd -log Exec /etc/lsyncd.conf
+21:27:44 Normal: --- Startup, daemonizing ---
++ CHECK_RESULT 0 0 0 'Check log exec failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check log exec failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsyncd -logfile /var/log/lsyncd/lsyncd.log /etc/lsyncd.conf
+21:27:44 Normal: --- Startup, daemonizing ---
++ CHECK_RESULT 0 0 0 'Check logfile failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check logfile failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsyncd -log scarce /etc/lsyncd.conf
++ CHECK_RESULT 0 0 0 'Check log scarce failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check log scarce failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Feb  2 21:27:45 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Feb  2 21:27:46 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Feb  2 21:27:47 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp8jch7hro ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp8jch7hro
++ '[' 0 -ne 0 ']'
++ rm -rf /var/www /tmp/htmlcopy /var/log/lsyncd /etc/lsyncd.conf
+++ ps -ef
+++ grep lsyncd
+++ grep -Ev 'grep|bash'
+++ awk '{print $2}'
++ kill -9 4750 4756 4763 4775 4782 4791 4798
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Feb  2 21:28:02 2023 - INFO  - Finish environment cleanup!

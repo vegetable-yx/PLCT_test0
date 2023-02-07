@@ -1,0 +1,204 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 13:52:18 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'httpd mod_ssl'
++ pkgs='httpd mod_ssl'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'httpd mod_ssl' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp39eepmj9
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp39eepmj9
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 13:53:04 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 13:53:05 2023 - INFO  - Start to run test.
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Fri 2023-02-03 13:53:19 CST; 1s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sed -i 's/#SSLProtocol all -SSLv3/SSLProtocol -all +TLSv1.3/g' /etc/httpd/conf.d/ssl.conf
++ grep 'SSLProtocol -all +TLSv1.3' /etc/httpd/conf.d/ssl.conf
+SSLProtocol -all +TLSv1.3
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ openssl s_client -connect 127.0.0.1:443 -tls1_3
+Can't use SSL_get_servername
+depth=1 C = US, O = Unspecified, OU = ca-2853023112977709538, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+verify error:num=19:self signed certificate in certificate chain
+verify return:1
+depth=1 C = US, O = Unspecified, OU = ca-2853023112977709538, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+verify return:1
+depth=0 C = US, O = Unspecified, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+verify return:1
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:C = US, O = Unspecified, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+   i:C = US, O = Unspecified, OU = ca-2853023112977709538, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+ 1 s:C = US, O = Unspecified, OU = ca-2853023112977709538, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+   i:C = US, O = Unspecified, OU = ca-2853023112977709538, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIE4TCCAsmgAwIBAgIICQa08eliIm0wDQYJKoZIhvcNAQELBQAwgYcxCzAJBgNV
+BAYTAlVTMRQwEgYDVQQKDAtVbnNwZWNpZmllZDEfMB0GA1UECwwWY2EtMjg1MzAy
+MzExMjk3NzcwOTUzODEaMBgGA1UEAwwRb3BlbkV1bGVyLXJpc2N2NjQxJTAjBgkq
+hkiG9w0BCQEWFnJvb3RAb3BlbkV1bGVyLXJpc2N2NjQwHhcNMjMwMjAzMDU1MzEz
+WhcNMjQwMjA4MDczMzEzWjBmMQswCQYDVQQGEwJVUzEUMBIGA1UECgwLVW5zcGVj
+aWZpZWQxGjAYBgNVBAMMEW9wZW5FdWxlci1yaXNjdjY0MSUwIwYJKoZIhvcNAQkB
+FhZyb290QG9wZW5FdWxlci1yaXNjdjY0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+MIIBCgKCAQEAtuF4gMRReMIXVK2NVCR4jUHa28259/R881uB8VT3IJroIRUBgbyK
+2J21nTep+mvP7A9FMKXg/DWpSvmZXrddVXDu6rKBLvc/lieiirTF+g/neDCOFAjq
+Xn0Yk+iH1WNHRLspMwGNIcB2SWYYE5gJGnyU8qFdJyJI4w3r0d0r2aqTtNi94GJ5
+/8P/k1s10U92dBGUlftYItMWkZp9QD98kt02lC4HfpqQ0JiLgNUGyvmMX64ll5A3
+JazdfepCbp/cVXFA/0DV8l2DLu8sAj3yeXM4xRCY/LSGsrTjxHzutZig7J4j1888
+WlfzfwR2ySV6FHAR20OeL9p1a1DHOngwSwIDAQABo3EwbzAOBgNVHQ8BAf8EBAMC
+BaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCQYDVR0TBAIwADAcBgNVHREEFTATghFv
+cGVuRXVsZXItcmlzY3Y2NDAfBgNVHSMEGDAWgBR70dTchI/aRDAW+NEYbocROpJ3
+TzANBgkqhkiG9w0BAQsFAAOCAgEAAgYts5lL8II21oJo7JG8wlq021fsJ0mL5tPu
+tg7gqGv7HyvU2RVT/BeXFTICtAOnNK04mR+9yYEur9+XSHDPNKy1XGnHPAA5ukUo
+N7khSWAMTC0Y5hpvffsSAj9TDwKqtzpj0lLK9PV3C4nw2Pxn8AiAOKlHIBgdx6GL
+G/mayz6B3A/6g8OgYOplN7Fw8lFM80xc0KCy6WpyGUAvHvoTrlSV9Z+UfRv76moS
+MWRO4A8dA22RmYlJepRWow3aoLSoqqxq1V3oy938k9zxQWDfnEQGt7gq+m3Mpyb9
+gUIqeiTQjbx0d1v62mp1LSL0MO/hgkZ0CyG6o/ayaKXGY+sTs83xSCdCQx/r1da/
+SkYkCnK7q/wltf/1uw/pL1a8CEJuk9vUjWiogfG0GTdR/AVSB9kKgzggqDQiPrqS
+R1C37GzNfZQMp6VygV2F2xcY7pncxeTtyPLAjTvrCOK6KcxRlutZvrwasrAYF2tM
+VKkQY7YXiG1conFNbDH74YAaApKGy6JCuDWLonnIwoRb2mK4YRNUWyZuFWfWVMuF
+g3dlxLHIkCit9ZEFes9uczr2PpULmwVbRJq1XU0HKA8mT5+Z+Tx+jkrPkZMZoUn2
+w76rbgyljpZvA9C7EyUMIgDPtRvoGU7Kv/9l8jUsJoNZhvV/FDH/sJRkdvqlCtby
+W2Dj4xw=
+-----END CERTIFICATE-----
+subject=C = US, O = Unspecified, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+
+issuer=C = US, O = Unspecified, OU = ca-2853023112977709538, CN = openEuler-riscv64, emailAddress = root@openEuler-riscv64
+
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 3371 bytes and written 295 bytes
+Verification error: self signed certificate in certificate chain
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 19 (self signed certificate in certificate chain)
+---
+DONE
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sed -i 's/SSLProtocol -all +TLSv1.3/#SSLProtocol all -SSLv3/g' /etc/httpd/conf.d/ssl.conf
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 13:53:24 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 13:53:25 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 13:53:25 2023 - INFO  - Start to restore the test environment.
++ systemctl reload httpd
++ systemctl stop httpd
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp39eepmj9 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp39eepmj9
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 13:53:47 2023 - INFO  - End to restore the test environment.

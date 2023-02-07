@@ -1,0 +1,170 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 07:28:08 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL rpmlint
++ pkgs=rpmlint
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs rpmlint --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpxto_djuh
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpxto_djuh
++ wget https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64/Packages/LibRaw-0.19.0-9.oe1.aarch64.rpm
+--2023-02-03 07:28:33--  https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64/Packages/LibRaw-0.19.0-9.oe1.aarch64.rpm
+Resolving repo.openeuler.org (repo.openeuler.org)... 49.0.230.196
+Connecting to repo.openeuler.org (repo.openeuler.org)|49.0.230.196|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 298520 (292K) [application/x-redhat-package-manager]
+Saving to: ‘LibRaw-0.19.0-9.oe1.aarch64.rpm’
+
+     0K .......... .......... .......... .......... .......... 17%  330K 1s
+    50K .......... .......... .......... .......... .......... 34%  615K 0s
+   100K .......... .......... .......... .......... .......... 51% 3.91M 0s
+   150K .......... .......... .......... .......... .......... 68% 4.39M 0s
+   200K .......... .......... .......... .......... .......... 85%  604K 0s
+   250K .......... .......... .......... .......... .         100% 3.68M=0.4s
+
+2023-02-03 07:28:34 (832 KB/s) - ‘LibRaw-0.19.0-9.oe1.aarch64.rpm’ saved [298520/298520]
+
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 07:28:35 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test1.'
++ message='Start to run test1.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test1.'
+Fri Feb  3 07:28:35 2023 - INFO  - Start to run test1.
++ rpmlint -i LibRaw-0.19.0-9.oe1.aarch64.rpm
++ grep -oE '[0-9]* packages and [0-9]* specfiles checked; [0-9]* errors, [0-9]* warnings.'
+sh: line 1: /usr/bin/python: No such file or directory
+sh: line 1: /usr/bin/python2: No such file or directory
+Error checking signature of LibRaw-0.19.0-9.oe1.aarch64.rpm: LibRaw-0.19.0-9.oe1.aarch64.rpm: digests SIGNATURES NOT OK
+1 packages and 0 specfiles checked; 3 errors, 2 warnings.
++ CHECK_RESULT 0 0 0 'rpmlint -i failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rpmlint -i failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test1.'
++ message='End to run test1.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test1.'
+Fri Feb  3 07:28:48 2023 - INFO  - End to run test1.
++ LOG_INFO 'Start to run test2.'
++ message='Start to run test2.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test2.'
+Fri Feb  3 07:28:49 2023 - INFO  - Start to run test2.
++ rpmlint -V
++ grep 'rpmlint version 1.10 Copyright (C) 1999-2007 Frederic Lepied, Mandriva'
+rpmlint version 1.10 Copyright (C) 1999-2007 Frederic Lepied, Mandriva
++ CHECK_RESULT 0 0 0 'rpmlint -V failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rpmlint -V failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test2.'
++ message='End to run test2.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test2.'
+Fri Feb  3 07:28:51 2023 - INFO  - End to run test2.
++ LOG_INFO 'Start to run test3.'
++ message='Start to run test3.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test3.'
+Fri Feb  3 07:28:52 2023 - INFO  - Start to run test3.
++ rpmlint -C /root /home
++ grep -oE '[0-9]* packages and [0-9]* specfiles checked; [0-9]* errors, [0-9]* warnings.'
+sh: line 1: /usr/bin/python: No such file or directory
+sh: line 1: /usr/bin/python2: No such file or directory
+0 packages and 0 specfiles checked; 0 errors, 0 warnings.
++ CHECK_RESULT 0 0 0 'rpmlint -C failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rpmlint -C failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test3.'
++ message='End to run test3.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test3.'
+Fri Feb  3 07:28:58 2023 - INFO  - End to run test3.
++ LOG_INFO 'Start to run test4.'
++ message='Start to run test4.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test4.'
+Fri Feb  3 07:28:59 2023 - INFO  - Start to run test4.
++ git clone https://gitee.com/src-openeuler/unzip.git
+Cloning into 'unzip'...
++ grep -oE '[0-9]* packages and [0-9]* specfiles checked; [0-9]* errors, [0-9]* warnings.'
++ rpmlint unzip/unzip.spec
+sh: line 1: /usr/bin/python: No such file or directory
+sh: line 1: /usr/bin/python2: No such file or directory
+0 packages and 1 specfiles checked; 1 errors, 0 warnings.
++ CHECK_RESULT 0 0 0 'rpmlint unzip.spec failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rpmlint unzip.spec failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test4.'
++ message='End to run test4.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test4.'
+Fri Feb  3 07:29:12 2023 - INFO  - End to run test4.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 07:29:12 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 07:29:13 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpxto_djuh ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpxto_djuh
++ '[' 0 -ne 0 ']'
++ rm -rf LibRaw-0.19.0-9.oe1.aarch64.rpm unzip
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 07:29:22 2023 - INFO  - End to restore the test environment.

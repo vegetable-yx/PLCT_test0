@@ -1,0 +1,45 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 00:00:47 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL opensp
++ pkgs=opensp
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs opensp --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpxunjxhlx
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpxunjxhlx
++ cp -r ../common/normal.sgml ./normal.sgml
++ cp -r normal.sgml normal2.sgml
++ printf 'DOCUMENT normal.sgml\nDOCUMENT normal2.sgml'
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Feb  3 00:01:17 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 00:01:18 2023 - INFO  - Start to run test.
++ onsgmls -b utf-8 normal.sgml
++ grep Hello
+Fri Feb  3 00:30:46 2023 - ERROR - Timeout : Command 'bash -x oe_test_opensp_onsgmls.sh' timed out after 1799.9983002000001 seconds

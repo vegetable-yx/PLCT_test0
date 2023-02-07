@@ -1,0 +1,188 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Fri Feb  3 08:46:58 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL cargo
++ pkgs=cargo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs cargo --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpx7pc9mj6
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpx7pc9mj6
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Fri Feb  3 08:48:41 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Fri Feb  3 08:48:41 2023 - INFO  - Start executing testcase!
++ cargo -h
++ grep USAGE
+USAGE:
++ CHECK_RESULT 0 0 0 'Help information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo -V
++ grep -E '[0-9]'
+cargo 1.57.0
++ CHECK_RESULT 0 0 0 'Failed to output the version information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo --list
++ grep 'Installed Commands'
+Installed Commands:
++ CHECK_RESULT 0 0 0 'Failed to list commands'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to list commands'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo --explain E0004
++ grep 'Erroneous code example'
+Erroneous code example:
++ CHECK_RESULT 0 0 0 'Failed to interpret code command'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to interpret code command'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo -vV
++ grep -E 'release|[0-9]'
+cargo 1.57.0
+release: 1.57.0
+host: riscv64gc-unknown-linux-gnu
+libgit2: 1.3.0 (sys:0.13.23 vendored)
+libcurl: 7.79.1 (sys:0.4.49+curl-7.79.1 system ssl:OpenSSL/1.1.1l-fips)
+os: OracleLinux 22.3.0 [64-bit]
++ CHECK_RESULT 0 0 0 'Failed to list details'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to list details'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo new hello -q
++ CHECK_RESULT 0 0 0 'Silent output failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Silent output failure'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd hello
++ cargo run --color always
+[0m[0m[1m[32m   Compiling[0m hello v0.1.0 (/root/mugen-riscv/testcases/cli-test/rust/oe_test_cargo_01/hello)
+[0m[0m[1m[32m    Finished[0m dev [unoptimized + debuginfo] target(s) in 6.89s
+[0m[0m[1m[32m     Running[0m `target/debug/hello`
+Hello, world!
++ CHECK_RESULT 0 0 0 'Color setting failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Color setting failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo run --offline
++ grep 'Hello, world!'
+    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
+     Running `target/debug/hello`
+Hello, world!
++ CHECK_RESULT 0 0 0 'Failed to run offline'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run offline'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo -Z help
++ grep 'Available unstable (nightly-only) flags'
+Available unstable (nightly-only) flags:
++ CHECK_RESULT 0 0 0 'Help printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help printing failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 08:48:52 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 08:48:53 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Feb  3 08:48:54 2023 - INFO  - start environment cleanup.
++ rm -rf ../hello
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpx7pc9mj6 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpx7pc9mj6
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Feb  3 08:49:04 2023 - INFO  - Finish environment cleanup!

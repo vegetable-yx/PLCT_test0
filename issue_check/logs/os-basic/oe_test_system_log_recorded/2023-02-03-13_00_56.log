@@ -1,0 +1,90 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Fri Feb  3 13:00:59 2023 - INFO  - Start executing testcase.
++ grep Storage /etc/systemd/journald.conf
++ grep -E 'Storage=auto|Storage=persistent'
+#Storage=auto
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ ls /run/log/journal/
++ folder=76229d2b2d7d4fb49222fb18dd77eb32
++ cp -r /run/log/journal/76229d2b2d7d4fb49222fb18dd77eb32 /run/log/journal/76229d2b2d7d4fb49222fb18dd77eb32bak
++ rm -rf /run/log/journal/76229d2b2d7d4fb49222fb18dd77eb32
++ systemctl restart systemd-journald.service
++ '[' '!' -d /run/log/journal/76229d2b2d7d4fb49222fb18dd77eb32 ']'
+++ grep '^-'
+++ grep journal
+++ wc -l
+++ ls -la /run/log/journal/76229d2b2d7d4fb49222fb18dd77eb32
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ sudo journalctl --file /run/log/journal/76229d2b2d7d4fb49222fb18dd77eb32/system.journal
+++ ls -l systemlog1
+++ awk '{print $5}'
++ logsize=1813
++ test 1813 -gt 0
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of testcase execution.'
++ message='End of testcase execution.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of testcase execution.'
+Fri Feb  3 13:01:01 2023 - INFO  - End of testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 13:01:01 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Feb  3 13:01:02 2023 - INFO  - start environment cleanup.
++ rm -rf /run/log/journal/76229d2b2d7d4fb49222fb18dd77eb32bak systemlog1
++ LOG_INFO 'Finish environment cleanup.'
++ message='Finish environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup.'
+Fri Feb  3 13:01:03 2023 - INFO  - Finish environment cleanup.

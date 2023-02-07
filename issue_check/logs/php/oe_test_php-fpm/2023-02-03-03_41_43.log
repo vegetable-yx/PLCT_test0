@@ -1,0 +1,165 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 03:41:46 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL php-fpm
++ pkgs=php-fpm
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs php-fpm --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp86xojidg
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp86xojidg
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Feb  3 03:42:22 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 03:42:23 2023 - INFO  - Start to run test.
++ php-fpm --help
++ grep Usage:
+Usage: php [-n] [-e] [-h] [-i] [-m] [-v] [-t] [-p <prefix>] [-g <pid>] [-c <file>] [-d foo[=bar]] [-y <file>] [-D] [-F [-O]]
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ php-fpm -v
++ grep PHP
+PHP 8.0.0 (fpm-fcgi) (built: Nov 24 2020 17:04:03)
+Copyright (c) The PHP Group
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ php-fpm -i
++ grep _SERVER
+$_SERVER['SHELL'] => /bin/bash
+$_SERVER['SUDO_GID'] => 0
+$_SERVER['NODE1_PASSWORD'] => openEuler12#$
+$_SERVER['NODE1_MACHINE'] => physical
+$_SERVER['NODE1_BMC_USER'] => 
+$_SERVER['SUDO_COMMAND'] => /usr/bin/bash mugen.sh -f php -r oe_test_php-fpm -x
+$_SERVER['SUDO_USER'] => root
+$_SERVER['PWD'] => /root/mugen-riscv/testcases/cli-test/php/oe_test_php-fpm
+$_SERVER['LOGNAME'] => root
+$_SERVER['NODE1_FRAME'] => riscv64
+$_SERVER['HOME'] => /root
+$_SERVER['NODE1_BMC_PASSWORD'] => 
+$_SERVER['NODE1_NIC'] => 
+$_SERVER['OET_PATH'] => /root/mugen-riscv
+$_SERVER['NODE1_SSH_PORT'] => 22
+$_SERVER['NODE1_IPV4'] => 127.0.0.1
+$_SERVER['TERM'] => unknown
+$_SERVER['USER'] => root
+$_SERVER['NODE1_MAC'] => 
+$_SERVER['NODE1_LOCALTION'] => local
+$_SERVER['SHLVL'] => 1
+$_SERVER['LC_CTYPE'] => C.UTF-8
+$_SERVER['NODE1_BMC_IP'] => 
+$_SERVER['NODE1_USER'] => root
+$_SERVER['PATH'] => /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+$_SERVER['SUDO_UID'] => 0
+$_SERVER['MAIL'] => /var/mail/root
+$_SERVER['conf_file'] => /root/mugen-riscv/conf/mugen.json
+$_SERVER['OLDPWD'] => /root/mugen-riscv
+$_SERVER['_'] => /usr/sbin/php-fpm
+$_SERVER['PHP_SELF'] => 
+$_SERVER['REQUEST_TIME_FLOAT'] => 1675366944.2687
+$_SERVER['REQUEST_TIME'] => 1675366944
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -E '\[PHP Modules\]|\[Zend Modules\]'
++ php-fpm -m
+[PHP Modules]
+[Zend Modules]
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ php-fpm --test
+[03-Feb-2023 03:42:25] NOTICE: configuration file /etc/php-fpm.conf test is successful
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Fri Feb  3 03:42:25 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 03:42:26 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 03:42:27 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp86xojidg ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp86xojidg
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Fri Feb  3 03:42:42 2023 - INFO  - Finish restoring the test environment.

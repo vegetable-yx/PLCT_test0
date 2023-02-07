@@ -1,0 +1,67 @@
++ source ../common/common_easymock.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb  7 17:08:57 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'easymock junit5 maven'
++ pkgs='easymock junit5 maven'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'easymock junit5 maven' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmphsa2rn8e
++ '[' -z '' ']'
++ tmpfile=/tmp/tmphsa2rn8e
+++ rpm -qa 'java*'
+++ grep 'java-.*-openjdk'
+++ awk -F - '{print $2}'
++ java_version='1.8.0
+1.8.0
+1.8.0'
++ DNF_INSTALL java-1.8.0 1.8.0 1.8.0-devel
++ pkgs=java-1.8.0
++ node=1.8.0
++ '[' -z /tmp/tmphsa2rn8e ']'
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs java-1.8.0 --node 1.8.0 --tempfile /tmp/tmphsa2rn8e
+usage: rpm_manage.py install|remove [-h] [--node NODE] [--pkgs PKG] [--tempfile TEPMFILE]
+rpm_manage.py: error: argument --node: invalid int value: '1.8.0'
++ tmpfile2=
++ '[' -z /tmp/tmphsa2rn8e ']'
++ mkdir libs
+++ rpm -ql junit5
+++ grep junit-jupiter-api.jar
+++ grep easymock.jar
+++ rpm -ql easymock
+++ rpm -ql hamcrest
+++ grep core.jar
++ cp -rf /usr/share/java/junit5/junit-jupiter-api.jar /usr/share/java/easymock.jar /usr/share/java/hamcrest/core.jar libs
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb  7 17:15:27 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb  7 17:15:30 2023 - INFO  - Start to run test.
++ mvn test
++ grep 'Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS'
+Tue Feb  7 17:38:41 2023 - ERROR - Timeout : Command 'bash -x oe_test_easymock_junit5.sh' timed out after 1799.9725749419995 seconds

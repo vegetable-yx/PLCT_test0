@@ -1,0 +1,430 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Fri Feb  3 08:34:51 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL rust
++ pkgs=rust
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs rust --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpoa22jnni
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpoa22jnni
++ cp ../common/hello.rs ../common/lib.rs ../common/main.rs ../common/myhello.rs ../common/pub.rs ../common/test.rs ../common/war.rs ./
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Fri Feb  3 08:36:34 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 08:36:34 2023 - INFO  - Start to run test.
++ rustc -h
++ grep Options
+Options:
++ CHECK_RESULT 0 0 0 'Help information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --cfg hello hello.rs
++ test -f hello
++ ./hello
++ grep 'world!'
+world!
++ CHECK_RESULT 0 0 0 'Failed to print world！'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to print world！'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc -L . hello.rs --crate-name hello1
++ test -f hello1
++ CHECK_RESULT 0 0 0 'Failed to output the hello1 file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello1 file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --crate-type bin pub.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f pub
++ CHECK_RESULT 0 0 0 'Failed to output the pub file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the pub file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --crate-type lib pub.rs --crate-name _lib
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f lib_lib.rlib
++ CHECK_RESULT 0 0 0 'Failed to output the lib_lib.rlib file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the lib_lib.rlib file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --crate-type rlib pub.rs --crate-name _rlib
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f lib_rlib.rlib
++ CHECK_RESULT 0 0 0 'Failed to output the lib_rlib.rlib file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the lib_rlib.rlib file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --crate-type dylib pub.rs --crate-name _dy
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f lib_dy.so
++ CHECK_RESULT 0 0 0 'Failed to output the lib_dy.so file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the lib_dy.so file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --crate-type cdylib pub.rs --crate-name _cdy
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f lib_cdy.so
++ CHECK_RESULT 0 0 0 'Failed to output the lib_cdy.so file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the lib_cdy.so file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --crate-type staticlib pub.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f libpub.a
++ CHECK_RESULT 0 0 0 'Failed to output the libpub.a file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the libpub.a file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc pub.rs --crate-name hello_crate
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello_crate
++ CHECK_RESULT 0 0 0 'Failed to output the craname file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the craname file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --edition 2018 hello.rs --crate-name hello_edit
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello_edit
++ CHECK_RESULT 0 0 0 'Failed to output the editname file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the editname file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --emit asm hello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello.s
++ CHECK_RESULT 0 0 0 'Failed to output the hello.s file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.s file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --emit llvm-bc hello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello.bc
++ CHECK_RESULT 0 0 0 'Failed to output the hello.bc file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.bc file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --emit llvm-ir hello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello.ll
++ CHECK_RESULT 0 0 0 'Failed to output the hello.ll file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.ll file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --emit obj hello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello.o
++ CHECK_RESULT 0 0 0 'Failed to output the hello.o file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.o file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --emit metadata hello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f libhello.rmeta
++ CHECK_RESULT 0 0 0 'Failed to output the libhello.rmeta file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the libhello.rmeta file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --emit link hello.rs --crate-name hello_link
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello_link
++ CHECK_RESULT 0 0 0 'Failed to output the hello_link file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello_link file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --emit dep-info hello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello.d
++ CHECK_RESULT 0 0 0 'Failed to output the hello.d file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.d file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --emit mir hello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f hello.mir
++ CHECK_RESULT 0 0 0 'Failed to output the hello.mir file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.mir file'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 08:37:17 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 08:37:17 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Feb  3 08:37:18 2023 - INFO  - start environment cleanup.
++ rm -rf ./hello.rs ./lib.rs ./main.rs ./myhello.rs ./pub.rs ./test.rs ./war.rs hello hello.bc hello.d hello.ll hello.mir hello.o hello.rs hello.s hello1 hello_crate hello_edit hello_link lib.rs lib_cdy.so lib_dy.so lib_lib.rlib lib_rlib.rlib libhello.rmeta libpub.a pub
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpoa22jnni ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpoa22jnni
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Feb  3 08:37:28 2023 - INFO  - Finish environment cleanup!

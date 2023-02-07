@@ -1,0 +1,202 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Fri Feb  3 00:47:04 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL openvswitch-ipsec
++ pkgs=openvswitch-ipsec
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs openvswitch-ipsec --node 1 --tempfile ''
+Fri Feb  3 00:47:11 2023 - ERROR - pkgs:(openvswitch-ipsec) not found
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ service=openvswitch-ipsec.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-03 00:47:11'
++ flag=false
+++ getenforce
+++ grep Enforcing
++ '[' ']'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri Feb  3 00:47:12 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri Feb  3 00:47:12 2023 - INFO  - Start testing...
++ service openvswitch-ipsec.service restart
+oe_test_service_openvswitch-ipsec.sh: line 37: service: command not found
++ CHECK_RESULT 127 0 0 'openvswitch-ipsec.service restart failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='openvswitch-ipsec.service restart failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'openvswitch-ipsec.service restart failed'
++ LOG_ERROR 'openvswitch-ipsec.service restart failed'
++ message='openvswitch-ipsec.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'openvswitch-ipsec.service restart failed'
+Fri Feb  3 00:47:13 2023 - ERROR - openvswitch-ipsec.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_openvswitch-ipsec.sh line 38'
++ message='oe_test_service_openvswitch-ipsec.sh line 38'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_openvswitch-ipsec.sh line 38'
+Fri Feb  3 00:47:14 2023 - ERROR - oe_test_service_openvswitch-ipsec.sh line 38
++ return 0
++ service openvswitch-ipsec.service stop
+oe_test_service_openvswitch-ipsec.sh: line 39: service: command not found
++ CHECK_RESULT 127 0 0 'openvswitch-ipsec.service stop failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='openvswitch-ipsec.service stop failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'openvswitch-ipsec.service stop failed'
++ LOG_ERROR 'openvswitch-ipsec.service stop failed'
++ message='openvswitch-ipsec.service stop failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'openvswitch-ipsec.service stop failed'
+Fri Feb  3 00:47:14 2023 - ERROR - openvswitch-ipsec.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_openvswitch-ipsec.sh line 40'
++ message='oe_test_service_openvswitch-ipsec.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_openvswitch-ipsec.sh line 40'
+Fri Feb  3 00:47:15 2023 - ERROR - oe_test_service_openvswitch-ipsec.sh line 40
++ return 0
++ service openvswitch-ipsec.service start
+oe_test_service_openvswitch-ipsec.sh: line 41: service: command not found
++ CHECK_RESULT 127 0 0 'openvswitch-ipsec.service start failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='openvswitch-ipsec.service start failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'openvswitch-ipsec.service start failed'
++ LOG_ERROR 'openvswitch-ipsec.service start failed'
++ message='openvswitch-ipsec.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'openvswitch-ipsec.service start failed'
+Fri Feb  3 00:47:15 2023 - ERROR - openvswitch-ipsec.service start failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_openvswitch-ipsec.sh line 42'
++ message='oe_test_service_openvswitch-ipsec.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_openvswitch-ipsec.sh line 42'
+Fri Feb  3 00:47:16 2023 - ERROR - oe_test_service_openvswitch-ipsec.sh line 42
++ return 0
++ grep 'Active: active (running)'
++ service openvswitch-ipsec.service status
+oe_test_service_openvswitch-ipsec.sh: line 43: service: command not found
++ CHECK_RESULT 1 0 0 'openvswitch-ipsec.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='openvswitch-ipsec.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'openvswitch-ipsec.service start failed'
++ LOG_ERROR 'openvswitch-ipsec.service start failed'
++ message='openvswitch-ipsec.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'openvswitch-ipsec.service start failed'
+Fri Feb  3 00:47:17 2023 - ERROR - openvswitch-ipsec.service start failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_openvswitch-ipsec.sh line 44'
++ message='oe_test_service_openvswitch-ipsec.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_openvswitch-ipsec.sh line 44'
+Fri Feb  3 00:47:18 2023 - ERROR - oe_test_service_openvswitch-ipsec.sh line 44
++ return 0
++ journalctl --since '2023-02-03 00:47:11' -u openvswitch-ipsec.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 1 0 'There is an error message for the log of openvswitch-ipsec.service'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='There is an error message for the log of openvswitch-ipsec.service'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ service openvswitch-ipsec.service reload
++ grep 'Job type reload is not applicable for unit openvswitch-ipsec.service'
++ CHECK_RESULT 1 0 0 'openvswitch-ipsec.service reload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='openvswitch-ipsec.service reload failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'openvswitch-ipsec.service reload failed'
++ LOG_ERROR 'openvswitch-ipsec.service reload failed'
++ message='openvswitch-ipsec.service reload failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'openvswitch-ipsec.service reload failed'
+Fri Feb  3 00:47:18 2023 - ERROR - openvswitch-ipsec.service reload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_openvswitch-ipsec.sh line 48'
++ message='oe_test_service_openvswitch-ipsec.sh line 48'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_openvswitch-ipsec.sh line 48'
+Fri Feb  3 00:47:19 2023 - ERROR - oe_test_service_openvswitch-ipsec.sh line 48
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri Feb  3 00:47:20 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 5
++ test 5 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Feb  3 00:47:20 2023 - ERROR - failed to execute the case.
++ exit 5
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Feb  3 00:47:21 2023 - INFO  - start environment cleanup.
++ service openvswitch-ipsec.service stop
+oe_test_service_openvswitch-ipsec.sh: line 54: service: command not found
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri Feb  3 00:47:21 2023 - WARN  - no thing to do.
++ return 0
++ '[' false = true ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Feb  3 00:47:22 2023 - INFO  - Finish environment cleanup!

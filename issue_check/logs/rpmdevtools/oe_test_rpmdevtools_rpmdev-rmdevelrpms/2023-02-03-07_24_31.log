@@ -1,0 +1,282 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Fri Feb  3 07:24:34 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL rpmdevtools
++ pkgs=rpmdevtools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs rpmdevtools --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpbqtbbwr_
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpbqtbbwr_
+++ dnf list
+++ head -n 3
+++ awk 'BEGIN {FS="."} {print $1}'
+++ tail -n 1
+++ awk '{print $1}'
++ pkg_name=ModemManager-glib
++ yumdownloader ModemManager-glib
+Last metadata expiration check: 1 day, 7:49:00 ago on Wed Feb  1 23:36:11 2023.
+ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm   373 kB/s | 237 kB     00:00    
++ test -d /root/rpmbuild
++ LOG_INFO 'End of environmental preparation.'
++ message='End of environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation.'
+Fri Feb  3 07:25:13 2023 - INFO  - End of environmental preparation.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 07:25:14 2023 - INFO  - Start to run test.
++ rpmdev-rmdevelrpms -h
++ grep -A 30 rpmdev-rmdevelrpms
++ grep Options:
+Options:
++ CHECK_RESULT 0 0 0 'Failed option: -h'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -h'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpmdev-rmdevelrpms -v
++ grep 'rpmdev-rmdevelrpms version'
+rpmdev-rmdevelrpms version 1.15
++ CHECK_RESULT 0 0 0 'Failed option: -v'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -v'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpmdev-rmdevelrpms -l
++ grep -E 'devel|debuginfo|sdk|static|perl'
+libxcrypt-devel-4.4.26-2.oe2203.riscv64
+perl-Devel-PPPort-3.63-1.oe2203.riscv64
+perl-Encode-devel-3.16-1.oe2203.riscv64
+perl-ExtUtils-Command-7.62-1.oe2203.noarch
+perl-ExtUtils-Install-2.20-1.oe2203.noarch
+perl-ExtUtils-MakeMaker-7.62-1.oe2203.noarch
+perl-ExtUtils-Manifest-1.73-1.oe2203.noarch
+perl-ExtUtils-ParseXS-3.35-1.oe2203.noarch
+perl-Test-Harness-3.42-1.oe2203.noarch
+perl-Test-Simple-1.302188-1.oe2203.noarch
+perl-devel-5.34.0-6.oe2203.riscv64
+systemtap-sdt-devel-4.5-2.oe2203.riscv64
++ CHECK_RESULT 0 0 0 'Fail option: -l'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Fail option: -l'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpmdev-rmdevelrpms --qf test
++ grep 'Not removed due to dependencies'
+Not removed due to dependencies.
++ CHECK_RESULT 0 0 0 'Fail option: --qf'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Fail option: --qf'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpmdev-rmdevelrpms -y
++ grep 'Not removed due to dependencies'
+Not removed due to dependencies.
++ CHECK_RESULT 0 0 0 'Fail option: -y'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Fail option: -y'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpmdev-setuptree
++ test -d /root/rpmbuild
++ CHECK_RESULT 0 0 0 'Failed command: rpmdev-setuptree'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: rpmdev-setuptree'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ head -n 1
+++ awk '{print $1}'
+++ rpmdev-sha1 ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
++ sha1=c7ce758d3759723bbfa804eefd8214f4c0f178a8
+++ expr length c7ce758d3759723bbfa804eefd8214f4c0f178a8
++ sha1_num=40
++ test 40 == 40
++ CHECK_RESULT 0 0 0 'Failed command: rpmdev-sha1'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: rpmdev-sha1'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ head -n 1
+++ rpmdev-sha224 ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
+++ awk '{print $1}'
++ sha224=8d79f98b1523dc44e2c3efa3837768f758d50f3bbc6243eeff331fe0
+++ expr length 8d79f98b1523dc44e2c3efa3837768f758d50f3bbc6243eeff331fe0
++ sha224_num=56
++ test 56 == 56
++ CHECK_RESULT 0 0 0 'Failed command: rpmdev-sha224'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: rpmdev-sha224'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ rpmdev-sha256 ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
+++ head -n 1
+++ awk '{print $1}'
++ sha256=53fb14afdfec7ed898c829e2dd3686f4cf4b132c96da65e52c49025e2815eafc
+++ expr length 53fb14afdfec7ed898c829e2dd3686f4cf4b132c96da65e52c49025e2815eafc
++ sha256_num=64
++ test 64 == 64
++ CHECK_RESULT 0 0 0 'Failed command: rpmdev-sha256'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: rpmdev-sha256'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ head -n 1
+++ rpmdev-sha384 ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
+++ awk '{print $1}'
++ sha384=4d4a72b6d36194af1cdaee30f285145989339529ef9b879a77510669f62d1eabf13b130f11e4f0e4cfd4261fe7d1401f
+++ expr length 4d4a72b6d36194af1cdaee30f285145989339529ef9b879a77510669f62d1eabf13b130f11e4f0e4cfd4261fe7d1401f
++ sha384_num=96
++ test 96 == 96
++ CHECK_RESULT 0 0 0 'Failed command: rpmdev-sha384'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: rpmdev-sha384'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ head -n 1
+++ rpmdev-sha512 ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
+++ awk '{print $1}'
++ sha512=9ce4ce99f0a519b0651ad97ae71fd7f28ad01d06194a2c4243148b6fd2fa3846cf2e62a2f254f805fc9efe59b25da485f50ecba153a0c26efdaa6980100f6b49
+++ expr length 9ce4ce99f0a519b0651ad97ae71fd7f28ad01d06194a2c4243148b6fd2fa3846cf2e62a2f254f805fc9efe59b25da485f50ecba153a0c26efdaa6980100f6b49
++ sha512_num=128
++ test 128 == 128
++ CHECK_RESULT 0 0 0 'Failed command: rpmdev-sha512'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: rpmdev-sha512'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ rpmdev-sort
+++ ls ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
+++ wc -l
++ CHECK_RESULT 1 1 0 'Failed command: rpmdev-sort'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed command: rpmdev-sort'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ rpmdev-sort -h
++ grep -A 4 rpmdev-sort
++ grep 'Supported formats:'
+Supported formats:
++ CHECK_RESULT 0 0 0 'Failed option: rpmdev-sort -h'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: rpmdev-sort -h'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpmdev-sum ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
++ grep ModemManager-glib
+03825   237 ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
++ CHECK_RESULT 0 0 0 'Failed command: rpmdev-sum'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: rpmdev-sum'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 07:25:29 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 07:25:30 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 07:25:31 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpbqtbbwr_ ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpbqtbbwr_
++ '[' 0 -ne 0 ']'
++ rm -rf /root/rpmbuild ModemManager-glib-1.14.8-1.oe2203.riscv64.rpm
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 07:25:41 2023 - INFO  - End to restore the test environment.

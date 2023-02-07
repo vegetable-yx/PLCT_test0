@@ -1,0 +1,266 @@
++ source common/common_pcp.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 02:53:29 2023 - INFO  - Start to prepare the test environment.
++ deploy_env
++ DNF_INSTALL pcp
++ pkgs=pcp
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs pcp --node 1 --tempfile ''
++ tmpfile2=/tmp/tmptscxkvzo
++ '[' -z '' ']'
++ tmpfile=/tmp/tmptscxkvzo
++ systemctl enable pmcd
+Created symlink /etc/systemd/system/multi-user.target.wants/pmcd.service → /usr/lib/systemd/system/pmcd.service.
++ systemctl start pmcd
++ systemctl enable pmlogger
+Created symlink /etc/systemd/system/multi-user.target.wants/pmlogger.service → /usr/lib/systemd/system/pmlogger.service.
++ systemctl start pmlogger
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
+++ hostname
++ host_name=openEuler-riscv64
+++ rpm -qa pcp
+++ awk -F - '{print $2}'
++ pcp_version=5.3.5
++ DNF_INSTALL pcp-system-tools
++ pkgs=pcp-system-tools
++ node=1
++ '[' -z /tmp/tmptscxkvzo ']'
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs pcp-system-tools --node 1 --tempfile /tmp/tmptscxkvzo
++ tmpfile2=/tmp/tmptscxkvzo
++ '[' -z /tmp/tmptscxkvzo ']'
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 02:56:52 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 02:56:53 2023 - INFO  - Start to run test.
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ nohup /usr/libexec/pcp/bin/pcp-atop -o
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ grep process atop_o
+                   *** system and process activity since boot ***
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ nohup /usr/libexec/pcp/bin/pcp-atop -u
++ grep RUID atop_u
+NPROCS SYSCPU USRCPU  RSIZE  PSIZE  RDDSK  WRDSK  RNET  SNET  CPU RUID     
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 7
++ nohup /usr/libexec/pcp/bin/pcp-atop -p
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ grep SNET atop_p
+NPROCS SYSCPU USRCPU  RSIZE  PSIZE  RDDSK  WRDSK  RNET  SNET  CPU CMD            
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ nohup /usr/libexec/pcp/bin/pcp-atop -j
++ grep CID atop_j
+NPROCS SYSCPU USRCPU  RSIZE  PSIZE  RDDSK  WRDSK  RNET  SNET  CPU CID          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ nohup /usr/libexec/pcp/bin/pcp-atop -M
++ test -f atop_M
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ nohup /usr/libexec/pcp/bin/pcp-atop -D
++ grep DSK atop_D
+DSK |          vda | busy      6% | read    4982 | write  98590 | avio 3.41 ms |
+    PID SYSCPU USRCPU RDELAY  VGROW  RGROW  RDDSK  WRDSK  DSK CMD            
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ nohup /usr/libexec/pcp/bin/pcp-atop -N
++ grep NET atop_N
+NET | transport    | tcpi   30207 | tcpo   27096 | udpi    1631 | udpo    1638 |
+NET | network      | ipi    31873 | ipo    28794 | ipfrw      0 | deliv  31872 |
+NET | eth0      0% | pcki  281778 | pcko   25287 | si  515 Kbps | so    2 Kbps |
+NET | lo      ---- | pcki    3630 | pcko    3630 | si    0 Kbps | so    0 Kbps |
+    PID SYSCPU USRCPU RDELAY  VGROW  RGROW  RDDSK  WRDSK  NET CMD            
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 30
++ wait_time=30
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 30 --cmd '' --mode 1
++ nohup /usr/libexec/pcp/bin/pcp-atop -A
++ grep -E 'ACPU|AMEM' atop_A
+    PID SYSCPU USRCPU RDELAY  VGROW  RGROW  RDDSK  WRDSK AMEM CMD            
+    PID SYSCPU USRCPU RDELAY  VGROW  RGROW  RDDSK  WRDSK AMEM CMD            
+    PID SYSCPU USRCPU RDELAY  VGROW  RGROW  RDDSK  WRDSK AMEM CMD            
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ nohup /usr/libexec/pcp/bin/pcp-atop -w testdir -S -a
++ test -d testdir
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 02:58:17 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 02:58:18 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 02:58:19 2023 - INFO  - Start to restore the test environment.
++ rm -rf ./testdir atop_A atop_D atop_M atop_N atop_j atop_o atop_p atop_u atop_wSa
+++ pgrep -f /usr/libexec/pcp/bin/pcp-atop
++ kill -9 76205 76258 76420 76652 76701 76710 76713 76716 76719
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmptscxkvzo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmptscxkvzo
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76205 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -o > atop_o 2>&1
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76258 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -u > atop_u 2>&1
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76420 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -p > atop_p 2>&1
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76652 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -j > atop_j 2>&1
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76701 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -M > atop_M 2>&1
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76710 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -D > atop_D 2>&1
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76713 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -N > atop_N 2>&1
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76716 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -A > atop_A 2>&1
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97: 76719 Killed                  nohup /usr/libexec/pcp/bin/pcp-atop -w testdir -S -a > atop_wSa 2>&1
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 02:59:58 2023 - INFO  - End to restore the test environment.

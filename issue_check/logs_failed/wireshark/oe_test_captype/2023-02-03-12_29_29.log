@@ -1,0 +1,108 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 12:29:32 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL wireshark
++ pkgs=wireshark
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs wireshark --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpfw58jwqm
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpfw58jwqm
+++ rpm -qa wireshark
+++ awk -F - '{print$2}'
++ version=3.6.2
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Feb  3 12:34:49 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 12:34:50 2023 - INFO  - Start to run test.
++ captype --help
++ grep 'Usage: captype *'
+Usage: captype [options] <infile> ...
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ captype --version
++ grep 3.6.2
+Captype (Wireshark) 3.6.2 (Git commit 626020d9b3c3)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ awk -F . '{print $2}'
+++ dumpcap -D
+++ head -1
++ netCard=' eth0'
++ SLEEP_WAIT 10 'dumpcap -i  eth0 -c 20 -w testfile1' 2
++ wait_time=10
++ cmd='dumpcap -i  eth0 -c 20 -w testfile1'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 10 --cmd 'dumpcap -i  eth0 -c 20 -w testfile1' --mode 2
+Fri Feb  3 12:59:30 2023 - ERROR - Timeout : Command 'bash -x oe_test_captype.sh' timed out after 1799.998212905 seconds
+Capturing on 'eth0'
+File: testfile1
+
+Packets: 2 
+Packets: 3 
+Packets: 5 
+Packets: 6 
+Packets: 8 
+Packets: 10 
+Packets: 12 
+Packets: 13 
+Packets: 16 
+Packets: 18 
+Packets: 20 
+Packets captured: 20
+Packets received/dropped on interface 'eth0': 20/0 (pcap:0/dumpcap:0/flushed:0/ps_ifdrop:0) (100.0%)
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 12:59:32 2023 - INFO  - Start to restore the test environment.
++++ ls
++++ grep -v .sh
+++ rm -rf testfile1
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z /tmp/tmpfw58jwqm ]]
+++ '[' 0 -ne 0 ']'
+++ '[' 1 == 0 ']'
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpfw58jwqm

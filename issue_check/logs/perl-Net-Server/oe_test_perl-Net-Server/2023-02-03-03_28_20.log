@@ -1,0 +1,387 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Fri Feb  3 03:28:23 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL perl-Net-Server
++ pkgs=perl-Net-Server
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs perl-Net-Server --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp7k4dqacs
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp7k4dqacs
+++ GET_FREE_PORT 127.0.0.1
+++ ip=127.0.0.1
+++ start_port=1000
+++ end_port=10000
+++ python3 /root/mugen-riscv/libs/locallibs/free_port.py get --ip 127.0.0.1 --start 1000 --end 10000
++ port=4971
++ cat
++ chmod u+x app.cgi
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri Feb  3 03:28:54 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri Feb  3 03:28:55 2023 - INFO  - Start testing...
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server Fork port 4971
+2023/02/03-03:28:56 net_server (type Net::Server::Fork) starting! pid(1374)
+Resolved [*]:4971 to [::]:4971, IPv6
+Not including resolved host [0.0.0.0] IPv4 because it will be handled by [::] IPv6
+Binding to TCP port 4971 on host :: with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L42: Fork No Pass '
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L42: Fork No Pass '
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ killall perl
+2023/02/03-03:28:58 Server closing!
++ echo helloTest
++ net-server INET
++ grep 'net_server:.*You said "helloTest"'
+net_server:1946: You said "helloTest"
++ CHECK_RESULT 0 0 0 'L46: INET No Pass. Output Error.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L46: INET No Pass. Output Error.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 0 0 0 'L48: INET No Pass. Port 4971 still in use.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L48: INET No Pass. Port 4971 still in use.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server MultiType port 4971
+2023/02/03-03:29:00 net_server (type Net::Server::Fork -> MultiType -> Net::Server::Fork) starting! pid(2288)
+Resolved [*]:4971 to [::]:4971, IPv6
+Not including resolved host [0.0.0.0] IPv4 because it will be handled by [::] IPv6
+Binding to TCP port 4971 on host :: with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L53: MultiType No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L53: MultiType No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ killall perl
+2023/02/03-03:29:02 Server closing!
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server Multiplex port 4971
+2023/02/03-03:29:03 net_server (type Net::Server::Multiplex) starting! pid(2790)
+Resolved [*]:4971 to [::]:4971, IPv6
+Not including resolved host [0.0.0.0] IPv4 because it will be handled by [::] IPv6
+Binding to TCP port 4971 on host :: with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L59: Multiplex No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L59: Multiplex No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ killall perl
+2023/02/03-03:29:05 Server closing!
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server PreForkSimple port 4971
+2023/02/03-03:29:06 net_server (type Net::Server::PreForkSimple) starting! pid(3259)
+Resolved [*]:4971 to [::]:4971, IPv6
+Not including resolved host [0.0.0.0] IPv4 because it will be handled by [::] IPv6
+Binding to TCP port 4971 on host :: with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L65: PreForkSimple No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L65: PreForkSimple No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ killall perl
+2023/02/03-03:29:08 Server closing!
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server PreFork port 4971
+2023/02/03-03:29:09 net_server (type Net::Server::PreFork) starting! pid(3414)
+Resolved [*]:4971 to [::]:4971, IPv6
+Not including resolved host [0.0.0.0] IPv4 because it will be handled by [::] IPv6
+Binding to TCP port 4971 on host :: with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L71: PreFork No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L71: PreFork No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ killall perl
+2023/02/03-03:29:11 Server closing!
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server Single port 4971
+2023/02/03-03:29:11 net_server (type Net::Server::Single) starting! pid(3425)
+Resolved [*]:4971 to [::]:4971, IPv6
+Not including resolved host [0.0.0.0] IPv4 because it will be handled by [::] IPv6
+Binding to TCP port 4971 on host :: with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L77: Single No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L77: Single No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ killall perl
+2023/02/03-03:29:13 Server closing!
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server HTTP port 4971
+2023/02/03-03:29:14 net_server (type Net::Server::HTTP -> MultiType -> Net::Server::PreFork) starting! pid(3430)
+Resolved [*]:4971 to [::]:4971, IPv6
+Not including resolved host [0.0.0.0] IPv4 because it will be handled by [::] IPv6
+Binding to TCP port 4971 on host :: with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L83: Http No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L83: Http No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ killall perl
+2023/02/03-03:29:16 Server closing!
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server HTTP port 4971 app /root/mugen-riscv/testcases/cli-test/perl-Net-Server/app.cgi
+2023/02/03-03:29:17 net_server (type Net::Server::HTTP -> MultiType -> Net::Server::PreFork) starting! pid(3441)
+Resolved [*]:4971 to [::]:4971, IPv6
+Not including resolved host [0.0.0.0] IPv4 because it will be handled by [::] IPv6
+Binding to TCP port 4971 on host :: with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
+  Dispatch: /root/mugen-riscv/testcases/cli-test/perl-Net-Server/app.cgi => /root/mugen-riscv/testcases/cli-test/perl-Net-Server/app.cgi
+  Dispatch: / => /root/mugen-riscv/testcases/cli-test/perl-Net-Server/app.cgi (default)
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L89: app No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L89: app No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ grep 'Test success'
++ curl 127.0.0.1:4971
+Test success
++ CHECK_RESULT 0 0 0 'L91: app No Pass. Failed to get data from net-server'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L91: app No Pass. Failed to get data from net-server'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ killall perl
+2023/02/03-03:29:19 Server closing!
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server host localhost/IPv4 port 4971 app app.cgi
+2023/02/03-03:29:20 net_server (type Net::Server::Fork -> MultiType -> Net::Server::Fork) starting! pid(3456)
+Binding to TCP port 4971 on host localhost with IPv4
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 127.0.0.1
++ port=4971
++ ip=127.0.0.1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip 127.0.0.1
++ CHECK_RESULT 1 1 0 'L97: IPv4 No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L97: IPv4 No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ killall perl
+2023/02/03-03:29:22 Server closing!
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ net-server host localhost/IPv6 port 4971
+2023/02/03-03:29:23 net_server (type Net::Server::Fork -> MultiType -> Net::Server::Fork) starting! pid(3462)
+Binding to TCP port 4971 on host localhost with IPv6
+Group Not Defined.  Defaulting to EGID '0 0'
+User Not Defined.  Defaulting to EUID '0'
++ IS_FREE_PORT 4971 ::1
++ port=4971
++ ip=::1
++ python3 /root/mugen-riscv/libs/locallibs/free_port.py check --port 4971 --ip ::1
++ CHECK_RESULT 1 1 0 'L103: IPv6 No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L103: IPv6 No Pass'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri Feb  3 03:29:26 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 03:29:26 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri Feb  3 03:29:27 2023 - INFO  - start environment cleanup.
++ killall perl
+2023/02/03-03:29:27 Server closing!
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp7k4dqacs ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp7k4dqacs
++ '[' 0 -ne 0 ']'
++ rm -rf app.cgi
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri Feb  3 03:29:37 2023 - INFO  - Finish environment cleanup!

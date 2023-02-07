@@ -1,0 +1,127 @@
++ source ../common/common_easymock.sh
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb  7 17:39:52 2023 - INFO  - Start to prepare the test environment.
++ deploy_env
++ DNF_INSTALL 'easymock junit'
++ pkgs='easymock junit'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'easymock junit' --node 1 --tempfile ''
+Tue Feb  7 17:40:47 2023 - INFO  - pkgs:(easymock junit) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
+++ rpm -qa 'java*'
+++ grep 'java-.*-openjdk'
+++ awk -F - '{print $2}'
++ java_version='1.8.0
+1.8.0
+1.8.0'
++ DNF_INSTALL java-1.8.0 1.8.0 1.8.0-devel
++ pkgs=java-1.8.0
++ node=1.8.0
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs java-1.8.0 --node 1.8.0 --tempfile ''
+usage: rpm_manage.py install|remove [-h] [--node NODE] [--pkgs PKG] [--tempfile TEPMFILE]
+rpm_manage.py: error: argument --node: invalid int value: '1.8.0'
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb  7 17:41:20 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb  7 17:41:24 2023 - INFO  - Start to run test.
++ compile_java
+++ basename -a ./IStudent.java ./StudentApplication.java ./TestStudentApplication.java
++ params='IStudent.java
+StudentApplication.java
+TestStudentApplication.java'
++ javac -classpath '/usr/share/java/*:/usr/share/java/hamcrest/*:' -d . IStudent.java StudentApplication.java TestStudentApplication.java
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ execute_java
+++ basename ./TestStudentApplication.class ./TestStudentApplication.java
++ grep 'Unexpected method call IStudent.doMethod'
++ testname=TestStudentApplication.class
++ java -classpath '/usr/share/java/*:/usr/share/java/hamcrest/*:' org.junit.runner.JUnitCore TestStudentApplication
+  Unexpected method call IStudent.doMethod(2 (int)):
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb  7 17:44:26 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Feb  7 17:44:32 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb  7 17:44:39 2023 - INFO  - Start to restore the test environment.
++ clear_env
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Feb  7 17:44:45 2023 - WARN  - no thing to do.
++ return 0
+++ ls
+++ grep -vE '.sh|.java|.xml|expect_result|main|test'
++ rm -rf IStudent.class StudentApplication.class TestStudentApplication.class
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb  7 17:44:51 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,432 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 15:15:00 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL wireshark
++ pkgs=wireshark
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs wireshark --node 1 --tempfile ''
+Fri Feb  3 15:15:08 2023 - INFO  - pkgs:(wireshark) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Feb  3 15:15:09 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 15:15:09 2023 - INFO  - Start to run test.
+++ tshark -D
+++ awk -F . '{print $2}'
+oe_test_tshark_02.sh: line 28: tshark: command not found
+++ head -1
++ netCard=
++ SLEEP_WAIT 5 'tshark -i  -a duration:5 -w tsfile7' 2
++ wait_time=5
++ cmd='tshark -i  -a duration:5 -w tsfile7'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -i  -a duration:5 -w tsfile7' --mode 2
++ capinfos tsfile7
++ grep -E 'Capture duration:.*seconds|File name:.*tsfile7'
+oe_test_tshark_02.sh: line 30: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 31'
++ message='oe_test_tshark_02.sh line 31'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 31'
+Fri Feb  3 15:15:16 2023 - ERROR - oe_test_tshark_02.sh line 31
++ return 0
++ SLEEP_WAIT 5 'tshark -i  -a filesize:3 -w tsfile8' 2
++ wait_time=5
++ cmd='tshark -i  -a filesize:3 -w tsfile8'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -i  -a filesize:3 -w tsfile8' --mode 2
++ capinfos tsfile8
++ grep -E 'File size:.*bytes|File name:.*tsfile8'
+oe_test_tshark_02.sh: line 33: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 34'
++ message='oe_test_tshark_02.sh line 34'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 34'
+Fri Feb  3 15:15:23 2023 - ERROR - oe_test_tshark_02.sh line 34
++ return 0
++ SLEEP_WAIT 5 'tshark -i  -a files:3 -a filesize:2 -w tsfile9' 2
++ wait_time=5
++ cmd='tshark -i  -a files:3 -a filesize:2 -w tsfile9'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -i  -a files:3 -a filesize:2 -w tsfile9' --mode 2
+++ ls
+++ grep -c tsfile9_
++ CHECK_RESULT 0 3
++ actual_result=0
++ expect_result=3
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 3x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 36'
++ message='oe_test_tshark_02.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 36'
+Fri Feb  3 15:15:29 2023 - ERROR - oe_test_tshark_02.sh line 36
++ return 0
++ grep -E 'File size:.*bytes|File name:.*tsfile9_.*'
++ capinfos 'tsfile9_*'
+oe_test_tshark_02.sh: line 37: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 38'
++ message='oe_test_tshark_02.sh line 38'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 38'
+Fri Feb  3 15:15:30 2023 - ERROR - oe_test_tshark_02.sh line 38
++ return 0
++ expect
+spawn tshark -i -b duration:6 -w tsfile10
+couldn't execute "tshark": no such file or directory
+    while executing
+"spawn tshark -i  -b duration:6 -w tsfile10"
++ capinfos 'tsfile10_*'
++ grep -E 'Capture duration:.*seconds|File name:.*tsfile10_.*'
+oe_test_tshark_02.sh: line 43: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 44'
++ message='oe_test_tshark_02.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 44'
+Fri Feb  3 15:15:31 2023 - ERROR - oe_test_tshark_02.sh line 44
++ return 0
++ expect
+spawn tshark -i -b interval:1 -w tsfile11
+couldn't execute "tshark": no such file or directory
+    while executing
+"spawn tshark -i  -b interval:1 -w tsfile11"
++ capinfos 'tsfile11_*'
++ grep -E 'Capture duration:.*seconds|File name:.*tsfile11_.*'
+oe_test_tshark_02.sh: line 49: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 50'
++ message='oe_test_tshark_02.sh line 50'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 50'
+Fri Feb  3 15:15:32 2023 - ERROR - oe_test_tshark_02.sh line 50
++ return 0
++ expect
+spawn tshark -i -b filesize:2 -w tsfile12
+couldn't execute "tshark": no such file or directory
+    while executing
+"spawn tshark -i  -b filesize:2 -w tsfile12"
++ capinfos 'tsfile12_*'
++ grep -E 'File size:.*bytes|File name:.*tsfile12_.*'
+oe_test_tshark_02.sh: line 55: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 56'
++ message='oe_test_tshark_02.sh line 56'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 56'
+Fri Feb  3 15:15:33 2023 - ERROR - oe_test_tshark_02.sh line 56
++ return 0
++ expect
+spawn tshark -i -b files:2 -b filesize:1 -w tsfile13
+couldn't execute "tshark": no such file or directory
+    while executing
+"spawn tshark -i  -b files:2 -b filesize:1 -w tsfile13"
++ capinfos 'tsfile13_*'
++ grep -E 'File size:.*bytes|File name:.*tsfile13_.*'
+oe_test_tshark_02.sh: line 62: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 63'
++ message='oe_test_tshark_02.sh line 63'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 63'
+Fri Feb  3 15:15:34 2023 - ERROR - oe_test_tshark_02.sh line 63
++ return 0
+++ ls
+++ grep -c tsfile13_
++ CHECK_RESULT 0 2
++ actual_result=0
++ expect_result=2
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 2x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 64'
++ message='oe_test_tshark_02.sh line 64'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 64'
+Fri Feb  3 15:15:34 2023 - ERROR - oe_test_tshark_02.sh line 64
++ return 0
++ SLEEP_WAIT 5 'tshark -i 1 -c 50 -w anyFile' 2
++ wait_time=5
++ cmd='tshark -i 1 -c 50 -w anyFile'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -i 1 -c 50 -w anyFile' --mode 2
++ capinfos anyFile
++ grep -E 'Number of packets:.*50|File name:.*anyFile'
+oe_test_tshark_02.sh: line 66: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 67'
++ message='oe_test_tshark_02.sh line 67'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 67'
+Fri Feb  3 15:15:41 2023 - ERROR - oe_test_tshark_02.sh line 67
++ return 0
++ tshark -r anyFile
++ grep -E 'SSH|TCP|STP'
+oe_test_tshark_02.sh: line 68: tshark: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 69'
++ message='oe_test_tshark_02.sh line 69'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 69'
+Fri Feb  3 15:15:42 2023 - ERROR - oe_test_tshark_02.sh line 69
++ return 0
++ SLEEP_WAIT 5 'tshark -r anyFile -R "tcp.dstport==22" -2 -w tcpFile1' 2
++ wait_time=5
++ cmd='tshark -r anyFile -R "tcp.dstport==22" -2 -w tcpFile1'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -r anyFile -R "tcp.dstport==22" -2 -w tcpFile1' --mode 2
++ capinfos tcpFile1
+oe_test_tshark_02.sh: line 71: capinfos: command not found
++ grep 'File name:.*tcpFile1'
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 72'
++ message='oe_test_tshark_02.sh line 72'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 72'
+Fri Feb  3 15:15:48 2023 - ERROR - oe_test_tshark_02.sh line 72
++ return 0
++ SLEEP_WAIT 5 'tshark -r tcpFile1 | grep "TCP"' 2
++ wait_time=5
++ cmd='tshark -r tcpFile1 | grep "TCP"'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -r tcpFile1 | grep "TCP"' --mode 2
++ SLEEP_WAIT 5 'tshark -i  -n -c 20 -w tsfile14' 2
++ wait_time=5
++ cmd='tshark -i  -n -c 20 -w tsfile14'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -i  -n -c 20 -w tsfile14' --mode 2
++ capinfos tsfile14
++ grep -E 'File name:.*tsfile14|Number of packets:.*20'
+oe_test_tshark_02.sh: line 75: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 76'
++ message='oe_test_tshark_02.sh line 76'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 76'
+Fri Feb  3 15:16:02 2023 - ERROR - oe_test_tshark_02.sh line 76
++ return 0
++ SLEEP_WAIT 5 'tshark -i  -N m -c 20 -w tsfile15' 2
++ wait_time=5
++ cmd='tshark -i  -N m -c 20 -w tsfile15'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -i  -N m -c 20 -w tsfile15' --mode 2
++ capinfos tsfile15
++ grep -E 'File name:.*tsfile15|Number of packets:.*20'
+oe_test_tshark_02.sh: line 78: capinfos: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 79'
++ message='oe_test_tshark_02.sh line 79'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 79'
+Fri Feb  3 15:16:08 2023 - ERROR - oe_test_tshark_02.sh line 79
++ return 0
++ SLEEP_WAIT 5 'tshark -i  -d "tcp.port==8888,http" -c 20 -w tsfile16' 2
++ wait_time=5
++ cmd='tshark -i  -d "tcp.port==8888,http" -c 20 -w tsfile16'
++ mode=2
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd 'tshark -i  -d "tcp.port==8888,http" -c 20 -w tsfile16' --mode 2
++ capinfos tsfile16
+oe_test_tshark_02.sh: line 81: capinfos: command not found
++ grep 'File name:.*tsfile16'
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 82'
++ message='oe_test_tshark_02.sh line 82'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 82'
+Fri Feb  3 15:16:15 2023 - ERROR - oe_test_tshark_02.sh line 82
++ return 0
++ captype tsfile16
++ grep 'tsfile16: pcapng'
+oe_test_tshark_02.sh: line 83: captype: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_tshark_02.sh line 84'
++ message='oe_test_tshark_02.sh line 84'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_tshark_02.sh line 84'
+Fri Feb  3 15:16:16 2023 - ERROR - oe_test_tshark_02.sh line 84
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Fri Feb  3 15:16:16 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 16
++ test 16 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Feb  3 15:16:17 2023 - ERROR - failed to execute the case.
++ exit 16
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 15:16:18 2023 - INFO  - Start to restore the test environment.
+++ ls
+++ grep -v .sh
++ rm -rf
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri Feb  3 15:16:18 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Fri Feb  3 15:16:19 2023 - INFO  - Finish restoring the test environment.

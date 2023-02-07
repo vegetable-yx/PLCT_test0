@@ -1,0 +1,527 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Fri Feb  3 07:10:26 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL redis6
++ pkgs=redis6
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs redis6 --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp8p1hp222
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp8p1hp222
++ systemctl start redis
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Fri Feb  3 07:10:59 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Fri Feb  3 07:11:00 2023 - INFO  - Start executing testcase!
++ systemctl status redis
++ grep running
+     Active: active (running) since Fri 2023-02-03 07:10:58 CST; 1s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-benchmark -t set -n 1000000 -r 100000000
+SET: 0.00SET: 3391.63SET: 3445.53SET: 3459.74SET: 3466.73SET: 3476.42SET: 3480.05SET: 3483.98SET: 3486.21SET: 3487.07SET: 3488.97SET: 3491.05SET: 3492.77SET: 3493.94SET: 3494.79SET: 3495.40SET: 3495.80SET: 3492.33SET: 3493.97SET: 3491.27SET: 3489.04SET: 3491.26SET: 3487.61SET: 3488.83SET: 3489.79SET: 3490.35SET: 3491.32SET: 3492.45SET: 3493.43SET: 3493.73SET: 3494.33SET: 3494.77SET: 3494.87SET: 3495.50SET: 3495.58SET: 3495.53SET: 3495.60SET: 3496.25SET: 3497.45SET: 3496.30SET: 3496.59SET: 3496.28SET: 3496.14SET: 3495.95SET: 3495.14SET: 3494.68SET: 3494.28SET: 3493.77SET: 3493.69SET: 3493.29SET: 3493.27SET: 3493.44SET: 3493.38SET: 3493.28SET: 3493.25SET: 3492.94SET: 3492.61SET: 3491.98SET: 3491.77SET: 3491.81SET: 3491.82SET: 3492.02SET: 3491.63SET: 3491.48SET: 3491.83SET: 3492.45SET: 3492.83SET: 3493.00SET: 3493.16SET: 3492.86SET: 3492.79SET: 3492.64SET: 3492.60SET: 3492.87SET: 3493.24SET: 3492.51SET: 3492.71SET: 3492.93SET: 3493.02SET: 3493.04SET: 3493.15SET: 3493.21SET: 3493.10SET: 3493.11SET: 3492.91SET: 3492.87SET: 3492.98SET: 3492.88SET: 3492.76SET: 3492.08SET: 3488.78SET: 3489.01SET: 3487.82SET: 3488.12SET: 3487.95SET: 3487.89SET: 3486.59SET: 3485.40SET: 3485.15SET: 3485.18SET: 3485.22SET: 3485.45SET: 3485.28SET: 3485.54SET: 3485.59SET: 3485.67SET: 3485.80SET: 3486.38SET: 3487.24SET: 3487.96SET: 3488.84SET: 3489.55SET: 3490.35SET: 3491.13SET: 3491.63SET: 3492.23SET: 3493.04SET: 3493.79SET: 3494.48SET: 3495.14SET: 3495.92SET: 3496.58SET: 3497.22SET: 3497.75SET: 3498.45SET: 3499.10SET: 3499.64SET: 3500.20SET: 3500.82SET: 3501.32SET: 3502.00SET: 3502.48SET: 3502.94SET: 3503.66SET: 3504.14SET: 3504.61SET: 3505.13SET: 3505.64SET: 3506.13SET: 3506.64SET: 3507.20SET: 3507.73SET: 3508.23SET: 3508.49SET: 3509.08SET: 3509.48SET: 3509.93SET: 3510.35SET: 3510.76SET: 3511.09SET: 3511.80SET: 3512.35SET: 3512.83SET: 3513.49SET: 3513.97SET: 3514.42SET: 3514.92SET: 3515.46SET: 3516.00SET: 3516.30SET: 3516.76SET: 3517.20SET: 3517.62SET: 3517.98SET: 3518.36SET: 3518.79SET: 3519.22SET: 3519.72SET: 3520.10SET: 3520.54SET: 3520.98SET: 3521.38SET: 3521.86SET: 3522.27SET: 3522.75SET: 3523.06SET: 3523.48SET: 3523.79SET: 3524.26SET: 3524.52SET: 3524.77SET: 3525.05SET: 3525.37SET: 3525.54SET: 3525.88SET: 3526.14SET: 3526.45SET: 3526.73SET: 3526.96SET: 3527.31SET: 3527.60SET: 3527.75SET: 3528.02SET: 3528.32SET: 3528.59SET: 3528.74SET: 3529.05SET: 3529.32SET: 3529.54SET: 3529.76SET: 3530.02SET: 3530.11SET: 3530.42SET: 3530.64SET: 3530.83SET: 3531.21SET: 3531.42SET: 3531.57SET: 3531.75SET: 3532.00SET: 3532.21SET: 3532.36SET: 3532.65SET: 3532.85SET: 3533.06SET: 3533.26SET: 3533.56SET: 3533.80SET: 3534.01SET: 3534.19SET: 3534.48SET: 3534.71SET: 3534.98SET: 3535.09SET: 3535.29SET: 3535.47SET: 3535.67SET: 3535.78SET: 3536.00SET: 3536.20SET: 3536.35SET: 3536.46SET: 3536.65SET: 3536.40SET: 3536.32SET: 3536.05SET: 3536.00SET: 3536.17SET: 3536.33SET: 3536.54SET: 3536.66SET: 3536.84SET: 3536.96SET: 3537.02SET: 3537.15SET: 3537.24SET: 3537.35SET: 3537.43SET: 3537.56SET: 3537.69SET: 3537.90SET: 3538.08SET: 3538.21SET: 3538.33SET: 3538.55SET: 3538.61SET: 3538.80SET: 3538.88SET: 3539.04SET: 3539.10SET: 3539.32SET: 3539.52SET: 3539.64SET: 3539.78SET: 3539.90SET: 3540.08SET: 3540.27SET: 3540.37SET: 3540.54SET: 3540.64SET: 3540.78SET: 3540.91SET: 3541.07SET: 3541.21SET: 3541.37SET: 3541.50SET: 3541.69SET: 3541.81SET: 3542.02SET: 3542.08SET: 3542.26SET: 3542.42SET: 3542.55SET: 3542.65SET: 3542.82SET: 3542.95SET: 3543.11SET: 3543.26SET: 3543.44SET: 3543.65SET: 3543.86SET: 3544.00SET: 3544.26SET: 3544.41SET: 3543.68SET: 3542.81SET: 3543.33SET: 3543.53SET: 3543.76SET: 3543.93SET: 3544.11SET: 3544.24SET: 3544.47SET: 3544.60SET: 3544.81SET: 3544.99SET: 3545.17SET: 3545.36SET: 3545.63SET: 3545.77SET: 3545.93SET: 3546.08SET: 3546.22SET: 3546.42SET: 3546.59SET: 3546.68SET: 3546.89SET: 3547.06SET: 3547.18SET: 3547.34SET: 3547.45SET: 3547.56SET: 3547.75SET: 3547.85SET: 3548.00SET: 3548.14SET: 3548.26SET: 3548.40SET: 3548.56SET: 3548.70SET: 3548.81SET: 3548.96SET: 3549.08SET: 3549.17SET: 3549.32SET: 3548.84SET: 3547.52SET: 3546.16SET: 3545.54SET: 3545.52SET: 3545.57SET: 3545.51SET: 3545.52SET: 3545.55SET: 3545.56SET: 3545.61SET: 3545.48SET: 3545.22SET: 3545.05SET: 3544.94SET: 3543.85SET: 3543.52SET: 3543.34SET: 3543.21SET: 3543.05SET: 3542.81SET: 3540.22SET: 3537.36SET: 3534.70SET: 3531.46SET: 3530.97SET: 3529.56SET: 3527.68SET: 3527.59SET: 3527.54SET: 3527.47SET: 3527.39SET: 3526.69SET: 3526.18SET: 3525.95SET: 3525.98SET: 3525.95SET: 3525.83SET: 3525.65SET: 3525.62SET: 3525.50SET: 3525.65SET: 3525.83SET: 3525.95SET: 3525.99SET: 3526.19SET: 3526.23SET: 3526.25SET: 3526.28SET: 3526.28SET: 3526.30SET: 3526.27SET: 3526.29SET: 3526.35SET: 3526.40SET: 3526.41SET: 3526.44SET: 3526.47SET: 3526.51SET: 3526.56SET: 3526.46SET: 3526.36SET: 3526.26SET: 3525.05SET: 3524.93SET: 3524.90SET: 3524.82SET: 3524.61SET: 3524.48SET: 3524.02SET: 3523.89SET: 3523.74SET: 3523.59SET: 3523.46SET: 3523.37SET: 3523.22SET: 3523.10SET: 3522.96SET: 3522.19SET: 3522.09SET: 3521.93SET: 3521.22SET: 3521.20SET: 3521.16SET: 3521.13SET: 3521.14SET: 3521.12SET: 3521.08SET: 3521.06SET: 3521.04SET: 3521.01SET: 3520.96SET: 3520.99SET: 3520.99SET: 3521.00SET: 3521.06SET: 3521.05SET: 3521.03SET: 3521.06SET: 3521.05SET: 3521.02SET: 3520.94SET: 3520.93SET: 3520.88SET: 3520.88SET: 3520.80SET: 3520.79SET: 3520.79SET: 3520.78SET: 3520.79SET: 3520.78SET: 3520.76SET: 3520.74SET: 3520.76SET: 3520.73SET: 3520.70SET: 3520.67SET: 3520.65SET: 3520.63SET: 3520.61SET: 3520.63SET: 3520.58SET: 3520.55SET: 3520.53SET: 3520.56SET: 3520.58SET: 3520.61SET: 3520.61SET: 3520.59SET: 3520.64SET: 3520.66SET: 3520.67SET: 3520.68SET: 3520.70SET: 3520.71SET: 3520.70SET: 3520.70SET: 3520.73SET: 3520.70SET: 3520.66SET: 3520.66SET: 3520.68SET: 3520.67SET: 3520.56SET: 3520.55SET: 3520.55SET: 3520.50SET: 3520.43SET: 3520.38SET: 3520.36SET: 3520.35SET: 3520.37SET: 3520.36SET: 3520.34SET: 3520.31SET: 3520.34SET: 3520.27SET: 3520.26SET: 3520.24SET: 3520.23SET: 3520.21SET: 3520.21SET: 3520.17SET: 3520.16SET: 3520.14SET: 3520.12SET: 3520.09SET: 3520.08SET: 3520.03SET: 3519.98SET: 3519.95SET: 3519.92SET: 3519.91SET: 3519.86SET: 3519.83SET: 3519.77SET: 3519.75SET: 3519.70SET: 3519.68SET: 3519.70SET: 3519.71SET: 3519.69SET: 3519.70SET: 3519.73SET: 3519.75SET: 3519.74SET: 3519.72SET: 3519.71SET: 3519.67SET: 3519.66SET: 3519.62SET: 3519.61SET: 3519.58SET: 3519.54SET: 3519.49SET: 3519.49SET: 3519.45SET: 3519.42SET: 3518.84SET: 3517.69SET: 3516.20SET: 3516.20SET: 3516.22SET: 3516.25SET: 3516.22SET: 3516.23SET: 3516.21SET: 3516.22SET: 3516.20SET: 3516.22SET: 3516.22SET: 3516.25SET: 3516.25SET: 3516.25SET: 3516.25SET: 3516.08SET: 3516.08SET: 3516.07SET: 3515.54SET: 3515.28SET: 3515.33SET: 3514.60SET: 3514.61SET: 3514.62SET: 3514.56SET: 3514.53SET: 3514.49SET: 3514.47SET: 3513.99SET: 3513.29SET: 3513.23SET: 3513.20SET: 3513.14SET: 3513.11SET: 3513.08SET: 3513.08SET: 3513.11SET: 3513.11SET: 3513.10SET: 3513.11SET: 3513.11SET: 3513.14SET: 3513.11SET: 3513.11SET: 3513.13SET: 3512.71SET: 3512.48SET: 3511.90SET: 3511.75SET: 3511.07SET: 3511.06SET: 3511.08SET: 3511.13SET: 3511.18SET: 3511.17SET: 3511.17SET: 3511.14SET: 3511.14SET: 3510.33SET: 3509.51SET: 3509.26SET: 3509.39SET: 3509.52SET: 3509.68SET: 3509.89SET: 3510.08SET: 3510.23SET: 3510.41SET: 3510.70SET: 3510.97SET: 3511.23SET: 3511.53SET: 3511.83SET: 3512.12SET: 3512.41SET: 3512.71SET: 3512.97SET: 3513.29SET: 3512.76SET: 3512.54SET: 3512.71SET: 3512.85SET: 3512.96SET: 3513.17SET: 3513.41SET: 3513.64SET: 3513.89SET: 3514.14SET: 3514.42SET: 3514.66SET: 3514.93SET: 3515.20SET: 3515.46SET: 3515.69SET: 3515.96SET: 3516.20SET: 3516.43SET: 3516.72SET: 3516.99SET: 3517.27SET: 3517.55SET: 3517.80SET: 3518.06SET: 3518.21SET: 3518.40SET: 3518.49SET: 3518.65SET: 3518.76SET: 3518.94SET: 3519.13SET: 3519.30SET: 3519.50SET: 3519.65SET: 3519.84SET: 3519.98SET: 3520.15SET: 3520.30SET: 3520.47SET: 3520.63SET: 3520.78SET: 3520.92SET: 3521.05SET: 3521.14SET: 3521.21SET: 3521.33SET: 3521.45SET: 3521.55SET: 3521.27SET: 3521.26SET: 3521.26SET: 3521.26SET: 3521.28SET: 3521.24SET: 3521.26SET: 3521.25SET: 3521.24SET: 3521.19SET: 3521.17SET: 3521.14SET: 3521.14SET: 3521.12SET: 3521.05SET: 3521.04SET: 3521.00SET: 3520.97SET: 3520.93SET: 3520.87SET: 3520.85SET: 3520.83SET: 3520.80SET: 3520.79SET: 3520.80SET: 3520.77SET: 3520.80SET: 3520.81SET: 3520.84SET: 3520.87SET: 3520.88SET: 3520.92SET: 3520.93SET: 3520.92SET: 3520.96SET: 3520.98SET: 3521.00SET: 3521.03SET: 3521.05SET: 3521.06SET: 3521.09SET: 3521.14SET: 3521.19SET: 3521.23SET: 3521.26SET: 3521.27SET: 3521.30SET: 3521.30SET: 3521.34SET: 3521.31SET: 3521.29SET: 3521.30SET: 3521.33SET: 3521.32SET: 3521.35SET: 3521.35SET: 3521.37SET: 3521.39SET: 3521.43SET: 3521.45SET: 3521.45SET: 3521.38SET: 3521.38SET: 3521.33SET: 3521.31SET: 3521.28SET: 3521.24SET: 3521.05SET: 3521.00SET: 3520.95SET: 3520.89SET: 3520.83SET: 3520.68SET: 3520.65SET: 3520.62SET: 3520.56SET: 3520.54SET: 3520.49SET: 3520.47SET: 3520.44SET: 3520.43SET: 3520.42SET: 3520.41SET: 3520.38SET: 3520.36SET: 3520.35SET: 3520.34SET: 3520.35SET: 3520.39SET: 3520.40SET: 3520.41SET: 3520.45SET: 3520.45SET: 3520.48SET: 3520.49SET: 3520.50SET: 3520.53SET: 3520.54SET: 3520.54SET: 3520.56SET: 3520.56SET: 3520.57SET: 3520.57SET: 3520.57SET: 3520.58SET: 3520.62SET: 3520.56SET: 3520.54SET: 3520.54SET: 3520.53SET: 3520.40SET: 3520.17SET: 3520.14SET: 3520.11SET: 3520.09SET: 3520.07SET: 3520.03SET: 3519.98SET: 3519.94SET: 3519.90SET: 3519.85SET: 3519.80SET: 3519.76SET: 3519.76SET: 3519.73SET: 3519.69SET: 3519.68SET: 3519.65SET: 3519.66SET: 3519.66SET: 3519.67SET: 3519.69SET: 3519.70SET: 3519.69SET: 3519.71SET: 3519.73SET: 3519.73SET: 3519.75SET: 3519.75SET: 3519.78SET: 3519.78SET: 3519.77SET: 3519.80SET: 3519.80SET: 3519.81SET: 3519.82SET: 3519.83SET: 3519.83SET: 3519.82SET: 3519.83SET: 3519.86SET: 3519.82SET: 3519.82SET: 3519.39SET: 3519.40SET: 3519.38SET: 3519.38SET: 3519.37SET: 3519.35SET: 3519.36SET: 3519.38SET: 3519.37SET: 3519.37SET: 3519.32SET: 3519.31SET: 3519.28SET: 3519.26SET: 3519.22SET: 3519.21SET: 3519.21SET: 3519.20SET: 3518.88SET: 3518.76SET: 3518.82SET: 3518.88SET: 3518.95SET: 3519.01SET: 3519.07SET: 3519.14SET: 3519.19SET: 3519.23SET: 3519.31SET: 3519.40SET: 3519.48SET: 3519.55SET: 3519.62SET: 3519.69SET: 3519.75SET: 3519.83SET: 3519.91SET: 3520.00SET: 3520.08SET: 3520.19SET: 3520.25SET: 3520.32SET: 3520.39SET: 3520.44SET: 3520.51SET: 3520.60SET: 3520.68SET: 3520.74SET: 3520.82SET: 3520.90SET: 3520.98SET: 3521.04SET: 3521.10SET: 3521.16SET: 3521.23SET: 3521.30SET: 3521.36SET: 3521.42SET: 3521.47SET: 3521.53SET: 3521.59SET: 3521.67SET: 3521.74SET: 3521.80SET: 3521.86SET: 3521.93SET: 3522.02SET: 3522.08SET: 3522.15SET: 3522.23SET: 3522.32SET: 3522.38SET: 3522.42SET: 3522.51SET: 3522.59SET: 3522.66SET: 3522.73SET: 3522.80SET: 3522.87SET: 3522.96SET: 3523.03SET: 3523.09SET: 3523.17SET: 3523.25SET: 3523.25SET: 3523.29SET: 3523.34SET: 3523.36SET: 3523.37SET: 3523.41SET: 3523.43SET: 3523.48SET: 3523.50SET: 3523.56SET: 3523.61SET: 3523.65SET: 3523.70SET: 3523.73SET: 3523.80SET: 3523.84SET: 3523.86SET: 3523.91SET: 3523.95SET: 3524.00SET: 3524.02SET: 3524.06SET: 3524.09SET: 3524.13SET: 3524.17SET: 3524.22SET: 3524.28SET: 3524.32SET: 3524.34SET: 3524.38SET: 3524.44SET: 3524.47SET: 3524.49SET: 3524.55SET: 3524.59SET: 3524.60SET: 3524.63SET: 3524.67SET: 3524.72SET: 3524.77SET: 3524.81SET: 3524.87SET: 3524.92SET: 3524.94SET: 3524.98SET: 3525.02SET: 3525.06SET: 3525.11SET: 3525.13SET: 3525.18SET: 3525.22SET: 3525.26SET: 3525.28SET: 3525.32SET: 3525.37SET: 3525.38SET: 3525.43SET: 3525.48SET: 3525.52SET: 3525.54SET: 3525.56SET: 3525.61SET: 3525.63SET: 3525.66SET: 3525.68SET: 3525.72SET: 3525.74SET: 3525.74SET: 3525.77SET: 3525.81SET: 3525.86SET: 3525.87SET: 3525.75SET: 3525.82SET: 3525.84SET: 3525.84SET: 3525.83SET: 3525.81SET: 3525.81SET: 3525.76SET: 3525.75SET: 3525.71SET: 3525.68SET: 3525.64SET: 3525.63SET: 3525.58SET: 3525.59SET: 3525.60SET: 3525.63SET: 3525.66SET: 3525.69SET: 3525.70SET: 3525.75SET: 3525.79SET: 3525.84SET: 3525.86SET: 3525.88SET: 3525.92SET: 3525.94SET: 3525.96SET: 3525.99SET: 3526.03SET: 3526.08SET: 3526.09SET: 3526.15SET: 3526.18SET: 3526.21SET: 3526.23SET: 3526.28SET: 3526.34SET: 3526.36SET: 3526.39SET: 3526.42SET: 3526.45SET: 3526.49SET: 3526.51SET: 3526.54SET: 3526.56SET: 3526.59SET: 3526.60SET: 3526.64SET: 3526.67SET: 3526.70SET: 3526.72SET: 3526.76SET: 3526.77SET: 3526.82SET: 3526.83SET: 3526.88SET: 3526.92SET: 3526.94SET: 3526.95SET: 3526.96SET: 3527.00SET: 3527.03SET: 3527.06SET: 3527.09SET: 3527.12SET: 3527.16SET: 3527.17SET: 3527.20SET: 3527.24SET: 3527.27SET: 3527.28SET: 3527.31SET: 3527.32SET: 3527.36SET: 3527.40SET: 3527.40SET: 3527.42SET: 3527.46SET: 3527.49SET: 3527.53SET: 3527.56SET: 3527.59SET: 3527.61SET: 3527.63SET: 3527.66SET: 3527.71SET: 3527.71SET: 3527.72SET: 3527.74SET: 3527.78SET: 3527.79SET: 3527.83SET: 3527.86SET: 3527.91SET: 3527.91SET: 3527.94SET: 3527.94SET: 3527.95SET: 3527.94SET: 3527.96SET: 3527.96SET: 3527.98SET: 3527.95SET: 3527.68SET: 3527.66SET: 3527.64SET: 3527.62SET: 3527.62SET: 3527.57SET: 3527.56SET: 3527.53SET: 3527.52SET: 3527.51SET: 3527.43SET: 3526.85SET: 3526.73SET: 3526.54SET: 3525.89SET: 3525.07SET: 3525.03SET: 3525.00SET: 3524.81SET: 3523.61SET: 3522.41SET: 3521.67SET: 3520.42SET: 3520.29SET: 3519.48SET: 3519.26SET: 3519.27SET: 3519.27SET: 3519.29SET: 3519.30SET: 3519.31SET: 3519.33SET: 3519.26SET: 3518.71SET: 3518.62SET: 3518.62SET: 3518.63SET: 3518.58SET: 3517.95SET: 3517.97SET: 3517.76SET: 3517.57SET: 3517.66SET: 3517.80SET: 3517.94SET: 3518.10SET: 3518.18SET: 3518.31SET: 3518.44====== SET ======
+  1000000 requests completed in 284.21 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+  host configuration "save": 900 1 300 10 60 10000
+  host configuration "appendonly": no
+  multi-thread: no
+
+0.00% <= 4 milliseconds
+0.00% <= 5 milliseconds
+0.02% <= 6 milliseconds
+8.01% <= 7 milliseconds
+95.58% <= 8 milliseconds
+97.48% <= 9 milliseconds
+97.95% <= 10 milliseconds
+98.32% <= 11 milliseconds
+98.63% <= 12 milliseconds
+99.01% <= 13 milliseconds
+99.36% <= 14 milliseconds
+99.54% <= 15 milliseconds
+99.67% <= 16 milliseconds
+99.76% <= 17 milliseconds
+99.83% <= 18 milliseconds
+99.89% <= 19 milliseconds
+99.92% <= 20 milliseconds
+99.95% <= 21 milliseconds
+99.96% <= 22 milliseconds
+99.97% <= 23 milliseconds
+99.98% <= 24 milliseconds
+99.98% <= 25 milliseconds
+99.99% <= 26 milliseconds
+100.00% <= 27 milliseconds
+100.00% <= 28 milliseconds
+100.00% <= 29 milliseconds
+100.00% <= 30 milliseconds
+100.00% <= 31 milliseconds
+100.00% <= 31 milliseconds
+3518.48 requests per second
+
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-benchmark -t ping,set,get -n 100000 --csv
+"PING_INLINE","3571.68"
+"PING_BULK","3583.46"
+"SET","3647.64"
+"GET","3639.67"
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-benchmark -r 10000 -n 10000 eval 'return redis.call("ping")' 0
+eval return redis.call("ping") 0: 0.00eval return redis.call("ping") 0: 3503.82eval return redis.call("ping") 0: 3618.68eval return redis.call("ping") 0: 3646.60eval return redis.call("ping") 0: 3665.02eval return redis.call("ping") 0: 3676.68eval return redis.call("ping") 0: 3686.02eval return redis.call("ping") 0: 3689.30eval return redis.call("ping") 0: 3691.62eval return redis.call("ping") 0: 3693.87eval return redis.call("ping") 0: 3698.85====== eval return redis.call("ping") 0 ======
+  10000 requests completed in 2.70 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+  host configuration "save": 900 1 300 10 60 10000
+  host configuration "appendonly": no
+  multi-thread: no
+
+0.01% <= 6 milliseconds
+0.79% <= 7 milliseconds
+9.00% <= 8 milliseconds
+22.41% <= 9 milliseconds
+34.86% <= 10 milliseconds
+55.54% <= 11 milliseconds
+67.00% <= 12 milliseconds
+75.23% <= 13 milliseconds
+81.97% <= 14 milliseconds
+88.73% <= 15 milliseconds
+95.24% <= 16 milliseconds
+97.74% <= 17 milliseconds
+99.60% <= 18 milliseconds
+99.88% <= 19 milliseconds
+99.94% <= 20 milliseconds
+99.98% <= 21 milliseconds
+99.99% <= 22 milliseconds
+100.00% <= 22 milliseconds
+3700.96 requests per second
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-benchmark -r 10000 -n 10000 lpush mylist __rand_int__
+lpush mylist __rand_int__: 0.00lpush mylist __rand_int__: 3500.00lpush mylist __rand_int__: 3580.77lpush mylist __rand_int__: 3613.70lpush mylist __rand_int__: 3624.88lpush mylist __rand_int__: 3629.57lpush mylist __rand_int__: 3638.08lpush mylist __rand_int__: 3641.58lpush mylist __rand_int__: 3645.02lpush mylist __rand_int__: 3648.85lpush mylist __rand_int__: 3651.53====== lpush mylist __rand_int__ ======
+  10000 requests completed in 2.74 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+  host configuration "save": 900 1 300 10 60 10000
+  host configuration "appendonly": no
+  multi-thread: no
+
+0.01% <= 5 milliseconds
+0.02% <= 6 milliseconds
+41.87% <= 7 milliseconds
+98.71% <= 8 milliseconds
+99.49% <= 9 milliseconds
+99.57% <= 10 milliseconds
+99.65% <= 11 milliseconds
+99.78% <= 12 milliseconds
+99.88% <= 13 milliseconds
+99.96% <= 14 milliseconds
+100.00% <= 14 milliseconds
+3650.97 requests per second
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat /etc/passwd
++ redis-cli -x set mypasswd
++ grep OK
+OK
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-cli get mypasswd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+unbound:x:998:995:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+dbus:x:81:81:D-Bus:/var/run/dbus:/sbin/nologin
+polkitd:x:997:994:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+systemd-timesync:x:996:993:systemd Time Synchronization:/:/sbin/nologin
+systemd-network:x:991:991:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+openeuler:x:1000:1000::/home/openeuler:/bin/bash
+redis:x:989:989:Redis Database Server:/var/lib/redis:/sbin/nologin
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-cli -r 100 lpush mylist x
+10001
+10002
+10003
+10004
+10005
+10006
+10007
+10008
+10009
+10010
+10011
+10012
+10013
+10014
+10015
+10016
+10017
+10018
+10019
+10020
+10021
+10022
+10023
+10024
+10025
+10026
+10027
+10028
+10029
+10030
+10031
+10032
+10033
+10034
+10035
+10036
+10037
+10038
+10039
+10040
+10041
+10042
+10043
+10044
+10045
+10046
+10047
+10048
+10049
+10050
+10051
+10052
+10053
+10054
+10055
+10056
+10057
+10058
+10059
+10060
+10061
+10062
+10063
+10064
+10065
+10066
+10067
+10068
+10069
+10070
+10071
+10072
+10073
+10074
+10075
+10076
+10077
+10078
+10079
+10080
+10081
+10082
+10083
+10084
+10085
+10086
+10087
+10088
+10089
+10090
+10091
+10092
+10093
+10094
+10095
+10096
+10097
+10098
+10099
+10100
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-cli -r 100 -i 1 info
++ grep used_memory_human:
++ grep used_memory_human
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
+used_memory_human:77.32M
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-cli --scan --pattern '*:12345*'
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-cli -h 127.0.0.1 -p 6379 set hello world
++ grep OK
+OK
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ redis-cli -h 127.0.0.1 -p 6379 get hello
++ grep world
+world
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of testcase execution!'
++ message='End of testcase execution!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of testcase execution!'
+Fri Feb  3 07:20:17 2023 - INFO  - End of testcase execution!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 07:20:17 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start environment cleanup.'
++ message='Start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environment cleanup.'
+Fri Feb  3 07:20:18 2023 - INFO  - Start environment cleanup.
++ rm -rf testlog
++ systemctl stop redis
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp8p1hp222 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp8p1hp222
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup.'
++ message='Finish environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup.'
+Fri Feb  3 07:20:37 2023 - INFO  - Finish environment cleanup.

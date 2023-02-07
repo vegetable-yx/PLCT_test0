@@ -1,0 +1,401 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Feb  2 23:46:19 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'openmpi openmpi-devel nfs-utils nfs-utils-devel'
++ pkgs='openmpi openmpi-devel nfs-utils nfs-utils-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'openmpi openmpi-devel nfs-utils nfs-utils-devel' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpi8l18f_0
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpi8l18f_0
++ SSH_CMD 'dnf -y install openmpi openmpi-devel nfs-utils nfs-utils-devel' '' '' ''
++ cmd='dnf -y install openmpi openmpi-devel nfs-utils nfs-utils-devel'
++ remoteip=
++ remotepasswd=
++ remoteuser=
++ timeout=300
++ connport=22
++ bash /root/mugen-riscv/libs/locallibs/sshcmd.sh -c 'dnf -y install openmpi openmpi-devel nfs-utils nfs-utils-devel' -i '' -u '' -p '' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Thu Feb  2 23:48:53 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
+++ whereis openmpi
+++ awk '{print$2}'
++ mpi_path=/usr/lib64/openmpi
++ echo 'export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib64/openmpi/bin'
++ echo 'export LD_LIBRARY_PATH=:/usr/lib64/openmpi'
++ source /root/.bashrc
+++ alias 'rm=rm -i'
+++ alias 'cp=cp -i'
+++ alias 'mv=mv -i'
+++ '[' -f /etc/bashrc ']'
+++ . /etc/bashrc
++++ '[' -z '' ']'
++++ BASHRCSOURCED=Y
++++ '[' '' ']'
++++ shopt -q login_shell
++++ '[' 0 -gt 199 ']'
++++ umask 022
++++ SHELL=/bin/bash
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/color.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/color.sh
+++++ alias 'ls=ls --color=auto'
+++++ alias 'll=ls -lh'
+++++ alias 'la=ls -lAh'
+++++ alias 'l.=ls -d .* --color=auto'
+++++ alias 'grep=grep --color=auto'
+++++ alias 'egrep=egrep --color=auto'
+++++ alias 'fgrep=fgrep --color=auto'
+++++ alias 'zgrep=zgrep --color=auto'
+++++ alias 'zfgrep=zfgrep --color=auto'
+++++ alias 'zegrep=zegrep --color=auto'
+++++ alias 'xzgrep=xzgrep --color=auto'
+++++ alias 'xzfgrep=xzfgrep --color=auto'
+++++ alias 'xzegrep=xzegrep --color=auto'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/gawk.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/gawk.sh
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/lang.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/lang.sh
+++++ unset LANG_backup
++++++ /usr/bin/locale
+++++ '[' -n '' ']'
+++++ LANG_backup=
+++++ for config in /etc/locale.conf "${HOME}/.i18n"
+++++ '[' -f /etc/locale.conf ']'
+++++ for config in /etc/locale.conf "${HOME}/.i18n"
+++++ '[' -f /root/.i18n ']'
+++++ '[' -n '' ']'
+++++ unset LANG_backup config
+++++ '[' -n '' ']'
+++++ '[' -n '' ']'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/modules.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/modules.sh
+++++ '[' -n /usr/bin/bash ']'
+++++ shell=bash
+++++ '[' -f /usr/share/Modules/init/bash ']'
+++++ . /usr/share/Modules/init/bash
++++++ unset _mlshdbg
++++++ '[' 0 = 1 ']'
++++++ export 'MODULES_RUN_QUARANTINE=LD_LIBRARY_PATH LD_PRELOAD'
++++++ MODULES_RUN_QUARANTINE='LD_LIBRARY_PATH LD_PRELOAD'
++++++ unset _mlre _mlIFS
++++++ '[' -n x ']'
++++++ _mlIFS=' 	
+'
++++++ IFS=' '
++++++ for _mlv in ${MODULES_RUN_QUARANTINE:-}
++++++ '[' LD_LIBRARY_PATH = LD_LIBRARY_PATH -a LD_LIBRARY_PATH = LD_LIBRARY_PATH ']'
+++++++ eval 'echo ${LD_LIBRARY_PATH+x}'
++++++++ echo
++++++ '[' -n '' ']'
++++++ _mlrv=MODULES_RUNENV_LD_LIBRARY_PATH
+++++++ eval 'echo ${MODULES_RUNENV_LD_LIBRARY_PATH:-}'
++++++++ echo
++++++ _mlre='LD_LIBRARY_PATH='\'''\'' '
++++++ for _mlv in ${MODULES_RUN_QUARANTINE:-}
++++++ '[' LD_PRELOAD = LD_PRELOAD -a LD_PRELOAD = LD_PRELOAD ']'
+++++++ eval 'echo ${LD_PRELOAD+x}'
++++++++ echo
++++++ '[' -n '' ']'
++++++ _mlrv=MODULES_RUNENV_LD_PRELOAD
+++++++ eval 'echo ${MODULES_RUNENV_LD_PRELOAD:-}'
++++++++ echo
++++++ _mlre='LD_LIBRARY_PATH='\'''\'' LD_PRELOAD='\'''\'' '
++++++ '[' -n 'LD_LIBRARY_PATH='\'''\'' LD_PRELOAD='\'''\'' ' ']'
++++++ _mlre='eval LD_LIBRARY_PATH='\'''\'' LD_PRELOAD='\'''\'' __MODULES_QUARANTINE_SET=1 '
+++++++ eval 'LD_LIBRARY_PATH='\'''\''' 'LD_PRELOAD='\'''\''' __MODULES_QUARANTINE_SET=1 /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash autoinit
++++++++ LD_LIBRARY_PATH=
++++++++ LD_PRELOAD=
++++++++ __MODULES_QUARANTINE_SET=1
++++++++ /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash autoinit
++++++ _mlcode='module() {
+   eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;
+   _mlstatus=$?;
+   return $_mlstatus;
+};
+ml() { module ml "$@"; };
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl; export MODULES_CMD;
+unset __MODULES_AUTOINIT_INPROGRESS;
+MODULESHOME=/usr/share/Modules; export MODULESHOME;
+LOADEDMODULES=; export LOADEDMODULES;
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles; export MODULEPATH;
+test 0;'
++++++ _mlret=0
++++++ '[' -n x ']'
++++++ IFS=' 	
+'
++++++ unset _mlIFS
++++++ unset _mlre _mlv _mlrv
++++++ '[' 0 -eq 0 ']'
++++++ eval 'module() {
+   eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;
+   _mlstatus=$?;
+   return $_mlstatus;
+};
+ml() { module ml "$@"; };
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl; export MODULES_CMD;
+unset __MODULES_AUTOINIT_INPROGRESS;
+MODULESHOME=/usr/share/Modules; export MODULESHOME;
+LOADEDMODULES=; export LOADEDMODULES;
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles; export MODULEPATH;
+test 0;'
+++++++ MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
+++++++ export MODULES_CMD
+++++++ unset __MODULES_AUTOINIT_INPROGRESS
+++++++ MODULESHOME=/usr/share/Modules
+++++++ export MODULESHOME
+++++++ LOADEDMODULES=
+++++++ export LOADEDMODULES
+++++++ MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
+++++++ export MODULEPATH
+++++++ test 0
++++++ '[' -t 2 ']'
++++++ export -f module
+++++++ type -t ml
++++++ '[' function = function ']'
++++++ export -f ml
++++++ '[' 5 -ge 3 ']'
++++++ [[ hxB =~ i ]]
++++++ [[ ! :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin: =~ :/usr/share/Modules/bin: ]]
++++++ PATH=/usr/share/Modules/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++++ export PATH
++++++ '[' '!' -n '' ']'
++++++ MANPATH=:
++++++ export MANPATH
+++++++ manpath
++++++ [[ ! :/usr/local/share/man:/usr/share/man:: =~ :/usr/share/man: ]]
++++++ unset _mlcode _mlret
++++++ '[' -n '' ']'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/system-info.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/system-info.sh
++++++ uname -r
+++++ welcome=5.10.0-10.oe2203.riscv64
++++++ cat /proc/meminfo
++++++ awk '/^MemTotal:/ {printf($2)}'
+++++ memory_total=8222676
++++++ cat /proc/meminfo
++++++ awk '/^MemFree:/ { printf($2)}'
+++++ memory_free=7704448
++++++ cat /proc/meminfo
++++++ awk '/^Buffers:/ { printf($2)}'
+++++ buffers=17592
++++++ cat /proc/meminfo
++++++ awk '/^Cached:/ { printf($2)}'
+++++ cached=390704
++++++ cat /proc/meminfo
++++++ awk '/^SReclaimable:/ { printf($2)}'
+++++ sreclaimable=29484
++++++ cat /proc/meminfo
++++++ awk '/^SwapTotal:/ { printf($2)}'
+++++ swap_total=0
++++++ cat /proc/meminfo
++++++ awk '/^SwapFree:/ { printf($2)}'
+++++ swap_free=0
+++++ '[' 8222676 -gt 0 ']'
++++++ echo 'scale=1; (8222676 - 7704448 - 17592 - 390704 - 29484) * 100.0 / 8222676'
++++++ bc
+++++ memory_usage=.9
+++++ memory_usage=.9%
+++++ '[' 0 -gt 0 ']'
+++++ swap_mem=0.0%
++++++ df -h /
++++++ awk '/\// {print $(NF-1)}'
+++++ usageof=8%
++++++ awk '{print $1}' /proc/loadavg
+++++ load_average=2.11
++++++ whoami
+++++ whoiam=root
++++++ date
+++++ time_cur='Thu Feb  2 23:48:54 CST 2023'
++++++ ps aux
++++++ wc -l
+++++ processes=129
++++++ users
++++++ wc -w
+++++ user_num=0
+++++ ip_pre=
+++++ '[' -x /sbin/ip ']'
++++++ /sbin/ip a
++++++ grep inet
++++++ grep -v 127.0.0.1
++++++ grep -v inet6
++++++ awk '{print $2}'
+++++ ip_pre=10.0.2.15/24
+++++ echo -e '\n'
+++++ echo -e 'Welcome to 5.10.0-10.oe2203.riscv64\n'
+++++ echo -e 'System information as of time: \tThu Feb  2 23:48:54 CST 2023\n'
+++++ echo -e 'System load: \t\033[0;33;40m2.11\033[0m'
+++++ echo -e 'Processes: \t129'
+++++ echo -e 'Memory used: \t.9%'
+++++ echo -e 'Swap used: \t0.0%'
+++++ echo -e 'Usage On: \t8%'
+++++ for line in $ip_pre
+++++ ip_address=10.0.2.15
+++++ echo -e 'IP address: \t10.0.2.15'
+++++ echo -e 'Users online: \t0'
+++++ '[' root == root ']'
+++++ echo -e '\n'
++++ unset i
++++ unset -f pathmunge
+++ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib64/openmpi/bin
+++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib64/openmpi/bin
+++ export LD_LIBRARY_PATH=:/usr/lib64/openmpi
+++ LD_LIBRARY_PATH=:/usr/lib64/openmpi
++ hostname node1
++ echo '127.0.0.1 node1'
++ echo ' node2'
++ SSH_CMD '
+    echo '\''export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib64/openmpi/bin:/usr/lib64/openmpi/bin\nexport LD_LIBRARY_PATH=:/usr/lib64/openmpi:/usr/lib64/openmpi'\'' >> ~/.bashrc
+    source ~/.bashrc
+    hostname node2;
+    echo '\''127.0.0.1 node1\n node2'\'' >> /etc/hosts;
+    ' '' '' ''
++ cmd='
+    echo '\''export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib64/openmpi/bin:/usr/lib64/openmpi/bin\nexport LD_LIBRARY_PATH=:/usr/lib64/openmpi:/usr/lib64/openmpi'\'' >> ~/.bashrc
+    source ~/.bashrc
+    hostname node2;
+    echo '\''127.0.0.1 node1\n node2'\'' >> /etc/hosts;
+    '
++ remoteip=
++ remotepasswd=
++ remoteuser=
++ timeout=300
++ connport=22
++ bash /root/mugen-riscv/libs/locallibs/sshcmd.sh -c '
+    echo '\''export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib64/openmpi/bin:/usr/lib64/openmpi/bin\nexport LD_LIBRARY_PATH=:/usr/lib64/openmpi:/usr/lib64/openmpi'\'' >> ~/.bashrc
+    source ~/.bashrc
+    hostname node2;
+    echo '\''127.0.0.1 node1\n node2'\'' >> /etc/hosts;
+    ' -i '' -u '' -p '' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Thu Feb  2 23:48:56 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ ping -c 3 node2
+PING node2 (127.0.0.2) 56(84) bytes of data.
+64 bytes from node1 (127.0.0.2): icmp_seq=1 ttl=64 time=1.97 ms
+64 bytes from node1 (127.0.0.2): icmp_seq=2 ttl=64 time=0.177 ms
+64 bytes from node1 (127.0.0.2): icmp_seq=3 ttl=64 time=0.173 ms
+
+--- node2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2007ms
+rtt min/avg/max/mdev = 0.173/0.773/1.969/0.845 ms
++ SSH_CMD 'ping -c 3 node1;rm -rf ~/.ssh/*;
+    ' '' '' ''
++ cmd='ping -c 3 node1;rm -rf ~/.ssh/*;
+    '
++ remoteip=
++ remotepasswd=
++ remoteuser=
++ timeout=300
++ connport=22
++ bash /root/mugen-riscv/libs/locallibs/sshcmd.sh -c 'ping -c 3 node1;rm -rf ~/.ssh/*;
+    ' -i '' -u '' -p '' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Thu Feb  2 23:48:59 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Feb  2 23:48:59 2023 - INFO  - Start to restore the test environment.
++ pkill -9 ompi
++ cd ''
++ hostname localhost
++ rm -rf /home/mpi_volumn /etc/exports './*log' /tmp/bak_mpi_volumn
++ sed -i /node/d /etc/hosts
++ sed -i /openmpi/d /root/.bashrc
++ source /root/.bashrc
+++ alias 'rm=rm -i'
+++ alias 'cp=cp -i'
+++ alias 'mv=mv -i'
+++ '[' -f /etc/bashrc ']'
+++ . /etc/bashrc
++++ '[' -z Y ']'
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpi8l18f_0 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpi8l18f_0
++ '[' 0 -ne 0 ']'
++ SSH_CMD 'umount -f /home/mpi_volumn;
+    hostname localhost;sed -i '\''/node/d'\'' /etc/hosts;
+    sed -i '\''/openmpi/d'\'' ~/.bashrc
+    source ~/.bashrc
+    ' '' '' ''
++ cmd='umount -f /home/mpi_volumn;
+    hostname localhost;sed -i '\''/node/d'\'' /etc/hosts;
+    sed -i '\''/openmpi/d'\'' ~/.bashrc
+    source ~/.bashrc
+    '
++ remoteip=
++ remotepasswd=
++ remoteuser=
++ timeout=300
++ connport=22
++ bash /root/mugen-riscv/libs/locallibs/sshcmd.sh -c 'umount -f /home/mpi_volumn;
+    hostname localhost;sed -i '\''/node/d'\'' /etc/hosts;
+    sed -i '\''/openmpi/d'\'' ~/.bashrc
+    source ~/.bashrc
+    ' -i '' -u '' -p '' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Thu Feb  2 23:49:38 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ REMOTE_REBOOT_WAIT '' '' ''
++ node=
++ waittime=
++ '[' x '!=' x ']'
++ python3 /root/mugen-riscv/libs/locallibs/remote_reboot.py wait --node
+usage: remote_reboot.py reboot|wait [-h] [--node NODE]
+remote_reboot.py: error: argument --node: expected one argument
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Thu Feb  2 23:49:41 2023 - INFO  - Finish restoring the test environment.

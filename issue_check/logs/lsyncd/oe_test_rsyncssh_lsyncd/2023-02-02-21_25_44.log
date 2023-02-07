@@ -1,0 +1,124 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Feb  2 21:25:46 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL lsyncd
++ pkgs=lsyncd
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs lsyncd --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp3i5b93fk
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp3i5b93fk
++ mkdir -p /var/source_dir /var/target_dir /var/log/lsyncd /etc/lsyncd
++ cat
++ echo 'This is to test the rsyncssh function of lsyncd'
++ touch /var/log/lsyncd/lsyncd.log /var/log/lsyncd/lsyncd.status
++ expect
+spawn ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? 
+send: spawn id exp3 not open
+    while executing
+"send "\n""
++ expect
+spawn ssh-copy-id root@127.0.0.1
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+The authenticity of host '127.0.0.1 (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:cXH/bDdo3zo17K2M3IcjyixQERxg4O/ZHVcK2O4KwlI.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: localhost
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: WARNING: All keys were skipped because they already exist on the remote system.
+		(if you think this is a mistake, you may want to use -f option)
+
+expect: spawn id exp3 not open
+    while executing
+"expect eof"
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Feb  2 21:26:41 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Feb  2 21:26:41 2023 - INFO  - Start to run test.
++ lsyncd -rsyncssh /var/source_dir/ 127.0.0.1 /var/target_dir/
+21:26:41 Normal: --- Startup, daemonizing ---
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ test -f /var/target_dir/test.lua
++ CHECK_RESULT 0 0 0 'This is to test the rsyncssh function of lsyncd'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='This is to test the rsyncssh function of lsyncd'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Feb  2 21:26:48 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Feb  2 21:26:48 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Feb  2 21:26:49 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp3i5b93fk ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp3i5b93fk
++ '[' 0 -ne 0 ']'
++ rm -rf /var/source_dir /var/target_dir /var/log/lsyncd /etc/lsyncd.conf /etc/lsyncd
+++ ps -ef
+++ grep lsyncd
+++ grep -Ev 'grep|bash'
+++ awk '{print $2}'
++ kill -9 4481
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Feb  2 21:27:04 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,125 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 12:33:45 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'yelp-tools yelp'
++ pkgs='yelp-tools yelp'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'yelp-tools yelp' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpyrfvpumm
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpyrfvpumm
++ wget https://gitlab.gnome.org/GNOME/yelp-tools/-/blob/master/help/C/yelp-new.page
+--2023-02-03 12:36:18--  https://gitlab.gnome.org/GNOME/yelp-tools/-/blob/master/help/C/yelp-new.page
+Resolving gitlab.gnome.org (gitlab.gnome.org)... 8.43.85.3, 8.43.85.4, 8.43.85.5
+Connecting to gitlab.gnome.org (gitlab.gnome.org)|8.43.85.3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘yelp-new.page’
+
+     0K .......... .......... .......... .......... .......... 25.9K
+    50K .......... .......... .......... .                     27.5K=3.1s
+
+2023-02-03 12:36:24 (26.5 KB/s) - ‘yelp-new.page’ saved [83230]
+
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 12:36:25 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 12:36:25 2023 - INFO  - Start to run test.
++ yelp-new --stub task yelp-new.page
++ CHECK_RESULT 0 0 0 'stub failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='stub failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f yelp-new.page.stub
++ CHECK_RESULT 0 0 0 'find first failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='find first failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ yelp-new --tmpl task yelp-new.page
++ CHECK_RESULT 0 0 0 'tmpl failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='tmpl failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f yelp-new.page.tmpl
++ CHECK_RESULT 0 0 0 'find second failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='find second failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 12:36:27 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 12:36:28 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 12:36:28 2023 - INFO  - Start to restore the test environment.
++ rm -rf yelp-new.page.stub yelp-new.page.tmpl yelp-new.page
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpyrfvpumm ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpyrfvpumm
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 12:37:01 2023 - INFO  - End to restore the test environment.

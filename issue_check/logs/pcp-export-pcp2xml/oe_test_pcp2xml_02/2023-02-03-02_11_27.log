@@ -1,0 +1,238 @@
++ source common/common_pcp2xml.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 02:11:30 2023 - INFO  - Start to prepare the test environment.
++ deploy_env
++ DNF_INSTALL 'pcp pcp-export-pcp2xml pcp-system-tools'
++ pkgs='pcp pcp-export-pcp2xml pcp-system-tools'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'pcp pcp-export-pcp2xml pcp-system-tools' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpouel6vwv
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpouel6vwv
++ systemctl enable pmcd
++ systemctl start pmcd
++ systemctl enable pmlogger
++ systemctl start pmlogger
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
+++ hostname
++ host_name=openEuler-riscv64
+++ pcp -h openEuler-riscv64
+++ grep 'primary logger:'
+++ awk -F: '{print $NF}'
++ archive_data=' /var/log/pcp/pmlogger/openEuler-riscv64/20230203.02.12'
++ metric_name=disk.dev.write
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 02:13:52 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 02:13:53 2023 - INFO  - Start to run test.
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
++ pcp2xml -a /var/log/pcp/pmlogger/openEuler-riscv64/20230203.02.12 disk.dev.write -F OUTFILE
+<!-- Writing 1 archived metrics to OUTFILE... -->
+<!-- Ctrl-C to stop -->
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep instance-name OUTFILE
+            <write instance-name="vda" unit="count/s">24.656</write>
+            <write instance-name="vda" unit="count/s">2.732</write>
+            <write instance-name="vda" unit="count/s">1.388</write>
+            <write instance-name="vda" unit="count/s">29.814</write>
+            <write instance-name="vda" unit="count/s">18.447</write>
+            <write instance-name="vda" unit="count/s">4.996</write>
+            <write instance-name="vda" unit="count/s">2.302</write>
+            <write instance-name="vda" unit="count/s">0.499</write>
+            <write instance-name="vda" unit="count/s">0.700</write>
+            <write instance-name="vda" unit="count/s">0.200</write>
+            <write instance-name="vda" unit="count/s">0.200</write>
+            <write instance-name="vda" unit="count/s">0.499</write>
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nohup pcp2xml --daemonize disk.dev.write
+++ pgrep -f daemonize
++ kill -9 12827
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pcp2xml -H -s 10 -t 2 disk.dev.write
++ grep instance-name
+            <write instance-name="vda" unit="count/s">0.000</write>
+            <write instance-name="vda" unit="count/s">0.500</write>
+            <write instance-name="vda" unit="count/s">0.998</write>
+            <write instance-name="vda" unit="count/s">0.000</write>
+            <write instance-name="vda" unit="count/s">10.070</write>
+            <write instance-name="vda" unit="count/s">0.000</write>
+            <write instance-name="vda" unit="count/s">1.002</write>
+            <write instance-name="vda" unit="count/s">0.000</write>
+            <write instance-name="vda" unit="count/s">0.000</write>
+oe_test_pcp2xml_02.sh: line 27: 12827 Killed                  nohup pcp2xml --daemonize $metric_name
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pcp2xml -G -s 10 -t 2 disk.dev.write
++ grep metrics
+<!-- Writing 1 metrics to stdout: -->
+    <metrics>
+    </metrics>
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'archived metrics'
++ pcp2xml -a /var/log/pcp/pmlogger/openEuler-riscv64/20230203.02.12 -S @00 -T @23 -s 10 -t 2 disk.dev.write
+<!-- Writing 1 archived metrics to stdout... -->
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pcp2xml -a /var/log/pcp/pmlogger/openEuler-riscv64/20230203.02.12 -O @00 -s 10 -t 2 disk.dev.write
++ grep 'archived metrics'
+<!-- Writing 1 archived metrics to stdout... -->
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pcp2xml -Z Africa/Lagos -s 10 -t 2 disk.dev.write
++ grep UTC+1
+    <timezone>UTC+1</timezone>
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pcp2xml -z -s 10 -t 2 disk.dev.write
++ grep UTC+8
+    <timezone>UTC+8</timezone>
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pcp2xml -r -s 10 -t 2 disk.dev.write
++ grep metrics
+<!-- Writing 1 metrics to stdout: -->
+    <metrics>
+    </metrics>
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 02:16:36 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 02:16:36 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 02:16:37 2023 - INFO  - Start to restore the test environment.
++ rm -f OUTFILE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpouel6vwv ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpouel6vwv
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 02:17:46 2023 - INFO  - End to restore the test environment.

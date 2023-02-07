@@ -1,0 +1,235 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Feb  2 21:36:53 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'lxcfs lxcfs-tools'
++ pkgs='lxcfs lxcfs-tools'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'lxcfs lxcfs-tools' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpoj6shraa
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpoj6shraa
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Feb  2 21:38:00 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Feb  2 21:38:00 2023 - INFO  - Start testing...
++ test_execution lxcfs.service
++ service=lxcfs.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-02 21:38:00'
++ test_restart lxcfs.service
++ service=lxcfs.service
++ systemctl restart lxcfs.service
++ CHECK_RESULT 0 0 0 'lxcfs.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status lxcfs.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-02-02 21:38:01 CST; 6s ago
++ CHECK_RESULT 0 0 0 'lxcfs.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop lxcfs.service
++ CHECK_RESULT 0 0 0 'lxcfs.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status lxcfs.service
++ grep 'Active: inactive'
+     Active: inactive (dead)
++ CHECK_RESULT 0 0 0 'lxcfs.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start lxcfs.service
++ CHECK_RESULT 0 0 0 'lxcfs.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status lxcfs.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-02-02 21:38:15 CST; 5s ago
++ CHECK_RESULT 0 0 0 'lxcfs.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled lxcfs.service
++ service=lxcfs.service
+++ systemctl is-enabled lxcfs.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable lxcfs.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/lxcfs.service
++ find /etc/systemd/system/multi-user.target.wants/lxcfs.service
+/etc/systemd/system/multi-user.target.wants/lxcfs.service
++ CHECK_RESULT 0 0 0 'lxcfs.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable lxcfs.service
+Removed /etc/systemd/system/multi-user.target.wants/lxcfs.service.
++ find /etc/systemd/system/multi-user.target.wants/lxcfs.service
+find: ‘/etc/systemd/system/multi-user.target.wants/lxcfs.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'lxcfs.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='lxcfs.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-02-02 21:38:00' -u lxcfs.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of lxcfs.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of lxcfs.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start lxcfs.service
++ sed -i 's\ExecStart=/usr/bin/lxcfs\ExecStart=/usr/bin/lxcfs -d\g' /usr/lib/systemd/system/lxcfs.service
++ systemctl daemon-reload
++ systemctl reload lxcfs.service
++ CHECK_RESULT 0 0 0 'lxcfs.service reload failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service reload failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status lxcfs.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-02-02 21:38:15 CST; 18s ago
++ CHECK_RESULT 0 0 0 'lxcfs.service reload causes the service status to change'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lxcfs.service reload causes the service status to change'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Feb  2 21:38:35 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Feb  2 21:38:35 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Feb  2 21:38:36 2023 - INFO  - start environment cleanup.
++ sed -i 'sExecStart=/usr/bin/lxcfs -d\ExecStart=/usr/bin/lxcfs\g' /usr/lib/systemd/system/lxcfs.service
+sed: -e expression #1, char 55: unterminated `s' command
++ systemctl daemon-reload
++ systemctl reload lxcfs.service
++ systemctl stop lxcfs.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpoj6shraa ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpoj6shraa
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Feb  2 21:39:01 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,437 @@
++ source ../common/common_podman.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 05:09:26 2023 - INFO  - Start to prepare the test environment.
++ deploy_env
++ DNF_INSTALL 'podman podman-docker'
++ pkgs='podman podman-docker'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'podman podman-docker' --node 1 --tempfile ''
+Fri Feb  3 05:09:33 2023 - INFO  - pkgs:(podman podman-docker) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ echo -e '[registries.search]
+registries = ['\''docker.io'\'']
+
+[registries.insecure]
+registries = []
+
+[registries.block]
+registries = []
+'
++ podman pull postgres:alpine
+time="2023-02-03T05:09:34+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:34+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ podman run --name postgres -e POSTGRES_PASSWORD=secret -d postgres:alpine
+time="2023-02-03T05:09:35+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:35+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 05:09:35 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 05:09:36 2023 - INFO  - Start to run test.
++ docker pull busybox
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:37+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:37+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
+++ docker images -q
+++ docker images -q
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:38+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:38+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:38+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ grep
+time="2023-02-03T05:09:38+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ docker images --filter after=
+Usage: grep [OPTION]... PATTERNS [FILE]...
+Try 'grep --help' for more information.
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:38+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:39+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 2 0 1
++ actual_result=2
++ expect_result=0
++ mode=1
++ error_log=
++ '[' -z 2 ']'
++ '[' 1 -eq 0 ']'
++ test 2x == 0x
++ return 0
++ docker images -sort created
++ grep busybox
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+Error: unknown shorthand flag: 's' in -sort
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 35'
++ message='oe_test_podman_DK_02.sh line 35'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 35'
+Fri Feb  3 05:09:40 2023 - ERROR - oe_test_podman_DK_02.sh line 35
++ return 0
++ docker rmi busybox
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:41+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:41+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ docker images
++ grep alpine
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:42+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:42+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 38'
++ message='oe_test_podman_DK_02.sh line 38'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 38'
+Fri Feb  3 05:09:42 2023 - ERROR - oe_test_podman_DK_02.sh line 38
++ return 0
++ docker stop postgres
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:43+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:43+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ docker commit postgres images1
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:44+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:44+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 125
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 125 ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 41'
++ message='oe_test_podman_DK_02.sh line 41'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 41'
+Fri Feb  3 05:09:45 2023 - ERROR - oe_test_podman_DK_02.sh line 41
++ return 0
++ docker images
++ grep images1
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:46+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:46+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 43'
++ message='oe_test_podman_DK_02.sh line 43'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 43'
+Fri Feb  3 05:09:46 2023 - ERROR - oe_test_podman_DK_02.sh line 43
++ return 0
++ docker commit --change CMD=/bin/bash --change ENTRYPOINT=/bin/sh postgres images2
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:47+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:47+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 125
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 125 ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 45'
++ message='oe_test_podman_DK_02.sh line 45'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 45'
+Fri Feb  3 05:09:48 2023 - ERROR - oe_test_podman_DK_02.sh line 45
++ return 0
++ docker images
++ grep images2
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:49+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:49+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 47'
++ message='oe_test_podman_DK_02.sh line 47'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 47'
+Fri Feb  3 05:09:50 2023 - ERROR - oe_test_podman_DK_02.sh line 47
++ return 0
++ docker commit -p postgres images3
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:51+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:51+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 125
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 125 ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 49'
++ message='oe_test_podman_DK_02.sh line 49'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 49'
+Fri Feb  3 05:09:51 2023 - ERROR - oe_test_podman_DK_02.sh line 49
++ return 0
++ docker images
++ grep images3
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:52+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:52+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 51'
++ message='oe_test_podman_DK_02.sh line 51'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 51'
+Fri Feb  3 05:09:53 2023 - ERROR - oe_test_podman_DK_02.sh line 51
++ return 0
++ docker commit -q postgres images4
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:54+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:54+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 125
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 125 ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 53'
++ message='oe_test_podman_DK_02.sh line 53'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 53'
+Fri Feb  3 05:09:54 2023 - ERROR - oe_test_podman_DK_02.sh line 53
++ return 0
++ docker images
++ grep images4
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:55+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:55+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 55'
++ message='oe_test_podman_DK_02.sh line 55'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 55'
+Fri Feb  3 05:09:56 2023 - ERROR - oe_test_podman_DK_02.sh line 55
++ return 0
++ docker commit -f docker -q --message 'committing container to image' postgres images5
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:57+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:57+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 125
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 125 ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 57'
++ message='oe_test_podman_DK_02.sh line 57'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 57'
+Fri Feb  3 05:09:57 2023 - ERROR - oe_test_podman_DK_02.sh line 57
++ return 0
++ docker images
++ grep images5
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:09:58+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:09:58+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 59'
++ message='oe_test_podman_DK_02.sh line 59'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 59'
+Fri Feb  3 05:09:59 2023 - ERROR - oe_test_podman_DK_02.sh line 59
++ return 0
++ docker image ls --quiet
+++ docker images -aq
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:10:00+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:10:00+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:10:00+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ grep ''
+time="2023-02-03T05:10:00+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 61'
++ message='oe_test_podman_DK_02.sh line 61'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 61'
+Fri Feb  3 05:10:00 2023 - ERROR - oe_test_podman_DK_02.sh line 61
++ return 0
++ docker image ls --sort size
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+time="2023-02-03T05:10:01+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:10:01+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ CHECK_RESULT 125
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 125 ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_podman_DK_02.sh line 63'
++ message='oe_test_podman_DK_02.sh line 63'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_podman_DK_02.sh line 63'
+Fri Feb  3 05:10:02 2023 - ERROR - oe_test_podman_DK_02.sh line 63
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 05:10:03 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 14
++ test 14 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Feb  3 05:10:03 2023 - ERROR - failed to execute the case.
++ exit 14
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 05:10:04 2023 - INFO  - Start to restore the test environment.
++ clear_env
++ podman stop postgres
+time="2023-02-03T05:10:05+08:00" level=warning msg="Conmon at /usr/bin/conmon invalid: outdated conmon version"
+time="2023-02-03T05:10:05+08:00" level=warning msg="Conmon at /usr/bin/conmon is invalid: outdated conmon version"
+Error: please update to v2.0.24 or later: outdated conmon version
++ podman rm -all
+Error: --all and --latest cannot be used together
++ podman rmi -f -all
+Error: unknown shorthand flag: 'l' in -ll
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri Feb  3 05:10:07 2023 - WARN  - no thing to do.
++ return 0
+++ ls
+++ grep -vE .sh
++ rm -rf
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 05:10:08 2023 - INFO  - End to restore the test environment.

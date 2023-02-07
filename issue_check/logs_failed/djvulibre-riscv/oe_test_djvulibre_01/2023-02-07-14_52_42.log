@@ -1,0 +1,345 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb  7 14:53:04 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'djvulibre ImageMagick'
++ pkgs='djvulibre ImageMagick'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'djvulibre ImageMagick' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpuu98ykai
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpuu98ykai
++ cp ../common/test.pdf ../common/test1.jpg ../common/test2.jpg ../common/test3.jpg ./
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb  7 14:57:13 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb  7 14:57:16 2023 - INFO  - Start to run test.
++ any2djvu --help
++ grep Usage:
+/usr/bin/any2djvu: illegal option -- -
+Usage:	/usr/bin/any2djvu [options] [url] {filename(s)}
++ CHECK_RESULT 0 0 0 'Check any2djvu --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check any2djvu --help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn any2djvu http://barak.pearlmutter.net/papers mesh-preprint.ps.gz
+/-- Started Tue Feb  7 06:57:24 UTC 2023: root@openEuler-riscv64, pid 1167: /usr/bin/any2djvu (cwd /root/GitRepo/mugen-riscv/testcases/cli-test/djvulibre/oe_test_djvulibre_01)
+WARNING!
+
+any2djvu uses an external server which is willing to perform the
+conversion and requires the document transfer over to that server.
+There is a security issue in operating on documents not intended for
+widespread distribution, which could be partially although not
+completely ameliorated by using a secure web connection.
+
+Do you acknowledge and allow the transmission of the document?
+(Type 'yes' to acknowledge. You can define non-empty environment
+ variable DJVU_ONLINE_ACK to avoid seeing this dialog, or use -a
+ command line parameter to any2djvu).
+[yes/no]:yes
+Tue Feb 7 06:57:25 UTC 2023 Processing mesh-preprint ...
+--2023-02-07 14:57:26--  http://any2djvu.djvu.org/any2djvu.php?urlupload=http://barak.pearlmutter.net/papers/mesh-preprint.ps.gz&docformat=2&resolution=400&ocr=1&legal=1
+Resolving any2djvu.djvu.org (any2djvu.djvu.org)... + CHECK_RESULT 0 0 0 'Check any2djvu failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check any2djvu failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f mesh-preprint.djvu
++ CHECK_RESULT 1 0 0 'Check mesh-preprint.djvu not exist.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check mesh-preprint.djvu not exist.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check mesh-preprint.djvu not exist.'
++ LOG_ERROR 'Check mesh-preprint.djvu not exist.'
++ message='Check mesh-preprint.djvu not exist.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check mesh-preprint.djvu not exist.'
+Tue Feb  7 14:57:50 2023 - ERROR - Check mesh-preprint.djvu not exist.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_djvulibre_01.sh line 41'
++ message='oe_test_djvulibre_01.sh line 41'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_djvulibre_01.sh line 41'
+Tue Feb  7 14:57:53 2023 - ERROR - oe_test_djvulibre_01.sh line 41
++ return 0
++ expect
+spawn any2djvu test.pdf
+/-- Started Tue Feb  7 06:57:55 UTC 2023: root@openEuler-riscv64, pid 1228: /usr/bin/any2djvu (cwd /root/GitRepo/mugen-riscv/testcases/cli-test/djvulibre/oe_test_djvulibre_01)
+WARNING!
+
+any2djvu uses an external server which is willing to perform the
+conversion and requires the document transfer over to that server.
+There is a security issue in operating on documents not intended for
+widespread distribution, which could be partially although not
+completely ameliorated by using a secure web connection.
+
+Do you acknowledge and allow the transmission of the document?
+(Type 'yes' to acknowledge. You can define non-empty environment
+ variable DJVU_ONLINE_ACK to avoid seeing this dialog, or use -a
+ command line parameter to any2djvu).
+[yes/no]:yes
+Tue Feb 7 06:57:56 UTC 2023 Processing test ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0   + CHECK_RESULT 0 0 0 'Check any2djvu test.pdf failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check any2djvu test.pdf failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test.djvu
++ CHECK_RESULT 1 0 0 'Check test.djvu not exist.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check test.djvu not exist.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check test.djvu not exist.'
++ LOG_ERROR 'Check test.djvu not exist.'
++ message='Check test.djvu not exist.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check test.djvu not exist.'
+Tue Feb  7 14:58:10 2023 - ERROR - Check test.djvu not exist.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_djvulibre_01.sh line 50'
++ message='oe_test_djvulibre_01.sh line 50'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_djvulibre_01.sh line 50'
+Tue Feb  7 14:58:13 2023 - ERROR - oe_test_djvulibre_01.sh line 50
++ return 0
++ bzz --help
++ grep -E 'DjVuLibre|Usage' result
+BZZ --- DjVuLibre-3.5.27
+Usage [encoding]: bzz -e[<blocksize>] <infile> <outfile>
+Usage [decoding]: bzz -d <infile> <outfile>
++ rm -rf result
++ CHECK_RESULT 0 0 0 'Check bzz --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bzz --help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bzz -e test.djvu bzz
+*** [1-11711] Failed to open 'test.djvu': No such file or directory.
+*** (ByteStream.cpp:696)
+*** 'DJVU::GUTF8String DJVU::ByteStream::Stdio::init(const DJVU::GURL&, const char*)'
+
++ CHECK_RESULT 1 0 0 'Check bzz -e failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check bzz -e failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check bzz -e failed.'
++ LOG_ERROR 'Check bzz -e failed.'
++ message='Check bzz -e failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check bzz -e failed.'
+Tue Feb  7 14:58:22 2023 - ERROR - Check bzz -e failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_djvulibre_01.sh line 55'
++ message='oe_test_djvulibre_01.sh line 55'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_djvulibre_01.sh line 55'
+Tue Feb  7 14:58:27 2023 - ERROR - oe_test_djvulibre_01.sh line 55
++ return 0
++ bzz -d test.djvu bzz.djvu
+*** [1-11711] Failed to open 'test.djvu': No such file or directory.
+*** (ByteStream.cpp:696)
+*** 'DJVU::GUTF8String DJVU::ByteStream::Stdio::init(const DJVU::GURL&, const char*)'
+
++ bzz -d bzz.djvu bzz1
+*** [1-11711] Failed to open 'bzz.djvu': No such file or directory.
+*** (ByteStream.cpp:696)
+*** 'DJVU::GUTF8String DJVU::ByteStream::Stdio::init(const DJVU::GURL&, const char*)'
+
++ CHECK_RESULT 1 0 0 'Check bzz -d failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check bzz -d failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check bzz -d failed.'
++ LOG_ERROR 'Check bzz -d failed.'
++ message='Check bzz -d failed.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check bzz -d failed.'
+Tue Feb  7 14:58:33 2023 - ERROR - Check bzz -d failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_djvulibre_01.sh line 58'
++ message='oe_test_djvulibre_01.sh line 58'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_djvulibre_01.sh line 58'
+Tue Feb  7 14:58:38 2023 - ERROR - oe_test_djvulibre_01.sh line 58
++ return 0
++ c44 --help
++ grep -E 'DjVuLibre|Usage: c44' result
+C44 --- DjVuLibre-3.5.27
+Usage: c44 [options] pnm-or-jpeg-file [djvufile]
++ rm -rf result
++ CHECK_RESULT 0 0 0 'Check c44 --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check c44 --help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ c44 -crcbdelay 10 test1.jpg
++ CHECK_RESULT 0 0 0 'Check c44 -crcbdelay failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check c44 -crcbdelay failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test1.djvu
++ CHECK_RESULT 0 0 0 'Check test1.djvu not exist.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check test1.djvu not exist.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ c44 -crcbfull test2.jpg
++ CHECK_RESULT 0 0 0 'Check c44 -crcbfull failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check c44 -crcbfull failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test2.djvu
++ CHECK_RESULT 0 0 0 'Check test2.djvu not exist.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check test2.djvu not exist.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ convert test3.jpg test.pbm
++ c44 -crcbhalf test.pbm test4.djvu
++ CHECK_RESULT 0 0 0 'Check c44 -crcbhalf failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check c44 -crcbhalf failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test4.djvu
++ CHECK_RESULT 0 0 0 'Check test4.djvu not exist.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check test4.djvu not exist.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ c44 -crcbnone test3.jpg test5.djvu
++ CHECK_RESULT 0 0 0 'Check c44 -crcbnone failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check c44 -crcbnone failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f test5.djvu
++ CHECK_RESULT 0 0 0 'Check test5.djvu not exist.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check test5.djvu not exist.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb  7 14:58:54 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Feb  7 14:58:59 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb  7 14:59:03 2023 - INFO  - Start to restore the test environment.
+++ ls
+++ grep -v '\.sh'
++ rm -rf mesh-preprint-any2djvu.log test-any2djvu.log test.pbm test.pdf test1.djvu test1.jpg test2.djvu test2.jpg test3.jpg test4.djvu test5.djvu wget-log
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpuu98ykai ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpuu98ykai
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb  7 15:00:23 2023 - INFO  - End to restore the test environment.

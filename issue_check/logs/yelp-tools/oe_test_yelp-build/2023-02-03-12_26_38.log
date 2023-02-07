@@ -1,0 +1,460 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 12:26:41 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'yelp-tools yelp'
++ pkgs='yelp-tools yelp'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'yelp-tools yelp' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp4083xus0
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp4083xus0
++ wget https://gitlab.gnome.org/GNOME/yelp-tools/-/blob/master/help/C/yelp-build.page
+--2023-02-03 12:29:16--  https://gitlab.gnome.org/GNOME/yelp-tools/-/blob/master/help/C/yelp-build.page
+Resolving gitlab.gnome.org (gitlab.gnome.org)... 8.43.85.3, 8.43.85.4, 8.43.85.5
+Connecting to gitlab.gnome.org (gitlab.gnome.org)|8.43.85.3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘yelp-build.page’
+
+     0K .......... .......... .......... .......... .......... 32.5K
+    50K .......... .......... .......... .                     44.2K=2.2s
+
+2023-02-03 12:29:22 (36.2 KB/s) - ‘yelp-build.page’ saved [83262]
+
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri Feb  3 12:29:23 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 12:29:24 2023 - INFO  - Start to run test.
++ yelp-build html yelp-build.page
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:140: parser error : Opening and ending tag mismatch: link line 134 and head
+</head>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:189: parser error : Opening and ending tag mismatch: input line 188 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: div line 186 and form
+</form></div>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: form line 186 and div
+</form></div>
+             ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:202: parser error : Opening and ending tag mismatch: div line 185 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:206: parser error : Opening and ending tag mismatch: li line 184 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:207: parser error : Opening and ending tag mismatch: ul line 183 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:275: parser error : Opening and ending tag mismatch: div line 157 and header
+</header>
+         ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Specification mandates value for attribute itemscope
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : attributes construct error
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Couldn't find end of Start Tag main line 614
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:664: parser error : Opening and ending tag mismatch: img line 664 and a
+?width=40" class="avatar s40 d-none d-sm-inline-block" title="Shaun McCance"></a
+                                                                               ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:665: parser error : Opening and ending tag mismatch: a line 664 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:670: parser error : Entity 'middot' not defined
+&middot;
+        ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:690: parser error : Opening and ending tag mismatch: div line 663 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:692: parser error : Opening and ending tag mismatch: li line 662 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:693: parser error : Opening and ending tag mismatch: ul line 661 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:714: parser error : Opening and ending tag mismatch: div line 622 and main
+</main>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:758: parser error : Opening and ending tag mismatch: header line 155 and body
+</body>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:759: parser error : Opening and ending tag mismatch: body line 142 and html
+</html>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:761: parser error : Premature end of data in tag meta line 128
+
+^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:140: parser error : Opening and ending tag mismatch: link line 134 and head
+</head>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:189: parser error : Opening and ending tag mismatch: input line 188 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: div line 186 and form
+</form></div>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: form line 186 and div
+</form></div>
+             ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:202: parser error : Opening and ending tag mismatch: div line 185 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:206: parser error : Opening and ending tag mismatch: li line 184 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:207: parser error : Opening and ending tag mismatch: ul line 183 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:275: parser error : Opening and ending tag mismatch: div line 157 and header
+</header>
+         ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Specification mandates value for attribute itemscope
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : attributes construct error
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Couldn't find end of Start Tag main line 614
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:664: parser error : Opening and ending tag mismatch: img line 664 and a
+?width=40" class="avatar s40 d-none d-sm-inline-block" title="Shaun McCance"></a
+                                                                               ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:665: parser error : Opening and ending tag mismatch: a line 664 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:670: parser error : Entity 'middot' not defined
+&middot;
+        ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:690: parser error : Opening and ending tag mismatch: div line 663 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:692: parser error : Opening and ending tag mismatch: li line 662 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:693: parser error : Opening and ending tag mismatch: ul line 661 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:714: parser error : Opening and ending tag mismatch: div line 622 and main
+</main>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:758: parser error : Opening and ending tag mismatch: header line 155 and body
+</body>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:759: parser error : Opening and ending tag mismatch: body line 142 and html
+</html>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:761: parser error : Premature end of data in tag meta line 128
+
+^
++ CHECK_RESULT 0 0 0 'html failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='html failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f highlight.pack.js
++ CHECK_RESULT 0 0 0 'find html failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='find html failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ yelp-build cache yelp-build.page
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:140: parser error : Opening and ending tag mismatch: link line 134 and head
+</head>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:189: parser error : Opening and ending tag mismatch: input line 188 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: div line 186 and form
+</form></div>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: form line 186 and div
+</form></div>
+             ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:202: parser error : Opening and ending tag mismatch: div line 185 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:206: parser error : Opening and ending tag mismatch: li line 184 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:207: parser error : Opening and ending tag mismatch: ul line 183 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:275: parser error : Opening and ending tag mismatch: div line 157 and header
+</header>
+         ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Specification mandates value for attribute itemscope
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : attributes construct error
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Couldn't find end of Start Tag main line 614
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:664: parser error : Opening and ending tag mismatch: img line 664 and a
+?width=40" class="avatar s40 d-none d-sm-inline-block" title="Shaun McCance"></a
+                                                                               ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:665: parser error : Opening and ending tag mismatch: a line 664 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:670: parser error : Entity 'middot' not defined
+&middot;
+        ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:690: parser error : Opening and ending tag mismatch: div line 663 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:692: parser error : Opening and ending tag mismatch: li line 662 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:693: parser error : Opening and ending tag mismatch: ul line 661 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:714: parser error : Opening and ending tag mismatch: div line 622 and main
+</main>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:758: parser error : Opening and ending tag mismatch: header line 155 and body
+</body>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:759: parser error : Opening and ending tag mismatch: body line 142 and html
+</html>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:761: parser error : Premature end of data in tag meta line 128
+
+^
++ CHECK_RESULT 0 0 0 'cache failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cache failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.cache
++ CHECK_RESULT 0 0 0 'find cache failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='find cache failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ yelp-build epub yelp-build.page
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:140: parser error : Opening and ending tag mismatch: link line 134 and head
+</head>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:189: parser error : Opening and ending tag mismatch: input line 188 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: div line 186 and form
+</form></div>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: form line 186 and div
+</form></div>
+             ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:202: parser error : Opening and ending tag mismatch: div line 185 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:206: parser error : Opening and ending tag mismatch: li line 184 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:207: parser error : Opening and ending tag mismatch: ul line 183 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:275: parser error : Opening and ending tag mismatch: div line 157 and header
+</header>
+         ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Specification mandates value for attribute itemscope
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : attributes construct error
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Couldn't find end of Start Tag main line 614
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:664: parser error : Opening and ending tag mismatch: img line 664 and a
+?width=40" class="avatar s40 d-none d-sm-inline-block" title="Shaun McCance"></a
+                                                                               ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:665: parser error : Opening and ending tag mismatch: a line 664 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:670: parser error : Entity 'middot' not defined
+&middot;
+        ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:690: parser error : Opening and ending tag mismatch: div line 663 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:692: parser error : Opening and ending tag mismatch: li line 662 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:693: parser error : Opening and ending tag mismatch: ul line 661 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:714: parser error : Opening and ending tag mismatch: div line 622 and main
+</main>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:758: parser error : Opening and ending tag mismatch: header line 155 and body
+</body>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:759: parser error : Opening and ending tag mismatch: body line 142 and html
+</html>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:761: parser error : Premature end of data in tag meta line 128
+
+^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:140: parser error : Opening and ending tag mismatch: link line 134 and head
+</head>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:189: parser error : Opening and ending tag mismatch: input line 188 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: div line 186 and form
+</form></div>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:200: parser error : Opening and ending tag mismatch: form line 186 and div
+</form></div>
+             ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:202: parser error : Opening and ending tag mismatch: div line 185 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:206: parser error : Opening and ending tag mismatch: li line 184 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:207: parser error : Opening and ending tag mismatch: ul line 183 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:275: parser error : Opening and ending tag mismatch: div line 157 and header
+</header>
+         ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Specification mandates value for attribute itemscope
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : attributes construct error
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:614: parser error : Couldn't find end of Start Tag main line 614
+<main class="content" id="content-body" itemscope itemtype="http://schema.org/So
+                                                  ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:664: parser error : Opening and ending tag mismatch: img line 664 and a
+?width=40" class="avatar s40 d-none d-sm-inline-block" title="Shaun McCance"></a
+                                                                               ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:665: parser error : Opening and ending tag mismatch: a line 664 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:670: parser error : Entity 'middot' not defined
+&middot;
+        ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:690: parser error : Opening and ending tag mismatch: div line 663 and li
+</li>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:692: parser error : Opening and ending tag mismatch: li line 662 and ul
+</ul>
+     ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:693: parser error : Opening and ending tag mismatch: ul line 661 and div
+</div>
+      ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:714: parser error : Opening and ending tag mismatch: div line 622 and main
+</main>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:758: parser error : Opening and ending tag mismatch: header line 155 and body
+</body>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:759: parser error : Opening and ending tag mismatch: body line 142 and html
+</html>
+       ^
+file:///root/mugen-riscv/testcases/cli-test/yelp-tools/oe_test_yelp-build/yelp-build.page:761: parser error : Premature end of data in tag meta line 128
+
+^
++ CHECK_RESULT 0 0 0 'epub failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='epub failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.epub
++ CHECK_RESULT 0 0 0 'find epub failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='find epub failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri Feb  3 12:29:29 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri Feb  3 12:29:30 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 12:29:30 2023 - INFO  - Start to restore the test environment.
++ rm -rf highlight.pack.js index.cache index.epub yelp-build.page C.css yelp-build.html yelp.js
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp4083xus0 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp4083xus0
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri Feb  3 12:30:10 2023 - INFO  - End to restore the test environment.

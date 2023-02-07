@@ -1,0 +1,113 @@
++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/GitRepo/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Tue Feb  7 02:56:14 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL auter
++ pkgs=auter
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs auter --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpdo07xz4s
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpdo07xz4s
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Tue Feb  7 02:58:50 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb  7 02:58:55 2023 - INFO  - Start to run test.
++ grep Usage
++ auter -h
+Usage: auter [--enable|--disable|--status] [--prep] [--apply] [--reboot] [--postreboot] [--config=<configfile>] [OPTIONS]
++ CHECK_RESULT 0 0 0 'Help information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auter -v
++ grep '[0-9]'
+auter 1.0.0
++ CHECK_RESULT 0 0 0 'Version information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Version information printing failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auter --status
++ grep enabled
+auter is currently enabled and not running
++ CHECK_RESULT 0 0 0 'Failed to check the status'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to check the status'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auter --disable
++ grep disabled
++ auter --status
++ grep disabled
+auter is currently disabled
++ CHECK_RESULT 0 0 0 'Disable the failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Disable the failure'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep enabled
++ auter --enable
++ CHECK_RESULT 1 0 0 'Enable the failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Enable the failure'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Enable the failure'
++ LOG_ERROR 'Enable the failure'
++ message='Enable the failure'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Enable the failure'
+Tue Feb  7 02:59:05 2023 - ERROR - Enable the failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_auter.sh line 40'
++ message='oe_test_auter.sh line 40'
++ python3 /root/GitRepo/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_auter.sh line 40'
+Tue Feb  7 02:59:10 2023 - ERROR - oe_test_auter.sh line 40
++ return 0
++ grep downloaded
++ auter --prep
+Tue Feb  7 03:25:59 2023 - ERROR - Timeout : Command 'bash -x oe_test_auter.sh' timed out after 1799.9970275689998 seconds

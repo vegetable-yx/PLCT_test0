@@ -1,0 +1,225 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Feb  2 21:31:17 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL lorax-composer
++ pkgs=lorax-composer
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs lorax-composer --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp71lv0lhw
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp71lv0lhw
++ systemctl stop lorax-composer.service
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Feb  2 21:33:31 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Feb  2 21:33:32 2023 - INFO  - Start testing...
++ test_execution lorax-composer.socket
++ service=lorax-composer.socket
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-02 21:33:32'
++ test_restart lorax-composer.socket
++ service=lorax-composer.socket
++ systemctl restart lorax-composer.socket
++ CHECK_RESULT 0 0 0 'lorax-composer.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lorax-composer.socket restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status lorax-composer.socket
++ grep 'Active: active'
+     Active: active (listening) since Thu 2023-02-02 21:33:32 CST; 6s ago
++ CHECK_RESULT 0 0 0 'lorax-composer.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lorax-composer.socket restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop lorax-composer.socket
++ CHECK_RESULT 0 0 0 'lorax-composer.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lorax-composer.socket stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status lorax-composer.socket
++ grep 'Active: inactive'
+     Active: inactive (dead)
++ CHECK_RESULT 0 0 0 'lorax-composer.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lorax-composer.socket stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start lorax-composer.socket
++ CHECK_RESULT 0 0 0 'lorax-composer.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lorax-composer.socket start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status lorax-composer.socket
++ grep 'Active: active'
+     Active: active (listening) since Thu 2023-02-02 21:33:44 CST; 6s ago
++ CHECK_RESULT 0 0 0 'lorax-composer.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lorax-composer.socket start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled lorax-composer.socket
++ service=lorax-composer.socket
+++ systemctl is-enabled lorax-composer.socket
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable lorax-composer.socket
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/sockets.target.wants/lorax-composer.socket
++ find /etc/systemd/system/sockets.target.wants/lorax-composer.socket
+/etc/systemd/system/sockets.target.wants/lorax-composer.socket
++ CHECK_RESULT 0 0 0 'lorax-composer.socket enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lorax-composer.socket enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable lorax-composer.socket
+Removed /etc/systemd/system/sockets.target.wants/lorax-composer.socket.
++ find /etc/systemd/system/sockets.target.wants/lorax-composer.socket
+find: ‘/etc/systemd/system/sockets.target.wants/lorax-composer.socket’: No such file or directory
++ CHECK_RESULT 1 0 1 'lorax-composer.socket disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='lorax-composer.socket disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-02-02 21:33:32' -u lorax-composer.socket
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ grep -i 'fail\|error'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of lorax-composer.socket'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of lorax-composer.socket'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload lorax-composer.socket
++ service=lorax-composer.socket
++ systemctl start lorax-composer.socket
++ systemctl reload lorax-composer.socket
++ grep 'Job type reload is not applicable'
+Failed to reload lorax-composer.socket: Job type reload is not applicable for unit lorax-composer.socket.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit lorax-composer.socket'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit lorax-composer.socket'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status lorax-composer.socket
++ grep 'Active: active'
+     Active: active (listening) since Thu 2023-02-02 21:33:44 CST; 14s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Feb  2 21:34:00 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Feb  2 21:34:01 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Feb  2 21:34:02 2023 - INFO  - start environment cleanup.
++ systemctl stop lorax-composer.socket
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp71lv0lhw ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp71lv0lhw
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Feb  2 21:35:05 2023 - INFO  - Finish environment cleanup!

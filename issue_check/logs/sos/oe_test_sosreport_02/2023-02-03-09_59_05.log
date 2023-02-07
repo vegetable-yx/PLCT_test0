@@ -1,0 +1,633 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri Feb  3 09:59:08 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'sos tar'
++ pkgs='sos tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'sos tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp2qbgm_vo
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp2qbgm_vo
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Fri Feb  3 09:59:38 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri Feb  3 09:59:38 2023 - INFO  - Start to run test.
++ expect
+spawn sosreport --debug
+
+Please note the 'sosreport' command has been deprecated in favor of the new 'sos' command, E.G. 'sos report'.
+Redirecting to 'sos report --debug'
+
+sosreport (version 4.0)
+
+This command will collect system configuration and diagnostic
+information from this OpenEuler system.
+
+For more information on the openEuler Project visit:
+
+  https://openeuler.org/
+
+The generated archive may contain data considered sensitive and its
+content should be reviewed by the originating organization before being
+passed to any third party.
+
+No changes will be made to system configuration.
+
+
+Press ENTER to continue, or CTRL-C to quit.
+Please enter the case id that you are generating this report for []: ++ date +%Y-%m-%d
++ grep sosreport-localhost-debug-2023-02-03 sos_log9
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_sosreport_02.sh line 39'
++ message='oe_test_sosreport_02.sh line 39'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_sosreport_02.sh line 39'
+Fri Feb  3 10:01:59 2023 - ERROR - oe_test_sosreport_02.sh line 39
++ return 0
++ expect
+spawn sosreport --desc test description content
+
+Please note the 'sosreport' command has been deprecated in favor of the new 'sos' command, E.G. 'sos report'.
+Redirecting to 'sos report --desc test description content'
+
+sosreport (version 4.0)
+
+This command will collect system configuration and diagnostic
+information from this OpenEuler system.
+
+For more information on the openEuler Project visit:
+
+  https://openeuler.org/
+
+The generated archive may contain data considered sensitive and its
+content should be reviewed by the originating organization before being
+passed to any third party.
+
+No changes will be made to system configuration.
+
+
+Press ENTER to continue, or CTRL-C to quit.
+Please enter the case id that you are generating this report for []: ++ date +%Y-%m-%d
++ grep sosreport-localhost-desc-2023-02-03 sos_log10
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_sosreport_02.sh line 49'
++ message='oe_test_sosreport_02.sh line 49'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_sosreport_02.sh line 49'
+Fri Feb  3 10:04:19 2023 - ERROR - oe_test_sosreport_02.sh line 49
++ return 0
++ expect
+spawn sosreport --experimental
+
+Please note the 'sosreport' command has been deprecated in favor of the new 'sos' command, E.G. 'sos report'.
+Redirecting to 'sos report --experimental'
+
+sosreport (version 4.0)
+
+This command will collect system configuration and diagnostic
+information from this OpenEuler system.
+
+For more information on the openEuler Project visit:
+
+  https://openeuler.org/
+
+The generated archive may contain data considered sensitive and its
+content should be reviewed by the originating organization before being
+passed to any third party.
+
+No changes will be made to system configuration.
+
+
+Press ENTER to continue, or CTRL-C to quit.
+Please enter the case id that you are generating this report for []: ++ date +%Y-%m-%d
++ grep sosreport-localhost-experimental-2023-02-03 sos_log12
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_sosreport_02.sh line 59'
++ message='oe_test_sosreport_02.sh line 59'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_sosreport_02.sh line 59'
+Fri Feb  3 10:06:41 2023 - ERROR - oe_test_sosreport_02.sh line 59
++ return 0
++ expect
+spawn sosreport -e dnf,rpm,selinux,dovecot
+
+Please note the 'sosreport' command has been deprecated in favor of the new 'sos' command, E.G. 'sos report'.
+Redirecting to 'sos report -e dnf,rpm,selinux,dovecot'
+
+sosreport (version 4.0)
+
+This command will collect system configuration and diagnostic
+information from this OpenEuler system.
+
+For more information on the openEuler Project visit:
+
+  https://openeuler.org/
+
+The generated archive may contain data considered sensitive and its
+content should be reviewed by the originating organization before being
+passed to any third party.
+
+No changes will be made to system configuration.
+
+
+Press ENTER to continue, or CTRL-C to quit.
+Please enter the case id that you are generating this report for []: ++ date +%Y-%m-%d
++ grep sosreport-localhost-enable-plugins-2023-02-03 sos_log13
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_sosreport_02.sh line 69'
++ message='oe_test_sosreport_02.sh line 69'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_sosreport_02.sh line 69'
+Fri Feb  3 10:09:01 2023 - ERROR - oe_test_sosreport_02.sh line 69
++ return 0
++ sosreport -l
++ grep -E 'on|off|inactive'
+sosreport (version 4.0)
+ anacron              Anacron job scheduling service
+ block                Block device information
+ cgroups              Control groups subsystem
+ console              Console and keyboard information
+ cron                 Cron job scheduler
+ crypto               System crypto services information
+ date                 Basic system time information
+ hardware             General hardware information
+ host                 Host information
+ i18n                 Internationalization
+ jars                 Collect information about available Java archives
+ krb5                 Kerberos authentication
+ ldap                 LDAP configuration
+ libvirt              libvirt virtualization API
+ login                login information
+ memory               Memory configuration and use
+ networking           Network and networking devices configuration
+ networkmanager       NetworkManager service configuration
+ nis                  Network Information Service
+ ntb                  Linux PCI-Express Non-Transparent Bridge
+ openssl              OpenSSL configuration
+ pam                  Pluggable Authentication Modules
+ process              process information
+ processor            CPU information
+ release              Linux release information
+ selinux              SELinux access control
+ sudo                 Sudo command execution
+ system               core system information
+ systemd              System management daemon
+ xen                  Xen virtualization
+ yum                  yum information
+ abrt                 inactive       Automatic Bug Reporting Tool
+ acpid                inactive       ACPI daemon information
+ activemq             inactive       ActiveMQ message broker
+ anaconda             inactive       Anaconda installer
+ ansible              inactive       Ansible configuration management
+ apache               inactive       Apache http daemon
+ ata                  inactive       ATA and IDE information
+ atomichost           inactive       Atomic Host
+ auditd               inactive       Audit daemon information
+ autofs               inactive       Autofs on-demand automounter
+ azure                inactive       Microsoft Azure client
+ boom                 inactive       Configuration data for the boom boot manager.
+ boot                 inactive       Bootloader information
+ btrfs                inactive       Btrfs filesystem
+ buildah              inactive       Buildah container and image builder
+ candlepin            inactive       Candlepin entitlement management
+ ceph                 inactive       CEPH distributed storage
+ ceph_ansible         inactive       CEPH distributed storage - Ansible installer
+ chrony               inactive       Chrony clock (for Network time protocol)
+ cifs                 inactive       SMB file system information
+ clear_containers     inactive       Intel(R) Clear Containers configuration
+ cloud_init           inactive       cloud-init instance configurations
+ cman                 inactive       cman based Red Hat Cluster High Availability
+ cobbler              inactive       Cobbler installation server
+ cockpit              inactive       Cockpit Web Service
+ collectd             inactive       Collectd config collector
+ composer             inactive       Lorax Composer
+ conntrackd           inactive       conntrackd - netfilter connection tracking user-space daemon
+ container_log        inactive       All logs under /var/log/containers
+ containers_common    inactive       Common container configs under {/etc,/usr/share}/containers
+ convert2rhel         inactive       Convert2RHEL
+ corosync             inactive       Corosync cluster engine
+ crio                 inactive       CRI-O containers
+ cs                   inactive       Certificate System and Dogtag
+ ctdb                 inactive       Samba Clustered TDB
+ cups                 inactive       CUPS IPP print service
+ dhcp                 inactive       DHCP daemon
+ distupgrade          inactive       Distribution upgrade data
+ dlm                  inactive       DLM (Distributed lock manager)
+ dmraid               inactive       dmraid software RAID
+ docker               inactive       Docker containers
+ docker_distribution  inactive       Docker Distribution
+ dovecot              inactive       Dovecot IMAP and POP3
+ dracut               inactive       Dracut initramfs generator
+ drbd                 inactive       Distributed Replicated Block Device (DRBD)
+ ds                   inactive       Directory Server
+ elastic              inactive       ElasticSearch service
+ etcd                 inactive       etcd plugin
+ fcoe                 inactive       Fibre Channel over Ethernet
+ fibrechannel         inactive       Collect information on fibrechannel devices
+ firewalld            inactive       Firewall daemon
+ foreman              inactive       Foreman/Satellite 6 systems management
+ frr                  inactive       Frr routing service
+ fwupd                inactive       fwupd information
+ gdm                  inactive       GNOME display manager
+ gfs2                 inactive       GFS2 (Global Filesystem 2)
+ gluster              inactive       GlusterFS storage
+ gluster_block        inactive       Gluster Block
+ gnocchi              inactive       Gnocchi - Metric as a service
+ grafana              inactive       Fetch Grafana configuration, logs and CLI output
+ grub                 inactive       GRUB bootloader
+ grub2                inactive       GRUB2 bootloader
+ gssproxy             inactive       GSSAPI Proxy
+ haproxy              inactive       HAProxy load balancer
+ hpasm                inactive       HP Advanced Server Management
+ hyperv               inactive       <no description available>
+ infiniband           inactive       Infiniband information
+ insights             inactive       Collect config and logs for Red Hat Insights
+ ipa                  inactive       Identity, policy, audit
+ ipmitool             inactive       IpmiTool hardware information
+ iprconfig            inactive       IBM Power RAID storage adapter configuration information
+ ipvs                 inactive       Linux IP virtual server
+ iscsi                inactive       iSCSI initiator
+ iscsitarget          inactive       iSCSI target
+ java                 inactive       Java runtime
+ kata_containers      inactive       Kata Containers configuration
+ kdump                inactive       Kdump crash dumps
+ keepalived           inactive       Keepalived routing server
+ kernelrt             inactive       Realtime kernel variant
+ keyutils             inactive       Kernel key ring
+ kimchi               inactive       kimchi-related information
+ kpatch               inactive       Kpatch information
+ kubernetes           inactive       Kubernetes container orchestration platform
+ leapp                inactive       Leapp upgrade handling tool
+ libreswan            inactive       Libreswan IPsec
+ lightdm              inactive       Light Display Manager
+ lilo                 inactive       Lilo bootloader
+ lstopo               inactive       Machine topology information
+ lustre               inactive       Lustre filesystem
+ manageiq             inactive       ManageIQ/CloudForms related information
+ megacli              inactive       LSI MegaRAID devices
+ memcached            inactive       memcached distributed memory caching system
+ mongodb              inactive       MongoDB document database
+ monit                inactive       Monit monitoring daemon
+ mpt                  inactive       LSI Message Passing Technology
+ mssql                inactive       Microsoft SQL Server on Linux
+ mysql                inactive       MySQL and MariaDB RDBMS
+ named                inactive       BIND named server
+ navicli              inactive       EMC Navicli
+ nfs                  inactive       Network file system information
+ nfsganesha           inactive       NFS-Ganesha file server information
+ nginx                inactive       nginx http daemon
+ nodejs               inactive       NodeJS runtime version
+ npm                  inactive       Information from available npm modules
+ nscd                 inactive       Name service caching daemon
+ nss                  inactive       Network Security Services configuration
+ numa                 inactive       NUMA state and configuration
+ nvidia               inactive       Nvidia GPU information
+ nvme                 inactive       Collect config and system information about NVMe devices
+ nvmetcli             inactive       Collect config and system information for nvmetcli
+ oddjob               inactive       OddJob task scheduler
+ omnipath_client      inactive       OmniPath Tools and Fast Fabric Client
+ omnipath_manager     inactive       OmniPath Fabric Manager
+ omsa                 inactive       Dell OpenManage Server Administrator (OMSA)
+ opencl               inactive       OpenCL
+ opendaylight         inactive       OpenDaylight network manager
+ opengl               inactive       OpenGL
+ openshift            inactive       Openshift Container Platform 4.x
+ openstack_ansible    inactive       OpenStack-Ansible
+ openstack_aodh       inactive       OpenStack Alarm service
+ openstack_ceilometer inactive       Openstack Ceilometer
+ openstack_cinder     inactive       OpenStack cinder
+ openstack_designate  inactive       Openstack Designate
+ openstack_glance     inactive       OpenStack Glance
+ openstack_heat       inactive       OpenStack Heat
+ openstack_horizon    inactive       OpenStack Horizon
+ openstack_instack    inactive       OpenStack Instack
+ openstack_ironic     inactive       OpenStack Ironic
+ openstack_keystone   inactive       OpenStack Keystone
+ openstack_manila     inactive       OpenStack Manila information for Red Hat distributions
+ openstack_neutron    inactive       OpenStack Networking
+ openstack_nova       inactive       OpenStack Nova
+ openstack_novajoin   inactive       OpenStack Novajoin
+ openstack_octavia    inactive       Openstack Octavia
+ openstack_placement  inactive       OpenStack Placement
+ openstack_sahara     inactive       OpenStack Sahara information for Red Hat distributions
+ openstack_swift      inactive       OpenStack Swift
+ openstack_tripleo    inactive       Installation information from OpenStack Installer
+ openstack_trove      inactive       OpenStack Trove
+ openvswitch          inactive       OpenVSwitch networking
+ origin               inactive       OpenShift Enterprise / OpenShift Container Platform
+ os_net_config        inactive       OpenStack Net Config
+ ovirt                inactive       oVirt Engine
+ ovirt_engine_backup  inactive       oVirt Engine database backup
+ ovirt_hosted_engine  inactive       oVirt Hosted Engine
+ ovirt_imageio        inactive       oVirt Image I/O Daemon / Proxy
+ ovirt_node           inactive       oVirt Node specific information
+ ovirt_provider_ovn   inactive       oVirt OVN Provider
+ ovn_central          inactive       OVN Northd
+ ovn_host             inactive       OVN Controller
+ pacemaker            inactive       Pacemaker high-availability cluster resource manager
+ pcp                  inactive       Performance Co-Pilot data
+ peripety             inactive       Peripety Storage Event Monitor
+ pmem                 inactive       Persistent Memory Devices
+ podman               inactive       Podman containers
+ postfix              inactive       Postfix smtp server
+ postgresql           inactive       PostgreSQL RDBMS
+ powerpath            inactive       EMC PowerPath
+ powerpc              inactive       IBM Power systems
+ ppp                  inactive       Point-to-point protocol
+ psacct               inactive       Process accounting information
+ ptp                  inactive       Precision time protocol
+ pulp                 inactive       Pulp platform
+ puppet               inactive       Puppet service
+ pxe                  inactive       PXE service
+ python               inactive       Python runtime
+ qpid                 inactive       Qpid messaging
+ qpid_dispatch        inactive       Qpid dispatch router
+ qt                   inactive       QT widget toolkit
+ quagga               inactive       Quagga routing service
+ rabbitmq             inactive       RabbitMQ messaging service
+ radius               inactive       RADIUS service information
+ rasdaemon            inactive       rasdaemon kernel trace event monitor
+ rear                 inactive       Relax and Recover
+ redis                inactive       Redis, in-memory data structure store
+ rhcos                inactive       Red Hat CoreOS
+ rhui                 inactive       Red Hat Update Infrastructure
+ rhv_analyzer         inactive       RHV Log Collector Analyzer
+ rpmostree            inactive       rpm-ostree image/package system
+ ruby                 inactive       Ruby runtime
+ runc                 inactive       runC container runtime
+ s390                 inactive       IBM S/390
+ salt                 inactive       Salt
+ saltmaster           inactive       Salt Master
+ samba                inactive       Samba Windows interoperability
+ sanlock              inactive       SANlock daemon
+ saphana              inactive       SAP HANA
+ sapnw                inactive       SAP NetWeaver
+ sar                  inactive       System Activity Reporter
+ sas3ircu             inactive       SAS-3 Integrated RAID adapter information
+ sendmail             inactive       sendmail service
+ skydive              inactive       Skydive network topology and protocol analyzer
+ smartcard            inactive       PKCS#11 smart cards
+ snappy               inactive       Snap packages
+ snmp                 inactive       Simple network management protocol
+ squid                inactive       Squid caching proxy
+ ssmtp                inactive       sSMTP information
+ sssd                 inactive       System security service daemon
+ storageconsole       inactive       Red Hat Storage Console
+ stratis              inactive       Stratis Storage
+ subscription_manager inactive       subscription-manager information
+ sunrpc               inactive       Sun RPC service
+ symcli               inactive       EMC Symcli
+ systemtap            inactive       SystemTap dynamic instrumentation
+ targetcli            inactive       TargetCLI TCM/LIO configuration
+ teamd                inactive       Network Interface Teaming
+ tftpserver           inactive       TFTP Server information
+ tomcat               inactive       Apache Tomcat Server
+ tuned                inactive       Tuned system tuning daemon
+ upstart              inactive       Upstart init system
+ validation_framework inactive       Logs provided by the Validation Framework
+ vdo                  inactive       Virtual Data Optimizer
+ vdsm                 inactive       VDSM - Virtual Desktop and Server Manager
+ veritas              inactive       Veritas software
+ vhostmd              inactive       vhostmd virtualization metrics collection
+ virsh                inactive       client for libvirt virtualization API
+ virtwho              inactive       Virt-Who agent
+ vmware               inactive       VMWare client information
+ vsftpd               inactive       Vsftpd server
+ vulkan               inactive       Vulkan
+ watchdog             inactive       Watchdog information.
+ wireless             inactive       Wireless
+ xdp                  inactive       XDP program information
+ xinetd               inactive       xinetd information
+ zfs                  inactive       ZFS filesystem
+The following options are available for ALL plugins:
+ timeout                   -1              Timeout in seconds for plugin
+The following plugin options are available:
+ dnf.history               off             captures transaction history
+ dnf.history-info          off             detailed transaction history
+ filesys.lsof              off             gathers information on all open files
+ filesys.dumpe2fs          off             dump filesystem information
+ filesys.frag              off             filesystem fragmentation status
+ jars.append_locations                     colon-separated list of additional JAR paths
+ jars.all_known_locations  off             scan all known paths
+ kernel.with-timer         off             gather /proc/timer* statistics
+ kernel.trace              off             gather /sys/kernel/debug/tracing/trace file
+ libraries.ldconfigv       off             collect verbose ldconfig output
+ lvm2.lvmdump              off             collect an lvmdump tarball
+ lvm2.lvmdump-am           off             attempt to collect an lvmdump with advanced options and raw metadata collection
+ networking.traceroute     off             collect a traceroute to www.example.com
+ networking.namespaces     0               Number of namespaces to collect, 0 for unlimited. Incompatible with the namespace_pattern plugin option
+ networking.ethtool_namespaces on              Define if ethtool commands should be collected for namespaces
+ process.lsof              on              gathers information on all open files
+ process.lsof-threads      off             gathers threads' open file info if supported
+ process.smaps             off             gathers all /proc/*/smaps files
+ process.samples           20              specify the number of samples that iotop will capture, with an interval of 0.5 seconds between samples
+ rpm.rpmq                  on              queries for package information via rpm -q
+ rpm.rpmva                 off             runs a verify on all packages
+ rpm.rpmdb                 off             collect /var/lib/rpm
+ selinux.fixfiles          off             Print incorrect file context labels
+ services.servicestatus    off             get a status of all running services
+ yum.yumlist               off             list repositories and packages
+ yum.yumdebug              off             gather yum debugging data
+ yum.yum-history-info      off             gather yum history info
+ Profiles: boot, container, debug, desktop, hardware, identity, java, 
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn sosreport -k dnf.history
+
+Please note the 'sosreport' command has been deprecated in favor of the new 'sos' command, E.G. 'sos report'.
+Redirecting to 'sos report -k dnf.history'
+
+sosreport (version 4.0)
+
+This command will collect system configuration and diagnostic
+information from this OpenEuler system.
+
+For more information on the openEuler Project visit:
+
+  https://openeuler.org/
+
+The generated archive may contain data considered sensitive and its
+content should be reviewed by the originating organization before being
+passed to any third party.
+
+No changes will be made to system configuration.
+
+
+Press ENTER to continue, or CTRL-C to quit.
+Please enter the case id that you are generating this report for []: ++ date +%Y-%m-%d
++ grep sosreport-localhost-plugin-option-2023-02-03 sos_log14
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_sosreport_02.sh line 81'
++ message='oe_test_sosreport_02.sh line 81'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_sosreport_02.sh line 81'
+Fri Feb  3 10:12:44 2023 - ERROR - oe_test_sosreport_02.sh line 81
++ return 0
++ expect
+spawn sosreport --label test-label
+
+Please note the 'sosreport' command has been deprecated in favor of the new 'sos' command, E.G. 'sos report'.
+Redirecting to 'sos report --label test-label'
+
+sosreport (version 4.0)
+
+This command will collect system configuration and diagnostic
+information from this OpenEuler system.
+
+For more information on the openEuler Project visit:
+
+  https://openeuler.org/
+
+The generated archive may contain data considered sensitive and its
+content should be reviewed by the originating organization before being
+passed to any third party.
+
+No changes will be made to system configuration.
+
+
+Press ENTER to continue, or CTRL-C to quit.
+Please enter the case id that you are generating this report for []: ++ date +%Y-%m-%d
++ grep sosreport-localhost-test-label-2023-02-03 sos_log15
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_sosreport_02.sh line 91'
++ message='oe_test_sosreport_02.sh line 91'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_sosreport_02.sh line 91'
+Fri Feb  3 10:15:06 2023 - ERROR - oe_test_sosreport_02.sh line 91
++ return 0
++ sosreport --list-presets
+Please note the 'sosreport' command has been deprecated in favor of the new 'sos' command, E.G. 'sos report'.
+Redirecting to 'sos report --list-presets'
+
+sosreport (version 4.0)
+
+The following presets are available:
+
+         name: none
+  description: Do not load a preset
+         note: Use to disable automatically loaded presets
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Fri Feb  3 10:15:29 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri Feb  3 10:15:30 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri Feb  3 10:15:30 2023 - INFO  - Start to restore the test environment.
+++ ls
+++ grep -v .sh
++ rm -rf sos_log10 sos_log12 sos_log13 sos_log14 sos_log15 sos_log9 /var/tmp/sos.21s79wqz /var/tmp/sos.5tm5wjm1 /var/tmp/sos.8m47irwd /var/tmp/sos.e__it_w1 /var/tmp/sos.i1n4km_i /var/tmp/sos.os8ad64w
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp2qbgm_vo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp2qbgm_vo
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Fri Feb  3 10:15:43 2023 - INFO  - Finish restoring the test environment.
