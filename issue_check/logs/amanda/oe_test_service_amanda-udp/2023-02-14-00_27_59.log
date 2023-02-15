@@ -1,0 +1,206 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Feb 14 00:28:05 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL amanda
++ pkgs=amanda
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs amanda --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp5n4u2e44
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp5n4u2e44
++ systemctl start amanda-udp.socket
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Feb 14 00:30:05 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Feb 14 00:30:08 2023 - INFO  - Start testing...
++ test_execution amanda-udp.service
++ service=amanda-udp.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-14 00:30:08'
++ test_restart amanda-udp.service
++ service=amanda-udp.service
++ systemctl restart amanda-udp.service
++ CHECK_RESULT 0 0 0 'amanda-udp.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='amanda-udp.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status amanda-udp.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-02-14 00:30:09 CST; 10s ago
++ CHECK_RESULT 0 0 0 'amanda-udp.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='amanda-udp.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop amanda-udp.service
+Warning: Stopping amanda-udp.service, but it can still be activated by:
+  amanda-udp.socket
++ CHECK_RESULT 0 0 0 'amanda-udp.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='amanda-udp.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status amanda-udp.service
++ grep 'Active: inactive'
+     Active: inactive (dead) since Tue 2023-02-14 00:30:20 CST; 9s ago
++ CHECK_RESULT 0 0 0 'amanda-udp.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='amanda-udp.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start amanda-udp.service
++ CHECK_RESULT 0 0 0 'amanda-udp.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='amanda-udp.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status amanda-udp.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-02-14 00:30:31 CST; 9s ago
++ CHECK_RESULT 0 0 0 'amanda-udp.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='amanda-udp.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled amanda-udp.service
++ service=amanda-udp.service
+++ systemctl is-enabled amanda-udp.service
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
+Tue Feb 14 00:30:42 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
++ journalctl --since '2023-02-14 00:30:08' -u amanda-udp.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of amanda-udp.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of amanda-udp.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload amanda-udp.service
++ service=amanda-udp.service
++ systemctl start amanda-udp.service
++ grep 'Job type reload is not applicable'
++ systemctl reload amanda-udp.service
+Failed to reload amanda-udp.service: Job type reload is not applicable for unit amanda-udp.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit amanda-udp.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit amanda-udp.service'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status amanda-udp.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-02-14 00:30:31 CST; 12s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Feb 14 00:30:45 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Feb 14 00:30:46 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Feb 14 00:30:48 2023 - INFO  - start environment cleanup.
++ systemctl stop amanda-udp.socket
++ systemctl stop amanda-udp.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp5n4u2e44 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp5n4u2e44
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Feb 14 00:31:35 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,198 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb 14 11:14:06 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL etcd
++ pkgs=etcd
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs etcd --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpb7u7zkjj
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpb7u7zkjj
++ systemctl start etcd
+++ rpm -qa etcd
+++ awk -F - '{print$2}'
++ version=3.4.14
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb 14 11:16:03 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 11:16:05 2023 - INFO  - Start to run test.
++ grep 'active (running)'
++ systemctl status etcd
+     Active: active (running) since Tue 2023-02-14 11:15:59 CST; 6s ago
++ CHECK_RESULT 0 0 0 'Check etcd.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcd.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcd --help
++ grep -i Usage:
+Usage:
++ CHECK_RESULT 0 0 0 'Check etcd --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcd --help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ awk '{print $3}'
+++ head -1
+++ etcd --version
++ test 3.4.14 == 3.4.14
++ CHECK_RESULT 0 0 0 'Check etcd --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcd --version failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ awk '{print $3}'
+++ head -1
+++ etcdctl version
++ test 3.4.14 == 3.4.14
++ CHECK_RESULT 0 0 0 'Check etcdctl version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl version failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -i USAGE:
++ etcdctl help
+USAGE:
++ CHECK_RESULT 0 0 0 'Check etcdctl help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl help failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl --endpoints=http://127.0.0.1:2379 put a 123
++ grep -i OK
+OK
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints put command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints put command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 123
++ etcdctl --endpoints=http://127.0.0.1:2379 get a
+123
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints get command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints get command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl --endpoints=http://127.0.0.1:2379 get a -w=json
++ grep version
+{"header":{"cluster_id":14841639068965178418,"member_id":10276657743932975437,"revision":2,"raft_term":4},"kvs":[{"key":"YQ==","create_revision":2,"mod_revision":2,"version":1,"value":"MTIz"}],"count":1}
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints get -w=json command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints get -w=json command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 1
++ etcdctl --endpoints=http://127.0.0.1:2379 del a
+1
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints del command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints del command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl --endpoints=http://127.0.0.1:2379 del a
++ grep 0
+0
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints del command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints del command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 11:16:20 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Feb 14 11:16:22 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb 14 11:16:24 2023 - INFO  - Start to restore the test environment.
++ systemctl stop etcd
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpb7u7zkjj ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpb7u7zkjj
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 11:17:02 2023 - INFO  - End to restore the test environment.

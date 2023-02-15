@@ -1,0 +1,266 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Wed Feb 15 04:01:52 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL jython
++ pkgs=jython
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs jython --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp94k0kr00
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp94k0kr00
++ ss=
+++ ls /usr/share/jython/javalib
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:/usr/share/jython/javalib/objectweb-asm_asm-commons.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:/usr/share/jython/javalib/objectweb-asm_asm-commons.jar:/usr/share/jython/javalib/objectweb-asm_asm-util.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:/usr/share/jython/javalib/objectweb-asm_asm-commons.jar:/usr/share/jython/javalib/objectweb-asm_asm-util.jar:/usr/share/jython/javalib/objectweb-asm_asm.jar:
++ for file in $(ls /usr/share/jython/javalib)
++ ss=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:/usr/share/jython/javalib/objectweb-asm_asm-commons.jar:/usr/share/jython/javalib/objectweb-asm_asm-util.jar:/usr/share/jython/javalib/objectweb-asm_asm.jar:/usr/share/jython/javalib/xerces-j2.jar:
++ export CLASSPATH=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:/usr/share/jython/javalib/objectweb-asm_asm-commons.jar:/usr/share/jython/javalib/objectweb-asm_asm-util.jar:/usr/share/jython/javalib/objectweb-asm_asm.jar:/usr/share/jython/javalib/xerces-j2.jar:
++ CLASSPATH=/usr/share/jython/javalib/antlr32_antlr-runtime-3.2.jar:/usr/share/jython/javalib/apache-commons-compress.jar:/usr/share/jython/javalib/bcpkix.jar:/usr/share/jython/javalib/bcprov.jar:/usr/share/jython/javalib/guavaguava.jar:/usr/share/jython/javalib/icu4j_icu4j.jar:/usr/share/jython/javalib/jansi_jansi.jar:/usr/share/jython/javalib/jctools_jctools-core.jar:/usr/share/jython/javalib/jffi-native.jar:/usr/share/jython/javalib/jffi.jar:/usr/share/jython/javalib/jline_jline.jar:/usr/share/jython/javalib/jnr-constants.jar:/usr/share/jython/javalib/jnr-ffijnr-ffi.jar:/usr/share/jython/javalib/jnr-netdbjnr-netdb.jar:/usr/share/jython/javalib/jnr-posixjnr-posix.jar:/usr/share/jython/javalib/netty_netty-buffer.jar:/usr/share/jython/javalib/netty_netty-codec.jar:/usr/share/jython/javalib/netty_netty-common.jar:/usr/share/jython/javalib/netty_netty-handler.jar:/usr/share/jython/javalib/netty_netty-resolver.jar:/usr/share/jython/javalib/netty_netty-transport.jar:/usr/share/jython/javalib/objectweb-asm_asm-commons.jar:/usr/share/jython/javalib/objectweb-asm_asm-util.jar:/usr/share/jython/javalib/objectweb-asm_asm.jar:/usr/share/jython/javalib/xerces-j2.jar:
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Wed Feb 15 04:07:54 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Wed Feb 15 04:07:57 2023 - INFO  - Start testing...
++ jython --help
++ grep 'usage: jython'
+usage: jython [option] ... [-c cmd | -m mod | file | -] [arg] ...
++ CHECK_RESULT 0 0 0 'Failed to run command: jython --help'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython --help'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython -h
++ grep 'usage: jython'
+usage: jython [option] ... [-c cmd | -m mod | file | -] [arg] ...
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -h'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -h'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython --version
++ grep 'Jython [[:digit:]]*'
+Jython 2.7.1
++ CHECK_RESULT 0 0 0 'Failed to run command: jython --version'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython --version'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'Jython [[:digit:]]*'
++ jython -V
+Jython 2.7.1
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -V'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -V'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython -c 'print '\''test'\'''
++ grep test
+test
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -c'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -c'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython -i -c 'str='\''test'\'';print str;exit(0)'
++ grep test
+test
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -i'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -i'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython -S -c 'exit(0)'
++ grep 'is not defined'
+NameError: name 'exit' is not defined
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -S'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -S'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython -Qnew -c 'a = 2/3; assert type(a)==float'
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -Q'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -Q'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython -B -c 'from java.util import Date;print Date()'
+Wed Feb 15 04:25:48 CST 2023
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -B'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -B'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython -v -c ''
++ grep -m 1 import
+import: 'exceptions' as org.python.core.exceptions in builtin modules
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -v'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -v'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -m 1 __init__
++ jython -vv -c ''
+import: trying _warnings/__init__$py.class in parent class loader
++ CHECK_RESULT 0 0 0 'Failed to run command: jython -vv'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython -vv'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jython ./common/test.py
++ grep test
+./common/test.py
++ CHECK_RESULT 0 0 0 'Failed to run command: jython [file]'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run command: jython [file]'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Wed Feb 15 04:29:14 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Wed Feb 15 04:29:15 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Wed Feb 15 04:29:17 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp94k0kr00 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp94k0kr00
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Wed Feb 15 04:30:50 2023 - INFO  - Finish environment cleanup!

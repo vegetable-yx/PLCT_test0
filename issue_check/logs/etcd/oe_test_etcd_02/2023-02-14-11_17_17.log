@@ -1,0 +1,210 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb 14 11:17:24 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL etcd
++ pkgs=etcd
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs etcd --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpmsgxc7p6
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpmsgxc7p6
++ systemctl start etcd
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb 14 11:19:21 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 11:19:24 2023 - INFO  - Start to run test.
++ grep 'active (running)'
++ systemctl status etcd
+     Active: active (running) since Tue 2023-02-14 11:19:18 CST; 7s ago
++ CHECK_RESULT 0 0 0 'Check etcd.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcd.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl --endpoints=http://127.0.0.1:2379 member list
++ grep started
+8e9e05c52164694d, started, default, http://localhost:2380, http://localhost:2379, false
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints member command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints member command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -i ENDPOINT
++ etcdctl --write-out=table --endpoints=127.0.0.1:2379 endpoint status
+|    ENDPOINT    |        ID        | VERSION | DB SIZE | IS LEADER | IS LEARNER | RAFT TERM | RAFT INDEX | RAFT APPLIED INDEX | ERRORS |
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints --write-out=table failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints --write-out=table failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl --write-out=table --endpoints=127.0.0.1:2379 endpoint health
++ grep HEALTH
+|    ENDPOINT    | HEALTH |     TOOK     | ERROR |
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints --write-out=table health failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints --write-out=table health failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl --endpoints=127.0.0.1:2379 endpoint health
+127.0.0.1:2379 is healthy: successfully committed proposal: took = 388.305854ms
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints health failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints health failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep true
++ etcdctl --endpoints=127.0.0.1:2379 endpoint status
+127.0.0.1:2379, 8e9e05c52164694d, 3.4.14, 20 kB, true, false, 5, 13, 13, 
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints status failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints status failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl snapshot save snapshot.db
++ grep 'Snapshot saved at snapshot.db'
+{"level":"info","ts":1676344776.5126054,"caller":"snapshot/v3_snapshot.go:119","msg":"created temporary db file","path":"snapshot.db.part"}
+{"level":"info","ts":"2023-02-14T11:19:36.621+0800","caller":"clientv3/maintenance.go:200","msg":"opened snapshot stream; downloading"}
+{"level":"info","ts":1676344776.6619313,"caller":"snapshot/v3_snapshot.go:127","msg":"fetching snapshot","endpoint":"127.0.0.1:2379"}
+{"level":"info","ts":"2023-02-14T11:19:36.751+0800","caller":"clientv3/maintenance.go:208","msg":"completed snapshot read; closing"}
+{"level":"info","ts":1676344776.7986977,"caller":"snapshot/v3_snapshot.go:142","msg":"fetched snapshot","endpoint":"127.0.0.1:2379","size":"20 kB","took":0.25926773}
+{"level":"info","ts":1676344776.8012633,"caller":"snapshot/v3_snapshot.go:152","msg":"saved","path":"snapshot.db"}
+Snapshot saved at snapshot.db
++ CHECK_RESULT 0 0 0 'Check etcdctl snapshot save command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl snapshot save command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl snapshot status snapshot.db
+ea330b40, 3, 6, 20 kB
++ CHECK_RESULT 0 0 0 'Check etcdctl snapshot status command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl snapshot status command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl snapshot status snapshot.db -w table
++ grep HASH
+|   HASH   | REVISION | TOTAL KEYS | TOTAL SIZE |
++ CHECK_RESULT 0 0 0 'Check etcdctl snapshot status -w table command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl snapshot status -w table command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl endpoint --cluster=true status -w table
++ grep ENDPOINT
+|       ENDPOINT        |        ID        | VERSION | DB SIZE | IS LEADER | IS LEARNER | RAFT TERM | RAFT INDEX | RAFT APPLIED INDEX | ERRORS |
++ CHECK_RESULT 0 0 0 'Check etcdctl endpoint --cluster=true status command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl endpoint --cluster=true status command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl --endpoints 127.0.0.1:2379 move-leader 8e9e05c52164694d
++ grep 'Leadership transferred'
+Leadership transferred from 8e9e05c52164694d to 8e9e05c52164694d
++ CHECK_RESULT 0 0 0 'Check etcdctl --endpoints endpoint move-leader command failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl --endpoints endpoint move-leader command failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 11:19:43 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Feb 14 11:19:45 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb 14 11:19:47 2023 - INFO  - Start to restore the test environment.
++ systemctl stop etcd
++ rm -rf snapshot.db
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpmsgxc7p6 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpmsgxc7p6
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 11:20:21 2023 - INFO  - End to restore the test environment.

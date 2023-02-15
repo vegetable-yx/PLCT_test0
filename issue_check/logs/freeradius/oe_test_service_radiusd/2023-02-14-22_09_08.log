@@ -1,0 +1,316 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Feb 14 22:09:14 2023 - INFO  - Start testing...
++ DNF_INSTALL freeradius
++ pkgs=freeradius
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs freeradius --node 1 --tempfile ''
+Tue Feb 14 22:09:32 2023 - INFO  - pkgs:(freeradius) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ test_execution radiusd.service
++ service=radiusd.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-14 22:09:32'
++ test_restart radiusd.service
++ service=radiusd.service
++ systemctl restart radiusd.service
+Job for radiusd.service failed because the control process exited with error code.
+See "systemctl status radiusd.service" and "journalctl -xeu radiusd.service" for details.
++ CHECK_RESULT 1 0 0 'radiusd.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radiusd.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radiusd.service restart failed'
++ LOG_ERROR 'radiusd.service restart failed'
++ message='radiusd.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radiusd.service restart failed'
+Tue Feb 14 22:09:35 2023 - ERROR - radiusd.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Tue Feb 14 22:09:36 2023 - ERROR - ../common/common_lib.sh line 34
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status radiusd.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'radiusd.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radiusd.service restart failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radiusd.service restart failed'
++ LOG_ERROR 'radiusd.service restart failed'
++ message='radiusd.service restart failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radiusd.service restart failed'
+Tue Feb 14 22:09:45 2023 - ERROR - radiusd.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Tue Feb 14 22:09:47 2023 - ERROR - ../common/common_lib.sh line 37
++ return 0
++ systemctl stop radiusd.service
++ CHECK_RESULT 0 0 0 'radiusd.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radiusd.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status radiusd.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'radiusd.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radiusd.service stop failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radiusd.service stop failed'
++ LOG_ERROR 'radiusd.service stop failed'
++ message='radiusd.service stop failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radiusd.service stop failed'
+Tue Feb 14 22:09:57 2023 - ERROR - radiusd.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Tue Feb 14 22:09:59 2023 - ERROR - ../common/common_lib.sh line 42
++ return 0
++ systemctl start radiusd.service
+Job for radiusd.service failed because the control process exited with error code.
+See "systemctl status radiusd.service" and "journalctl -xeu radiusd.service" for details.
++ CHECK_RESULT 1 0 0 'radiusd.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radiusd.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radiusd.service start failed'
++ LOG_ERROR 'radiusd.service start failed'
++ message='radiusd.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radiusd.service start failed'
+Tue Feb 14 22:10:01 2023 - ERROR - radiusd.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Tue Feb 14 22:10:03 2023 - ERROR - ../common/common_lib.sh line 44
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status radiusd.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'radiusd.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radiusd.service start failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radiusd.service start failed'
++ LOG_ERROR 'radiusd.service start failed'
++ message='radiusd.service start failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radiusd.service start failed'
+Tue Feb 14 22:10:11 2023 - ERROR - radiusd.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Tue Feb 14 22:10:13 2023 - ERROR - ../common/common_lib.sh line 47
++ return 0
++ test_enabled radiusd.service
++ service=radiusd.service
+++ systemctl is-enabled radiusd.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable radiusd.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/radiusd.service
++ find /etc/systemd/system/multi-user.target.wants/radiusd.service
+/etc/systemd/system/multi-user.target.wants/radiusd.service
++ CHECK_RESULT 0 0 0 'radiusd.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radiusd.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable radiusd.service
+Removed /etc/systemd/system/multi-user.target.wants/radiusd.service.
++ find /etc/systemd/system/multi-user.target.wants/radiusd.service
+find: ‘/etc/systemd/system/multi-user.target.wants/radiusd.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'radiusd.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='radiusd.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ journalctl --since '2023-02-14 22:09:32' -u radiusd.service
+Feb 14 22:09:33 openEuler-riscv64 systemd[1]: radiusd.service: Control process exited, code=exited, status=1/FAILURE
+Feb 14 22:09:33 openEuler-riscv64 systemd[1]: radiusd.service: Failed with result 'exit-code'.
+Feb 14 22:09:33 openEuler-riscv64 systemd[1]: Failed to start FreeRADIUS high performance RADIUS server..
+Feb 14 22:09:59 openEuler-riscv64 systemd[1]: radiusd.service: Control process exited, code=exited, status=1/FAILURE
+Feb 14 22:09:59 openEuler-riscv64 systemd[1]: radiusd.service: Failed with result 'exit-code'.
+Feb 14 22:09:59 openEuler-riscv64 systemd[1]: Failed to start FreeRADIUS high performance RADIUS server..
++ CHECK_RESULT 0 0 1 'There is an error message for the log of radiusd.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of radiusd.service'
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of radiusd.service'
++ LOG_ERROR 'There is an error message for the log of radiusd.service'
++ message='There is an error message for the log of radiusd.service'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of radiusd.service'
+Tue Feb 14 22:10:38 2023 - ERROR - There is an error message for the log of radiusd.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Tue Feb 14 22:10:39 2023 - ERROR - ../common/common_lib.sh line 28
++ return 0
++ systemctl start radiusd.service
+Job for radiusd.service failed because the control process exited with error code.
+See "systemctl status radiusd.service" and "journalctl -xeu radiusd.service" for details.
++ sed -i 's\ExecStart=/usr/sbin/radiusd\ExecStart=/usr/sbin/radiusd -P\g' /usr/lib/systemd/system/radiusd.service
++ systemctl daemon-reload
++ systemctl reload radiusd.service
+radiusd.service is not active, cannot reload.
++ CHECK_RESULT 1 0 0 'radiusd.service reload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radiusd.service reload failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radiusd.service reload failed'
++ LOG_ERROR 'radiusd.service reload failed'
++ message='radiusd.service reload failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radiusd.service reload failed'
+Tue Feb 14 22:10:54 2023 - ERROR - radiusd.service reload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_radiusd.sh line 30'
++ message='oe_test_service_radiusd.sh line 30'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_radiusd.sh line 30'
+Tue Feb 14 22:10:55 2023 - ERROR - oe_test_service_radiusd.sh line 30
++ return 0
++ systemctl status radiusd.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'radiusd.service reload causes the service status to change'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radiusd.service reload causes the service status to change'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radiusd.service reload causes the service status to change'
++ LOG_ERROR 'radiusd.service reload causes the service status to change'
++ message='radiusd.service reload causes the service status to change'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radiusd.service reload causes the service status to change'
+Tue Feb 14 22:10:57 2023 - ERROR - radiusd.service reload causes the service status to change
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_radiusd.sh line 32'
++ message='oe_test_service_radiusd.sh line 32'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_radiusd.sh line 32'
+Tue Feb 14 22:10:59 2023 - ERROR - oe_test_service_radiusd.sh line 32
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Feb 14 22:11:00 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Feb 14 22:11:02 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Feb 14 22:11:04 2023 - INFO  - start environment cleanup.
++ sed -i 's\ExecStart=/usr/sbin/radiusd -P\ExecStart=/usr/sbin/radiusd\g' /usr/lib/systemd/system/radiusd.service
++ systemctl daemon-reload
++ systemctl reload radiusd.service
+radiusd.service is not active, cannot reload.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Feb 14 22:11:17 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Feb 14 22:11:19 2023 - INFO  - Finish environment cleanup!

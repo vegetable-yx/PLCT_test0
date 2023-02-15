@@ -1,0 +1,91 @@
++ source ../common/lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Wed Feb 15 04:24:26 2023 - INFO  - Start environment preparation.
++ pre_junit5
++ DNF_INSTALL junit5
++ pkgs=junit5
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs junit5 --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpm1pv7bg1
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpm1pv7bg1
+++ rpm -qa 'java*'
+++ head -1
+++ grep 'java-.*-openjdk'
+++ awk -F - '{print $2}'
++ java_version=1.8.0
++ DNF_INSTALL java-1.8.0-devel
++ pkgs=java-1.8.0-devel
++ node=1
++ '[' -z /tmp/tmpm1pv7bg1 ']'
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs java-1.8.0-devel --node 1 --tempfile /tmp/tmpm1pv7bg1
++ tmpfile2=/tmp/tmpm1pv7bg1
++ '[' -z /tmp/tmpm1pv7bg1 ']'
++ pre_maven
++ DNF_INSTALL maven
++ pkgs=maven
++ node=1
++ '[' -z /tmp/tmpm1pv7bg1 ']'
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs maven --node 1 --tempfile /tmp/tmpm1pv7bg1
++ tmpfile2=/tmp/tmpm1pv7bg1
++ '[' -z /tmp/tmpm1pv7bg1 ']'
++ JAVA_HOME=/usr/lib/jvm/java-openjdk
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin
++ export JAVA_HOME PATH
++ export MAVEN_HOME=/usr/share/maven
++ MAVEN_HOME=/usr/share/maven
++ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:/usr/share/maven
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:/usr/share/maven
++ mkdir -p junit5-maven-kotlin/src/main/kotlin/com/example/project
++ mkdir -p junit5-maven-kotlin/src/test/kotlin/com/example/project/
++ cp pom.xml junit5-maven-kotlin/
++ cp CalculatorTests.kt junit5-maven-kotlin/src/test/kotlin/com/example/project/
++ cp Calculator.kt junit5-maven-kotlin/src/main/kotlin/com/example/project/
++ cd junit5-maven-kotlin
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Wed Feb 15 04:32:17 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Wed Feb 15 04:32:20 2023 - INFO  - Start testing...
++ mvn -version
+Apache Maven 3.6.3 (openEuler 3.6.3-1)
+Maven home: /usr/share/maven
+Java version: 1.8.0_332, vendor: Bisheng, runtime: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.332.b09-4.oe2203.riscv64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.10.0-10.oe2203.riscv64", arch: "riscv64", family: "unix"
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mvn test
+Wed Feb 15 04:54:21 2023 - ERROR - Timeout : Command 'bash -x oe_test_junit5_kotlin_maven.sh' timed out after 1799.992023572 seconds

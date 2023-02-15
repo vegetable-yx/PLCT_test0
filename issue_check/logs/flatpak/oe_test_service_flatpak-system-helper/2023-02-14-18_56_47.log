@@ -1,0 +1,201 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Feb 14 18:56:54 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL flatpak
++ pkgs=flatpak
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs flatpak --node 1 --tempfile ''
++ tmpfile2=/tmp/tmprucvk5fc
++ '[' -z '' ']'
++ tmpfile=/tmp/tmprucvk5fc
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Feb 14 19:05:45 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Feb 14 19:05:48 2023 - INFO  - Start testing...
++ test_execution flatpak-system-helper.service
++ service=flatpak-system-helper.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-14 19:05:49'
++ test_restart flatpak-system-helper.service
++ service=flatpak-system-helper.service
++ systemctl restart flatpak-system-helper.service
++ CHECK_RESULT 0 0 0 'flatpak-system-helper.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='flatpak-system-helper.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status flatpak-system-helper.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-02-14 19:06:02 CST; 7s ago
++ CHECK_RESULT 0 0 0 'flatpak-system-helper.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='flatpak-system-helper.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop flatpak-system-helper.service
++ CHECK_RESULT 0 0 0 'flatpak-system-helper.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='flatpak-system-helper.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status flatpak-system-helper.service
++ grep 'Active: inactive'
+     Active: inactive (dead)
++ CHECK_RESULT 0 0 0 'flatpak-system-helper.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='flatpak-system-helper.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start flatpak-system-helper.service
++ CHECK_RESULT 0 0 0 'flatpak-system-helper.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='flatpak-system-helper.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status flatpak-system-helper.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-02-14 19:06:19 CST; 7s ago
++ CHECK_RESULT 0 0 0 'flatpak-system-helper.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='flatpak-system-helper.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled flatpak-system-helper.service
++ service=flatpak-system-helper.service
+++ systemctl is-enabled flatpak-system-helper.service
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
+Tue Feb 14 19:06:29 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
++ grep -i 'fail\|error'
++ journalctl --since '2023-02-14 19:05:49' -u flatpak-system-helper.service
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of flatpak-system-helper.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of flatpak-system-helper.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload flatpak-system-helper.service
++ service=flatpak-system-helper.service
++ systemctl start flatpak-system-helper.service
++ systemctl reload flatpak-system-helper.service
++ grep 'Job type reload is not applicable'
+Failed to reload flatpak-system-helper.service: Job type reload is not applicable for unit flatpak-system-helper.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit flatpak-system-helper.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit flatpak-system-helper.service'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'Active: active'
++ systemctl status flatpak-system-helper.service
+     Active: active (running) since Tue 2023-02-14 19:06:19 CST; 12s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Feb 14 19:06:33 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Feb 14 19:06:35 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Feb 14 19:06:37 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmprucvk5fc ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmprucvk5fc
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Feb 14 19:06:57 2023 - INFO  - Finish environment cleanup!

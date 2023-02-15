@@ -1,0 +1,111 @@
++ source ../common/lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Wed Feb 15 03:46:29 2023 - INFO  - Start environment preparation.
++ pre_junit5
++ DNF_INSTALL junit5
++ pkgs=junit5
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs junit5 --node 1 --tempfile ''
++ tmpfile2=/tmp/tmphr1uhz5v
++ '[' -z '' ']'
++ tmpfile=/tmp/tmphr1uhz5v
+++ grep 'java-.*-openjdk'
+++ rpm -qa 'java*'
+++ head -1
+++ awk -F - '{print $2}'
++ java_version=1.8.0
++ DNF_INSTALL java-1.8.0-devel
++ pkgs=java-1.8.0-devel
++ node=1
++ '[' -z /tmp/tmphr1uhz5v ']'
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs java-1.8.0-devel --node 1 --tempfile /tmp/tmphr1uhz5v
++ tmpfile2=/tmp/tmphr1uhz5v
++ '[' -z /tmp/tmphr1uhz5v ']'
++ DNF_INSTALL gradle
++ pkgs=gradle
++ node=1
++ '[' -z /tmp/tmphr1uhz5v ']'
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs gradle --node 1 --tempfile /tmp/tmphr1uhz5v
++ tmpfile2=/tmp/tmphr1uhz5v
++ '[' -z /tmp/tmphr1uhz5v ']'
++ JAVA_HOME=/usr/lib/jvm/java-openjdk
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin
++ export JAVA_HOME PATH
++ export GRADLE_HOME=usr/share/gradle
++ GRADLE_HOME=usr/share/gradle
++ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:usr/share/gradle
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:usr/share/gradle
++ mkdir -p junit5-gradle/src/test/java/com/example/project/
++ mkdir -p junit5-gradle/src/main/java/com/example/project/
++ cp build.gradle junit5-gradle
++ cp SecondTest.java junit5-gradle/src/test/java/com/example/project/
++ cd junit5-gradle
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Wed Feb 15 04:09:47 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Wed Feb 15 04:09:49 2023 - INFO  - Start testing...
++ gradle -version
+
+------------------------------------------------------------
+Gradle 4.4.1
+------------------------------------------------------------
+
+Build time:   2022-11-30 09:14:14 UTC
+Revision:     8456bc0ef07e67a5171798080982c3969dcb3c48
+
+Groovy:       2.4.8
+Ant:          Apache Ant(TM) version 1.10.12 compiled on November 30 2022
+JVM:          1.8.0_332 (Bisheng 25.332-b09)
+OS:           Linux 5.10.0-10.oe2203.riscv64 riscv64
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wait
++ gradle build
+Wed Feb 15 04:16:25 2023 - ERROR - Timeout : Command 'bash -x oe_test_junit5_gradle.sh' timed out after 1799.981258538 seconds
+++ post_test
+++ LOG_INFO 'start environment cleanup.'
+++ message='start environment cleanup.'
+++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Wed Feb 15 04:16:28 2023 - INFO  - start environment cleanup.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z /tmp/tmphr1uhz5v ]]
+++ '[' 0 -ne 0 ']'
+++ '[' 1 == 0 ']'
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmphr1uhz5v

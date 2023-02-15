@@ -1,0 +1,470 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the database config.'
++ message='Start to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the database config.'
+Tue Feb 14 05:50:53 2023 - INFO  - Start to prepare the database config.
++ DNF_INSTALL clamav
++ pkgs=clamav
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs clamav --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpaoxqg44l
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpaoxqg44l
++ mkdir test_virus_collection
++ echo test1
++ echo test2
++ cp /var/lib/clamav/main.cvd test_virus_collection/
++ LOG_INFO 'End to prepare the database config.'
++ message='End to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the database config.'
+Tue Feb 14 05:54:46 2023 - INFO  - End to prepare the database config.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 05:54:48 2023 - INFO  - Start to run test.
++ clamscan --max-recursion 1024 --max-dir-recursion 10 --max-embeddedpe 10 --max-htmlnormalize 10
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
++ CHECK_RESULT 0 0 0 'Check clamscan --max-recursion 1024 --max-dir-recursion 10 --max-embeddedpe 10 --max-htmlnormalize 10 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --max-recursion 1024 --max-dir-recursion 10 --max-embeddedpe 10 --max-htmlnormalize 10 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamscan --allmatch test_virus_collection --include=REGEX --include-dir=REGEX --max-htmlnotags 5 --max-scriptnormalize 5
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
++ CHECK_RESULT 0 0 0 'Check clamscan --allmatch test_virus_collection --include=REGEX --include-dir=REGEX --max-htmlnotags 5 --max-scriptnormalize 5 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --allmatch test_virus_collection --include=REGEX --include-dir=REGEX --max-htmlnotags 5 --max-scriptnormalize 5 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamscan -z test_virus_collection --cross-fs /opt --max-filesize 1024 --max-ziptypercg 5
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
++ CHECK_RESULT 0 0 0 'Check clamscan -z test_virus_collection --cross-fs /opt --max-filesize 1024 --max-ziptypercg 5 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check clamscan -z test_virus_collection --cross-fs /opt --max-filesize 1024 --max-ziptypercg 5 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamscan --follow-dir-symlinks 0 --max-scansize 1024
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
++ CHECK_RESULT 0 0 0 'Check clamscan --follow-dir-symlinks 0 --max-scansize 1024 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --follow-dir-symlinks 0 --max-scansize 1024 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamscan --follow-file-symlinks 0 --max-files 1024 --max-ziptypercg 5
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
++ CHECK_RESULT 0 0 0 'Check clamscan --follow-file-symlinks 0 --max-files 1024 --max-ziptypercg 5 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --follow-file-symlinks 0 --max-files 1024 --max-ziptypercg 5 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamscan --file-list /opt --exclude-dir=REGEX --max-partitions 5 --max-iconspe 5
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
++ CHECK_RESULT 0 0 0 'Check clamscan --file-list /opt --exclude-dir=REGEX --max-partitions 5 --max-iconspe 5 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --file-list /opt --exclude-dir=REGEX --max-partitions 5 --max-iconspe 5 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamscan --bytecode test_virus_collection --bytecode-timeout 50 --max-rechwp3 5
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+Tue Feb 14 06:20:46 2023 - ERROR - Timeout : Command 'bash -x oe_test_clamav_clamscan_3.sh' timed out after 1799.9925710279995 seconds
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb 14 06:25:24 2023 - INFO  - Start to restore the test environment.
+++ rm -rf test_clamscan.log test_virus_collection test_log.log
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z /tmp/tmpaoxqg44l ]]
+++ '[' 0 -ne 0 ']'
+++ '[' 1 == 0 ']'
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpaoxqg44l
+++ '[' 0 -ne 0 ']'
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 06:25:54 2023 - INFO  - End to restore the test environment.
++ CHECK_RESULT 0 0 0 'Check clamscan --bytecode test_virus_collection --bytecode-timeout 50 --max-rechwp3 5 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --bytecode test_virus_collection --bytecode-timeout 50 --max-rechwp3 5 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamscan --bytecode-unsigned test_virus_collection --statistics bytecode --pcre-match-limit 5
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+LibClamAV Error: sigperf_events_init: events table full. Increase MAX_TRACKED_BC
+test_virus_collection: No such file or directory
+WARNING: test_virus_collection: Can't access file
+LibClamAV info: Bytecode name                        #runs #matches  usecs total usecs avg
+LibClamAV info: =============                        ===== ========  =========== =========
+LibClamAV info: BC.Legacy.Exploit.CVE_2010_1885-2        1        0         7512   7512.00
++ CHECK_RESULT 2 0 0 'Check clamscan --bytecode-unsigned test_virus_collection --statistics bytecode --pcre-match-limit 5 failed.'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --bytecode-unsigned test_virus_collection --statistics bytecode --pcre-match-limit 5 failed.'
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Check clamscan --bytecode-unsigned test_virus_collection --statistics bytecode --pcre-match-limit 5 failed.'
++ LOG_ERROR 'Check clamscan --bytecode-unsigned test_virus_collection --statistics bytecode --pcre-match-limit 5 failed.'
++ message='Check clamscan --bytecode-unsigned test_virus_collection --statistics bytecode --pcre-match-limit 5 failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clamscan --bytecode-unsigned test_virus_collection --statistics bytecode --pcre-match-limit 5 failed.'
+Tue Feb 14 06:32:10 2023 - ERROR - Check clamscan --bytecode-unsigned test_virus_collection --statistics bytecode --pcre-match-limit 5 failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamscan_3.sh line 51'
++ message='oe_test_clamav_clamscan_3.sh line 51'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamscan_3.sh line 51'
+Tue Feb 14 06:32:12 2023 - ERROR - oe_test_clamav_clamscan_3.sh line 51
++ return 0
++ clamscan --detect-pua test_virus_collection --pcre-recmatch-limit 5 --phishing-sigs test_virus_collection --statistics pcre
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+LibClamAV Error: pcre_perf: events table full. Increase MAX_TRACKED_PCRE
+test_virus_collection: No such file or directory
+WARNING: test_virus_collection: Can't access file
+test_virus_collection: No such file or directory
+WARNING: test_virus_collection: Can't access file
+LibClamAV info: PCRE Expression    #runs #matches  usecs total usecs avg
+LibClamAV info: ===============    ===== ========  =========== =========
++ CHECK_RESULT 2 0 0 'Check clamscan --detect-pua test_virus_collection  --pcre-recmatch-limit 5 --phishing-sigs test_virus_collection --statistics pcre failed.'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --detect-pua test_virus_collection  --pcre-recmatch-limit 5 --phishing-sigs test_virus_collection --statistics pcre failed.'
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Check clamscan --detect-pua test_virus_collection  --pcre-recmatch-limit 5 --phishing-sigs test_virus_collection --statistics pcre failed.'
++ LOG_ERROR 'Check clamscan --detect-pua test_virus_collection  --pcre-recmatch-limit 5 --phishing-sigs test_virus_collection --statistics pcre failed.'
++ message='Check clamscan --detect-pua test_virus_collection  --pcre-recmatch-limit 5 --phishing-sigs test_virus_collection --statistics pcre failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clamscan --detect-pua test_virus_collection  --pcre-recmatch-limit 5 --phishing-sigs test_virus_collection --statistics pcre failed.'
+Tue Feb 14 06:38:41 2023 - ERROR - Check clamscan --detect-pua test_virus_collection  --pcre-recmatch-limit 5 --phishing-sigs test_virus_collection --statistics pcre failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamscan_3.sh line 53'
++ message='oe_test_clamav_clamscan_3.sh line 53'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamscan_3.sh line 53'
+Tue Feb 14 06:38:43 2023 - ERROR - oe_test_clamav_clamscan_3.sh line 53
++ return 0
++ clamscan --include-pua=CAT --detect-structured test_virus_collection --structured-ssn-format=2 --pcre-max-filesize 5 --statistics none
+test_virus_collection: No such file or directory
+WARNING: test_virus_collection: Can't access file
++ CHECK_RESULT 2 0 0 'Check clamscan --include-pua=CAT --detect-structured test_virus_collection --structured-ssn-format=2 --pcre-max-filesize 5 --statistics none failed.'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Check clamscan --include-pua=CAT --detect-structured test_virus_collection --structured-ssn-format=2 --pcre-max-filesize 5 --statistics none failed.'
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Check clamscan --include-pua=CAT --detect-structured test_virus_collection --structured-ssn-format=2 --pcre-max-filesize 5 --statistics none failed.'
++ LOG_ERROR 'Check clamscan --include-pua=CAT --detect-structured test_virus_collection --structured-ssn-format=2 --pcre-max-filesize 5 --statistics none failed.'
++ message='Check clamscan --include-pua=CAT --detect-structured test_virus_collection --structured-ssn-format=2 --pcre-max-filesize 5 --statistics none failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check clamscan --include-pua=CAT --detect-structured test_virus_collection --structured-ssn-format=2 --pcre-max-filesize 5 --statistics none failed.'
+Tue Feb 14 06:46:52 2023 - ERROR - Check clamscan --include-pua=CAT --detect-structured test_virus_collection --structured-ssn-format=2 --pcre-max-filesize 5 --statistics none failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clamav_clamscan_3.sh line 55'
++ message='oe_test_clamav_clamscan_3.sh line 55'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamscan_3.sh line 55'
+Tue Feb 14 06:46:55 2023 - ERROR - oe_test_clamav_clamscan_3.sh line 55
++ return 0
++ clamscan --structured-ssn-count 1 --structured-cc-count 1 --scan-mail test_virus_collection --disable-cache

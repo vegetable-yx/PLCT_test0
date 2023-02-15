@@ -1,0 +1,1251 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb 14 22:33:43 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL gradle
++ pkgs=gradle
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs gradle --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 1 day, 0:31:37 ago on Mon Feb 13 22:03:37 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ gradle                           noarch   4.4.1-2.oe2203      mainline   9.2 M
+Installing dependencies:
+ args4j                           noarch   2.33-6.oe2203       mainline   166 k
+ aws-sdk-java                     noarch   1.11.3-7.oe2203     mainline    47 M
+ jackson-databind                 noarch   2.9.8-9.oe2203      mainline   1.2 M
+ jackson-dataformats-binary       noarch   2.9.4-6.oe2203      mainline   237 k
+ jgit                             noarch   5.4.0-1.oe2203      mainline   3.0 M
+ kryo                             noarch   4.0.2-7.oe2203      mainline   541 k
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+ nekohtml                         noarch   1.9.22-8.oe2203     mainline   253 k
+ tesla-polyglot-groovy            noarch   0.2.1-3.oe2203      mainline    55 k
+
+Transaction Summary
+================================================================================
+Install  13 Packages
+
+Total download size: 62 M
+Installed size: 626 M
+Downloading Packages:
+(1/13): args4j-2.33-6.oe2203.noarch.rpm          43 kB/s | 166 kB     00:03    
+(2/13): jackson-databind-2.9.8-9.oe2203.noarch. 388 kB/s | 1.2 MB     00:03    
+(3/13): jackson-dataformats-binary-2.9.4-6.oe22 351 kB/s | 237 kB     00:00    
+(4/13): jgit-5.4.0-1.oe2203.noarch.rpm          387 kB/s | 3.0 MB     00:07    
+(5/13): kryo-4.0.2-7.oe2203.noarch.rpm          240 kB/s | 541 kB     00:02    
+(6/13): maven-resolver-connector-basic-1.1.1-4. 164 kB/s |  49 kB     00:00    
+(7/13): maven-resolver-transport-wagon-1.1.1-4. 188 kB/s |  37 kB     00:00    
+(8/13): maven-wagon-http-3.1.0-2.oe2203.noarch. 148 kB/s |  20 kB     00:00    
+(9/13): maven-wagon-http-shared-3.1.0-2.oe2203. 193 kB/s |  42 kB     00:00    
+(10/13): nekohtml-1.9.22-8.oe2203.noarch.rpm    274 kB/s | 253 kB     00:00    
+(11/13): tesla-polyglot-groovy-0.2.1-3.oe2203.n 199 kB/s |  55 kB     00:00    
+(12/13): gradle-4.4.1-2.oe2203.noarch.rpm       373 kB/s | 9.2 MB     00:25    
+(13/13): aws-sdk-java-1.11.3-7.oe2203.noarch.rp 926 kB/s |  47 MB     00:52    
+--------------------------------------------------------------------------------
+Total                                           1.2 MB/s |  62 MB     00:52     
+Running transaction check
+Waiting for process with pid 4052 to finish.
+Error: transaction check vs depsolve:
+java-headless >= 1:1.6 is needed by args4j-2.33-6.oe2203.noarch
+javapackages-filesystem is needed by args4j-2.33-6.oe2203.noarch
+mvn(com.sun:tools) is needed by args4j-2.33-6.oe2203.noarch
+mvn(org.apache.felix:maven-bundle-plugin) is needed by args4j-2.33-6.oe2203.noarch
+mvn(org.kohsuke:pom:pom:) is needed by args4j-2.33-6.oe2203.noarch
+java-headless >= 1:1.6 is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+javapackages-filesystem is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(commons-logging:commons-logging) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(joda-time:joda-time) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(junit:junit) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+ant-lib is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-cli is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-codec is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-collections is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-compress is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-io is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-lang is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-lang3 is needed by gradle-4.4.1-2.oe2203.noarch
+apache-ivy is needed by gradle-4.4.1-2.oe2203.noarch
+aqute-bndlib is needed by gradle-4.4.1-2.oe2203.noarch
+atinject is needed by gradle-4.4.1-2.oe2203.noarch
+base64coder is needed by gradle-4.4.1-2.oe2203.noarch
+beust-jcommander is needed by gradle-4.4.1-2.oe2203.noarch
+bouncycastle is needed by gradle-4.4.1-2.oe2203.noarch
+bsh is needed by gradle-4.4.1-2.oe2203.noarch
+ecj is needed by gradle-4.4.1-2.oe2203.noarch
+glassfish-servlet-api is needed by gradle-4.4.1-2.oe2203.noarch
+google-gson is needed by gradle-4.4.1-2.oe2203.noarch
+google-guice is needed by gradle-4.4.1-2.oe2203.noarch
+groovy is needed by gradle-4.4.1-2.oe2203.noarch
+guava20 is needed by gradle-4.4.1-2.oe2203.noarch
+hawtjni-runtime is needed by gradle-4.4.1-2.oe2203.noarch
+httpcomponents-client is needed by gradle-4.4.1-2.oe2203.noarch
+httpcomponents-core is needed by gradle-4.4.1-2.oe2203.noarch
+jackson-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+jackson-core is needed by gradle-4.4.1-2.oe2203.noarch
+jansi is needed by gradle-4.4.1-2.oe2203.noarch
+jansi-native is needed by gradle-4.4.1-2.oe2203.noarch
+jatl is needed by gradle-4.4.1-2.oe2203.noarch
+java-headless is needed by gradle-4.4.1-2.oe2203.noarch
+javapackages-filesystem is needed by gradle-4.4.1-2.oe2203.noarch
+javapackages-tools is needed by gradle-4.4.1-2.oe2203.noarch
+jcifs is needed by gradle-4.4.1-2.oe2203.noarch
+jcip-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+jcl-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+jetty-server is needed by gradle-4.4.1-2.oe2203.noarch
+jetty-util is needed by gradle-4.4.1-2.oe2203.noarch
+joda-time is needed by gradle-4.4.1-2.oe2203.noarch
+jsch is needed by gradle-4.4.1-2.oe2203.noarch
+jsr-305 is needed by gradle-4.4.1-2.oe2203.noarch
+jul-to-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+junit is needed by gradle-4.4.1-2.oe2203.noarch
+log4j-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+maven-lib is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-api is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-impl is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-spi is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-util is needed by gradle-4.4.1-2.oe2203.noarch
+maven-wagon-file is needed by gradle-4.4.1-2.oe2203.noarch
+maven-wagon-provider-api is needed by gradle-4.4.1-2.oe2203.noarch
+minlog is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(biz.aQute.bnd:bndlib) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.code.findbugs:jsr305) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.code.gson:gson) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.guava:guava:20.0) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.googlecode.jatl:jatl) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.jcraft:jsch) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-cli:commons-cli) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-codec:commons-codec) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-collections:commons-collections) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-lang:commons-lang) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(javax.inject:javax.inject) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(joda-time:joda-time) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(junit:junit) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(net.jcip:jcip-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(net.rubygrapefruit:native-platform) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache-extras.beanshell:bsh) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.ant:ant) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.commons:commons-compress) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.ivy:ivy) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.maven:maven-core) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.xbean:xbean-reflect) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.bouncycastle:bcpg-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.bouncycastle:bcprov-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.codehaus.groovy:groovy-all) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-component-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.eclipse.jetty:jetty-server) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.fusesource.jansi:jansi) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.mozilla:rhino) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.ow2.asm:asm-debug-all) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.samba.jcifs:jcifs) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:jul-to-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:log4j-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.sonatype.pmaven:pmaven-common) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.testng:testng) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(xerces:xercesImpl) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(xml-apis:xml-apis) is needed by gradle-4.4.1-2.oe2203.noarch
+native-platform is needed by gradle-4.4.1-2.oe2203.noarch
+objectweb-asm is needed by gradle-4.4.1-2.oe2203.noarch
+objenesis is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-cipher is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-classworlds is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-containers-component-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-interpolation is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-sec-dispatcher is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-utils is needed by gradle-4.4.1-2.oe2203.noarch
+reflectasm is needed by gradle-4.4.1-2.oe2203.noarch
+rhino is needed by gradle-4.4.1-2.oe2203.noarch
+sisu-inject is needed by gradle-4.4.1-2.oe2203.noarch
+sisu-plexus is needed by gradle-4.4.1-2.oe2203.noarch
+slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+snakeyaml is needed by gradle-4.4.1-2.oe2203.noarch
+tesla-polyglot-common is needed by gradle-4.4.1-2.oe2203.noarch
+testng is needed by gradle-4.4.1-2.oe2203.noarch
+xbean is needed by gradle-4.4.1-2.oe2203.noarch
+xerces-j2 is needed by gradle-4.4.1-2.oe2203.noarch
+xml-commons-apis is needed by gradle-4.4.1-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by jackson-databind-2.9.8-9.oe2203.noarch
+javapackages-filesystem is needed by jackson-databind-2.9.8-9.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-annotations) is needed by jackson-databind-2.9.8-9.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-databind-2.9.8-9.oe2203.noarch
+java-headless >= 1:1.7 is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+javapackages-filesystem is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+mvn(com.fasterxml.jackson:jackson-base:pom:) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+apache-sshd >= 1:2.2.0 is needed by jgit-5.4.0-1.oe2203.noarch
+bouncycastle >= 1.61 is needed by jgit-5.4.0-1.oe2203.noarch
+java-headless >= 1:1.8 is needed by jgit-5.4.0-1.oe2203.noarch
+javapackages-filesystem is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.google.code.gson:gson) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.googlecode.javaewah:JavaEWAH) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.jcraft:jsch) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.jcraft:jzlib) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(net.i2p.crypto:eddsa) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.ant:ant) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.commons:commons-compress) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.sshd:sshd-osgi) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.sshd:sshd-sftp) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcpg-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcpkix-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcprov-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.eclipse.jetty:jetty-servlet) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.osgi:osgi.core) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.slf4j:slf4j-simple) is needed by jgit-5.4.0-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by kryo-4.0.2-7.oe2203.noarch
+javapackages-filesystem is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(com.esotericsoftware:minlog) is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(com.esotericsoftware:reflectasm) is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(org.objenesis:objenesis) is needed by kryo-4.0.2-7.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+bcel is needed by nekohtml-1.9.22-8.oe2203.noarch
+java-headless is needed by nekohtml-1.9.22-8.oe2203.noarch
+javapackages-filesystem is needed by nekohtml-1.9.22-8.oe2203.noarch
+mvn(xerces:xercesImpl) is needed by nekohtml-1.9.22-8.oe2203.noarch
+xerces-j2 >= 0:2.7.1 is needed by nekohtml-1.9.22-8.oe2203.noarch
+xml-commons-apis is needed by nekohtml-1.9.22-8.oe2203.noarch
+java-headless is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+javapackages-filesystem is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(commons-logging:commons-logging) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(io.takari.polyglot:polyglot-common) = 0.2.1 is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(org.codehaus.groovy:groovy) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 1 day, 0:31:37 ago on Mon Feb 13 22:03:37 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ gradle                           noarch   4.4.1-2.oe2203      mainline   9.2 M
+Installing dependencies:
+ args4j                           noarch   2.33-6.oe2203       mainline   166 k
+ aws-sdk-java                     noarch   1.11.3-7.oe2203     mainline    47 M
+ jackson-databind                 noarch   2.9.8-9.oe2203      mainline   1.2 M
+ jackson-dataformats-binary       noarch   2.9.4-6.oe2203      mainline   237 k
+ jgit                             noarch   5.4.0-1.oe2203      mainline   3.0 M
+ kryo                             noarch   4.0.2-7.oe2203      mainline   541 k
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+ nekohtml                         noarch   1.9.22-8.oe2203     mainline   253 k
+ tesla-polyglot-groovy            noarch   0.2.1-3.oe2203      mainline    55 k
+
+Transaction Summary
+================================================================================
+Install  13 Packages
+
+Total download size: 62 M
+Installed size: 626 M
+Downloading Packages:
+(1/13): args4j-2.33-6.oe2203.noarch.rpm          43 kB/s | 166 kB     00:03    
+(2/13): jackson-databind-2.9.8-9.oe2203.noarch. 388 kB/s | 1.2 MB     00:03    
+(3/13): jackson-dataformats-binary-2.9.4-6.oe22 351 kB/s | 237 kB     00:00    
+(4/13): jgit-5.4.0-1.oe2203.noarch.rpm          387 kB/s | 3.0 MB     00:07    
+(5/13): kryo-4.0.2-7.oe2203.noarch.rpm          240 kB/s | 541 kB     00:02    
+(6/13): maven-resolver-connector-basic-1.1.1-4. 164 kB/s |  49 kB     00:00    
+(7/13): maven-resolver-transport-wagon-1.1.1-4. 188 kB/s |  37 kB     00:00    
+(8/13): maven-wagon-http-3.1.0-2.oe2203.noarch. 148 kB/s |  20 kB     00:00    
+(9/13): maven-wagon-http-shared-3.1.0-2.oe2203. 193 kB/s |  42 kB     00:00    
+(10/13): nekohtml-1.9.22-8.oe2203.noarch.rpm    274 kB/s | 253 kB     00:00    
+(11/13): tesla-polyglot-groovy-0.2.1-3.oe2203.n 199 kB/s |  55 kB     00:00    
+(12/13): gradle-4.4.1-2.oe2203.noarch.rpm       373 kB/s | 9.2 MB     00:25    
+(13/13): aws-sdk-java-1.11.3-7.oe2203.noarch.rp 926 kB/s |  47 MB     00:52    
+--------------------------------------------------------------------------------
+Total                                           1.2 MB/s |  62 MB     00:52     
+Running transaction check
+Waiting for process with pid 4052 to finish.
+Error: transaction check vs depsolve:
+java-headless >= 1:1.6 is needed by args4j-2.33-6.oe2203.noarch
+javapackages-filesystem is needed by args4j-2.33-6.oe2203.noarch
+mvn(com.sun:tools) is needed by args4j-2.33-6.oe2203.noarch
+mvn(org.apache.felix:maven-bundle-plugin) is needed by args4j-2.33-6.oe2203.noarch
+mvn(org.kohsuke:pom:pom:) is needed by args4j-2.33-6.oe2203.noarch
+java-headless >= 1:1.6 is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+javapackages-filesystem is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(commons-logging:commons-logging) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(joda-time:joda-time) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(junit:junit) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+ant-lib is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-cli is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-codec is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-collections is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-compress is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-io is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-lang is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-lang3 is needed by gradle-4.4.1-2.oe2203.noarch
+apache-ivy is needed by gradle-4.4.1-2.oe2203.noarch
+aqute-bndlib is needed by gradle-4.4.1-2.oe2203.noarch
+atinject is needed by gradle-4.4.1-2.oe2203.noarch
+base64coder is needed by gradle-4.4.1-2.oe2203.noarch
+beust-jcommander is needed by gradle-4.4.1-2.oe2203.noarch
+bouncycastle is needed by gradle-4.4.1-2.oe2203.noarch
+bsh is needed by gradle-4.4.1-2.oe2203.noarch
+ecj is needed by gradle-4.4.1-2.oe2203.noarch
+glassfish-servlet-api is needed by gradle-4.4.1-2.oe2203.noarch
+google-gson is needed by gradle-4.4.1-2.oe2203.noarch
+google-guice is needed by gradle-4.4.1-2.oe2203.noarch
+groovy is needed by gradle-4.4.1-2.oe2203.noarch
+guava20 is needed by gradle-4.4.1-2.oe2203.noarch
+hawtjni-runtime is needed by gradle-4.4.1-2.oe2203.noarch
+httpcomponents-client is needed by gradle-4.4.1-2.oe2203.noarch
+httpcomponents-core is needed by gradle-4.4.1-2.oe2203.noarch
+jackson-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+jackson-core is needed by gradle-4.4.1-2.oe2203.noarch
+jansi is needed by gradle-4.4.1-2.oe2203.noarch
+jansi-native is needed by gradle-4.4.1-2.oe2203.noarch
+jatl is needed by gradle-4.4.1-2.oe2203.noarch
+java-headless is needed by gradle-4.4.1-2.oe2203.noarch
+javapackages-filesystem is needed by gradle-4.4.1-2.oe2203.noarch
+javapackages-tools is needed by gradle-4.4.1-2.oe2203.noarch
+jcifs is needed by gradle-4.4.1-2.oe2203.noarch
+jcip-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+jcl-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+jetty-server is needed by gradle-4.4.1-2.oe2203.noarch
+jetty-util is needed by gradle-4.4.1-2.oe2203.noarch
+joda-time is needed by gradle-4.4.1-2.oe2203.noarch
+jsch is needed by gradle-4.4.1-2.oe2203.noarch
+jsr-305 is needed by gradle-4.4.1-2.oe2203.noarch
+jul-to-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+junit is needed by gradle-4.4.1-2.oe2203.noarch
+log4j-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+maven-lib is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-api is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-impl is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-spi is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-util is needed by gradle-4.4.1-2.oe2203.noarch
+maven-wagon-file is needed by gradle-4.4.1-2.oe2203.noarch
+maven-wagon-provider-api is needed by gradle-4.4.1-2.oe2203.noarch
+minlog is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(biz.aQute.bnd:bndlib) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.code.findbugs:jsr305) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.code.gson:gson) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.guava:guava:20.0) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.googlecode.jatl:jatl) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.jcraft:jsch) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-cli:commons-cli) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-codec:commons-codec) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-collections:commons-collections) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-lang:commons-lang) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(javax.inject:javax.inject) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(joda-time:joda-time) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(junit:junit) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(net.jcip:jcip-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(net.rubygrapefruit:native-platform) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache-extras.beanshell:bsh) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.ant:ant) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.commons:commons-compress) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.ivy:ivy) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.maven:maven-core) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.xbean:xbean-reflect) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.bouncycastle:bcpg-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.bouncycastle:bcprov-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.codehaus.groovy:groovy-all) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-component-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.eclipse.jetty:jetty-server) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.fusesource.jansi:jansi) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.mozilla:rhino) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.ow2.asm:asm-debug-all) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.samba.jcifs:jcifs) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:jul-to-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:log4j-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.sonatype.pmaven:pmaven-common) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.testng:testng) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(xerces:xercesImpl) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(xml-apis:xml-apis) is needed by gradle-4.4.1-2.oe2203.noarch
+native-platform is needed by gradle-4.4.1-2.oe2203.noarch
+objectweb-asm is needed by gradle-4.4.1-2.oe2203.noarch
+objenesis is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-cipher is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-classworlds is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-containers-component-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-interpolation is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-sec-dispatcher is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-utils is needed by gradle-4.4.1-2.oe2203.noarch
+reflectasm is needed by gradle-4.4.1-2.oe2203.noarch
+rhino is needed by gradle-4.4.1-2.oe2203.noarch
+sisu-inject is needed by gradle-4.4.1-2.oe2203.noarch
+sisu-plexus is needed by gradle-4.4.1-2.oe2203.noarch
+slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+snakeyaml is needed by gradle-4.4.1-2.oe2203.noarch
+tesla-polyglot-common is needed by gradle-4.4.1-2.oe2203.noarch
+testng is needed by gradle-4.4.1-2.oe2203.noarch
+xbean is needed by gradle-4.4.1-2.oe2203.noarch
+xerces-j2 is needed by gradle-4.4.1-2.oe2203.noarch
+xml-commons-apis is needed by gradle-4.4.1-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by jackson-databind-2.9.8-9.oe2203.noarch
+javapackages-filesystem is needed by jackson-databind-2.9.8-9.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-annotations) is needed by jackson-databind-2.9.8-9.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-databind-2.9.8-9.oe2203.noarch
+java-headless >= 1:1.7 is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+javapackages-filesystem is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+mvn(com.fasterxml.jackson:jackson-base:pom:) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+apache-sshd >= 1:2.2.0 is needed by jgit-5.4.0-1.oe2203.noarch
+bouncycastle >= 1.61 is needed by jgit-5.4.0-1.oe2203.noarch
+java-headless >= 1:1.8 is needed by jgit-5.4.0-1.oe2203.noarch
+javapackages-filesystem is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.google.code.gson:gson) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.googlecode.javaewah:JavaEWAH) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.jcraft:jsch) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.jcraft:jzlib) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(net.i2p.crypto:eddsa) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.ant:ant) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.commons:commons-compress) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.sshd:sshd-osgi) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.sshd:sshd-sftp) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcpg-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcpkix-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcprov-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.eclipse.jetty:jetty-servlet) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.osgi:osgi.core) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.slf4j:slf4j-simple) is needed by jgit-5.4.0-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by kryo-4.0.2-7.oe2203.noarch
+javapackages-filesystem is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(com.esotericsoftware:minlog) is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(com.esotericsoftware:reflectasm) is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(org.objenesis:objenesis) is needed by kryo-4.0.2-7.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+bcel is needed by nekohtml-1.9.22-8.oe2203.noarch
+java-headless is needed by nekohtml-1.9.22-8.oe2203.noarch
+javapackages-filesystem is needed by nekohtml-1.9.22-8.oe2203.noarch
+mvn(xerces:xercesImpl) is needed by nekohtml-1.9.22-8.oe2203.noarch
+xerces-j2 >= 0:2.7.1 is needed by nekohtml-1.9.22-8.oe2203.noarch
+xml-commons-apis is needed by nekohtml-1.9.22-8.oe2203.noarch
+java-headless is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+javapackages-filesystem is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(commons-logging:commons-logging) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(io.takari.polyglot:polyglot-common) = 0.2.1 is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(org.codehaus.groovy:groovy) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ mkdir subdir
++ cat
++ cat
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb 14 22:38:36 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 22:38:38 2023 - INFO  - Start to run test.
++ grep 'BUILD SUCCESSFUL'
++ gradle tasks init
+oe_test_gradle_02.sh: line 38: gradle: command not found
++ CHECK_RESULT 1 0 0 'Check gradle tasks init failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle tasks init failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle tasks init failed'
++ LOG_ERROR 'Check gradle tasks init failed'
++ message='Check gradle tasks init failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle tasks init failed'
+Tue Feb 14 22:38:41 2023 - ERROR - Check gradle tasks init failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_02.sh line 39'
++ message='oe_test_gradle_02.sh line 39'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_02.sh line 39'
+Tue Feb 14 22:38:43 2023 - ERROR - oe_test_gradle_02.sh line 39
++ return 0
++ grep 'BUILD SUCCESSFUL'
++ gradle tasks wrapper
+oe_test_gradle_02.sh: line 40: gradle: command not found
++ CHECK_RESULT 1 0 0 'Check gradle tasks wrapper failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle tasks wrapper failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle tasks wrapper failed.'
++ LOG_ERROR 'Check gradle tasks wrapper failed.'
++ message='Check gradle tasks wrapper failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle tasks wrapper failed.'
+Tue Feb 14 22:38:45 2023 - ERROR - Check gradle tasks wrapper failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_02.sh line 41'
++ message='oe_test_gradle_02.sh line 41'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_02.sh line 41'
+Tue Feb 14 22:38:47 2023 - ERROR - oe_test_gradle_02.sh line 41
++ return 0
++ cp -f ../common/build.gradle ./
++ gradle -m build
+oe_test_gradle_02.sh: line 43: gradle: command not found
++ grep 'BUILD SUCCESSFUL'
++ CHECK_RESULT 1 0 0 'Check gradle -m build failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle -m build failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle -m build failed.'
++ LOG_ERROR 'Check gradle -m build failed.'
++ message='Check gradle -m build failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle -m build failed.'
+Tue Feb 14 22:38:50 2023 - ERROR - Check gradle -m build failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_02.sh line 44'
++ message='oe_test_gradle_02.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_02.sh line 44'
+Tue Feb 14 22:38:52 2023 - ERROR - oe_test_gradle_02.sh line 44
++ return 0
++ gradle build --profile
+oe_test_gradle_02.sh: line 45: gradle: command not found
++ grep 'BUILD SUCCESSFUL'
++ CHECK_RESULT 1 0 0 'Check gradle build --profile failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle build --profile failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle build --profile failed.'
++ LOG_ERROR 'Check gradle build --profile failed.'
++ message='Check gradle build --profile failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle build --profile failed.'
+Tue Feb 14 22:38:55 2023 - ERROR - Check gradle build --profile failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_02.sh line 46'
++ message='oe_test_gradle_02.sh line 46'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_02.sh line 46'
+Tue Feb 14 22:38:57 2023 - ERROR - oe_test_gradle_02.sh line 46
++ return 0
++ gradle -q -b subdir/myproject.gradle hello
++ grep 'using build file '\''.name'\'' in '\''.parentFile.name'\''.'
+oe_test_gradle_02.sh: line 47: gradle: command not found
++ CHECK_RESULT 1 0 0 'Check gradle -q -b failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle -q -b failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle -q -b failed.'
++ LOG_ERROR 'Check gradle -q -b failed.'
++ message='Check gradle -q -b failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle -q -b failed.'
+Tue Feb 14 22:38:59 2023 - ERROR - Check gradle -q -b failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_02.sh line 48'
++ message='oe_test_gradle_02.sh line 48'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_02.sh line 48'
+Tue Feb 14 22:39:02 2023 - ERROR - oe_test_gradle_02.sh line 48
++ return 0
++ gradle -q -p subdir hello
++ grep 'using build file '\''.name'\'' in '\''.parentFile.name'\''.'
+oe_test_gradle_02.sh: line 49: gradle: command not found
++ CHECK_RESULT 1 0 0 'Check gradle -q -p failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle -q -p failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle -q -p failed.'
++ LOG_ERROR 'Check gradle -q -p failed.'
++ message='Check gradle -q -p failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle -q -p failed.'
+Tue Feb 14 22:39:05 2023 - ERROR - Check gradle -q -p failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_02.sh line 50'
++ message='oe_test_gradle_02.sh line 50'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_02.sh line 50'
+Tue Feb 14 22:39:07 2023 - ERROR - oe_test_gradle_02.sh line 50
++ return 0
++ gradle base
+oe_test_gradle_02.sh: line 51: gradle: command not found
++ grep Task
++ CHECK_RESULT 1 0 0 'Check gradle base failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle base failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle base failed.'
++ LOG_ERROR 'Check gradle base failed.'
++ message='Check gradle base failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle base failed.'
+Tue Feb 14 22:39:09 2023 - ERROR - Check gradle base failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_02.sh line 52'
++ message='oe_test_gradle_02.sh line 52'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_02.sh line 52'
+Tue Feb 14 22:39:11 2023 - ERROR - oe_test_gradle_02.sh line 52
++ return 0
++ gradle -q base
+oe_test_gradle_02.sh: line 53: gradle: command not found
++ grep 'BUILD SUCCESSFUL'
++ CHECK_RESULT 1 1 0 'Check gradle -q base failed.'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Check gradle -q base failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ gradle -w base
+oe_test_gradle_02.sh: line 55: gradle: command not found
++ grep warning
++ CHECK_RESULT 1 0 0 'Check gradle -w base failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check gradle -w base failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check gradle -w base failed.'
++ LOG_ERROR 'Check gradle -w base failed.'
++ message='Check gradle -w base failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Check gradle -w base failed.'
+Tue Feb 14 22:39:13 2023 - ERROR - Check gradle -w base failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_gradle_02.sh line 56'
++ message='oe_test_gradle_02.sh line 56'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_gradle_02.sh line 56'
+Tue Feb 14 22:39:14 2023 - ERROR - oe_test_gradle_02.sh line 56
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 22:39:16 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Feb 14 22:39:19 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb 14 22:39:20 2023 - INFO  - Start to restore the test environment.
+++ grep -vE '\.sh'
+++ ls
++ rm -rf build.gradle subdir .gradle/
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 1 day, 0:31:37 ago on Mon Feb 13 22:03:37 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ gradle                           noarch   4.4.1-2.oe2203      mainline   9.2 M
+Installing dependencies:
+ args4j                           noarch   2.33-6.oe2203       mainline   166 k
+ aws-sdk-java                     noarch   1.11.3-7.oe2203     mainline    47 M
+ jackson-databind                 noarch   2.9.8-9.oe2203      mainline   1.2 M
+ jackson-dataformats-binary       noarch   2.9.4-6.oe2203      mainline   237 k
+ jgit                             noarch   5.4.0-1.oe2203      mainline   3.0 M
+ kryo                             noarch   4.0.2-7.oe2203      mainline   541 k
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+ nekohtml                         noarch   1.9.22-8.oe2203     mainline   253 k
+ tesla-polyglot-groovy            noarch   0.2.1-3.oe2203      mainline    55 k
+
+Transaction Summary
+================================================================================
+Install  13 Packages
+
+Total download size: 62 M
+Installed size: 626 M
+Downloading Packages:
+(1/13): args4j-2.33-6.oe2203.noarch.rpm          43 kB/s | 166 kB     00:03    
+(2/13): jackson-databind-2.9.8-9.oe2203.noarch. 388 kB/s | 1.2 MB     00:03    
+(3/13): jackson-dataformats-binary-2.9.4-6.oe22 351 kB/s | 237 kB     00:00    
+(4/13): jgit-5.4.0-1.oe2203.noarch.rpm          387 kB/s | 3.0 MB     00:07    
+(5/13): kryo-4.0.2-7.oe2203.noarch.rpm          240 kB/s | 541 kB     00:02    
+(6/13): maven-resolver-connector-basic-1.1.1-4. 164 kB/s |  49 kB     00:00    
+(7/13): maven-resolver-transport-wagon-1.1.1-4. 188 kB/s |  37 kB     00:00    
+(8/13): maven-wagon-http-3.1.0-2.oe2203.noarch. 148 kB/s |  20 kB     00:00    
+(9/13): maven-wagon-http-shared-3.1.0-2.oe2203. 193 kB/s |  42 kB     00:00    
+(10/13): nekohtml-1.9.22-8.oe2203.noarch.rpm    274 kB/s | 253 kB     00:00    
+(11/13): tesla-polyglot-groovy-0.2.1-3.oe2203.n 199 kB/s |  55 kB     00:00    
+(12/13): gradle-4.4.1-2.oe2203.noarch.rpm       373 kB/s | 9.2 MB     00:25    
+(13/13): aws-sdk-java-1.11.3-7.oe2203.noarch.rp 926 kB/s |  47 MB     00:52    
+--------------------------------------------------------------------------------
+Total                                           1.2 MB/s |  62 MB     00:52     
+Running transaction check
+Waiting for process with pid 4052 to finish.
+Error: transaction check vs depsolve:
+java-headless >= 1:1.6 is needed by args4j-2.33-6.oe2203.noarch
+javapackages-filesystem is needed by args4j-2.33-6.oe2203.noarch
+mvn(com.sun:tools) is needed by args4j-2.33-6.oe2203.noarch
+mvn(org.apache.felix:maven-bundle-plugin) is needed by args4j-2.33-6.oe2203.noarch
+mvn(org.kohsuke:pom:pom:) is needed by args4j-2.33-6.oe2203.noarch
+java-headless >= 1:1.6 is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+javapackages-filesystem is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(commons-logging:commons-logging) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(joda-time:joda-time) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(junit:junit) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+ant-lib is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-cli is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-codec is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-collections is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-compress is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-io is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-lang is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-lang3 is needed by gradle-4.4.1-2.oe2203.noarch
+apache-ivy is needed by gradle-4.4.1-2.oe2203.noarch
+aqute-bndlib is needed by gradle-4.4.1-2.oe2203.noarch
+atinject is needed by gradle-4.4.1-2.oe2203.noarch
+base64coder is needed by gradle-4.4.1-2.oe2203.noarch
+beust-jcommander is needed by gradle-4.4.1-2.oe2203.noarch
+bouncycastle is needed by gradle-4.4.1-2.oe2203.noarch
+bsh is needed by gradle-4.4.1-2.oe2203.noarch
+ecj is needed by gradle-4.4.1-2.oe2203.noarch
+glassfish-servlet-api is needed by gradle-4.4.1-2.oe2203.noarch
+google-gson is needed by gradle-4.4.1-2.oe2203.noarch
+google-guice is needed by gradle-4.4.1-2.oe2203.noarch
+groovy is needed by gradle-4.4.1-2.oe2203.noarch
+guava20 is needed by gradle-4.4.1-2.oe2203.noarch
+hawtjni-runtime is needed by gradle-4.4.1-2.oe2203.noarch
+httpcomponents-client is needed by gradle-4.4.1-2.oe2203.noarch
+httpcomponents-core is needed by gradle-4.4.1-2.oe2203.noarch
+jackson-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+jackson-core is needed by gradle-4.4.1-2.oe2203.noarch
+jansi is needed by gradle-4.4.1-2.oe2203.noarch
+jansi-native is needed by gradle-4.4.1-2.oe2203.noarch
+jatl is needed by gradle-4.4.1-2.oe2203.noarch
+java-headless is needed by gradle-4.4.1-2.oe2203.noarch
+javapackages-filesystem is needed by gradle-4.4.1-2.oe2203.noarch
+javapackages-tools is needed by gradle-4.4.1-2.oe2203.noarch
+jcifs is needed by gradle-4.4.1-2.oe2203.noarch
+jcip-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+jcl-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+jetty-server is needed by gradle-4.4.1-2.oe2203.noarch
+jetty-util is needed by gradle-4.4.1-2.oe2203.noarch
+joda-time is needed by gradle-4.4.1-2.oe2203.noarch
+jsch is needed by gradle-4.4.1-2.oe2203.noarch
+jsr-305 is needed by gradle-4.4.1-2.oe2203.noarch
+jul-to-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+junit is needed by gradle-4.4.1-2.oe2203.noarch
+log4j-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+maven-lib is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-api is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-impl is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-spi is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-util is needed by gradle-4.4.1-2.oe2203.noarch
+maven-wagon-file is needed by gradle-4.4.1-2.oe2203.noarch
+maven-wagon-provider-api is needed by gradle-4.4.1-2.oe2203.noarch
+minlog is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(biz.aQute.bnd:bndlib) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.code.findbugs:jsr305) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.code.gson:gson) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.guava:guava:20.0) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.googlecode.jatl:jatl) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.jcraft:jsch) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-cli:commons-cli) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-codec:commons-codec) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-collections:commons-collections) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-lang:commons-lang) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(javax.inject:javax.inject) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(joda-time:joda-time) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(junit:junit) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(net.jcip:jcip-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(net.rubygrapefruit:native-platform) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache-extras.beanshell:bsh) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.ant:ant) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.commons:commons-compress) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.ivy:ivy) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.maven:maven-core) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.xbean:xbean-reflect) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.bouncycastle:bcpg-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.bouncycastle:bcprov-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.codehaus.groovy:groovy-all) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-component-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.eclipse.jetty:jetty-server) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.fusesource.jansi:jansi) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.mozilla:rhino) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.ow2.asm:asm-debug-all) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.samba.jcifs:jcifs) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:jul-to-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:log4j-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.sonatype.pmaven:pmaven-common) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.testng:testng) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(xerces:xercesImpl) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(xml-apis:xml-apis) is needed by gradle-4.4.1-2.oe2203.noarch
+native-platform is needed by gradle-4.4.1-2.oe2203.noarch
+objectweb-asm is needed by gradle-4.4.1-2.oe2203.noarch
+objenesis is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-cipher is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-classworlds is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-containers-component-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-interpolation is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-sec-dispatcher is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-utils is needed by gradle-4.4.1-2.oe2203.noarch
+reflectasm is needed by gradle-4.4.1-2.oe2203.noarch
+rhino is needed by gradle-4.4.1-2.oe2203.noarch
+sisu-inject is needed by gradle-4.4.1-2.oe2203.noarch
+sisu-plexus is needed by gradle-4.4.1-2.oe2203.noarch
+slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+snakeyaml is needed by gradle-4.4.1-2.oe2203.noarch
+tesla-polyglot-common is needed by gradle-4.4.1-2.oe2203.noarch
+testng is needed by gradle-4.4.1-2.oe2203.noarch
+xbean is needed by gradle-4.4.1-2.oe2203.noarch
+xerces-j2 is needed by gradle-4.4.1-2.oe2203.noarch
+xml-commons-apis is needed by gradle-4.4.1-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by jackson-databind-2.9.8-9.oe2203.noarch
+javapackages-filesystem is needed by jackson-databind-2.9.8-9.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-annotations) is needed by jackson-databind-2.9.8-9.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-databind-2.9.8-9.oe2203.noarch
+java-headless >= 1:1.7 is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+javapackages-filesystem is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+mvn(com.fasterxml.jackson:jackson-base:pom:) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+apache-sshd >= 1:2.2.0 is needed by jgit-5.4.0-1.oe2203.noarch
+bouncycastle >= 1.61 is needed by jgit-5.4.0-1.oe2203.noarch
+java-headless >= 1:1.8 is needed by jgit-5.4.0-1.oe2203.noarch
+javapackages-filesystem is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.google.code.gson:gson) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.googlecode.javaewah:JavaEWAH) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.jcraft:jsch) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.jcraft:jzlib) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(net.i2p.crypto:eddsa) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.ant:ant) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.commons:commons-compress) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.sshd:sshd-osgi) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.sshd:sshd-sftp) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcpg-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcpkix-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcprov-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.eclipse.jetty:jetty-servlet) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.osgi:osgi.core) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.slf4j:slf4j-simple) is needed by jgit-5.4.0-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by kryo-4.0.2-7.oe2203.noarch
+javapackages-filesystem is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(com.esotericsoftware:minlog) is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(com.esotericsoftware:reflectasm) is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(org.objenesis:objenesis) is needed by kryo-4.0.2-7.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+bcel is needed by nekohtml-1.9.22-8.oe2203.noarch
+java-headless is needed by nekohtml-1.9.22-8.oe2203.noarch
+javapackages-filesystem is needed by nekohtml-1.9.22-8.oe2203.noarch
+mvn(xerces:xercesImpl) is needed by nekohtml-1.9.22-8.oe2203.noarch
+xerces-j2 >= 0:2.7.1 is needed by nekohtml-1.9.22-8.oe2203.noarch
+xml-commons-apis is needed by nekohtml-1.9.22-8.oe2203.noarch
+java-headless is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+javapackages-filesystem is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(commons-logging:commons-logging) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(io.takari.polyglot:polyglot-common) = 0.2.1 is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(org.codehaus.groovy:groovy) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+To diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.
+You probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 1 day, 0:31:37 ago on Mon Feb 13 22:03:37 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ gradle                           noarch   4.4.1-2.oe2203      mainline   9.2 M
+Installing dependencies:
+ args4j                           noarch   2.33-6.oe2203       mainline   166 k
+ aws-sdk-java                     noarch   1.11.3-7.oe2203     mainline    47 M
+ jackson-databind                 noarch   2.9.8-9.oe2203      mainline   1.2 M
+ jackson-dataformats-binary       noarch   2.9.4-6.oe2203      mainline   237 k
+ jgit                             noarch   5.4.0-1.oe2203      mainline   3.0 M
+ kryo                             noarch   4.0.2-7.oe2203      mainline   541 k
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+ nekohtml                         noarch   1.9.22-8.oe2203     mainline   253 k
+ tesla-polyglot-groovy            noarch   0.2.1-3.oe2203      mainline    55 k
+
+Transaction Summary
+================================================================================
+Install  13 Packages
+
+Total download size: 62 M
+Installed size: 626 M
+Downloading Packages:
+(1/13): args4j-2.33-6.oe2203.noarch.rpm          43 kB/s | 166 kB     00:03    
+(2/13): jackson-databind-2.9.8-9.oe2203.noarch. 388 kB/s | 1.2 MB     00:03    
+(3/13): jackson-dataformats-binary-2.9.4-6.oe22 351 kB/s | 237 kB     00:00    
+(4/13): jgit-5.4.0-1.oe2203.noarch.rpm          387 kB/s | 3.0 MB     00:07    
+(5/13): kryo-4.0.2-7.oe2203.noarch.rpm          240 kB/s | 541 kB     00:02    
+(6/13): maven-resolver-connector-basic-1.1.1-4. 164 kB/s |  49 kB     00:00    
+(7/13): maven-resolver-transport-wagon-1.1.1-4. 188 kB/s |  37 kB     00:00    
+(8/13): maven-wagon-http-3.1.0-2.oe2203.noarch. 148 kB/s |  20 kB     00:00    
+(9/13): maven-wagon-http-shared-3.1.0-2.oe2203. 193 kB/s |  42 kB     00:00    
+(10/13): nekohtml-1.9.22-8.oe2203.noarch.rpm    274 kB/s | 253 kB     00:00    
+(11/13): tesla-polyglot-groovy-0.2.1-3.oe2203.n 199 kB/s |  55 kB     00:00    
+(12/13): gradle-4.4.1-2.oe2203.noarch.rpm       373 kB/s | 9.2 MB     00:25    
+(13/13): aws-sdk-java-1.11.3-7.oe2203.noarch.rp 926 kB/s |  47 MB     00:52    
+--------------------------------------------------------------------------------
+Total                                           1.2 MB/s |  62 MB     00:52     
+Running transaction check
+Waiting for process with pid 4052 to finish.
+Error: transaction check vs depsolve:
+java-headless >= 1:1.6 is needed by args4j-2.33-6.oe2203.noarch
+javapackages-filesystem is needed by args4j-2.33-6.oe2203.noarch
+mvn(com.sun:tools) is needed by args4j-2.33-6.oe2203.noarch
+mvn(org.apache.felix:maven-bundle-plugin) is needed by args4j-2.33-6.oe2203.noarch
+mvn(org.kohsuke:pom:pom:) is needed by args4j-2.33-6.oe2203.noarch
+java-headless >= 1:1.6 is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+javapackages-filesystem is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(commons-logging:commons-logging) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(joda-time:joda-time) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(junit:junit) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch
+ant-lib is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-cli is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-codec is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-collections is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-compress is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-io is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-lang is needed by gradle-4.4.1-2.oe2203.noarch
+apache-commons-lang3 is needed by gradle-4.4.1-2.oe2203.noarch
+apache-ivy is needed by gradle-4.4.1-2.oe2203.noarch
+aqute-bndlib is needed by gradle-4.4.1-2.oe2203.noarch
+atinject is needed by gradle-4.4.1-2.oe2203.noarch
+base64coder is needed by gradle-4.4.1-2.oe2203.noarch
+beust-jcommander is needed by gradle-4.4.1-2.oe2203.noarch
+bouncycastle is needed by gradle-4.4.1-2.oe2203.noarch
+bsh is needed by gradle-4.4.1-2.oe2203.noarch
+ecj is needed by gradle-4.4.1-2.oe2203.noarch
+glassfish-servlet-api is needed by gradle-4.4.1-2.oe2203.noarch
+google-gson is needed by gradle-4.4.1-2.oe2203.noarch
+google-guice is needed by gradle-4.4.1-2.oe2203.noarch
+groovy is needed by gradle-4.4.1-2.oe2203.noarch
+guava20 is needed by gradle-4.4.1-2.oe2203.noarch
+hawtjni-runtime is needed by gradle-4.4.1-2.oe2203.noarch
+httpcomponents-client is needed by gradle-4.4.1-2.oe2203.noarch
+httpcomponents-core is needed by gradle-4.4.1-2.oe2203.noarch
+jackson-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+jackson-core is needed by gradle-4.4.1-2.oe2203.noarch
+jansi is needed by gradle-4.4.1-2.oe2203.noarch
+jansi-native is needed by gradle-4.4.1-2.oe2203.noarch
+jatl is needed by gradle-4.4.1-2.oe2203.noarch
+java-headless is needed by gradle-4.4.1-2.oe2203.noarch
+javapackages-filesystem is needed by gradle-4.4.1-2.oe2203.noarch
+javapackages-tools is needed by gradle-4.4.1-2.oe2203.noarch
+jcifs is needed by gradle-4.4.1-2.oe2203.noarch
+jcip-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+jcl-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+jetty-server is needed by gradle-4.4.1-2.oe2203.noarch
+jetty-util is needed by gradle-4.4.1-2.oe2203.noarch
+joda-time is needed by gradle-4.4.1-2.oe2203.noarch
+jsch is needed by gradle-4.4.1-2.oe2203.noarch
+jsr-305 is needed by gradle-4.4.1-2.oe2203.noarch
+jul-to-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+junit is needed by gradle-4.4.1-2.oe2203.noarch
+log4j-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+maven-lib is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-api is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-impl is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-spi is needed by gradle-4.4.1-2.oe2203.noarch
+maven-resolver-util is needed by gradle-4.4.1-2.oe2203.noarch
+maven-wagon-file is needed by gradle-4.4.1-2.oe2203.noarch
+maven-wagon-provider-api is needed by gradle-4.4.1-2.oe2203.noarch
+minlog is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(biz.aQute.bnd:bndlib) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.code.findbugs:jsr305) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.code.gson:gson) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.google.guava:guava:20.0) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.googlecode.jatl:jatl) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(com.jcraft:jsch) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-cli:commons-cli) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-codec:commons-codec) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-collections:commons-collections) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(commons-lang:commons-lang) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(javax.inject:javax.inject) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(joda-time:joda-time) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(junit:junit) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(net.jcip:jcip-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(net.rubygrapefruit:native-platform) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache-extras.beanshell:bsh) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.ant:ant) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.commons:commons-compress) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.ivy:ivy) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.maven:maven-core) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.apache.xbean:xbean-reflect) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.bouncycastle:bcpg-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.bouncycastle:bcprov-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.codehaus.groovy:groovy-all) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-component-annotations) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.eclipse.jetty:jetty-server) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.fusesource.jansi:jansi) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.mozilla:rhino) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.ow2.asm:asm-debug-all) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.samba.jcifs:jcifs) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:jul-to-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:log4j-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.sonatype.pmaven:pmaven-common) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(org.testng:testng) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(xerces:xercesImpl) is needed by gradle-4.4.1-2.oe2203.noarch
+mvn(xml-apis:xml-apis) is needed by gradle-4.4.1-2.oe2203.noarch
+native-platform is needed by gradle-4.4.1-2.oe2203.noarch
+objectweb-asm is needed by gradle-4.4.1-2.oe2203.noarch
+objenesis is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-cipher is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-classworlds is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-containers-component-annotations is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-interpolation is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-sec-dispatcher is needed by gradle-4.4.1-2.oe2203.noarch
+plexus-utils is needed by gradle-4.4.1-2.oe2203.noarch
+reflectasm is needed by gradle-4.4.1-2.oe2203.noarch
+rhino is needed by gradle-4.4.1-2.oe2203.noarch
+sisu-inject is needed by gradle-4.4.1-2.oe2203.noarch
+sisu-plexus is needed by gradle-4.4.1-2.oe2203.noarch
+slf4j is needed by gradle-4.4.1-2.oe2203.noarch
+snakeyaml is needed by gradle-4.4.1-2.oe2203.noarch
+tesla-polyglot-common is needed by gradle-4.4.1-2.oe2203.noarch
+testng is needed by gradle-4.4.1-2.oe2203.noarch
+xbean is needed by gradle-4.4.1-2.oe2203.noarch
+xerces-j2 is needed by gradle-4.4.1-2.oe2203.noarch
+xml-commons-apis is needed by gradle-4.4.1-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by jackson-databind-2.9.8-9.oe2203.noarch
+javapackages-filesystem is needed by jackson-databind-2.9.8-9.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-annotations) is needed by jackson-databind-2.9.8-9.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-databind-2.9.8-9.oe2203.noarch
+java-headless >= 1:1.7 is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+javapackages-filesystem is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+mvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+mvn(com.fasterxml.jackson:jackson-base:pom:) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch
+apache-sshd >= 1:2.2.0 is needed by jgit-5.4.0-1.oe2203.noarch
+bouncycastle >= 1.61 is needed by jgit-5.4.0-1.oe2203.noarch
+java-headless >= 1:1.8 is needed by jgit-5.4.0-1.oe2203.noarch
+javapackages-filesystem is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.google.code.gson:gson) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.googlecode.javaewah:JavaEWAH) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.jcraft:jsch) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(com.jcraft:jzlib) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(net.i2p.crypto:eddsa) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.ant:ant) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.commons:commons-compress) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.sshd:sshd-osgi) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.apache.sshd:sshd-sftp) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcpg-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcpkix-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.bouncycastle:bcprov-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.eclipse.jetty:jetty-servlet) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.osgi:osgi.core) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by jgit-5.4.0-1.oe2203.noarch
+mvn(org.slf4j:slf4j-simple) is needed by jgit-5.4.0-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by kryo-4.0.2-7.oe2203.noarch
+javapackages-filesystem is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(com.esotericsoftware:minlog) is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(com.esotericsoftware:reflectasm) is needed by kryo-4.0.2-7.oe2203.noarch
+mvn(org.objenesis:objenesis) is needed by kryo-4.0.2-7.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+bcel is needed by nekohtml-1.9.22-8.oe2203.noarch
+java-headless is needed by nekohtml-1.9.22-8.oe2203.noarch
+javapackages-filesystem is needed by nekohtml-1.9.22-8.oe2203.noarch
+mvn(xerces:xercesImpl) is needed by nekohtml-1.9.22-8.oe2203.noarch
+xerces-j2 >= 0:2.7.1 is needed by nekohtml-1.9.22-8.oe2203.noarch
+xml-commons-apis is needed by nekohtml-1.9.22-8.oe2203.noarch
+java-headless is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+javapackages-filesystem is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(commons-logging:commons-logging) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(io.takari.polyglot:polyglot-common) = 0.2.1 is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+mvn(org.codehaus.groovy:groovy) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 1 day, 0:31:37 ago on Mon Feb 13 22:03:37 2023.\nDependencies resolved.\n================================================================================\n Package                          Arch     Version             Repository  Size\n================================================================================\nInstalling:\n gradle                           noarch   4.4.1-2.oe2203      mainline   9.2 M\nInstalling dependencies:\n args4j                           noarch   2.33-6.oe2203       mainline   166 k\n aws-sdk-java                     noarch   1.11.3-7.oe2203     mainline    47 M\n jackson-databind                 noarch   2.9.8-9.oe2203      mainline   1.2 M\n jackson-dataformats-binary       noarch   2.9.4-6.oe2203      mainline   237 k\n jgit                             noarch   5.4.0-1.oe2203      mainline   3.0 M\n kryo                             noarch   4.0.2-7.oe2203      mainline   541 k\n maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k\n maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k\n maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k\n maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k\n nekohtml                         noarch   1.9.22-8.oe2203     mainline   253 k\n tesla-polyglot-groovy            noarch   0.2.1-3.oe2203      mainline    55 k\n\nTransaction Summary\n================================================================================\nInstall  13 Packages\n\nTotal download size: 62 M\nInstalled size: 626 M\nDownloading Packages:\n(1/13): args4j-2.33-6.oe2203.noarch.rpm          43 kB/s | 166 kB     00:03    \n(2/13): jackson-databind-2.9.8-9.oe2203.noarch. 388 kB/s | 1.2 MB     00:03    \n(3/13): jackson-dataformats-binary-2.9.4-6.oe22 351 kB/s | 237 kB     00:00    \n(4/13): jgit-5.4.0-1.oe2203.noarch.rpm          387 kB/s | 3.0 MB     00:07    \n(5/13): kryo-4.0.2-7.oe2203.noarch.rpm          240 kB/s | 541 kB     00:02    \n(6/13): maven-resolver-connector-basic-1.1.1-4. 164 kB/s |  49 kB     00:00    \n(7/13): maven-resolver-transport-wagon-1.1.1-4. 188 kB/s |  37 kB     00:00    \n(8/13): maven-wagon-http-3.1.0-2.oe2203.noarch. 148 kB/s |  20 kB     00:00    \n(9/13): maven-wagon-http-shared-3.1.0-2.oe2203. 193 kB/s |  42 kB     00:00    \n(10/13): nekohtml-1.9.22-8.oe2203.noarch.rpm    274 kB/s | 253 kB     00:00    \n(11/13): tesla-polyglot-groovy-0.2.1-3.oe2203.n 199 kB/s |  55 kB     00:00    \n(12/13): gradle-4.4.1-2.oe2203.noarch.rpm       373 kB/s | 9.2 MB     00:25    \n(13/13): aws-sdk-java-1.11.3-7.oe2203.noarch.rp 926 kB/s |  47 MB     00:52    \n--------------------------------------------------------------------------------\nTotal                                           1.2 MB/s |  62 MB     00:52     \nRunning transaction check\nWaiting for process with pid 4052 to finish.\nError: transaction check vs depsolve:\njava-headless >= 1:1.6 is needed by args4j-2.33-6.oe2203.noarch\njavapackages-filesystem is needed by args4j-2.33-6.oe2203.noarch\nmvn(com.sun:tools) is needed by args4j-2.33-6.oe2203.noarch\nmvn(org.apache.felix:maven-bundle-plugin) is needed by args4j-2.33-6.oe2203.noarch\nmvn(org.kohsuke:pom:pom:) is needed by args4j-2.33-6.oe2203.noarch\njava-headless >= 1:1.6 is needed by aws-sdk-java-1.11.3-7.oe2203.noarch\njavapackages-filesystem is needed by aws-sdk-java-1.11.3-7.oe2203.noarch\nmvn(commons-logging:commons-logging) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch\nmvn(joda-time:joda-time) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch\nmvn(junit:junit) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by aws-sdk-java-1.11.3-7.oe2203.noarch\nant-lib is needed by gradle-4.4.1-2.oe2203.noarch\napache-commons-cli is needed by gradle-4.4.1-2.oe2203.noarch\napache-commons-codec is needed by gradle-4.4.1-2.oe2203.noarch\napache-commons-collections is needed by gradle-4.4.1-2.oe2203.noarch\napache-commons-compress is needed by gradle-4.4.1-2.oe2203.noarch\napache-commons-io is needed by gradle-4.4.1-2.oe2203.noarch\napache-commons-lang is needed by gradle-4.4.1-2.oe2203.noarch\napache-commons-lang3 is needed by gradle-4.4.1-2.oe2203.noarch\napache-ivy is needed by gradle-4.4.1-2.oe2203.noarch\naqute-bndlib is needed by gradle-4.4.1-2.oe2203.noarch\natinject is needed by gradle-4.4.1-2.oe2203.noarch\nbase64coder is needed by gradle-4.4.1-2.oe2203.noarch\nbeust-jcommander is needed by gradle-4.4.1-2.oe2203.noarch\nbouncycastle is needed by gradle-4.4.1-2.oe2203.noarch\nbsh is needed by gradle-4.4.1-2.oe2203.noarch\necj is needed by gradle-4.4.1-2.oe2203.noarch\nglassfish-servlet-api is needed by gradle-4.4.1-2.oe2203.noarch\ngoogle-gson is needed by gradle-4.4.1-2.oe2203.noarch\ngoogle-guice is needed by gradle-4.4.1-2.oe2203.noarch\ngroovy is needed by gradle-4.4.1-2.oe2203.noarch\nguava20 is needed by gradle-4.4.1-2.oe2203.noarch\nhawtjni-runtime is needed by gradle-4.4.1-2.oe2203.noarch\nhttpcomponents-client is needed by gradle-4.4.1-2.oe2203.noarch\nhttpcomponents-core is needed by gradle-4.4.1-2.oe2203.noarch\njackson-annotations is needed by gradle-4.4.1-2.oe2203.noarch\njackson-core is needed by gradle-4.4.1-2.oe2203.noarch\njansi is needed by gradle-4.4.1-2.oe2203.noarch\njansi-native is needed by gradle-4.4.1-2.oe2203.noarch\njatl is needed by gradle-4.4.1-2.oe2203.noarch\njava-headless is needed by gradle-4.4.1-2.oe2203.noarch\njavapackages-filesystem is needed by gradle-4.4.1-2.oe2203.noarch\njavapackages-tools is needed by gradle-4.4.1-2.oe2203.noarch\njcifs is needed by gradle-4.4.1-2.oe2203.noarch\njcip-annotations is needed by gradle-4.4.1-2.oe2203.noarch\njcl-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch\njetty-server is needed by gradle-4.4.1-2.oe2203.noarch\njetty-util is needed by gradle-4.4.1-2.oe2203.noarch\njoda-time is needed by gradle-4.4.1-2.oe2203.noarch\njsch is needed by gradle-4.4.1-2.oe2203.noarch\njsr-305 is needed by gradle-4.4.1-2.oe2203.noarch\njul-to-slf4j is needed by gradle-4.4.1-2.oe2203.noarch\njunit is needed by gradle-4.4.1-2.oe2203.noarch\nlog4j-over-slf4j is needed by gradle-4.4.1-2.oe2203.noarch\nmaven-lib is needed by gradle-4.4.1-2.oe2203.noarch\nmaven-resolver-api is needed by gradle-4.4.1-2.oe2203.noarch\nmaven-resolver-impl is needed by gradle-4.4.1-2.oe2203.noarch\nmaven-resolver-spi is needed by gradle-4.4.1-2.oe2203.noarch\nmaven-resolver-util is needed by gradle-4.4.1-2.oe2203.noarch\nmaven-wagon-file is needed by gradle-4.4.1-2.oe2203.noarch\nmaven-wagon-provider-api is needed by gradle-4.4.1-2.oe2203.noarch\nminlog is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(biz.aQute.bnd:bndlib) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(com.fasterxml.jackson.core:jackson-annotations) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(com.fasterxml.jackson.core:jackson-core) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(com.google.code.findbugs:jsr305) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(com.google.code.gson:gson) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(com.google.guava:guava:20.0) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(com.googlecode.jatl:jatl) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(com.jcraft:jsch) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(commons-cli:commons-cli) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(commons-codec:commons-codec) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(commons-collections:commons-collections) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(commons-io:commons-io) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(commons-lang:commons-lang) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(javax.inject:javax.inject) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(joda-time:joda-time) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(junit:junit) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(net.jcip:jcip-annotations) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(net.rubygrapefruit:native-platform) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.apache-extras.beanshell:bsh) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.apache.ant:ant) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.apache.commons:commons-compress) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.apache.ivy:ivy) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.apache.maven:maven-core) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.apache.xbean:xbean-reflect) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.bouncycastle:bcpg-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.bouncycastle:bcprov-jdk15on) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.codehaus.groovy:groovy-all) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.codehaus.plexus:plexus-component-annotations) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.eclipse.jetty:jetty-server) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.fusesource.jansi:jansi) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.mozilla:rhino) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.ow2.asm:asm-debug-all) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.samba.jcifs:jcifs) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.slf4j:jcl-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.slf4j:jul-to-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.slf4j:log4j-over-slf4j) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.slf4j:slf4j-api) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.sonatype.pmaven:pmaven-common) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(org.testng:testng) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(xerces:xercesImpl) is needed by gradle-4.4.1-2.oe2203.noarch\nmvn(xml-apis:xml-apis) is needed by gradle-4.4.1-2.oe2203.noarch\nnative-platform is needed by gradle-4.4.1-2.oe2203.noarch\nobjectweb-asm is needed by gradle-4.4.1-2.oe2203.noarch\nobjenesis is needed by gradle-4.4.1-2.oe2203.noarch\nplexus-cipher is needed by gradle-4.4.1-2.oe2203.noarch\nplexus-classworlds is needed by gradle-4.4.1-2.oe2203.noarch\nplexus-containers-component-annotations is needed by gradle-4.4.1-2.oe2203.noarch\nplexus-interpolation is needed by gradle-4.4.1-2.oe2203.noarch\nplexus-sec-dispatcher is needed by gradle-4.4.1-2.oe2203.noarch\nplexus-utils is needed by gradle-4.4.1-2.oe2203.noarch\nreflectasm is needed by gradle-4.4.1-2.oe2203.noarch\nrhino is needed by gradle-4.4.1-2.oe2203.noarch\nsisu-inject is needed by gradle-4.4.1-2.oe2203.noarch\nsisu-plexus is needed by gradle-4.4.1-2.oe2203.noarch\nslf4j is needed by gradle-4.4.1-2.oe2203.noarch\nsnakeyaml is needed by gradle-4.4.1-2.oe2203.noarch\ntesla-polyglot-common is needed by gradle-4.4.1-2.oe2203.noarch\ntestng is needed by gradle-4.4.1-2.oe2203.noarch\nxbean is needed by gradle-4.4.1-2.oe2203.noarch\nxerces-j2 is needed by gradle-4.4.1-2.oe2203.noarch\nxml-commons-apis is needed by gradle-4.4.1-2.oe2203.noarch\njava-headless >= 1:1.7 is needed by jackson-databind-2.9.8-9.oe2203.noarch\njavapackages-filesystem is needed by jackson-databind-2.9.8-9.oe2203.noarch\nmvn(com.fasterxml.jackson.core:jackson-annotations) is needed by jackson-databind-2.9.8-9.oe2203.noarch\nmvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-databind-2.9.8-9.oe2203.noarch\njava-headless >= 1:1.7 is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch\njavapackages-filesystem is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch\nmvn(com.fasterxml.jackson.core:jackson-core) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch\nmvn(com.fasterxml.jackson:jackson-base:pom:) is needed by jackson-dataformats-binary-2.9.4-6.oe2203.noarch\napache-sshd >= 1:2.2.0 is needed by jgit-5.4.0-1.oe2203.noarch\nbouncycastle >= 1.61 is needed by jgit-5.4.0-1.oe2203.noarch\njava-headless >= 1:1.8 is needed by jgit-5.4.0-1.oe2203.noarch\njavapackages-filesystem is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(com.google.code.gson:gson) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(com.googlecode.javaewah:JavaEWAH) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(com.jcraft:jsch) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(com.jcraft:jzlib) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(net.i2p.crypto:eddsa) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.apache.ant:ant) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.apache.commons:commons-compress) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.apache.httpcomponents:httpcore) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.apache.sshd:sshd-osgi) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.apache.sshd:sshd-sftp) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.bouncycastle:bcpg-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.bouncycastle:bcpkix-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.bouncycastle:bcprov-jdk15on) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.eclipse.jetty:jetty-servlet) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.osgi:osgi.core) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.slf4j:slf4j-api) is needed by jgit-5.4.0-1.oe2203.noarch\nmvn(org.slf4j:slf4j-simple) is needed by jgit-5.4.0-1.oe2203.noarch\njava-headless >= 1:1.7 is needed by kryo-4.0.2-7.oe2203.noarch\njavapackages-filesystem is needed by kryo-4.0.2-7.oe2203.noarch\nmvn(com.esotericsoftware:minlog) is needed by kryo-4.0.2-7.oe2203.noarch\nmvn(com.esotericsoftware:reflectasm) is needed by kryo-4.0.2-7.oe2203.noarch\nmvn(org.objenesis:objenesis) is needed by kryo-4.0.2-7.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\njavapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\njavapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\njavapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\njavapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nbcel is needed by nekohtml-1.9.22-8.oe2203.noarch\njava-headless is needed by nekohtml-1.9.22-8.oe2203.noarch\njavapackages-filesystem is needed by nekohtml-1.9.22-8.oe2203.noarch\nmvn(xerces:xercesImpl) is needed by nekohtml-1.9.22-8.oe2203.noarch\nxerces-j2 >= 0:2.7.1 is needed by nekohtml-1.9.22-8.oe2203.noarch\nxml-commons-apis is needed by nekohtml-1.9.22-8.oe2203.noarch\njava-headless is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch\njavapackages-filesystem is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch\nmvn(commons-logging:commons-logging) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch\nmvn(io.takari.polyglot:polyglot-common) = 0.2.1 is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch\nmvn(org.codehaus.groovy:groovy) is needed by tesla-polyglot-groovy-0.2.1-3.oe2203.noarch\nTo diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.\nYou probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 22:39:28 2023 - INFO  - End to restore the test environment.

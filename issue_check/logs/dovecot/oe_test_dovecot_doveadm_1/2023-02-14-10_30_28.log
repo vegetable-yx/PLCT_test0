@@ -1,0 +1,267 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the database config.'
++ message='Start to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the database config.'
+Tue Feb 14 10:30:35 2023 - INFO  - Start to prepare the database config.
++ DNF_INSTALL dovecot
++ pkgs=dovecot
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs dovecot --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp45u_hk6q
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp45u_hk6q
++ cp /etc/dovecot/conf.d/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf.bak
++ sed -i '/ssl_key = <\/etc\/pki\/dovecot\/private\/dovecot.pem/d' /etc/dovecot/conf.d/10-ssl.conf
++ systemctl restart dovecot
++ LOG_INFO 'End to prepare the database config.'
++ message='End to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the database config.'
+Tue Feb 14 10:32:04 2023 - INFO  - End to prepare the database config.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 10:32:05 2023 - INFO  - Start to run test.
++ doveadm -D who
+Feb 14 10:32:06 Debug: Loading modules from directory: /usr/lib64/dovecot/doveadm
+Feb 14 10:32:06 Debug: Skipping module doveadm_acl_plugin, because dlopen() failed: /usr/lib64/dovecot/doveadm/lib10_doveadm_acl_plugin.so: undefined symbol: acl_user_module (this is usually intentional, so just ignore this message)
+Feb 14 10:32:06 Debug: Skipping module doveadm_quota_plugin, because dlopen() failed: /usr/lib64/dovecot/doveadm/lib10_doveadm_quota_plugin.so: undefined symbol: quota_user_module (this is usually intentional, so just ignore this message)
+Feb 14 10:32:06 Debug: Skipping module doveadm_fts_lucene_plugin, because dlopen() failed: /usr/lib64/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so: undefined symbol: lucene_index_iter_deinit (this is usually intentional, so just ignore this message)
+Feb 14 10:32:06 Debug: Skipping module doveadm_fts_plugin, because dlopen() failed: /usr/lib64/dovecot/doveadm/lib20_doveadm_fts_plugin.so: undefined symbol: fts_user_get_language_list (this is usually intentional, so just ignore this message)
+Feb 14 10:32:06 Debug: Skipping module doveadm_mail_crypt_plugin, because dlopen() failed: /usr/lib64/dovecot/doveadm/libdoveadm_mail_crypt_plugin.so: undefined symbol: mail_crypt_box_get_public_key (this is usually intentional, so just ignore this message)
+username # proto (pids) (ips)                         
++ CHECK_RESULT 0 0 0 'Check doveadm who detail failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm who detail failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm -v who
+username # proto (pids) (ips)                         
++ CHECK_RESULT 0 0 0 'Check doveadm who verbose failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm who verbose failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm who -1
+username                              proto pid ip
++ CHECK_RESULT 0 0 0 'Check doveadm who -1 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm who -1 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm who 127.0.0.1
+username # proto (pids) (ips)                         
++ CHECK_RESULT 0 0 0 'Check doveadm who 127.0.0.1 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm who 127.0.0.1 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm who 0022
+username # proto (pids) (ips)                         
++ CHECK_RESULT 0 0 0 'Check doveadm who 0022 failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm who 0022 failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm pw -l
+SHA1 SSHA512 SCRAM-SHA-256 BLF-CRYPT PLAIN HMAC-MD5 OTP SHA512 SHA DES-CRYPT CRYPT SSHA MD5-CRYPT PLAIN-MD4 PLAIN-MD5 SCRAM-SHA-1 SHA512-CRYPT CLEAR CLEARTEXT SSHA256 MD5 PBKDF2 SHA256 CRAM-MD5 PLAIN-TRUNC SHA256-CRYPT SMD5 DIGEST-MD5 LDAP-MD5 
++ printf 'password\npassword\n'
++ doveadm pw
+{CRYPT}$2y$05$6mtTfVndt6jbqJKpaBROxuE/QjH7qoswRsCd3j.TrjRG2H.FwbS..
++ CHECK_RESULT 0 0 0 'Check doveadm pw failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm pw failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm pw -p password
+{CRYPT}$2y$05$vOtfovFjVnAkaWry.c7SnO6YdLEr.cp2VOX81hJr2e2QV2MMA6/eS
++ CHECK_RESULT 0 0 0 'Check doveadm pw -p failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm pw -p failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm pw -r 1002
++ ps -ef
++ grep 'doveadm pw -r 1002'
++ grep -v grep
++ printf 'password\npassword\n'
+root        1602    1513  0 10:32 ?        00:00:00 doveadm pw -r 1002
++ CHECK_RESULT 0 0 0 'Check doveadm pw -r failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm pw -r failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ printf 'password\npassword\n'
++ doveadm pw -u testuser
+{CRYPT}$2y$05$qNC5v5CiPN3Ijbz0QIgL2.bhuj4eKCaTVaM27CmUsFPNsnap0/q4C
++ CHECK_RESULT 0 0 0 'Check doveadm pw -u failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm pw -u failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ printf 'password\npassword\n'
++ doveadm pw -V
+{CRYPT}$2y$05$h7xA5Z.0mQBiCxsSd.e38esfKDpY3O9y5LvwhFSHZwCYJ4G8wAkOG (verified)
++ CHECK_RESULT 0 0 0 'Check doveadm pw -V failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm pw -V failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ printf 'password\npassword\n'
++ doveadm pw -s SHA512-CRYPT
+{SHA512-CRYPT}$6$uAPnHALm5xoMx7qe$MTQmMTyZCk8U78n2qkcB2Sxr9sP9TO59JcnmBlfyl5iZlMzFvICyA9o3byXJEwIhg/IP8Egy6BxYaW.JGDt2d/
++ CHECK_RESULT 0 0 0 'Check doveadm pw -s failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm pw -s failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm log errors
++ CHECK_RESULT 0 0 0 'Check doveadm log errors failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm log errors failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm log find
+Looking for log files from /var/log
+Debug: Not found
+Info: Not found
+Warning: Not found
+Error: Not found
+Fatal: Not found
++ CHECK_RESULT 0 0 0 'Check doveadm log find failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm log find failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm log reopen
++ CHECK_RESULT 0 0 0 'Check doveadm log reopen failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm log reopen failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ doveadm log test
++ CHECK_RESULT 0 0 0 'Check doveadm log test failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check doveadm log test failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 10:32:15 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Feb 14 10:32:18 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb 14 10:32:24 2023 - INFO  - Start to restore the test environment.
++ systemctl stop dovecot
++ rm -f 'a.sh*' /etc/dovecot/conf.d/10-ssl.conf
++ mv /etc/dovecot/conf.d/10-ssl.conf.bak /etc/dovecot/conf.d/10-ssl.conf
+++ ps -ef
+++ grep doveadm
+++ awk '{print $2}'
+++ grep -Ev 'grep|.sh'
++ kill -9 1602
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp45u_hk6q ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp45u_hk6q
+/root/mugen-riscv/libs/locallibs/common_lib_python.sh: line 97:  1601 Done                    printf 'password\npassword\n'
+      1602 Killed                  | doveadm pw -r 1002
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 10:34:07 2023 - INFO  - End to restore the test environment.

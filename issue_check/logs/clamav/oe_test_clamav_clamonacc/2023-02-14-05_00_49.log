@@ -1,0 +1,1601 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the database config.'
++ message='Start to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the database config.'
+Tue Feb 14 05:00:54 2023 - INFO  - Start to prepare the database config.
++ DNF_INSTALL 'clamav clamav-server'
++ pkgs='clamav clamav-server'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'clamav clamav-server' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpu2iow00i
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpu2iow00i
++ echo /opt
++ mkdir testdir
++ echo test1
++ echo test2
++ cp /var/lib/clamav/main.cvd testdir
++ mv /etc/clamd.d/scan.conf /etc/clamd.d/scan.conf.bak
++ echo '  LogFile /var/log/clamd.scan
+            LogFileMaxSize 2M
+            LogTime yes
+            PidFile /run/clamd.scan/clamd.pid
+            DatabaseDirectory /var/lib/clamav
+            TCPAddr 0.0.0.0
+            TCPSocket 3310
+            LocalSocket /run/clamd.scan/clamd.sock
+            ScanOnAccess yes
+            OnAccessExcludeUname test 
+            OnAccessIncludePath /opt'
++ systemctl restart clamd@scan.service
++ systemctl restart clamav-clamonacc
++ LOG_INFO 'End to prepare the database config.'
++ message='End to prepare the database config.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the database config.'
+Tue Feb 14 05:08:55 2023 - INFO  - End to prepare the database config.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 05:08:56 2023 - INFO  - Start to run test.
++ clamonacc -v
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc -v failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc -v failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc -w
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc -w failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc -w failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc -W testfile
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc -W testfile failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc -W testfile failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc -l clamonacc_log /opt --fdpass
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc -l clamonacc_log /opt --fdpass failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc -l clamonacc_log /opt --fdpass failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc --exclude-list=testlist
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc --exclude-list=testlist failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc --exclude-list=testlist failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc --config-file=/etc/clamd.d/scan.conf
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc --config-file=/etc/clamd.d/scan.conf failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc --config-file=/etc/clamd.d/scan.conf failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc -p 3:1 -w
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc -p 3:1  -w failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc -p 3:1  -w failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc --remove
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc --remove failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc --remove failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc --move testdir /opt
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc --move testdir /opt failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc --move testdir /opt failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc --copy testdir /opt
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc --copy testdir /opt failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc --copy testdir /opt failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc -z
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc -z failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc -z failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clamonacc --stream
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
++ CHECK_RESULT 0 0 0 'Execute clamonacc --stream failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc --stream failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ nohup clamonacc -v -F
+WARNING: Ignoring deprecated option ScanOnAccess at /etc/clamd.d/scan.conf:9
+ClamClient: client setup for continuous scanning
+Clamonacc: daemon is local
+ClamFanotif: kernel-level blocking feature disabled ...
+ClamScanQueue: initializing event queue consumer ... (5) threads in thread pool
+ClamFanotif: max file size limited to 5242880 bytes
+Clamonacc: beginning event loops
+ClamFanotif: starting fanotify event loop with process id (2328) ... 
+ClamInotif: starting inotify event loop ...
+ClamInotif: dynamically determining directory hierarchy...
+ClamScanQueue: waiting to consume events ...
+ClamInotif: watching '/opt' (and all sub-directories)
+Excluding temp directory: /tmp
+ClamInotif: NVM, didn't actually need to exclude '/tmp'
++ SSH_CMD 'echo '\''test force file'\'' >/opt/test_forcefile' 127.0.0.1 'openEuler12#$' root
++ cmd='echo '\''test force file'\'' >/opt/test_forcefile'
++ remoteip=127.0.0.1
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen-riscv/libs/locallibs/sshcmd.sh -c 'echo '\''test force file'\'' >/opt/test_forcefile' -i 127.0.0.1 -u root -p 'openEuler12#$' -t 300 -o 22
+Tue Feb 14 05:09:07 2023 - WARN  - the remote user uses the default configuration.
+Tue Feb 14 05:09:08 2023 - WARN  - the remote password uses the default configuration.
+Tue Feb 14 05:09:09 2023 - WARN  - the connect port using the default configuration
+spawn ssh -o ConnectTimeout=300 -p 22 root@127.0.0.1 echo 'test force file' >/opt/test_forcefile
+The authenticity of host '127.0.0.1 (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:4UEprsDagAIqlA0So3dUnegxHD5CYDknNOjZmm9+UBE.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '127.0.0.1' (ED25519) to the list of known hosts.
+root@127.0.0.1's password: 
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled last job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2338 pulled last job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled last job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
++ ret=0
++ test 0 -ne 0
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
++ grep -q /opt/test_forcefile nohup.out
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+grep: nohup.out: No such file or directory
++ CHECK_RESULT 2 0 0 'Execute clamonacc -F failed.'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Execute clamonacc -F failed.'
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
+ClamFanotif: attempting to feed consumer queue
++ test -n 'Execute clamonacc -F failed.'
++ LOG_ERROR 'Execute clamonacc -F failed.'
++ message='Execute clamonacc -F failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Execute clamonacc -F failed.'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+Tue Feb 14 05:09:33 2023 - ERROR - Execute clamonacc -F failed.
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
++ (( exec_result++ ))
+ClamFanotif: attempting to feed consumer queue
++ LOG_ERROR 'oe_test_clamav_clamonacc.sh line 84'
++ message='oe_test_clamav_clamonacc.sh line 84'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_clamav_clamonacc.sh line 84'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+Tue Feb 14 05:09:39 2023 - ERROR - oe_test_clamav_clamonacc.sh line 84
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+Tue Feb 14 05:09:45 2023 - INFO  - End to run test.
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
+ClamFanotif: attempting to feed consumer queue
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamMisc: internal error (failed to exclude event) ... Too many open files
+ClamMisc: waiting for consumer thread to catch up then retrying ...
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+Tue Feb 14 05:09:52 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2338 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2339 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2343 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2340 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+Tue Feb 14 05:09:56 2023 - INFO  - Start to restore the test environment.
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamFanotif: attempting to feed consumer queue
+ClamMisc: internal error (failed to exclude event) ... Too many open files
+ClamMisc: waiting for consumer thread to catch up then retrying ...
+++ ps -ef
+++ grep clamonacc
+++ grep -Ev 'grep|bash'
+++ awk '{print $2}'
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
+jobqueue_pull: Thread 2342 pulled a job from queue.
+ClamWorker: performing scanning on file '/opt/test_forcefile'
++ kill -9 2216 2228 2237 2246 2255 2264 2273 2282 2291 2300 2309 2318 2327 2328
++ rm -rf /etc/clamd.d/scan.conf testlist clamonacc_log testdir nohup.out /opt/test_forcefile
+oe_test_clamav_clamonacc.sh: line 89:  2328 Killed                  nohup clamonacc -v -F
++ mv /etc/clamd.d/scan.conf.bak /etc/clamd.d/scan.conf
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpu2iow00i ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpu2iow00i
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 05:10:57 2023 - INFO  - End to restore the test environment.

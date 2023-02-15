@@ -1,0 +1,138 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 02:05:37 2023 - INFO  - Start to run test.
++ service auditd restart
+oe_test_audit_use_d_audit.sh: line 25: service: command not found
++ auditctl -D
+oe_test_audit_use_d_audit.sh: line 26: auditctl: command not found
++ CHECK_RESULT 127 0 0 'delete failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='delete failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'delete failed'
++ LOG_ERROR 'delete failed'
++ message='delete failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'delete failed'
+Tue Feb 14 02:05:38 2023 - ERROR - delete failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_use_d_audit.sh line 27'
++ message='oe_test_audit_use_d_audit.sh line 27'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_use_d_audit.sh line 27'
+Tue Feb 14 02:05:40 2023 - ERROR - oe_test_audit_use_d_audit.sh line 27
++ return 0
++ auditctl -a always,exit -F arch=b64 -S settimeofday -k time_change
+oe_test_audit_use_d_audit.sh: line 28: auditctl: command not found
++ CHECK_RESULT 127 0 0 'add failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='add failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'add failed'
++ LOG_ERROR 'add failed'
++ message='add failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'add failed'
+Tue Feb 14 02:05:41 2023 - ERROR - add failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_use_d_audit.sh line 29'
++ message='oe_test_audit_use_d_audit.sh line 29'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_use_d_audit.sh line 29'
+Tue Feb 14 02:05:42 2023 - ERROR - oe_test_audit_use_d_audit.sh line 29
++ return 0
++ auditctl -l
+oe_test_audit_use_d_audit.sh: line 30: auditctl: command not found
++ grep -e '-a always,exit -F arch=b64 -S settimeofday -F key=time_change'
++ CHECK_RESULT 1 0 0 'grep failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep failed'
++ LOG_ERROR 'grep failed'
++ message='grep failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'grep failed'
+Tue Feb 14 02:05:44 2023 - ERROR - grep failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_use_d_audit.sh line 31'
++ message='oe_test_audit_use_d_audit.sh line 31'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_use_d_audit.sh line 31'
+Tue Feb 14 02:05:45 2023 - ERROR - oe_test_audit_use_d_audit.sh line 31
++ return 0
++ auditctl -d always,exit -F arch=b64 -S settimeofday -k time_change
+oe_test_audit_use_d_audit.sh: line 32: auditctl: command not found
++ CHECK_RESULT 127 0 0 'delete failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='delete failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'delete failed'
++ LOG_ERROR 'delete failed'
++ message='delete failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'delete failed'
+Tue Feb 14 02:05:46 2023 - ERROR - delete failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_use_d_audit.sh line 33'
++ message='oe_test_audit_use_d_audit.sh line 33'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_use_d_audit.sh line 33'
+Tue Feb 14 02:05:47 2023 - ERROR - oe_test_audit_use_d_audit.sh line 33
++ return 0
++ auditctl -l
+oe_test_audit_use_d_audit.sh: line 34: auditctl: command not found
++ grep -e '-a always,exit -F arch=b64 -S settimeofday -F key=time_change'
++ CHECK_RESULT 1 1 0 'grep delete failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='grep delete failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 02:05:49 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Feb 14 02:05:50 2023 - ERROR - failed to execute the case.
++ exit 4
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_audit_use_d_audit.sh post_test'
++ message='oe_test_audit_use_d_audit.sh post_test'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'oe_test_audit_use_d_audit.sh post_test'
+Tue Feb 14 02:05:51 2023 - INFO  - oe_test_audit_use_d_audit.sh post_test

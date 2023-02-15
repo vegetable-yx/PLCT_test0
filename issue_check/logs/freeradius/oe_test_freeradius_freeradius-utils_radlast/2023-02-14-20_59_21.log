@@ -1,0 +1,223 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb 14 20:59:31 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'freeradius freeradius-utils'
++ pkgs='freeradius freeradius-utils'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'freeradius freeradius-utils' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpime7bwq6
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpime7bwq6
++ cp /var/log/wtmp /var/log/radius/radwtmp
++ test -e /var/log/radius/radwtmp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb 14 21:12:14 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 21:12:17 2023 - INFO  - Start to run test.
++ radtimes=3
+++ radlast -3
+++ grep -c oot
++ a=3
++ '[' 3 -eq 3 ']'
++ CHECK_RESULT 0 0 0 'radlast -num execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radlast -num execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ radlast -a
++ awk '{print $NF}'
++ grep -E '([0-9]{1,3}.){3}[0-9]'
+5.10.0-10.oe2203.riscv64
+5.10.0-10.oe2203.riscv64
++ CHECK_RESULT 0 0 0 'radlast -a execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radlast -a execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ radlast -3 -d
+reboot   system boot  0.0.0.0          Tue Feb 14 19:09   still running
+root     ttyS0        0.0.0.0          Mon Feb 13 21:58 - down   (00:08)
+reboot   system boot  0.0.0.0          Mon Feb 13 21:55 - 22:06  (00:11)
+
+radwtmp begins Mon Feb 13 21:55:43 2023
++ CHECK_RESULT 0 0 0 'radlast -d execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radlast -d execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ radlast --file /var/log/radius/radwtmp
++ grep 'radwtmp begins'
+radwtmp begins Mon Feb 13 21:55:43 2023
+radwtmp begins Mon Feb 13 21:55:43 2023
++ CHECK_RESULT 0 0 0 'radlast --file execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radlast --file execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ radlast --fulltimes
++ grep -E '([0-9]{1,2}:){2}[0-9]{1,2}'
+reboot   system boot  5.10.0-10.oe2203 Tue Feb 14 19:09:20 2023   still running
+root     ttyS0                         Mon Feb 13 21:58:16 2023 - down                      (00:08)
+reboot   system boot  5.10.0-10.oe2203 Mon Feb 13 21:55:43 2023 - Mon Feb 13 22:06:45 2023  (00:11)
+radwtmp begins Mon Feb 13 21:55:43 2023
++ CHECK_RESULT 0 0 0 'radlast --fulltimes execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radlast --fulltimes execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ radlast -i
++ grep -E '([0-9]{1,3}.){3}[0-9]'
+reboot   system boot  0.0.0.0          Tue Feb 14 19:09   still running
+root     ttyS0        0.0.0.0          Mon Feb 13 21:58 - down   (00:08)
+reboot   system boot  0.0.0.0          Mon Feb 13 21:55 - 22:06  (00:11)
+radwtmp begins Mon Feb 13 21:55:43 2023
++ CHECK_RESULT 0 0 0 'radlast -i execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radlast -i execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ radlast -n 3
+++ grep -c oot
++ a=3
++ '[' 3 -eq 3 ']'
++ CHECK_RESULT 0 0 0 'radlast -n execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radlast -n execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ awk '{print $3}'
++ radlast -R
++ grep -e Mon -e Tue -e Wed -e Sat -e Sun -e Thu -e Sat -e Fri
+Mon
+Mon
++ CHECK_RESULT 0 0 0 'radlast -R execution failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='radlast -R execution failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ sed -n '$p'
+++ radlast -s 00:00
+++ grep 'logged in'
+++ awk '{print $(NF-3)}'
++ a=
+++ sed -n '$p'
+++ radlast -s 00:00
+++ grep 'logged in'
+++ awk '{print $(NF-3)}'
+++ awk -F : '{print $1":"$2+1}'
++ b=
+++ radlast -s ''
+++ sed -n '$p'
+++ grep 'logged in'
+++ awk '{print $(NF-3)}'
+last: invalid time value ""
++ '[' '' '!=' '' ']'
++ CHECK_RESULT 1 0 0 'radlast -s execution failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='radlast -s execution failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'radlast -s execution failed.'
++ LOG_ERROR 'radlast -s execution failed.'
++ message='radlast -s execution failed.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'radlast -s execution failed.'
+Tue Feb 14 21:12:25 2023 - ERROR - radlast -s execution failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_freeradius_freeradius-utils_radlast.sh line 56'
++ message='oe_test_freeradius_freeradius-utils_radlast.sh line 56'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_freeradius_freeradius-utils_radlast.sh line 56'
+Tue Feb 14 21:12:28 2023 - ERROR - oe_test_freeradius_freeradius-utils_radlast.sh line 56
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 21:12:30 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Feb 14 21:12:32 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb 14 21:12:34 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpime7bwq6 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpime7bwq6
++ '[' 0 -ne 0 ']'
++ rm -rf /etc/raddb
++ rm -rf /var/log/radius
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 21:13:36 2023 - INFO  - End to restore the test environment.

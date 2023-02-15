@@ -1,0 +1,202 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb 14 11:24:23 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL etcd
++ pkgs=etcd
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs etcd --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp85f7he1_
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp85f7he1_
++ systemctl start etcd
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb 14 11:26:14 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 11:26:17 2023 - INFO  - Start to run test.
++ grep 'active (running)'
++ systemctl status etcd
+     Active: active (running) since Tue 2023-02-14 11:26:12 CST; 7s ago
++ CHECK_RESULT 0 0 0 'Check etcd.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcd.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn etcdctl user add root
+Password of root: 123456
+
+Type password of root again for confirmation: 123456
+
+User root created
++ expect
+spawn etcdctl user passwd root
+Password of root: 12345
+
+Type password of root again for confirmation: 12345
+
+Password updated
++ grep 'Password updated' etcd_log
+Password updated
++ CHECK_RESULT 0 0 0 'Check etcdctl user passwd root failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl user passwd root failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl lease grant 100
++ grep 'TTL(100s)'
+lease 694d864df5592506 granted with TTL(100s)
++ CHECK_RESULT 0 0 0 'Check etcdctl lease grant failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl lease grant failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ awk '{print $2}'
+++ etcdctl lease grant 100
++ Lease=694d864df5592508
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup etcdctl lease keep-alive 694d864df5592508
++ grep keepalived result
+lease 694d864df5592508 keepalived with TTL(100)
++ CHECK_RESULT 0 0 0 'Check etcdctl lease keep-alive failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl lease keep-alive failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl lease timetolive --keys 694d864df5592508
++ grep 694d864df5592508
+lease 694d864df5592508 granted with TTL(100s), remaining(87s), attached keys([])
++ CHECK_RESULT 0 0 0 'Check etcdctl lease timetolive failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl lease timetolive failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl lease list
++ grep 694d864df5592508
+694d864df5592508
++ CHECK_RESULT 0 0 0 'Check etcdctl list failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl list failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep revoked
++ etcdctl lease revoke 694d864df5592508
+lease 694d864df5592508 revoked
++ CHECK_RESULT 0 0 0 'Check etcdctl revoke failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl revoke failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ etcdctl lease list
++ grep 694d864df5592508
++ CHECK_RESULT 1 1 0 'Check etcdctl list failed.'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Check etcdctl list failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ grep -i 'User root deleted'
++ etcdctl user del root
+User root deleted
++ CHECK_RESULT 0 0 0 'Check etcdctl user del failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check etcdctl user del failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 11:26:58 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Feb 14 11:27:00 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb 14 11:27:02 2023 - INFO  - Start to restore the test environment.
++ systemctl stop etcd
++ rm -rf result etcd_log
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp85f7he1_ ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp85f7he1_
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 11:27:40 2023 - INFO  - End to restore the test environment.

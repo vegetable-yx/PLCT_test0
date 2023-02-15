@@ -1,0 +1,117 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb 14 22:39:50 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL gradle
++ pkgs=gradle
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs gradle --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpix5i_hl4
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpix5i_hl4
++ cp ../common/build.gradle ./
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb 14 23:01:54 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 23:01:58 2023 - INFO  - Start to run test.
++ gradle -i base
++ grep 'All projects evaluated.'
+All projects evaluated.
++ CHECK_RESULT 0 0 0 'Check gradle -i base failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle -i base failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gradle extend
++ grep 'I'\''m extend!'
+I'm extend!
++ CHECK_RESULT 0 0 0 'Check gradle extend failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle extend failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gradle base dolast
++ grep dolast
+:dolast
+show me! dolast
+show me! dolast
+show me! dolast
++ CHECK_RESULT 0 0 0 'Check gradle base dolast failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle base dolast failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep dolast
++ gradle base dolast -x dolast
++ CHECK_RESULT 1 1 0 'Check gradle base dolast -x dolast failed.'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Check gradle base dolast -x dolast failed.'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ gradle base --rerun-tasks
++ grep 'BUILD SUCCESSFUL'
+BUILD SUCCESSFUL in 41s
++ CHECK_RESULT 0 0 0 'Check gradle base --rerun-tasks failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle base --rerun-tasks failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'BUILD SUCCESSFUL'
++ gradle base --continue
+BUILD SUCCESSFUL in 46s
++ CHECK_RESULT 0 0 0 'Check gradle base --continue failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check gradle base --continue failed.'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'BUILD SUCCESSFUL'
++ gradle base --console plain
+Tue Feb 14 23:09:46 2023 - ERROR - Timeout : Command 'bash -x oe_test_gradle_03.sh' timed out after 1799.992956738 seconds

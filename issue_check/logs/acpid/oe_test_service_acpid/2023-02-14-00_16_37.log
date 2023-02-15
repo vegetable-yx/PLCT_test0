@@ -1,0 +1,234 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Feb 14 00:16:52 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL acpid
++ pkgs=acpid
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs acpid --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpo1ohwzuo
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpo1ohwzuo
++ flag=false
+++ grep Enforcing
+++ getenforce
++ '[' ']'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Feb 14 00:18:44 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Feb 14 00:18:46 2023 - INFO  - Start testing...
++ test_execution acpid.service
++ service=acpid.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-14 00:18:46'
++ test_restart acpid.service
++ service=acpid.service
++ systemctl restart acpid.service
++ CHECK_RESULT 0 0 0 'acpid.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status acpid.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-02-14 00:18:47 CST; 7s ago
++ CHECK_RESULT 0 0 0 'acpid.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop acpid.service
+Warning: Stopping acpid.service, but it can still be activated by:
+  acpid.socket
++ CHECK_RESULT 0 0 0 'acpid.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status acpid.service
++ grep 'Active: inactive'
+     Active: inactive (dead) since Tue 2023-02-14 00:18:54 CST; 7s ago
++ CHECK_RESULT 0 0 0 'acpid.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start acpid.service
++ CHECK_RESULT 0 0 0 'acpid.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status acpid.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-02-14 00:19:02 CST; 7s ago
++ CHECK_RESULT 0 0 0 'acpid.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled acpid.service
++ service=acpid.service
+++ systemctl is-enabled acpid.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable acpid.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ symlink_file='/etc/systemd/system/sockets.target.wants/acpid.socket
+/etc/systemd/system/multi-user.target.wants/acpid.service'
++ find /etc/systemd/system/sockets.target.wants/acpid.socket /etc/systemd/system/multi-user.target.wants/acpid.service
+find: ‘/etc/systemd/system/sockets.target.wants/acpid.socket’: No such file or directory
+find: ‘/etc/systemd/system/multi-user.target.wants/acpid.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'acpid.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='acpid.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable acpid.service
+Created symlink /etc/systemd/system/multi-user.target.wants/acpid.service → /usr/lib/systemd/system/acpid.service.
+Created symlink /etc/systemd/system/sockets.target.wants/acpid.socket → /usr/lib/systemd/system/acpid.socket.
++ find /etc/systemd/system/sockets.target.wants/acpid.socket /etc/systemd/system/multi-user.target.wants/acpid.service
+/etc/systemd/system/sockets.target.wants/acpid.socket
+/etc/systemd/system/multi-user.target.wants/acpid.service
++ CHECK_RESULT 0 0 0 'acpid.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-02-14 00:18:46' -u acpid.service
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ grep -i 'fail\|error'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of acpid.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of acpid.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload acpid.service
++ service=acpid.service
++ systemctl start acpid.service
++ grep 'Job type reload is not applicable'
++ systemctl reload acpid.service
+Failed to reload acpid.service: Job type reload is not applicable for unit acpid.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit acpid.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit acpid.service'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'Active: active'
++ systemctl status acpid.service
+     Active: active (running) since Tue 2023-02-14 00:19:02 CST; 33s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Feb 14 00:19:38 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Feb 14 00:19:39 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Feb 14 00:19:41 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpo1ohwzuo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpo1ohwzuo
++ '[' 0 -ne 0 ']'
++ '[' false = true ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Feb 14 00:20:12 2023 - INFO  - Finish environment cleanup!

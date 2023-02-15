@@ -1,0 +1,1021 @@
++ source ../common/lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Wed Feb 15 04:17:11 2023 - INFO  - Start environment preparation.
++ pre_junit5
++ DNF_INSTALL junit5
++ pkgs=junit5
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs junit5 --node 1 --tempfile ''
+Wed Feb 15 04:17:54 2023 - INFO  - pkgs:(junit5) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
+++ head -1
+++ grep 'java-.*-openjdk'
+++ rpm -qa 'java*'
+++ awk -F - '{print $2}'
++ java_version=1.8.0
++ DNF_INSTALL java-1.8.0-devel
++ pkgs=java-1.8.0-devel
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs java-1.8.0-devel --node 1 --tempfile ''
+Wed Feb 15 04:18:29 2023 - INFO  - pkgs:(java-1.8.0-devel) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ pre_maven
++ DNF_INSTALL maven
++ pkgs=maven
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs maven --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:31:41 ago on Wed Feb 15 03:48:06 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ maven                            noarch   1:3.6.3-1.oe2203    mainline    11 k
+Installing dependencies:
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 159 k
+Installed size: 171 k
+Downloading Packages:
+(1/5): maven-3.6.3-1.oe2203.noarch.rpm          7.3 kB/s |  11 kB     00:01    
+(2/5): maven-resolver-transport-wagon-1.1.1-4.o  23 kB/s |  37 kB     00:01    
+(3/5): maven-resolver-connector-basic-1.1.1-4.o  28 kB/s |  49 kB     00:01    
+(4/5): maven-wagon-http-3.1.0-2.oe2203.noarch.r  77 kB/s |  20 kB     00:00    
+(5/5): maven-wagon-http-shared-3.1.0-2.oe2203.n 232 kB/s |  42 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            74 kB/s | 159 kB     00:02     
+Running transaction check
+Waiting for process with pid 7766 to finish.
+Error: transaction check vs depsolve:
+aopalliance is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-cli is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-codec is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-io is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-lang3 is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-logging is needed by maven-1:3.6.3-1.oe2203.noarch
+atinject is needed by maven-1:3.6.3-1.oe2203.noarch
+cdi-api is needed by maven-1:3.6.3-1.oe2203.noarch
+geronimo-annotation is needed by maven-1:3.6.3-1.oe2203.noarch
+google-guice is needed by maven-1:3.6.3-1.oe2203.noarch
+guava20 is needed by maven-1:3.6.3-1.oe2203.noarch
+hawtjni-runtime is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-client is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-core is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi-native is needed by maven-1:3.6.3-1.oe2203.noarch
+java-1.8.0-devel is needed by maven-1:3.6.3-1.oe2203.noarch
+jcl-over-slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-lib = 1:3.6.3-1.oe2203 is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-api is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-impl is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-spi is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-util is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-shared-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-file is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-provider-api is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-cipher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-classworlds is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-containers-component-annotations is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-interpolation is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-sec-dispatcher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-inject is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-plexus is needed by maven-1:3.6.3-1.oe2203.noarch
+slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:31:41 ago on Wed Feb 15 03:48:06 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ maven                            noarch   1:3.6.3-1.oe2203    mainline    11 k
+Installing dependencies:
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 159 k
+Installed size: 171 k
+Downloading Packages:
+(1/5): maven-3.6.3-1.oe2203.noarch.rpm          7.3 kB/s |  11 kB     00:01    
+(2/5): maven-resolver-transport-wagon-1.1.1-4.o  23 kB/s |  37 kB     00:01    
+(3/5): maven-resolver-connector-basic-1.1.1-4.o  28 kB/s |  49 kB     00:01    
+(4/5): maven-wagon-http-3.1.0-2.oe2203.noarch.r  77 kB/s |  20 kB     00:00    
+(5/5): maven-wagon-http-shared-3.1.0-2.oe2203.n 232 kB/s |  42 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            74 kB/s | 159 kB     00:02     
+Running transaction check
+Waiting for process with pid 7766 to finish.
+Error: transaction check vs depsolve:
+aopalliance is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-cli is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-codec is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-io is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-lang3 is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-logging is needed by maven-1:3.6.3-1.oe2203.noarch
+atinject is needed by maven-1:3.6.3-1.oe2203.noarch
+cdi-api is needed by maven-1:3.6.3-1.oe2203.noarch
+geronimo-annotation is needed by maven-1:3.6.3-1.oe2203.noarch
+google-guice is needed by maven-1:3.6.3-1.oe2203.noarch
+guava20 is needed by maven-1:3.6.3-1.oe2203.noarch
+hawtjni-runtime is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-client is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-core is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi-native is needed by maven-1:3.6.3-1.oe2203.noarch
+java-1.8.0-devel is needed by maven-1:3.6.3-1.oe2203.noarch
+jcl-over-slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-lib = 1:3.6.3-1.oe2203 is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-api is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-impl is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-spi is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-util is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-shared-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-file is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-provider-api is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-cipher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-classworlds is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-containers-component-annotations is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-interpolation is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-sec-dispatcher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-inject is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-plexus is needed by maven-1:3.6.3-1.oe2203.noarch
+slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ JAVA_HOME=/usr/lib/jvm/java-openjdk
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin
++ export JAVA_HOME PATH
++ export MAVEN_HOME=/usr/share/maven
++ MAVEN_HOME=/usr/share/maven
++ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:/usr/share/maven
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-openjdk/bin:/usr/share/maven
++ mkdir -p junit5-junit4/src/test/java/com/example/project/
++ mkdir -p junit5-junit4/src/main/java/com/example/project/
++ cp pom.xml junit5-junit4
++ cp JUnit4Test.java junit5-junit4/src/test/java/com/example/project/
++ cp JUnit5Test.java junit5-junit4/src/test/java/com/example/project/
++ cd junit5-junit4
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Wed Feb 15 04:23:03 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Wed Feb 15 04:23:05 2023 - INFO  - Start testing...
++ mvn -version
+oe_test_junit5_junit4.sh: line 37: mvn: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_junit5_junit4.sh line 38'
++ message='oe_test_junit5_junit4.sh line 38'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_junit5_junit4.sh line 38'
+Wed Feb 15 04:23:08 2023 - ERROR - oe_test_junit5_junit4.sh line 38
++ return 0
++ mvn test
+oe_test_junit5_junit4.sh: line 39: mvn: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_junit5_junit4.sh line 40'
++ message='oe_test_junit5_junit4.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_junit5_junit4.sh line 40'
+Wed Feb 15 04:23:11 2023 - ERROR - oe_test_junit5_junit4.sh line 40
++ return 0
++ grep 'Tests run: 2, Failures: 0, Errors: 0' /tmp/result
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_junit5_junit4.sh line 42'
++ message='oe_test_junit5_junit4.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_junit5_junit4.sh line 42'
+Wed Feb 15 04:23:13 2023 - ERROR - oe_test_junit5_junit4.sh line 42
++ return 0
++ grep 'BUILD SUCCESS' /tmp/result
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_junit5_junit4.sh line 44'
++ message='oe_test_junit5_junit4.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_junit5_junit4.sh line 44'
+Wed Feb 15 04:23:16 2023 - ERROR - oe_test_junit5_junit4.sh line 44
++ return 0
++ cd -
+/root/mugen-riscv/testcases/cli-test/junit5/oe_test_junit5_junit4
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Wed Feb 15 04:23:19 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Wed Feb 15 04:23:22 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Wed Feb 15 04:23:23 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:31:41 ago on Wed Feb 15 03:48:06 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ maven                            noarch   1:3.6.3-1.oe2203    mainline    11 k
+Installing dependencies:
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 159 k
+Installed size: 171 k
+Downloading Packages:
+(1/5): maven-3.6.3-1.oe2203.noarch.rpm          7.3 kB/s |  11 kB     00:01    
+(2/5): maven-resolver-transport-wagon-1.1.1-4.o  23 kB/s |  37 kB     00:01    
+(3/5): maven-resolver-connector-basic-1.1.1-4.o  28 kB/s |  49 kB     00:01    
+(4/5): maven-wagon-http-3.1.0-2.oe2203.noarch.r  77 kB/s |  20 kB     00:00    
+(5/5): maven-wagon-http-shared-3.1.0-2.oe2203.n 232 kB/s |  42 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            74 kB/s | 159 kB     00:02     
+Running transaction check
+Waiting for process with pid 7766 to finish.
+Error: transaction check vs depsolve:
+aopalliance is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-cli is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-codec is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-io is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-lang3 is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-logging is needed by maven-1:3.6.3-1.oe2203.noarch
+atinject is needed by maven-1:3.6.3-1.oe2203.noarch
+cdi-api is needed by maven-1:3.6.3-1.oe2203.noarch
+geronimo-annotation is needed by maven-1:3.6.3-1.oe2203.noarch
+google-guice is needed by maven-1:3.6.3-1.oe2203.noarch
+guava20 is needed by maven-1:3.6.3-1.oe2203.noarch
+hawtjni-runtime is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-client is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-core is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi-native is needed by maven-1:3.6.3-1.oe2203.noarch
+java-1.8.0-devel is needed by maven-1:3.6.3-1.oe2203.noarch
+jcl-over-slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-lib = 1:3.6.3-1.oe2203 is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-api is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-impl is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-spi is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-util is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-shared-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-file is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-provider-api is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-cipher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-classworlds is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-containers-component-annotations is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-interpolation is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-sec-dispatcher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-inject is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-plexus is needed by maven-1:3.6.3-1.oe2203.noarch
+slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+To diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.
+You probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:31:41 ago on Wed Feb 15 03:48:06 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ maven                            noarch   1:3.6.3-1.oe2203    mainline    11 k
+Installing dependencies:
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 159 k
+Installed size: 171 k
+Downloading Packages:
+(1/5): maven-3.6.3-1.oe2203.noarch.rpm          7.3 kB/s |  11 kB     00:01    
+(2/5): maven-resolver-transport-wagon-1.1.1-4.o  23 kB/s |  37 kB     00:01    
+(3/5): maven-resolver-connector-basic-1.1.1-4.o  28 kB/s |  49 kB     00:01    
+(4/5): maven-wagon-http-3.1.0-2.oe2203.noarch.r  77 kB/s |  20 kB     00:00    
+(5/5): maven-wagon-http-shared-3.1.0-2.oe2203.n 232 kB/s |  42 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            74 kB/s | 159 kB     00:02     
+Running transaction check
+Waiting for process with pid 7766 to finish.
+Error: transaction check vs depsolve:
+aopalliance is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-cli is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-codec is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-io is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-lang3 is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-logging is needed by maven-1:3.6.3-1.oe2203.noarch
+atinject is needed by maven-1:3.6.3-1.oe2203.noarch
+cdi-api is needed by maven-1:3.6.3-1.oe2203.noarch
+geronimo-annotation is needed by maven-1:3.6.3-1.oe2203.noarch
+google-guice is needed by maven-1:3.6.3-1.oe2203.noarch
+guava20 is needed by maven-1:3.6.3-1.oe2203.noarch
+hawtjni-runtime is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-client is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-core is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi-native is needed by maven-1:3.6.3-1.oe2203.noarch
+java-1.8.0-devel is needed by maven-1:3.6.3-1.oe2203.noarch
+jcl-over-slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-lib = 1:3.6.3-1.oe2203 is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-api is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-impl is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-spi is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-util is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-shared-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-file is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-provider-api is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-cipher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-classworlds is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-containers-component-annotations is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-interpolation is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-sec-dispatcher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-inject is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-plexus is needed by maven-1:3.6.3-1.oe2203.noarch
+slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 0:31:41 ago on Wed Feb 15 03:48:06 2023.\nDependencies resolved.\n================================================================================\n Package                          Arch     Version             Repository  Size\n================================================================================\nInstalling:\n maven                            noarch   1:3.6.3-1.oe2203    mainline    11 k\nInstalling dependencies:\n maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k\n maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k\n maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k\n maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k\n\nTransaction Summary\n================================================================================\nInstall  5 Packages\n\nTotal download size: 159 k\nInstalled size: 171 k\nDownloading Packages:\n(1/5): maven-3.6.3-1.oe2203.noarch.rpm          7.3 kB/s |  11 kB     00:01    \n(2/5): maven-resolver-transport-wagon-1.1.1-4.o  23 kB/s |  37 kB     00:01    \n(3/5): maven-resolver-connector-basic-1.1.1-4.o  28 kB/s |  49 kB     00:01    \n(4/5): maven-wagon-http-3.1.0-2.oe2203.noarch.r  77 kB/s |  20 kB     00:00    \n(5/5): maven-wagon-http-shared-3.1.0-2.oe2203.n 232 kB/s |  42 kB     00:00    \n--------------------------------------------------------------------------------\nTotal                                            74 kB/s | 159 kB     00:02     \nRunning transaction check\nWaiting for process with pid 7766 to finish.\nError: transaction check vs depsolve:\naopalliance is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-cli is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-codec is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-io is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-lang3 is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-logging is needed by maven-1:3.6.3-1.oe2203.noarch\natinject is needed by maven-1:3.6.3-1.oe2203.noarch\ncdi-api is needed by maven-1:3.6.3-1.oe2203.noarch\ngeronimo-annotation is needed by maven-1:3.6.3-1.oe2203.noarch\ngoogle-guice is needed by maven-1:3.6.3-1.oe2203.noarch\nguava20 is needed by maven-1:3.6.3-1.oe2203.noarch\nhawtjni-runtime is needed by maven-1:3.6.3-1.oe2203.noarch\nhttpcomponents-client is needed by maven-1:3.6.3-1.oe2203.noarch\nhttpcomponents-core is needed by maven-1:3.6.3-1.oe2203.noarch\njansi is needed by maven-1:3.6.3-1.oe2203.noarch\njansi-native is needed by maven-1:3.6.3-1.oe2203.noarch\njava-1.8.0-devel is needed by maven-1:3.6.3-1.oe2203.noarch\njcl-over-slf4j is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-lib = 1:3.6.3-1.oe2203 is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-resolver-api is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-resolver-impl is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-resolver-spi is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-resolver-util is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-shared-utils is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-wagon-file is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-wagon-provider-api is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-cipher is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-classworlds is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-containers-component-annotations is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-interpolation is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-sec-dispatcher is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-utils is needed by maven-1:3.6.3-1.oe2203.noarch\nsisu-inject is needed by maven-1:3.6.3-1.oe2203.noarch\nsisu-plexus is needed by maven-1:3.6.3-1.oe2203.noarch\nslf4j is needed by maven-1:3.6.3-1.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\njavapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\njavapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\njavapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\njavapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nTo diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.\nYou probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ clean_maven
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:31:41 ago on Wed Feb 15 03:48:06 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ maven                            noarch   1:3.6.3-1.oe2203    mainline    11 k
+Installing dependencies:
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 159 k
+Installed size: 171 k
+Downloading Packages:
+(1/5): maven-3.6.3-1.oe2203.noarch.rpm          7.3 kB/s |  11 kB     00:01    
+(2/5): maven-resolver-transport-wagon-1.1.1-4.o  23 kB/s |  37 kB     00:01    
+(3/5): maven-resolver-connector-basic-1.1.1-4.o  28 kB/s |  49 kB     00:01    
+(4/5): maven-wagon-http-3.1.0-2.oe2203.noarch.r  77 kB/s |  20 kB     00:00    
+(5/5): maven-wagon-http-shared-3.1.0-2.oe2203.n 232 kB/s |  42 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            74 kB/s | 159 kB     00:02     
+Running transaction check
+Waiting for process with pid 7766 to finish.
+Error: transaction check vs depsolve:
+aopalliance is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-cli is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-codec is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-io is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-lang3 is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-logging is needed by maven-1:3.6.3-1.oe2203.noarch
+atinject is needed by maven-1:3.6.3-1.oe2203.noarch
+cdi-api is needed by maven-1:3.6.3-1.oe2203.noarch
+geronimo-annotation is needed by maven-1:3.6.3-1.oe2203.noarch
+google-guice is needed by maven-1:3.6.3-1.oe2203.noarch
+guava20 is needed by maven-1:3.6.3-1.oe2203.noarch
+hawtjni-runtime is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-client is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-core is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi-native is needed by maven-1:3.6.3-1.oe2203.noarch
+java-1.8.0-devel is needed by maven-1:3.6.3-1.oe2203.noarch
+jcl-over-slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-lib = 1:3.6.3-1.oe2203 is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-api is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-impl is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-spi is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-util is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-shared-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-file is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-provider-api is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-cipher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-classworlds is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-containers-component-annotations is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-interpolation is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-sec-dispatcher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-inject is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-plexus is needed by maven-1:3.6.3-1.oe2203.noarch
+slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+To diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.
+You probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:31:41 ago on Wed Feb 15 03:48:06 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch     Version             Repository  Size
+================================================================================
+Installing:
+ maven                            noarch   1:3.6.3-1.oe2203    mainline    11 k
+Installing dependencies:
+ maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k
+ maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k
+ maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k
+ maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 159 k
+Installed size: 171 k
+Downloading Packages:
+(1/5): maven-3.6.3-1.oe2203.noarch.rpm          7.3 kB/s |  11 kB     00:01    
+(2/5): maven-resolver-transport-wagon-1.1.1-4.o  23 kB/s |  37 kB     00:01    
+(3/5): maven-resolver-connector-basic-1.1.1-4.o  28 kB/s |  49 kB     00:01    
+(4/5): maven-wagon-http-3.1.0-2.oe2203.noarch.r  77 kB/s |  20 kB     00:00    
+(5/5): maven-wagon-http-shared-3.1.0-2.oe2203.n 232 kB/s |  42 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            74 kB/s | 159 kB     00:02     
+Running transaction check
+Waiting for process with pid 7766 to finish.
+Error: transaction check vs depsolve:
+aopalliance is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-cli is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-codec is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-io is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-lang3 is needed by maven-1:3.6.3-1.oe2203.noarch
+apache-commons-logging is needed by maven-1:3.6.3-1.oe2203.noarch
+atinject is needed by maven-1:3.6.3-1.oe2203.noarch
+cdi-api is needed by maven-1:3.6.3-1.oe2203.noarch
+geronimo-annotation is needed by maven-1:3.6.3-1.oe2203.noarch
+google-guice is needed by maven-1:3.6.3-1.oe2203.noarch
+guava20 is needed by maven-1:3.6.3-1.oe2203.noarch
+hawtjni-runtime is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-client is needed by maven-1:3.6.3-1.oe2203.noarch
+httpcomponents-core is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi is needed by maven-1:3.6.3-1.oe2203.noarch
+jansi-native is needed by maven-1:3.6.3-1.oe2203.noarch
+java-1.8.0-devel is needed by maven-1:3.6.3-1.oe2203.noarch
+jcl-over-slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-lib = 1:3.6.3-1.oe2203 is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-api is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-impl is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-spi is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-resolver-util is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-shared-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-file is needed by maven-1:3.6.3-1.oe2203.noarch
+maven-wagon-provider-api is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-cipher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-classworlds is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-containers-component-annotations is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-interpolation is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-sec-dispatcher is needed by maven-1:3.6.3-1.oe2203.noarch
+plexus-utils is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-inject is needed by maven-1:3.6.3-1.oe2203.noarch
+sisu-plexus is needed by maven-1:3.6.3-1.oe2203.noarch
+slf4j is needed by maven-1:3.6.3-1.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+javapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch
+java-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+javapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+mvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch
+To diagnose the problem, try running: '\''rpm -Va --nofiles --nodigest'\''.
+You probably have corrupted RPMDB, running '\''rpm --rebuilddb'\'' might fix the issue.
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/mugen-riscv/libs/locallibs/rpm_manage.py", line 181, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen-riscv/libs/locallibs/rpm_manage.py", line 152, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 0:31:41 ago on Wed Feb 15 03:48:06 2023.\nDependencies resolved.\n================================================================================\n Package                          Arch     Version             Repository  Size\n================================================================================\nInstalling:\n maven                            noarch   1:3.6.3-1.oe2203    mainline    11 k\nInstalling dependencies:\n maven-resolver-connector-basic   noarch   1:1.1.1-4.oe2203    mainline    49 k\n maven-resolver-transport-wagon   noarch   1:1.1.1-4.oe2203    mainline    37 k\n maven-wagon-http                 noarch   3.1.0-2.oe2203      mainline    20 k\n maven-wagon-http-shared          noarch   3.1.0-2.oe2203      mainline    42 k\n\nTransaction Summary\n================================================================================\nInstall  5 Packages\n\nTotal download size: 159 k\nInstalled size: 171 k\nDownloading Packages:\n(1/5): maven-3.6.3-1.oe2203.noarch.rpm          7.3 kB/s |  11 kB     00:01    \n(2/5): maven-resolver-transport-wagon-1.1.1-4.o  23 kB/s |  37 kB     00:01    \n(3/5): maven-resolver-connector-basic-1.1.1-4.o  28 kB/s |  49 kB     00:01    \n(4/5): maven-wagon-http-3.1.0-2.oe2203.noarch.r  77 kB/s |  20 kB     00:00    \n(5/5): maven-wagon-http-shared-3.1.0-2.oe2203.n 232 kB/s |  42 kB     00:00    \n--------------------------------------------------------------------------------\nTotal                                            74 kB/s | 159 kB     00:02     \nRunning transaction check\nWaiting for process with pid 7766 to finish.\nError: transaction check vs depsolve:\naopalliance is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-cli is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-codec is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-io is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-lang3 is needed by maven-1:3.6.3-1.oe2203.noarch\napache-commons-logging is needed by maven-1:3.6.3-1.oe2203.noarch\natinject is needed by maven-1:3.6.3-1.oe2203.noarch\ncdi-api is needed by maven-1:3.6.3-1.oe2203.noarch\ngeronimo-annotation is needed by maven-1:3.6.3-1.oe2203.noarch\ngoogle-guice is needed by maven-1:3.6.3-1.oe2203.noarch\nguava20 is needed by maven-1:3.6.3-1.oe2203.noarch\nhawtjni-runtime is needed by maven-1:3.6.3-1.oe2203.noarch\nhttpcomponents-client is needed by maven-1:3.6.3-1.oe2203.noarch\nhttpcomponents-core is needed by maven-1:3.6.3-1.oe2203.noarch\njansi is needed by maven-1:3.6.3-1.oe2203.noarch\njansi-native is needed by maven-1:3.6.3-1.oe2203.noarch\njava-1.8.0-devel is needed by maven-1:3.6.3-1.oe2203.noarch\njcl-over-slf4j is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-lib = 1:3.6.3-1.oe2203 is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-resolver-api is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-resolver-impl is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-resolver-spi is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-resolver-util is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-shared-utils is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-wagon-file is needed by maven-1:3.6.3-1.oe2203.noarch\nmaven-wagon-provider-api is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-cipher is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-classworlds is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-containers-component-annotations is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-interpolation is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-sec-dispatcher is needed by maven-1:3.6.3-1.oe2203.noarch\nplexus-utils is needed by maven-1:3.6.3-1.oe2203.noarch\nsisu-inject is needed by maven-1:3.6.3-1.oe2203.noarch\nsisu-plexus is needed by maven-1:3.6.3-1.oe2203.noarch\nslf4j is needed by maven-1:3.6.3-1.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\njavapackages-filesystem is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-connector-basic-1:1.1.1-4.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\njavapackages-filesystem is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-api) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-spi) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.resolver:maven-resolver-util) = 1.1.1 is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) is needed by maven-resolver-transport-wagon-1:1.1.1-4.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\njavapackages-filesystem is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.codehaus.plexus:plexus-utils) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\nmvn(org.slf4j:jcl-over-slf4j) is needed by maven-wagon-http-0:3.1.0-2.oe2203.noarch\njava-headless >= 1:1.7 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\njavapackages-filesystem is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(commons-io:commons-io) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpclient) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.httpcomponents:httpcore) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.apache.maven.wagon:wagon-provider-api) = 3.1.0 is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.jsoup:jsoup) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nmvn(org.slf4j:slf4j-api) is needed by maven-wagon-http-shared-0:3.1.0-2.oe2203.noarch\nTo diagnose the problem, try running: 'rpm -Va --nofiles --nodigest'.\nYou probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue.\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ source /etc/profile
+++ '[' -x /usr/bin/id ']'
+++ '[' -z 0 ']'
++++ /usr/bin/id -un
+++ USER=root
+++ LOGNAME=root
+++ MAIL=/var/spool/mail/root
+++ '[' 0 = 0 ']'
+++ pathmunge /usr/sbin
+++ case ":${PATH}:" in
+++ pathmunge /usr/local/sbin
+++ case ":${PATH}:" in
++++ /usr/bin/hostnamectl --transient
+++ HOSTNAME=openEuler-riscv64
+++ HISTSIZE=1000
+++ '[' '' = ignorespace ']'
+++ export HISTCONTROL=ignoredups
+++ HISTCONTROL=ignoredups
+++ export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/color.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/color.sh
++++ alias 'ls=ls --color=auto'
++++ alias 'll=ls -lh'
++++ alias 'la=ls -lAh'
++++ alias 'l.=ls -d .* --color=auto'
++++ alias 'grep=grep --color=auto'
++++ alias 'egrep=egrep --color=auto'
++++ alias 'fgrep=fgrep --color=auto'
++++ alias 'zgrep=zgrep --color=auto'
++++ alias 'zfgrep=zfgrep --color=auto'
++++ alias 'zegrep=zegrep --color=auto'
++++ alias 'xzgrep=xzgrep --color=auto'
++++ alias 'xzfgrep=xzfgrep --color=auto'
++++ alias 'xzegrep=xzegrep --color=auto'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/gawk.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/gawk.sh
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/lang.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/lang.sh
++++ unset LANG_backup
+++++ /usr/bin/locale
++++ '[' -n '' ']'
++++ LANG_backup=
++++ for config in /etc/locale.conf "${HOME}/.i18n"
++++ '[' -f /etc/locale.conf ']'
++++ for config in /etc/locale.conf "${HOME}/.i18n"
++++ '[' -f /root/.i18n ']'
++++ '[' -n '' ']'
++++ unset LANG_backup config
++++ '[' -n '' ']'
++++ '[' -n '' ']'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/system-info.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/system-info.sh
+++++ uname -r
++++ welcome=5.10.0-10.oe2203.riscv64
+++++ awk '/^MemTotal:/ {printf($2)}'
+++++ cat /proc/meminfo
++++ memory_total=8222676
+++++ awk '/^MemFree:/ { printf($2)}'
+++++ cat /proc/meminfo
++++ memory_free=7513540
+++++ cat /proc/meminfo
+++++ awk '/^Buffers:/ { printf($2)}'
++++ buffers=73284
+++++ cat /proc/meminfo
+++++ awk '/^Cached:/ { printf($2)}'
++++ cached=347276
+++++ awk '/^SReclaimable:/ { printf($2)}'
+++++ cat /proc/meminfo
++++ sreclaimable=56236
+++++ awk '/^SwapTotal:/ { printf($2)}'
+++++ cat /proc/meminfo
++++ swap_total=0
+++++ awk '/^SwapFree:/ { printf($2)}'
+++++ cat /proc/meminfo
++++ swap_free=0
++++ '[' 8222676 -gt 0 ']'
+++++ bc
+++++ echo 'scale=1; (8222676 - 7513540 - 73284 - 347276 - 56236) * 100.0 / 8222676'
++++ memory_usage=2.8
++++ memory_usage=2.8%
++++ '[' 0 -gt 0 ']'
++++ swap_mem=0.0%
+++++ df -h /
+++++ awk '/\// {print $(NF-1)}'
++++ usageof=8%
+++++ awk '{print $1}' /proc/loadavg
++++ load_average=3.12
+++++ whoami
++++ whoiam=root
+++++ date
++++ time_cur='Wed Feb 15 04:23:49 CST 2023'
+++++ ps aux
+++++ wc -l
++++ processes=123
+++++ wc -w
+++++ users
++++ user_num=0
++++ ip_pre=
++++ '[' -x /sbin/ip ']'
+++++ /sbin/ip a
+++++ grep -v inet6
+++++ awk '{print $2}'
+++++ grep inet
+++++ grep -v 127.0.0.1
++++ ip_pre=10.0.2.15/24
++++ echo -e '\n'
++++ echo -e 'Welcome to 5.10.0-10.oe2203.riscv64\n'
++++ echo -e 'System information as of time: \tWed Feb 15 04:23:49 CST 2023\n'
++++ echo -e 'System load: \t\033[0;33;40m3.12\033[0m'
++++ echo -e 'Processes: \t123'
++++ echo -e 'Memory used: \t2.8%'
++++ echo -e 'Swap used: \t0.0%'
++++ echo -e 'Usage On: \t8%'
++++ for line in $ip_pre
++++ ip_address=10.0.2.15
++++ echo -e 'IP address: \t10.0.2.15'
++++ echo -e 'Users online: \t0'
++++ '[' root == root ']'
++++ echo -e '\n'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/sh.local ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/sh.local
+++ unset i
+++ unset -f pathmunge
+++ test /usr/bin/bash
+++ test -z ''
+++ test oe_test_junit5_junit4.sh '!=' sh
+++ test -r /etc/bashrc
+++ . /etc/bashrc
++++ '[' -z '' ']'
++++ BASHRCSOURCED=Y
++++ '[' '' ']'
++++ shopt -q login_shell
++++ '[' 0 -gt 199 ']'
++++ umask 022
++++ SHELL=/bin/bash
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/color.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/color.sh
+++++ alias 'ls=ls --color=auto'
+++++ alias 'll=ls -lh'
+++++ alias 'la=ls -lAh'
+++++ alias 'l.=ls -d .* --color=auto'
+++++ alias 'grep=grep --color=auto'
+++++ alias 'egrep=egrep --color=auto'
+++++ alias 'fgrep=fgrep --color=auto'
+++++ alias 'zgrep=zgrep --color=auto'
+++++ alias 'zfgrep=zfgrep --color=auto'
+++++ alias 'zegrep=zegrep --color=auto'
+++++ alias 'xzgrep=xzgrep --color=auto'
+++++ alias 'xzfgrep=xzfgrep --color=auto'
+++++ alias 'xzegrep=xzegrep --color=auto'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/gawk.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/gawk.sh
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/lang.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/lang.sh
+++++ unset LANG_backup
++++++ /usr/bin/locale
+++++ '[' -n '' ']'
+++++ LANG_backup=
+++++ for config in /etc/locale.conf "${HOME}/.i18n"
+++++ '[' -f /etc/locale.conf ']'
+++++ for config in /etc/locale.conf "${HOME}/.i18n"
+++++ '[' -f /root/.i18n ']'
+++++ '[' -n '' ']'
+++++ unset LANG_backup config
+++++ '[' -n '' ']'
+++++ '[' -n '' ']'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/system-info.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/system-info.sh
++++++ uname -r
+++++ welcome=5.10.0-10.oe2203.riscv64
++++++ cat /proc/meminfo
++++++ awk '/^MemTotal:/ {printf($2)}'
+++++ memory_total=8222676
++++++ cat /proc/meminfo
++++++ awk '/^MemFree:/ { printf($2)}'
+++++ memory_free=7505232
++++++ awk '/^Buffers:/ { printf($2)}'
++++++ cat /proc/meminfo
+++++ buffers=73296
++++++ cat /proc/meminfo
++++++ awk '/^Cached:/ { printf($2)}'
+++++ cached=347280
++++++ awk '/^SReclaimable:/ { printf($2)}'
++++++ cat /proc/meminfo
+++++ sreclaimable=56236
++++++ cat /proc/meminfo
++++++ awk '/^SwapTotal:/ { printf($2)}'
+++++ swap_total=0
++++++ awk '/^SwapFree:/ { printf($2)}'
++++++ cat /proc/meminfo
+++++ swap_free=0
+++++ '[' 8222676 -gt 0 ']'
++++++ echo 'scale=1; (8222676 - 7505232 - 73296 - 347280 - 56236) * 100.0 / 8222676'
++++++ bc
+++++ memory_usage=2.9
+++++ memory_usage=2.9%
+++++ '[' 0 -gt 0 ']'
+++++ swap_mem=0.0%
++++++ awk '/\// {print $(NF-1)}'
++++++ df -h /
+++++ usageof=8%
++++++ awk '{print $1}' /proc/loadavg
+++++ load_average=3.19
++++++ whoami
+++++ whoiam=root
++++++ date
+++++ time_cur='Wed Feb 15 04:23:55 CST 2023'
++++++ wc -l
++++++ ps aux
+++++ processes=123
++++++ users
++++++ wc -w
+++++ user_num=0
+++++ ip_pre=
+++++ '[' -x /sbin/ip ']'
++++++ grep inet
++++++ /sbin/ip a
++++++ grep -v 127.0.0.1
++++++ grep -v inet6
++++++ awk '{print $2}'
+++++ ip_pre=10.0.2.15/24
+++++ echo -e '\n'
+++++ echo -e 'Welcome to 5.10.0-10.oe2203.riscv64\n'
+++++ echo -e 'System information as of time: \tWed Feb 15 04:23:55 CST 2023\n'
+++++ echo -e 'System load: \t\033[0;33;40m3.19\033[0m'
+++++ echo -e 'Processes: \t123'
+++++ echo -e 'Memory used: \t2.9%'
+++++ echo -e 'Swap used: \t0.0%'
+++++ echo -e 'Usage On: \t8%'
+++++ for line in $ip_pre
+++++ ip_address=10.0.2.15
+++++ echo -e 'IP address: \t10.0.2.15'
+++++ echo -e 'Users online: \t0'
+++++ '[' root == root ']'
+++++ echo -e '\n'
++++ unset i
++++ unset -f pathmunge
++ rm -rf junit5-junit4 /tmp/result
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Wed Feb 15 04:23:59 2023 - INFO  - Finish environment cleanup!

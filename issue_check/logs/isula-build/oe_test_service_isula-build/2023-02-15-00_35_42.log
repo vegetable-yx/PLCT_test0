@@ -1,0 +1,223 @@
++ source ../common/common_lib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Wed Feb 15 00:35:50 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL isula-build
++ pkgs=isula-build
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs isula-build --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpn1rzs_j6
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpn1rzs_j6
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Wed Feb 15 00:37:36 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Wed Feb 15 00:37:39 2023 - INFO  - Start testing...
++ test_execution isula-build.service
++ service=isula-build.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-02-15 00:37:39'
++ test_restart isula-build.service
++ service=isula-build.service
++ systemctl restart isula-build.service
++ CHECK_RESULT 0 0 0 'isula-build.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isula-build.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status isula-build.service
++ grep 'Active: active'
+     Active: active (running) since Wed 2023-02-15 00:38:17 CST; 7s ago
++ CHECK_RESULT 0 0 0 'isula-build.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isula-build.service restart failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop isula-build.service
++ CHECK_RESULT 0 0 0 'isula-build.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isula-build.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'Active: inactive'
++ systemctl status isula-build.service
+     Active: inactive (dead)
++ CHECK_RESULT 0 0 0 'isula-build.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isula-build.service stop failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start isula-build.service
++ CHECK_RESULT 0 0 0 'isula-build.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isula-build.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status isula-build.service
++ grep 'Active: active'
+     Active: active (running) since Wed 2023-02-15 00:38:50 CST; 7s ago
++ CHECK_RESULT 0 0 0 'isula-build.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isula-build.service start failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled isula-build.service
++ service=isula-build.service
+++ systemctl is-enabled isula-build.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable isula-build.service
+++ awk '{print $3}'
+++ grep 'Created symlink'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/isula-build.service
++ find /etc/systemd/system/multi-user.target.wants/isula-build.service
+/etc/systemd/system/multi-user.target.wants/isula-build.service
++ CHECK_RESULT 0 0 0 'isula-build.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isula-build.service enable failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable isula-build.service
+Removed /etc/systemd/system/multi-user.target.wants/isula-build.service.
++ find /etc/systemd/system/multi-user.target.wants/isula-build.service
+find: ‘/etc/systemd/system/multi-user.target.wants/isula-build.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'isula-build.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='isula-build.service disable failed'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ grep -i 'fail\|error'
++ journalctl --since '2023-02-15 00:37:39' -u isula-build.service
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of isula-build.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of isula-build.service'
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload isula-build.service
++ service=isula-build.service
++ systemctl start isula-build.service
++ grep 'Job type reload is not applicable'
++ systemctl reload isula-build.service
+Failed to reload isula-build.service: Job type reload is not applicable for unit isula-build.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit isula-build.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit isula-build.service'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'Active: active'
++ systemctl status isula-build.service
+     Active: active (running) since Wed 2023-02-15 00:38:50 CST; 31s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Wed Feb 15 00:39:22 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Wed Feb 15 00:39:24 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Wed Feb 15 00:39:25 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpn1rzs_j6 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpn1rzs_j6
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Wed Feb 15 00:39:58 2023 - INFO  - Finish environment cleanup!

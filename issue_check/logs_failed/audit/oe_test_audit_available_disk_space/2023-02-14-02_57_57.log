@@ -1,0 +1,2119 @@
++ source ../common/comlib.sh
+++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++++ find /etc -name auditd.conf
+++ AUDIT_PATH=
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Feb 14 02:58:05 2023 - INFO  - Start to prepare the test environment.
++ cp -raf /var/log/ /tmp/
++ sed -i 's/log_file = \/var\/log\/audit\/audit.log/log_file = \/tmp\/log\/audit\/audit.log/g' /etc/audit/auditd.conf
+sed: can't read /etc/audit/auditd.conf: No such file or directory
++ sed -i 's/max_log_file_action = ROTATE/max_log_file_action = KEEP_LOGS/g' /etc/audit/auditd.conf
+sed: can't read /etc/audit/auditd.conf: No such file or directory
++ service auditd restart
+oe_test_audit_available_disk_space.sh: line 28: service: command not found
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Feb 14 02:58:08 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 02:58:10 2023 - INFO  - Start to run test.
+++ df -m /tmp/log/audit/
+++ awk NR==2
+++ awk '{print $4-74}'
+df: /tmp/log/audit/: No such file or directory
++ count_size=
++ dd if=/dev/zero of=/tmp/log/audit/audit_log bs=1M count=
+dd: invalid number: ‘’
++ (( j=0 ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 02:58:15 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 02:58:18 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=02:58:18
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=02:58:18
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 02:58:20 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 02:58:22 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:58:18 -te 02:58:18
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 02:59:24 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 02:59:28 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 02:59:36 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 02:59:38 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=02:59:39
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=02:59:39
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 02:59:41 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 02:59:44 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 02:59:39 -te 02:59:39
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:00:23 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:00:26 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:00:31 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:00:33 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:00:34
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:00:34
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:00:37 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:00:39 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:00:34 -te 03:00:34
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:01:16 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:01:17 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:01:22 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:01:23 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:01:23
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:01:23
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:01:25 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:01:26 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:23 -te 03:01:23
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:01:52 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:01:53 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:01:57 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:01:58 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:01:58
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:01:59
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:02:00 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:02:01 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:01:58 -te 03:01:59
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:03:06 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:03:09 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:03:18 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:03:22 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:03:22
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:03:22
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:03:25 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:03:29 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:03:22 -te 03:03:22
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:04:07 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:04:09 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:04:15 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:04:16 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:04:17
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:04:17
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:04:19 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:04:21 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:04:17 -te 03:04:17
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:04:58 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:05:00 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:05:06 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:05:08 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:05:08
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:05:08
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:05:10 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:05:12 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:08 -te 03:05:08
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:05:47 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:05:49 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:05:54 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:05:57 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:05:57
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:05:57
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:06:00 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:06:01 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:05:57 -te 03:05:57
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:06:39 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:06:41 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:06:45 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:06:47 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:06:48
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:06:48
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:06:49 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:06:52 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:06:48 -te 03:06:48
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ CHECK_RESULT 1 0 0 'search first'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='search first'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'search first'
++ LOG_ERROR 'search first'
++ message='search first'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'search first'
+Tue Feb 14 03:07:53 2023 - ERROR - search first
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 40'
++ message='oe_test_audit_available_disk_space.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 40'
+Tue Feb 14 03:07:58 2023 - ERROR - oe_test_audit_available_disk_space.sh line 40
++ return 0
++ (( j++ ))
++ (( j<10 ))
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ grep -iE 'Audit daemon is low on disk space for logging' /var/log/messages
+grep: /var/log/messages: No such file or directory
++ CHECK_RESULT 2 0 0 'grep logging first failed'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='grep logging first failed'
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'grep logging first failed'
++ LOG_ERROR 'grep logging first failed'
++ message='grep logging first failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'grep logging first failed'
+Tue Feb 14 03:08:10 2023 - ERROR - grep logging first failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 44'
++ message='oe_test_audit_available_disk_space.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 44'
+Tue Feb 14 03:08:15 2023 - ERROR - oe_test_audit_available_disk_space.sh line 44
++ return 0
+++ awk NR==2
+++ awk '{print $4-49}'
+++ df -m /tmp/log/audit/
+df: /tmp/log/audit/: No such file or directory
++ count_size=
++ dd if=/dev/zero of=/tmp/log/audit/audit_log bs=1M count=
+dd: invalid number: ‘’
++ search_log available_disk_space
++ audit_key=available_disk_space
++ auditctl -w /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 ' add rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ' add rules failed'
++ LOG_ERROR ' add rules failed'
++ message=' add rules failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message ' add rules failed'
+Tue Feb 14 03:08:19 2023 - ERROR -  add rules failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 36'
++ message='../common/comlib.sh line 36'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 36'
+Tue Feb 14 03:08:21 2023 - ERROR - ../common/comlib.sh line 36
++ return 0
+++ date +%T
++ starttime=03:08:21
++ touch /tmp/available_disk_space
++ rm -rf /tmp/available_disk_space
+++ date +%T
++ endtime=03:08:21
++ auditctl -W /tmp/available_disk_space -p rwxa -k available_disk_space
+../common/comlib.sh: line 41: auditctl: command not found
++ CHECK_RESULT 127 0 0 'second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'second failed'
++ LOG_ERROR 'second failed'
++ message='second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'second failed'
+Tue Feb 14 03:08:22 2023 - ERROR - second failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/comlib.sh line 42'
++ message='../common/comlib.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message '../common/comlib.sh line 42'
+Tue Feb 14 03:08:24 2023 - ERROR - ../common/comlib.sh line 42
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k available_disk_space -ts 03:08:21 -te 03:08:21
+../common/comlib.sh: line 44: ausearch: command not found
++ [[ 127 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ [[ 10 -eq 10 ]]
++ return 1
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ service auditd status
+oe_test_audit_available_disk_space.sh: line 49: service: command not found
++ grep 'active (running)'
++ CHECK_RESULT 1 0 0 'grep active failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep active failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep active failed'
++ LOG_ERROR 'grep active failed'
++ message='grep active failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'grep active failed'
+Tue Feb 14 03:09:16 2023 - ERROR - grep active failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 50'
++ message='oe_test_audit_available_disk_space.sh line 50'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 50'
+Tue Feb 14 03:09:18 2023 - ERROR - oe_test_audit_available_disk_space.sh line 50
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen-riscv/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ service auditd status
+oe_test_audit_available_disk_space.sh: line 52: service: command not found
++ grep 'Audit daemon is low on disk space for logging'
++ CHECK_RESULT 1 0 0 'grep logging second failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep logging second failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep logging second failed'
++ LOG_ERROR 'grep logging second failed'
++ message='grep logging second failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'grep logging second failed'
+Tue Feb 14 03:09:28 2023 - ERROR - grep logging second failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_available_disk_space.sh line 53'
++ message='oe_test_audit_available_disk_space.sh line 53'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_available_disk_space.sh line 53'
+Tue Feb 14 03:09:31 2023 - ERROR - oe_test_audit_available_disk_space.sh line 53
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 03:09:33 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 35
++ test 35 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Feb 14 03:09:34 2023 - ERROR - failed to execute the case.
++ exit 35
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Feb 14 03:09:37 2023 - INFO  - Start to restore the test environment.
++ sed -i 's/log_file = \/tmp\/log\/audit\/audit.log/log_file = \/var\/log\/audit\/audit.log/g' ''
+sed: can't read : No such file or directory
++ sed -i 's/max_log_file_action = KEEP_LOGS/max_log_file_action = ROTATE/g' ''
+sed: can't read : No such file or directory
++ service auditd restart
+oe_test_audit_available_disk_space.sh: line 62: service: command not found
++ rm -rf /tmp/log
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Feb 14 03:09:39 2023 - INFO  - End to restore the test environment.

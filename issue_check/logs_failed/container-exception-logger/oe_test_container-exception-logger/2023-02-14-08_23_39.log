@@ -1,0 +1,181 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Feb 14 08:23:47 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'docker-engine wget'
++ pkgs='docker-engine wget'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs 'docker-engine wget' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpim7u7an2
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpim7u7an2
++ . /etc/os-release
+++ NAME=openEuler
+++ VERSION='22.03 LTS'
+++ ID=openEuler
+++ VERSION_ID=22.03
+++ PRETTY_NAME='openEuler 22.03 LTS'
+++ ANSI_COLOR='0;31'
+++ tr -d '('
+++ tr -d ')'
+++ echo openEuler 22.03 LTS
+++ tr ' ' -
++ PRETTY_NAME=openEuler-22.03-LTS
++ wget -q https://repo.openeuler.org/openEuler-22.03-LTS/docker_img/riscv64/openEuler-docker.riscv64.tar.xz
++ docker load
+oe_test_container-exception-logger.sh: line 29: openEuler-docker.riscv64.tar.xz: No such file or directory
+++ docker images --format '{{.Repository}}:{{.Tag}}'
++ IMAGE_NAME=
++ cat
++ docker build -t openeuler-container-exception-logger .
+Sending build context to Docker daemon  5.632kB
+Error response from daemon: Dockerfile parse error line 1: FROM requires either one or three arguments
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Feb 14 08:27:48 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Feb 14 08:27:50 2023 - INFO  - Start testing...
++ echo without-option-test
++ grep 'container-exception-logger - without-option-test'
++ docker run --rm -i openeuler-container-exception-logger container-exception-logger
++ CHECK_RESULT 1 0 0 'test failed without option'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='test failed without option'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'test failed without option'
++ LOG_ERROR 'test failed without option'
++ message='test failed without option'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'test failed without option'
+Tue Feb 14 08:28:00 2023 - ERROR - test failed without option
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_container-exception-logger.sh line 45'
++ message='oe_test_container-exception-logger.sh line 45'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_container-exception-logger.sh line 45'
+Tue Feb 14 08:28:01 2023 - ERROR - oe_test_container-exception-logger.sh line 45
++ return 0
++ docker run --rm -i openeuler-container-exception-logger container-exception-logger --help
++ grep 'Usage: container-exception-logger'
++ CHECK_RESULT 1 0 0 'test failed with option --help'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='test failed with option --help'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'test failed with option --help'
++ LOG_ERROR 'test failed with option --help'
++ message='test failed with option --help'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'test failed with option --help'
+Tue Feb 14 08:28:22 2023 - ERROR - test failed with option --help
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_container-exception-logger.sh line 48'
++ message='oe_test_container-exception-logger.sh line 48'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_container-exception-logger.sh line 48'
+Tue Feb 14 08:28:24 2023 - ERROR - oe_test_container-exception-logger.sh line 48
++ return 0
++ echo option-no-tag-test
++ grep option-no-tag-test
++ docker run --rm -i openeuler-container-exception-logger container-exception-logger --no-tag
++ CHECK_RESULT 1 0 0 'test failed with option --no-tag'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='test failed with option --no-tag'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'test failed with option --no-tag'
++ LOG_ERROR 'test failed with option --no-tag'
++ message='test failed with option --no-tag'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'test failed with option --no-tag'
+Tue Feb 14 08:28:32 2023 - ERROR - test failed with option --no-tag
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_container-exception-logger.sh line 51'
++ message='oe_test_container-exception-logger.sh line 51'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_container-exception-logger.sh line 51'
+Tue Feb 14 08:28:34 2023 - ERROR - oe_test_container-exception-logger.sh line 51
++ return 0
++ docker run --rm -i openeuler-container-exception-logger container-exception-logger --tag example-tag
++ echo option-tag-test
++ grep 'example-tag - option-tag-test'
++ CHECK_RESULT 1 0 0 'test failed with option --tag'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='test failed with option --tag'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'test failed with option --tag'
++ LOG_ERROR 'test failed with option --tag'
++ message='test failed with option --tag'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'test failed with option --tag'
+Tue Feb 14 08:28:47 2023 - ERROR - test failed with option --tag
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_container-exception-logger.sh line 54'
++ message='oe_test_container-exception-logger.sh line 54'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_container-exception-logger.sh line 54'
+Tue Feb 14 08:28:49 2023 - ERROR - oe_test_container-exception-logger.sh line 54
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Feb 14 08:28:50 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Feb 14 08:28:52 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Feb 14 08:28:53 2023 - INFO  - start environment cleanup.
++ rm -rf Dockerfile openEuler-docker.riscv64.tar.xz
++ docker rmi openeuler-container-exception-logger
+Error: No such image: openeuler-container-exception-logger
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpim7u7an2 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpim7u7an2
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Feb 14 08:29:40 2023 - INFO  - Finish environment cleanup!

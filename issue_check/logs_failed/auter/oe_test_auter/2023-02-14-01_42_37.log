@@ -1,0 +1,204 @@
++ source /root/mugen-riscv/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen-riscv/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Tue Feb 14 01:42:43 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL auter
++ pkgs=auter
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py install --pkgs auter --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp741bwgh1
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp741bwgh1
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Tue Feb 14 01:43:45 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Feb 14 01:43:48 2023 - INFO  - Start to run test.
++ auter -h
++ grep Usage
+Usage: auter [--enable|--disable|--status] [--prep] [--apply] [--reboot] [--postreboot] [--config=<configfile>] [OPTIONS]
++ CHECK_RESULT 0 0 0 'Help information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep '[0-9]'
++ auter -v
+auter 1.0.0
++ CHECK_RESULT 0 0 0 'Version information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Version information printing failed'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auter --status
++ grep enabled
+auter is currently enabled and not running
++ CHECK_RESULT 0 0 0 'Failed to check the status'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to check the status'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep disabled
++ auter --disable
++ auter --status
++ grep disabled
+auter is currently disabled
++ CHECK_RESULT 0 0 0 'Disable the failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Disable the failure'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auter --enable
++ grep enabled
++ CHECK_RESULT 1 0 0 'Enable the failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Enable the failure'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Enable the failure'
++ LOG_ERROR 'Enable the failure'
++ message='Enable the failure'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Enable the failure'
+Tue Feb 14 01:43:55 2023 - ERROR - Enable the failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_auter.sh line 40'
++ message='oe_test_auter.sh line 40'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_auter.sh line 40'
+Tue Feb 14 01:43:58 2023 - ERROR - oe_test_auter.sh line 40
++ return 0
++ auter --prep
++ grep downloaded
++ CHECK_RESULT 1 0 0 'Predownload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Predownload failed'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Predownload failed'
++ LOG_ERROR 'Predownload failed'
++ message='Predownload failed'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Predownload failed'
+Tue Feb 14 01:44:36 2023 - ERROR - Predownload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_auter.sh line 42'
++ message='oe_test_auter.sh line 42'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_auter.sh line 42'
+Tue Feb 14 01:44:38 2023 - ERROR - oe_test_auter.sh line 42
++ return 0
++ auter --apply
++ grep successfully
++ CHECK_RESULT 1 0 0 'Application of failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Application of failure'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Application of failure'
++ LOG_ERROR 'Application of failure'
++ message='Application of failure'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Application of failure'
+Tue Feb 14 01:44:52 2023 - ERROR - Application of failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_auter.sh line 44'
++ message='oe_test_auter.sh line 44'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_auter.sh line 44'
+Tue Feb 14 01:44:53 2023 - ERROR - oe_test_auter.sh line 44
++ return 0
++ grep post-reboot
++ auter --postreboot
++ CHECK_RESULT 1 0 0 'Postreboot of failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Postreboot of failure'
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Postreboot of failure'
++ LOG_ERROR 'Postreboot of failure'
++ message='Postreboot of failure'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'Postreboot of failure'
+Tue Feb 14 01:49:56 2023 - ERROR - Postreboot of failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_auter.sh line 46'
++ message='oe_test_auter.sh line 46'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'oe_test_auter.sh line 46'
+Tue Feb 14 01:49:57 2023 - ERROR - oe_test_auter.sh line 46
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Feb 14 01:49:58 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Feb 14 01:50:00 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Feb 14 01:50:01 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp741bwgh1 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen-riscv/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp741bwgh1
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen-riscv/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Feb 14 01:50:23 2023 - INFO  - Finish environment cleanup!
