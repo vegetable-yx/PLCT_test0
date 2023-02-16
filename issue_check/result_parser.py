@@ -147,7 +147,7 @@ class TestResults(object):
 class classifier(object):
     def __init__(self,configFileName):
         self.errorType = []
-        configFile = open(configFileName,'r')
+        configFile = open(configFileName,'rb')
         configraw = configFile.read()
         configFile.close()
         config = json.loads(configraw)
