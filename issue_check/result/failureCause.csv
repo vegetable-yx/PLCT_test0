@@ -1,0 +1,1098 @@
+测试套/软件包名,测试用例名,日志文件,原因,Broken testcase,pkg not found,preinstall absent,kernel module absent,file missing,systemd unit restart failure,systemd unit runtime error,systemd unit enable failure,timeout
+anaconda,oe_test_service_zram,2023-02-14-01_13_59.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+arptables,oe_test_service_arptables,2023-02-14-00_48_14.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+atune,oe_test_service_atuned,2023-02-14-01_10_57.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+audit,oe_test_audit_available_disk_space,2023-02-14-02_57_57.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_count_number_of_event,2023-02-14-02_15_03.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_count_time,2023-02-14-02_14_27.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_event_log,2023-02-14-03_15_48.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_fetch_file_in_order,2023-02-14-02_11_05.log,"file missing
+",0,0,0,0,1,0,0,0,0
+audit,oe_test_audit_max_log_file_ignore,2023-02-14-02_22_10.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_max_log_file_keep_logs,2023-02-14-02_54_23.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_max_log_file_rotate,2023-02-14-02_19_19.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_max_log_file_suspend,2023-02-14-02_50_39.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_max_log_file_syslog,2023-02-14-02_46_43.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_dictionary_access,2023-02-14-01_59_20.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_do_command,2023-02-14-02_01_48.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_file_access,2023-02-14-01_28_29.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+audit,oe_test_audit_monitor_network_visit,2023-02-14-02_03_52.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_system_use,2023-02-14-02_00_37.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_other,2023-02-14-03_16_47.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_rule_conflict_strategy,2023-02-14-02_09_01.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_rule_contact_strategy,2023-02-14-02_07_00.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_rule_fetch_from_rule,2023-02-14-02_10_17.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_show_event_list,2023-02-14-02_15_45.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_track_designated_access,2023-02-14-02_04_48.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_user_build_connection,2023-02-14-02_16_23.log,"file missing
+",0,0,0,0,1,0,0,0,0
+audit,oe_test_audit_use_d_audit,2023-02-14-02_05_32.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_use_w_audit,2023-02-14-02_06_03.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_inject_time_fault,2023-02-14-03_09_58.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_service_auditd,2023-02-14-03_13_58.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_start_audit,2023-02-14-03_18_02.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+auter,oe_test_auter,2023-02-14-01_42_37.log,,0,0,0,0,0,0,0,0,0
+bind,oe_test_service_named,2023-02-14-03_23_21.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+bind,oe_test_service_named-chroot,2023-02-14-03_10_27.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+bind,oe_test_service_named-chroot-setup,2023-02-14-03_04_02.log,"systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,0,1,1,0,0
+bluez,oe_test_service_bluetooth,2023-02-14-03_24_41.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+bluez,oe_test_service_bluetooth-mesh,2023-02-14-03_23_24.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+cachefilesd,oe_test_service_cachefilesd,2023-02-14-03_40_33.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+chrony,oe_test_service_chrony-wait,2023-02-14-03_59_04.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+chrony,oe_test_service_chronyd,2023-02-14-03_57_40.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+clamav,oe_test_clamav_clamdtop,2023-02-14-04_51_36.log,,0,0,0,0,0,0,0,0,0
+clamav,oe_test_clamav_clamonacc,2023-02-14-05_00_49.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+clamav,oe_test_clamav_clamscan_1,2023-02-14-05_11_11.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+clamav,oe_test_clamav_clamscan_2,2023-02-14-05_41_40.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+clamav,oe_test_clamav_clamscan_3,2023-02-14-05_50_44.log,"timeout
+",0,0,0,0,0,0,0,0,1
+clamav,oe_test_clamav_sigtool_2,2023-02-14-06_46_45.log,"file missing
+",0,0,0,0,1,0,0,0,0
+clamav,oe_test_service_clamav-clamonacc,2023-02-14-04_03_57.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+cmake,oe_test_ccmake,2023-02-14-06_19_32.log,"timeout
+",0,0,0,0,0,0,0,0,1
+cmake,oe_test_ccmake3,2023-02-14-06_23_55.log,"timeout
+",0,0,0,0,0,0,0,0,1
+cobbler,oe_test_cobbler_distro,2023-02-14-06_53_01.log,,0,0,0,0,0,0,0,0,0
+cobbler,oe_test_cobbler_file,2023-02-14-07_59_34.log,,0,0,0,0,0,0,0,0,0
+cobbler,oe_test_cobbler_image,2023-02-14-07_32_33.log,,0,0,0,0,0,0,0,0,0
+cobbler,oe_test_cobbler_mgmtclass,2023-02-14-07_41_43.log,,0,0,0,0,0,0,0,0,0
+cobbler,oe_test_cobbler_other,2023-02-14-08_09_20.log,,0,0,0,0,0,0,0,0,0
+cobbler,oe_test_cobbler_package,2023-02-14-07_50_01.log,,0,0,0,0,0,0,0,0,0
+cobbler,oe_test_cobbler_profile,2023-02-14-07_02_45.log,,0,0,0,0,0,0,0,0,0
+cobbler,oe_test_cobbler_repo,2023-02-14-07_23_51.log,,0,0,0,0,0,0,0,0,0
+cobbler,oe_test_cobbler_system,2023-02-14-07_12_23.log,,0,0,0,0,0,0,0,0,0
+conntrack-tools,oe_test_service_conntrackd,2023-02-14-08_18_59.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+container-exception-logger,oe_test_container-exception-logger,2023-02-14-08_23_39.log,"file missing
+",0,0,0,0,1,0,0,0,0
+crontabs,oe_test_crontabs,2023-02-02-02_11_28.log,,0,0,0,0,0,0,0,0,0
+cryptsetup,oe_test_encrypt_data,2023-02-14-08_33_45.log,"file missing
+",0,0,0,0,1,0,0,0,0
+cryptsetup,oe_test_luks_encrypted,2023-02-14-08_36_52.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+cryptsetup,oe_test_use_luks,2023-02-14-08_43_05.log,"file missing
+",0,0,0,0,1,0,0,0,0
+cups,oe_test_socket_cups-lpd,2023-02-14-08_43_12.log,"file missing
+",0,0,0,0,1,0,0,0,0
+dbxtool,oe_test_service_dbxtool,2023-02-14-09_06_59.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+dejagnu,oe_test_dejagnu_runtest_01,2023-02-14-09_10_49.log,"file missing
+",0,0,0,0,1,0,0,0,0
+dejagnu,oe_test_dejagnu_runtest_02,2023-02-14-09_22_12.log,,0,0,0,0,0,0,0,0,0
+derby,oe_test_service_derby,2023-02-14-09_14_42.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+dhcp,oe_test_service_dhcpd,2023-02-14-09_24_42.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+dhcp,oe_test_service_dhcpd6,2023-02-14-09_23_18.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+dhcp,oe_test_service_dhcrelay,2023-02-14-09_26_02.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+dnf,oe_test_dnf_list_mark,2023-02-02-13_00_04.log,"timeout
+",0,0,0,0,0,0,0,0,1
+dnf,oe_test_dnf_repeat-upgrade-downgrade,2023-02-02-13_21_59.log,"timeout
+",0,0,0,0,0,0,0,0,1
+dnssec-trigger,oe_test_service_dnssec-triggerd,2023-02-14-10_04_59.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+dracut,oe_test_service_dracut-shutdown,2023-02-14-10_28_49.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+easymock,oe_test_easymock_spring,2023-02-14-11_14_25.log,"pkg not found
+",0,1,0,0,0,0,0,0,0
+ebtables,oe_test_service_ebtables,2023-02-14-10_44_58.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+edac-utils,oe_test_service_edac,2023-02-14-10_50_16.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+etcd,oe_test_etcd_05,2023-02-14-11_27_55.log,"systemd unit restart failure
+",0,0,0,0,0,1,0,0,0
+fcoe-utils,oe_test_service_fcoe,2023-02-14-11_56_56.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+freeipmi,oe_test_service_bmc-watchdog,2023-02-14-19_04_32.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+freeipmi,oe_test_service_ipmidetectd,2023-02-14-19_08_53.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+freeipmi,oe_test_service_ipmiseld,2023-02-14-19_12_51.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+freeradius,oe_test_freeradius_freeradius-utils_radclient2,2023-02-14-20_26_35.log,,0,0,0,0,0,0,0,0,0
+freeradius,oe_test_freeradius_freeradius-utils_radeapclient,2023-02-14-20_50_14.log,"timeout
+",0,0,0,0,0,0,0,0,1
+freeradius,oe_test_freeradius_freeradius-utils_radlast,2023-02-14-20_59_21.log,,0,0,0,0,0,0,0,0,0
+freeradius,oe_test_freeradius_freeradius-utils_radsniff,2023-02-14-21_23_26.log,"timeout
+",0,0,0,0,0,0,0,0,1
+freeradius,oe_test_freeradius_freeradius-utils_radsniff2,2023-02-14-21_53_42.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+freeradius,oe_test_freeradius_freeradius-utils_radtestAndRadwho,2023-02-14-22_01_00.log,"file missing
+",0,0,0,0,1,0,0,0,0
+freeradius,oe_test_freeradius_freeradius-utils_radwho,2023-02-14-22_04_15.log,"file missing
+",0,0,0,0,1,0,0,0,0
+freeradius,oe_test_freeradius_freeradius-utils_radzap,2023-02-14-22_05_48.log,"file missing
+",0,0,0,0,1,0,0,0,0
+freeradius,oe_test_freeradius_freeradius-utils_rlm_ippool_toolAndSmbencrypt,2023-02-14-22_07_52.log,"file missing
+",0,0,0,0,1,0,0,0,0
+freeradius,oe_test_freeradius_freeradius_raddebugAndCheckrad,2023-02-14-19_11_00.log,,0,0,0,0,0,0,0,0,0
+freeradius,oe_test_service_radiusd,2023-02-14-22_09_08.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+fwupd,oe_test_service_fwupd,2023-02-14-19_22_47.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+ganglia,oe_test_service_gmetad,2023-02-14-19_48_53.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+glusterfs,oe_test_service_gluster-ta-volume,2023-02-14-21_35_07.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+glusterfs,oe_test_service_glusterd,2023-02-14-21_20_44.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+glusterfs,oe_test_service_glustereventsd,2023-02-14-21_25_41.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+glusterfs,oe_test_service_glusterfsd,2023-02-14-21_29_36.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+glusterfs,oe_test_service_glusterfssharedstorage,2023-02-14-21_32_25.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+gradle,oe_test_gradle_01,2023-02-14-22_03_03.log,"timeout
+",0,0,0,0,0,0,0,0,1
+gradle,oe_test_gradle_02,2023-02-14-22_33_31.log,"file missing
+",0,0,0,0,1,0,0,0,0
+gradle,oe_test_gradle_03,2023-02-14-22_39_45.log,"timeout
+",0,0,0,0,0,0,0,0,1
+gradle,oe_test_gradle_04,2023-02-14-23_10_28.log,"file missing
+",0,0,0,0,1,0,0,0,0
+groovy,oe_test_groovy_02,2023-02-14-22_29_07.log,"file missing
+",0,0,0,0,1,0,0,0,0
+hostname,oe_test_service_nis-domainname,2023-02-02-02_22_20.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,1,0,0,1,1,1,0
+iftop,oe_test_iftop_gui,2023-02-14-23_39_56.log,"file missing
+",0,0,0,0,1,0,0,0,0
+initscripts,oe_test_service_import-state,2023-02-14-23_51_43.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+initscripts,oe_test_service_loadmodules,2023-02-14-23_53_09.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+initscripts,oe_test_service_netconsole,2023-02-15-00_00_21.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+ipmitool,oe_test_service_bmc-snmp-proxy,2023-02-15-00_06_44.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+ipmitool,oe_test_service_exchange-bmc-os-info,2023-02-15-00_10_07.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+ipmitool,oe_test_service_ipmievd,2023-02-15-00_13_59.log,"kernel module absent
+file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,1,1,1,1,1,0
+iprutils,oe_test_service_iprdump,2023-02-15-00_12_07.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+iprutils,oe_test_service_iprinit,2023-02-15-00_13_26.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+iprutils,oe_test_service_iprupdate,2023-02-15-00_14_44.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+iprutils,oe_test_target_iprutils,2023-02-15-00_15_55.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+ipset,oe_test_service_ipset,2023-02-15-00_21_44.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+iptables,oe_test_service_ip6tables,2023-02-15-00_21_48.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+iptables,oe_test_service_iptables,2023-02-15-00_23_37.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+iputils,oe_test_service_ninfod,2023-02-02-02_24_02.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+irqbalance,oe_test_service_irqbalance,2023-02-15-00_30_09.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+java-1.8.0-openjdk,oe_test_openjdk_appletviewer_clhsdb,2023-02-15-00_35_54.log,,0,0,0,0,0,0,0,0,0
+java-1.8.0-openjdk,oe_test_openjdk_jdb_jdeps,2023-02-15-01_57_52.log,"file missing
+",0,0,0,0,1,0,0,0,0
+javapackages-tools,oe_test_gradle-local,2023-02-15-01_13_24.log,"timeout
+",0,0,0,0,0,0,0,0,1
+jetty,oe_test_jetty_start,2023-02-15-01_58_21.log,,0,0,0,0,0,0,0,0,0
+junit5,oe_test_junit5_gradle,2023-02-15-03_46_23.log,"timeout
+",0,0,0,0,0,0,0,0,1
+junit5,oe_test_junit5_junit4,2023-02-15-04_16_56.log,"file missing
+",0,0,0,0,1,0,0,0,0
+junit5,oe_test_junit5_kotlin_maven,2023-02-15-04_24_20.log,"timeout
+",0,0,0,0,0,0,0,0,1
+junit5,oe_test_junit5_maven,2023-02-15-04_54_51.log,"file missing
+",0,0,0,0,1,0,0,0,0
+junit5,oe_test_junit5_spring_maven,2023-02-15-05_21_40.log,"pkg not found
+timeout
+",0,1,0,0,0,0,0,0,1
+jython,oe_test_jython_02,2023-02-15-04_31_05.log,"timeout
+",0,0,0,0,0,0,0,0,1
+jython,oe_test_jython_03,2023-02-15-05_01_38.log,,0,0,0,0,0,0,0,0,0
+keepalived,oe_test_service_keepalived,2023-02-15-05_25_40.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+kernel,oe_test_kernel_cmd_01,2023-02-02-02_24_52.log,,0,0,0,0,0,0,0,0,0
+kernel,oe_test_service_cpupower,journelctl_for_2023-02-02-02_27_20.log,"Broken testcase
+preinstall absent
+timeout
+",1,0,1,0,0,0,0,0,1
+kexec-tools,oe_test_service_kdump,2023-02-15-05_33_33.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+keyutils,oe_test_keyutils-api,2023-02-15-05_39_13.log,"file missing
+",0,0,0,0,1,0,0,0,0
+kmod,oe_test_depmod,2023-02-02-12_37_55.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+kmod,oe_test_modinfo,2023-02-02-12_40_32.log,,0,0,0,0,0,0,0,0,0
+kmod,oe_test_modprobe,2023-02-02-12_40_47.log,"kernel module absent
+",0,0,0,1,0,0,0,0,0
+kmod,oe_test_rmmod,2023-02-02-12_41_23.log,"preinstall absent
+kernel module absent
+",0,0,1,1,0,0,0,0,0
+kmod,oe_test_weak-modules,2023-02-02-12_41_37.log,,0,0,0,0,0,0,0,0,0
+ladspa,oe_test_ladspa_analyseplugin,2023-02-15-09_46_11.log,,0,0,0,0,0,0,0,0,0
+ladspa,oe_test_ladspa_applyplugin,2023-02-15-09_48_30.log,,0,0,0,0,0,0,0,0,0
+lighttpd,oe_test_service_lighttpd,2023-02-02-21_08_24.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+linuxptp,oe_test_service_phc2sys,2023-02-02-21_11_37.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+linuxptp,oe_test_service_ptp4l,2023-02-02-21_13_04.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+lldpad,oe_test_service_lldpad,2023-02-02-21_12_31.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+lm_sensors,oe_test_service_fancontrol,2023-02-02-21_16_12.log,"Broken testcase
+kernel module absent
+",1,0,0,1,0,0,0,0,0
+lm_sensors,oe_test_service_lm_sensors,2023-02-02-21_17_10.log,"Broken testcase
+kernel module absent
+",1,0,0,1,0,0,0,0,0
+logwatch,oe_test_logwatch,2023-02-02-21_17_17.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+lvm2,oe_test_lvm2_pvcreate_001,2023-02-02-02_41_04.log,,0,0,0,0,0,0,0,0,0
+lvm2,oe_test_lvm2_pvcreate_002,2023-02-02-02_39_59.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lvm2,oe_test_lvm2_pvmove_001,2023-02-02-02_41_37.log,"kernel module absent
+file missing
+",0,0,0,1,1,0,0,0,0
+lvm2,oe_test_lvm2_pvmove_002,2023-02-02-02_45_09.log,"kernel module absent
+",0,0,0,1,0,0,0,0,0
+lvm2,oe_test_lvm2_pvresize_001,2023-02-02-02_40_32.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lvm2,oe_test_service_lvmlockd,2023-02-02-02_36_34.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+lvm2,oe_test_service_lvmlocks,2023-02-02-02_37_22.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+lxc,oe_test_lxc_autostart_cgroup,2023-02-02-21_39_19.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lxc,oe_test_lxc_create_attach,2023-02-02-21_33_28.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lxc,oe_test_lxc_device_copy,2023-02-02-21_41_12.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lxc,oe_test_lxc_info,2023-02-02-21_52_14.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lxc,oe_test_lxc_ls_monitor,2023-02-02-21_35_23.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lxc,oe_test_lxc_snapshot_start,2023-02-02-21_43_05.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lxc,oe_test_lxc_stop_top,2023-02-02-21_50_20.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+lxc,oe_test_lxc_unfreeze_destroy,2023-02-02-21_37_16.log,"file missing
+",0,0,0,0,1,0,0,0,0
+lxc,oe_test_lxc_unshare_update,2023-02-02-21_45_00.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+lxc,oe_test_service_lxc-net,2023-02-02-21_29_48.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+mailman,oe_test_service_mailman,2023-02-02-21_40_47.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+mcstrans,oe_test_service_mcstrans,2023-02-02-21_55_46.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+mcstrans,oe_test_service_mcstransd,2023-02-02-21_54_27.log,"systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,0,1,1,0,0
+mpg123,oe_test_mpg123,2023-02-02-22_04_12.log,,0,0,0,0,0,0,0,0,0
+mrtg,oe_test_service_mrtg,2023-02-02-22_06_56.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+multipath-tools,oe_test_service_multipathd,2023-02-02-22_10_19.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+mysql,oe_test_service_mysql,2023-02-02-22_15_13.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+nagios,oe_test_service_nagios,2023-02-02-22_21_53.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+nbdkit,oe_test_nbdkit_02,2023-02-02-22_26_33.log,,0,0,0,0,0,0,0,0,0
+netlabel_tools,oe_test_service_netlabel,2023-02-02-22_34_29.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+nfs-utils,oe_test_service_nfs-blkmap,2023-02-02-22_40_29.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+nftables,oe_test_nftables_anonymous_map,2023-02-02-22_42_28.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+nftables,oe_test_nftables_backup_rules,2023-02-02-22_44_52.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+nftables,oe_test_nftables_chains,2023-02-02-22_43_37.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+nftables,oe_test_nftables_create_counters,2023-02-02-22_40_55.log,"file missing
+",0,0,0,0,1,0,0,0,0
+nftables,oe_test_nftables_listen_package,2023-02-02-22_42_48.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+nftables,oe_test_nftables_name_sets,2023-02-02-22_43_20.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+nftables,oe_test_nftables_replace_counters,2023-02-02-22_45_10.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+nftables,oe_test_service_nftables,2023-02-02-22_45_26.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+nmon,oe_test_nmon_01,2023-02-02-22_54_34.log,"file missing
+",0,0,0,0,1,0,0,0,0
+nmon,oe_test_nmon_02,2023-02-02-22_58_48.log,"file missing
+",0,0,0,0,1,0,0,0,0
+nmon,oe_test_nmon_04,2023-02-02-23_04_01.log,,0,0,0,0,0,0,0,0,0
+nss_wrapper,oe_test_nss_wrapper,2023-02-02-23_12_13.log,,0,0,0,0,0,0,0,0,0
+ntfs-3g,oe_test_ntfs-3g_ntfsresize,2023-02-02-23_28_38.log,,0,0,0,0,0,0,0,0,0
+numad,oe_test_service_numad,2023-02-02-23_16_26.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+nvmetcli,oe_test_service_nvmet,2023-02-02-23_19_36.log,"kernel module absent
+file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,1,1,1,1,1,0
+open-iscsi,oe_test_open-iscsi_iscsiadm,2023-02-02-23_26_11.log,"Broken testcase
+file missing
+timeout
+",1,0,0,0,1,0,0,0,1
+open-iscsi,oe_test_open-iscsi_iscsistart_iscsiuio,2023-02-02-23_27_35.log,"Broken testcase
+file missing
+timeout
+",1,0,0,0,1,0,0,0,1
+open-iscsi,oe_test_service_iscsid,2023-02-02-23_28_54.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+open-iscsi,oe_test_service_iscsiuio,2023-02-02-23_32_11.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+open-iscsi,oe_test_socket_iscsiuio,2023-02-02-23_35_20.log,"file missing
+",0,0,0,0,1,0,0,0,0
+OpenIPMI,oe_test_service_ipmi,2023-02-13-23_11_54.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+openmpi,oe_test_openmpi_cluster,2023-02-02-23_46_17.log,"Broken testcase
+timeout
+",1,0,0,0,0,0,0,0,1
+openscap,oe_test_assess_safety_compliance,2023-02-03-00_21_22.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+openscap,oe_test_scanning_remote_system,2023-02-03-00_15_04.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+opensp,oe_test_opensp_onsgmls,2023-02-03-00_00_44.log,"timeout
+",0,0,0,0,0,0,0,0,1
+opensp,oe_test_opensp_osgmlnorm,2023-02-03-00_31_13.log,"timeout
+",0,0,0,0,0,0,0,0,1
+opensp,oe_test_opensp_osx,2023-02-03-01_02_57.log,"timeout
+",0,0,0,0,0,0,0,0,1
+openssh,oe_test_openssh_cipher,2023-02-02-02_52_59.log,,0,0,0,0,0,0,0,0,0
+openssh,oe_test_openssh_port,2023-02-02-02_55_47.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+openssh,oe_test_openssh_scp,2023-02-02-02_59_49.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+openssh,oe_test_openssh_scp_P,2023-02-02-02_57_04.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+openssh,oe_test_openssh_scp_q,2023-02-02-02_58_08.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+openssh,oe_test_sec_jump_login,2023-02-02-03_07_54.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+openssh,oe_test_sec_ssh,2023-02-02-03_06_49.log,"file missing
+",0,0,0,0,1,0,0,0,0
+openvpn,oe_test_openvpn,2023-02-03-00_30_02.log,"timeout
+",0,0,0,0,0,0,0,0,1
+openvswitch,oe_test_service_openvswitch,2023-02-03-00_36_58.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+openvswitch,oe_test_service_openvswitch-ipsec,2023-02-03-00_47_02.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+openvswitch,oe_test_service_ovn-controller,2023-02-03-00_45_12.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+openvswitch,oe_test_service_ovn-controller-vtep,2023-02-03-00_46_15.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+openvswitch,oe_test_service_ovn-northd,2023-02-03-00_45_38.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+openvswitch,oe_test_service_ovs-vswitchd,2023-02-03-00_42_32.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+openvswitch,oe_test_service_ovsdb-server,2023-02-03-00_39_48.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+os-basic,oe_test_disk_graphics_card,2023-02-03-15_46_55.log,"file missing
+",0,0,0,0,1,0,0,0,0
+os-basic,oe_test_disk_schedule_udev,2023-02-03-14_28_00.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+os-basic,oe_test_IOaccess_1Gfile,2023-02-03-15_13_23.log,"timeout
+",0,0,0,0,0,0,0,0,1
+os-basic,oe_test_kernel_kdump,2023-02-03-15_08_15.log,"file missing
+",0,0,0,0,1,0,0,0,0
+os-basic,oe_test_nmcli_set_bond,2023-02-03-15_45_51.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+os-basic,oe_test_nmcli_set_team,2023-02-03-15_47_55.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_power_measurement_internal,2023-02-03-14_11_45.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_power_powertop2tuned_optimize,2023-02-03-14_07_15.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_power_powertop_powerup,2023-02-03-14_05_11.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_server_openssh_verifykey,2023-02-03-13_13_41.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+os-basic,oe_test_system_monitor_share_total,2023-02-03-15_46_44.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_who,2023-02-03-12_58_27.log,,0,0,0,0,0,0,0,0,0
+osc,oe_test_osc_04,2023-02-02-03_14_32.log,,0,0,0,0,0,0,0,0,0
+osc,oe_test_osc_build,2023-02-02-03_20_13.log,"file missing
+",0,0,0,0,1,0,0,0,0
+paps,oe_test_paps,2023-02-03-01_09_53.log,,0,0,0,0,0,0,0,0,0
+pcp,oe_test_pmevent_02,2023-02-03-01_28_33.log,"file missing
+",0,0,0,0,1,0,0,0,0
+pcp,oe_test_pmhostname_pmlock_pmlogger_check,2023-02-03-02_23_24.log,,0,0,0,0,0,0,0,0,0
+pcp,oe_test_pmlogger_daily_01,2023-02-03-02_27_25.log,,0,0,0,0,0,0,0,0,0
+pcp,oe_test_pmlogger_daily_report,2023-02-03-02_39_15.log,"file missing
+",0,0,0,0,1,0,0,0,0
+pcp,oe_test_pmprobe_01,2023-02-03-01_56_36.log,"file missing
+",0,0,0,0,1,0,0,0,0
+pcp,oe_test_pmval_02,2023-02-03-02_14_00.log,"file missing
+",0,0,0,0,1,0,0,0,0
+pcp,oe_test_service_pmmgr,2023-02-03-03_16_45.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+pcp,oe_test_service_pmwebd,2023-02-03-03_19_50.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+pcp-system-tools,oe_test_dstat_03,2023-02-03-03_22_28.log,"file missing
+",0,0,0,0,1,0,0,0,0
+pcp-system-tools,oe_test_pcp-iostat,2023-02-03-03_41_28.log,,0,0,0,0,0,0,0,0,0
+pcp-system-tools,oe_test_pcp-mpstat_pcp-numastat,2023-02-03-03_46_59.log,,0,0,0,0,0,0,0,0,0
+pcp-system-tools,oe_test_pcp-pidstat_02_pcp-ipcs,2023-02-03-03_36_18.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_01,2023-02-03-04_08_00.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_02,2023-02-03-04_10_01.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_03,2023-02-03-04_12_14.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_04,2023-02-03-04_14_19.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_05,2023-02-03-04_16_23.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_06,2023-02-03-04_18_28.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_07,2023-02-03-04_20_43.log,"timeout
+",0,0,0,0,0,0,0,0,1
+podman,oe_test_podman_08,2023-02-03-04_23_03.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_09,2023-02-03-04_25_20.log,"timeout
+",0,0,0,0,0,0,0,0,1
+podman,oe_test_podman_10,2023-02-03-04_55_28.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_11,2023-02-03-04_56_15.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_12,2023-02-03-04_56_58.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_13,2023-02-03-04_57_45.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_14,2023-02-03-04_58_31.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_15,2023-02-03-04_59_20.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+podman,oe_test_podman_16,2023-02-03-05_00_03.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_17,2023-02-03-05_00_51.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_18,2023-02-03-05_01_30.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_19,2023-02-03-05_02_07.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_20,2023-02-03-05_02_49.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_21,2023-02-03-05_03_21.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_22,2023-02-03-05_04_05.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_23,2023-02-03-05_04_50.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_24,2023-02-03-05_05_32.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_25,2023-02-03-05_06_15.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_26,2023-02-03-05_06_53.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_27,2023-02-03-05_07_34.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_28,2023-02-03-05_08_09.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_01,2023-02-03-05_08_45.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_DK_02,2023-02-03-05_09_23.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_03,2023-02-03-05_10_13.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_DK_04,2023-02-03-05_10_53.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_DK_05,2023-02-03-05_11_36.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_DK_06,2023-02-03-05_12_17.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_DK_07,2023-02-03-05_13_05.log,"timeout
+",0,0,0,0,0,0,0,0,1
+podman,oe_test_podman_DK_08,2023-02-03-05_13_54.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_DK_09,2023-02-03-05_14_39.log,"timeout
+",0,0,0,0,0,0,0,0,1
+podman,oe_test_podman_DK_10,2023-02-03-05_44_46.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_11,2023-02-03-05_45_33.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_12,2023-02-03-05_46_17.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_13,2023-02-03-05_47_06.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_14,2023-02-03-05_47_53.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_15,2023-02-03-05_48_46.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+podman,oe_test_podman_DK_16,2023-02-03-05_49_29.log,"file missing
+",0,0,0,0,1,0,0,0,0
+podman,oe_test_podman_DK_17,2023-02-03-05_50_19.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_18,2023-02-03-05_50_59.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_19,2023-02-03-05_51_38.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_20,2023-02-03-05_52_22.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_21,2023-02-03-05_52_55.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_22,2023-02-03-05_53_41.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_23,2023-02-03-05_54_28.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_24,2023-02-03-05_55_11.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_25,2023-02-03-05_55_57.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_26,2023-02-03-05_56_36.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_27,2023-02-03-05_57_19.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_podman_DK_28,2023-02-03-05_57_55.log,,0,0,0,0,0,0,0,0,0
+podman,oe_test_service_io.podman,2023-02-03-04_03_56.log,"file missing
+systemd unit runtime error
+",0,0,0,0,1,0,1,0,0
+podman,oe_test_socket_io.podman,2023-02-03-04_05_47.log,"file missing
+",0,0,0,0,1,0,0,0,0
+policycoreutils,oe_test_service_restorecond,2023-02-03-04_05_56.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+pps-tools,oe_test_pps-tools,2023-02-03-04_19_01.log,"file missing
+",0,0,0,0,1,0,0,0,0
+procinfo,oe_test_procinfo_01,2023-02-03-04_29_44.log,,0,0,0,0,0,0,0,0,0
+procinfo,oe_test_procinfo_02,2023-02-03-04_30_57.log,,0,0,0,0,0,0,0,0,0
+psacct,oe_test_psacct,2023-02-03-04_54_45.log,,0,0,0,0,0,0,0,0,0
+psacct,oe_test_service_psacct,2023-02-03-04_55_59.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+qemu,oe_test_service_qemu-guest-agent,2023-02-03-04_59_11.log,"systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,0,1,1,0,0
+qperf,oe_test_qperf_01,2023-02-03-05_25_41.log,"timeout
+",0,0,0,0,0,0,0,0,1
+qt5-qttools,oe_test_qt5-qttools_qdbus-qt5,2023-02-03-05_41_41.log,,0,0,0,0,0,0,0,0,0
+qt5-qttools,oe_test_qt5-qttools_qdoc_02,2023-02-03-05_47_25.log,,0,0,0,0,0,0,0,0,0
+qt5-qttools,oe_test_qt5-qttools_qdoc_03,2023-02-03-05_50_49.log,,0,0,0,0,0,0,0,0,0
+quota,oe_test_service_quota_nld,2023-02-03-06_00_17.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+rabbitmq-server,oe_test_rabbitmqctl_app,2023-02-03-06_09_04.log,,0,0,0,0,0,0,0,0,0
+radvd,oe_test_service_radvd,2023-02-03-06_08_12.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+rasdaemon,oe_test_service_ras-mc-ctl,2023-02-03-06_13_15.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+rasdaemon,oe_test_service_rasdaemon,2023-02-03-06_11_35.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+rdma-core,oe_test_socket_ibacm,2023-02-03-06_20_41.log,"file missing
+",0,0,0,0,1,0,0,0,0
+redis,oe_test_redis_02,2023-02-03-06_40_15.log,"timeout
+",0,0,0,0,0,0,0,0,1
+redis5,oe_test_redis5_02,2023-02-03-07_02_59.log,"timeout
+",0,0,0,0,0,0,0,0,1
+redis6,oe_test_redis6_02,2023-02-03-07_08_59.log,"timeout
+",0,0,0,0,0,0,0,0,1
+rng-tools,oe_test_service_rngd,2023-02-03-07_15_53.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+rootsh,oe_test_rootsh01,2023-02-03-07_18_14.log,,0,0,0,0,0,0,0,0,0
+rootsh,oe_test_rootsh02,2023-02-03-07_19_33.log,,0,0,0,0,0,0,0,0,0
+rpmdevtools,oe_test_rpmdevtools_rpmargs,2023-02-03-07_22_25.log,"timeout
+",0,0,0,0,0,0,0,0,1
+rpmdevtools,oe_test_rpmdevtools_rpmdev-wipetree,2023-02-03-07_27_11.log,"Broken testcase
+timeout
+",1,0,0,0,0,0,0,0,1
+rsyslog,oe_test_rsyslog_abnormal_template,2023-02-03-07_41_09.log,"timeout
+",0,0,0,0,0,0,0,0,1
+rsyslog,oe_test_rsyslog_function_attribute,2023-02-03-07_41_58.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+rsyslog,oe_test_rsyslog_function_httpd,2023-02-03-07_44_21.log,"timeout
+",0,0,0,0,0,0,0,0,1
+rsyslog,oe_test_rsyslog_function_relp,2023-02-03-07_49_47.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+rsyslog,oe_test_rsyslog_function_tcp,2023-02-03-07_51_36.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+rsyslog,oe_test_rsyslog_function_tcp_firewall,2023-02-03-07_52_24.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+rsyslog,oe_test_rsyslog_function_udp,2023-02-03-07_53_43.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+rsyslog,oe_test_rsyslog_reliability_lenght,2023-02-03-07_56_32.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+rsyslog,oe_test_rsyslog_reliability_network,2023-02-03-07_57_19.log,"timeout
+",0,0,0,0,0,0,0,0,1
+rsyslog,oe_test_rsyslog_reliability_tcp,2023-02-03-08_30_21.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+ruby,oe_test_irb_01,2023-02-03-08_07_58.log,,0,0,0,0,0,0,0,0,0
+rubygem-bundler,oe_test_rubygem-bundler_bundle_02,2023-02-03-08_36_34.log,"timeout
+",0,0,0,0,0,0,0,0,1
+samba,oe_test_service_ctdb,2023-02-03-09_01_40.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+samba,oe_test_service_nmb,2023-02-03-09_03_37.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+samba,oe_test_service_samba,2023-02-03-09_05_32.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+samba,oe_test_service_smb,2023-02-03-09_08_10.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+samba,oe_test_service_winbind,2023-02-03-09_10_50.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+sanlock,oe_test_service_sanlk-resetd,2023-02-03-09_18_11.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+sanlock,oe_test_service_wdmd,2023-02-03-09_21_10.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+security-tool,oe_test_security_tool,2023-02-03-09_24_24.log,"file missing
+",0,0,0,0,1,0,0,0,0
+security-tool,oe_test_service_openEuler-security,2023-02-03-09_25_46.log,"preinstall absent
+systemd unit runtime error
+systemd unit enable failure
+",0,0,1,0,0,0,1,1,0
+sos,oe_test_sosreport_01,2023-02-03-09_30_53.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+sos,oe_test_sosreport_02,2023-02-03-09_59_05.log,"timeout
+",0,0,0,0,0,0,0,0,1
+sos,oe_test_sosreport_03,2023-02-03-10_15_49.log,"file missing
+",0,0,0,0,1,0,0,0,0
+sos,oe_test_sosreport_04,2023-02-03-10_27_23.log,,0,0,0,0,0,0,0,0,0
+spawn-fcgi,oe_test_service_spawn-fcgi,2023-02-03-09_42_24.log,"systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,0,1,1,1,0
+strongswan,oe_test_service_strongswan,2023-02-03-10_41_37.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+strongswan,oe_test_service_strongswan-swanctl,2023-02-03-10_42_53.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+systemd,oe_test_service_console-getty,2023-02-02-03_19_21.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,1,0,0,1,1,1,0
+systemd,oe_test_service_dbus-org.freedesktop.import1,2023-02-02-03_20_36.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+systemd,oe_test_service_dbus-org.freedesktop.portable1,2023-02-02-03_24_17.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_service_initrd-switch-root,2023-02-02-03_27_12.log,"preinstall absent
+systemd unit runtime error
+",0,0,1,0,0,0,1,0,0
+systemd,oe_test_service_quotaon,2023-02-02-03_28_40.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+systemd,oe_test_service_systemd-ask-password-wall,2023-02-02-03_31_35.log,"systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,0,1,1,0,0
+systemd,oe_test_service_systemd-boot-check-no-failures,2023-02-02-03_32_29.log,"systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,0,1,1,1,0
+systemd,oe_test_service_systemd-fsck-root,2023-02-02-03_35_17.log,"systemd unit runtime error
+",0,0,0,0,0,0,1,0,0
+systemd,oe_test_service_systemd-importd,2023-02-02-03_37_17.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+systemd,oe_test_service_systemd-initctl,2023-02-02-03_38_35.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_service_systemd-journal-gatewayd,2023-02-02-03_40_42.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+systemd,oe_test_service_systemd-journal-remote,2023-02-02-03_41_29.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+systemd,oe_test_service_systemd-journal-upload,2023-02-02-03_42_23.log,"pkg not found
+file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,1,0,0,1,1,1,0,0
+systemd,oe_test_service_systemd-network-generator,2023-02-02-03_47_21.log,"preinstall absent
+systemd unit runtime error
+systemd unit enable failure
+",0,0,1,0,0,0,1,1,0
+systemd,oe_test_service_systemd-networkd,2023-02-02-03_46_06.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_service_systemd-networkd-wait-online,2023-02-02-03_46_43.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_service_systemd-portabled,2023-02-02-03_47_42.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_service_systemd-quotacheck,2023-02-02-03_48_43.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_service_systemd-resolved,2023-02-02-03_50_31.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_service_systemd-sysext,2023-02-02-04_30_43.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_service_systemd-udevd,2023-02-02-03_55_33.log,"systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,0,1,1,0,0
+systemd,oe_test_service_systemd-userdbd,2023-02-02-04_31_22.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+systemd,oe_test_socket_syslog,2023-02-02-04_00_45.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_socket_systemd-journal-gatewayd,2023-02-02-04_04_04.log,"pkg not found
+file missing
+",0,1,0,0,1,0,0,0,0
+systemd,oe_test_socket_systemd-journal-remote,2023-02-02-04_04_50.log,"pkg not found
+file missing
+",0,1,0,0,1,0,0,0,0
+systemd,oe_test_socket_systemd-networkd,2023-02-02-04_05_36.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_socket_systemd-rfkill,2023-02-02-04_06_13.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_socket_systemd-userdbd,2023-02-02-04_32_00.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_target_cryptsetup,2023-02-02-04_09_07.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_target_cryptsetup-pre,2023-02-02-04_08_52.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_target_initrd-switch-root,2023-02-02-04_15_13.log,,0,0,0,0,0,0,0,0,0
+systemd,oe_test_target_machines,2023-02-02-04_16_34.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_target_remote-cryptsetup,2023-02-02-04_20_11.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_target_remote-veritysetup,2023-02-02-04_32_49.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_target_veritysetup,2023-02-02-04_33_56.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemd,oe_test_target_veritysetup-pre,2023-02-02-04_34_33.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+systemtap,oe_test_service_systemtap,2023-02-03-11_07_32.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+targetcli,oe_test_targetcli_01,2023-02-03-11_09_59.log,,0,0,0,0,0,0,0,0,0
+targetcli,oe_test_targetcli_02,2023-02-03-11_11_55.log,,0,0,0,0,0,0,0,0,0
+targetcli,oe_test_targetcli_03,2023-02-03-11_13_19.log,"file missing
+",0,0,0,0,1,0,0,0,0
+targetcli,oe_test_targetcli_04,2023-02-03-11_15_03.log,"file missing
+",0,0,0,0,1,0,0,0,0
+tomcat,oe_test_service_tomcat-jsvc,2023-02-03-11_28_56.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+tuned,oe_test_service_tuned,2023-02-03-11_37_12.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+unbound,oe_test_service_unbound-keygen,2023-02-03-11_42_24.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+vdo,oe_test_service_vdo,2023-02-03-11_50_27.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+webbench,oe_test_webbench,2023-02-03-11_57_44.log,,0,0,0,0,0,0,0,0,0
+wireshark,oe_test_capinfos,2023-02-03-11_59_20.log,"timeout
+",0,0,0,0,0,0,0,0,1
+wireshark,oe_test_captype,2023-02-03-12_29_29.log,"timeout
+",0,0,0,0,0,0,0,0,1
+wireshark,oe_test_dumpcap_01,2023-02-03-12_59_36.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+wireshark,oe_test_dumpcap_02,2023-02-03-13_29_44.log,"timeout
+",0,0,0,0,0,0,0,0,1
+wireshark,oe_test_editcap_01,2023-02-03-13_59_51.log,"file missing
+",0,0,0,0,1,0,0,0,0
+wireshark,oe_test_editcap_02,2023-02-03-14_02_13.log,"timeout
+",0,0,0,0,0,0,0,0,1
+wireshark,oe_test_mergecap,2023-02-03-14_32_20.log,"file missing
+",0,0,0,0,1,0,0,0,0
+wireshark,oe_test_tshark_01,2023-02-03-14_44_50.log,"timeout
+",0,0,0,0,0,0,0,0,1
+wireshark,oe_test_tshark_02,2023-02-03-15_14_58.log,"file missing
+",0,0,0,0,1,0,0,0,0
+wireshark,oe_test_tshark_03,2023-02-03-15_16_25.log,"timeout
+",0,0,0,0,0,0,0,0,1
