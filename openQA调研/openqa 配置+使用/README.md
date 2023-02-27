@@ -38,7 +38,7 @@ cd /usr/share/openqa/script/
 : "${needles_giturl:="https://gitee.com/lvxiaoqian/os-autoinst-needles-openeuler.git"}"
 ```
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p1.jpeg)
 
 然后再次执行改脚本即可。
 
@@ -235,4 +235,4 @@ openqa-cli api -X POST isos async=0 DISTRI=openeuler FLAVOR=v2 ARCH=riscv64 VERS
 
 ![]()
 
-
+![]()
