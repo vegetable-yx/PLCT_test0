@@ -164,7 +164,7 @@ YAML_SCHEDULE=schedule/install_testsuite.yaml
 
 ![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p9.jpeg)
 
-然后点击进入新家的 job，编辑 job template
+然后点击进入新加的 job，编辑 job template，然后save changes
 
 ```
 ---
@@ -227,7 +227,7 @@ openqa-cli api -X POST isos async=0 DISTRI=openeuler FLAVOR=v2 ARCH=riscv64 VERS
 点击build进入结果页面，这里之前`openqa-cli api -X POST isos`的结果都会列出
 ![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p13.jpeg)
 
-点击结果按钮进入详情页面
+点击结果按钮（中间下面的小圆点）进入详情页面
 ![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p14.jpeg)此页面可以看到该用例的测试步骤，以及详细的检查点
 
 - 点击`Logs&Asserts`可以看到详细的日志
@@ -236,3 +236,5 @@ openqa-cli api -X POST isos async=0 DISTRI=openeuler FLAVOR=v2 ARCH=riscv64 VERS
 ![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p15.jpeg)
 
 ![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p16.jpeg)
+
+
