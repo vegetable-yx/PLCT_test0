@@ -44,13 +44,13 @@ cd /usr/share/openqa/script/
 
 2. 修改 qemu.pm
 
-此外，`/usr/lib/os-autoinst/backend/qemu.pm` 文件需要被修改，打上这个patch `https://gitee.com/lvxiaoqian/os-autoinst/commit/c2c580265330c7bab82e2efe61ebd8612671a0eb.patch` 或者直接将改文件内容替换为以下内容：[qemu.pm]()
+此外，`/usr/lib/os-autoinst/backend/qemu.pm` 文件需要被修改，打上这个patch `https://gitee.com/lvxiaoqian/os-autoinst/commit/c2c580265330c7bab82e2efe61ebd8612671a0eb.patch` 或者直接将改文件内容替换为以下内容：[qemu.pm](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/qemu.pm)
 
 这时 openQA web UI 已经可以在 http://localhost/ 打开，首先可以以demo的身份登录（不需要输入密码）。此时的 openqa-bootstrap 已经启动了一个本地的worker（openqa-bootstrap 自动开启的），在workers界面可以看到它。
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p2.jpeg)
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p3.jpeg)
 
 启动本地riscv worker
 ---
@@ -79,7 +79,7 @@ systemctl enable --now openqa-worker@10
 
 在 worker 界面刷新一下，即可看到新加的 10 号 
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p4.jpeg)
 
 ### 配置Medium types
 
@@ -87,7 +87,7 @@ systemctl enable --now openqa-worker@10
 
 点击 new Medium Types，然后输入以下信息：
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p5.jpeg)
 
 **具体配置信息：**
 
@@ -99,7 +99,7 @@ Flavor: v2
 
 arch: riscv64
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p6.jpeg)
 
 ### 配置Machines
 
@@ -136,7 +136,7 @@ VIRTIO_CONSOLE=1
 WORKER_CLASS=qemu_riscv64
 ```
 
-![]() 
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p7.jpeg) 
 
 ### 配置Test suites
 
@@ -156,13 +156,13 @@ NICTYPE=user
 YAML_SCHEDULE=schedule/install_testsuite.yaml
 ```
 
-![]() 
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p8.jpeg) 
 
 ### 配置Job groups
 
 点击“+”添加新的`job group`到当前层级
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p9.jpeg)
 
 然后点击进入新家的 job，编辑 job template
 
@@ -190,7 +190,7 @@ scenarios:
 - `scenarios`中配置在`openeuler-v2-riscv64-22.03`系统的`RISCV64_VM`虚拟机中跑的测试集
 - `install_testsuite`为之前在`Test suite`中定义的`Name`，指明测试套
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p10.jpeg)
 
 执行测试
 ---
@@ -220,19 +220,19 @@ openqa-cli api -X POST isos async=0 DISTRI=openeuler FLAVOR=v2 ARCH=riscv64 VERS
 点击左上角Job Groups，可以看到build结果
 
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p11.jpeg)
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p12.jpeg)
 
 点击build进入结果页面，这里之前`openqa-cli api -X POST isos`的结果都会列出
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p13.jpeg)
 
 点击结果按钮进入详情页面
-![]()此页面可以看到该用例的测试步骤，以及详细的检查点
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p14.jpeg)此页面可以看到该用例的测试步骤，以及详细的检查点
 
 - 点击`Logs&Asserts`可以看到详细的日志
 - 点击`Settings`可以看到用例设置的变量
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p15.jpeg)
 
-![]()
+![](https://github.com/vegetable-yx/PLCT_test0/blob/main/openQA%E8%B0%83%E7%A0%94/openqa%20%E9%85%8D%E7%BD%AE%2B%E4%BD%BF%E7%94%A8/iamges/p16.jpeg)
